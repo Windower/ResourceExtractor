@@ -238,226 +238,226 @@ IN THE SOFTWARE.
       <a id="132" element="Dark" />
       
 	  <!-- Skillchains -->
-      <a id="769" wsA="Impaction" wsB="" wsC="" />
-      <a id="770" wsA="Impaction" wsB="Reverberation" wsC="" />
-      <a id="771" wsA="Compression" wsB="" wsC="" />
-      <a id="772" wsA="Detonation" wsB="" wsC="" />
-      <a id="773" wsA="Impaction" wsB="" wsC="" />
-      <a id="774" wsA="Liquefaction" wsB="Impaction" wsC="" />
-      <a id="775" wsA="Transfixion" wsB="Impaction" wsC="" />
-      <a id="776" wsA="Fragmentation" wsB="" wsC="" />
-      <a id="777" wsA="Gravitation" wsB="Liquefaction" wsC="" />
-      <a id="778" wsA="Light" wsB="Fusion" wsC="" />
-      <a id="779" wsA="Fusion" wsB="Transfixion" wsC="" />
-      <a id="780" wsA="Gravitation" wsB="Liquefaction" wsC="" />
-      <a id="781" wsA="Induration" wsB="Impaction" wsC="Detonation" />
-      <a id="782" wsA="Light" wsB="Fragmentation" wsC="" />
-      <a id="783" wsA="Fusion" wsB="Reverberation" wsC="" />
-      <a id="784" wsA="Scission" wsB="" wsC="" />
-      <a id="785" wsA="Scission" wsB="" wsC="" />
-      <a id="786" wsA="Reverberation" wsB="" wsC="" />
-      <a id="787" wsA="Detonation" wsB="" wsC="" />
-      <a id="788" wsA="Detonation" wsB="Impaction" wsC="" />
-      <a id="789" wsA="" wsB="" wsC="" />
-      <a id="790" wsA="" wsB="" wsC="" />
-      <a id="791" wsA="Scission" wsB="Detonation" wsC="" />
-      <a id="792" wsA="Fragmentation" wsB="" wsC="" />
-      <a id="793" wsA="Gravitation" wsB="Transfixion" wsC="" />
-      <a id="794" wsA="Darkness" wsB="Gravitation" wsC="" />
-      <a id="795" wsA="Fusion" wsB="Compression" wsC="" />
-      <a id="796" wsA="Fragmentation" wsB="Distortion" wsC="" />
-      <a id="797" wsA="Distortion" wsB="Scission" wsC="" />
-      <a id="798" wsA="Impaction" wsB="Scission" wsC="Detonation" />
-      <a id="799" wsA="Darkness" wsB="Distortion" wsC="" />
-      <a id="800" wsA="Scission" wsB="" wsC="" />
-      <a id="801" wsA="Liquefaction" wsB="" wsC="" />
-      <a id="802" wsA="Liquefaction" wsB="Detonation" wsC="" />
-      <a id="803" wsA="Impaction" wsB="" wsC="" />
-      <a id="804" wsA="Scission" wsB="" wsC="" />
-      <a id="805" wsA="Scission" wsB="" wsC="" />
-      <a id="806" wsA="Reverberation" wsB="Impaction" wsC="" />
-      <a id="807" wsA="" wsB="" wsC="" />
-      <a id="808" wsA="Scission" wsB="Impaction" wsC="" />
-      <a id="809" wsA="Gravitation" wsB="" wsC="" />
-      <a id="810" wsA="Fragmentation" wsB="Scission" wsC="" />
-      <a id="811" wsA="Light" wsB="Fusion" wsC="" />
-      <a id="812" wsA="Fragmentation" wsB="Distortion" wsC="" />
-      <a id="813" wsA="Fusion" wsB="Reverberation" wsC="" />
-      <a id="814" wsA="Distortion" wsB="Scission" wsC="" />
-      <a id="815" wsA="" wsB="" wsC="" />
-      <a id="816" wsA="Scission" wsB="" wsC="" />
-      <a id="817" wsA="Transfixion" wsB="" wsC="" />
-      <a id="818" wsA="Induration" wsB="" wsC="" />
-      <a id="819" wsA="Induration" wsB="Detonation" wsC="" />
-      <a id="820" wsA="Reverberation" wsB="" wsC="" />
-      <a id="821" wsA="Scission" wsB="" wsC="" />
-      <a id="822" wsA="Scission" wsB="Impaction" wsC="" />
-      <a id="823" wsA="Fragmentation" wsB="" wsC="" />
-      <a id="824" wsA="Fragmentation" wsB="Distortion" wsC="" />
-      <a id="825" wsA="Light" wsB="Fusion" wsC="" />
-      <a id="826" wsA="Induration" wsB="Impaction" wsC="Detonation" />
-      <a id="827" wsA="Light" wsB="Distortion" wsC="" />
-      <a id="828" wsA="Fragmentation" wsB="Scission" wsC="" />
-      <a id="832" wsA="Detonation" wsB="Impaction" wsC="" />
-      <a id="833" wsA="Impaction" wsB="Reverberation" wsC="" />
-      <a id="834" wsA="Detonation" wsB="" wsC="" />
-      <a id="835" wsA="Scission" wsB="Impaction" wsC="" />
-      <a id="836" wsA="Liquefaction" wsB="Scission" wsC="Impaction" />
-      <a id="837" wsA="Scission" wsB="" wsC="" />
-      <a id="838" wsA="Scission" wsB="Impaction" wsC="" />
-      <a id="839" wsA="Fusion" wsB="" wsC="" />
-      <a id="840" wsA="Fusion" wsB="Reverberation" wsC="" />
-      <a id="841" wsA="Darkness" wsB="Gravitation" wsC="" />
-      <a id="842" wsA="Gravitation" wsB="Reverberation" wsC="" />
-      <a id="843" wsA="Scission" wsB="Detonation" wsC="" />
-      <a id="844" wsA="Darkness" wsB="Fragmentation" wsC="" />
-      <a id="845" wsA="Distortion" wsB="Detonation" wsC="" />
-      <a id="848" wsA="Impaction" wsB="" wsC="" />
-      <a id="849" wsA="Scission" wsB="" wsC="" />
-      <a id="850" wsA="Reverberation" wsB="Scission" wsC="" />
-      <a id="851" wsA="Impaction" wsB="" wsC="" />
-      <a id="852" wsA="Compression" wsB="" wsC="" />
-      <a id="853" wsA="Impaction" wsB="" wsC="" />
-      <a id="854" wsA="Induration" wsB="Reverberation" wsC="" />
-      <a id="855" wsA="Distortion" wsB="" wsC="" />
-      <a id="856" wsA="Distortion" wsB="Detonation" wsC="" />
-      <a id="857" wsA="Light" wsB="Fusion" wsC="" />
-      <a id="858" wsA="Fragmentation" wsB="Scission" wsC="" />
-      <a id="859" wsA="Scission" wsB="Detonation" wsC="" />
-      <a id="860" wsA="Light" wsB="Fragmentation" wsC="" />
-      <a id="861" wsA="Fusion" wsB="Compression" wsC="" />
-      <a id="864" wsA="Scission" wsB="" wsC="" />
-      <a id="865" wsA="Reverberation" wsB="" wsC="" />
-      <a id="866" wsA="Induration" wsB="Reverberation" wsC="" />
-      <a id="867" wsA="Compression" wsB="Scission" wsC="" />
-      <a id="868" wsA="Reverberation" wsB="Scission" wsC="" />
-      <a id="869" wsA="Transfixion" wsB="Scission" wsC="" />
-      <a id="870" wsA="Induration" wsB="" wsC="" />
-      <a id="871" wsA="Distortion" wsB="" wsC="" />
-      <a id="872" wsA="Distortion" wsB="Scission" wsC="" />
-      <a id="873" wsA="Darkness" wsB="Gravitation" wsC="" />
-      <a id="874" wsA="Fusion" wsB="Compression" wsC="" />
-      <a id="875" wsA="Compression" wsB="Reverberation" wsC="" />
-      <a id="876" wsA="Darkness" wsB="Distortion" wsC="" />
-      <a id="877" wsA="Gravitation" wsB="Reverberation" wsC="" />
-      <a id="880" wsA="Transfixion" wsB="" wsC="" />
-      <a id="881" wsA="Transfixion" wsB="Impaction" wsC="" />
-      <a id="882" wsA="Transfixion" wsB="Impaction" wsC="" />
-      <a id="883" wsA="Impaction" wsB="" wsC="" />
-      <a id="884" wsA="Compression" wsB="" wsC="" />
-      <a id="885" wsA="Reverberation" wsB="Transfixion" wsC="" />
-      <a id="886" wsA="Transfixion" wsB="Impaction" wsC="" />
-      <a id="887" wsA="Fusion" wsB="" wsC="" />
-      <a id="888" wsA="Gravitation" wsB="Induration" wsC="" />
-      <a id="889" wsA="Light" wsB="Distortion" wsC="" />
-      <a id="890" wsA="Fusion" wsB="Transfixion" wsC="" />
-      <a id="891" wsA="Transfixion" wsB="Scission" wsC="" />
-      <a id="892" wsA="Light" wsB="Fragmentation" wsC="" />
-      <a id="893" wsA="Gravitation" wsB="Transfixion" wsC="" />
-      <a id="896" wsA="Transfixion" wsB="" wsC="" />
-      <a id="897" wsA="Scission" wsB="" wsC="" />
-      <a id="898" wsA="Reverberation" wsB="" wsC="" />
-      <a id="899" wsA="Induration" wsB="Detonation" wsC="" />
-      <a id="900" wsA="Impaction" wsB="Transfixion" wsC="" />
-      <a id="901" wsA="Compression" wsB="" wsC="" />
-      <a id="902" wsA="Impaction" wsB="Detonation" wsC="" />
-      <a id="903" wsA="Gravitation" wsB="" wsC="" />
-      <a id="904" wsA="Gravitation" wsB="Transfixion" wsC="" />
-      <a id="905" wsA="Darkness" wsB="Fragmentation" wsC="" />
-      <a id="906" wsA="Fragmentation" wsB="Compression" wsC="" />
-      <a id="907" wsA="Reverberation" wsB="Scission" wsC="" />
-      <a id="908" wsA="Darkness" wsB="Gravitation" wsC="" />
-      <a id="909" wsA="Fusion" wsB="Impaction" wsC="" />
-      <a id="912" wsA="Transfixion" wsB="Scission" wsC="" />
-      <a id="913" wsA="Induration" wsB="" wsC="" />
-      <a id="914" wsA="Transfixion" wsB="Impaction" wsC="" />
-      <a id="915" wsA="Liquefaction" wsB="" wsC="" />
-      <a id="916" wsA="Scission" wsB="Detonation" wsC="" />
-      <a id="917" wsA="Reverberation" wsB="Impaction" wsC="" />
-      <a id="918" wsA="Induration" wsB="Detonation" wsC="" />
-      <a id="919" wsA="Distortion" wsB="Reverberation" wsC="" />
-      <a id="920" wsA="Fusion" wsB="Compression" wsC="" />
-      <a id="921" wsA="Light" wsB="Fragmentation" wsC="" />
-      <a id="922" wsA="Gravitation" wsB="Induration" wsC="" />
-      <a id="923" wsA="Compression" wsB="Scission" wsC="" />
-      <a id="924" wsA="Light" wsB="Distortion" wsC="" />
-      <a id="925" wsA="Fragmentation" wsB="Compression" wsC="" />
-      <a id="928" wsA="Impaction" wsB="" wsC="" />
-      <a id="929" wsA="Impaction" wsB="" wsC="" />
-      <a id="930" wsA="Reverberation" wsB="" wsC="" />
-      <a id="931" wsA="" wsB="" wsC="" />
-      <a id="932" wsA="" wsB="" wsC="" />
-      <a id="933" wsA="Induration" wsB="Reverberation" wsC="" />
-      <a id="934" wsA="Detonation" wsB="Impaction" wsC="" />
-      <a id="935" wsA="Impaction" wsB="" wsC="" />
-      <a id="936" wsA="Fusion" wsB="" wsC="" />
-      <a id="937" wsA="Fragmentation" wsB="Compression" wsC="" />
-      <a id="938" wsA="Light" wsB="Fragmentation" wsC="" />
-      <a id="939" wsA="" wsB="" wsC="" />
-      <a id="940" wsA="Induration" wsB="Reverberation" wsC="" />
-      <a id="941" wsA="" wsB="" wsC="" />
-      <a id="942" wsA="Fusion" wsB="Impaction" wsC="" />
-      <a id="944" wsA="Impaction" wsB="" wsC="" />
-      <a id="945" wsA="Impaction" wsB="" wsC="" />
-      <a id="946" wsA="Detonation" wsB="Impaction" wsC="" />
-      <a id="947" wsA="Compression" wsB="Reverberation" wsC="" />
-      <a id="948" wsA="Compression" wsB="Reverberation" wsC="" />
-      <a id="949" wsA="Detonation" wsB="" wsC="" />
-      <a id="950" wsA="Liquefaction" wsB="Impaction" wsC="" />
-      <a id="951" wsA="" wsB="" wsC="" />
-      <a id="952" wsA="Gravitation" wsB="Reverberation" wsC="" />
-      <a id="953" wsA="Darkness" wsB="Distortion" wsC="" />
-      <a id="954" wsA="Fragmentation" wsB="Distortion" wsC="" />
-      <a id="955" wsA="Fusion" wsB="Reverberation" wsC="" />
-      <a id="956" wsA="Gravitation" wsB="Transfixion" wsC="" />
-      <a id="957" wsA="Compression" wsB="Reverberation" wsC="" />
-      <a id="958" wsA="" wsB="" wsC="" />
-      <a id="959" wsA="Gravitation" wsB="Induration" wsC="" />
-      <a id="960" wsA="Liquefaction" wsB="Transfixion" wsC="" />
-      <a id="961" wsA="Reverberation" wsB="Transfixion" wsC="" />
-      <a id="962" wsA="Liquefaction" wsB="Transfixion" wsC="" />
-      <a id="964" wsA="Reverberation" wsB="Transfixion" wsC="Detonation" />
-      <a id="965" wsA="Induration" wsB="Transfixion" wsC="" />
-      <a id="966" wsA="Fusion" wsB="" wsC="" />
-      <a id="967" wsA="Fusion" wsB="Transfixion" wsC="" />
-      <a id="968" wsA="Light" wsB="Distortion" wsC="" />
-      <a id="969" wsA="Reverberation" wsB="Transfixion" wsC="" />
-      <a id="970" wsA="Light" wsB="Fusion" wsC="" />
-      <a id="971" wsA="Fragmentation" wsB="Transfixion" wsC="" />
-      <a id="976" wsA="Reverberation" wsB="Transfixion" wsC="" />
-      <a id="977" wsA="Reverberation" wsB="Transfixion" wsC="" />
-      <a id="978" wsA="Liquefaction" wsB="Transfixion" wsC="" />
-      <a id="980" wsA="Reverberation" wsB="Transfixion" wsC="Detonation" />
-      <a id="981" wsA="Induration" wsB="Transfixion" wsC="" />
-      <a id="982" wsA="Fusion" wsB="" wsC="" />
-      <a id="983" wsA="Fusion" wsB="Transfixion" wsC="" />
-      <a id="984" wsA="Darkness" wsB="Fragmentation" wsC="" />
-      <a id="985" wsA="Fragmentation" wsB="Scission" wsC="" />
-      <a id="986" wsA="Gravitation" wsB="Transfixion" wsC="" />
-      <a id="987" wsA="Induration" wsB="Impaction" wsC="Detonation" />
-      <a id="988" wsA="Darkness" wsB="Gravitation" wsC="" />
-      <a id="989" wsA="Fusion" wsB="Reverberation" wsC="" />
-      <a id="992" wsA="Fragmentation" wsB="Scission" wsC="" />
-      <a id="993" wsA="Light" wsB="Distortion" wsC="" />
-      <a id="994" wsA="Gravitation" wsB="Scission" wsC="" />
-      <a id="1006" wsA="" wsB="" wsC="" />
-      <a id="1007" wsA="" wsB="" wsC="" />
-      <a id="1008" wsA="" wsB="" wsC="" />
-      <a id="1009" wsA="" wsB="" wsC="" />
-      <a id="1010" wsA="" wsB="" wsC="" />
-      <a id="1011" wsA="" wsB="" wsC="" />
-      <a id="1012" wsA="" wsB="" wsC="" />
-      <a id="1013" wsA="" wsB="" wsC="" />
-      <a id="1014" wsA="" wsB="" wsC="" />
-      <a id="1015" wsA="" wsB="" wsC="" />
-      <a id="1016" wsA="" wsB="" wsC="" />
-      <a id="1017" wsA="" wsB="" wsC="" />
-      <a id="1018" wsA="" wsB="" wsC="" />
-      <a id="1019" wsA="" wsB="" wsC="" />
-      <a id="1020" wsA="" wsB="" wsC="" />
-      <a id="1021" wsA="" wsB="" wsC="" />
-      <a id="1022" wsA="" wsB="" wsC="" />
-      <a id="1023" wsA="" wsB="" wsC="" />
+      <a id="769" wsA="Impaction" wsB="" wsC="" /> <!-- Combo -->
+      <a id="770" wsA="Impaction" wsB="Reverberation" wsC="" /> <!-- Shoulder Tackle -->
+      <a id="771" wsA="Compression" wsB="" wsC="" /> <!-- One Inch Punch -->
+      <a id="772" wsA="Detonation" wsB="" wsC="" /> <!-- Backhand Blow -->
+      <a id="773" wsA="Impaction" wsB="" wsC="" /> <!-- Raging Fists -->
+      <a id="774" wsA="Liquefaction" wsB="Impaction" wsC="" /> <!-- Spinning Attack -->
+      <a id="775" wsA="Transfixion" wsB="Impaction" wsC="" /> <!-- Howling Fist -->
+      <a id="776" wsA="Fragmentation" wsB="" wsC="" /> <!-- Dragon Kick -->
+      <a id="777" wsA="Gravitation" wsB="Liquefaction" wsC="" /> <!-- Asuran Fists -->
+      <a id="778" wsA="Light" wsB="Fusion" wsC="" /> <!-- Final Heaven -->
+      <a id="779" wsA="Fusion" wsB="Transfixion" wsC="" /> <!-- Ascetic's Fury -->
+      <a id="780" wsA="Gravitation" wsB="Liquefaction" wsC="" /> <!-- Stringing Pummel -->
+      <a id="781" wsA="Induration" wsB="Impaction" wsC="Detonation" /> <!-- Tornado Kick -->
+      <a id="782" wsA="Light" wsB="Fragmentation" wsC="" /> <!-- Victory Smite -->
+      <a id="783" wsA="Fusion" wsB="Reverberation" wsC="" /> <!-- Shijin Spiral -->
+      <a id="784" wsA="Scission" wsB="" wsC="" /> <!-- Wasp Sting -->
+      <a id="785" wsA="Scission" wsB="" wsC="" /> <!-- Viper Bite -->
+      <a id="786" wsA="Reverberation" wsB="" wsC="" /> <!-- Shadowstitch -->
+      <a id="787" wsA="Detonation" wsB="" wsC="" /> <!-- Gust Slash -->
+      <a id="788" wsA="Detonation" wsB="Impaction" wsC="" /> <!-- Cyclone -->
+      <a id="789" wsA="" wsB="" wsC="" /> <!-- Energy Steal -->
+      <a id="790" wsA="" wsB="" wsC="" /> <!-- Energy Drain -->
+      <a id="791" wsA="Scission" wsB="Detonation" wsC="" /> <!-- Dancing Edge -->
+      <a id="792" wsA="Fragmentation" wsB="" wsC="" /> <!-- Shark Bite -->
+      <a id="793" wsA="Gravitation" wsB="Transfixion" wsC="" /> <!-- Evisceration -->
+      <a id="794" wsA="Darkness" wsB="Gravitation" wsC="" /> <!-- Mercy Stroke -->
+      <a id="795" wsA="Fusion" wsB="Compression" wsC="" /> <!-- Mandalic Stab -->
+      <a id="796" wsA="Fragmentation" wsB="Distortion" wsC="" /> <!-- Mordant Rime -->
+      <a id="797" wsA="Distortion" wsB="Scission" wsC="" /> <!-- Pyrrhic Kleos -->
+      <a id="798" wsA="Impaction" wsB="Scission" wsC="Detonation" /> <!-- Aeolian Edge -->
+      <a id="799" wsA="Darkness" wsB="Distortion" wsC="" /> <!-- Rudra's Storm -->
+      <a id="800" wsA="Scission" wsB="" wsC="" /> <!-- Fast Blade -->
+      <a id="801" wsA="Liquefaction" wsB="" wsC="" /> <!-- Burning Blade -->
+      <a id="802" wsA="Liquefaction" wsB="Detonation" wsC="" /> <!-- Red Lotus Blade -->
+      <a id="803" wsA="Impaction" wsB="" wsC="" /> <!-- Flat Blade -->
+      <a id="804" wsA="Scission" wsB="" wsC="" /> <!-- Shining Blade -->
+      <a id="805" wsA="Scission" wsB="" wsC="" /> <!-- Seraph Blade -->
+      <a id="806" wsA="Reverberation" wsB="Impaction" wsC="" /> <!-- Circle Blade -->
+      <a id="807" wsA="" wsB="" wsC="" /> <!-- Spirits Within -->
+      <a id="808" wsA="Scission" wsB="Impaction" wsC="" /> <!-- Vorpal Blade -->
+      <a id="809" wsA="Gravitation" wsB="" wsC="" /> <!-- Swift Blade -->
+      <a id="810" wsA="Fragmentation" wsB="Scission" wsC="" /> <!-- Savage Blade -->
+      <a id="811" wsA="Light" wsB="Fusion" wsC="" /> <!-- Knights of Round -->
+      <a id="812" wsA="Fragmentation" wsB="Distortion" wsC="" /> <!-- Death Blossom -->
+      <a id="813" wsA="Fusion" wsB="Reverberation" wsC="" /> <!-- Atonement -->
+      <a id="814" wsA="Distortion" wsB="Scission" wsC="" /> <!-- Expiacion -->
+      <a id="815" wsA="" wsB="" wsC="" /> <!-- Sanguine Blade -->
+      <a id="816" wsA="Scission" wsB="" wsC="" /> <!-- Hard Slash -->
+      <a id="817" wsA="Transfixion" wsB="" wsC="" /> <!-- Power Slash -->
+      <a id="818" wsA="Induration" wsB="" wsC="" /> <!-- Frostbite -->
+      <a id="819" wsA="Induration" wsB="Detonation" wsC="" /> <!-- Freezebite -->
+      <a id="820" wsA="Reverberation" wsB="" wsC="" /> <!-- Shockwave -->
+      <a id="821" wsA="Scission" wsB="" wsC="" /> <!-- Crescent Moon -->
+      <a id="822" wsA="Scission" wsB="Impaction" wsC="" /> <!-- Sickle Moon -->
+      <a id="823" wsA="Fragmentation" wsB="" wsC="" /> <!-- Spinning Slash -->
+      <a id="824" wsA="Fragmentation" wsB="Distortion" wsC="" /> <!-- Ground Strike -->
+      <a id="825" wsA="Light" wsB="Fusion" wsC="" /> <!-- Scourge -->
+      <a id="826" wsA="Induration" wsB="Impaction" wsC="Detonation" /> <!-- Herculean Slash -->
+      <a id="827" wsA="Light" wsB="Distortion" wsC="" /> <!-- Torcleaver -->
+      <a id="828" wsA="Fragmentation" wsB="Scission" wsC="" /> <!-- Resolution -->
+      <a id="832" wsA="Detonation" wsB="Impaction" wsC="" /> <!-- Raging Axe -->
+      <a id="833" wsA="Impaction" wsB="Reverberation" wsC="" /> <!-- Smash Axe -->
+      <a id="834" wsA="Detonation" wsB="" wsC="" /> <!-- Gale Axe -->
+      <a id="835" wsA="Scission" wsB="Impaction" wsC="" /> <!-- Avalanche Axe -->
+      <a id="836" wsA="Liquefaction" wsB="Scission" wsC="Impaction" /> <!-- Spinning Axe -->
+      <a id="837" wsA="Scission" wsB="" wsC="" /> <!-- Rampage -->
+      <a id="838" wsA="Scission" wsB="Impaction" wsC="" /> <!-- Calamity -->
+      <a id="839" wsA="Fusion" wsB="" wsC="" /> <!-- Mistral Axe -->
+      <a id="840" wsA="Fusion" wsB="Reverberation" wsC="" /> <!-- Decimation -->
+      <a id="841" wsA="Darkness" wsB="Gravitation" wsC="" /> <!-- Onslaught -->
+      <a id="842" wsA="Gravitation" wsB="Reverberation" wsC="" /> <!-- Primal Rend -->
+      <a id="843" wsA="Scission" wsB="Detonation" wsC="" /> <!-- Bora Axe -->
+      <a id="844" wsA="Darkness" wsB="Fragmentation" wsC="" /> <!-- Cloudsplitter -->
+      <a id="845" wsA="Distortion" wsB="Detonation" wsC="" /> <!-- Ruinator -->
+      <a id="848" wsA="Impaction" wsB="" wsC="" /> <!-- Shield Break -->
+      <a id="849" wsA="Scission" wsB="" wsC="" /> <!-- Iron Tempest -->
+      <a id="850" wsA="Reverberation" wsB="Scission" wsC="" /> <!-- Sturmwind -->
+      <a id="851" wsA="Impaction" wsB="" wsC="" /> <!-- Armor Break -->
+      <a id="852" wsA="Compression" wsB="" wsC="" /> <!-- Keen Edge -->
+      <a id="853" wsA="Impaction" wsB="" wsC="" /> <!-- Weapon Break -->
+      <a id="854" wsA="Induration" wsB="Reverberation" wsC="" /> <!-- Raging Rush -->
+      <a id="855" wsA="Distortion" wsB="" wsC="" /> <!-- Full Break -->
+      <a id="856" wsA="Distortion" wsB="Detonation" wsC="" /> <!-- Steel Cyclone -->
+      <a id="857" wsA="Light" wsB="Fusion" wsC="" /> <!-- Metatron Torment -->
+      <a id="858" wsA="Fragmentation" wsB="Scission" wsC="" /> <!-- King's Justice -->
+      <a id="859" wsA="Scission" wsB="Detonation" wsC="" /> <!-- Fell Cleave -->
+      <a id="860" wsA="Light" wsB="Fragmentation" wsC="" /> <!-- Ukko's Fury -->
+      <a id="861" wsA="Fusion" wsB="Compression" wsC="" /> <!-- Upheaval -->
+      <a id="864" wsA="Scission" wsB="" wsC="" /> <!-- Slice -->
+      <a id="865" wsA="Reverberation" wsB="" wsC="" /> <!-- Dark Harvest -->
+      <a id="866" wsA="Induration" wsB="Reverberation" wsC="" /> <!-- Shadow of Death -->
+      <a id="867" wsA="Compression" wsB="Scission" wsC="" /> <!-- Nightmare Scythe -->
+      <a id="868" wsA="Reverberation" wsB="Scission" wsC="" /> <!-- Spinning Scythe -->
+      <a id="869" wsA="Transfixion" wsB="Scission" wsC="" /> <!-- Vorpal Scythe -->
+      <a id="870" wsA="Induration" wsB="" wsC="" /> <!-- Guillotine -->
+      <a id="871" wsA="Distortion" wsB="" wsC="" /> <!-- Cross Reaper -->
+      <a id="872" wsA="Distortion" wsB="Scission" wsC="" /> <!-- Spiral Hell -->
+      <a id="873" wsA="Darkness" wsB="Gravitation" wsC="" /> <!-- Catastrophe -->
+      <a id="874" wsA="Fusion" wsB="Compression" wsC="" /> <!-- Insurgency -->
+      <a id="875" wsA="Compression" wsB="Reverberation" wsC="" /> <!-- Infernal Scythe -->
+      <a id="876" wsA="Darkness" wsB="Distortion" wsC="" /> <!-- Quietus -->
+      <a id="877" wsA="Gravitation" wsB="Reverberation" wsC="" /> <!-- Entropy -->
+      <a id="880" wsA="Transfixion" wsB="" wsC="" /> <!-- Double Thrust -->
+      <a id="881" wsA="Transfixion" wsB="Impaction" wsC="" /> <!-- Thunder Thrust -->
+      <a id="882" wsA="Transfixion" wsB="Impaction" wsC="" /> <!-- Raiden Thrust -->
+      <a id="883" wsA="Impaction" wsB="" wsC="" /> <!-- Leg Sweep -->
+      <a id="884" wsA="Compression" wsB="" wsC="" /> <!-- Penta Thrust -->
+      <a id="885" wsA="Reverberation" wsB="Transfixion" wsC="" /> <!-- Vorpal Thrust -->
+      <a id="886" wsA="Transfixion" wsB="Impaction" wsC="" /> <!-- Skewer -->
+      <a id="887" wsA="Fusion" wsB="" wsC="" /> <!-- Wheeling Thrust -->
+      <a id="888" wsA="Gravitation" wsB="Induration" wsC="" /> <!-- Impulse Drive -->
+      <a id="889" wsA="Light" wsB="Distortion" wsC="" /> <!-- Geirskogul -->
+      <a id="890" wsA="Fusion" wsB="Transfixion" wsC="" /> <!-- Drakesbane -->
+      <a id="891" wsA="Transfixion" wsB="Scission" wsC="" /> <!-- Sonic Thrust -->
+      <a id="892" wsA="Light" wsB="Fragmentation" wsC="" /> <!-- Camlann's Torment -->
+      <a id="893" wsA="Gravitation" wsB="Transfixion" wsC="" /> <!-- Stardiver -->
+      <a id="896" wsA="Transfixion" wsB="" wsC="" /> <!-- Blade: Rin -->
+      <a id="897" wsA="Scission" wsB="" wsC="" /> <!-- Blade: Retsu -->
+      <a id="898" wsA="Reverberation" wsB="" wsC="" /> <!-- Blade: Teki -->
+      <a id="899" wsA="Induration" wsB="Detonation" wsC="" /> <!-- Blade: To -->
+      <a id="900" wsA="Impaction" wsB="Transfixion" wsC="" /> <!-- Blade: Chi -->
+      <a id="901" wsA="Compression" wsB="" wsC="" /> <!-- Blade: Ei -->
+      <a id="902" wsA="Impaction" wsB="Detonation" wsC="" /> <!-- Blade: Jin -->
+      <a id="903" wsA="Gravitation" wsB="" wsC="" /> <!-- Blade: Ten -->
+      <a id="904" wsA="Gravitation" wsB="Transfixion" wsC="" /> <!-- Blade: Ku -->
+      <a id="905" wsA="Darkness" wsB="Fragmentation" wsC="" /> <!-- Blade: Metsu -->
+      <a id="906" wsA="Fragmentation" wsB="Compression" wsC="" /> <!-- Blade: Kamu -->
+      <a id="907" wsA="Reverberation" wsB="Scission" wsC="" /> <!-- Blade: Yu -->
+      <a id="908" wsA="Darkness" wsB="Gravitation" wsC="" /> <!-- Blade: Hi -->
+      <a id="909" wsA="Fusion" wsB="Impaction" wsC="" /> <!-- Blade: Shun -->
+      <a id="912" wsA="Transfixion" wsB="Scission" wsC="" /> <!-- Tachi: Enpi -->
+      <a id="913" wsA="Induration" wsB="" wsC="" /> <!-- Tachi: Hobaku -->
+      <a id="914" wsA="Transfixion" wsB="Impaction" wsC="" /> <!-- Tachi: Goten -->
+      <a id="915" wsA="Liquefaction" wsB="" wsC="" /> <!-- Tachi: Kagero -->
+      <a id="916" wsA="Scission" wsB="Detonation" wsC="" /> <!-- Tachi: Jinpu -->
+      <a id="917" wsA="Reverberation" wsB="Impaction" wsC="" /> <!-- Tachi: Koki -->
+      <a id="918" wsA="Induration" wsB="Detonation" wsC="" /> <!-- Tachi: Yukikaze -->
+      <a id="919" wsA="Distortion" wsB="Reverberation" wsC="" /> <!-- Tachi: Gekko -->
+      <a id="920" wsA="Fusion" wsB="Compression" wsC="" /> <!-- Tachi: Kasha -->
+      <a id="921" wsA="Light" wsB="Fragmentation" wsC="" /> <!-- Tachi: Kaiten -->
+      <a id="922" wsA="Gravitation" wsB="Induration" wsC="" /> <!-- Tachi: Rana -->
+      <a id="923" wsA="Compression" wsB="Scission" wsC="" /> <!-- Tachi: Ageha -->
+      <a id="924" wsA="Light" wsB="Distortion" wsC="" /> <!-- Tachi: Fudo -->
+      <a id="925" wsA="Fragmentation" wsB="Compression" wsC="" /> <!-- Tachi: Shoha -->
+      <a id="928" wsA="Impaction" wsB="" wsC="" /> <!-- Shining Strike -->
+      <a id="929" wsA="Impaction" wsB="" wsC="" /> <!-- Seraph Strike -->
+      <a id="930" wsA="Reverberation" wsB="" wsC="" /> <!-- Brainshaker -->
+      <a id="931" wsA="" wsB="" wsC="" /> <!-- Starlight -->
+      <a id="932" wsA="" wsB="" wsC="" /> <!-- Moonlight -->
+      <a id="933" wsA="Induration" wsB="Reverberation" wsC="" /> <!-- Skullbreaker -->
+      <a id="934" wsA="Detonation" wsB="Impaction" wsC="" /> <!-- True Strike -->
+      <a id="935" wsA="Impaction" wsB="" wsC="" /> <!-- Judgment -->
+      <a id="936" wsA="Fusion" wsB="" wsC="" /> <!-- Hexa Strike -->
+      <a id="937" wsA="Fragmentation" wsB="Compression" wsC="" /> <!-- Black Halo -->
+      <a id="938" wsA="Light" wsB="Fragmentation" wsC="" /> <!-- Randgrith -->
+      <a id="939" wsA="" wsB="" wsC="" /> <!-- Mystic Boon -->
+      <a id="940" wsA="Induration" wsB="Reverberation" wsC="" /> <!-- Flash Nova -->
+      <a id="941" wsA="" wsB="" wsC="" /> <!-- Dagan -->
+      <a id="942" wsA="Fusion" wsB="Impaction" wsC="" /> <!-- Realmrazer -->
+      <a id="944" wsA="Impaction" wsB="" wsC="" /> <!-- Heavy Swing -->
+      <a id="945" wsA="Impaction" wsB="" wsC="" /> <!-- Rock Crusher -->
+      <a id="946" wsA="Detonation" wsB="Impaction" wsC="" /> <!-- Earth Crusher -->
+      <a id="947" wsA="Compression" wsB="Reverberation" wsC="" /> <!-- Starburst -->
+      <a id="948" wsA="Compression" wsB="Reverberation" wsC="" /> <!-- Sunburst -->
+      <a id="949" wsA="Detonation" wsB="" wsC="" /> <!-- Shell Crusher -->
+      <a id="950" wsA="Liquefaction" wsB="Impaction" wsC="" /> <!-- Full Swing -->
+      <a id="951" wsA="" wsB="" wsC="" /> <!-- Spirit Taker -->
+      <a id="952" wsA="Gravitation" wsB="Reverberation" wsC="" /> <!-- Retribution -->
+      <a id="953" wsA="Darkness" wsB="Distortion" wsC="" /> <!-- Gate of Tartarus -->
+      <a id="954" wsA="Fragmentation" wsB="Distortion" wsC="" /> <!-- Vidohunir -->
+      <a id="955" wsA="Fusion" wsB="Reverberation" wsC="" /> <!-- Garland of Bliss -->
+      <a id="956" wsA="Gravitation" wsB="Transfixion" wsC="" /> <!-- Omniscience -->
+      <a id="957" wsA="Compression" wsB="Reverberation" wsC="" /> <!-- Cataclysm -->
+      <a id="958" wsA="" wsB="" wsC="" /> <!-- Myrkr -->
+      <a id="959" wsA="Gravitation" wsB="Induration" wsC="" /> <!-- Shattersoul -->
+      <a id="960" wsA="Liquefaction" wsB="Transfixion" wsC="" /> <!-- Flaming Arrow -->
+      <a id="961" wsA="Reverberation" wsB="Transfixion" wsC="" /> <!-- Piercing Arrow -->
+      <a id="962" wsA="Liquefaction" wsB="Transfixion" wsC="" /> <!-- Dulling Arrow -->
+      <a id="964" wsA="Reverberation" wsB="Transfixion" wsC="Detonation" /> <!-- Sidewinder -->
+      <a id="965" wsA="Induration" wsB="Transfixion" wsC="" /> <!-- Blast Arrow -->
+      <a id="966" wsA="Fusion" wsB="" wsC="" /> <!-- Arching Arrow -->
+      <a id="967" wsA="Fusion" wsB="Transfixion" wsC="" /> <!-- Empyreal Arrow -->
+      <a id="968" wsA="Light" wsB="Distortion" wsC="" /> <!-- Namas Arrow -->
+      <a id="969" wsA="Reverberation" wsB="Transfixion" wsC="" /> <!-- Refulgent Arrow -->
+      <a id="970" wsA="Light" wsB="Fusion" wsC="" /> <!-- Jishnu's Radiance -->
+      <a id="971" wsA="Fragmentation" wsB="Transfixion" wsC="" /> <!-- Apex Arrow -->
+      <a id="976" wsA="Reverberation" wsB="Transfixion" wsC="" /> <!-- Hot Shot -->
+      <a id="977" wsA="Reverberation" wsB="Transfixion" wsC="" /> <!-- Split Shot -->
+      <a id="978" wsA="Liquefaction" wsB="Transfixion" wsC="" /> <!-- Sniper Shot -->
+      <a id="980" wsA="Reverberation" wsB="Transfixion" wsC="Detonation" /> <!-- Slug Shot -->
+      <a id="981" wsA="Induration" wsB="Transfixion" wsC="" /> <!-- Blast Shot -->
+      <a id="982" wsA="Fusion" wsB="" wsC="" /> <!-- Heavy Shot -->
+      <a id="983" wsA="Fusion" wsB="Transfixion" wsC="" /> <!-- Detonator -->
+      <a id="984" wsA="Darkness" wsB="Fragmentation" wsC="" /> <!-- Coronach -->
+      <a id="985" wsA="Fragmentation" wsB="Scission" wsC="" /> <!-- Trueflight -->
+      <a id="986" wsA="Gravitation" wsB="Transfixion" wsC="" /> <!-- Leaden Salute -->
+      <a id="987" wsA="Induration" wsB="Impaction" wsC="Detonation" /> <!-- Numbing Shot -->
+      <a id="988" wsA="Darkness" wsB="Gravitation" wsC="" /> <!-- Wildfire -->
+      <a id="989" wsA="Fusion" wsB="Reverberation" wsC="" /> <!-- Last Stand -->
+      <a id="992" wsA="Fragmentation" wsB="Scission" wsC="" /> <!-- Exenterator -->
+      <a id="993" wsA="Light" wsB="Distortion" wsC="" /> <!-- Chant du Cygne -->
+      <a id="994" wsA="Gravitation" wsB="Scission" wsC="" /> <!-- Requiescat -->
+      <a id="1006" wsA="" wsB="" wsC="" /> <!-- Uriel Blade -->
+      <a id="1007" wsA="" wsB="" wsC="" /> <!-- Glory Slash -->
+      <a id="1008" wsA="" wsB="" wsC="" /> <!-- Tartarus Torpor -->
+      <a id="1009" wsA="" wsB="" wsC="" /> <!-- Netherspikes -->
+      <a id="1010" wsA="" wsB="" wsC="" /> <!-- Carnal Nightmare -->
+      <a id="1011" wsA="" wsB="" wsC="" /> <!-- Aegis Schism -->
+      <a id="1012" wsA="" wsB="" wsC="" /> <!-- Dancing Chains -->
+      <a id="1013" wsA="" wsB="" wsC="" /> <!-- Barbed Crescent -->
+      <a id="1014" wsA="" wsB="" wsC="" /> <!-- Shackled Fists -->
+      <a id="1015" wsA="" wsB="" wsC="" /> <!-- Foxfire -->
+      <a id="1016" wsA="" wsB="" wsC="" /> <!-- Grim Halo -->
+      <a id="1017" wsA="" wsB="" wsC="" /> <!-- Netherspikes -->
+      <a id="1018" wsA="" wsB="" wsC="" /> <!-- Carnal Nightmare -->
+      <a id="1019" wsA="" wsB="" wsC="" /> <!-- Aegis Schism -->
+      <a id="1020" wsA="" wsB="" wsC="" /> <!-- Dancing Chains -->
+      <a id="1021" wsA="" wsB="" wsC="" /> <!-- Barbed Crescent -->
+      <a id="1022" wsA="" wsB="" wsC="" /> <!-- Vulcan Shot -->
+      <a id="1023" wsA="" wsB="" wsC="" /> <!-- Dimensional Death -->
 	  
       <!-- Elemental Weapon Skills -->
       <a id="787" element="Wind" /> <!-- Gust Slash -->

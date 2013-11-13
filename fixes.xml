@@ -201,8 +201,9 @@ IN THE SOFTWARE.
       <a id="212" alias="da" />
       <a id="215" alias="pen" />
       <a id="216" alias="cel|cele" />
-      
+
       <!-- Shared Timers -->
+      <a id="-21" index="10" prefix="/jobability" english="Rune Enchantment" german="Verzauber.-Rune" french="Runes enchant." japanese="エンチャントルーン" type="Rune" element="None" targets="Self" skill="Ability" mpcost="1" tpcost="0" casttime="0" recast="0" alias="" />
       <a id="-20" index="61" prefix="/jobability" english="Steal/Despoil" german="Stehlen/Fleddern" french="Vol/Pillage" japanese="ぬすむ/ぶんどる" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
       <a id="-19" index="69" prefix="/jobability" english="Accomp./Collab." german="Accomplice/Kollaborateur" french="Complice/Acolyte" japanese="アカンプリス/コラボレーター" type="JobAbility" element="None" targets="Self, Party" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
       <a id="-18" index="101" prefix="/pet" english="Stay/Heel/Leave" german="Verharren/Bei Fuß/Freilassen" french="Assis !/Au pied !/Va-t'en !" japanese="まってろ/もどれ/かえれ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
@@ -223,10 +224,10 @@ IN THE SOFTWARE.
       <a id="-3" index="222" prefix="/jobability" english="Flourishes II" german="Polka-R. II" french="Pirouettes II" japanese="フラリッシュII" type="JobAbility" element="None" targets="Self, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
       <a id="-2" index="226" prefix="/jobability" english="Flourishes III" german="Polka-Rhythm. III" french="Pirouettes III" japanese="フラリッシュIII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
       <a id="-1" index="231" prefix="/jobability" english="Stratagems" german="Schultz' Kriegsl." french="Stratagèmes" japanese="戦術魔道書" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      
+
       <!-- Ranged Attack -->
       <a id="1" prefix="/range" targets="Enemy" />
-      
+
       <!-- Corsair Shots -->
       <a id="125" element="Fire" />
       <a id="126" element="Ice" />
@@ -236,8 +237,8 @@ IN THE SOFTWARE.
       <a id="130" element="Water" />
       <a id="131" element="Light" />
       <a id="132" element="Dark" />
-      
-	  <!-- Skillchains -->
+
+      <!-- Skillchains -->
       <a id="769" wsA="Impaction" wsB="" wsC="" /> <!-- Combo -->
       <a id="770" wsA="Impaction" wsB="Reverberation" wsC="" /> <!-- Shoulder Tackle -->
       <a id="771" wsA="Compression" wsB="" wsC="" /> <!-- One Inch Punch -->
@@ -458,7 +459,7 @@ IN THE SOFTWARE.
       <a id="1021" wsA="" wsB="" wsC="" /> <!-- Barbed Crescent -->
       <a id="1022" wsA="" wsB="" wsC="" /> <!-- Vulcan Shot -->
       <a id="1023" wsA="" wsB="" wsC="" /> <!-- Dimensional Death -->
-	  
+
       <!-- Elemental Weapon Skills -->
       <a id="787" element="Wind" /> <!-- Gust Slash -->
       <a id="788" element="Wind" /> <!-- Cyclone -->
@@ -526,6 +527,7 @@ IN THE SOFTWARE.
       <a id="213" /> <!-- Flourishes II -->
       <a id="223" /> <!-- Stratagems -->
       <a id="263" /> <!-- Flourishes III -->
+      <a id="357" /> <!-- Rune Enchantment -->
     </remove>
   </abils>
   <status key="id">

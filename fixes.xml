@@ -198,7 +198,7 @@ IN THE SOFTWARE.
       <a id="74" alias="ds|dseal|divseal" />
       <a id="75" alias="es|eseal|elemseal" />
       <a id="211" alias="la|litarts" />
-      <a id="212" alias="da|darkarts" />
+      <a id="212" alias="da" />
       <a id="215" alias="pen" />
       <a id="216" alias="cel|cele" />
       
@@ -395,7 +395,7 @@ IN THE SOFTWARE.
       <b id="354" duration="300" /> <!-- Seigan -->
     </update>
   </status>
-  <items_general>
+  <items_general key="id">
     <remove>
       <i id="29681" />
       <i id="29682" />

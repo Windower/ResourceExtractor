@@ -634,9 +634,9 @@ namespace ResourceExtractor
                             }
                             else
                             {
-                                foreach (XAttribute a in fix.Attributes())
+                                foreach (XAttribute attr in fix.Attributes())
                                 {
-                                    string name = a.Name.LocalName;
+                                    string name = attr.Name.LocalName;
                                     if (name == key)
                                     {
                                         continue;
@@ -644,7 +644,15 @@ namespace ResourceExtractor
 
                                     foreach (XElement e in elements)
                                     {
-                                        e.Attribute(name).Value = a.Value;
+                                        XAttribute a = e.Attribute(name);
+                                        if (a == null)
+                                        {
+                                            e.Add(new XAttribute(attr));
+                                        }
+                                        else
+                                        {
+                                            a.Value = attr.Value;
+                                        }
                                     }
                                 }
 
@@ -675,7 +683,7 @@ namespace ResourceExtractor
                         }
                     }
 
-                    list.Root.ReplaceNodes(list.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
+                    list.Root.ReplaceNodes(list.Root.Elements().OrderBy(e => (int?)e.Attribute(key) ?? 0));
 
                     list.Save(path);
                 }

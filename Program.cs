@@ -224,9 +224,9 @@ namespace ResourceExtractor
                     }
                 }
 
-                armor.Root.ReplaceNodes(armor.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
-                general.Root.ReplaceNodes(general.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
-                weapons.Root.ReplaceNodes(weapons.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
+                armor.Root.ReplaceNodes(armor.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
+                general.Root.ReplaceNodes(general.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
+                weapons.Root.ReplaceNodes(weapons.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
                 armor.Save(Path.Combine("resources", "items_armor.xml"));
                 general.Save(Path.Combine("resources", "items_general.xml"));
@@ -352,7 +352,7 @@ namespace ResourceExtractor
                     }
                 }
 
-                spells.Root.ReplaceNodes(spells.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
+                spells.Root.ReplaceNodes(spells.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
                 spells.Save(Path.Combine("resources", "spells.xml"));
 #if !DEBUG
@@ -474,7 +474,7 @@ namespace ResourceExtractor
                     }
                 }
 
-                abilities.Root.ReplaceNodes(abilities.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
+                abilities.Root.ReplaceNodes(abilities.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
                 abilities.Save(Path.Combine("resources", "abils.xml"));
 #if !DEBUG
@@ -529,7 +529,7 @@ namespace ResourceExtractor
                     }
                 }
 
-                areas.Root.ReplaceNodes(areas.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
+                areas.Root.ReplaceNodes(areas.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
                 areas.Save(Path.Combine("resources", "areas.xml"));
 #if !DEBUG
@@ -587,7 +587,7 @@ namespace ResourceExtractor
                     }
                 }
 
-                statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (int?)e.Attribute("id") ?? 0));
+                statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
                 statuses.Save(Path.Combine("resources", "status.xml"));
 #if !DEBUG
@@ -683,7 +683,7 @@ namespace ResourceExtractor
                         }
                     }
 
-                    list.Root.ReplaceNodes(list.Root.Elements().OrderBy(e => (int?)e.Attribute(key) ?? 0));
+                    list.Root.ReplaceNodes(list.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute(key) ?? 0)));
 
                     list.Save(path);
                 }

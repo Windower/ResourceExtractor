@@ -64,8 +64,8 @@ namespace ResourceExtractor.Formats
             this.id = data[38] | data[39] << 8;
             this.iconid = data[40];
 
+            this.valid = this.iconid != 0;
             // Check if spell is usable by any job.
-            this.valid = false;
             for (int i = 0; i < 24; i++)
             {
                 this.valid |= data[14 + i] != 0xFF;

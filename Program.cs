@@ -162,7 +162,7 @@ namespace ResourceExtractor
                     Item item = items[0][id];
                     string name = item.Name.Trim();
 
-                    if (!string.IsNullOrEmpty(name) && !ignore.Contains(name))
+                    if (IsValidName(ignore, name))
                     {
                         Item jp = items[1][id];
                         Item de = items[2][id];
@@ -297,7 +297,7 @@ namespace ResourceExtractor
                     string de = names[2][id][0].Trim();
                     string fr = names[3][id][0].Trim();
 
-                    if (!string.IsNullOrEmpty(en) && !string.IsNullOrEmpty(de) && !string.IsNullOrEmpty(fr) && !string.IsNullOrEmpty(jp) && !ignore.Contains(en))
+                    if (IsValidName(ignore, en, de, fr, jp))
                     {
                         string prefix = "/unknown";
                         switch (spell.MagicType)
@@ -411,7 +411,7 @@ namespace ResourceExtractor
                     string de = names[2][id][0].Trim();
                     string fr = names[3][id][0].Trim();
 
-                    if (!string.IsNullOrEmpty(en) && !string.IsNullOrEmpty(de) && !string.IsNullOrEmpty(fr) && !string.IsNullOrEmpty(jp) && !ignore.Contains(en) && !en.StartsWith("#", StringComparison.Ordinal))
+                    if (IsValidName(ignore, en, de, fr, jp) && !en.StartsWith("#", StringComparison.Ordinal))
                     {
                         string prefix = "/unknown";
                         switch (ability.AbilityType)
@@ -518,7 +518,7 @@ namespace ResourceExtractor
                     string de = names[2][id][0].Trim();
                     string fr = names[3][id][0].Trim();
 
-                    if (!string.IsNullOrEmpty(en) && !string.IsNullOrEmpty(de) && !string.IsNullOrEmpty(fr) && !string.IsNullOrEmpty(jp) && !ignore.Contains(en))
+                    if (IsValidName(ignore, en, de, fr, jp))
                     {
                         areas.Root.Add(new XElement("a",
                             new XAttribute("id", id),
@@ -574,7 +574,7 @@ namespace ResourceExtractor
                     string fr = names[3][id][2].Trim();
                     string enl = names[0][id][1];
 
-                    if (!string.IsNullOrEmpty(en) && !string.IsNullOrEmpty(de) && !string.IsNullOrEmpty(fr) && !string.IsNullOrEmpty(jp) && !ignore.Contains(en))
+                    if (IsValidName(ignore, en, de, fr, jp))
                     {
                         statuses.Root.Add(new XElement("b",
                             new XAttribute("id", id),
@@ -930,6 +930,19 @@ namespace ResourceExtractor
             }
 
             return result;
+        }
+
+        private static bool IsValidName(string[] ignore, params string[] names)
+        {
+            foreach (string name in names)
+            {
+                if (string.IsNullOrWhiteSpace(name) || ignore.Contains(name))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private static string GetPath(string basedirectory, int id)

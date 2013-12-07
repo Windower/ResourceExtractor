@@ -35,7 +35,7 @@ namespace ResourceExtractor
         Ally = 0x0008,
         NPC = 0x0010,
         Enemy = 0x0020,
-        Unknown = 0x0060,
+        Object = 0x0060,
 
         Corpse = 0x009D,
     }

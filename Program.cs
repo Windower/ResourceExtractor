@@ -212,11 +212,17 @@ namespace ResourceExtractor
                                     new XAttribute("jpl", string.Empty),
                                     name);
 
-                            UsableItem usable = item as UsableItem;
-                            if (usable != null)
+                            GeneralItem generalitem = item as GeneralItem;
+                            if (generalitem != null)
                             {
-                                element.Add(new XAttribute("targets", usable.ValidTargets));
-                                element.Add(new XAttribute("casttime", usable.CastTime));
+                                element.Add(new XAttribute("targets", generalitem.ValidTargets));
+                            }
+
+                            UsableItem usableitem = item as UsableItem;
+                            if (usableitem != null)
+                            {
+                                element.Add(new XAttribute("targets", usableitem.ValidTargets));
+                                element.Add(new XAttribute("casttime", usableitem.CastTime));
                             }
 
                             general.Root.Add(element);

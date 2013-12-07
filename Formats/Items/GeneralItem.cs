@@ -24,10 +24,19 @@ namespace ResourceExtractor.Formats.Items
 {
     internal sealed class GeneralItem : Item
     {
+        private ValidTargets validtargets;
+
         internal GeneralItem(byte[] data)
             : base(data)
         {
+            this.validtargets = (ValidTargets)(data[0x0C] | data[0x0D] << 8);
+
             this.InitializeStrings(data, 0x18);
+        }
+
+        public ValidTargets ValidTargets
+        {
+            get { return this.validtargets; }
         }
     }
 }

@@ -31,39 +31,40 @@ IN THE SOFTWARE.
       <s id="4" alias="c4" /> <!-- Cure IV -->
       <s id="5" alias="c5" /> <!-- Cure V -->
       <s id="6" alias="c6" /> <!-- Cure VI -->
-      <s id="12" alias="r1|r" /> <!-- Raise -->
-      <s id="13" alias="r2" /> <!-- Raise II -->
+      <s id="15" alias="r1|r" /> <!-- Raise -->
+      <s id="16" alias="r2" /> <!-- Raise II -->
+      <s id="17" alias="r3" /> <!-- Raise III -->
       <s id="38" alias="bga" /> <!-- Banishga -->
       <s id="39" alias="bga2" /> <!-- Banishga II -->
-      <s id="53" alias="bl" /> <!-- Blink -->
-      <s id="54" alias="ss" /> <!-- Stoneskin -->
-      <s id="81" alias="jugner" /> <!-- Recall-Jugner -->
-      <s id="82" alias="pash|pashh" /> <!-- Recall-Pashh -->
-      <s id="83" alias="meri|meriph" /> <!-- Recall-Meriph -->
-      <s id="107" alias="re1|re" /> <!-- Regen -->
-      <s id="109" alias="re2" /> <!-- Regen II -->
-      <s id="110" alias="re3" /> <!-- Regen III -->
-      <s id="120" alias="yhoat" /> <!-- Teleport-Yhoat -->
-      <s id="121" alias="altep" /> <!-- Teleport-Altep -->
-      <s id="122" alias="holla" /> <!-- Teleport-Holla -->
-      <s id="123" alias="dem" /> <!-- Teleport-Dem -->
-      <s id="124" alias="mea" /> <!-- Teleport-Mea -->
-      <s id="125" alias="pro1|pro" /> <!-- Protect -->
-      <s id="126" alias="pro2" /> <!-- Protect II -->
-      <s id="127" alias="pro3" /> <!-- Protect III -->
-      <s id="128" alias="pro4" /> <!-- Protect IV -->
-      <s id="129" alias="pro5" /> <!-- Protect V -->
-      <s id="130" alias="she1|she|sh1|sh" /> <!-- Shell -->
-      <s id="131" alias="she2|sh2" /> <!-- Shell II -->
-      <s id="132" alias="she3|sh3" /> <!-- Shell III -->
-      <s id="133" alias="she4|sh4" /> <!-- Shell IV -->
-      <s id="134" alias="she5|sh5" /> <!-- Shell V -->
+      <s id="60" alias="pro1|pro" /> <!-- Protectra -->
+      <s id="61" alias="pro2" /> <!-- Protectra II -->
+      <s id="62" alias="pro3" /> <!-- Protectra III -->
+      <s id="63" alias="pro4" /> <!-- Protectra IV -->
+      <s id="64" alias="pro5" /> <!-- Protectra V -->
+      <s id="65" alias="she1|she|sh1|sh" /> <!-- Shellra -->
+      <s id="66" alias="she2|sh2" /> <!-- Shellra II -->
+      <s id="67" alias="she3|sh3" /> <!-- Shellra III -->
+      <s id="68" alias="she4|sh4" /> <!-- Shellra IV -->
+      <s id="69" alias="she5|sh5" /> <!-- Shellra V -->
+      <s id="70" alias="bl" /> <!-- Blink -->
+      <s id="71" alias="ss" /> <!-- Stoneskin -->
+      <s id="120" alias="re1|re" /> <!-- Regen -->
+      <s id="121" alias="re2" /> <!-- Regen II -->
+      <s id="122" alias="re3" /> <!-- Regen III -->
+      <s id="123" alias="re4" /> <!-- Regen IV -->
+      <s id="124" alias="re5" /> <!-- Regen V -->
+      <s id="154" alias="holla" /> <!-- Teleport-Holla -->
+      <s id="155" alias="dem" /> <!-- Teleport-Dem -->
+      <s id="156" alias="mea" /> <!-- Teleport-Mea -->
+      <s id="157" alias="yhoat" /> <!-- Teleport-Yhoat -->
+      <s id="158" alias="altep" /> <!-- Teleport-Altep -->
       <s id="159" alias="vahzl" /> <!-- Teleport-Vahzl -->
-      <s id="140" alias="r3" /> <!-- Raise III -->
-      <s id="338" alias="ichi|utsu1" /> <!-- Utsusemi: Ichi -->
-      <s id="339" alias="ni|utsu2" /> <!-- Utsusemi: Ni -->
-      <s id="477" alias="re4" /> <!-- Regen IV -->
-
+      <s id="160" alias="jugner" /> <!-- Recall-Jugner -->
+      <s id="161" alias="pash|pashh" /> <!-- Recall-Pashh -->
+      <s id="162" alias="meri|meriph" /> <!-- Recall-Meriph -->
+      <s id="418" alias="ichi|utsu1" /> <!-- Utsusemi: Ichi -->
+      <s id="419" alias="ni|utsu2" /> <!-- Utsusemi: Ni -->
+      
       <!-- Triggers -->
       <s id="10000" index="10000" prefix="/trigger" english="Trigger0" german="Trigger0" french="Trigger0" japanese="Trigger0" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
       <s id="10001" index="10001" prefix="/trigger" english="Trigger1" german="Trigger1" french="Trigger1" japanese="Trigger1" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />

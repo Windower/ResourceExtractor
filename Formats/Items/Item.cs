@@ -74,7 +74,7 @@ namespace ResourceExtractor.Formats.Items
             {
                 return new GeneralItem(data);
             }
-            else if (id >= 0x1000 && id <= 0x17FF)
+            else if (id >= 0x1000 && id <= 0x1FFF)
             {
                 return new UsableItem(data);
             }

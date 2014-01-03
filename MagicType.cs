@@ -32,5 +32,6 @@ namespace ResourceExtractor
         BardSong = 5,
         BlueMagic = 6,
         Geomancy = 7,
+        Trust = 8,
     }
 }

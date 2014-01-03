@@ -313,6 +313,7 @@ namespace ResourceExtractor
                             case MagicType.SummonerPact:
                             case MagicType.BlueMagic:
                             case MagicType.Geomancy:
+                            case MagicType.Trust:
                                 prefix = "/magic";
                                 break;
 

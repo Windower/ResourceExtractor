@@ -578,8 +578,8 @@ IN THE SOFTWARE.
       <b id="71" duration="300" /> <!-- Sneak -->
       <b id="72" duration="60" /> <!-- Sharpshot -->
       <b id="73" duration="60" /> <!-- Barrage -->
-      <b id="74" duration="60" /> <!-- Holy Circle -->
-      <b id="75" duration="30" /> <!-- Arcane Circle -->
+      <b id="74" duration="180" /> <!-- Holy Circle -->
+      <b id="75" duration="180" /> <!-- Arcane Circle -->
       <b id="78" duration="60" /> <!-- Divine Seal -->
       <b id="79" duration="60" /> <!-- Elemental Seal -->
       <b id="87" duration="60" /> <!-- Trick Attack -->
@@ -599,8 +599,8 @@ IN THE SOFTWARE.
       <b id="113" duration="3600" /> <!-- Reraise -->
       <b id="114" duration="15" /> <!-- Cover -->
       <b id="115" duration="60" /> <!-- Unlimited Shot -->
-      <b id="117" duration="30" /> <!-- Warding Circle -->
-      <b id="118" duration="30" /> <!-- Ancient Circle -->
+      <b id="117" duration="180" /> <!-- Warding Circle -->
+      <b id="118" duration="180" /> <!-- Ancient Circle -->
       <b id="126" duration="60" /> <!-- Spirit Surge -->
       <b id="154" duration="180" /> <!-- Shining Ruby -->
       <b id="164" duration="30" /> <!-- Chain Affinity -->
@@ -617,9 +617,12 @@ IN THE SOFTWARE.
       <b id="346" duration="180" /> <!-- Diabolic Eye -->
       <b id="347" duration="60" /> <!-- Nightingale -->
       <b id="348" duration="60" /> <!-- Troubadour -->
-      <b id="349" duration="60" /> <!-- Killer Instinct -->
+      <b id="349" duration="180" /> <!-- Killer Instinct -->
       <b id="353" duration="300" /> <!-- Hasso -->
       <b id="354" duration="300" /> <!-- Seigan -->
+      <b id="368" duration="90" /> <!-- Drain Samba -->
+      <b id="369" duration="90" /> <!-- Aspir Samba -->
+      <b id="370" duration="90" /> <!-- Haste Samba -->
     </update>
   </status>
   <items_general key="id">

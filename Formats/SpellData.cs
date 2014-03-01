@@ -36,6 +36,7 @@ namespace ResourceExtractor.Formats
         private int mpcost;
         private int casttime;
         private int recast;
+        byte[] levels = new byte[22];
         private int id;
         private int iconid;
 
@@ -61,28 +62,7 @@ namespace ResourceExtractor.Formats
             this.mpcost = (data[10] | data[11] << 8);
             this.casttime = data[12];
             this.recast = data[13];
-            this.war_level = data[14];
-            this.mnk_level = data[15];
-            this.whm_level = data[16];
-            this.blm_level = data[17];
-            this.rdm_level = data[18];
-            this.thf_level = data[19];
-            this.pld_level = data[20];
-            this.drk_level = data[21];
-            this.bst_level = data[22];
-            this.brd_level = data[23];
-            this.rng_level = data[24];
-            this.sam_level = data[25];
-            this.nin_level = data[26];
-            this.drg_level = data[27];
-            this.smn_level = data[28];
-            this.blu_level = data[29];
-            this.cor_level = data[30];
-            this.pup_level = data[31];
-            this.dnc_level = data[32];
-            this.sch_level = data[33];
-            this.geo_level = data[34];
-            this.run_level = data[35];
+            Array.Copy(data, 14, thislevels, 0, thislevels.Length);
             this.id = data[38] | data[39] << 8;
             this.iconid = data[40];
 

@@ -36,7 +36,7 @@ namespace ResourceExtractor.Formats
         private int mpcost;
         private int casttime;
         private int recast;
-        byte[] levels = new byte[22];
+        private byte[] levels = new byte[22];
         private int id;
         private int iconid;
 

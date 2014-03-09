@@ -336,77 +336,88 @@ namespace ResourceExtractor
                 DisplayMessage("Generating xml file...");
 
                 XDocument spells = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("spells"));
-
-                string[] ignore = { "." };
-
-                foreach (SpellData spell in data)
+                /// Start Lua Code
+                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter(@"C:\lua_spells.lua"))
                 {
-                    if (!spell.Valid)
-                    {
-                        continue;
-                    }
+                    lua_spells.WriteLine("spells = {}");
+                    /// End Lua Code
 
-                    int id = spell.Index;
-                    string en = names[0][id][0];
-                    string jp = names[1][id][0];
-                    string de = names[2][id][0];
-                    string fr = names[3][id][0];
+                    string[] ignore = { "." };
 
-                    if (IsValidName(ignore, en, de, fr, jp))
+                    foreach (SpellData spell in data)
                     {
-                        string prefix = "/unknown";
-                        switch (spell.MagicType)
+                        if (!spell.Valid)
                         {
-                            case MagicType.WhiteMagic:
-                            case MagicType.BlackMagic:
-                            case MagicType.SummonerPact:
-                            case MagicType.BlueMagic:
-                            case MagicType.Geomancy:
-                            case MagicType.Trust:
-                                prefix = "/magic";
-                                break;
-
-                            case MagicType.BardSong:
-                                prefix = "/song";
-                                break;
-
-                            case MagicType.Ninjutsu:
-                                prefix = "/ninjutsu";
-                                break;
+                            continue;
                         }
 
-                        Element element = spell.Element;
-                        switch (spell.IconId)
-                        {
-                            case 56: element = Element.Fire; break;
-                            case 57: element = Element.Ice; break;
-                            case 58: element = Element.Wind; break;
-                            case 59: element = Element.Earth; break;
-                            case 60: element = Element.Thunder; break;
-                            case 61: element = Element.Water; break;
-                            case 62: element = Element.Light; break;
-                            case 63: element = Element.Dark; break;
-                            case 64: element = Element.None; break;
-                        }
+                        int id = spell.Index;
+                        string en = names[0][id][0];
+                        string jp = names[1][id][0];
+                        string de = names[2][id][0];
+                        string fr = names[3][id][0];
 
-                        spells.Root.Add(new XElement("s",
-                            new XAttribute("id", spell.Id),
-                            new XAttribute("index", spell.Index),
-                            new XAttribute("prefix", prefix),
-                            new XAttribute("english", en),
-                            new XAttribute("german", de),
-                            new XAttribute("french", fr),
-                            new XAttribute("japanese", jp),
-                            new XAttribute("type", spell.MagicType),
-                            new XAttribute("element", element),
-                            new XAttribute("targets", spell.ValidTargets),
-                            new XAttribute("skill", spell.Skill),
-                            new XAttribute("mpcost", spell.MPCost),
-                            new XAttribute("casttime", spell.CastTime),
-                            new XAttribute("recast", spell.Recast),
-                            new XAttribute("alias", string.Empty)));
+                        if (IsValidName(ignore, en, de, fr, jp))
+                        {
+                            string prefix = "/unknown";
+                            switch (spell.MagicType)
+                            {
+                                case MagicType.WhiteMagic:
+                                case MagicType.BlackMagic:
+                                case MagicType.SummonerPact:
+                                case MagicType.BlueMagic:
+                                case MagicType.Geomancy:
+                                case MagicType.Trust:
+                                    prefix = "/magic";
+                                    break;
+
+                                case MagicType.BardSong:
+                                    prefix = "/song";
+                                    break;
+
+                                case MagicType.Ninjutsu:
+                                    prefix = "/ninjutsu";
+                                    break;
+                            }
+
+                            Element element = spell.Element;
+                            switch (spell.IconId)
+                            {
+                                case 56: element = Element.Fire; break;
+                                case 57: element = Element.Ice; break;
+                                case 58: element = Element.Wind; break;
+                                case 59: element = Element.Earth; break;
+                                case 60: element = Element.Thunder; break;
+                                case 61: element = Element.Water; break;
+                                case 62: element = Element.Light; break;
+                                case 63: element = Element.Dark; break;
+                                case 64: element = Element.None; break;
+                            }
+
+                            spells.Root.Add(new XElement("s",
+                                new XAttribute("id", spell.Id),
+                                new XAttribute("index", spell.Index),
+                                new XAttribute("prefix", prefix),
+                                new XAttribute("english", en),
+                                new XAttribute("german", de),
+                                new XAttribute("french", fr),
+                                new XAttribute("japanese", jp),
+                                new XAttribute("type", spell.MagicType),
+                                new XAttribute("element", element),
+                                new XAttribute("targets", spell.ValidTargets),
+                                new XAttribute("skill", spell.Skill),
+                                new XAttribute("mpcost", spell.MPCost),
+                                new XAttribute("casttime", spell.CastTime),
+                                new XAttribute("recast", spell.Recast),
+                                new XAttribute("alias", string.Empty)));
+                            /// Start Lua Code
+                            lua_spells.WriteLine("spells[{1}] = {{ id={0},index={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets=S({9}),skill=\"{10}\",mp_cost=\"{11}\",cast_time={12},recast={13},alias=\"{14}\" }}", spell.Id, spell.Index, prefix, en, fr, de, jp, spell.MagicType.ToString(), element, Targ_string(spell.ValidTargets), spell.Skill, spell.MPCost, spell.CastTime, spell.Recast, string.Empty);
+                            /// End Lua Code
+                        }
                     }
+                /// Start Lua Code
                 }
+                /// End Lua Code
 
                 spells.Root.ReplaceNodes(spells.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
@@ -456,79 +467,90 @@ namespace ResourceExtractor
                 DisplayMessage("Generating xml file...");
 
                 XDocument abilities = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("abils"));
-
-                string[] ignore = { "." };
-
-                foreach (AbilityData ability in data)
+                /// Start Lua Code
+                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter(@"C:\lua_abilities.lua"))
                 {
-                    int id = ability.Id;
-                    string en = names[0][id][0];
-                    string jp = names[1][id][0];
-                    string de = names[2][id][0];
-                    string fr = names[3][id][0];
+                    lua_abilities.WriteLine("abilities = {}");
+                    /// End Lua Code
 
-                    if (IsValidName(ignore, en, de, fr, jp) && !en.StartsWith("#", StringComparison.Ordinal))
+                    string[] ignore = { "." };
+
+                    foreach (AbilityData ability in data)
                     {
-                        string prefix = "/unknown";
-                        switch (ability.AbilityType)
+                        int id = ability.Id;
+                        string en = names[0][id][0];
+                        string jp = names[1][id][0];
+                        string de = names[2][id][0];
+                        string fr = names[3][id][0];
+
+                        if (IsValidName(ignore, en, de, fr, jp) && !en.StartsWith("#", StringComparison.Ordinal))
                         {
-                            case AbilityType.Misc:
-                            case AbilityType.JobTrait:
-                                prefix = "/echo";
-                                break;
+                            string prefix = "/unknown";
+                            switch (ability.AbilityType)
+                            {
+                                case AbilityType.Misc:
+                                case AbilityType.JobTrait:
+                                    prefix = "/echo";
+                                    break;
 
-                            case AbilityType.JobAbility:
-                            case AbilityType.CorsairRoll:
-                            case AbilityType.CorsairShot:
-                            case AbilityType.Samba:
-                            case AbilityType.Waltz:
-                            case AbilityType.Step:
-                            case AbilityType.Jig:
-                            case AbilityType.Flourish1:
-                            case AbilityType.Flourish2:
-                            case AbilityType.Flourish3:
-                            case AbilityType.Scholar:
-                            case AbilityType.Rune:
-                            case AbilityType.Ward:
-                            case AbilityType.Effusion:
-                                prefix = "/jobability";
-                                break;
+                                case AbilityType.JobAbility:
+                                case AbilityType.CorsairRoll:
+                                case AbilityType.CorsairShot:
+                                case AbilityType.Samba:
+                                case AbilityType.Waltz:
+                                case AbilityType.Step:
+                                case AbilityType.Jig:
+                                case AbilityType.Flourish1:
+                                case AbilityType.Flourish2:
+                                case AbilityType.Flourish3:
+                                case AbilityType.Scholar:
+                                case AbilityType.Rune:
+                                case AbilityType.Ward:
+                                case AbilityType.Effusion:
+                                    prefix = "/jobability";
+                                    break;
 
-                            case AbilityType.WeaponSkill:
-                                prefix = "/weaponskill";
-                                break;
+                                case AbilityType.WeaponSkill:
+                                    prefix = "/weaponskill";
+                                    break;
 
-                            case AbilityType.MonsterSkill:
-                                prefix = "/monsterskill";
-                                break;
+                                case AbilityType.MonsterSkill:
+                                    prefix = "/monsterskill";
+                                    break;
 
-                            case AbilityType.PetCommand:
-                            case AbilityType.BloodPactWard:
-                            case AbilityType.BloodPactRage:
-                            case AbilityType.Monster:
-                                prefix = "/pet";
-                                break;
+                                case AbilityType.PetCommand:
+                                case AbilityType.BloodPactWard:
+                                case AbilityType.BloodPactRage:
+                                case AbilityType.Monster:
+                                    prefix = "/pet";
+                                    break;
+                            }
+
+                            abilities.Root.Add(new XElement("a",
+                                new XAttribute("id", id),
+                                new XAttribute("index", ability.TimerId),
+                                new XAttribute("prefix", prefix),
+                                new XAttribute("english", en),
+                                new XAttribute("german", de),
+                                new XAttribute("french", fr),
+                                new XAttribute("japanese", jp),
+                                new XAttribute("type", ability.AbilityType),
+                                new XAttribute("element", Element.None),
+                                new XAttribute("targets", ability.ValidTargets),
+                                new XAttribute("skill", "Ability"),
+                                new XAttribute("mpcost", ability.MPCost),
+                                new XAttribute("tpcost", ability.TPCost),
+                                new XAttribute("casttime", 0),
+                                new XAttribute("recast", 0),
+                                new XAttribute("alias", string.Empty)));
+                            /// Start Lua Code
+                            lua_abilities.WriteLine("abilities[{0}] = {{ id={0},index={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets=S({9}),skill=\"Ability\",mp_cost=\"{10}\",tp_cost=\"{11}\",cast_time=0,recast=0,alias=\"{12}\" }}", ability.Id, ability.TimerId, prefix, en, fr, de, jp, ability.AbilityType.ToString(), Element.None, Targ_string(ability.ValidTargets), "Ability", ability.MPCost, ability.TPCost, string.Empty);
+                            /// End Lua Code
                         }
-
-                        abilities.Root.Add(new XElement("a",
-                            new XAttribute("id", id),
-                            new XAttribute("index", ability.TimerId),
-                            new XAttribute("prefix", prefix),
-                            new XAttribute("english", en),
-                            new XAttribute("german", de),
-                            new XAttribute("french", fr),
-                            new XAttribute("japanese", jp),
-                            new XAttribute("type", ability.AbilityType),
-                            new XAttribute("element", Element.None),
-                            new XAttribute("targets", ability.ValidTargets),
-                            new XAttribute("skill", "Ability"),
-                            new XAttribute("mpcost", ability.MPCost),
-                            new XAttribute("tpcost", ability.TPCost),
-                            new XAttribute("casttime", 0),
-                            new XAttribute("recast", 0),
-                            new XAttribute("alias", string.Empty)));
                     }
+                /// Start Lua Code
                 }
+                /// End Lua Code
 
                 abilities.Root.ReplaceNodes(abilities.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 

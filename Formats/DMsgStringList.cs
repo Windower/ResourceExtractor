@@ -1,5 +1,5 @@
 ﻿// <copyright file="DMsgStringList.cs" company="Windower Team">
-// Copyright © 2013 Windower Team
+// Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to

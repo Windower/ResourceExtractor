@@ -83,6 +83,18 @@ namespace ResourceExtractor
             Console.ReadKey(true);
         }
 
+        /// Start Lua Code
+        private static string Targ_string(ValidTargets Targs)
+        {
+            string ret = String.Empty;
+            foreach (ValidTargets i in Targs.ToList())
+            {
+                ret += "\"" + i.ToString() + "\",";
+            }
+            return ret;
+        }
+        /// End Lua Code
+
         private static string GetBaseDirectory()
         {
             string basedirectory = null;
@@ -154,54 +166,48 @@ namespace ResourceExtractor
                 XDocument armor = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 XDocument general = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 XDocument weapons = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
-
-                string[] ignore = { "." };
-
-                foreach (int id in items[0].Keys)
+                /// Start Lua Code
+                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter(@"C:\lua_items.lua"))
                 {
-                    Item item = items[0][id];
-                    string name = item.Name;
+                    lua_items.WriteLine("items = {}");
+                    /// End Lua Code
 
-                    if (IsValidName(ignore, name))
+                    string[] ignore = { "." };
+
+                    foreach (int id in items[0].Keys)
                     {
-                        Item jp = items[1][id];
-                        Item de = items[2][id];
-                        Item fr = items[3][id];
+                        Item item = items[0][id];
+                        string name = item.Name;
+                        /// Start Lua Code
+                        string category = "General";
+                        /// End Lua Code
 
-                        EquippableItem equip = item as EquippableItem;
-                        if (equip != null)
+                        if (IsValidName(ignore, name))
                         {
-                            XElement root;
-                            if (item is WeaponItem)
-                            {
-                                root = weapons.Root;
-                            }
-                            else
-                            {
-                                root = armor.Root;
-                            }
+                            Item jp = items[1][id];
+                            Item de = items[2][id];
+                            Item fr = items[3][id];
 
-                            root.Add(new XElement("i",
-                                new XAttribute("id", id),
-                                new XAttribute("enl", item.LogName),
-                                new XAttribute("fr", fr.Name),
-                                new XAttribute("frl", fr.LogName),
-                                new XAttribute("de", de.Name),
-                                new XAttribute("del", de.LogName),
-                                new XAttribute("jp", jp.Name),
-                                new XAttribute("jpl", string.Empty),
-                                new XAttribute("slots", String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Slots)),
-                                new XAttribute("jobs", String.Format(CultureInfo.InvariantCulture, "{0:X8}", equip.Jobs)),
-                                new XAttribute("races", String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Races)),
-                                new XAttribute("level", equip.Level),
-                                new XAttribute("targets", equip.ValidTargets),
-                                new XAttribute("casttime", equip.CastTime),
-                                new XAttribute("recast", equip.Recast),
-                                name));
-                        }
-                        else
-                        {
-                            XElement element = new XElement("i",
+                            EquippableItem equip = item as EquippableItem;
+                            if (equip != null)
+                            {
+                                XElement root;
+                                if (item is WeaponItem)
+                                {
+                                    /// Start Lua Code
+                                    category = "Weapons";
+                                    /// End Lua Code
+                                    root = weapons.Root;
+                                }
+                                else
+                                {
+                                    /// Start Lua Code
+                                    category = "Armor";
+                                    /// End Lua Code
+                                    root = armor.Root;
+                                }
+
+                                root.Add(new XElement("i",
                                     new XAttribute("id", id),
                                     new XAttribute("enl", item.LogName),
                                     new XAttribute("fr", fr.Name),
@@ -210,25 +216,68 @@ namespace ResourceExtractor
                                     new XAttribute("del", de.LogName),
                                     new XAttribute("jp", jp.Name),
                                     new XAttribute("jpl", string.Empty),
-                                    name);
+                                    new XAttribute("slots", String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Slots)),
+                                    new XAttribute("jobs", String.Format(CultureInfo.InvariantCulture, "{0:X8}", equip.Jobs)),
+                                    new XAttribute("races", String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Races)),
+                                    new XAttribute("level", equip.Level),
+                                    new XAttribute("targets", equip.ValidTargets),
+                                    new XAttribute("casttime", equip.CastTime),
+                                    new XAttribute("recast", equip.Recast),
+                                    name));
 
-                            GeneralItem generalitem = item as GeneralItem;
-                            if (generalitem != null)
-                            {
-                                element.Add(new XAttribute("targets", generalitem.ValidTargets));
+                                /// Start Lua Code
+                                lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets=S({8}),cast_time={9},recast={10},category=\"{11}\",level={12},slots=resources.parse_flags(0x{13}),jobs=resources.parse_flags(0x{14}),races=resources.parse_flags(0x{15}) }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(equip.ValidTargets), equip.CastTime, equip.Recast, category, equip.Level, String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Slots), String.Format(CultureInfo.InvariantCulture, "{0:X8}", equip.Jobs), String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Races));
+                                /// End Lua Code
                             }
-
-                            UsableItem usableitem = item as UsableItem;
-                            if (usableitem != null)
+                            else
                             {
-                                element.Add(new XAttribute("targets", usableitem.ValidTargets));
-                                element.Add(new XAttribute("casttime", usableitem.CastTime));
-                            }
+                                XElement element = new XElement("i",
+                                        new XAttribute("id", id),
+                                        new XAttribute("enl", item.LogName),
+                                        new XAttribute("fr", fr.Name),
+                                        new XAttribute("frl", fr.LogName),
+                                        new XAttribute("de", de.Name),
+                                        new XAttribute("del", de.LogName),
+                                        new XAttribute("jp", jp.Name),
+                                        new XAttribute("jpl", string.Empty),
+                                        name);
+                                
+                                GeneralItem generalitem = item as GeneralItem;
+                                if (generalitem != null)
+                                {
+                                    element.Add(new XAttribute("targets", generalitem.ValidTargets));
+                                    /// Start Lua Code
+                                    lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets=S({8}),cast_time=0,category=\"{9}\" }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(generalitem.ValidTargets), category);
+                                    /// End Lua Code
+                                }
 
-                            general.Root.Add(element);
+                                UsableItem usableitem = item as UsableItem;
+                                if (usableitem != null)
+                                {
+                                    element.Add(new XAttribute("targets", usableitem.ValidTargets));
+                                    element.Add(new XAttribute("casttime", usableitem.CastTime));
+                                    /// Start Lua Code
+                                    lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets=S({8}),cast_time={9},category=\"{10}\" }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(usableitem.ValidTargets), usableitem.CastTime, category);
+                                    /// End Lua Code
+                                }
+
+                                /// Start Lua Code
+                                MazeItem mazeitem = item as MazeItem;
+                                BasicItem basicitem = item as BasicItem;
+                                AutomatonItem automatonitem = item as AutomatonItem;
+                                if (mazeitem != null | basicitem != null | automatonitem != null)
+                                {
+                                    lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",category=\"{8}\" }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), category);
+                                }
+                                /// End Lua Code
+
+                                general.Root.Add(element);
+                            }
                         }
                     }
+                /// Start Lua Code
                 }
+                /// End Lua Code
 
                 armor.Root.ReplaceNodes(armor.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
                 general.Root.ReplaceNodes(general.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));

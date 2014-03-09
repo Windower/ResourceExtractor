@@ -93,6 +93,21 @@ namespace ResourceExtractor
             }
             return ret;
         }
+
+        private static string Jobs_string(byte[] Levels)
+        {
+            string ret = String.Empty;
+            Job count = 0;
+            foreach (byte i in Levels)
+            {
+                count += 1;
+                if (i != 0xFF)
+                {
+                    ret += "[\"" + count.ToString() + "\"]=" + i + ",";
+                }
+            }
+            return ret;
+        }
         /// End Lua Code
 
         private static string GetBaseDirectory()
@@ -411,7 +426,7 @@ namespace ResourceExtractor
                                 new XAttribute("recast", spell.Recast),
                                 new XAttribute("alias", string.Empty)));
                             /// Start Lua Code
-                            lua_spells.WriteLine("spells[{1}] = {{ id={0},index={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets=S({9}),skill=\"{10}\",mp_cost=\"{11}\",cast_time={12},recast={13},alias=\"{14}\" }}", spell.Id, spell.Index, prefix, en, fr, de, jp, spell.MagicType.ToString(), element, Targ_string(spell.ValidTargets), spell.Skill, spell.MPCost, spell.CastTime, spell.Recast, string.Empty);
+                            lua_spells.WriteLine("spells[{1}] = {{ id={0},index={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets=S({9}),skill=\"{10}\",mp_cost=\"{11}\",cast_time={12},recast={13},jobs={{{14}}}alias=\"{15}\" }}", spell.Id, spell.Index, prefix, en, fr, de, jp, spell.MagicType.ToString(), element, Targ_string(spell.ValidTargets), spell.Skill, spell.MPCost, spell.CastTime, spell.Recast, Jobs_string(spell.Levels), string.Empty);
                             /// End Lua Code
                         }
                     }

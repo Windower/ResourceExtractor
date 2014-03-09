@@ -89,8 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
+    <Compile Include="Job.cs" />
     <Compile Include="MagicType.cs" />
-    <Compile Include="Skill.cs" />
     <Compile Include="Element.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FF11ShiftJISDecoder.cs" />
@@ -115,6 +115,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Formats\DMsgStringList.cs" />
+    <Compile Include="Skill.cs" />
     <Compile Include="ValidTargets.cs" />
   </ItemGroup>
   <ItemGroup>

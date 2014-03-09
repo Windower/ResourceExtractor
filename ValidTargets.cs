@@ -29,12 +29,13 @@ namespace ResourceExtractor
     {
         None = 0,
 
-        Self = 0x00001,
+        Self = 0x0001,
         Player = 0x0002,
         Party = 0x0004,
         Ally = 0x0008,
         NPC = 0x0010,
         Enemy = 0x0020,
+        Object = 0x0060,
 
         Corpse = 0x009D,
     }

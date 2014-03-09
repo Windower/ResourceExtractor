@@ -74,7 +74,7 @@ namespace ResourceExtractor.Formats.Items
             {
                 return new GeneralItem(data);
             }
-            else if (id >= 0x1000 && id <= 0x17FF)
+            else if (id >= 0x1000 && id <= 0x1FFF)
             {
                 return new UsableItem(data);
             }
@@ -86,7 +86,7 @@ namespace ResourceExtractor.Formats.Items
             {
                 return new GeneralItem(data);
             }
-            else if ((id >= 0x2800 && id <= 0x3FFF) || (id >= 0x6C00 && id <= 0x6FFF))
+            else if ((id >= 0x2800 && id <= 0x3FFF) || (id >= 0x6400 && id <= 0x6FFF))
             {
                 return new ArmorItem(data);
             }

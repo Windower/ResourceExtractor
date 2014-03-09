@@ -23,11 +23,38 @@
 namespace ResourceExtractor
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Runtime.InteropServices;
 
     internal static class ExtensionMethods
     {
+        public static IList<T> ToList<T>(this T value) where T : struct, IConvertible
+        {
+            if (!typeof(T).IsDefined(typeof(FlagsAttribute), false))
+            {
+                throw new InvalidOperationException("T must be an enumeration type with the [Flags] attribute.");
+            }
+
+            List<T> results = new List<T>();
+
+            var flags = Enum.GetValues(typeof(T));
+            Array.Reverse(flags);
+
+            long temp = value.ToInt64(null);
+            foreach (T flag in flags)
+            {
+                long f = flag.ToInt64(null);
+                if (f != 0 && (temp & f) == f)
+                {
+                    temp &= ~f;
+                    results.Insert(0, flag);
+                }
+            }
+
+            return results;
+        }
+
         public static void RotateRight(this byte[] data, int count)
         {
             for (int i = 0; i < data.Length; i++)

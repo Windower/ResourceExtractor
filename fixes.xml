@@ -31,39 +31,40 @@ IN THE SOFTWARE.
       <s id="4" alias="c4" /> <!-- Cure IV -->
       <s id="5" alias="c5" /> <!-- Cure V -->
       <s id="6" alias="c6" /> <!-- Cure VI -->
-      <s id="12" alias="r1|r" /> <!-- Raise -->
-      <s id="13" alias="r2" /> <!-- Raise II -->
+      <s id="15" alias="r1|r" /> <!-- Raise -->
+      <s id="16" alias="r2" /> <!-- Raise II -->
+      <s id="17" alias="r3" /> <!-- Raise III -->
       <s id="38" alias="bga" /> <!-- Banishga -->
       <s id="39" alias="bga2" /> <!-- Banishga II -->
-      <s id="53" alias="bl" /> <!-- Blink -->
-      <s id="54" alias="ss" /> <!-- Stoneskin -->
-      <s id="81" alias="jugner" /> <!-- Recall-Jugner -->
-      <s id="82" alias="pash|pashh" /> <!-- Recall-Pashh -->
-      <s id="83" alias="meri|meriph" /> <!-- Recall-Meriph -->
-      <s id="107" alias="re1|re" /> <!-- Regen -->
-      <s id="109" alias="re2" /> <!-- Regen II -->
-      <s id="110" alias="re3" /> <!-- Regen III -->
-      <s id="120" alias="yhoat" /> <!-- Teleport-Yhoat -->
-      <s id="121" alias="altep" /> <!-- Teleport-Altep -->
-      <s id="122" alias="holla" /> <!-- Teleport-Holla -->
-      <s id="123" alias="dem" /> <!-- Teleport-Dem -->
-      <s id="124" alias="mea" /> <!-- Teleport-Mea -->
-      <s id="125" alias="pro1|pro" /> <!-- Protect -->
-      <s id="126" alias="pro2" /> <!-- Protect II -->
-      <s id="127" alias="pro3" /> <!-- Protect III -->
-      <s id="128" alias="pro4" /> <!-- Protect IV -->
-      <s id="129" alias="pro5" /> <!-- Protect V -->
-      <s id="130" alias="she1|she|sh1|sh" /> <!-- Shell -->
-      <s id="131" alias="she2|sh2" /> <!-- Shell II -->
-      <s id="132" alias="she3|sh3" /> <!-- Shell III -->
-      <s id="133" alias="she4|sh4" /> <!-- Shell IV -->
-      <s id="134" alias="she5|sh5" /> <!-- Shell V -->
-      <s id="139" alias="vahzl" /> <!-- Teleport-Vahzl -->
-      <s id="140" alias="r3" /> <!-- Raise III -->
-      <s id="338" alias="ichi|utsu1" /> <!-- Utsusemi: Ichi -->
-      <s id="339" alias="ni|utsu2" /> <!-- Utsusemi: Ni -->
-      <s id="477" alias="re4" /> <!-- Regen IV -->
-
+      <s id="60" alias="pro1|pro" /> <!-- Protectra -->
+      <s id="61" alias="pro2" /> <!-- Protectra II -->
+      <s id="62" alias="pro3" /> <!-- Protectra III -->
+      <s id="63" alias="pro4" /> <!-- Protectra IV -->
+      <s id="64" alias="pro5" /> <!-- Protectra V -->
+      <s id="65" alias="she1|she|sh1|sh" /> <!-- Shellra -->
+      <s id="66" alias="she2|sh2" /> <!-- Shellra II -->
+      <s id="67" alias="she3|sh3" /> <!-- Shellra III -->
+      <s id="68" alias="she4|sh4" /> <!-- Shellra IV -->
+      <s id="69" alias="she5|sh5" /> <!-- Shellra V -->
+      <s id="70" alias="bl" /> <!-- Blink -->
+      <s id="71" alias="ss" /> <!-- Stoneskin -->
+      <s id="120" alias="re1|re" /> <!-- Regen -->
+      <s id="121" alias="re2" /> <!-- Regen II -->
+      <s id="122" alias="re3" /> <!-- Regen III -->
+      <s id="123" alias="re4" /> <!-- Regen IV -->
+      <s id="124" alias="re5" /> <!-- Regen V -->
+      <s id="154" alias="holla" /> <!-- Teleport-Holla -->
+      <s id="155" alias="dem" /> <!-- Teleport-Dem -->
+      <s id="156" alias="mea" /> <!-- Teleport-Mea -->
+      <s id="157" alias="yhoat" /> <!-- Teleport-Yhoat -->
+      <s id="158" alias="altep" /> <!-- Teleport-Altep -->
+      <s id="159" alias="vahzl" /> <!-- Teleport-Vahzl -->
+      <s id="160" alias="jugner" /> <!-- Recall-Jugner -->
+      <s id="161" alias="pash|pashh" /> <!-- Recall-Pashh -->
+      <s id="162" alias="meri|meriph" /> <!-- Recall-Meriph -->
+      <s id="418" alias="ichi|utsu1" /> <!-- Utsusemi: Ichi -->
+      <s id="419" alias="ni|utsu2" /> <!-- Utsusemi: Ni -->
+      
       <!-- Triggers -->
       <s id="10000" index="10000" prefix="/trigger" english="Trigger0" german="Trigger0" french="Trigger0" japanese="Trigger0" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
       <s id="10001" index="10001" prefix="/trigger" english="Trigger1" german="Trigger1" french="Trigger1" japanese="Trigger1" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
@@ -203,27 +204,31 @@ IN THE SOFTWARE.
       <a id="216" alias="cel|cele" />
 
       <!-- Shared Timers -->
-      <a id="-21" index="10" prefix="/jobability" english="Rune Enchantment" german="Verzauber.-Rune" french="Runes enchant." japanese="エンチャントルーン" type="Rune" element="None" targets="Self" skill="Ability" mpcost="1" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-20" index="61" prefix="/jobability" english="Steal/Despoil" german="Stehlen/Fleddern" french="Vol/Pillage" japanese="ぬすむ/ぶんどる" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-19" index="69" prefix="/jobability" english="Accomp./Collab." german="Accomplice/Kollaborateur" french="Complice/Acolyte" japanese="アカンプリス/コラボレーター" type="JobAbility" element="None" targets="Self, Party" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-18" index="101" prefix="/pet" english="Stay/Heel/Leave" german="Verharren/Bei Fuß/Freilassen" french="Assis !/Au pied !/Va-t'en !" japanese="まってろ/もどれ/かえれ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-17" index="102" prefix="/pet" english="Sic/Ready" german="Spezial/Sturm und Drang" french="Vas-y !/Obéis !" japanese="ほんきだせ/しじをさせろ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-16" index="126" prefix="/jobability" english="Unlimited/Double Shot" german="Dauerschuss/Doppelschuss" french="Tirs illimités/Double tir" japanese="エンドレスショット/ダブルショット" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-15" index="158" prefix="/jobability" english="Jump/Spirit Jump" german="Sprung/Seelensprung" french="Saut/Saut d'esprit" japanese="ジャンプ/スピリットジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-14" index="159" prefix="/jobability" english="High/Soul Jump" german="Hochsprung/Psycho-Sprung" french="Saut aérien/Saut de l'âme" japanese="ハイジャンプ/ソウルジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-13" index="173" prefix="/pet" english="Blood Pact: Rage" german="Blutsbund: Zorn" french="Pacte sang : rage" japanese="契約の履行:幻術" type="PetCommand" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-12" index="174" prefix="/pet" english="Blood Pact: Ward" german="Blutsbund: Hilfe" french="Pacte sang : abri" japanese="契約の履行:験術" type="PetCommand" element="None" targets="Self, Party, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-11" index="193" prefix="/jobability" english="Phantom Roll" german="Phantom-Wurf" french="Jet fantôme" japanese="ファントムロール" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-10" index="195" prefix="/jobability" english="Quick Draw" german="Schnellschuss" french="Tirage vif" japanese="クイックドロー" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-9" index="210" prefix="/pet" english="Maneuvers" german="Manöver" french="Manœuvres" japanese="マニューバ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-8" index="216" prefix="/jobability" english="Sambas" german="Samba-Rhythmen" french="Sambas" japanese="サンバモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-7" index="217" prefix="/jobability" english="Waltzes" german="Walzer-Rhythmen" french="Valses" japanese="ワルツモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-6" index="218" prefix="/jobability" english="Jigs" german="Tango-Rhythmen" french="Gigues" japanese="ジグモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-5" index="220" prefix="/jobability" english="Steps" german="Tanzschritte" french="Pas" japanese="ステップ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-4" index="221" prefix="/jobability" english="Flourishes I" german="Polka-Rhythmen" french="Pirouettes I" japanese="フラリッシュI" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-3" index="222" prefix="/jobability" english="Flourishes II" german="Polka-R. II" french="Pirouettes II" japanese="フラリッシュII" type="JobAbility" element="None" targets="Self, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-2" index="226" prefix="/jobability" english="Flourishes III" german="Polka-Rhythm. III" french="Pirouettes III" japanese="フラリッシュIII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-1" index="231" prefix="/jobability" english="Stratagems" german="Schultz' Kriegsl." french="Stratagèmes" japanese="戦術魔道書" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-25" index="0" prefix="/jobability" english="SP Ability" german="SP Fähigkeit" french="SP aptitude" japanese="SPアビリティ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-24" index="10" prefix="/jobability" english="Rune Enchantment" german="Verzauber.-Rune" french="Runes enchant." japanese="エンチャントルーン" type="Rune" element="None" targets="Self" skill="Ability" mpcost="1" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-23" index="61" prefix="/jobability" english="Steal/Despoil" german="Stehlen/Fleddern" french="Vol/Pillage" japanese="ぬすむ/ぶんどる" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-22" index="69" prefix="/jobability" english="Accomp./Collab." german="Accomplice/Kollaborateur" french="Complice/Acolyte" japanese="アカンプリス/コラボレーター" type="JobAbility" element="None" targets="Self, Party" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-21" index="101" prefix="/pet" english="Stay/Heel/Leave" german="Verharren/Bei Fuß/Freilassen" french="Assis !/Au pied !/Va-t'en !" japanese="まってろ/もどれ/かえれ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-20" index="102" prefix="/pet" english="Sic/Ready" german="Spezial/Sturm und Drang" french="Vas-y !/Obéis !" japanese="ほんきだせ/しじをさせろ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-19" index="126" prefix="/jobability" english="Unlimited/Double Shot" german="Dauerschuss/Doppelschuss" french="Tirs illimités/Double tir" japanese="エンドレスショット/ダブルショット" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-18" index="158" prefix="/jobability" english="Jump/Spirit Jump" german="Sprung/Seelensprung" french="Saut/Saut d'esprit" japanese="ジャンプ/スピリットジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-17" index="159" prefix="/jobability" english="High/Soul Jump" german="Hochsprung/Psycho-Sprung" french="Saut aérien/Saut de l'âme" japanese="ハイジャンプ/ソウルジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-16" index="173" prefix="/pet" english="Blood Pact: Rage" german="Blutsbund: Zorn" french="Pacte sang : rage" japanese="契約の履行:幻術" type="PetCommand" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-15" index="174" prefix="/pet" english="Blood Pact: Ward" german="Blutsbund: Hilfe" french="Pacte sang : abri" japanese="契約の履行:験術" type="PetCommand" element="None" targets="Self, Party, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-14" index="193" prefix="/jobability" english="Phantom Roll" german="Phantom-Wurf" french="Jet fantôme" japanese="ファントムロール" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-13" index="195" prefix="/jobability" english="Quick Draw" german="Schnellschuss" french="Tirage vif" japanese="クイックドロー" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-12" index="210" prefix="/pet" english="Maneuvers" german="Manöver" french="Manœuvres" japanese="マニューバ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-11" index="215" prefix="/jobability" english="Healing Waltz" german="Kur-Walzer" french="Valse curative" japanese="ヒーリングワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-10" index="216" prefix="/jobability" english="Sambas" german="Samba-Rhythmen" french="Sambas" japanese="サンバモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-9" index="217" prefix="/jobability" english="Curing Waltz" german="Heilender Walzer" french="Valse Soin" japanese="ケアルワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-8" index="218" prefix="/jobability" english="Jigs" german="Tango-Rhythmen" french="Gigues" japanese="ジグモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-7" index="220" prefix="/jobability" english="Steps" german="Tanzschritte" french="Pas" japanese="ステップ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-6" index="221" prefix="/jobability" english="Flourishes I" german="Polka-Rhythmen" french="Pirouettes I" japanese="フラリッシュI" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-5" index="222" prefix="/jobability" english="Flourishes II" german="Polka-R. II" french="Pirouettes II" japanese="フラリッシュII" type="JobAbility" element="None" targets="Self, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-4" index="225" prefix="/jobability" english="Divine Waltz" german="Walzer der Göttin" french="Valse divine" japanese="ディバインワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-3" index="226" prefix="/jobability" english="Flourishes III" german="Polka-Rhythm. III" french="Pirouettes III" japanese="フラリッシュIII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-2" index="231" prefix="/jobability" english="Stratagems" german="Schultz' Kriegsl." french="Stratagèmes" japanese="戦術魔道書" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-1" index="254" prefix="/jobability" english="SP Ability II" german="SP Fähigkeit II" french="SP aptitude II" japanese="SPアビリティII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
 
       <!-- Ranged Attack -->
       <a id="1" prefix="/range" targets="Enemy" />
@@ -511,49 +516,6 @@ IN THE SOFTWARE.
       <a id="987" element="Ice" /> <!-- Numbing Shot -->
       <a id="988" element="Fire" /> <!-- Wildfire -->
       <a id="1006" element="Light" /> <!-- Uriel Blade -->
-	  
-	  <!-- Monster Magic -->
-	  <s id="26" index="26" prefix="/magic" english="Dia IV" german="Dia IV" french="Lumen IV" japanese="ディアIV" type="WhiteMagic" element="Light" targets="Enemy" skill="EnfeeblingMagic" mpcost="164" casttime="2.5" recast="8" alias="" />
-	  <s id="27" index="27" prefix="/magic" english="Dia V" german="Dia V" french="Lumen V" japanese="ディアV" type="WhiteMagic" element="Light" targets="Enemy" skill="EnfeeblingMagic" mpcost="217" casttime="3" recast="9" alias="" />
-	  <s id="32" index="32" prefix="/magic" english="Banish V" german="Verbannen V" french="Bannissement V" japanese="バニシュV" type="WhiteMagic" element="Light" targets="Enemy" skill="DivineMagic" mpcost="159" casttime="7.5" recast="60" alias="" />
-	  <s id="34" index="34" prefix="/magic" english="Diaga II" german="Diaga II" french="OmniLumen II" japanese="ディアガII" type="WhiteMagic" element="Light" targets="Enemy" skill="EnfeeblingMagic" mpcost="60" casttime="1.75" recast="6.25" alias="" />
-	  <s id="36" index="36" prefix="/magic" english="Diaga IV" german="Diaga IV" french="OmniLumen IV" japanese="ディアガIV" type="WhiteMagic" element="Light" targets="Enemy" skill="EnfeeblingMagic" mpcost="180" casttime="2.25" recast="6.75" alias="" />
-	  <s id="37" index="37" prefix="/magic" english="Diaga V" german="Diaga V" french="OmniLumen V" japanese="ディアガV" type="WhiteMagic" element="Light" targets="Enemy" skill="EnfeeblingMagic" mpcost="240" casttime="2.5" recast="7" alias="" />
-	  <s id="41" index="41" prefix="/magic" english="Banishga IV" german="Verbannga IV" french="OmniBanniss. IV" japanese="バニシュガIV" type="WhiteMagic" element="Light" targets="Enemy" skill="DivineMagic" mpcost="380" casttime="5.75" recast="60" alias="" />
-	  <s id="42" index="42" prefix="/magic" english="Banishga V" german="Verbannga V" french="OmniBanniss. V" japanese="バニシュガV" type="WhiteMagic" element="Light" targets="Enemy" skill="DivineMagic" mpcost="563" casttime="6" recast="60" alias="" />
-	  <s id="177" index="177" prefix="/magic" english="Firaga IV" german="Feuerga IV" french="OmniFeu IV" japanese="ファイガIV" type="BlackMagic" element="Fire" targets="Enemy" skill="ElementalMagic" mpcost="360" casttime="12" recast="40" alias="" />
-	  <s id="178" index="178" prefix="/magic" english="Firaga V" german="Feuerga V" french="OmniFeu V" japanese="ファイガV" type="BlackMagic" element="Fire" targets="Enemy" skill="ElementalMagic" mpcost="450" casttime="16" recast="60" alias="" />
-	  <s id="182" index="182" prefix="/magic" english="Blizzaga IV" german="Eisga IV" french="OmniGlace IV" japanese="ブリザガIV" type="BlackMagic" element="Ice" targets="Enemy" skill="ElementalMagic" mpcost="403" casttime="12" recast="40" alias="" />
-	  <s id="183" index="183" prefix="/magic" english="Blizzaga V" german="Eisga V" french="OmniGlace V" japanese="ブリザガV" type="BlackMagic" element="Ice" targets="Enemy" skill="ElementalMagic" mpcost="500" casttime="16" recast="60" alias="" />
-	  <s id="187" index="187" prefix="/magic" english="Aeroga IV" german="Windga IV" french="OmniVent IV" japanese="エアロガIV" type="BlackMagic" element="Wind" targets="Enemy" skill="ElementalMagic" mpcost="318" casttime="12" recast="40" alias="" />
-	  <s id="188" index="188" prefix="/magic" english="Aeroga V" german="Windga V" french="OmniVent V" japanese="エアロガV" type="BlackMagic" element="Wind" targets="Enemy" skill="ElementalMagic" mpcost="402" casttime="16" recast="60" alias="" />
-	  <s id="192" index="192" prefix="/magic" english="Stonega IV" german="Erdenga IV" french="OmniPierre IV" japanese="ストンガIV" type="BlackMagic" element="Earth" targets="Enemy" skill="ElementalMagic" mpcost="243" casttime="12" recast="40" alias="" />
-	  <s id="193" index="193" prefix="/magic" english="Stonega V" german="Erdenga V" french="OmniPierre V" japanese="ストンガV" type="BlackMagic" element="Earth" targets="Enemy" skill="ElementalMagic" mpcost="315" casttime="16" recast="60" alias="" />
-	  <s id="197" index="197" prefix="/magic" english="Thundaga IV" german="Donnerga IV" french="OmniFoudre IV" japanese="サンダガIV" type="BlackMagic" element="Thunder" targets="Enemy" skill="ElementalMagic" mpcost="450" casttime="12" recast="40" alias="" />
-	  <s id="198" index="198" prefix="/magic" english="Thundaga V" german="Donnerga V" french="OmniFoudre V" japanese="サンダガV" type="BlackMagic" element="Thunder" targets="Enemy" skill="ElementalMagic" mpcost="520" casttime="16" recast="60" alias="" />
-	  <s id="202" index="202" prefix="/magic" english="Waterga IV" german="Wasserga IV" french="OmniEau IV" japanese="ウォタガIV" type="BlackMagic" element="Water" targets="Enemy" skill="ElementalMagic" mpcost="280" casttime="12" recast="40" alias="" />
-	  <s id="203" index="203" prefix="/magic" english="Waterga V" german="Wasserga V" french="OmniEau V" japanese="ウォタガV" type="BlackMagic" element="Water" targets="Enemy" skill="ElementalMagic" mpcost="357" casttime="16" recast="60" alias="" />
-	  <s id="222" index="222" prefix="/magic" english="Poison III" german="Gift III" french="Poison III" japanese="ポイズンIII" type="BlackMagic" element="Water" targets="Enemy" skill="EnfeeblingMagic" mpcost="72" casttime="1" recast="5" alias="" />
-	  <s id="223" index="223" prefix="/magic" english="Poison IV" german="Gift IV" french="Poison IV" japanese="ポイズンIV" type="BlackMagic" element="Water" targets="Enemy" skill="EnfeeblingMagic" mpcost="106" casttime="1" recast="5" alias="" />
-	  <s id="224" index="224" prefix="/magic" english="Poison V" german="Gift V" french="Poison V" japanese="ポイズンV" type="BlackMagic" element="Water" targets="Enemy" skill="EnfeeblingMagic" mpcost="140" casttime="1" recast="5" alias="" />
-	  <s id="227" index="227" prefix="/magic" english="Poisonga III" german="Giftga III" french="OmniPoison III" japanese="ポイゾガIII" type="BlackMagic" element="Water" targets="Enemy" skill="EnfeeblingMagic" mpcost="180" casttime="2" recast="10" alias="" />
-	  <s id="228" index="228" prefix="/magic" english="Poisonga IV" german="Giftga IV" french="OmniPoison IV" japanese="ポイゾガIV" type="BlackMagic" element="Water" targets="Enemy" skill="EnfeeblingMagic" mpcost="248" casttime="2" recast="10" alias="" />
-	  <s id="229" index="229" prefix="/magic" english="Poisonga V" german="Giftga V" french="OmniPoison V" japanese="ポイゾガV" type="BlackMagic" element="Water" targets="Enemy" skill="EnfeeblingMagic" mpcost="314" casttime="2" recast="10" alias="" />
-	  <s id="233" index="233" prefix="/magic" english="Bio IV" german="Bio IV" french="Bactérie IV" japanese="バイオIV" type="BlackMagic" element="Dark" targets="Enemy" skill="DarkMagic" mpcost="154" casttime="1.5" recast="5" alias="" />
-	  <s id="234" index="234" prefix="/magic" english="Bio V" german="Bio V" french="Bactérie V" japanese="バイオV" type="BlackMagic" element="Dark" targets="Enemy" skill="DarkMagic" mpcost="197" casttime="1.5" recast="5" alias="" />
-	  <s id="265" index="265" prefix="/magic" english="Tractor II" german="Schlepper II" french="Traction II" japanese="トラクタII" type="BlackMagic" element="Dark" targets="Self, Player, Party, Ally, NPC, Enemy" skill="DarkMagic" mpcost="50" casttime="3" recast="10" alias="" />
-	  <s id="343" index="343" prefix="/ninjutsu" english="Jubaku: San" german="Jubaku: San" french="Jubaku : San" japanese="呪縛の術:参" type="Ninjutsu" element="Ice" targets="Enemy" skill="Ninjutsu" mpcost="0" casttime="12" recast="60" alias="" />
-	  <s id="352" index="352" prefix="/ninjutsu" english="Dokumori: San" german="Dokumori: San" french="Dokumori : San" japanese="毒盛の術:参" type="Ninjutsu" element="Water" targets="Enemy" skill="Ninjutsu" mpcost="0" casttime="12" recast="60" alias="" />
-	  <s id="366" index="366" prefix="/magic" english="Graviga" german="Schwerkraftga" french="OmniPesanteur" japanese="グラビガ" type="BlackMagic" element="Wind" targets="Enemy" skill="EnfeeblingMagic" mpcost="48" casttime="2" recast="60" alias="" />
-	  <s id="367" index="367" prefix="/magic" english="Death" german="Tod" french="Mort" japanese="デス" type="BlackMagic" element="Dark" targets="Enemy" skill="DarkMagic" mpcost="666" casttime="5" recast="10" alias="" />
-	  <s id="375" index="375" prefix="/song" english="Foe Requiem VIII" german="Feindesrequiem VIII" french="Requ. ennemi VIII" japanese="魔物のレクイエムVIII" type="BardSong" element="Light" targets="Enemy" skill="Singing" mpcost="0" casttime="2" recast="24" alias="" />
-	  <s id="384" index="384" prefix="/song" english="Army's Paeon VII" german="Armee-Paeon VII" french="Péan martial VII" japanese="戦士達のピーアンVII" type="BardSong" element="Light" targets="Self" skill="Singing" mpcost="0" casttime="8" recast="24" alias="" />
-	  <s id="385" index="385" prefix="/song" english="Army's Paeon VIII" german="Armee-Paeon VIII" french="Péan martial VIII" japanese="戦士達のピーアンVIII" type="BardSong" element="Light" targets="Self" skill="Singing" mpcost="0" casttime="8" recast="24" alias="" />
-	  <s id="411" index="411" prefix="/song" english="Jester's Operetta" german="Narren-Operette" french="Opér. du bouffon" japanese="道化のオペレッタ" type="BardSong" element="Ice" targets="Self" skill="Singing" mpcost="0" casttime="8" recast="24" alias="" />
-	  <s id="413" index="413" prefix="/song" english="Devotee Serenade" german="Jünger-Serenade" french="Sérén. fervente" japanese="献身のセレナーデ" type="BardSong" element="Water" targets="Self" skill="Singing" mpcost="0" casttime="8" recast="24" alias="" />
-	  <s id="417" index="417" prefix="/song" english="Moogle Rhapsody" german="Moogle-Rhapsodie" french="Rhapsodie moogle" japanese="モーグリのラプソディ" type="BardSong" element="Light" targets="Self" skill="Singing" mpcost="0" casttime="8" recast="24" alias="" />
-	  <s id="418" index="418" prefix="/song" english="Protected Aria" german="Arie des Schutzes" french="Aria de protection" japanese="冷静と情熱のアリア" type="BardSong" element="Light" targets="Self" skill="Singing" mpcost="0" casttime="8" recast="24" alias="" />
-	  <s id="423" index="423" prefix="/song" english="Massacre Elegy" german="Höllen-Elegie" french="Elég. du massacre" japanese="地獄のエレジー" type="BardSong" element="Earth" targets="Enemy" skill="Singing" mpcost="0" casttime="2" recast="24" alias="" />
     </update>
     <remove>
       <!-- Ability Categories -->
@@ -618,8 +580,8 @@ IN THE SOFTWARE.
       <b id="71" duration="300" /> <!-- Sneak -->
       <b id="72" duration="60" /> <!-- Sharpshot -->
       <b id="73" duration="60" /> <!-- Barrage -->
-      <b id="74" duration="60" /> <!-- Holy Circle -->
-      <b id="75" duration="30" /> <!-- Arcane Circle -->
+      <b id="74" duration="180" /> <!-- Holy Circle -->
+      <b id="75" duration="180" /> <!-- Arcane Circle -->
       <b id="78" duration="60" /> <!-- Divine Seal -->
       <b id="79" duration="60" /> <!-- Elemental Seal -->
       <b id="87" duration="60" /> <!-- Trick Attack -->
@@ -639,8 +601,8 @@ IN THE SOFTWARE.
       <b id="113" duration="3600" /> <!-- Reraise -->
       <b id="114" duration="15" /> <!-- Cover -->
       <b id="115" duration="60" /> <!-- Unlimited Shot -->
-      <b id="117" duration="30" /> <!-- Warding Circle -->
-      <b id="118" duration="30" /> <!-- Ancient Circle -->
+      <b id="117" duration="180" /> <!-- Warding Circle -->
+      <b id="118" duration="180" /> <!-- Ancient Circle -->
       <b id="126" duration="60" /> <!-- Spirit Surge -->
       <b id="154" duration="180" /> <!-- Shining Ruby -->
       <b id="164" duration="30" /> <!-- Chain Affinity -->
@@ -657,9 +619,12 @@ IN THE SOFTWARE.
       <b id="346" duration="180" /> <!-- Diabolic Eye -->
       <b id="347" duration="60" /> <!-- Nightingale -->
       <b id="348" duration="60" /> <!-- Troubadour -->
-      <b id="349" duration="60" /> <!-- Killer Instinct -->
+      <b id="349" duration="180" /> <!-- Killer Instinct -->
       <b id="353" duration="300" /> <!-- Hasso -->
       <b id="354" duration="300" /> <!-- Seigan -->
+      <b id="368" duration="90" /> <!-- Drain Samba -->
+      <b id="369" duration="90" /> <!-- Aspir Samba -->
+      <b id="370" duration="90" /> <!-- Haste Samba -->
     </update>
   </status>
   <items_general key="id">

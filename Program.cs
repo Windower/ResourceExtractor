@@ -108,6 +108,16 @@ namespace ResourceExtractor
             }
             return ret;
         }
+
+        private static string Deb_string(byte[] Otherbyte)
+        {
+            string ret = String.Empty;
+            foreach (byte i in Otherbyte)
+            {
+                ret += i + ",";
+            }
+            return ret;
+        }
         /// End Lua Code
 
         private static string GetBaseDirectory()
@@ -561,7 +571,7 @@ namespace ResourceExtractor
                                 new XAttribute("recast", 0),
                                 new XAttribute("alias", string.Empty)));
                             /// Start Lua Code
-                            lua_abilities.WriteLine("abilities[{0}] = {{ id={0},recast_id={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets={{{9}}},skill=\"Ability\",mp_cost={10},tp_cost={11},cast_time=0,recast=0,alias=\"{12}\" }}", ability.Id, ability.TimerId, prefix, en, fr, de, jp, ability.AbilityType.ToString(), Element.None, Targ_string(ability.ValidTargets), ability.MPCost, ability.TPCost, string.Empty);
+                            lua_abilities.WriteLine("abilities[{0}] = {{ id={0},recast_id={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets={{{9}}},skill=\"Ability\",mp_cost={10},tp_cost={11},cast_time=0,recast=0,monster_level={12},alias=\"{13}\" }}", ability.Id, ability.TimerId, prefix, en, fr, de, jp, ability.AbilityType.ToString(), Element.None, Targ_string(ability.ValidTargets), ability.MPCost, ability.TPCost, ability.MonsterLevel, string.Empty);//, Deb_string(ability.Otherbytes), Deb_string(ability.Firstbytes));
                             /// End Lua Code
                         }
                     }

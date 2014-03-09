@@ -89,7 +89,7 @@ namespace ResourceExtractor
             string ret = String.Empty;
             foreach (ValidTargets i in Targs.ToList())
             {
-                ret += "\"" + i.ToString() + "\",";
+                ret += "[\"" + i.ToString() + "\"]=true,";
             }
             return ret;
         }
@@ -100,11 +100,11 @@ namespace ResourceExtractor
             Job count = 0;
             foreach (byte i in Levels)
             {
-                count += 1;
                 if (i != 0xFF)
                 {
                     ret += "[\"" + count.ToString() + "\"]=" + i + ",";
                 }
+                count += 1;
             }
             return ret;
         }
@@ -184,7 +184,7 @@ namespace ResourceExtractor
                 /// Start Lua Code
                 using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter(@"C:\lua_items.lua"))
                 {
-                    lua_items.WriteLine("items = {}");
+                    lua_items.WriteLine("local items = {}");
                     /// End Lua Code
 
                     string[] ignore = { "." };
@@ -241,7 +241,7 @@ namespace ResourceExtractor
                                     name));
 
                                 /// Start Lua Code
-                                lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets=S({8}),cast_time={9},recast={10},category=\"{11}\",level={12},slots=resources.parse_flags(0x{13}),jobs=resources.parse_flags(0x{14}),races=resources.parse_flags(0x{15}) }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(equip.ValidTargets), equip.CastTime, equip.Recast, category, equip.Level, String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Slots), String.Format(CultureInfo.InvariantCulture, "{0:X8}", equip.Jobs), String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Races));
+                                lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets={{{8}}},cast_time={9},recast={10},category=\"{11}\",level={12},slots=resources.parse_flags(0x{13}),jobs=resources.parse_flags(0x{14}),races=resources.parse_flags(0x{15}) }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(equip.ValidTargets), equip.CastTime, equip.Recast, category, equip.Level, String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Slots), String.Format(CultureInfo.InvariantCulture, "{0:X8}", equip.Jobs), String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Races));
                                 /// End Lua Code
                             }
                             else
@@ -262,7 +262,7 @@ namespace ResourceExtractor
                                 {
                                     element.Add(new XAttribute("targets", generalitem.ValidTargets));
                                     /// Start Lua Code
-                                    lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets=S({8}),cast_time=0,category=\"{9}\" }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(generalitem.ValidTargets), category);
+                                    lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets={{{8}}},cast_time=0,category=\"{9}\" }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(generalitem.ValidTargets), category);
                                     /// End Lua Code
                                 }
 
@@ -272,7 +272,7 @@ namespace ResourceExtractor
                                     element.Add(new XAttribute("targets", usableitem.ValidTargets));
                                     element.Add(new XAttribute("casttime", usableitem.CastTime));
                                     /// Start Lua Code
-                                    lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets=S({8}),cast_time={9},category=\"{10}\" }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(usableitem.ValidTargets), usableitem.CastTime, category);
+                                    lua_items.WriteLine("items[{0}] = {{ id={0},english=\"{1}\",english_log=\"{2}\",french=\"{3}\",french_log=\"{4}\",german=\"{5}\",german_log=\"{6}\",japanese=\"{7}\",japanese_log=\"\",targets={{{8}}},cast_time={9},category=\"{10}\" }}", id, name, item.LogName.Trim(), fr.Name, fr.LogName.Trim(), de.Name.Trim(), de.LogName.Trim(), jp.Name.Trim(), Targ_string(usableitem.ValidTargets), usableitem.CastTime, category);
                                     /// End Lua Code
                                 }
 
@@ -290,7 +290,8 @@ namespace ResourceExtractor
                             }
                         }
                     }
-                /// Start Lua Code
+                    /// Start Lua Code
+                    lua_items.WriteLine("return items");
                 }
                 /// End Lua Code
 
@@ -354,7 +355,7 @@ namespace ResourceExtractor
                 /// Start Lua Code
                 using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter(@"C:\lua_spells.lua"))
                 {
-                    lua_spells.WriteLine("spells = {}");
+                    lua_spells.WriteLine("local spells = {}");
                     /// End Lua Code
 
                     string[] ignore = { "." };
@@ -426,11 +427,12 @@ namespace ResourceExtractor
                                 new XAttribute("recast", spell.Recast),
                                 new XAttribute("alias", string.Empty)));
                             /// Start Lua Code
-                            lua_spells.WriteLine("spells[{1}] = {{ id={0},index={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets=S({9}),skill=\"{10}\",mp_cost=\"{11}\",cast_time={12},recast={13},jobs={{{14}}}alias=\"{15}\" }}", spell.Id, spell.Index, prefix, en, fr, de, jp, spell.MagicType.ToString(), element, Targ_string(spell.ValidTargets), spell.Skill, spell.MPCost, spell.CastTime, spell.Recast, Jobs_string(spell.Levels), string.Empty);
+                            lua_spells.WriteLine("spells[{1}] = {{ id={1},recast_id={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets={{{9}}},skill=\"{10}\",mp_cost=\"{11}\",cast_time={12},recast={13},jobs={{{14}}},alias=\"{15}\" }}", spell.Id, spell.Index, prefix, en, fr, de, jp, spell.MagicType.ToString(), element, Targ_string(spell.ValidTargets), spell.Skill, spell.MPCost, spell.CastTime, spell.Recast, Jobs_string(spell.Levels), string.Empty);
                             /// End Lua Code
                         }
                     }
-                /// Start Lua Code
+                    /// Start Lua Code
+                    lua_spells.WriteLine("return spells");
                 }
                 /// End Lua Code
 
@@ -485,7 +487,7 @@ namespace ResourceExtractor
                 /// Start Lua Code
                 using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter(@"C:\lua_abilities.lua"))
                 {
-                    lua_abilities.WriteLine("abilities = {}");
+                    lua_abilities.WriteLine("local abilities = {}");
                     /// End Lua Code
 
                     string[] ignore = { "." };
@@ -559,11 +561,12 @@ namespace ResourceExtractor
                                 new XAttribute("recast", 0),
                                 new XAttribute("alias", string.Empty)));
                             /// Start Lua Code
-                            lua_abilities.WriteLine("abilities[{0}] = {{ id={0},index={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets=S({9}),skill=\"Ability\",mp_cost=\"{10}\",tp_cost=\"{11}\",cast_time=0,recast=0,alias=\"{12}\" }}", ability.Id, ability.TimerId, prefix, en, fr, de, jp, ability.AbilityType.ToString(), Element.None, Targ_string(ability.ValidTargets), "Ability", ability.MPCost, ability.TPCost, string.Empty);
+                            lua_abilities.WriteLine("abilities[{0}] = {{ id={0},recast_id={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets={{{9}}},skill=\"Ability\",mp_cost={10},tp_cost={11},cast_time=0,recast=0,alias=\"{12}\" }}", ability.Id, ability.TimerId, prefix, en, fr, de, jp, ability.AbilityType.ToString(), Element.None, Targ_string(ability.ValidTargets), ability.MPCost, ability.TPCost, string.Empty);
                             /// End Lua Code
                         }
                     }
-                /// Start Lua Code
+                    /// Start Lua Code
+                    lua_abilities.WriteLine("return abilities");
                 }
                 /// End Lua Code
 

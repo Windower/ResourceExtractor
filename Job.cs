@@ -24,6 +24,7 @@ namespace ResourceExtractor
 {
     internal enum Job
     {
+        DEB = 0,
         WAR = 1,
         MNK = 2,
         WHM = 3,

@@ -36,7 +36,7 @@ namespace ResourceExtractor.Formats
         private int mpcost;
         private int casttime;
         private int recast;
-        private byte[] levels = new byte[22];
+        private byte[] levels = new byte[24];
         private int id;
         private int iconid;
 
@@ -62,7 +62,7 @@ namespace ResourceExtractor.Formats
             this.mpcost = (data[10] | data[11] << 8);
             this.casttime = data[12];
             this.recast = data[13];
-            Array.Copy(data, 15, this.levels, 0, this.levels.Length);
+            Array.Copy(data, 14, this.levels, 0, this.levels.Length);
             this.id = data[38] | data[39] << 8;
             this.iconid = data[40];
 

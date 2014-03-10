@@ -37,7 +37,7 @@ namespace ResourceExtractor.Formats.Items
 
             foreach (int i in offsets)
             {
-                if (data[48 + i + 2] != 0 & !tpmoves.ContainsKey(data[48 + i] | data[48 + i + 1] << 8))
+                if (data[48 + i + 2] != 0 & data[48 + i + 2] != 0xFF & !tpmoves.ContainsKey(data[48 + i] | data[48 + i + 1] << 8))
                 {
                     tpmoves.Add(data[48+i] | data[48+i+1]<<8, data[48+i+2]);
                 }

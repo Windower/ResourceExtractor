@@ -28,20 +28,21 @@ namespace ResourceExtractor.Formats.Items
     internal sealed class MonstrosityItem : Item
     {
         private IDictionary<int, int> tpmoves = new Dictionary<int, int>();
-        private int[] offsets = { 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56 };
 
         internal MonstrosityItem(byte[] data)
             : base(data)
         {
             this.InitializeStrings(data, 0x70);
 
-            foreach (int i in offsets)
+            for (int i = 0; i < 15; i++)
             {
-                if (data[48 + i + 2] != 0 & data[48 + i + 2] != 0xFF & !tpmoves.ContainsKey(data[48 + i] | data[48 + i + 1] << 8))
+                int offset = i * 4;
+                if (data[48 + offset + 2] != 0 & data[48 + offset + 2] != 0xFF & !tpmoves.ContainsKey(data[48 + offset] | data[48 + offset + 1] << 8))
                 {
-                    tpmoves.Add(data[48+i] | data[48+i+1]<<8, data[48+i+2]);
+                    tpmoves.Add(data[48 + offset] | data[48 + offset + 1] << 8, data[48 + offset + 2]);
                 }
             }
+
         }
 
         public IDictionary<int,int> TPMoves

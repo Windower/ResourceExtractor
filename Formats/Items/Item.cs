@@ -98,6 +98,10 @@ namespace ResourceExtractor.Formats.Items
             {
                 return new MazeItem(data);
             }
+            else if (id >= 0xF000 && id <= 0xF1FF)
+            {
+                return new MonstrosityItem(data);
+            }
             else if (id == 0xFFFF)
             {
                 return new BasicItem(data);

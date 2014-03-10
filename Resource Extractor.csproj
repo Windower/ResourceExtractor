@@ -89,6 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
+    <Compile Include="Formats\Items\AutomatonItem.cs" />
+    <Compile Include="Formats\Items\MonstrosityItem.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="MagicType.cs" />
     <Compile Include="Element.cs" />
@@ -99,7 +101,6 @@
     <Compile Include="Formats\SpellData.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Formats\Items\ArmorItem.cs" />
-    <Compile Include="Formats\Items\AutomatonItem.cs" />
     <Compile Include="Formats\Items\BasicItem.cs" />
     <Compile Include="Formats\Items\EnglishStrings.cs" />
     <Compile Include="Formats\Items\EquippableItem.cs" />

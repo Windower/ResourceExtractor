@@ -50,6 +50,8 @@ namespace ResourceExtractor
                 if (basedirectory != null)
                 {
                     Directory.CreateDirectory("resources");
+                    Directory.CreateDirectory("resources/lua");
+                    Directory.CreateDirectory("resources/xml");
 
                     ExtractItems(basedirectory);
 
@@ -195,7 +197,7 @@ namespace ResourceExtractor
                 XDocument general = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 XDocument weapons = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter("resources/items.lua"))
+                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter("resources/lua/items.lua"))
                 {
                     lua_items.WriteLine("local items = {}");
                     /// End Lua Code
@@ -318,9 +320,9 @@ namespace ResourceExtractor
                 general.Root.ReplaceNodes(general.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
                 weapons.Root.ReplaceNodes(weapons.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                armor.Save(Path.Combine("resources", "items_armor.xml"));
-                general.Save(Path.Combine("resources", "items_general.xml"));
-                weapons.Save(Path.Combine("resources", "items_weapons.xml"));
+                armor.Save(Path.Combine("resources/xml", "items_armor.xml"));
+                general.Save(Path.Combine("resources/xml", "items_general.xml"));
+                weapons.Save(Path.Combine("resources/xml", "items_weapons.xml"));
 #if !DEBUG
             }
             catch
@@ -372,7 +374,7 @@ namespace ResourceExtractor
 
                 XDocument spells = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("spells"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter("resources/spells.lua"))
+                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter("resources/lua/spells.lua"))
                 {
                     lua_spells.WriteLine("local spells = {}");
                     /// End Lua Code
@@ -457,7 +459,7 @@ namespace ResourceExtractor
 
                 spells.Root.ReplaceNodes(spells.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                spells.Save(Path.Combine("resources", "spells.xml"));
+                spells.Save(Path.Combine("resources/xml", "spells.xml"));
 #if !DEBUG
             }
             catch
@@ -504,7 +506,7 @@ namespace ResourceExtractor
 
                 XDocument abilities = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("abils"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter("resources/abilities.lua"))
+                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter("resources/lua/abilities.lua"))
                 {
                     lua_abilities.WriteLine("local abilities = {}");
                     /// End Lua Code
@@ -594,7 +596,7 @@ namespace ResourceExtractor
 
                 abilities.Root.ReplaceNodes(abilities.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                abilities.Save(Path.Combine("resources", "abils.xml"));
+                abilities.Save(Path.Combine("resources/xml", "abils.xml"));
 #if !DEBUG
             }
             catch
@@ -625,7 +627,7 @@ namespace ResourceExtractor
 
                 XDocument areas = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("areas"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_zones = new System.IO.StreamWriter("resources/zones.lua"))
+                using (System.IO.StreamWriter lua_zones = new System.IO.StreamWriter("resources/lua/zones.lua"))
                 {
                     lua_zones.WriteLine("local zones = {}");
                     /// End Lua Code
@@ -661,7 +663,7 @@ namespace ResourceExtractor
 
                 areas.Root.ReplaceNodes(areas.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                areas.Save(Path.Combine("resources", "areas.xml"));
+                areas.Save(Path.Combine("resources/xml", "areas.xml"));
 #if !DEBUG
             }
             catch
@@ -692,7 +694,7 @@ namespace ResourceExtractor
 
                 XDocument statuses = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("status"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/buffs.lua"))
+                using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/lua/buffs.lua"))
                 {
                     lua_buffs.WriteLine("local buffs = {}");
                     /// End Lua Code
@@ -731,7 +733,7 @@ namespace ResourceExtractor
 
                 statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                statuses.Save(Path.Combine("resources", "status.xml"));
+                statuses.Save(Path.Combine("resources/xml", "status.xml"));
 #if !DEBUG
             }
             catch
@@ -759,7 +761,7 @@ namespace ResourceExtractor
             try
             {
 #endif
-            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/monster_abilities.lua"))
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/lua/monster_abilities.lua"))
             {
                 lua_buffs.WriteLine("local monster_abilities = {}");
 
@@ -808,7 +810,7 @@ namespace ResourceExtractor
             try
             {
 #endif
-            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/action_messages.lua"))
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/lua/action_messages.lua"))
             {
                 lua_buffs.WriteLine("local action_messages = {}");
 
@@ -857,7 +859,7 @@ namespace ResourceExtractor
 
                 foreach (XElement fixset in fixes.Root.Elements())
                 {
-                    string path = Path.Combine("resources", string.Format(CultureInfo.InvariantCulture, "{0}.xml", fixset.Name.LocalName));
+                    string path = Path.Combine("resources/xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", fixset.Name.LocalName));
                     XDocument list = XDocument.Load(path);
 
                     string key = (string)fixset.Attribute("key") ?? "id";

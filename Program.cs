@@ -195,7 +195,7 @@ namespace ResourceExtractor
                 XDocument general = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 XDocument weapons = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter(@"C:\lua_items.lua"))
+                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter("resources/items.lua"))
                 {
                     lua_items.WriteLine("local items = {}");
                     /// End Lua Code
@@ -372,7 +372,7 @@ namespace ResourceExtractor
 
                 XDocument spells = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("spells"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter(@"C:\lua_spells.lua"))
+                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter("resources/spells.lua"))
                 {
                     lua_spells.WriteLine("local spells = {}");
                     /// End Lua Code
@@ -504,7 +504,7 @@ namespace ResourceExtractor
 
                 XDocument abilities = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("abils"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter(@"C:\lua_abilities.lua"))
+                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter("resources/abilities.lua"))
                 {
                     lua_abilities.WriteLine("local abilities = {}");
                     /// End Lua Code
@@ -625,7 +625,7 @@ namespace ResourceExtractor
 
                 XDocument areas = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("areas"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_zones = new System.IO.StreamWriter(@"C:\lua_zones.lua"))
+                using (System.IO.StreamWriter lua_zones = new System.IO.StreamWriter("resources/zones.lua"))
                 {
                     lua_zones.WriteLine("local zones = {}");
                     /// End Lua Code
@@ -692,7 +692,7 @@ namespace ResourceExtractor
 
                 XDocument statuses = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("status"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter(@"C:\lua_buffs.lua"))
+                using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/buffs.lua"))
                 {
                     lua_buffs.WriteLine("local buffs = {}");
                     /// End Lua Code
@@ -759,7 +759,7 @@ namespace ResourceExtractor
             try
             {
 #endif
-            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter(@"C:\lua_monster_abilities.lua"))
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/monster_abilities.lua"))
             {
                 lua_buffs.WriteLine("local monster_abilities = {}");
 
@@ -808,7 +808,7 @@ namespace ResourceExtractor
             try
             {
 #endif
-            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter(@"C:\lua_action_messages.lua"))
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/action_messages.lua"))
             {
                 lua_buffs.WriteLine("local action_messages = {}");
 

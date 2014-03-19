@@ -622,28 +622,40 @@ namespace ResourceExtractor
                 DisplayMessage("Generating xml file...");
 
                 XDocument areas = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("areas"));
-
-                int count = names[0].Count;
-
-                string[] ignore = { "none" };
-
-                for (int id = 0; id < count; id++)
+                /// Start Lua Code
+                using (System.IO.StreamWriter lua_zones = new System.IO.StreamWriter(@"C:\lua_zones.lua"))
                 {
-                    string en = names[0][id][0];
-                    string jp = names[1][id][0];
-                    string de = names[2][id][0];
-                    string fr = names[3][id][0];
+                    lua_zones.WriteLine("local zones = {}");
+                    /// End Lua Code
 
-                    if (IsValidName(ignore, en, de, fr, jp))
+                    int count = names[0].Count;
+
+                    string[] ignore = { "none" };
+
+                    for (int id = 0; id < count; id++)
                     {
-                        areas.Root.Add(new XElement("a",
-                            new XAttribute("id", id),
-                            new XAttribute("fr", fr),
-                            new XAttribute("de", de),
-                            new XAttribute("jp", jp),
-                            en));
+                        string en = names[0][id][0];
+                        string jp = names[1][id][0];
+                        string de = names[2][id][0];
+                        string fr = names[3][id][0];
+
+                        if (IsValidName(ignore, en, de, fr, jp))
+                        {
+                            areas.Root.Add(new XElement("a",
+                                new XAttribute("id", id),
+                                new XAttribute("fr", fr),
+                                new XAttribute("de", de),
+                                new XAttribute("jp", jp),
+                                en));
+                            /// Start Lua Code
+                            lua_zones.WriteLine("zones[{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}}", id, en, fr, de, jp);
+                            /// End Lua Code
+                        }
                     }
+                    /// Start Lua Code
+                    lua_zones.WriteLine("return zones");
                 }
+                /// End Lua Code
 
                 areas.Root.ReplaceNodes(areas.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
@@ -677,31 +689,43 @@ namespace ResourceExtractor
                 DisplayMessage("Generating xml file...");
 
                 XDocument statuses = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("status"));
-
-                int count = names[0].Count;
-
-                string[] ignore = { ".", "(None)", "(Imagery)" };
-
-                for (int id = 0; id < count; id++)
+                /// Start Lua Code
+                using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter(@"C:\lua_buffs.lua"))
                 {
-                    string en = names[0][id][0];
-                    string jp = names[1][id][0];
-                    string de = names[2][id][1];
-                    string fr = names[3][id][2];
-                    string enl = names[0][id][1];
+                    lua_buffs.WriteLine("local buffs = {}");
+                    /// End Lua Code
 
-                    if (IsValidName(ignore, en, de, fr, jp))
+                    int count = names[0].Count;
+
+                    string[] ignore = { ".", "(None)", "(Imagery)" };
+
+                    for (int id = 0; id < count; id++)
                     {
-                        statuses.Root.Add(new XElement("b",
-                            new XAttribute("id", id),
-                            new XAttribute("duration", 0),
-                            new XAttribute("fr", fr),
-                            new XAttribute("de", de),
-                            new XAttribute("jp", jp),
-                            new XAttribute("enLog", enl),
-                            en));
+                        string en = names[0][id][0];
+                        string jp = names[1][id][0];
+                        string de = names[2][id][1];
+                        string fr = names[3][id][2];
+                        string enl = names[0][id][1];
+
+                        if (IsValidName(ignore, en, de, fr, jp))
+                        {
+                            statuses.Root.Add(new XElement("b",
+                                new XAttribute("id", id),
+                                new XAttribute("duration", 0),
+                                new XAttribute("fr", fr),
+                                new XAttribute("de", de),
+                                new XAttribute("jp", jp),
+                                new XAttribute("enLog", enl),
+                                en));
+                            /// Start Lua Code
+                            lua_buffs.WriteLine("buffs[{0}] = {{ id={0},duration={1},english=\"{2}\",french=\"{3}\",german=\"{4}\",japanese=\"{5}\"}}", id, 0, en, fr, de, jp);
+                            /// End Lua Code
+                        }
                     }
+                    /// Start Lua Code
+                    lua_buffs.WriteLine("return buffs");
                 }
+                /// End Lua Code
 
                 statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 

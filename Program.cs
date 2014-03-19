@@ -50,6 +50,8 @@ namespace ResourceExtractor
                 if (basedirectory != null)
                 {
                     Directory.CreateDirectory("resources");
+                    Directory.CreateDirectory("resources/lua");
+                    Directory.CreateDirectory("resources/xml");
 
                     ExtractItems(basedirectory);
 
@@ -58,6 +60,8 @@ namespace ResourceExtractor
                     ExtractAbilities(basedirectory, data);
                     ExtractAreas(basedirectory);
                     ExtractStatuses(basedirectory);
+                    //ExtractMonsterAbilities(basedirectory); //Format is wrong
+                    //ExtractActionMessages(basedirectory); //Format is wrong
 
                     ApplyFixes();
 
@@ -193,7 +197,7 @@ namespace ResourceExtractor
                 XDocument general = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 XDocument weapons = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter(@"C:\lua_items.lua"))
+                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter("resources/lua/items.lua"))
                 {
                     lua_items.WriteLine("local items = {}");
                     /// End Lua Code
@@ -316,9 +320,9 @@ namespace ResourceExtractor
                 general.Root.ReplaceNodes(general.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
                 weapons.Root.ReplaceNodes(weapons.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                armor.Save(Path.Combine("resources", "items_armor.xml"));
-                general.Save(Path.Combine("resources", "items_general.xml"));
-                weapons.Save(Path.Combine("resources", "items_weapons.xml"));
+                armor.Save(Path.Combine("resources/xml", "items_armor.xml"));
+                general.Save(Path.Combine("resources/xml", "items_general.xml"));
+                weapons.Save(Path.Combine("resources/xml", "items_weapons.xml"));
 #if !DEBUG
             }
             catch
@@ -370,7 +374,7 @@ namespace ResourceExtractor
 
                 XDocument spells = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("spells"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter(@"C:\lua_spells.lua"))
+                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter("resources/lua/spells.lua"))
                 {
                     lua_spells.WriteLine("local spells = {}");
                     /// End Lua Code
@@ -455,7 +459,7 @@ namespace ResourceExtractor
 
                 spells.Root.ReplaceNodes(spells.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                spells.Save(Path.Combine("resources", "spells.xml"));
+                spells.Save(Path.Combine("resources/xml", "spells.xml"));
 #if !DEBUG
             }
             catch
@@ -502,7 +506,7 @@ namespace ResourceExtractor
 
                 XDocument abilities = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("abils"));
                 /// Start Lua Code
-                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter(@"C:\lua_abilities.lua"))
+                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter("resources/lua/abilities.lua"))
                 {
                     lua_abilities.WriteLine("local abilities = {}");
                     /// End Lua Code
@@ -592,7 +596,7 @@ namespace ResourceExtractor
 
                 abilities.Root.ReplaceNodes(abilities.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                abilities.Save(Path.Combine("resources", "abils.xml"));
+                abilities.Save(Path.Combine("resources/xml", "abils.xml"));
 #if !DEBUG
             }
             catch
@@ -622,32 +626,44 @@ namespace ResourceExtractor
                 DisplayMessage("Generating xml file...");
 
                 XDocument areas = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("areas"));
-
-                int count = names[0].Count;
-
-                string[] ignore = { "none" };
-
-                for (int id = 0; id < count; id++)
+                /// Start Lua Code
+                using (System.IO.StreamWriter lua_zones = new System.IO.StreamWriter("resources/lua/zones.lua"))
                 {
-                    string en = names[0][id][0];
-                    string jp = names[1][id][0];
-                    string de = names[2][id][0];
-                    string fr = names[3][id][0];
+                    lua_zones.WriteLine("local zones = {}");
+                    /// End Lua Code
 
-                    if (IsValidName(ignore, en, de, fr, jp))
+                    int count = names[0].Count;
+
+                    string[] ignore = { "none" };
+
+                    for (int id = 0; id < count; id++)
                     {
-                        areas.Root.Add(new XElement("a",
-                            new XAttribute("id", id),
-                            new XAttribute("fr", fr),
-                            new XAttribute("de", de),
-                            new XAttribute("jp", jp),
-                            en));
+                        string en = names[0][id][0];
+                        string jp = names[1][id][0];
+                        string de = names[2][id][0];
+                        string fr = names[3][id][0];
+
+                        if (IsValidName(ignore, en, de, fr, jp))
+                        {
+                            areas.Root.Add(new XElement("a",
+                                new XAttribute("id", id),
+                                new XAttribute("fr", fr),
+                                new XAttribute("de", de),
+                                new XAttribute("jp", jp),
+                                en));
+                            /// Start Lua Code
+                            lua_zones.WriteLine("zones[{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}}", id, en, fr, de, jp);
+                            /// End Lua Code
+                        }
                     }
+                    /// Start Lua Code
+                    lua_zones.WriteLine("return zones");
                 }
+                /// End Lua Code
 
                 areas.Root.ReplaceNodes(areas.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                areas.Save(Path.Combine("resources", "areas.xml"));
+                areas.Save(Path.Combine("resources/xml", "areas.xml"));
 #if !DEBUG
             }
             catch
@@ -677,10 +693,81 @@ namespace ResourceExtractor
                 DisplayMessage("Generating xml file...");
 
                 XDocument statuses = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("status"));
+                /// Start Lua Code
+                using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/lua/buffs.lua"))
+                {
+                    lua_buffs.WriteLine("local buffs = {}");
+                    /// End Lua Code
+
+                    int count = names[0].Count;
+
+                    string[] ignore = { ".", "(None)", "(Imagery)" };
+
+                    for (int id = 0; id < count; id++)
+                    {
+                        string en = names[0][id][0];
+                        string jp = names[1][id][0];
+                        string de = names[2][id][1];
+                        string fr = names[3][id][2];
+                        string enl = names[0][id][1];
+
+                        if (IsValidName(ignore, en, de, fr, jp))
+                        {
+                            statuses.Root.Add(new XElement("b",
+                                new XAttribute("id", id),
+                                new XAttribute("duration", 0),
+                                new XAttribute("fr", fr),
+                                new XAttribute("de", de),
+                                new XAttribute("jp", jp),
+                                new XAttribute("enLog", enl),
+                                en));
+                            /// Start Lua Code
+                            lua_buffs.WriteLine("buffs[{0}] = {{ id={0},duration={1},english=\"{2}\",log_english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\"}}", id, 0, en, enl, fr, de, jp);
+                            /// End Lua Code
+                        }
+                    }
+                    /// Start Lua Code
+                    lua_buffs.WriteLine("return buffs");
+                }
+                /// End Lua Code
+
+                statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
+
+                statuses.Save(Path.Combine("resources/xml", "status.xml"));
+#if !DEBUG
+            }
+            catch
+            {
+                DisplayResult("Error", ConsoleColor.DarkRed);
+                throw;
+            }
+#endif
+
+            DisplayResult("Done!", ConsoleColor.DarkGreen);
+        }
+
+        /// Start Lua Code
+        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
+        private static void ExtractMonsterAbilities(string basedirectory)
+        {
+            IList<IList<IList<string>>> names = LoadMonsterAbilityNames(basedirectory);
+            if (names == null)
+            {
+                DisplayMessage("\nA problem occurred while loading monster ability names.");
+                return;
+            }
+
+#if !DEBUG
+            try
+            {
+#endif
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/lua/monster_abilities.lua"))
+            {
+                lua_buffs.WriteLine("local monster_abilities = {}");
 
                 int count = names[0].Count;
 
-                string[] ignore = { ".", "(None)", "(Imagery)" };
+                string[] ignore = { "." };
 
                 for (int id = 0; id < count; id++)
                 {
@@ -688,24 +775,15 @@ namespace ResourceExtractor
                     string jp = names[1][id][0];
                     string de = names[2][id][1];
                     string fr = names[3][id][2];
-                    string enl = names[0][id][1];
 
                     if (IsValidName(ignore, en, de, fr, jp))
                     {
-                        statuses.Root.Add(new XElement("b",
-                            new XAttribute("id", id),
-                            new XAttribute("duration", 0),
-                            new XAttribute("fr", fr),
-                            new XAttribute("de", de),
-                            new XAttribute("jp", jp),
-                            new XAttribute("enLog", enl),
-                            en));
+                        lua_buffs.WriteLine("monster_abilities[{0}] = {{ id={0},duration={1},english=\"{2}\",french=\"{3}\",german=\"{4}\",japanese=\"{5}\"}}", id, 0, en, fr, de, jp);
                     }
                 }
+                lua_buffs.WriteLine("return monster_abilities");
+            }
 
-                statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-
-                statuses.Save(Path.Combine("resources", "status.xml"));
 #if !DEBUG
             }
             catch
@@ -719,6 +797,57 @@ namespace ResourceExtractor
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
+        private static void ExtractActionMessages(string basedirectory)
+        {
+            IList<IList<IList<string>>> names = LoadActionMessages(basedirectory);
+            if (names == null)
+            {
+                DisplayMessage("\nA problem occurred while loading action messages.");
+                return;
+            }
+
+#if !DEBUG
+            try
+            {
+#endif
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/lua/action_messages.lua"))
+            {
+                lua_buffs.WriteLine("local action_messages = {}");
+
+                int count = names[0].Count;
+
+                string[] ignore = { "." };
+
+                for (int id = 0; id < count; id++)
+                {
+                    string en = names[0][id][0];
+                    string jp = names[1][id][0];
+                    string de = names[2][id][1];
+                    string fr = names[3][id][2];
+
+                    if (IsValidName(ignore, en, de, fr, jp))
+                    {
+                        lua_buffs.WriteLine("action_messages[{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}}", id, en, fr, de, jp);
+                    }
+                }
+                lua_buffs.WriteLine("return action_messages");
+            }
+
+#if !DEBUG
+            }
+            catch
+            {
+                DisplayResult("Error", ConsoleColor.DarkRed);
+                throw;
+            }
+#endif
+
+            DisplayResult("Done!", ConsoleColor.DarkGreen);
+        }
+        /// End Lua Code
+
+
+        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static void ApplyFixes()
         {
             DisplayMessage("Applying fixes...");
@@ -730,7 +859,7 @@ namespace ResourceExtractor
 
                 foreach (XElement fixset in fixes.Root.Elements())
                 {
-                    string path = Path.Combine("resources", string.Format(CultureInfo.InvariantCulture, "{0}.xml", fixset.Name.LocalName));
+                    string path = Path.Combine("resources/xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", fixset.Name.LocalName));
                     XDocument list = XDocument.Load(path);
 
                     string key = (string)fixset.Attribute("key") ?? "id";
@@ -1047,6 +1176,82 @@ namespace ResourceExtractor
 
             return result;
         }
+
+        /// Start Lua Code
+        private static IList<IList<IList<string>>> LoadMonsterAbilityNames(string basedirectory)
+        {
+            IList<IList<IList<string>>> result = null;
+
+            try
+            {
+                DisplayMessage("Loading monster ability names...");
+
+                int[] fileids = new int[] { 0x1B7B, 0x1B8C, 0xDA2B, 0xDBCF };
+
+                result = new List<IList<IList<string>>>();
+
+                foreach (int id in fileids)
+                {
+                    string path = GetPath(basedirectory, id);
+                    using (FileStream stream = File.OpenRead(path))
+                    {
+                        /// Format is wrong
+                        result.Add(new DMsgStringList(stream));
+                    }
+                }
+            }
+            finally
+            {
+                if (result == null)
+                {
+                    DisplayResult("Error", ConsoleColor.DarkRed);
+                }
+                else
+                {
+                    DisplayResult("Done!", ConsoleColor.DarkGreen);
+                }
+            }
+
+            return result;
+        }
+
+        private static IList<IList<IList<string>>> LoadActionMessages(string basedirectory)
+        {
+            IList<IList<IList<string>>> result = null;
+
+            try
+            {
+                DisplayMessage("Loading action messages...");
+
+                int[] fileids = new int[] { 0x1B73, 0x1B72, 0xDA28, 0xDBCC };
+
+                result = new List<IList<IList<string>>>();
+
+                foreach (int id in fileids)
+                {
+                    string path = GetPath(basedirectory, id);
+                    using (FileStream stream = File.OpenRead(path))
+                    {
+                        // Format is wrong
+                        result.Add(new DMsgStringList(stream));
+                    }
+                }
+            }
+            finally
+            {
+                if (result == null)
+                {
+                    DisplayResult("Error", ConsoleColor.DarkRed);
+                }
+                else
+                {
+                    DisplayResult("Done!", ConsoleColor.DarkGreen);
+                }
+            }
+
+            return result;
+        }
+        /// End Lua Code
 
         private static bool IsValidName(string[] ignore, params string[] names)
         {

@@ -58,6 +58,8 @@ namespace ResourceExtractor
                     ExtractAbilities(basedirectory, data);
                     ExtractAreas(basedirectory);
                     ExtractStatuses(basedirectory);
+                    //ExtractMonsterAbilities(basedirectory); //Format is wrong
+                    //ExtractActionMessages(basedirectory); //Format is wrong
 
                     ApplyFixes();
 
@@ -718,7 +720,7 @@ namespace ResourceExtractor
                                 new XAttribute("enLog", enl),
                                 en));
                             /// Start Lua Code
-                            lua_buffs.WriteLine("buffs[{0}] = {{ id={0},duration={1},english=\"{2}\",french=\"{3}\",german=\"{4}\",japanese=\"{5}\"}}", id, 0, en, fr, de, jp);
+                            lua_buffs.WriteLine("buffs[{0}] = {{ id={0},duration={1},english=\"{2}\",log_english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\"}}", id, 0, en, enl, fr, de, jp);
                             /// End Lua Code
                         }
                     }
@@ -741,6 +743,107 @@ namespace ResourceExtractor
 
             DisplayResult("Done!", ConsoleColor.DarkGreen);
         }
+
+        /// Start Lua Code
+        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
+        private static void ExtractMonsterAbilities(string basedirectory)
+        {
+            IList<IList<IList<string>>> names = LoadMonsterAbilityNames(basedirectory);
+            if (names == null)
+            {
+                DisplayMessage("\nA problem occurred while loading monster ability names.");
+                return;
+            }
+
+#if !DEBUG
+            try
+            {
+#endif
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter(@"C:\lua_monster_abilities.lua"))
+            {
+                lua_buffs.WriteLine("local monster_abilities = {}");
+
+                int count = names[0].Count;
+
+                string[] ignore = { "." };
+
+                for (int id = 0; id < count; id++)
+                {
+                    string en = names[0][id][0];
+                    string jp = names[1][id][0];
+                    string de = names[2][id][1];
+                    string fr = names[3][id][2];
+
+                    if (IsValidName(ignore, en, de, fr, jp))
+                    {
+                        lua_buffs.WriteLine("monster_abilities[{0}] = {{ id={0},duration={1},english=\"{2}\",french=\"{3}\",german=\"{4}\",japanese=\"{5}\"}}", id, 0, en, fr, de, jp);
+                    }
+                }
+                lua_buffs.WriteLine("return monster_abilities");
+            }
+
+#if !DEBUG
+            }
+            catch
+            {
+                DisplayResult("Error", ConsoleColor.DarkRed);
+                throw;
+            }
+#endif
+
+            DisplayResult("Done!", ConsoleColor.DarkGreen);
+        }
+
+        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
+        private static void ExtractActionMessages(string basedirectory)
+        {
+            IList<IList<IList<string>>> names = LoadActionMessages(basedirectory);
+            if (names == null)
+            {
+                DisplayMessage("\nA problem occurred while loading action messages.");
+                return;
+            }
+
+#if !DEBUG
+            try
+            {
+#endif
+            using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter(@"C:\lua_action_messages.lua"))
+            {
+                lua_buffs.WriteLine("local action_messages = {}");
+
+                int count = names[0].Count;
+
+                string[] ignore = { "." };
+
+                for (int id = 0; id < count; id++)
+                {
+                    string en = names[0][id][0];
+                    string jp = names[1][id][0];
+                    string de = names[2][id][1];
+                    string fr = names[3][id][2];
+
+                    if (IsValidName(ignore, en, de, fr, jp))
+                    {
+                        lua_buffs.WriteLine("action_messages[{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}}", id, en, fr, de, jp);
+                    }
+                }
+                lua_buffs.WriteLine("return action_messages");
+            }
+
+#if !DEBUG
+            }
+            catch
+            {
+                DisplayResult("Error", ConsoleColor.DarkRed);
+                throw;
+            }
+#endif
+
+            DisplayResult("Done!", ConsoleColor.DarkGreen);
+        }
+        /// End Lua Code
+
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static void ApplyFixes()
@@ -1071,6 +1174,82 @@ namespace ResourceExtractor
 
             return result;
         }
+
+        /// Start Lua Code
+        private static IList<IList<IList<string>>> LoadMonsterAbilityNames(string basedirectory)
+        {
+            IList<IList<IList<string>>> result = null;
+
+            try
+            {
+                DisplayMessage("Loading monster ability names...");
+
+                int[] fileids = new int[] { 0x1B7B, 0x1B8C, 0xDA2B, 0xDBCF };
+
+                result = new List<IList<IList<string>>>();
+
+                foreach (int id in fileids)
+                {
+                    string path = GetPath(basedirectory, id);
+                    using (FileStream stream = File.OpenRead(path))
+                    {
+                        /// Format is wrong
+                        result.Add(new DMsgStringList(stream));
+                    }
+                }
+            }
+            finally
+            {
+                if (result == null)
+                {
+                    DisplayResult("Error", ConsoleColor.DarkRed);
+                }
+                else
+                {
+                    DisplayResult("Done!", ConsoleColor.DarkGreen);
+                }
+            }
+
+            return result;
+        }
+
+        private static IList<IList<IList<string>>> LoadActionMessages(string basedirectory)
+        {
+            IList<IList<IList<string>>> result = null;
+
+            try
+            {
+                DisplayMessage("Loading action messages...");
+
+                int[] fileids = new int[] { 0x1B73, 0x1B72, 0xDA28, 0xDBCC };
+
+                result = new List<IList<IList<string>>>();
+
+                foreach (int id in fileids)
+                {
+                    string path = GetPath(basedirectory, id);
+                    using (FileStream stream = File.OpenRead(path))
+                    {
+                        // Format is wrong
+                        result.Add(new DMsgStringList(stream));
+                    }
+                }
+            }
+            finally
+            {
+                if (result == null)
+                {
+                    DisplayResult("Error", ConsoleColor.DarkRed);
+                }
+                else
+                {
+                    DisplayResult("Done!", ConsoleColor.DarkGreen);
+                }
+            }
+
+            return result;
+        }
+        /// End Lua Code
 
         private static bool IsValidName(string[] ignore, params string[] names)
         {

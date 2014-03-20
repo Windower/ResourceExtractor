@@ -722,7 +722,7 @@ namespace ResourceExtractor
                                 new XAttribute("enLog", enl),
                                 en));
                             /// Start Lua Code
-                            lua_buffs.WriteLine("    [{0}] = {{ id={0},duration={1},english=\"{2}\",log_english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\"}},", id, 0, en, enl, fr, de, jp);
+                            lua_buffs.WriteLine("    [{0}] = {{ id={0},duration={1},english=\"{2}\",english_log=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\"}},", id, 0, en, enl, fr, de, jp);
                             /// End Lua Code
                         }
                     }

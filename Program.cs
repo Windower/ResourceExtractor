@@ -312,7 +312,7 @@ namespace ResourceExtractor
                         }
                     }
                     /// Start Lua Code
-                    lua_items.WriteLine("}\n\nreturn items, {{\"id\",\"prefix\",\"english\",\"english_log\",\"french\",\"french_log\",\"german\",\"german_log\",\"japanese\",\"japanese_log\",\"category\",\"tp_moves\",\"targets\",\"mp_cost\",\"cast_time\",\"recast\",\"level\",\"slots\",\"jobs\",\"races\"}}");
+                    lua_items.WriteLine("}\n\nreturn items, {\"id\",\"prefix\",\"english\",\"english_log\",\"french\",\"french_log\",\"german\",\"german_log\",\"japanese\",\"japanese_log\",\"category\",\"tp_moves\",\"targets\",\"mp_cost\",\"cast_time\",\"recast\",\"level\",\"slots\",\"jobs\",\"races\"}");
                 }
                 /// End Lua Code
 
@@ -453,7 +453,7 @@ namespace ResourceExtractor
                         }
                     }
                     /// Start Lua Code
-                    lua_spells.WriteLine("}\n\nreturn spells, {{\"id\",\"recast_id\",\"prefix\",\"english\",\"french\",\"german\",\"japanese\",\"type\",\"element\",\"targets\",\"skill\",\"mp_cost\",\"cast_time\",\"recast\",\"jobs\",\"alias\"}}");
+                    lua_spells.WriteLine("}\n\nreturn spells, {\"id\",\"recast_id\",\"prefix\",\"english\",\"french\",\"german\",\"japanese\",\"type\",\"element\",\"targets\",\"skill\",\"mp_cost\",\"cast_time\",\"recast\",\"jobs\",\"alias\"}");
                 }
                 /// End Lua Code
 
@@ -590,7 +590,7 @@ namespace ResourceExtractor
                         }
                     }
                     /// Start Lua Code
-                    lua_abilities.WriteLine("}\n\nreturn abilities, {{\"id\",\"recast_id\",\"prefix\",\"english\",\"french\",\"german\",\"japanese\",\"type\",\"element\",\"targets\",\"skill\",\"mp_cost\",\"tp_cost\",\"cast_time\",\"recast\",\"monster_level\",\"alias\"}}");
+                    lua_abilities.WriteLine("}\n\nreturn abilities, {\"id\",\"recast_id\",\"prefix\",\"english\",\"french\",\"german\",\"japanese\",\"type\",\"element\",\"targets\",\"skill\",\"mp_cost\",\"tp_cost\",\"cast_time\",\"recast\",\"monster_level\",\"alias\"}");
                 }
                 /// End Lua Code
 
@@ -657,7 +657,7 @@ namespace ResourceExtractor
                         }
                     }
                     /// Start Lua Code
-                    lua_zones.WriteLine("}\n\nreturn zones, {{\"id\",\"english\",\"french\",\"german\",\"japanese\"}}");
+                    lua_zones.WriteLine("}\n\nreturn zones, {\"id\",\"english\",\"french\",\"german\",\"japanese\"}");
                 }
                 /// End Lua Code
 
@@ -727,7 +727,7 @@ namespace ResourceExtractor
                         }
                     }
                     /// Start Lua Code
-                    lua_buffs.WriteLine("}\n\nreturn buffs, {{\"id\",\"duration\",\"english\",\"english_log\",\"french\",\"german\",\"japanese\"}}");
+                    lua_buffs.WriteLine("}\n\nreturn buffs, {\"id\",\"duration\",\"english\",\"english_log\",\"french\",\"german\",\"japanese\"}");
                 }
                 /// End Lua Code
 
@@ -781,7 +781,7 @@ namespace ResourceExtractor
                         lua_monster_abilities.WriteLine("    [{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}},", id, en, fr, de, jp);
                     }
                 }
-                lua_monster_abilities.WriteLine("}\n\nreturn monster_abilities, {{\"id\",\"english\",\"french\",\"german\",\"japanese\"}}");
+                lua_monster_abilities.WriteLine("}\n\nreturn monster_abilities, {\"id\",\"english\",\"french\",\"german\",\"japanese\"}");
             }
 
 #if !DEBUG
@@ -830,7 +830,7 @@ namespace ResourceExtractor
                         lua_action_messages.WriteLine("    [{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}},", id, en, fr, de, jp);
                     }
                 }
-                lua_action_messages.WriteLine("}\n\nreturn action_messages, {{\"id\",\"english\",\"french\",\"german\",\"japanese\"}}");
+                lua_action_messages.WriteLine("}\n\nreturn action_messages, {\"id\",\"english\",\"french\",\"german\",\"japanese\"}");
             }
 
 #if !DEBUG

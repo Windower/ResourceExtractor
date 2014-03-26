@@ -30,13 +30,11 @@ namespace ResourceExtractor.Formats
     {
         private int id;
         private AbilityType type;
-//        private byte[] firstbytes = new byte[3];
         private int mpcost;
         private int timerid;
         private ValidTargets validtargets;
         private int tpcost;
         private int monsterlevel;
-//        private byte[] otherbytes = new byte[35];
 
         private AbilityData(byte[] data)
         {
@@ -52,13 +50,11 @@ namespace ResourceExtractor.Formats
 
             this.id = data[0] | data[1] << 8;
             this.type = (AbilityType)data[2];
-//            Array.Copy(data, 3, this.firstbytes, 0, this.firstbytes.Length);
             this.mpcost = data[6] | data[7] << 8;
             this.timerid = data[8] | data[9] << 8;
             this.validtargets = (ValidTargets)(data[10] | data[11] << 8);
             this.tpcost = data[12];
             this.monsterlevel = data[15];
-//            Array.Copy(data, 13, this.otherbytes, 0, this.otherbytes.Length);
         }
 
         public int Id
@@ -95,22 +91,6 @@ namespace ResourceExtractor.Formats
         {
             get { return this.monsterlevel; }
         }
-
-//        public byte[] Firstbytes
-//        {
-//            get
-//            {
-//                return this.firstbytes;
-//            }
-//        }
-
-//        public byte[] Otherbytes
-//        {
-//            get
-//            {
-//                return this.otherbytes;
-//            }
-//        }
 
         public static IList<AbilityData> Load(Stream stream, int length)
         {

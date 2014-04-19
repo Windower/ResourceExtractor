@@ -440,7 +440,7 @@ namespace ResourceExtractor
             else
             {
                 DisplayMessage("Adding ability names...");
-                foreach (dynamic ability in data)
+                foreach (dynamic ability in Data.abilities)
                 {
                     ability.English = abilnames[Languages.English][ability.ID][0];
                     ability.Japanese = abilnames[Languages.Japanese][ability.ID][0];
@@ -457,7 +457,7 @@ namespace ResourceExtractor
             else
             {
                 DisplayMessage("Adding spell names...");
-                foreach (dynamic spell in data)
+                foreach (dynamic spell in Data.spells)
                 {
                     spell.English = spellnames[Languages.English][spell.ID][0];
                     spell.Japanese = spellnames[Languages.Japanese][spell.ID][0];

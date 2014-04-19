@@ -570,8 +570,8 @@ namespace ResourceExtractor
                 zone.ID = id;
                 zone.English = names[Languages.English][id][0];
                 zone.Japanese = names[Languages.Japanese][id][0];
-                zone.German = names[Languages.German][id][1];
-                zone.French = names[Languages.French][id][2];
+                zone.German = names[Languages.German][id][0];
+                zone.French = names[Languages.French][id][0];
                 Data.zones.Add(zone);
             }
         }

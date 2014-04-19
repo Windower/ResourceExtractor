@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 // </copyright>
 
-namespace ResourceExtractor.Formats
+namespace ResourceExtractor
 {
     using System;
     using System.Collections;
@@ -74,7 +74,7 @@ namespace ResourceExtractor.Formats
 
                     for (int i = 0; i < data.Length; i++)
                     {
-                        data[i] = (byte)~data[i];
+                        data[i] = (byte) ~data[i];
                     }
                 }
 
@@ -82,8 +82,8 @@ namespace ResourceExtractor.Formats
 
                 for (int i = 0; i < this.strings.Length; i++)
                 {
-                    int offset = (int)table[i];
-                    int length = (int)(table[i] >> 32);
+                    int offset = (int) table[i];
+                    int length = (int) (table[i] >> 32);
 
                     int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
 
@@ -131,7 +131,7 @@ namespace ResourceExtractor.Formats
                 {
                     for (int i = 0; i < data.Length; i++)
                     {
-                        data[i] = (byte)~data[i];
+                        data[i] = (byte) ~data[i];
                     }
                 }
 
@@ -139,7 +139,7 @@ namespace ResourceExtractor.Formats
 
                 for (int i = 0; i < this.strings.Length; i++)
                 {
-                    int offset = i * (int)header.EntrySize;
+                    int offset = i * (int) header.EntrySize;
 
                     int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
 
@@ -195,12 +195,12 @@ namespace ResourceExtractor.Formats
 
         int IList<IList<string>>.IndexOf(IList<string> item)
         {
-            return ((IList<IList<string>>)this.strings).IndexOf(item);
+            return ((IList<IList<string>>) this.strings).IndexOf(item);
         }
 
         bool ICollection<IList<string>>.Contains(IList<string> item)
         {
-            return ((ICollection<IList<string>>)this.strings).Contains(item);
+            return ((ICollection<IList<string>>) this.strings).Contains(item);
         }
 
         void ICollection<IList<string>>.CopyTo(IList<string>[] array, int arrayIndex)
@@ -210,7 +210,7 @@ namespace ResourceExtractor.Formats
 
         public IEnumerator<IList<string>> GetEnumerator()
         {
-            return ((IList<IList<string>>)this.strings).GetEnumerator();
+            return ((IList<IList<string>>) this.strings).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()

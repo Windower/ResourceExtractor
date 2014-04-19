@@ -30,7 +30,7 @@ namespace ResourceExtractor
         Ice = 1,
         Wind = 2,
         Earth = 3,
-        Thunder = 4,
+        Lightning = 4,
         Water = 5,
         Light = 6,
         Dark = 7,

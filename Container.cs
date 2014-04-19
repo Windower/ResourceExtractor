@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 // </copyright>
 
-namespace ResourceExtractor.Formats
+namespace ResourceExtractor
 {
     using System;
     using System.Collections;
@@ -36,7 +36,7 @@ namespace ResourceExtractor.Formats
 
         public Container(Stream stream)
         {
-            this.list = new List<object>();
+            list = new List<object>();
 
             Header header = stream.Read<Header>();
             long block = stream.Position;
@@ -56,7 +56,7 @@ namespace ResourceExtractor.Formats
                 object o = Load(stream, header);
                 if (o != null)
                 {
-                    this.list.Add(o);
+                    list.Add(o);
                 }
 
                 stream.Position = block + header.Size;
@@ -67,7 +67,7 @@ namespace ResourceExtractor.Formats
         {
             get
             {
-                return this.list[index];
+                return list[index];
             }
 
             set
@@ -83,32 +83,32 @@ namespace ResourceExtractor.Formats
 
         public int Count
         {
-            get { return this.list.Count; }
+            get { return list.Count; }
         }
 
         public bool Contains(object item)
         {
-            return this.list.Contains(item);
+            return list.Contains(item);
         }
 
         public int IndexOf(object item)
         {
-            return this.list.IndexOf(item);
+            return list.IndexOf(item);
         }
 
         public void CopyTo(object[] array, int arrayIndex)
         {
-            this.list.CopyTo(array, arrayIndex);
+            list.CopyTo(array, arrayIndex);
         }
 
         public IEnumerator<object> GetEnumerator()
         {
-            return this.list.GetEnumerator();
+            return list.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable)this.list).GetEnumerator();
+            return ((IEnumerable) list).GetEnumerator();
         }
 
         public void Add(object item)
@@ -146,11 +146,11 @@ namespace ResourceExtractor.Formats
                     stream.Position -= Marshal.SizeOf(typeof(Header));
                     return new Container(stream);
                 case BlockType.SpellData:
-                    return SpellData.Load(stream, header.Size);
+                    return new KeyValuePair<string, object>("spells", ResourceParser.ParseSpells(stream, header.Size));
                 case BlockType.AbilityData:
-                    return AbilityData.Load(stream, header.Size);
+                    return new KeyValuePair<string, object>("abilities", ResourceParser.ParseAbilities(stream, header.Size));
                 default:
-                    Trace.WriteLine(string.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int)header.Type));
+                    Trace.WriteLine(String.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int) header.Type));
                     break;
             }
 
@@ -171,12 +171,12 @@ namespace ResourceExtractor.Formats
 
             public int Size
             {
-                get { return (int)(((uint)size >> 3) & ~0xF) - 16; }
+                get { return (int) (((uint) size >> 3) & ~0xF) - 16; }
             }
 
             public BlockType Type
             {
-                get { return (BlockType)(this.size & 0x7F); }
+                get { return (BlockType) (size & 0x7F); }
             }
         }
 

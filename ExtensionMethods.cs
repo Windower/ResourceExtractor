@@ -29,32 +29,6 @@ namespace ResourceExtractor
 
     internal static class ExtensionMethods
     {
-        public static IList<T> ToList<T>(this T value) where T : struct, IConvertible
-        {
-            if (!typeof(T).IsDefined(typeof(FlagsAttribute), false))
-            {
-                throw new InvalidOperationException("T must be an enumeration type with the [Flags] attribute.");
-            }
-
-            List<T> results = new List<T>();
-
-            var flags = Enum.GetValues(typeof(T));
-            Array.Reverse(flags);
-
-            long temp = value.ToInt64(null);
-            foreach (T flag in flags)
-            {
-                long f = flag.ToInt64(null);
-                if (f != 0 && (temp & f) == f)
-                {
-                    temp &= ~f;
-                    results.Insert(0, flag);
-                }
-            }
-
-            return results;
-        }
-
         public static void RotateRight(this byte[] data, int count)
         {
             for (int i = 0; i < data.Length; i++)
@@ -73,8 +47,7 @@ namespace ResourceExtractor
 
             int key = 0;
 
-            int count = CountBits(data[2]) - CountBits(data[11]) + CountBits(data[12]);
-            count = count < 0 ? -count : count;
+            int count = Math.Abs(CountBits(data[2]) - CountBits(data[11]) + CountBits(data[12]));
             switch (count % 5)
             {
                 case 0: key = 7; break;
@@ -166,6 +139,71 @@ namespace ResourceExtractor
             }
 
             return count;
+        }
+
+        // Enum values
+        public static string Prefix(this AbilityType value)
+        {
+            switch (value)
+            {
+                case AbilityType.Misc:
+                case AbilityType.JobTrait:
+                    return "/echo";
+                case AbilityType.JobAbility:
+                case AbilityType.CorsairRoll:
+                case AbilityType.CorsairShot:
+                case AbilityType.Samba:
+                case AbilityType.Waltz:
+                case AbilityType.Step:
+                case AbilityType.Jig:
+                case AbilityType.Flourish1:
+                case AbilityType.Flourish2:
+                case AbilityType.Flourish3:
+                case AbilityType.Scholar:
+                case AbilityType.Rune:
+                case AbilityType.Ward:
+                case AbilityType.Effusion:
+                    return "/jobability";
+                case AbilityType.WeaponSkill:
+                    return "/weaponskill";
+                case AbilityType.MonsterSkill:
+                    return "/monsterskill";
+                case AbilityType.PetCommand:
+                case AbilityType.BloodPactWard:
+                case AbilityType.BloodPactRage:
+                case AbilityType.Monster:
+                    return "/pet";
+            }
+            return "/unknown";
+        }
+
+        public static string Prefix(this MagicType value)
+        {
+            switch (value)
+            {
+                case MagicType.WhiteMagic:
+                case MagicType.BlackMagic:
+                case MagicType.SummonerPact:
+                case MagicType.BlueMagic:
+                case MagicType.Geomancy:
+                case MagicType.Trust:
+                    return "/magic";
+
+                case MagicType.BardSong:
+                    return "/song";
+
+                case MagicType.Ninjutsu:
+                    return "/ninjutsu";
+            }
+            return "/unknown";
+        }
+        public static string ToString(this Skill value)
+        {
+            return Enum.GetName(typeof(Skill), value);
+        }
+        public static string ToString(this Element value)
+        {
+            return Enum.GetName(typeof(Element), value);
         }
     }
 }

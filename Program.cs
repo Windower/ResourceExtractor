@@ -161,7 +161,7 @@ namespace ResourceExtractor
             try
             {
 #endif
-            XDocument file = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name + ".xml"));
+            XDocument file = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
 
             foreach (dynamic obj in ((IDictionary<string, dynamic>) Data)[name])
             {

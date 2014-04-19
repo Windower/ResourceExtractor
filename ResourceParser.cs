@@ -159,49 +159,48 @@ namespace ResourceExtractor
                            stringstreamde = new MemoryStream(datade),
                            stringstreamfr = new MemoryStream(datafr))
                 {
-
                     if (item.ID >= 0x0001 && item.ID <= 0x0FFF || item.ID >= 0x2200 && item.ID < 0x2800)
                     {
-                        ParseGeneralItem(stringstream, item);
+                        ParseGeneralItem(stringstream, ref item);
                     }
                     else if (item.ID >= 0x1000 && item.ID < 0x2000)
                     {
-                        ParseUsableItem(stringstream, item);
+                        ParseUsableItem(stringstream, ref item);
                     }
                     else if (item.ID >= 0x2000 && item.ID < 0x2200)
                     {
-                        ParseAutomatonItem(stringstream, item);
+                        ParseAutomatonItem(stringstream, ref item);
                     }
                     else if ((item.ID >= 0x2800 && item.ID < 0x4000) || (item.ID >= 0x6400 && item.ID < 0x7000))
                     {
-                        ParseArmorItem(stringstream, item);
+                        ParseArmorItem(stringstream, ref item);
                         item.Category = "Armor";
                     }
                     else if (item.ID >= 0x4000 && item.ID < 0x5400)
                     {
-                        ParseWeaponItem(stringstream, item);
+                        ParseWeaponItem(stringstream, ref item);
                         item.Category = "Weapon";
                     }
                     else if (item.ID >= 0x7000 && item.ID < 0x7400)
                     {
-                        ParseMazeItem(stringstream, item);
+                        ParseMazeItem(stringstream, ref item);
                     }
                     else if (item.ID >= 0xF000 && item.ID < 0xF200)
                     {
-                        ParseMonstrosityItem(stringstream, item);
+                        ParseMonstrosityItem(stringstream, ref item);
                     }
                     else if (item.ID == 0xFFFF)
                     {
-                        ParseBasicItem(stringstream, item);
+                        ParseBasicItem(stringstream, ref item);
                     }
 
                     if (stringstream.Position > 0x00)
                     {
                         stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
-                        ParseItemString(stringstream, item);
-                        ParseItemString(stringstreamja, item);
-                        ParseItemString(stringstreamde, item);
-                        ParseItemString(stringstreamfr, item);
+                        ParseItemString(stringstream, ref item);
+                        ParseItemString(stringstreamja, ref item);
+                        ParseItemString(stringstreamde, ref item);
+                        ParseItemString(stringstreamfr, ref item);
                     }
 
                     items.Add(item);
@@ -314,7 +313,7 @@ namespace ResourceExtractor
         }
         static private void ParseItemString(Stream stream, ref dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
             {
                 switch (reader.ReadInt32())
                 {

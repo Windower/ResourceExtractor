@@ -217,7 +217,7 @@ namespace ResourceExtractor
         }
         static private void ParseGeneralItem(Stream stream, ref dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
             {
                 stream.Position += 0x0C;            // Unknown 00 - 0B
                 item.ValidTargets = (ValidTargets) reader.ReadInt16();
@@ -227,7 +227,7 @@ namespace ResourceExtractor
         }
         static private void ParseWeaponItem(Stream stream, ref dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
             {
                 stream.Position += 0x0C;            // Unknown 00 - 0B
                 item.ValidTargets = (ValidTargets) reader.ReadInt16();
@@ -244,7 +244,7 @@ namespace ResourceExtractor
         }
         static private void ParseArmorItem(Stream stream, ref dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
             {
                 stream.Position += 0x0C;            // Unknown 00 - 0B
                 item.ValidTargets = (ValidTargets) reader.ReadInt16();
@@ -261,7 +261,7 @@ namespace ResourceExtractor
         }
         static private void ParseUsableItem(Stream stream, ref dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
             {
                 stream.Position += 0x0C;            // Unknown 00 - 0B
                 item.ValidTargets = (ValidTargets) reader.ReadInt16();
@@ -281,7 +281,7 @@ namespace ResourceExtractor
         }
         static private void ParseMonstrosityItem(Stream stream, ref dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
             {
                 item.TPMoves = new Dictionary<short, byte>();
                 stream.Position += 0x30;            // Unknown 00 - 2F
@@ -345,7 +345,7 @@ namespace ResourceExtractor
         }
         static private object DecodeEntry(Stream stream, StringIndex index)
         {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
             {
                 long origin = stream.Position;
                 stream.Position += 8 * (int) index;

@@ -53,7 +53,7 @@ namespace ResourceExtractor
 
                 ability.ID = data[0] | data[1] << 8;
                 ability.Type = (AbilityType) data[2];
-                ability.Prefix = ability.Type.Prefix();
+                ability.Prefix = ((AbilityType) ability.Type).Prefix();
                 ability.MPCost = data[6] | data[7] << 8;
                 ability.RecastID = data[8] | data[9] << 8;
                 ability.Targets = (ValidTargets) (data[10] | data[11] << 8);
@@ -105,7 +105,7 @@ namespace ResourceExtractor
 
                 spell.RecastID = BitConverter.ToInt16(data, 0);
                 spell.Type = (MagicType) BitConverter.ToInt16(data, 2);
-                spell.Prefix = spell.Type.Prefix();
+                spell.Prefix = ((MagicType) spell.Type).Prefix();
                 spell.Targets = (ValidTargets) BitConverter.ToInt16(data, 6);
                 spell.Skill = (Skill) BitConverter.ToInt16(data, 8);
                 spell.MPCost = BitConverter.ToInt16(data, 10);

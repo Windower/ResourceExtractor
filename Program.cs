@@ -67,7 +67,7 @@ namespace ResourceExtractor
                 LoadBuffData();
                 LoadZoneData();
                 LoadItemData();
-
+                
                 ApplyFixes();
 
                 Extract("items", new string[] { "." });
@@ -163,7 +163,7 @@ namespace ResourceExtractor
 #endif
             XDocument file = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name + ".xml"));
 
-            foreach (dynamic obj in ((IDictionary<string, ExpandoObject>) Data)[name])
+            foreach (dynamic obj in ((IDictionary<string, dynamic>) Data)[name])
             {
                 if (IsValidName(ignore, obj))
                 {
@@ -287,8 +287,8 @@ namespace ResourceExtractor
                     {
                         new int[] { 0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975 },
                         new int[] { 0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD },
-                        new int[] { 0xDA07, 0xDA08, 0xDA0B, 0xDA0A, 0xDA09, 0xD9EB, 0xD9EC, 0xD9EF, 0xDA0C, 0xD9ED },
-                        new int[] { 0xDBAB, 0xDBAC, 0xDBAF, 0xDBAE, 0xDBAD, 0xDB8F, 0xDB90, 0xDB93, 0xDBB0, 0xDB91 },
+                        new int[] { 0xDA07, 0xDA08, 0xDA0B, 0xDA0A, 0xDA09, 0xDA0C, 0xD9EB, 0xD9EC, 0xD9EF, 0xD9ED },
+                        new int[] { 0xDBAB, 0xDBAC, 0xDBAF, 0xDBAE, 0xDBAD, 0xDBB0, 0xDB8F, 0xDB90, 0xDB93, 0xDB91 },
                     };
 
                 for (var i = 0; i < fileids[0].Length; ++i)
@@ -305,7 +305,7 @@ namespace ResourceExtractor
             }
             finally
             {
-                if (!Data.items.Any())
+                if (Data.items.Count == 0)
                 {
                     DisplayResult("Error", ConsoleColor.DarkRed);
                 }

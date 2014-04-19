@@ -197,13 +197,5 @@ namespace ResourceExtractor
             }
             return "/unknown";
         }
-        public static string ToString(this Skill value)
-        {
-            return Enum.GetName(typeof(Skill), value);
-        }
-        public static string ToString(this Element value)
-        {
-            return Enum.GetName(typeof(Element), value);
-        }
     }
 }

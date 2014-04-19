@@ -134,13 +134,10 @@ namespace ResourceExtractor
             int count = (int) (stream.Length / 0xC00);
             for (int i = 0; i < count; i++)
             {
-                stream.Position = i * 0xC00;
+                streamfr.Position = streamde.Position = streamja.Position = stream.Position = i * 0xC00;
                 stream.Read(data, 0, data.Length);
-                streamja.Position = i * 0xC00;
                 streamja.Read(dataja, 0, dataja.Length);
-                streamde.Position = i * 0xC00;
                 streamde.Read(datade, 0, datade.Length);
-                streamfr.Position = i * 0xC00;
                 streamfr.Read(datafr, 0, datafr.Length);
 
                 dynamic item = new ExpandoObject();
@@ -150,60 +147,66 @@ namespace ResourceExtractor
                 datade.RotateRight(5);
                 datafr.RotateRight(5);
 
-                item.ID = data[0] | data[1] << 8;
-                item.Category = "General";
-
                 using (
-                    Stream stringstream   = new MemoryStream(data),
+                    Stream stringstream = new MemoryStream(data),
                            stringstreamja = new MemoryStream(dataja),
                            stringstreamde = new MemoryStream(datade),
                            stringstreamfr = new MemoryStream(datafr))
+                using (BinaryReader reader = new BinaryReader(stringstream))
                 {
+                    item.ID = reader.ReadUInt16();
+                    item.Category = "General";
+
                     if (item.ID >= 0x0001 && item.ID <= 0x0FFF || item.ID >= 0x2200 && item.ID < 0x2800)
                     {
-                        ParseGeneralItem(stringstream, ref item);
+                        ParseGeneralItem(reader, item);
                     }
                     else if (item.ID >= 0x1000 && item.ID < 0x2000)
                     {
-                        ParseUsableItem(stringstream, ref item);
+                        ParseUsableItem(reader, item);
                     }
                     else if (item.ID >= 0x2000 && item.ID < 0x2200)
                     {
-                        ParseAutomatonItem(stringstream, ref item);
+                        ParseAutomatonItem(reader, item);
                     }
                     else if ((item.ID >= 0x2800 && item.ID < 0x4000) || (item.ID >= 0x6400 && item.ID < 0x7000))
                     {
-                        ParseArmorItem(stringstream, ref item);
+                        ParseArmorItem(reader, item);
                         item.Category = "Armor";
                     }
                     else if (item.ID >= 0x4000 && item.ID < 0x5400)
                     {
-                        ParseWeaponItem(stringstream, ref item);
+                        ParseWeaponItem(reader, item);
                         item.Category = "Weapon";
                     }
                     else if (item.ID >= 0x7000 && item.ID < 0x7400)
                     {
-                        ParseMazeItem(stringstream, ref item);
+                        ParseMazeItem(reader, item);
                     }
-                    else if (item.ID >= 0xF000 && item.ID < 0xF200)
-                    {
-                        ParseMonstrosityItem(stringstream, ref item);
-                    }
+                    //else if (item.ID >= 0xF000 && item.ID < 0xF200)
+                    //{
+                    //    ParseMonstrosityItem(reader, item);
+                    //}
                     else if (item.ID == 0xFFFF)
                     {
-                        ParseBasicItem(stringstream, ref item);
+                        ParseBasicItem(reader, item);
                     }
 
-                    if (stringstream.Position > 0x00)
+                    if (stringstream.Position > 0x02)
                     {
                         stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
-                        ParseItemString(stringstream, ref item);
-                        ParseItemString(stringstreamja, ref item);
-                        ParseItemString(stringstreamde, ref item);
-                        ParseItemString(stringstreamfr, ref item);
-                    }
 
-                    items.Add(item);
+                        ParseItemString(reader, item);
+                        ParseItemString(new BinaryReader(stringstreamja), item);
+                        ParseItemString(new BinaryReader(stringstreamde), item);
+                        ParseItemString(new BinaryReader(stringstreamfr), item);
+
+                        items.Add(item);
+                    }
+                    else
+                    {
+                        Console.WriteLine(String.Format("Unknown item ({0})", item.ID));
+                    }
                 }
             }
 
@@ -211,90 +214,75 @@ namespace ResourceExtractor
         }
 
         [SuppressMessage("Microsoft.Usage", "CA1801")]
-        static private void ParseBasicItem(Stream stream, ref dynamic item)
+        static private void ParseBasicItem(BinaryReader reader, dynamic item)
         {
-            stream.Position += 0x10;
+            reader.ReadBytes(0x0E);             // Unknown 02 - 0F
         }
-        static private void ParseGeneralItem(Stream stream, ref dynamic item)
+        static private void ParseGeneralItem(BinaryReader reader, dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
-            {
-                stream.Position += 0x0C;            // Unknown 00 - 0B
-                item.ValidTargets = (ValidTargets) reader.ReadInt16();
+            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
+            item.ValidTargets = (ValidTargets) reader.ReadInt16();
 
-                stream.Position += 0x0A;
-            }
+            reader.ReadBytes(0x0A);             // Unknown 0E - 17
         }
-        static private void ParseWeaponItem(Stream stream, ref dynamic item)
+        static private void ParseWeaponItem(BinaryReader reader, dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
-            {
-                stream.Position += 0x0C;            // Unknown 00 - 0B
-                item.ValidTargets = (ValidTargets) reader.ReadInt16();
-                item.Level = reader.ReadInt16();
-                item.Slots = reader.ReadInt16();
-                item.Races = reader.ReadInt16();
-                item.Jobs = reader.ReadInt32();
-                stream.Position += 0x0D;            // Unknown 18 - 24
-                item.CastTime = reader.ReadByte();
-                stream.Position += 0x02;            // Unknown 26 - 27
-                item.Recast = reader.ReadInt32();
-                stream.Position += 0x04;
-            }
+            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
+            item.ValidTargets = (ValidTargets) reader.ReadUInt16();
+            item.Level = reader.ReadUInt16();
+            item.Slots = reader.ReadUInt16();
+            item.Races = reader.ReadUInt16();
+            item.Jobs = reader.ReadUInt32();
+            reader.ReadBytes(0x0D);             // Unknown 18 - 24
+            item.CastTime = reader.ReadByte();
+            reader.ReadBytes(0x02);             // Unknown 26 - 27
+            item.Recast = reader.ReadUInt32();
+            reader.ReadBytes(0x04);             // Unknown 2C - 2F
         }
-        static private void ParseArmorItem(Stream stream, ref dynamic item)
+        static private void ParseArmorItem(BinaryReader reader, dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
-            {
-                stream.Position += 0x0C;            // Unknown 00 - 0B
-                item.ValidTargets = (ValidTargets) reader.ReadInt16();
-                item.Level = reader.ReadInt16();
-                item.Slots = reader.ReadInt16();
-                item.Races = reader.ReadInt16();
-                item.Jobs = reader.ReadInt32();
-                stream.Position += 0x03;            // Unknown 18 - 1A
-                item.CastTime = reader.ReadByte();
-                stream.Position += 0x04;            // Unknown 1C - 1F
-                item.Recast = reader.ReadInt32();
-                stream.Position += 0x04;
-            }
+            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
+            item.ValidTargets = (ValidTargets) reader.ReadUInt16();
+            item.Level = reader.ReadUInt16();
+            item.Slots = reader.ReadUInt16();
+            item.Races = reader.ReadUInt16();
+            item.Jobs = reader.ReadUInt32();
+            reader.ReadBytes(0x03);             // Unknown 18 - 1A
+            item.CastTime = reader.ReadByte();
+            reader.ReadBytes(0x04);             // Unknown 1C - 1F
+            item.Recast = reader.ReadUInt32();
+            reader.ReadBytes(0x04);             // Unknown 24 - 27
         }
-        static private void ParseUsableItem(Stream stream, ref dynamic item)
+        static private void ParseUsableItem(BinaryReader reader, dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
-            {
-                stream.Position += 0x0C;            // Unknown 00 - 0B
-                item.ValidTargets = (ValidTargets) reader.ReadInt16();
-                item.CastTime = reader.ReadInt16();
-                stream.Position += 0x08;
-            }
+            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
+            item.ValidTargets = (ValidTargets) reader.ReadUInt16();
+            item.CastTime = reader.ReadUInt16();
+            reader.ReadBytes(0x08);             // Unknown 10 - 17
         }
         [SuppressMessage("Microsoft.Usage", "CA1801")]
-        static private void ParseAutomatonItem(Stream stream, ref dynamic item)
+        static private void ParseAutomatonItem(BinaryReader reader, dynamic item)
         {
-            stream.Position += 0x18;
+            reader.ReadBytes(0x16);             // Unknown 02 - 17
         }
         [SuppressMessage("Microsoft.Usage", "CA1801")]
-        static private void ParseMazeItem(Stream stream, ref dynamic item)
+        static private void ParseMazeItem(BinaryReader reader, dynamic item)
         {
-            stream.Position += 0x54;
+            reader.ReadBytes(0x52);             // Unknown 02 - 53
         }
-        static private void ParseMonstrosityItem(Stream stream, ref dynamic item)
+        static private void ParseMonstrosityItem(BinaryReader reader, dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
+            item.TPMoves = new Dictionary<ushort, sbyte>();
+            reader.ReadBytes(0x2E);             // Unknown 02 - 2F
+            for (var i = 0x00; i < 0x10; ++i)
             {
-                item.TPMoves = new Dictionary<short, byte>();
-                stream.Position += 0x30;            // Unknown 00 - 2F
-                for (int i = 0x00; i < 0x10; i++)
+                var move = reader.ReadUInt16();
+                var level = reader.ReadSByte();
+                if (level != 0 && level != -1 && !item.TPMoves.ContainsKey(move))
                 {
-                    var move = reader.ReadInt16();
-                    var level = reader.ReadByte();
-                    if (level != 0 && level != 0xFF)
-                    {
-                        item.TPMoves.Add(move, level);
-                    }
-                    ++stream.Position;
+                    item.TPMoves.Add(move, level);
                 }
+                reader.ReadByte();              // Unknown byte, possibly padding, or level being a short
             }
         }
 
@@ -311,77 +299,80 @@ namespace ResourceExtractor
             GermanLogSingular = 4,
             GermanLogPlural = 7,
         }
-        static private void ParseItemString(Stream stream, ref dynamic item)
+        static private void ParseItemString(BinaryReader reader, dynamic item)
         {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
+            var language = reader.ReadInt32();
+            switch (language)
             {
-                switch (reader.ReadInt32())
-                {
-                // Japanese
-                case 2:
-                    item.Japanese = DecodeEntry(stream, StringIndex.Name);
-                    item.JapaneseLog = item.Japanese;
-                    break;
+            // Japanese
+            case 2:
+                item.Japanese = DecodeEntry(reader, StringIndex.Name);
+                item.JapaneseLog = item.Japanese;
+                break;
 
-                // English
-                case 5:
-                    item.English = DecodeEntry(stream, StringIndex.Name);
-                    item.EnglishLog = DecodeEntry(stream, StringIndex.EnglishLogSingular);
-                    break;
+            // English
+            case 5:
+                item.English = DecodeEntry(reader, StringIndex.Name);
+                item.EnglishLog = DecodeEntry(reader, StringIndex.EnglishLogSingular);
+                break;
 
-                // French
-                case 6:
-                    item.French = DecodeEntry(stream, StringIndex.Name);
-                    item.FrenchLog = DecodeEntry(stream, StringIndex.FrenchLogSingular);
-                    break;
+            // French
+            case 6:
+                item.French = DecodeEntry(reader, StringIndex.Name);
+                item.FrenchLog = DecodeEntry(reader, StringIndex.FrenchLogSingular);
+                break;
 
-                // German
-                case 9:
-                    item.German = DecodeEntry(stream, StringIndex.Name);
-                    item.GermanLog = DecodeEntry(stream, StringIndex.GermanLogSingular);
-                    break;
-                }
+            // German
+            case 9:
+                item.German = DecodeEntry(reader, StringIndex.Name);
+                item.GermanLog = DecodeEntry(reader, StringIndex.GermanLogSingular);
+                break;
+
+            // Shouldn't happen, suggests new format (or new language)
+            default:
+                Stream stream = reader.BaseStream;
+                stream.Position = 0;
+                Console.WriteLine(String.Format("Unknown language format. Item: {0}, Language (#fields): {1}, Data:\n{2}", item.ID, language, BitConverter.ToString(reader.ReadBytes((int) stream.Length)).Replace("-", " ")));
+                break;
             }
         }
-        static private object DecodeEntry(Stream stream, StringIndex index)
+        static private object DecodeEntry(BinaryReader reader, StringIndex index)
         {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.ASCII, true))
+            Stream stream = reader.BaseStream;
+            long origin = stream.Position;
+            stream.Position += 8 * (int) index;
+            int dataoffset = reader.ReadInt32();
+            int datatype = reader.ReadInt32();
+
+            stream.Position = origin + dataoffset;
+
+            switch (datatype)
             {
-                long origin = stream.Position;
-                stream.Position += 8 * (int) index;
-                int dataoffset = reader.ReadInt32();
-                int datatype = reader.ReadInt32();
+            case 0:
+                stream.Position += 0x1C;
+                long dataorigin = stream.Position;
+                int length;
 
-                stream.Position = origin + dataoffset;
-
-                switch (datatype)
+                try
                 {
-                case 0:
-                    stream.Position += 0x1C;
-                    long dataorigin = stream.Position;
-                    int length;
-
-                    try
-                    {
-                        while (reader.ReadByte() != 0) ;
-                    }
-                    catch (EndOfStreamException)
-                    {
-                    }
-                    finally
-                    {
-                        length = (int) (stream.Position - dataorigin);
-                        stream.Position = dataorigin;
-                    }
-
-                    return FF11ShiftJISDecoder.Decode(reader.ReadBytes(length), 0, length);
-
-                case 1:
-                    return reader.ReadInt32();
+                    while (reader.ReadByte() != 0) ;
+                }
+                catch (EndOfStreamException)
+                {
+                }
+                finally
+                {
+                    length = (int) (stream.Position - dataorigin);
+                    stream.Position = dataorigin;
                 }
 
-                return null;
+                return FF11ShiftJISDecoder.Decode(reader.ReadBytes(length), 0, length);
+
+            case 1:
+                return reader.ReadInt32();
             }
+
+            return null;
         }
     }
 }

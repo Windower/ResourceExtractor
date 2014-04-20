@@ -26,6 +26,7 @@ namespace ResourceExtractor
     using System.Collections.Generic;
     using System.IO;
     using System.Runtime.InteropServices;
+    using System.Xml.Linq;
 
     internal static class ExtensionMethods
     {
@@ -196,6 +197,11 @@ namespace ResourceExtractor
                     return "/ninjutsu";
             }
             return "/unknown";
+        }
+
+        public static object Parse(this XAttribute str)
+        {
+            return (object) (int?) str ?? (object) (float?) str ?? (string) str;
         }
     }
 }

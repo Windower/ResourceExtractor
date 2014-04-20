@@ -35,6 +35,7 @@ namespace ResourceExtractor
     using System.Xml.Linq;
     using System.Text;
     using Microsoft.Win32;
+    using ResourceExtractor.Serializers.Lua;
 
     internal class Program
     {
@@ -161,7 +162,8 @@ namespace ResourceExtractor
             try
             {
 #endif
-            XDocument file = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
+            XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
+            LuaFile lua = new LuaFile(name);
 
             foreach (dynamic obj in ((IDictionary<string, dynamic>) Data)[name])
             {
@@ -173,13 +175,16 @@ namespace ResourceExtractor
                         xmlelement.SetAttributeValue(pair.Key, pair.Value);
                     }
 
-                    file.Root.Add(xmlelement);
+                    xml.Root.Add(xmlelement);
+                    lua.Add(obj);
                 }
             }
 
-            file.Root.ReplaceNodes(file.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
+            xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-            file.Save(Path.Combine("resources", "xml", String.Format("{0}.xml", name)));
+            xml.Save(Path.Combine("resources", "xml", String.Format("{0}.xml", name)));
+            lua.Save();
+
 #if !DEBUG
             }
             catch
@@ -215,9 +220,9 @@ namespace ResourceExtractor
                 {
                     foreach (XElement fix in update.Elements())
                     {
-                        IEnumerable<dynamic> elements = from e in data
-                                                        where e.ID == Convert.ToInt32(fix.Attribute("id").Value)
-                                                        select e;
+                        var elements = from e in data
+                                       where e.id == Convert.ToInt32(fix.Attribute("id").Value)
+                                       select e;
 
                         if (!elements.Any())
                         {
@@ -225,29 +230,17 @@ namespace ResourceExtractor
                             IDictionary<string, object> del = (IDictionary<string, object>) el;
                             foreach (XAttribute attr in fix.Attributes())
                             {
-                                int resint;
-                                if (int.TryParse(attr.Value, out resint))
-                                {
-                                    del[attr.Name.LocalName] = resint;
-                                    continue;
-                                }
-                                float resfloat;
-                                if (float.TryParse(attr.Value, out resfloat))
-                                {
-                                    del[attr.Name.LocalName] = resfloat;
-                                    continue;
-                                }
-                                del[attr.Name.LocalName] = attr.Value;
+                                del[attr.Name.LocalName] = attr.Parse();
                             }
                             data.Add(el);
                             continue;
                         }
-
-                        foreach (XAttribute attr in fix.Attributes())
+                        else
                         {
-                            foreach (IDictionary<string, object> element in elements)
+                            var element = (IDictionary<string, object>) elements.Single();
+                            foreach (XAttribute attr in fix.Attributes())
                             {
-                                element[attr.Name.LocalName] = attr.Value;
+                                element[attr.Name.LocalName] = attr.Parse();
                             }
                         }
                     }
@@ -258,7 +251,7 @@ namespace ResourceExtractor
                 {
                     foreach (XElement fix in remove.Elements())
                     {
-                        ((List<dynamic>) data).RemoveAll(x => x.ID == Convert.ToInt32(fix.Attribute("id").Value));
+                        ((List<dynamic>) data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value));
                     }
                 }
             }
@@ -441,10 +434,10 @@ namespace ResourceExtractor
                 DisplayMessage("Adding ability names...");
                 foreach (dynamic ability in Data.abilities)
                 {
-                    ability.English = abilnames[Languages.English][ability.ID][0];
-                    ability.Japanese = abilnames[Languages.Japanese][ability.ID][0];
-                    ability.German = abilnames[Languages.German][ability.ID][0];
-                    ability.French = abilnames[Languages.French][ability.ID][0];
+                    ability.en = abilnames[Languages.English][ability.id][0];
+                    ability.ja = abilnames[Languages.Japanese][ability.id][0];
+                    ability.de = abilnames[Languages.German][ability.id][0];
+                    ability.fr = abilnames[Languages.French][ability.id][0];
                 }
                 DisplayResult("Done!", ConsoleColor.DarkGreen);
             }
@@ -458,10 +451,10 @@ namespace ResourceExtractor
                 DisplayMessage("Adding spell names...");
                 foreach (dynamic spell in Data.spells)
                 {
-                    spell.English = spellnames[Languages.English][spell.ID][0];
-                    spell.Japanese = spellnames[Languages.Japanese][spell.ID][0];
-                    spell.German = spellnames[Languages.German][spell.ID][0];
-                    spell.French = spellnames[Languages.French][spell.ID][0];
+                    spell.en = spellnames[Languages.English][spell.id][0];
+                    spell.ja = spellnames[Languages.Japanese][spell.id][0];
+                    spell.de = spellnames[Languages.German][spell.id][0];
+                    spell.fr = spellnames[Languages.French][spell.id][0];
                 }
                 DisplayResult("Done!", ConsoleColor.DarkGreen);
             }
@@ -510,15 +503,15 @@ namespace ResourceExtractor
             for (int id = 0; id < names[0].Count; id++)
             {
                 dynamic buff = new ExpandoObject();
-                buff.ID = id;
-                buff.English = names[Languages.English][id][0];
-                buff.Japanese = names[Languages.Japanese][id][0];
-                buff.German = names[Languages.German][id][1];
-                buff.French = names[Languages.French][id][2];
-                buff.LogEnglish = names[Languages.English][id][1];
-                buff.LogJapanese = names[Languages.Japanese][id][0];
-                buff.LogGerman = names[Languages.German][id][1];
-                buff.LogFrench = names[Languages.French][id][2];
+                buff.id = id;
+                buff.en = names[Languages.English][id][0];
+                buff.ja = names[Languages.Japanese][id][0];
+                buff.de = names[Languages.German][id][1];
+                buff.fr = names[Languages.French][id][2];
+                buff.enl = names[Languages.English][id][1];
+                buff.jal = names[Languages.Japanese][id][0];
+                buff.del = names[Languages.German][id][1];
+                buff.frl = names[Languages.French][id][2];
                 Data.buffs.Add(buff);
             }
         }
@@ -566,11 +559,11 @@ namespace ResourceExtractor
             for (int id = 0; id < names[0].Count; id++)
             {
                 dynamic zone = new ExpandoObject();
-                zone.ID = id;
-                zone.English = names[Languages.English][id][0];
-                zone.Japanese = names[Languages.Japanese][id][0];
-                zone.German = names[Languages.German][id][0];
-                zone.French = names[Languages.French][id][0];
+                zone.id = id;
+                zone.en = names[Languages.English][id][0];
+                zone.ja = names[Languages.Japanese][id][0];
+                zone.de = names[Languages.German][id][0];
+                zone.fr = names[Languages.French][id][0];
                 Data.zones.Add(zone);
             }
         }
@@ -651,11 +644,11 @@ namespace ResourceExtractor
 
         private static bool IsValidName(string[] ignore, dynamic res)
         {
-            return !(String.IsNullOrWhiteSpace(res.English) || ignore.Contains((string) res.English)
-                || String.IsNullOrWhiteSpace(res.Japanese) || ignore.Contains((string) res.Japanese)
-                || String.IsNullOrWhiteSpace(res.German) || ignore.Contains((string) res.German)
-                || String.IsNullOrWhiteSpace(res.French) || ignore.Contains((string) res.French)
-                || res.English.StartsWith("#", StringComparison.Ordinal));
+            return !(String.IsNullOrWhiteSpace(res.en) || ignore.Contains((string) res.en)
+                || String.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string) res.ja)
+                || String.IsNullOrWhiteSpace(res.de) || ignore.Contains((string) res.de)
+                || String.IsNullOrWhiteSpace(res.fr) || ignore.Contains((string) res.fr)
+                || res.en.StartsWith("#", StringComparison.Ordinal));
         }
 
         private static string GetPath(int id)

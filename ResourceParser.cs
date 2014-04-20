@@ -51,18 +51,16 @@ namespace ResourceExtractor
 
                 dynamic ability = new ExpandoObject();
 
-                ability.ID = data[0] | data[1] << 8;
-                ability.Type = (AbilityType) data[2];
-                ability.Prefix = ((AbilityType) ability.Type).Prefix();
-                ability.MPCost = data[6] | data[7] << 8;
-                ability.RecastID = data[8] | data[9] << 8;
-                ability.Targets = (ValidTargets) (data[10] | data[11] << 8);
-                ability.TPCost = data[12] == 0xFF ? 0 : data[12];
-                ability.MonsterLevel = data[15];
-                ability.Skill = Skill.None;
-                ability.Element = Element.None;
-
-                ability.Valid = true;
+                ability.id = data[0] | data[1] << 8;
+                ability.type = (AbilityType) data[2];
+                ability.prefix = ((AbilityType) ability.type).Prefix();
+                ability.mp_cost = data[6] | data[7] << 8;
+                ability.recast_id = data[8] | data[9] << 8;
+                ability.targets = (ValidTargets) (data[10] | data[11] << 8);
+                ability.tp_cost = data[12] == 0xFF ? 0 : data[12];
+                ability.monster_level = data[15];
+                ability.skill = Skill.None;
+                ability.element = Element.None;
 
                 abilities.Add(ability);
             }
@@ -103,19 +101,19 @@ namespace ResourceExtractor
 
                 dynamic spell = new ExpandoObject();
 
-                spell.RecastID = BitConverter.ToInt16(data, 0);
-                spell.Type = (MagicType) BitConverter.ToInt16(data, 2);
-                spell.Prefix = ((MagicType) spell.Type).Prefix();
-                spell.Targets = (ValidTargets) BitConverter.ToInt16(data, 6);
-                spell.Skill = (Skill) BitConverter.ToInt16(data, 8);
-                spell.MPCost = BitConverter.ToInt16(data, 10);
-                spell.CastTime = data[12];
-                spell.Recast = data[13];
-                spell.Levels = new byte[24];
-                Array.Copy(data, 14, spell.Levels, 0, spell.Levels.Length);
-                spell.ID = BitConverter.ToInt16(data, 38);
-                spell.IconID = data[40];
-                spell.Element = (Element) (spell.IconID == 64 ? -1 : spell.IconID - 56);
+                spell.recast_id = BitConverter.ToInt16(data, 0);
+                spell.type = (MagicType) BitConverter.ToInt16(data, 2);
+                spell.prefix = ((MagicType) spell.type).Prefix();
+                spell.targets = (ValidTargets) BitConverter.ToInt16(data, 6);
+                spell.skill = (Skill) BitConverter.ToInt16(data, 8);
+                spell.mp_cost = BitConverter.ToInt16(data, 10);
+                spell.cast_time = data[12];
+                spell.recast = data[13];
+                spell.levels = new byte[24];
+                Array.Copy(data, 14, spell.levels, 0, spell.levels.Length);
+                spell.id = BitConverter.ToInt16(data, 38);
+                spell.icon_id = data[40];
+                spell.element = (Element) (spell.icon_id == 64 ? -1 : spell.icon_id - 56);
 
                 spells.Add(spell);
             }
@@ -154,40 +152,40 @@ namespace ResourceExtractor
                            stringstreamfr = new MemoryStream(datafr))
                 using (BinaryReader reader = new BinaryReader(stringstream))
                 {
-                    item.ID = reader.ReadUInt16();
+                    item.id = reader.ReadUInt16();
                     item.Category = "General";
 
-                    if (item.ID >= 0x0001 && item.ID <= 0x0FFF || item.ID >= 0x2200 && item.ID < 0x2800)
+                    if (item.id >= 0x0001 && item.id <= 0x0FFF || item.id >= 0x2200 && item.id < 0x2800)
                     {
                         ParseGeneralItem(reader, item);
                     }
-                    else if (item.ID >= 0x1000 && item.ID < 0x2000)
+                    else if (item.id >= 0x1000 && item.id < 0x2000)
                     {
                         ParseUsableItem(reader, item);
                     }
-                    else if (item.ID >= 0x2000 && item.ID < 0x2200)
+                    else if (item.id >= 0x2000 && item.id < 0x2200)
                     {
                         ParseAutomatonItem(reader, item);
                     }
-                    else if ((item.ID >= 0x2800 && item.ID < 0x4000) || (item.ID >= 0x6400 && item.ID < 0x7000))
+                    else if ((item.id >= 0x2800 && item.id < 0x4000) || (item.id >= 0x6400 && item.id < 0x7000))
                     {
                         ParseArmorItem(reader, item);
                         item.Category = "Armor";
                     }
-                    else if (item.ID >= 0x4000 && item.ID < 0x5400)
+                    else if (item.id >= 0x4000 && item.id < 0x5400)
                     {
                         ParseWeaponItem(reader, item);
                         item.Category = "Weapon";
                     }
-                    else if (item.ID >= 0x7000 && item.ID < 0x7400)
+                    else if (item.id >= 0x7000 && item.id < 0x7400)
                     {
                         ParseMazeItem(reader, item);
                     }
-                    //else if (item.ID >= 0xF000 && item.ID < 0xF200)
+                    //else if (item.id >= 0xF000 && item.id < 0xF200)
                     //{
                     //    ParseMonstrosityItem(reader, item);
                     //}
-                    else if (item.ID == 0xFFFF)
+                    else if (item.id == 0xFFFF)
                     {
                         ParseBasicItem(reader, item);
                     }
@@ -205,7 +203,7 @@ namespace ResourceExtractor
                     }
                     else
                     {
-                        Console.WriteLine(String.Format("Unknown item ({0})", item.ID));
+                        Console.WriteLine(String.Format("Unknown item ({0})", item.id));
                     }
                 }
             }
@@ -221,43 +219,43 @@ namespace ResourceExtractor
         static private void ParseGeneralItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.ValidTargets = (ValidTargets) reader.ReadInt16();
+            item.targets = (ValidTargets) reader.ReadInt16();
 
             reader.ReadBytes(0x0A);             // Unknown 0E - 17
         }
         static private void ParseWeaponItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.ValidTargets = (ValidTargets) reader.ReadUInt16();
-            item.Level = reader.ReadUInt16();
-            item.Slots = reader.ReadUInt16();
-            item.Races = reader.ReadUInt16();
-            item.Jobs = reader.ReadUInt32();
+            item.valid_targets = (ValidTargets) reader.ReadUInt16();
+            item.level = reader.ReadUInt16();
+            item.slots = reader.ReadUInt16();
+            item.races = reader.ReadUInt16();
+            item.jobs = reader.ReadUInt32();
             reader.ReadBytes(0x0D);             // Unknown 18 - 24
-            item.CastTime = reader.ReadByte();
+            item.cast_time = reader.ReadByte();
             reader.ReadBytes(0x02);             // Unknown 26 - 27
-            item.Recast = reader.ReadUInt32();
+            item.recast = reader.ReadUInt32();
             reader.ReadBytes(0x04);             // Unknown 2C - 2F
         }
         static private void ParseArmorItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.ValidTargets = (ValidTargets) reader.ReadUInt16();
-            item.Level = reader.ReadUInt16();
-            item.Slots = reader.ReadUInt16();
-            item.Races = reader.ReadUInt16();
-            item.Jobs = reader.ReadUInt32();
+            item.targets = (ValidTargets) reader.ReadUInt16();
+            item.level = reader.ReadUInt16();
+            item.slots = reader.ReadUInt16();
+            item.races = reader.ReadUInt16();
+            item.jobs = reader.ReadUInt32();
             reader.ReadBytes(0x03);             // Unknown 18 - 1A
-            item.CastTime = reader.ReadByte();
+            item.cast_time = reader.ReadByte();
             reader.ReadBytes(0x04);             // Unknown 1C - 1F
-            item.Recast = reader.ReadUInt32();
+            item.recast = reader.ReadUInt32();
             reader.ReadBytes(0x04);             // Unknown 24 - 27
         }
         static private void ParseUsableItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.ValidTargets = (ValidTargets) reader.ReadUInt16();
-            item.CastTime = reader.ReadUInt16();
+            item.targets = (ValidTargets) reader.ReadUInt16();
+            item.cast_time = reader.ReadUInt16();
             reader.ReadBytes(0x08);             // Unknown 10 - 17
         }
         [SuppressMessage("Microsoft.Usage", "CA1801")]
@@ -272,7 +270,7 @@ namespace ResourceExtractor
         }
         static private void ParseMonstrosityItem(BinaryReader reader, dynamic item)
         {
-            item.TPMoves = new Dictionary<ushort, sbyte>();
+            item.tp_moves = new Dictionary<ushort, sbyte>();
             reader.ReadBytes(0x2E);             // Unknown 02 - 2F
             for (var i = 0x00; i < 0x10; ++i)
             {
@@ -280,7 +278,7 @@ namespace ResourceExtractor
                 var level = reader.ReadSByte();
                 if (level != 0 && level != -1 && !item.TPMoves.ContainsKey(move))
                 {
-                    item.TPMoves.Add(move, level);
+                    item.tp_moves.Add(move, level);
                 }
                 reader.ReadByte();              // Unknown byte, possibly padding, or level being a short
             }
@@ -306,33 +304,33 @@ namespace ResourceExtractor
             {
             // Japanese
             case 2:
-                item.Japanese = DecodeEntry(reader, StringIndex.Name);
-                item.JapaneseLog = item.Japanese;
+                item.ja = DecodeEntry(reader, StringIndex.Name);
+                item.jal = item.ja;
                 break;
 
             // English
             case 5:
-                item.English = DecodeEntry(reader, StringIndex.Name);
-                item.EnglishLog = DecodeEntry(reader, StringIndex.EnglishLogSingular);
+                item.en = DecodeEntry(reader, StringIndex.Name);
+                item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
                 break;
 
             // French
             case 6:
-                item.French = DecodeEntry(reader, StringIndex.Name);
-                item.FrenchLog = DecodeEntry(reader, StringIndex.FrenchLogSingular);
+                item.fr = DecodeEntry(reader, StringIndex.Name);
+                item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular);
                 break;
 
             // German
             case 9:
-                item.German = DecodeEntry(reader, StringIndex.Name);
-                item.GermanLog = DecodeEntry(reader, StringIndex.GermanLogSingular);
+                item.de = DecodeEntry(reader, StringIndex.Name);
+                item.del = DecodeEntry(reader, StringIndex.GermanLogSingular);
                 break;
 
             // Shouldn't happen, suggests new format (or new language)
             default:
                 Stream stream = reader.BaseStream;
                 stream.Position = 0;
-                Console.WriteLine(String.Format("Unknown language format. Item: {0}, Language (#fields): {1}, Data:\n{2}", item.ID, language, BitConverter.ToString(reader.ReadBytes((int) stream.Length)).Replace("-", " ")));
+                Console.WriteLine(String.Format("Unknown language format. Item: {0}, Language (#fields): {1}, Data:\n{2}", item.id, language, BitConverter.ToString(reader.ReadBytes((int) stream.Length)).Replace("-", " ")));
                 break;
             }
         }
@@ -340,16 +338,17 @@ namespace ResourceExtractor
         {
             Stream stream = reader.BaseStream;
             long origin = stream.Position;
-            stream.Position += 8 * (int) index;
+            reader.ReadBytes(8 * (int) index);
             int dataoffset = reader.ReadInt32();
             int datatype = reader.ReadInt32();
+            stream.Position = origin;
 
-            stream.Position = origin + dataoffset;
+            reader.ReadBytes(dataoffset);
 
             switch (datatype)
             {
             case 0:
-                stream.Position += 0x18;
+                reader.ReadBytes(0x18);
                 long dataorigin = stream.Position;
                 int length;
 

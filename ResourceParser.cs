@@ -353,18 +353,9 @@ namespace ResourceExtractor
                 long dataorigin = stream.Position;
                 int length;
 
-                try
-                {
-                    while (reader.ReadByte() != 0) ;
-                }
-                catch (EndOfStreamException)
-                {
-                }
-                finally
-                {
-                    length = (int) (stream.Position - dataorigin);
-                    stream.Position = dataorigin;
-                }
+                while (stream.Position != stream.Length && reader.ReadByte() != 0) ;
+                length = (int) (stream.Position - dataorigin) - 1;
+                stream.Position = dataorigin;
 
                 return FF11ShiftJISDecoder.Decode(reader.ReadBytes(length), 0, length);
 

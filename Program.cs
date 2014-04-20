@@ -179,7 +179,7 @@ namespace ResourceExtractor
 
             file.Root.ReplaceNodes(file.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-            file.Save(Path.Combine("resources/xml", String.Format("{0}.xml", name)));
+            file.Save(Path.Combine("resources", "xml", String.Format("{0}.xml", name)));
 #if !DEBUG
             }
             catch

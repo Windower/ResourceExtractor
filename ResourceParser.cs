@@ -201,10 +201,6 @@ namespace ResourceExtractor
 
                         items.Add(item);
                     }
-                    else
-                    {
-                        Console.WriteLine(String.Format("Unknown item ({0})", item.id));
-                    }
                 }
             }
 

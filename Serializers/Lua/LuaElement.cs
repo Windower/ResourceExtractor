@@ -30,11 +30,13 @@ namespace ResourceExtractor.Serializers.Lua
     {
         private static List<string> Keys = new List<string> { "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl" };
         private List<LuaAttribute> Attributes { get; set; }
-        public uint ID { get; set; }
+        public int ID { get; set; }
         
         public LuaElement(dynamic obj)
         {
             Attributes = new List<LuaAttribute>();
+
+            ID = obj.id;
 
             IDictionary<string, object> o = obj;
             foreach (var Key in Keys)

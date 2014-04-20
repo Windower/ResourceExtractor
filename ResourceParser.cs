@@ -57,7 +57,7 @@ namespace ResourceExtractor
                 ability.MPCost = data[6] | data[7] << 8;
                 ability.RecastID = data[8] | data[9] << 8;
                 ability.Targets = (ValidTargets) (data[10] | data[11] << 8);
-                ability.TPCost = data[12];
+                ability.TPCost = data[12] == 0xFF ? 0 : data[12];
                 ability.MonsterLevel = data[15];
                 ability.Skill = Skill.None;
                 ability.Element = Element.None;

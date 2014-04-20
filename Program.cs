@@ -49,11 +49,11 @@ namespace ResourceExtractor
             Console.CursorVisible = false;
 
             Data = new ExpandoObject();
-            Data.abilities = new ExpandoObject();
-            Data.spells = new ExpandoObject();
-            Data.zones = new ExpandoObject();
-            Data.buffs = new ExpandoObject();
-            Data.items = new ExpandoObject();
+            Data.abilities = new List<dynamic>();
+            Data.spells = new List<dynamic>();
+            Data.zones = new List<dynamic>();
+            Data.buffs = new List<dynamic>();
+            Data.items = new List<dynamic>();
 
             Dir = GetBaseDirectory();
             if (Dir != null)
@@ -172,12 +172,14 @@ namespace ResourceExtractor
                     {
                         xmlelement.SetAttributeValue(pair.Key, pair.Value);
                     }
+
+                    file.Root.Add(xmlelement);
                 }
             }
 
             file.Root.ReplaceNodes(file.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-            file.Save(Path.Combine("resources/xml", name + ".xml"));
+            file.Save(Path.Combine("resources/xml", String.Format("{0}.xml", name)));
 #if !DEBUG
             }
             catch
@@ -202,7 +204,11 @@ namespace ResourceExtractor
 
             foreach (XElement fixset in fixes.Root.Elements())
             {
-                IList<dynamic> data = ((IDictionary<string, IList<dynamic>>) Data)[fixset.Name.LocalName];
+                if (fixset.Name.LocalName == "timers")
+                {
+                    continue;
+                }
+                IList<dynamic> data = (IList<dynamic>) ((IDictionary<string, object>) Data)[fixset.Name.LocalName];
 
                 XElement update = fixset.Element("update");
                 if (update != null)
@@ -210,8 +216,8 @@ namespace ResourceExtractor
                     foreach (XElement fix in update.Elements())
                     {
                         IEnumerable<dynamic> elements = from e in data
-                                           where e.id == Convert.ToInt32(fix.Attributes("id"))
-                                           select e;
+                                                        where e.ID == Convert.ToInt32(fix.Attribute("id").Value)
+                                                        select e;
 
                         if (!elements.Any())
                         {
@@ -252,14 +258,7 @@ namespace ResourceExtractor
                 {
                     foreach (XElement fix in remove.Elements())
                     {
-                        IEnumerable<dynamic> elements = from e in data
-                                                         where e.id == Convert.ToInt32(fix.Attribute("id"))
-                                                         select e;
-
-                        foreach (dynamic e in elements)
-                        {
-                            data.Remove(e);
-                        }
+                        ((List<dynamic>) data).RemoveAll(x => x.ID == Convert.ToInt32(fix.Attribute("id").Value));
                     }
                 }
             }
@@ -277,7 +276,7 @@ namespace ResourceExtractor
 
         private static void LoadItemData()
         {
-            Data.items = new List<ExpandoObject>();
+            Data.items = new List<dynamic>();
 
             try
             {
@@ -319,29 +318,6 @@ namespace ResourceExtractor
         [SuppressMessage("Microsoft.Performance", "CA1800")]
         private static void LoadSpellAbilityData()
         {
-            IList<object> data = null;
-
-            try
-            {
-                DisplayMessage("Loading spell and ability data...");
-
-                using (FileStream stream = File.OpenRead(GetPath(0x0051)))
-                {
-                    data = new Container(stream);
-                }
-            }
-            finally
-            {
-                if (data == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
             // Ability names
             IList<IList<IList<string>>> abilnames = null;
             try
@@ -405,10 +381,33 @@ namespace ResourceExtractor
                 }
             }
 
+            IList<object> data = null;
+
+            try
+            {
+                DisplayMessage("Looking up ability and spell data...");
+
+                using (FileStream stream = File.OpenRead(GetPath(0x0051)))
+                {
+                    data = new Container(stream);
+                }
+            }
+            finally
+            {
+                if (data == null)
+                {
+                    DisplayResult("Error", ConsoleColor.DarkRed);
+                }
+                else
+                {
+                    DisplayResult("Done!", ConsoleColor.DarkGreen);
+                }
+            }
+
             DisplayMessage("Loading ability and spell data...");
             foreach (object o in data)
             {
-                if (Data.abilities == null)
+                if (Data.abilities.Count == 0)
                 {
                     var kvp = o as KeyValuePair<string, object>?;
                     if (kvp.HasValue && kvp.Value.Key == "abilities")
@@ -417,7 +416,7 @@ namespace ResourceExtractor
                     }
                     continue;
                 }
-                if (Data.spells == null)
+                if (Data.spells.Count == 0)
                 {
                     var kvp = o as KeyValuePair<string, object>?;
                     if (kvp.HasValue && kvp.Value.Key == "spells")
@@ -427,7 +426,7 @@ namespace ResourceExtractor
                     continue;
                 }
 
-                if (Data.spells != null && Data.abilities != null)
+                if (Data.spells.Count != 0 && Data.abilities.Count != 0)
                 {
                     break;
                 }
@@ -435,7 +434,7 @@ namespace ResourceExtractor
 
             if (Data.abilities == null)
             {
-                DisplayResult("Error: Abilities not found", ConsoleColor.DarkRed);
+                DisplayResult("Error!", ConsoleColor.DarkRed);
             }
             else
             {
@@ -452,7 +451,7 @@ namespace ResourceExtractor
 
             if (Data.spells == null)
             {
-                DisplayResult("Error: Spells not found", ConsoleColor.DarkRed);
+                DisplayResult("Error!", ConsoleColor.DarkRed);
             }
             else
             {
@@ -506,7 +505,7 @@ namespace ResourceExtractor
                 return;
             }
 
-            Data.buffs = new List<ExpandoObject>();
+            Data.buffs = new List<dynamic>();
 
             for (int id = 0; id < names[0].Count; id++)
             {
@@ -562,7 +561,7 @@ namespace ResourceExtractor
                 return;
             }
 
-            Data.zones = new List<ExpandoObject>();
+            Data.zones = new List<dynamic>();
 
             for (int id = 0; id < names[0].Count; id++)
             {

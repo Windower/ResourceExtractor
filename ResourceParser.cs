@@ -31,9 +31,9 @@ namespace ResourceExtractor
 
     static class ResourceParser
     {
-        public static IList<ExpandoObject> ParseAbilities(Stream stream, int length)
+        public static IList<dynamic> ParseAbilities(Stream stream, int length)
         {
-            var abilities = new List<ExpandoObject>();
+            var abilities = new List<dynamic>();
 
             var data = new byte[0x30];
             for (var i = 0; i < length / data.Length; ++i)
@@ -70,9 +70,9 @@ namespace ResourceExtractor
             return abilities;
         }
 
-        public static IList<ExpandoObject> ParseSpells(Stream stream, int length)
+        public static IList<dynamic> ParseSpells(Stream stream, int length)
         {
-            var spells = new List<ExpandoObject>();
+            var spells = new List<dynamic>();
 
             var data = new byte[0x40];
             for (var i = 0; i < length / data.Length; ++i)
@@ -123,9 +123,9 @@ namespace ResourceExtractor
             return spells;
         }
 
-        public static IList<ExpandoObject> ParseItems(Stream stream, Stream streamja, Stream streamde, Stream streamfr)
+        public static IList<dynamic> ParseItems(Stream stream, Stream streamja, Stream streamde, Stream streamfr)
         {
-            var items = new List<ExpandoObject>();
+            var items = new List<dynamic>();
 
             byte[] data = new byte[0x200];
             byte[] dataja = new byte[0x200];

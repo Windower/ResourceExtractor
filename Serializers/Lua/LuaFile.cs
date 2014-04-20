@@ -46,7 +46,8 @@ namespace ResourceExtractor.Serializers.Lua
         {
             using (StreamWriter file = new StreamWriter(Path.Combine(Directory.GetCurrentDirectory(), "resources", "lua", String.Format("{0}.lua", Name))))
             {
-                file.WriteLine("-- Automatically generated file");
+                file.WriteLine("-- Automatically generated file: {0}", Name.First().ToString().ToUpper() + String.Join("", Name.Skip(1)));
+                file.WriteLine();
                 file.WriteLine("local {0} = {{", Name);
 
                 foreach (var e in from e in Elements orderby e.ID select e)
@@ -54,7 +55,7 @@ namespace ResourceExtractor.Serializers.Lua
                     file.WriteLine("    [{0}] = {1},", e.ID, e.ToString());
                 }
 
-                file.WriteLine("}}");
+                file.WriteLine("}");
                 file.WriteLine();
                 file.WriteLine("return {0}", Name);
                 file.WriteLine();

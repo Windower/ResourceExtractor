@@ -496,8 +496,8 @@ namespace ResourceExtractor
                 return;
             }
 
-            var l = (IList<dynamic>) ((IDictionary<string, object>) Data)[Name];
-            bool add = l.Any();
+            var l = (List<dynamic>) ((IDictionary<string, object>) Data)[Name];
+            bool add = !l.Any();
 
             for (int id = 0; id < names[0].Count; ++id)
             {
@@ -529,7 +529,6 @@ namespace ResourceExtractor
                     obj.frl = names[Languages.French][id][logindices[Languages.French]];
                 }
 
-                
                 if (add)
                 {
                     l.Add(obj);
@@ -539,106 +538,12 @@ namespace ResourceExtractor
 
         private static void LoadBuffData()
         {
-            IList<IList<IList<string>>> names = null;
-
-            try
-            {
-                DisplayMessage("Loading status names...");
-
-                int[] fileids = new int[] { 0xD9AD, 0xD935, 0xDA2C, 0xDBD0 };
-
-                names = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        names.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (names == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            if (names == null)
-            {
-                return;
-            }
-
-            for (int id = 0; id < names[0].Count; id++)
-            {
-                dynamic buff = new ExpandoObject();
-                buff.id = id;
-                buff.en = names[Languages.English][id][0];
-                buff.ja = names[Languages.Japanese][id][0];
-                buff.de = names[Languages.German][id][1];
-                buff.fr = names[Languages.French][id][2];
-                buff.enl = names[Languages.English][id][1];
-                buff.jal = names[Languages.Japanese][id][0];
-                buff.del = names[Languages.German][id][1];
-                buff.frl = names[Languages.French][id][2];
-                Data.buffs.Add(buff);
-            }
+            LoadNames("buffs", new int[] { 0xD9AD, 0xD935, 0xDA2C, 0xDBD0 }, new int[] { 0, 0, 1, 2 }, new int[] { 1, 0, 1, 2 });
         }
 
         private static void LoadZoneData()
         {
-            IList<IList<IList<string>>> names = null;
-
-            try
-            {
-                DisplayMessage("Loading status names...");
-
-                int[] fileids = new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 };
-
-                names = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        names.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (names == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            if (names == null)
-            {
-                return;
-            }
-
-            for (int id = 0; id < names[0].Count; id++)
-            {
-                dynamic zone = new ExpandoObject();
-                zone.id = id;
-                zone.en = names[Languages.English][id][0];
-                zone.ja = names[Languages.Japanese][id][0];
-                zone.de = names[Languages.German][id][0];
-                zone.fr = names[Languages.French][id][0];
-                Data.zones.Add(zone);
-            }
+            LoadNames("buffs", new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 }, new int[] { 0, 0, 0, 0 });
         }
 
         private static IList<IList<IList<string>>> LoadMonsterAbilityNames()

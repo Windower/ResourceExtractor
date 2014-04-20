@@ -349,11 +349,11 @@ namespace ResourceExtractor
             switch (datatype)
             {
             case 0:
-                stream.Position += 0x1C;
+                stream.Position += 0x18;
                 long dataorigin = stream.Position;
                 int length;
 
-                while (stream.Position != stream.Length && reader.ReadByte() != 0) ;
+                while (stream.Position != stream.Length && reader.ReadByte() != 0);
                 length = (int) (stream.Position - dataorigin) - 1;
                 stream.Position = dataorigin;
 

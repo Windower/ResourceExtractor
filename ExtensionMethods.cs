@@ -24,6 +24,7 @@ namespace ResourceExtractor
 {
     using System;
     using System.Collections.Generic;
+    using System.Dynamic;
     using System.IO;
     using System.Runtime.InteropServices;
     using System.Xml.Linq;
@@ -199,9 +200,23 @@ namespace ResourceExtractor
             return "/unknown";
         }
 
-        public static object Parse(this XAttribute str)
+        public static object Parse(this XAttribute value)
         {
-            return (object) (int?) str ?? (object) (float?) str ?? (string) str;
+            string str = (string) value;
+
+            int resint;
+            if (int.TryParse(str, out resint))
+            {
+                return resint;
+            }
+            
+            float resfloat;
+            if (float.TryParse(str, out resfloat))
+            {
+                return resfloat;
+            }
+            
+            return str;
         }
     }
 }

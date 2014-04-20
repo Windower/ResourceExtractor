@@ -460,6 +460,83 @@ namespace ResourceExtractor
             }
         }
 
+        private static void LoadNames(string Name, int[] fileids, int[] indices, int[] logindices = null)
+        {
+            IList<IList<IList<string>>> names = null;
+
+            try
+            {
+                DisplayMessage("Loading " + Name + " names...");
+
+                names = new List<IList<IList<string>>>();
+
+                foreach (int id in fileids)
+                {
+                    string path = GetPath(id);
+                    using (FileStream stream = File.OpenRead(path))
+                    {
+                        names.Add(new DMsgStringList(stream));
+                    }
+                }
+            }
+            finally
+            {
+                if (names == null)
+                {
+                    DisplayResult("Error", ConsoleColor.DarkRed);
+                }
+                else
+                {
+                    DisplayResult("Done!", ConsoleColor.DarkGreen);
+                }
+            }
+
+            if (names == null)
+            {
+                return;
+            }
+
+            var l = (IList<dynamic>) ((IDictionary<string, object>) Data)[Name];
+            bool add = l.Any();
+
+            for (int id = 0; id < names[0].Count; ++id)
+            {
+                dynamic obj;
+                if (add)
+                {
+                    obj = new ExpandoObject();
+                    obj.id = id;
+                }
+                else
+                {
+                    obj = l[id];
+                    if (obj == null)
+                    {
+                        continue;
+                    }
+                }
+
+                obj.en = names[Languages.English][id][indices[Languages.English]];
+                obj.ja = names[Languages.Japanese][id][indices[Languages.Japanese]];
+                obj.de = names[Languages.German][id][indices[Languages.German]];
+                obj.fr = names[Languages.French][id][indices[Languages.French]];
+
+                if (logindices != null)
+                {
+                    obj.enl = names[Languages.English][id][logindices[Languages.English]];
+                    obj.jal = names[Languages.Japanese][id][logindices[Languages.Japanese]];
+                    obj.del = names[Languages.German][id][logindices[Languages.German]];
+                    obj.frl = names[Languages.French][id][logindices[Languages.French]];
+                }
+
+                
+                if (add)
+                {
+                    l.Add(obj);
+                }
+            }
+        }
+
         private static void LoadBuffData()
         {
             IList<IList<IList<string>>> names = null;
@@ -497,8 +574,6 @@ namespace ResourceExtractor
             {
                 return;
             }
-
-            Data.buffs = new List<dynamic>();
 
             for (int id = 0; id < names[0].Count; id++)
             {
@@ -553,8 +628,6 @@ namespace ResourceExtractor
             {
                 return;
             }
-
-            Data.zones = new List<dynamic>();
 
             for (int id = 0; id < names[0].Count; id++)
             {

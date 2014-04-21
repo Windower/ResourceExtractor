@@ -31,15 +31,19 @@ namespace ResourceExtractor.Serializers.Lua
     {
         private string Name { get; set; }
         private List<LuaElement> Elements { get; set; }
+        private HashSet<string> Keys { get; set; }
         public LuaFile(string Name)
         {
             this.Name = Name;
             Elements = new List<LuaElement>();
+            Keys = new HashSet<string>();
         }
 
         public void Add(dynamic e)
         {
-            Elements.Add(new LuaElement(e));
+            var el = new LuaElement(e);
+            Elements.Add(el);
+            Keys.UnionWith(el.Keys);
         }
 
         public void Save()
@@ -55,7 +59,7 @@ namespace ResourceExtractor.Serializers.Lua
                     file.WriteLine("    [{0}] = {1},", e.ID, e.ToString());
                 }
 
-                file.WriteLine("}");
+                file.WriteLine("}}, {0}", "{" + String.Join(", ", Keys.Select(k => "\"" + k + "\"")) + "}");
                 file.WriteLine();
                 file.WriteLine("--[[");
                 file.WriteLine("Copyright © 2013-{0}, Windower", DateTime.Now.Year);

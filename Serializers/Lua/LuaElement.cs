@@ -28,28 +28,33 @@ namespace ResourceExtractor.Serializers.Lua
 
     class LuaElement
     {
-        private static List<string> Keys = new List<string> { "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl" };
+        private static List<string> FixedKeys = new List<string> { "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl" };
+        public HashSet<string> Keys { get; private set; }
         private List<LuaAttribute> Attributes { get; set; }
-        public int ID { get; set; }
+        public int ID { get; private set; }
         
         public LuaElement(dynamic obj)
         {
             Attributes = new List<LuaAttribute>();
 
+            Keys = new HashSet<string>();
+
             ID = obj.id;
 
             IDictionary<string, object> o = obj;
-            foreach (var Key in Keys)
+            foreach (var Key in FixedKeys)
             {
                 if (o.ContainsKey(Key))
                 {
                     Attributes.Add(new LuaAttribute(Key, o[Key]));
+                    Keys.Add(Key);
                 }
             }
 
-            foreach (var Key in from k in o.Keys where !Keys.Contains(k) orderby k select k)
+            foreach (var Key in from k in o.Keys where !FixedKeys.Contains(k) orderby k select k)
             {
                 Attributes.Add(new LuaAttribute(Key, o[Key]));
+                Keys.Add(Key);
             }
         }
 

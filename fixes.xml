@@ -55,7 +55,7 @@ IN THE SOFTWARE.
   <abilities>
     <update>
       <!-- Ranged Attack -->
-      <a id="1" prefix="/range" targets="Enemy" />
+      <a id="1" prefix="/range" targets="32" />
 
       <!-- Corsair Shots -->
       <a id="125" element="0" />

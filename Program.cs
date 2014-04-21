@@ -64,7 +64,7 @@ namespace ResourceExtractor
                 Directory.CreateDirectory("resources/xml");
                 Directory.CreateDirectory("resources/json");
 
-                LoadSpellAbilityData();
+                LoadMainData();
                 LoadBuffData();
                 LoadZoneData();
                 LoadItemData();
@@ -140,14 +140,7 @@ namespace ResourceExtractor
             }
             finally
             {
-                if (Dir == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(Dir != null);
             }
 
             return Dir;
@@ -189,12 +182,12 @@ namespace ResourceExtractor
             }
             catch
             {
-                DisplayResult("Error", ConsoleColor.DarkRed);
+                DisplayError();
                 throw;
             }
 #endif
 
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
+            DisplaySuccess();
         }
         
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
@@ -259,12 +252,12 @@ namespace ResourceExtractor
             }
             catch
             {
-                DisplayResult("Error", ConsoleColor.DarkRed);
+                DisplayError();
                 throw;
             }
 #endif
 
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
+            DisplaySuccess();
         }
 
         private static void LoadItemData()
@@ -297,88 +290,18 @@ namespace ResourceExtractor
             }
             finally
             {
-                if (Data.items.Count == 0)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(Data.items.Count != 0);
             }
         }
 
         [SuppressMessage("Microsoft.Performance", "CA1800")]
-        private static void LoadSpellAbilityData()
+        private static void LoadMainData()
         {
-            // Ability names
-            IList<IList<IList<string>>> abilnames = null;
-            try
-            {
-                DisplayMessage("Loading ability names...");
-
-                int[] fileids = new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 };
-
-                abilnames = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        abilnames.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (abilnames == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            // Spell names
-            IList<IList<IList<string>>> spellnames = null;
-
-            try
-            {
-                DisplayMessage("Loading spell names...");
-
-                int[] fileids = new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 };
-
-                spellnames = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        spellnames.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (spellnames == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
             IList<object> data = null;
 
+            DisplayMessage("Loading main data stream...");
             try
             {
-                DisplayMessage("Looking up main data stream data...");
 
                 using (FileStream stream = File.OpenRead(GetPath(0x0051)))
                 {
@@ -387,14 +310,7 @@ namespace ResourceExtractor
             }
             finally
             {
-                if (data == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(data != null);
             }
 
             foreach (object o in data)
@@ -402,135 +318,91 @@ namespace ResourceExtractor
                 if (Data.abilities.Count == 0)
                 {
                     var kvp = o as KeyValuePair<string, object>?;
-                    if (kvp.HasValue && kvp.Value.Key == "abilities")
+                    if (kvp.HasValue)
                     {
-                        Data.abilities = kvp.Value.Value;
+                        ((IDictionary<string, object>) Data)[kvp.Value.Key] = kvp.Value.Value;
                         continue;
                     }
                 }
-                if (Data.spells.Count == 0)
-                {
-                    var kvp = o as KeyValuePair<string, object>?;
-                    if (kvp.HasValue && kvp.Value.Key == "spells")
-                    {
-                        Data.spells = kvp.Value.Value;
-                        continue;
-                    }
-                }
-
-                if (Data.spells.Count != 0 && Data.abilities.Count != 0)
-                {
-                    break;
-                }
             }
 
-            DisplayMessage("Adding ability names...");
-            if (Data.abilities == null)
-            {
-                DisplayResult("Error!", ConsoleColor.DarkRed);
-            }
-            else
-            {
-                foreach (dynamic ability in Data.abilities)
-                {
-                    ability.en = abilnames[Languages.English][ability.id][0];
-                    ability.ja = abilnames[Languages.Japanese][ability.id][0];
-                    ability.de = abilnames[Languages.German][ability.id][0];
-                    ability.fr = abilnames[Languages.French][ability.id][0];
-                }
-                DisplayResult("Done!", ConsoleColor.DarkGreen);
-            }
-
-            DisplayMessage("Adding spell names...");
-            if (Data.spells == null)
-            {
-                DisplayResult("Error!", ConsoleColor.DarkRed);
-            }
-            else
-            {
-                foreach (dynamic spell in Data.spells)
-                {
-                    spell.en = spellnames[Languages.English][spell.id][0];
-                    spell.ja = spellnames[Languages.Japanese][spell.id][0];
-                    spell.de = spellnames[Languages.German][spell.id][0];
-                    spell.fr = spellnames[Languages.French][spell.id][0];
-                }
-                DisplayResult("Done!", ConsoleColor.DarkGreen);
-            }
+            LoadNames("abilities", new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 }, new int[] { 0, 0, 0, 0 });
+            LoadNames("spells", new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 }, new int[] { 0, 0, 0, 0 });
         }
 
-        private static void LoadNames(string Name, int[] fileids, int[] indices, int[] logindices = null)
+        private static IList<IList<IList<string>>> ParseNames(int[] fileids)
         {
             IList<IList<IList<string>>> names = null;
 
             try
             {
-                DisplayMessage("Loading " + Name + " names...");
-
-                names = new List<IList<IList<string>>>();
+                IList<IList<IList<string>>> tmp = new List<IList<IList<string>>>();
 
                 foreach (int id in fileids)
                 {
                     string path = GetPath(id);
                     using (FileStream stream = File.OpenRead(path))
                     {
-                        names.Add(new DMsgStringList(stream));
+                        tmp.Add(new DMsgStringList(stream));
                     }
                 }
+
+                names = tmp;
             }
             finally
             {
-                if (names == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(names != null);
             }
 
+            return names;
+        }
+
+        private static void AddNames(dynamic obj, IList<IList<IList<string>>> names, int[] indices, int[] logindices)
+        {
+            obj.en = names[Languages.English][obj.id][indices[Languages.English]];
+            obj.ja = names[Languages.Japanese][obj.id][indices[Languages.Japanese]];
+            obj.de = names[Languages.German][obj.id][indices[Languages.German]];
+            obj.fr = names[Languages.French][obj.id][indices[Languages.French]];
+
+            if (logindices != null)
+            {
+                obj.enl = names[Languages.English][obj.id][logindices[Languages.English]];
+                obj.jal = names[Languages.Japanese][obj.id][logindices[Languages.Japanese]];
+                obj.del = names[Languages.German][obj.id][logindices[Languages.German]];
+                obj.frl = names[Languages.French][obj.id][logindices[Languages.French]];
+            }
+        }
+
+        private static void LoadNames(string Name, int[] fileids, int[] indices, int[] logindices = null)
+        {
+            DisplayMessage("Loading " + Name + " names...");
+
+            IList<IList<IList<string>>> names = ParseNames(fileids);
             if (names == null)
             {
                 return;
             }
 
-            var l = (List<dynamic>) ((IDictionary<string, object>) Data)[Name];
-            bool add = !l.Any();
+            var dict = (List<dynamic>) ((IDictionary<string, object>) Data)[Name];
 
-            for (int id = 0; id < names[0].Count; ++id)
+            if (dict.Any())
             {
-                dynamic obj;
-                if (add)
+                foreach (var obj in dict)
                 {
+                    AddNames(obj, names, indices, logindices);
+                }
+            }
+            else
+            {
+                for (int id = 0; id < names[0].Count; ++id)
+                {
+                    dynamic obj;
                     obj = new ExpandoObject();
                     obj.id = id;
-                }
-                else
-                {
-                    obj = l[id];
-                    if (obj == null)
-                    {
-                        continue;
-                    }
-                }
 
-                obj.en = names[Languages.English][id][indices[Languages.English]];
-                obj.ja = names[Languages.Japanese][id][indices[Languages.Japanese]];
-                obj.de = names[Languages.German][id][indices[Languages.German]];
-                obj.fr = names[Languages.French][id][indices[Languages.French]];
+                    AddNames(obj, names, indices, logindices);
 
-                if (logindices != null)
-                {
-                    obj.enl = names[Languages.English][id][logindices[Languages.English]];
-                    obj.jal = names[Languages.Japanese][id][logindices[Languages.Japanese]];
-                    obj.del = names[Languages.German][id][logindices[Languages.German]];
-                    obj.frl = names[Languages.French][id][logindices[Languages.French]];
-                }
-
-                if (add)
-                {
-                    l.Add(obj);
+                    dict.Add(obj);
                 }
             }
         }
@@ -569,14 +441,7 @@ namespace ResourceExtractor
             }
             finally
             {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(result != null);
             }
 
             return result;
@@ -606,14 +471,7 @@ namespace ResourceExtractor
             }
             finally
             {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(result != null);
             }
 
             return result;
@@ -648,6 +506,25 @@ namespace ResourceExtractor
             Console.WriteLine(message);
         }
 
+        private static void DisplayError()
+        {
+            DisplayResult("Error!", ConsoleColor.Red);
+        }
+        private static void DisplaySuccess()
+        {
+            DisplayResult("Done!", ConsoleColor.Green);
+        }
+        private static void DisplayResult(bool Success)
+        {
+            if (Success)
+            {
+                DisplaySuccess();
+            }
+            else
+            {
+                DisplayError();
+            }
+        }
         private static void DisplayResult(string result, ConsoleColor color)
         {
             Console.CursorTop = Console.CursorTop - 1;

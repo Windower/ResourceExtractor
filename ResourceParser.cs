@@ -192,7 +192,7 @@ namespace ResourceExtractor
                 using (BinaryReader reader = new BinaryReader(stringstream, Encoding.ASCII, true))
                 {
                     item.id = reader.ReadUInt16();
-                    item.Category = "General";
+                    item.category = "General";
 
                     if (item.id >= 0x0001 && item.id <= 0x0FFF || item.id >= 0x2200 && item.id < 0x2800)
                     {
@@ -209,12 +209,12 @@ namespace ResourceExtractor
                     else if ((item.id >= 0x2800 && item.id < 0x4000) || (item.id >= 0x6400 && item.id < 0x7000))
                     {
                         ParseArmorItem(reader, item);
-                        item.Category = "Armor";
+                        item.category = "Armor";
                     }
                     else if (item.id >= 0x4000 && item.id < 0x5400)
                     {
                         ParseWeaponItem(reader, item);
-                        item.Category = "Weapon";
+                        item.category = "Weapon";
                     }
                     else if (item.id >= 0x7000 && item.id < 0x7400)
                     {

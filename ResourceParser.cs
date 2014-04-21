@@ -261,7 +261,7 @@ namespace ResourceExtractor
         static private void ParseWeaponItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.valid_targets = reader.ReadUInt16();
+            item.targets = reader.ReadUInt16();
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();

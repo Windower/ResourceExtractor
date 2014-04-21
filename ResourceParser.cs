@@ -118,7 +118,7 @@ namespace ResourceExtractor
                     spell.mp_cost = reader.ReadInt16();
                     spell.cast_time = reader.ReadByte();
                     spell.recast = reader.ReadByte();
-                    spell.levels = reader.ReadBytes(0x18);
+                    var levels = reader.ReadBytes(0x18);
                     spell.recast_id = reader.ReadInt16();
                     spell.icon_id = reader.ReadByte();
 
@@ -139,6 +139,16 @@ namespace ResourceExtractor
                     case 64:
                         spell.element = -1;
                         break;
+                    }
+
+                    spell.levels = new Dictionary<int, int>();
+                    // Discard last entry, always a copy of white mages...
+                    for (var j = 0; j < levels.Length - 1; ++j)
+                    {
+                        if (levels[j] != 0xFF)
+                        {
+                            spell.levels[j] = levels[j];
+                        }
                     }
                 }
 

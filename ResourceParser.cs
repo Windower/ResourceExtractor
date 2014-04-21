@@ -51,16 +51,22 @@ namespace ResourceExtractor
 
                 dynamic ability = new ExpandoObject();
 
-                ability.id = data[0] | data[1] << 8;
-                ability.type = (AbilityType) data[2];
-                ability.prefix = ((AbilityType) ability.type).Prefix();
-                ability.mp_cost = data[6] | data[7] << 8;
-                ability.recast_id = data[8] | data[9] << 8;
-                ability.targets = (ValidTargets) (data[10] | data[11] << 8);
-                ability.tp_cost = data[12] == 0xFF ? 0 : data[12];
-                ability.monster_level = data[15];
-                ability.skill = Skill.None;
-                ability.element = Element.None;
+                using (BinaryReader reader = new BinaryReader(new MemoryStream(data)))
+                {
+                    ability.id = reader.ReadInt16();
+                    ability.type = (AbilityType) reader.ReadByte();
+                    reader.ReadBytes(0x03);     // Unknown 03 - 05
+                    ability.mp_cost = reader.ReadInt16();
+                    ability.recast_id = reader.ReadInt16();
+                    ability.targets = reader.ReadInt16();
+                    var tp_cost = reader.ReadSByte();
+                    ability.tp_cost = tp_cost == -1 ? 0 : tp_cost;
+                    reader.ReadBytes(0x02);     // Unknown 0D - 0E
+                    ability.monster_level = reader.ReadByte();
+
+                    // Derived data
+                    ability.prefix = ((AbilityType) ability.type).Prefix();
+                }
 
                 abilities.Add(ability);
             }
@@ -101,19 +107,40 @@ namespace ResourceExtractor
 
                 dynamic spell = new ExpandoObject();
 
-                spell.recast_id = BitConverter.ToInt16(data, 0);
-                spell.type = (MagicType) BitConverter.ToInt16(data, 2);
-                spell.prefix = ((MagicType) spell.type).Prefix();
-                spell.targets = (ValidTargets) BitConverter.ToInt16(data, 6);
-                spell.skill = (Skill) BitConverter.ToInt16(data, 8);
-                spell.mp_cost = BitConverter.ToInt16(data, 10);
-                spell.cast_time = data[12];
-                spell.recast = data[13];
-                spell.levels = new byte[24];
-                Array.Copy(data, 14, spell.levels, 0, spell.levels.Length);
-                spell.id = BitConverter.ToInt16(data, 38);
-                spell.icon_id = data[40];
-                spell.element = (Element) (spell.icon_id == 64 ? -1 : spell.icon_id - 56);
+                using (BinaryReader reader = new BinaryReader(new MemoryStream(data)))
+                {
+                    spell.recast_id = reader.ReadInt16();
+                    spell.type = (MagicType) reader.ReadInt16();
+                    spell.element = reader.ReadByte();
+                    reader.ReadByte();          // Unknown 05 - 05, possibly just padding or element being a short
+                    spell.targets = reader.ReadInt16();
+                    spell.skill = reader.ReadInt16();
+                    spell.mp_cost = reader.ReadInt16();
+                    spell.cast_time = reader.ReadByte();
+                    spell.recast = reader.ReadByte();
+                    spell.levels = reader.ReadBytes(0x18);
+                    spell.id = reader.ReadInt16();
+                    spell.icon_id = reader.ReadByte();
+
+                    // Derived data
+                    spell.prefix = ((MagicType) spell.type).Prefix();
+                    switch ((byte) spell.icon_id)
+                    {
+                    case 56:
+                    case 57:
+                    case 58:
+                    case 59:
+                    case 60:
+                    case 61:
+                    case 62:
+                    case 63:
+                        spell.element = spell.icon_id - 56;
+                        break;
+                    case 64:
+                        spell.element = -1;
+                        break;
+                    }
+                }
 
                 spells.Add(spell);
             }

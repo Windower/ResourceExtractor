@@ -47,22 +47,34 @@ namespace ResourceExtractor.Serializers.Lua
         }
         private static string MakeValue(object Value)
         {
-            var vdict = Value as IDictionary<string, object>;
-            if (vdict != null)
-            {
-                return "{" + String.Join(",", vdict.Select(v => String.Format("{0}={1}", MakeKey(v.Key), MakeValue(v.Value)))) + "}";
-            }
-
             if (Value is String || Value is Enum)
             {
                 return "\"" + Value.ToString() + "\"";
             }
 
-            if (Value is IEnumerable)
+            var vdict = Value as IDictionary;
+            if (vdict != null)
             {
                 string str = "{";
                 bool first = true;
-                foreach (var v in (IEnumerable) Value)
+                foreach (var v in vdict.Keys)
+                {
+                    str += first ? "" : ",";
+                    str += MakeKey(v);
+                    str += "=";
+                    str += MakeValue(vdict[v]);
+                    first = false;
+                }
+                str += "}";
+                return str;
+            }
+
+            var venum = Value as IEnumerable;
+            if (venum != null)
+            {
+                string str = "{";
+                bool first = true;
+                foreach (var v in venum)
                 {
                     str += first ? "" : ",";
                     str += v.ToString();

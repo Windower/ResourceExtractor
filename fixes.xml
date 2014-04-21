@@ -25,31 +25,31 @@ IN THE SOFTWARE.
   <timers>
     <update>
       <!-- Shared Timers -->
-      <a id="0" english="SP Ability" german="SP Fähigkeit" french="SP aptitude" japanese="SPアビリティ" />
-      <a id="10" english="Rune Enchantment" german="Verzauber.-Rune" french="Runes enchant." japanese="エンチャントルーン" />
-      <a id="61" english="Steal/Despoil" german="Stehlen/Fleddern" french="Vol/Pillage" japanese="ぬすむ/ぶんどる" />
-      <a id="69" english="Accomp./Collab." german="Accomplice/Kollaborateur" french="Complice/Acolyte" japanese="アカンプリス/コラボレーター" />
-      <a id="101" english="Stay/Heel/Leave" german="Verharren/Bei Fuß/Freilassen" french="Assis !/Au pied !/Va-t'en !" japanese="まってろ/もどれ/かえれ" />
-      <a id="102" english="Sic/Ready" german="Spezial/Sturm und Drang" french="Vas-y !/Obéis !" japanese="ほんきだせ/しじをさせろ" />
-      <a id="126" english="Unlimited/Double Shot" german="Dauerschuss/Doppelschuss" french="Tirs illimités/Double tir" japanese="エンドレスショット/ダブルショット" />
-      <a id="158" english="Jump/Spirit Jump" german="Sprung/Seelensprung" french="Saut/Saut d'esprit" japanese="ジャンプ/スピリットジャンプ" />
-      <a id="159" english="High/Soul Jump" german="Hochsprung/Psycho-Sprung" french="Saut aérien/Saut de l'âme" japanese="ハイジャンプ/ソウルジャンプ" />
-      <a id="173" english="Blood Pact: Rage" german="Blutsbund: Zorn" french="Pacte sang : rage" japanese="契約の履行:幻術" />
-      <a id="174" english="Blood Pact: Ward" german="Blutsbund: Hilfe" french="Pacte sang : abri" japanese="契約の履行:験術" />
-      <a id="193" english="Phantom Roll" german="Phantom-Wurf" french="Jet fantôme" japanese="ファントムロール" />
-      <a id="195" english="Quick Draw" german="Schnellschuss" french="Tirage vif" japanese="クイックドロー" />
-      <a id="210" english="Maneuvers" german="Manöver" french="Manœuvres" japanese="マニューバ" />
-      <a id="215" english="Healing Waltz" german="Kur-Walzer" french="Valse curative" japanese="ヒーリングワルツ" />
-      <a id="216" english="Sambas" german="Samba-Rhythmen" french="Sambas" japanese="サンバモード" />
-      <a id="217" english="Curing Waltz" german="Heilender Walzer" french="Valse Soin" japanese="ケアルワルツ" />
-      <a id="218" english="Jigs" german="Tango-Rhythmen" french="Gigues" japanese="ジグモード" />
-      <a id="220" english="Steps" german="Tanzschritte" french="Pas" japanese="ステップ" />
-      <a id="221" english="Flourishes I" german="Polka-Rhythmen" french="Pirouettes I" japanese="フラリッシュI" />
-      <a id="222" english="Flourishes II" german="Polka-R. II" french="Pirouettes II" japanese="フラリッシュII" />
-      <a id="225" english="Divine Waltz" german="Walzer der Göttin" french="Valse divine" japanese="ディバインワルツ" />
-      <a id="226" english="Flourishes III" german="Polka-Rhythm. III" french="Pirouettes III" japanese="フラリッシュIII" />
-      <a id="231" english="Stratagems" german="Schultz' Kriegsl." french="Stratagèmes" japanese="戦術魔道書" />
-      <a id="254" english="SP Ability II" german="SP Fähigkeit II" french="SP aptitude II" japanese="SPアビリティII" />
+      <a id="0" en="SP Ability" de="SP Fähigkeit" fr="SP aptitude" ja="SPアビリティ" />
+      <a id="10" en="Rune Enchantment" de="Verzauber.-Rune" fr="Runes enchant." ja="エンチャントルーン" />
+      <a id="61" en="Steal/Despoil" de="Stehlen/Fleddern" fr="Vol/Pillage" ja="ぬすむ/ぶんどる" />
+      <a id="69" en="Accomp./Collab." de="Accomplice/Kollaborateur" fr="Complice/Acolyte" ja="アカンプリス/コラボレーター" />
+      <a id="101" en="Stay/Heel/Leave" de="Verharren/Bei Fuß/Freilassen" fr="Assis !/Au pied !/Va-t'en !" ja="まってろ/もどれ/かえれ" />
+      <a id="102" en="Sic/Ready" de="Spezial/Sturm und Drang" fr="Vas-y !/Obéis !" ja="ほんきだせ/しじをさせろ" />
+      <a id="126" en="Unlimited/Double Shot" de="Dauerschuss/Doppelschuss" fr="Tirs illimités/Double tir" ja="エンドレスショット/ダブルショット" />
+      <a id="158" en="Jump/Spirit Jump" de="Sprung/Seelensprung" fr="Saut/Saut d'esprit" ja="ジャンプ/スピリットジャンプ" />
+      <a id="159" en="High/Soul Jump" de="Hochsprung/Psycho-Sprung" fr="Saut aérien/Saut de l'âme" ja="ハイジャンプ/ソウルジャンプ" />
+      <a id="173" en="Blood Pact: Rage" de="Blutsbund: Zorn" fr="Pacte sang : rage" ja="契約の履行:幻術" />
+      <a id="174" en="Blood Pact: Ward" de="Blutsbund: Hilfe" fr="Pacte sang : abri" ja="契約の履行:験術" />
+      <a id="193" en="Phantom Roll" de="Phantom-Wurf" fr="Jet fantôme" ja="ファントムロール" />
+      <a id="195" en="Quick Draw" de="Schnellschuss" fr="Tirage vif" ja="クイックドロー" />
+      <a id="210" en="Maneuvers" de="Manöver" fr="Manœuvres" ja="マニューバ" />
+      <a id="215" en="Healing Waltz" de="Kur-Walzer" fr="Valse curative" ja="ヒーリングワルツ" />
+      <a id="216" en="Sambas" de="Samba-Rhythmen" fr="Sambas" ja="サンバモード" />
+      <a id="217" en="Curing Waltz" de="Heilender Walzer" fr="Valse Soin" ja="ケアルワルツ" />
+      <a id="218" en="Jigs" de="Tango-Rhythmen" fr="Gigues" ja="ジグモード" />
+      <a id="220" en="Steps" de="Tanzschritte" fr="Pas" ja="ステップ" />
+      <a id="221" en="Flourishes I" de="Polka-Rhythmen" fr="Pirouettes I" ja="フラリッシュI" />
+      <a id="222" en="Flourishes II" de="Polka-R. II" fr="Pirouettes II" ja="フラリッシュII" />
+      <a id="225" en="Divine Waltz" de="Walzer der Göttin" fr="Valse divine" ja="ディバインワルツ" />
+      <a id="226" en="Flourishes III" de="Polka-Rhythm. III" fr="Pirouettes III" ja="フラリッシュIII" />
+      <a id="231" en="Stratagems" de="Schultz' Kriegsl." fr="Stratagèmes" ja="戦術魔道書" />
+      <a id="254" en="SP Ability II" de="SP Fähigkeit II" fr="SP aptitude II" ja="SPアビリティII" />
     </update>
   </timers>
   <abilities>
@@ -58,14 +58,14 @@ IN THE SOFTWARE.
       <a id="1" prefix="/range" targets="Enemy" />
 
       <!-- Corsair Shots -->
-      <a id="125" element="Fire" />
-      <a id="126" element="Ice" />
-      <a id="127" element="Wind" />
-      <a id="128" element="Earth" />
-      <a id="129" element="Lightning" />
-      <a id="130" element="Water" />
-      <a id="131" element="Light" />
-      <a id="132" element="Dark" />
+      <a id="125" element="0" />
+      <a id="126" element="1" />
+      <a id="127" element="2" />
+      <a id="128" element="3" />
+      <a id="129" element="4" />
+      <a id="130" element="5" />
+      <a id="131" element="6" />
+      <a id="132" element="7" />
 
       <!-- Skillchains -->
       <a id="769" wsA="Impaction" wsB="" wsC="" /> <!-- Combo -->
@@ -290,56 +290,56 @@ IN THE SOFTWARE.
       <a id="1023" wsA="" wsB="" wsC="" /> <!-- Dimensional Death -->
 
       <!-- Elemental Weapon Skills -->
-      <a id="787" element="Wind" /> <!-- Gust Slash -->
-      <a id="788" element="Wind" /> <!-- Cyclone -->
-      <a id="789" element="Dark" /> <!-- Energy Steal -->
-      <a id="790" element="Dark" /> <!-- Energy Drain -->
-      <a id="798" element="Wind" /> <!-- Aeolian Edge -->
-      <a id="801" element="Fire" /> <!-- Burning Blade -->
-      <a id="802" element="Fire" /> <!-- Red Lotus Blade -->
-      <a id="804" element="Light" /> <!-- Shining Blade -->
-      <a id="805" element="Light" /> <!-- Seraph Blade -->
-      <a id="807" element="NonElemental" /> <!-- Spirits Within -->
-      <a id="813" element="NonElemental" /> <!-- Atonement -->
-      <a id="815" element="Dark" /> <!-- Sanguine Blade -->
-      <a id="818" element="Ice" /> <!-- Frostbite -->
-      <a id="819" element="Ice" /> <!-- Freezebite -->
-      <a id="826" element="Ice" /> <!-- Herculean Slash -->
-      <a id="842" element="Light" /> <!-- Primal Rend -->
-      <a id="844" element="Thunder" /> <!-- Cloudsplitter -->
-      <a id="865" element="Dark" /> <!-- Dark Harvest -->
-      <a id="866" element="Dark" /> <!-- Shadow of Death -->
-      <a id="867" element="Dark" /> <!-- Nightmare Scythe -->
-      <a id="875" element="Dark" /> <!-- Infernal Scythe -->
-      <a id="881" element="Thunder" /> <!-- Thunder Thrust -->
-      <a id="882" element="Thunder" /> <!-- Raiden Thrust -->
-      <a id="898" element="Water" /> <!-- Blade: Teki -->
-      <a id="899" element="Ice" /> <!-- Blade: To -->
-      <a id="900" element="Earth" /> <!-- Blade: Chi -->
-      <a id="901" element="Dark" /> <!-- Blade: Ei -->
-      <a id="907" element="Water" /> <!-- Blade: Yu -->
-      <a id="914" element="Thunder" /> <!-- Tachi: Goten -->
-      <a id="915" element="Fire" /> <!-- Tachi: Kagero -->
-      <a id="916" element="Wind" /> <!-- Tachi: Jinpu -->
-      <a id="917" element="Light" /> <!-- Tachi: Koki -->
-      <a id="928" element="Light" /> <!-- Shining Strike -->
-      <a id="929" element="Light" /> <!-- Seraph Strike -->
-      <a id="940" element="Light" /> <!-- Flash Nova -->
-      <a id="945" element="Earth" /> <!-- Rock Crusher -->
-      <a id="946" element="Earth" /> <!-- Earth Crusher -->
-      <a id="947" element="Light, Dark" /> <!-- Starburst -->
-      <a id="948" element="Light, Dark" /> <!-- Sunburst -->
-      <a id="954" element="Dark" /> <!-- Vidohunir -->
-      <a id="955" element="Light" /> <!-- Garland of Bliss -->
-      <a id="956" element="Dark" /> <!-- Omniscience -->
-      <a id="957" element="Dark" /> <!-- Cataclysm -->
-      <a id="960" element="Fire" /> <!-- Flaming Arrow -->
-      <a id="976" element="Fire" /> <!-- Hot Shot -->
-      <a id="985" element="Light" /> <!-- Trueflight -->
-      <a id="986" element="Dark" /> <!-- Leaden Salute -->
-      <a id="987" element="Ice" /> <!-- Numbing Shot -->
-      <a id="988" element="Fire" /> <!-- Wildfire -->
-      <a id="1006" element="Light" /> <!-- Uriel Blade -->
+      <a id="787" element="2" /> <!-- Gust Slash -->
+      <a id="788" element="2" /> <!-- Cyclone -->
+      <a id="789" element="7" /> <!-- Energy Steal -->
+      <a id="790" element="7" /> <!-- Energy Drain -->
+      <a id="798" element="2" /> <!-- Aeolian Edge -->
+      <a id="801" element="0" /> <!-- Burning Blade -->
+      <a id="802" element="0" /> <!-- Red Lotus Blade -->
+      <a id="804" element="6" /> <!-- Shining Blade -->
+      <a id="805" element="6" /> <!-- Seraph Blade -->
+      <a id="807" element="15" /> <!-- Spirits Within -->
+      <a id="813" element="15" /> <!-- Atonement -->
+      <a id="815" element="7" /> <!-- Sanguine Blade -->
+      <a id="818" element="1" /> <!-- Frostbite -->
+      <a id="819" element="1" /> <!-- Freezebite -->
+      <a id="826" element="1" /> <!-- Herculean Slash -->
+      <a id="842" element="6" /> <!-- Primal Rend -->
+      <a id="844" element="4" /> <!-- Cloudsplitter -->
+      <a id="865" element="7" /> <!-- Dark Harvest -->
+      <a id="866" element="7" /> <!-- Shadow of Death -->
+      <a id="867" element="7" /> <!-- Nightmare Scythe -->
+      <a id="875" element="7" /> <!-- Infernal Scythe -->
+      <a id="881" element="4" /> <!-- 4 Thrust -->
+      <a id="882" element="4" /> <!-- Raiden Thrust -->
+      <a id="898" element="5" /> <!-- Blade: Teki -->
+      <a id="899" element="1" /> <!-- Blade: To -->
+      <a id="900" element="3" /> <!-- Blade: Chi -->
+      <a id="901" element="7" /> <!-- Blade: Ei -->
+      <a id="907" element="5" /> <!-- Blade: Yu -->
+      <a id="914" element="4" /> <!-- Tachi: Goten -->
+      <a id="915" element="0" /> <!-- Tachi: Kagero -->
+      <a id="916" element="2" /> <!-- Tachi: Jinpu -->
+      <a id="917" element="6" /> <!-- Tachi: Koki -->
+      <a id="928" element="6" /> <!-- Shining Strike -->
+      <a id="929" element="6" /> <!-- Seraph Strike -->
+      <a id="940" element="6" /> <!-- Flash Nova -->
+      <a id="945" element="3" /> <!-- Rock Crusher -->
+      <a id="946" element="3" /> <!-- 3 Crusher -->
+      <a id="947" element="6" /> <!-- Starburst -->
+      <a id="948" element="6" /> <!-- Sunburst -->
+      <a id="954" element="7" /> <!-- Vidohunir -->
+      <a id="955" element="6" /> <!-- Garland of Bliss -->
+      <a id="956" element="7" /> <!-- Omniscience -->
+      <a id="957" element="7" /> <!-- Cataclysm -->
+      <a id="960" element="0" /> <!-- Flaming Arrow -->
+      <a id="976" element="0" /> <!-- Hot Shot -->
+      <a id="985" element="6" /> <!-- Trueflight -->
+      <a id="986" element="7" /> <!-- Leaden Salute -->
+      <a id="987" element="1" /> <!-- Numbing Shot -->
+      <a id="988" element="0" /> <!-- Wildfire -->
+      <a id="1006" element="6" /> <!-- Uriel Blade -->
     </update>
     <remove>
       <!-- Ability Categories -->

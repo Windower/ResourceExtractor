@@ -289,6 +289,213 @@ IN THE SOFTWARE.
       <a id="1022" wsA="" wsB="" wsC="" /> <!-- Vulcan Shot -->
       <a id="1023" wsA="" wsB="" wsC="" /> <!-- Dimensional Death -->
 
+      <!-- Skills -->
+      <a id="769" skill="1" /> <!-- Combo -->
+      <a id="770" skill="1" /> <!-- Shoulder Tackle -->
+      <a id="771" skill="1" /> <!-- One Inch Punch -->
+      <a id="772" skill="1" /> <!-- Backhand Blow -->
+      <a id="773" skill="1" /> <!-- Raging Fists -->
+      <a id="774" skill="1" /> <!-- Spinning Attack -->
+      <a id="775" skill="1" /> <!-- Howling Fist -->
+      <a id="776" skill="1" /> <!-- Dragon Kick -->
+      <a id="777" skill="1" /> <!-- Asuran Fists -->
+      <a id="778" skill="1" /> <!-- Final Heaven -->
+      <a id="779" skill="1" /> <!-- Ascetic's Fury -->
+      <a id="780" skill="1" /> <!-- Stringing Pummel -->
+      <a id="781" skill="1" /> <!-- Tornado Kick -->
+      <a id="782" skill="1" /> <!-- Victory Smite -->
+      <a id="783" skill="1" /> <!-- Shijin Spiral -->
+      <a id="784" skill="2" /> <!-- Wasp Sting -->
+      <a id="785" skill="2" /> <!-- Viper Bite -->
+      <a id="786" skill="2" /> <!-- Shadowstitch -->
+      <a id="787" skill="2" /> <!-- Gust Slash -->
+      <a id="788" skill="2" /> <!-- Cyclone -->
+      <a id="789" skill="2" /> <!-- Energy Steal -->
+      <a id="790" skill="2" /> <!-- Energy Drain -->
+      <a id="791" skill="2" /> <!-- Dancing Edge -->
+      <a id="792" skill="2" /> <!-- Shark Bite -->
+      <a id="793" skill="2" /> <!-- Evisceration -->
+      <a id="794" skill="2" /> <!-- Mercy Stroke -->
+      <a id="795" skill="2" /> <!-- Mandalic Stab -->
+      <a id="796" skill="2" /> <!-- Mordant Rime -->
+      <a id="797" skill="2" /> <!-- Pyrrhic Kleos -->
+      <a id="798" skill="2" /> <!-- Aeolian Edge -->
+      <a id="799" skill="2" /> <!-- Rudra's Storm -->
+      <a id="800" skill="3" /> <!-- Fast Blade -->
+      <a id="801" skill="3" /> <!-- Burning Blade -->
+      <a id="802" skill="3" /> <!-- Red Lotus Blade -->
+      <a id="803" skill="3" /> <!-- Flat Blade -->
+      <a id="804" skill="3" /> <!-- Shining Blade -->
+      <a id="805" skill="3" /> <!-- Seraph Blade -->
+      <a id="806" skill="3" /> <!-- Circle Blade -->
+      <a id="807" skill="3" /> <!-- Spirits Within -->
+      <a id="808" skill="3" /> <!-- Vorpal Blade -->
+      <a id="809" skill="3" /> <!-- Swift Blade -->
+      <a id="810" skill="3" /> <!-- Savage Blade -->
+      <a id="811" skill="3" /> <!-- Knights of Round -->
+      <a id="812" skill="3" /> <!-- Death Blossom -->
+      <a id="813" skill="3" /> <!-- Atonement -->
+      <a id="814" skill="3" /> <!-- Expiacion -->
+      <a id="815" skill="3" /> <!-- Sanguine Blade -->
+      <a id="816" skill="4" /> <!-- Hard Slash -->
+      <a id="817" skill="4" /> <!-- Power Slash -->
+      <a id="818" skill="4" /> <!-- Frostbite -->
+      <a id="819" skill="4" /> <!-- Freezebite -->
+      <a id="820" skill="4" /> <!-- Shockwave -->
+      <a id="821" skill="4" /> <!-- Crescent Moon -->
+      <a id="822" skill="4" /> <!-- Sickle Moon -->
+      <a id="823" skill="4" /> <!-- Spinning Slash -->
+      <a id="824" skill="4" /> <!-- Ground Strike -->
+      <a id="825" skill="4" /> <!-- Scourge -->
+      <a id="826" skill="4" /> <!-- Herculean Slash -->
+      <a id="827" skill="4" /> <!-- Torcleaver -->
+      <a id="828" skill="4" /> <!-- Resolution -->
+      <a id="832" skill="5" /> <!-- Raging Axe -->
+      <a id="833" skill="5" /> <!-- Smash Axe -->
+      <a id="834" skill="5" /> <!-- Gale Axe -->
+      <a id="835" skill="5" /> <!-- Avalanche Axe -->
+      <a id="836" skill="5" /> <!-- Spinning Axe -->
+      <a id="837" skill="5" /> <!-- Rampage -->
+      <a id="838" skill="5" /> <!-- Calamity -->
+      <a id="839" skill="5" /> <!-- Mistral Axe -->
+      <a id="840" skill="5" /> <!-- Decimation -->
+      <a id="841" skill="5" /> <!-- Onslaught -->
+      <a id="842" skill="5" /> <!-- Primal Rend -->
+      <a id="843" skill="5" /> <!-- Bora Axe -->
+      <a id="844" skill="5" /> <!-- Cloudsplitter -->
+      <a id="845" skill="5" /> <!-- Ruinator -->
+      <a id="848" skill="6" /> <!-- Shield Break -->
+      <a id="849" skill="6" /> <!-- Iron Tempest -->
+      <a id="850" skill="6" /> <!-- Sturmwind -->
+      <a id="851" skill="6" /> <!-- Armor Break -->
+      <a id="852" skill="6" /> <!-- Keen Edge -->
+      <a id="853" skill="6" /> <!-- Weapon Break -->
+      <a id="854" skill="6" /> <!-- Raging Rush -->
+      <a id="855" skill="6" /> <!-- Full Break -->
+      <a id="856" skill="6" /> <!-- Steel Cyclone -->
+      <a id="857" skill="6" /> <!-- Metatron Torment -->
+      <a id="858" skill="6" /> <!-- King's Justice -->
+      <a id="859" skill="6" /> <!-- Fell Cleave -->
+      <a id="860" skill="6" /> <!-- Ukko's Fury -->
+      <a id="861" skill="6" /> <!-- Upheaval -->
+      <a id="864" skill="7" /> <!-- Slice -->
+      <a id="865" skill="7" /> <!-- Dark Harvest -->
+      <a id="866" skill="7" /> <!-- Shadow of Death -->
+      <a id="867" skill="7" /> <!-- Nightmare Scythe -->
+      <a id="868" skill="7" /> <!-- Spinning Scythe -->
+      <a id="869" skill="7" /> <!-- Vorpal Scythe -->
+      <a id="870" skill="7" /> <!-- Guillotine -->
+      <a id="871" skill="7" /> <!-- Cross Reaper -->
+      <a id="872" skill="7" /> <!-- Spiral Hell -->
+      <a id="873" skill="7" /> <!-- Catastrophe -->
+      <a id="874" skill="7" /> <!-- Insurgency -->
+      <a id="875" skill="7" /> <!-- Infernal Scythe -->
+      <a id="876" skill="7" /> <!-- Quietus -->
+      <a id="877" skill="7" /> <!-- Entropy -->
+      <a id="880" skill="8" /> <!-- Double Thrust -->
+      <a id="881" skill="8" /> <!-- Thunder Thrust -->
+      <a id="882" skill="8" /> <!-- Raiden Thrust -->
+      <a id="883" skill="8" /> <!-- Leg Sweep -->
+      <a id="884" skill="8" /> <!-- Penta Thrust -->
+      <a id="885" skill="8" /> <!-- Vorpal Thrust -->
+      <a id="886" skill="8" /> <!-- Skewer -->
+      <a id="887" skill="8" /> <!-- Wheeling Thrust -->
+      <a id="888" skill="8" /> <!-- Impulse Drive -->
+      <a id="889" skill="8" /> <!-- Geirskogul -->
+      <a id="890" skill="8" /> <!-- Drakesbane -->
+      <a id="891" skill="8" /> <!-- Sonic Thrust -->
+      <a id="892" skill="8" /> <!-- Camlann's Torment -->
+      <a id="893" skill="8" /> <!-- Stardiver -->
+      <a id="896" skill="9" /> <!-- Blade: Rin -->
+      <a id="897" skill="9" /> <!-- Blade: Retsu -->
+      <a id="898" skill="9" /> <!-- Blade: Teki -->
+      <a id="899" skill="9" /> <!-- Blade: To -->
+      <a id="900" skill="9" /> <!-- Blade: Chi -->
+      <a id="901" skill="9" /> <!-- Blade: Ei -->
+      <a id="902" skill="9" /> <!-- Blade: Jin -->
+      <a id="903" skill="9" /> <!-- Blade: Ten -->
+      <a id="904" skill="9" /> <!-- Blade: Ku -->
+      <a id="905" skill="9" /> <!-- Blade: Metsu -->
+      <a id="906" skill="9" /> <!-- Blade: Kamu -->
+      <a id="907" skill="9" /> <!-- Blade: Yu -->
+      <a id="908" skill="9" /> <!-- Blade: Hi -->
+      <a id="909" skill="9" /> <!-- Blade: Shun -->
+      <a id="912" skill="10" /> <!-- Tachi: Enpi -->
+      <a id="913" skill="10" /> <!-- Tachi: Hobaku -->
+      <a id="914" skill="10" /> <!-- Tachi: Goten -->
+      <a id="915" skill="10" /> <!-- Tachi: Kagero -->
+      <a id="916" skill="10" /> <!-- Tachi: Jinpu -->
+      <a id="917" skill="10" /> <!-- Tachi: Koki -->
+      <a id="918" skill="10" /> <!-- Tachi: Yukikaze -->
+      <a id="919" skill="10" /> <!-- Tachi: Gekko -->
+      <a id="920" skill="10" /> <!-- Tachi: Kasha -->
+      <a id="921" skill="10" /> <!-- Tachi: Kaiten -->
+      <a id="922" skill="10" /> <!-- Tachi: Rana -->
+      <a id="923" skill="10" /> <!-- Tachi: Ageha -->
+      <a id="924" skill="10" /> <!-- Tachi: Fudo -->
+      <a id="925" skill="10" /> <!-- Tachi: Shoha -->
+      <a id="928" skill="11" /> <!-- Shining Strike -->
+      <a id="929" skill="11" /> <!-- Seraph Strike -->
+      <a id="930" skill="11" /> <!-- Brainshaker -->
+      <a id="931" skill="11" /> <!-- Starlight -->
+      <a id="932" skill="11" /> <!-- Moonlight -->
+      <a id="933" skill="11" /> <!-- Skullbreaker -->
+      <a id="934" skill="11" /> <!-- True Strike -->
+      <a id="935" skill="11" /> <!-- Judgment -->
+      <a id="936" skill="11" /> <!-- Hexa Strike -->
+      <a id="937" skill="11" /> <!-- Black Halo -->
+      <a id="938" skill="11" /> <!-- Randgrith -->
+      <a id="939" skill="11" /> <!-- Mystic Boon -->
+      <a id="940" skill="11" /> <!-- Flash Nova -->
+      <a id="941" skill="11" /> <!-- Dagan -->
+      <a id="942" skill="11" /> <!-- Realmrazer -->
+      <a id="944" skill="12" /> <!-- Heavy Swing -->
+      <a id="945" skill="12" /> <!-- Rock Crusher -->
+      <a id="946" skill="12" /> <!-- Earth Crusher -->
+      <a id="947" skill="12" /> <!-- Starburst -->
+      <a id="948" skill="12" /> <!-- Sunburst -->
+      <a id="949" skill="12" /> <!-- Shell Crusher -->
+      <a id="950" skill="12" /> <!-- Full Swing -->
+      <a id="951" skill="12" /> <!-- Spirit Taker -->
+      <a id="952" skill="12" /> <!-- Retribution -->
+      <a id="953" skill="12" /> <!-- Gate of Tartarus -->
+      <a id="954" skill="12" /> <!-- Vidohunir -->
+      <a id="955" skill="12" /> <!-- Garland of Bliss -->
+      <a id="956" skill="12" /> <!-- Omniscience -->
+      <a id="957" skill="12" /> <!-- Cataclysm -->
+      <a id="958" skill="12" /> <!-- Myrkr -->
+      <a id="959" skill="12" /> <!-- Shattersoul -->
+      <a id="960" skill="25" /> <!-- Flaming Arrow -->
+      <a id="961" skill="25" /> <!-- Piercing Arrow -->
+      <a id="962" skill="25" /> <!-- Dulling Arrow -->
+      <a id="964" skill="25" /> <!-- Sidewinder -->
+      <a id="965" skill="25" /> <!-- Blast Arrow -->
+      <a id="966" skill="25" /> <!-- Arching Arrow -->
+      <a id="967" skill="25" /> <!-- Empyreal Arrow -->
+      <a id="968" skill="25" /> <!-- Namas Arrow -->
+      <a id="969" skill="25" /> <!-- Refulgent Arrow -->
+      <a id="970" skill="25" /> <!-- Jishnu's Radiance -->
+      <a id="971" skill="25" /> <!-- Apex Arrow -->
+      <a id="976" skill="26" /> <!-- Hot Shot -->
+      <a id="977" skill="26" /> <!-- Split Shot -->
+      <a id="978" skill="26" /> <!-- Sniper Shot -->
+      <a id="980" skill="26" /> <!-- Slug Shot -->
+      <a id="981" skill="26" /> <!-- Blast Shot -->
+      <a id="982" skill="26" /> <!-- Heavy Shot -->
+      <a id="983" skill="26" /> <!-- Detonator -->
+      <a id="984" skill="26" /> <!-- Coronach -->
+      <a id="985" skill="26" /> <!-- Trueflight -->
+      <a id="986" skill="26" /> <!-- Leaden Salute -->
+      <a id="987" skill="26" /> <!-- Numbing Shot -->
+      <a id="988" skill="26" /> <!-- Wildfire -->
+      <a id="989" skill="26" /> <!-- Last Stand -->
+      <a id="992" skill="2" /> <!-- Exenterator -->
+      <a id="993" skill="3" /> <!-- Chant du Cygne -->
+      <a id="994" skill="3" /> <!-- Requiescat -->
+      <a id="1006" skill="2" /> <!-- Uriel Blade -->
+      <a id="1007" skill="2" /> <!-- Glory Slash -->
+      <a id="1008" skill="12" /> <!-- Tartarus Torpor -->
+
       <!-- Elemental Weapon Skills -->
       <a id="787" element="2" /> <!-- Gust Slash -->
       <a id="788" element="2" /> <!-- Cyclone -->

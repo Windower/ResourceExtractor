@@ -109,7 +109,7 @@ namespace ResourceExtractor
 
                 using (BinaryReader reader = new BinaryReader(new MemoryStream(data)))
                 {
-                    spell.recast_id = reader.ReadInt16();
+                    spell.id = reader.ReadInt16();
                     spell.type = (MagicType) reader.ReadInt16();
                     spell.element = reader.ReadByte();
                     reader.ReadByte();          // Unknown 05 - 05, possibly just padding or element being a short
@@ -119,7 +119,7 @@ namespace ResourceExtractor
                     spell.cast_time = reader.ReadByte();
                     spell.recast = reader.ReadByte();
                     spell.levels = reader.ReadBytes(0x18);
-                    spell.id = reader.ReadInt16();
+                    spell.recast_id = reader.ReadInt16();
                     spell.icon_id = reader.ReadByte();
 
                     // Derived data

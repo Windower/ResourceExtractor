@@ -397,7 +397,6 @@ namespace ResourceExtractor
                 }
             }
 
-            DisplayMessage("Loading ability and spell data...");
             foreach (object o in data)
             {
                 if (Data.abilities.Count == 0)
@@ -425,13 +424,13 @@ namespace ResourceExtractor
                 }
             }
 
+            DisplayMessage("Adding ability names...");
             if (Data.abilities == null)
             {
                 DisplayResult("Error!", ConsoleColor.DarkRed);
             }
             else
             {
-                DisplayMessage("Adding ability names...");
                 foreach (dynamic ability in Data.abilities)
                 {
                     ability.en = abilnames[Languages.English][ability.id][0];
@@ -442,13 +441,13 @@ namespace ResourceExtractor
                 DisplayResult("Done!", ConsoleColor.DarkGreen);
             }
 
+            DisplayMessage("Adding spell names...");
             if (Data.spells == null)
             {
                 DisplayResult("Error!", ConsoleColor.DarkRed);
             }
             else
             {
-                DisplayMessage("Adding spell names...");
                 foreach (dynamic spell in Data.spells)
                 {
                     spell.en = spellnames[Languages.English][spell.id][0];
@@ -543,7 +542,7 @@ namespace ResourceExtractor
 
         private static void LoadZoneData()
         {
-            LoadNames("buffs", new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 }, new int[] { 0, 0, 0, 0 });
+            LoadNames("zones", new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 }, new int[] { 0, 0, 0, 0 });
         }
 
         private static IList<IList<IList<string>>> LoadMonsterAbilityNames()

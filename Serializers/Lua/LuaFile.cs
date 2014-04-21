@@ -48,7 +48,7 @@ namespace ResourceExtractor.Serializers.Lua
             {
                 file.WriteLine("-- Automatically generated file: {0}", Name.First().ToString().ToUpper() + String.Join("", Name.Skip(1)));
                 file.WriteLine();
-                file.WriteLine("local {0} = {{", Name);
+                file.WriteLine("return {{");
 
                 foreach (var e in from e in Elements orderby e.ID select e)
                 {
@@ -56,8 +56,6 @@ namespace ResourceExtractor.Serializers.Lua
                 }
 
                 file.WriteLine("}");
-                file.WriteLine();
-                file.WriteLine("return {0}", Name);
                 file.WriteLine();
                 file.WriteLine("--[[");
                 file.WriteLine("Copyright © 2013-{0}, Windower", DateTime.Now.Year);

@@ -23,7 +23,9 @@
 namespace ResourceExtractor.Serializers.Lua
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
+    using System.Linq;
 
     class LuaAttribute
     {
@@ -36,9 +38,45 @@ namespace ResourceExtractor.Serializers.Lua
             this.Value = Value;
         }
 
+        private static string MakeKey(object Key)
+        {
+            return String.Format(
+                Key is string ? "{0}" :
+                "[{0}]",
+                Key);
+        }
+        private static string MakeValue(object Value)
+        {
+            var vdict = Value as IDictionary<string, object>;
+            if (vdict != null)
+            {
+                return "{" + String.Join(",", vdict.Select(v => String.Format("{0}={1}", MakeKey(v.Key), MakeValue(v.Value)))) + "}";
+            }
+
+            if (Value is String || Value is Enum)
+            {
+                return "\"" + Value.ToString() + "\"";
+            }
+
+            if (Value is IEnumerable)
+            {
+                string str = "{";
+                bool first = true;
+                foreach (var v in (IEnumerable) Value)
+                {
+                    str += first ? "" : ",";
+                    str += v.ToString();
+                    first = false;
+                }
+                str += "}";
+                return str;
+            }
+
+            return Value.ToString();
+        }
         public override string ToString()
         {
-            return String.Format(Value is string ? "{0}=\"{1}\"" : "{0}={1}", Key, Value);
+            return String.Format("{0}={1}", MakeKey(Key), MakeValue(Value));
         }
     }
 }

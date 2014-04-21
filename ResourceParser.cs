@@ -51,7 +51,8 @@ namespace ResourceExtractor
 
                 dynamic ability = new ExpandoObject();
 
-                using (BinaryReader reader = new BinaryReader(new MemoryStream(data)))
+                using (MemoryStream mstream = new MemoryStream(data))
+                using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
                     ability.id = reader.ReadInt16();
                     ability.type = (AbilityType) reader.ReadByte();
@@ -107,7 +108,8 @@ namespace ResourceExtractor
 
                 dynamic spell = new ExpandoObject();
 
-                using (BinaryReader reader = new BinaryReader(new MemoryStream(data)))
+                using (MemoryStream mstream = new MemoryStream(data))
+                using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
                     spell.id = reader.ReadInt16();
                     spell.type = (MagicType) reader.ReadInt16();
@@ -187,7 +189,7 @@ namespace ResourceExtractor
                            stringstreamja = new MemoryStream(dataja),
                            stringstreamde = new MemoryStream(datade),
                            stringstreamfr = new MemoryStream(datafr))
-                using (BinaryReader reader = new BinaryReader(stringstream))
+                using (BinaryReader reader = new BinaryReader(stringstream, Encoding.ASCII, true))
                 {
                     item.id = reader.ReadUInt16();
                     item.Category = "General";

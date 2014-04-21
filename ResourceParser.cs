@@ -254,14 +254,14 @@ namespace ResourceExtractor
         static private void ParseGeneralItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.targets = (ValidTargets) reader.ReadInt16();
+            item.targets = reader.ReadInt16();
 
             reader.ReadBytes(0x0A);             // Unknown 0E - 17
         }
         static private void ParseWeaponItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.valid_targets = (ValidTargets) reader.ReadUInt16();
+            item.valid_targets = reader.ReadUInt16();
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
@@ -275,7 +275,7 @@ namespace ResourceExtractor
         static private void ParseArmorItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.targets = (ValidTargets) reader.ReadUInt16();
+            item.targets = reader.ReadUInt16();
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
@@ -289,7 +289,7 @@ namespace ResourceExtractor
         static private void ParseUsableItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.targets = (ValidTargets) reader.ReadUInt16();
+            item.targets = reader.ReadUInt16();
             item.cast_time = reader.ReadUInt16();
             reader.ReadBytes(0x08);             // Unknown 10 - 17
         }

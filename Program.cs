@@ -68,14 +68,14 @@ namespace ResourceExtractor
                 LoadBuffData();
                 LoadZoneData();
                 LoadItemData();
-                
+
                 ApplyFixes();
 
-                Extract("items", new string[] { "." });
                 Extract("abilities", new string[] { "." });
                 Extract("spells", new string[] { "." });
                 Extract("buffs", new string[] { ".", "(None)", "(Imagery)" });
                 Extract("zones", new string[] { "none" });
+                Extract("items", new string[] { "." });
 
                 Console.WriteLine("Resource extraction complete!");
             }
@@ -96,7 +96,7 @@ namespace ResourceExtractor
 
             Console.Write("Press any key to exit. ");
             Console.CursorVisible = true;
-            Console.ReadKey(true);
+//            Console.ReadKey(true);
         }
 
         private static string GetBaseDirectory()
@@ -378,7 +378,7 @@ namespace ResourceExtractor
 
             try
             {
-                DisplayMessage("Looking up ability and spell data...");
+                DisplayMessage("Looking up main data stream data...");
 
                 using (FileStream stream = File.OpenRead(GetPath(0x0051)))
                 {
@@ -406,8 +406,8 @@ namespace ResourceExtractor
                     if (kvp.HasValue && kvp.Value.Key == "abilities")
                     {
                         Data.abilities = kvp.Value.Value;
+                        continue;
                     }
-                    continue;
                 }
                 if (Data.spells.Count == 0)
                 {
@@ -415,8 +415,8 @@ namespace ResourceExtractor
                     if (kvp.HasValue && kvp.Value.Key == "spells")
                     {
                         Data.spells = kvp.Value.Value;
+                        continue;
                     }
-                    continue;
                 }
 
                 if (Data.spells.Count != 0 && Data.abilities.Count != 0)

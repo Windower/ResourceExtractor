@@ -48,7 +48,7 @@ namespace ResourceExtractor.Serializers.Lua
             {
                 file.WriteLine("-- Automatically generated file: {0}", Name.First().ToString().ToUpper() + String.Join("", Name.Skip(1)));
                 file.WriteLine();
-                file.WriteLine("return {{");
+                file.WriteLine("return {");
 
                 foreach (var e in from e in Elements orderby e.ID select e)
                 {

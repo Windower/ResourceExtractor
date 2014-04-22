@@ -313,7 +313,7 @@ namespace ResourceExtractor
             {
                 var move = reader.ReadUInt16();
                 var level = reader.ReadSByte();
-                if (level != 0 && level != -1 && !item.TPMoves.ContainsKey(move))
+                if (level != 0 && level != -1 && !item.tp_moves.ContainsKey(move))
                 {
                     item.tp_moves.Add(move, level);
                 }

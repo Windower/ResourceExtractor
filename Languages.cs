@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ResourceExtractor
 {
-    static enum Languages
+    enum Languages
     {
         English = 0,
         Japanese = 1,

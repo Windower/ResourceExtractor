@@ -359,17 +359,17 @@ namespace ResourceExtractor
 
         private static void AddNames(dynamic obj, IList<IList<IList<string>>> names, int[] indices, int[] logindices)
         {
-            obj.en = names[Languages.English][obj.id][indices[Languages.English]];
-            obj.ja = names[Languages.Japanese][obj.id][indices[Languages.Japanese]];
-            obj.de = names[Languages.German][obj.id][indices[Languages.German]];
-            obj.fr = names[Languages.French][obj.id][indices[Languages.French]];
+            obj.en = names[(int) Languages.English][obj.id][indices[(int) Languages.English]];
+            obj.ja = names[(int) Languages.Japanese][obj.id][indices[(int) Languages.Japanese]];
+            obj.de = names[(int) Languages.German][obj.id][indices[(int) Languages.German]];
+            obj.fr = names[(int) Languages.French][obj.id][indices[(int) Languages.French]];
 
             if (logindices != null)
             {
-                obj.enl = names[Languages.English][obj.id][logindices[Languages.English]];
-                obj.jal = names[Languages.Japanese][obj.id][logindices[Languages.Japanese]];
-                obj.del = names[Languages.German][obj.id][logindices[Languages.German]];
-                obj.frl = names[Languages.French][obj.id][logindices[Languages.French]];
+                obj.enl = names[(int) Languages.English][obj.id][logindices[(int) Languages.English]];
+                obj.jal = names[(int) Languages.Japanese][obj.id][logindices[(int) Languages.Japanese]];
+                obj.del = names[(int) Languages.German][obj.id][logindices[(int) Languages.German]];
+                obj.frl = names[(int) Languages.French][obj.id][logindices[(int) Languages.French]];
             }
         }
 

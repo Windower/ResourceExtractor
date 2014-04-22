@@ -222,10 +222,10 @@ namespace ResourceExtractor
                     {
                         ParseMazeItem(reader, item);
                     }
-                    //else if (item.id >= 0xF000 && item.id < 0xF200)
-                    //{
-                    //    ParseMonstrosityItem(reader, item);
-                    //}
+                    else if (item.id >= 0xF000 && item.id < 0xF200)
+                    {
+                        ParseMonstrosityItem(reader, item);
+                    }
                     else if (item.id == 0xFFFF)
                     {
                         ParseBasicItem(reader, item);

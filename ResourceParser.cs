@@ -344,25 +344,25 @@ namespace ResourceExtractor
             // English
             case Languages.English:
                 item.en = DecodeEntry(reader, StringIndex.Name);
-                item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
+                item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular) ?? item.en;
                 break;
 
             // Japanese
             case Languages.Japanese:
                 item.ja = DecodeEntry(reader, StringIndex.Name);
-                item.jal = item.ja;
+                item.jal = DecodeEntry(reader, StringIndex.Name) ?? item.ja;
                 break;
 
             // German
             case Languages.German:
                 item.de = DecodeEntry(reader, StringIndex.Name);
-                item.del = DecodeEntry(reader, StringIndex.GermanLogSingular);
+                item.del = DecodeEntry(reader, StringIndex.GermanLogSingular) ?? item.de;
                 break;
 
             // French
             case Languages.French:
                 item.fr = DecodeEntry(reader, StringIndex.Name);
-                item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular);
+                item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular) ?? item.fr;
                 break;
             }
         }

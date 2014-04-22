@@ -95,10 +95,8 @@
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
     <Compile Include="Container.cs" />
-    <Compile Include="Job.cs" />
     <Compile Include="Languages.cs" />
     <Compile Include="MagicType.cs" />
-    <Compile Include="Element.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FF11ShiftJISDecoder.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -109,8 +107,6 @@
     <Compile Include="Serializers\Lua\LuaAttribute.cs" />
     <Compile Include="Serializers\Lua\LuaElement.cs" />
     <Compile Include="Serializers\Lua\LuaFile.cs" />
-    <Compile Include="Skill.cs" />
-    <Compile Include="ValidTargets.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

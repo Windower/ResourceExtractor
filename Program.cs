@@ -206,7 +206,7 @@ namespace ResourceExtractor
                 {
                     continue;
                 }
-                IList<dynamic> data = (IList<dynamic>) ((IDictionary<string, object>) Data)[fixset.Name.LocalName];
+                List<dynamic> data = (List<dynamic>) ((IDictionary<string, object>) Data)[fixset.Name.LocalName];
 
                 XElement update = fixset.Element("update");
                 if (update != null)

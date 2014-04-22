@@ -63,6 +63,24 @@ namespace ResourceExtractor
             }
         }
 
+        private enum BlockType
+        {
+            ContainerEnd = 0x00,
+            ContainerBegin = 0x01,
+            SpellData = 0x49,
+            AbilityData = 0x53,
+        }
+
+        public bool IsReadOnly
+        {
+            get { return true; }
+        }
+
+        public int Count
+        {
+            get { return list.Count; }
+        }
+
         public object this[int index]
         {
             get
@@ -74,16 +92,6 @@ namespace ResourceExtractor
             {
                 throw new NotSupportedException();
             }
-        }
-
-        public bool IsReadOnly
-        {
-            get { return true; }
-        }
-
-        public int Count
-        {
-            get { return list.Count; }
         }
 
         public bool Contains(object item)
@@ -108,7 +116,7 @@ namespace ResourceExtractor
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable) list).GetEnumerator();
+            return ((IEnumerable)list).GetEnumerator();
         }
 
         public void Add(object item)
@@ -150,7 +158,7 @@ namespace ResourceExtractor
                 case BlockType.AbilityData:
                     return new KeyValuePair<string, object>("abilities", ResourceParser.ParseAbilities(stream, header.Size));
                 default:
-                    Trace.WriteLine(String.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int) header.Type));
+                    Trace.WriteLine(string.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int)header.Type));
                     break;
             }
 
@@ -171,21 +179,13 @@ namespace ResourceExtractor
 
             public int Size
             {
-                get { return (int) (((uint) size >> 3) & ~0xF) - 16; }
+                get { return (int)(((uint)size >> 3) & ~0xF) - 16; }
             }
 
             public BlockType Type
             {
-                get { return (BlockType) (size & 0x7F); }
+                get { return (BlockType)(size & 0x7F); }
             }
-        }
-
-        private enum BlockType
-        {
-            ContainerEnd = 0x00,
-            ContainerBegin = 0x01,
-            SpellData = 0x49,
-            AbilityData = 0x53,
         }
     }
 }

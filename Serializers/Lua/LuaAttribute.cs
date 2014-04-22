@@ -1,4 +1,4 @@
-﻿// <copyright file="Container.cs" company="Windower Team">
+﻿// <copyright file="LuaAttribute.cs" company="Windower Team">
 // Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,71 +24,81 @@ namespace ResourceExtractor.Serializers.Lua
 {
     using System;
     using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
+    using System.Globalization;
+    using System.Text;
 
-    class LuaAttribute
+    internal class LuaAttribute
     {
+        public LuaAttribute(string key, object value)
+        {
+            this.Key = key;
+            this.Value = value;
+        }
+
         private string Key { get; set; }
+
         private object Value { get; set; }
 
-        public LuaAttribute(string Key, object Value)
+        public override string ToString()
         {
-            this.Key = Key;
-            this.Value = Value;
+            return string.Format(CultureInfo.InvariantCulture, "{0}={1}", MakeKey(Key), MakeValue(Value));
         }
 
-        private static string MakeKey(object Key)
+        private static string MakeKey(object key)
         {
-            return String.Format(
-                Key is string ? "{0}" :
-                "[{0}]",
-                Key);
+            return string.Format(CultureInfo.InvariantCulture, key is string ? "{0}" : "[{0}]", key);
         }
-        private static string MakeValue(object Value)
+
+        private static string MakeValue(object value)
         {
-            if (Value is String || Value is Enum)
+            if (value is string || value is Enum)
             {
-                return "\"" + Value.ToString().Replace("\"", "\\\"") + "\"";
+                return "\"" + value.ToString().Replace("\"", "\\\"") + "\"";
             }
 
-            var vdict = Value as IDictionary;
+            var vdict = value as IDictionary;
             if (vdict != null)
             {
-                string str = "{";
+                StringBuilder str = new StringBuilder("{");
+
                 bool first = true;
                 foreach (var v in vdict.Keys)
                 {
-                    str += first ? "" : ",";
-                    str += MakeKey(v);
-                    str += "=";
-                    str += MakeValue(vdict[v]);
+                    if (!first)
+                    {
+                        str.Append(',');
+                    }
+
+                    str.Append(MakeKey(v)).Append('=').Append(MakeValue(vdict[v]));
                     first = false;
                 }
-                str += "}";
-                return str;
+
+                str.Append('}');
+                return str.ToString();
             }
 
-            var venum = Value as IEnumerable;
+            var venum = value as IEnumerable;
             if (venum != null)
             {
-                string str = "{";
+                StringBuilder str = new StringBuilder("{");
+
                 bool first = true;
                 foreach (var v in venum)
                 {
-                    str += first ? "" : ",";
-                    str += v.ToString();
+                    if (!first)
+                    {
+                        str.Append(',');
+                    }
+
+                    str.Append(v);
                     first = false;
                 }
-                str += "}";
-                return str;
+
+                str.Append('}');
+                return str.ToString();
             }
 
-            return Value.ToString();
-        }
-        public override string ToString()
-        {
-            return String.Format("{0}={1}", MakeKey(Key), MakeValue(Value));
+            return value.ToString();
         }
     }
 }

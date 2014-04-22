@@ -99,7 +99,6 @@
     <Compile Include="MagicType.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FF11ShiftJISDecoder.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DMsgStringList.cs" />
@@ -109,7 +108,6 @@
     <Compile Include="Serializers\Lua\LuaFile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="codeanalysis.ruleset" />
     <None Include="extractor.snk" />

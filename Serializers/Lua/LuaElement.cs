@@ -1,4 +1,4 @@
-﻿// <copyright file="Container.cs" company="Windower Team">
+﻿// <copyright file="LuaElement.cs" company="Windower Team">
 // Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,17 +22,13 @@
 
 namespace ResourceExtractor.Serializers.Lua
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    class LuaElement
+    internal class LuaElement
     {
-        private static List<string> FixedKeys = new List<string> { "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl" };
-        public HashSet<string> Keys { get; private set; }
-        private List<LuaAttribute> Attributes { get; set; }
-        public int ID { get; private set; }
-        
+        private static List<string> fixedKeys = new List<string> { "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl" };
+
         public LuaElement(dynamic obj)
         {
             Attributes = new List<LuaAttribute>();
@@ -42,25 +38,31 @@ namespace ResourceExtractor.Serializers.Lua
             ID = obj.id;
 
             IDictionary<string, object> o = obj;
-            foreach (var Key in FixedKeys)
+            foreach (var key in fixedKeys)
             {
-                if (o.ContainsKey(Key))
+                if (o.ContainsKey(key))
                 {
-                    Attributes.Add(new LuaAttribute(Key, o[Key]));
-                    Keys.Add(Key);
+                    Attributes.Add(new LuaAttribute(key, o[key]));
+                    Keys.Add(key);
                 }
             }
 
-            foreach (var Key in from k in o.Keys where !FixedKeys.Contains(k) orderby k select k)
+            foreach (var key in from k in o.Keys where !fixedKeys.Contains(k) orderby k select k)
             {
-                Attributes.Add(new LuaAttribute(Key, o[Key]));
-                Keys.Add(Key);
+                Attributes.Add(new LuaAttribute(key, o[key]));
+                Keys.Add(key);
             }
         }
 
+        public HashSet<string> Keys { get; private set; }
+
+        public int ID { get; private set; }
+
+        private List<LuaAttribute> Attributes { get; set; }
+
         public override string ToString()
         {
-            return "{" + String.Join(",", from Attr in Attributes select Attr.ToString()) + "}";
+            return "{" + string.Join(",", from Attr in Attributes select Attr.ToString()) + "}";
         }
     }
 }

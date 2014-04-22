@@ -1,4 +1,4 @@
-﻿// <copyright file="Container.cs" company="Windower Team">
+﻿// <copyright file="LuaFile.cs" company="Windower Team">
 // Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,20 +24,24 @@ namespace ResourceExtractor.Serializers.Lua
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
 
-    class LuaFile
+    internal class LuaFile
     {
-        private string Name { get; set; }
-        private List<LuaElement> Elements { get; set; }
-        private HashSet<string> Keys { get; set; }
-        public LuaFile(string Name)
+        public LuaFile(string name)
         {
-            this.Name = Name;
+            Name = name;
             Elements = new List<LuaElement>();
             Keys = new HashSet<string>();
         }
+
+        private string Name { get; set; }
+
+        private List<LuaElement> Elements { get; set; }
+
+        private HashSet<string> Keys { get; set; }
 
         public void Add(dynamic e)
         {
@@ -48,9 +52,9 @@ namespace ResourceExtractor.Serializers.Lua
 
         public void Save()
         {
-            using (StreamWriter file = new StreamWriter(Path.Combine(Directory.GetCurrentDirectory(), "resources", "lua", String.Format("{0}.lua", Name))))
+            using (StreamWriter file = new StreamWriter(Path.Combine(Directory.GetCurrentDirectory(), "resources", "lua", string.Format(CultureInfo.InvariantCulture, "{0}.lua", Name))))
             {
-                file.WriteLine("-- Automatically generated file: {0}", Name.First().ToString().ToUpper() + String.Join("", Name.Skip(1)));
+                file.WriteLine("-- Automatically generated file: {0}{1}", char.ToUpperInvariant(Name[0]), Name.Substring(1));
                 file.WriteLine();
                 file.WriteLine("return {");
 
@@ -59,7 +63,7 @@ namespace ResourceExtractor.Serializers.Lua
                     file.WriteLine("    [{0}] = {1},", e.ID, e.ToString());
                 }
 
-                file.WriteLine("}}, {0}", "{" + String.Join(", ", Keys.Select(k => "\"" + k + "\"")) + "}");
+                file.WriteLine("}}, {0}", "{" + string.Join(", ", Keys.Select(k => "\"" + k + "\"")) + "}");
                 file.WriteLine();
                 file.WriteLine("--[[");
                 file.WriteLine("Copyright © 2013-{0}, Windower", DateTime.Now.Year);

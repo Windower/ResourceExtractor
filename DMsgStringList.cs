@@ -28,7 +28,6 @@ namespace ResourceExtractor
     using System.Globalization;
     using System.IO;
     using System.Runtime.InteropServices;
-    using ResourceExtractor;
 
     internal class DMsgStringList : IList<IList<string>>
     {
@@ -74,7 +73,7 @@ namespace ResourceExtractor
 
                     for (int i = 0; i < data.Length; i++)
                     {
-                        data[i] = (byte) ~data[i];
+                        data[i] = (byte)~data[i];
                     }
                 }
 
@@ -82,17 +81,17 @@ namespace ResourceExtractor
 
                 for (int i = 0; i < this.strings.Length; i++)
                 {
-                    int offset = (int) table[i];
-                    int length = (int) (table[i] >> 32);
+                    int offset = (int)table[i];
+                    int length = (int)(table[i] >> 32);
 
-                    int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
+                    int count = BitConverter.ToInt32(data, offset);
 
                     string[] s = new string[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = data[offset + j * 8 + 4] | data[offset + j * 8 + 5] << 8 | data[offset + j * 8 + 6] << 16 | data[offset + j * 8 + 7] << 24;
-                        int stringtype = data[offset + j * 8 + 8] | data[offset + j * 8 + 9] << 8 | data[offset + j * 8 + 10] << 16 | data[offset + j * 8 + 11] << 24;
+                        int stringoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
+                        int stringtype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
                         if (stringtype == 0)
                         {
@@ -131,7 +130,7 @@ namespace ResourceExtractor
                 {
                     for (int i = 0; i < data.Length; i++)
                     {
-                        data[i] = (byte) ~data[i];
+                        data[i] = (byte)~data[i];
                     }
                 }
 
@@ -139,16 +138,16 @@ namespace ResourceExtractor
 
                 for (int i = 0; i < this.strings.Length; i++)
                 {
-                    int offset = i * (int) header.EntrySize;
+                    int offset = i * (int)header.EntrySize;
 
-                    int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
+                    int count = BitConverter.ToInt32(data, offset);
 
                     string[] s = new string[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = data[offset + j * 8 + 4] | data[offset + j * 8 + 5] << 8 | data[offset + j * 8 + 6] << 16 | data[offset + j * 8 + 7] << 24;
-                        int stringtype = data[offset + j * 8 + 8] | data[offset + j * 8 + 9] << 8 | data[offset + j * 8 + 10] << 16 | data[offset + j * 8 + 11] << 24;
+                        int stringoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
+                        int stringtype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
                         if (stringtype == 0)
                         {
@@ -195,12 +194,12 @@ namespace ResourceExtractor
 
         int IList<IList<string>>.IndexOf(IList<string> item)
         {
-            return ((IList<IList<string>>) this.strings).IndexOf(item);
+            return ((IList<IList<string>>)this.strings).IndexOf(item);
         }
 
         bool ICollection<IList<string>>.Contains(IList<string> item)
         {
-            return ((ICollection<IList<string>>) this.strings).Contains(item);
+            return ((ICollection<IList<string>>)this.strings).Contains(item);
         }
 
         void ICollection<IList<string>>.CopyTo(IList<string>[] array, int arrayIndex)
@@ -210,7 +209,7 @@ namespace ResourceExtractor
 
         public IEnumerator<IList<string>> GetEnumerator()
         {
-            return ((IList<IList<string>>) this.strings).GetEnumerator();
+            return ((IList<IList<string>>)this.strings).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()

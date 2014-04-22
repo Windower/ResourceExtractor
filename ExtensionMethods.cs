@@ -23,8 +23,6 @@
 namespace ResourceExtractor
 {
     using System;
-    using System.Collections.Generic;
-    using System.Dynamic;
     using System.IO;
     using System.Runtime.InteropServices;
     using System.Xml.Linq;
@@ -90,7 +88,13 @@ namespace ResourceExtractor
             return Read<T>(stream);
         }
 
-        private static T[] ReadArray<T>(this Stream stream, int count)
+        public static T[] ReadArray<T>(this Stream stream, int count, uint offset)
+        {
+            stream.Position = offset;
+            return stream.ReadArray<T>(count);
+        }
+
+        public static T[] ReadArray<T>(this Stream stream, int count)
         {
             int size = Marshal.SizeOf(typeof(T));
             byte[] data = new byte[size * count];
@@ -118,29 +122,6 @@ namespace ResourceExtractor
                     Marshal.FreeHGlobal(ptr);
                 }
             }
-        }
-
-        public static T[] ReadArray<T>(this Stream stream, int count, uint offset)
-        {
-            stream.Position = offset;
-            return ReadArray<T>(stream, count);
-        }
-
-        private static int CountBits(byte b)
-        {
-            int count = 0;
-
-            while (b != 0)
-            {
-                if ((b & 1) != 0)
-                {
-                    count++;
-                }
-
-                b >>= 1;
-            }
-
-            return count;
         }
 
         // Enum values
@@ -176,6 +157,7 @@ namespace ResourceExtractor
                 case AbilityType.Monster:
                     return "/pet";
             }
+
             return "/unknown";
         }
 
@@ -197,26 +179,44 @@ namespace ResourceExtractor
                 case MagicType.Ninjutsu:
                     return "/ninjutsu";
             }
+
             return "/unknown";
         }
 
         public static object Parse(this XAttribute value)
         {
-            string str = (string) value;
+            string str = (string)value;
 
             int resint;
             if (int.TryParse(str, out resint))
             {
                 return resint;
             }
-            
+
             float resfloat;
             if (float.TryParse(str, out resfloat))
             {
                 return resfloat;
             }
-            
+
             return str;
+        }
+
+        private static int CountBits(byte b)
+        {
+            int count = 0;
+
+            while (b != 0)
+            {
+                if ((b & 1) != 0)
+                {
+                    count++;
+                }
+
+                b >>= 1;
+            }
+
+            return count;
         }
     }
 }

@@ -24,23 +24,21 @@ namespace ResourceExtractor
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Dynamic;
     using System.Globalization;
     using System.IO;
     using System.Linq;
-    using System.Reflection;
-    using System.Security.Cryptography;
     using System.Xml.Linq;
-    using System.Text;
     using Microsoft.Win32;
     using ResourceExtractor.Serializers.Lua;
 
     internal class Program
     {
+        private static dynamic model;
+
         private static string Dir { get; set; }
-        private static dynamic Data;
+
         private static void Main()
         {
 #if !DEBUG
@@ -49,12 +47,12 @@ namespace ResourceExtractor
 #endif
             Console.CursorVisible = false;
 
-            Data = new ExpandoObject();
-            Data.abilities = new List<dynamic>();
-            Data.spells = new List<dynamic>();
-            Data.zones = new List<dynamic>();
-            Data.buffs = new List<dynamic>();
-            Data.items = new List<dynamic>();
+            model = new ExpandoObject();
+            model.abilities = new List<dynamic>();
+            model.spells = new List<dynamic>();
+            model.zones = new List<dynamic>();
+            model.buffs = new List<dynamic>();
+            model.items = new List<dynamic>();
 
             Dir = GetBaseDirectory();
             if (Dir != null)
@@ -96,7 +94,7 @@ namespace ResourceExtractor
 
             Console.Write("Press any key to exit. ");
             Console.CursorVisible = true;
-//            Console.ReadKey(true);
+            ////Console.ReadKey(true);
         }
 
         private static string GetBaseDirectory()
@@ -146,7 +144,6 @@ namespace ResourceExtractor
             return Dir;
         }
 
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static void Extract(string name, string[] ignore)
         {
             DisplayMessage("Generating files for " + name + "...");
@@ -158,7 +155,7 @@ namespace ResourceExtractor
             XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
             LuaFile lua = new LuaFile(name);
 
-            foreach (dynamic obj in ((IDictionary<string, dynamic>) Data)[name])
+            foreach (dynamic obj in ((IDictionary<string, dynamic>)model)[name])
             {
                 if (IsValidName(ignore, obj))
                 {
@@ -175,7 +172,7 @@ namespace ResourceExtractor
 
             xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-            xml.Save(Path.Combine("resources", "xml", String.Format("{0}.xml", name)));
+            xml.Save(Path.Combine("resources", "xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", name)));
             lua.Save();
 
 #if !DEBUG
@@ -189,8 +186,7 @@ namespace ResourceExtractor
 
             DisplaySuccess();
         }
-        
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
+
         private static void ApplyFixes()
         {
             DisplayMessage("Applying fixes...");
@@ -206,7 +202,8 @@ namespace ResourceExtractor
                 {
                     continue;
                 }
-                List<dynamic> data = (List<dynamic>) ((IDictionary<string, object>) Data)[fixset.Name.LocalName];
+
+                List<dynamic> data = (List<dynamic>)((IDictionary<string, object>)model)[fixset.Name.LocalName];
 
                 XElement update = fixset.Element("update");
                 if (update != null)
@@ -214,23 +211,25 @@ namespace ResourceExtractor
                     foreach (XElement fix in update.Elements())
                     {
                         var elements = from e in data
-                                       where e.id == Convert.ToInt32(fix.Attribute("id").Value)
+                                       where e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture)
                                        select e;
 
                         if (!elements.Any())
                         {
                             dynamic el = new ExpandoObject();
-                            IDictionary<string, object> del = (IDictionary<string, object>) el;
+                            IDictionary<string, object> del = (IDictionary<string, object>)el;
+
                             foreach (XAttribute attr in fix.Attributes())
                             {
                                 del[attr.Name.LocalName] = attr.Parse();
                             }
+
                             data.Add(el);
                             continue;
                         }
                         else
                         {
-                            var element = (IDictionary<string, object>) elements.Single();
+                            var element = (IDictionary<string, object>)elements.Single();
                             foreach (XAttribute attr in fix.Attributes())
                             {
                                 element[attr.Name.LocalName] = attr.Parse();
@@ -244,7 +243,7 @@ namespace ResourceExtractor
                 {
                     foreach (XElement fix in remove.Elements())
                     {
-                        ((List<dynamic>) data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value));
+                        ((List<dynamic>)data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
                     }
                 }
             }
@@ -262,7 +261,7 @@ namespace ResourceExtractor
 
         private static void LoadItemData()
         {
-            Data.items = new List<dynamic>();
+            model.items = new List<dynamic>();
 
             try
             {
@@ -278,23 +277,21 @@ namespace ResourceExtractor
 
                 for (var i = 0; i < fileids[0].Length; ++i)
                 {
-                    using (
-                        FileStream  stream   = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite),
-                                    streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite),
-                                    streamde = File.Open(GetPath(fileids[2][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite),
-                                    streamfr = File.Open(GetPath(fileids[3][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (FileStream stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (FileStream streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (FileStream streamde = File.Open(GetPath(fileids[2][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (FileStream streamfr = File.Open(GetPath(fileids[3][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        Data.items.AddRange(ResourceParser.ParseItems(stream, streamja, streamde, streamfr));
+                        model.items.AddRange(ResourceParser.ParseItems(stream, streamja, streamde, streamfr));
                     }
                 }
             }
             finally
             {
-                DisplayResult(Data.items.Count != 0);
+                DisplayResult(model.items.Count != 0);
             }
         }
 
-        [SuppressMessage("Microsoft.Performance", "CA1800")]
         private static void LoadMainData()
         {
             IList<object> data = null;
@@ -302,7 +299,6 @@ namespace ResourceExtractor
             DisplayMessage("Loading main data stream...");
             try
             {
-
                 using (FileStream stream = File.OpenRead(GetPath(0x0051)))
                 {
                     data = new Container(stream);
@@ -315,12 +311,12 @@ namespace ResourceExtractor
 
             foreach (object o in data)
             {
-                if (Data.abilities.Count == 0)
+                if (model.abilities.Count == 0)
                 {
                     var kvp = o as KeyValuePair<string, object>?;
                     if (kvp.HasValue)
                     {
-                        ((IDictionary<string, object>) Data)[kvp.Value.Key] = kvp.Value.Value;
+                        ((IDictionary<string, object>)model)[kvp.Value.Key] = kvp.Value.Value;
                         continue;
                     }
                 }
@@ -357,25 +353,26 @@ namespace ResourceExtractor
             return names;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static void AddNames(dynamic obj, IList<IList<IList<string>>> names, int[] indices, int[] logindices)
         {
-            obj.en = names[(int) Languages.English][obj.id][indices[(int) Languages.English]];
-            obj.ja = names[(int) Languages.Japanese][obj.id][indices[(int) Languages.Japanese]];
-            obj.de = names[(int) Languages.German][obj.id][indices[(int) Languages.German]];
-            obj.fr = names[(int) Languages.French][obj.id][indices[(int) Languages.French]];
+            obj.en = names[(int)Languages.English][obj.id][indices[(int)Languages.English]];
+            obj.ja = names[(int)Languages.Japanese][obj.id][indices[(int)Languages.Japanese]];
+            obj.de = names[(int)Languages.German][obj.id][indices[(int)Languages.German]];
+            obj.fr = names[(int)Languages.French][obj.id][indices[(int)Languages.French]];
 
             if (logindices != null)
             {
-                obj.enl = names[(int) Languages.English][obj.id][logindices[(int) Languages.English]];
-                obj.jal = names[(int) Languages.Japanese][obj.id][logindices[(int) Languages.Japanese]];
-                obj.del = names[(int) Languages.German][obj.id][logindices[(int) Languages.German]];
-                obj.frl = names[(int) Languages.French][obj.id][logindices[(int) Languages.French]];
+                obj.enl = names[(int)Languages.English][obj.id][logindices[(int)Languages.English]];
+                obj.jal = names[(int)Languages.Japanese][obj.id][logindices[(int)Languages.Japanese]];
+                obj.del = names[(int)Languages.German][obj.id][logindices[(int)Languages.German]];
+                obj.frl = names[(int)Languages.French][obj.id][logindices[(int)Languages.French]];
             }
         }
 
-        private static void LoadNames(string Name, int[] fileids, int[] indices, int[] logindices = null)
+        private static void LoadNames(string name, int[] fileids, int[] indices, int[] logindices = null)
         {
-            DisplayMessage("Loading " + Name + " names...");
+            DisplayMessage("Loading " + name + " names...");
 
             IList<IList<IList<string>>> names = ParseNames(fileids);
             if (names == null)
@@ -383,7 +380,7 @@ namespace ResourceExtractor
                 return;
             }
 
-            var dict = (List<dynamic>) ((IDictionary<string, object>) Data)[Name];
+            var dict = (List<dynamic>)((IDictionary<string, object>)model)[name];
 
             if (dict.Any())
             {
@@ -477,12 +474,13 @@ namespace ResourceExtractor
             return result;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static bool IsValidName(string[] ignore, dynamic res)
         {
-            return !(String.IsNullOrWhiteSpace(res.en) || ignore.Contains((string) res.en)
-                || String.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string) res.ja)
-                || String.IsNullOrWhiteSpace(res.de) || ignore.Contains((string) res.de)
-                || String.IsNullOrWhiteSpace(res.fr) || ignore.Contains((string) res.fr)
+            return !(string.IsNullOrWhiteSpace(res.en) || ignore.Contains((string)res.en)
+                || string.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string)res.ja)
+                || string.IsNullOrWhiteSpace(res.de) || ignore.Contains((string)res.de)
+                || string.IsNullOrWhiteSpace(res.fr) || ignore.Contains((string)res.fr)
                 || res.en.StartsWith("#", StringComparison.Ordinal));
         }
 
@@ -494,8 +492,7 @@ namespace ResourceExtractor
             {
                 fstream.Position = id * 2;
                 int file = fstream.ReadByte() | fstream.ReadByte() << 8;
-                return Path.Combine(
-                    Dir, "ROM",
+                return Path.Combine(Dir, "ROM",
                     string.Format(CultureInfo.InvariantCulture, "{0}", file >> 7),
                     string.Format(CultureInfo.InvariantCulture, "{0}.DAT", file & 0x7F));
             }
@@ -510,13 +507,15 @@ namespace ResourceExtractor
         {
             DisplayResult("Error!", ConsoleColor.Red);
         }
+
         private static void DisplaySuccess()
         {
             DisplayResult("Done!", ConsoleColor.Green);
         }
-        private static void DisplayResult(bool Success)
+
+        private static void DisplayResult(bool success)
         {
-            if (Success)
+            if (success)
             {
                 DisplaySuccess();
             }
@@ -525,6 +524,7 @@ namespace ResourceExtractor
                 DisplayError();
             }
         }
+
         private static void DisplayResult(string result, ConsoleColor color)
         {
             Console.CursorTop = Console.CursorTop - 1;

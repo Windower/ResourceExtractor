@@ -235,10 +235,10 @@ namespace ResourceExtractor
                     {
                         stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
 
-                        ParseItemString(reader, item);
-                        ParseItemString(new BinaryReader(stringstreamja), item);
-                        ParseItemString(new BinaryReader(stringstreamde), item);
-                        ParseItemString(new BinaryReader(stringstreamfr), item);
+                        ParseItemString(reader, item, Languages.English);
+                        ParseItemString(new BinaryReader(stringstreamja), item, Languages.Japanese);
+                        ParseItemString(new BinaryReader(stringstreamde), item, Languages.German);
+                        ParseItemString(new BinaryReader(stringstreamfr), item, Languages.French);
 
                         items.Add(item);
                     }
@@ -334,40 +334,35 @@ namespace ResourceExtractor
             GermanLogSingular = 4,
             GermanLogPlural = 7,
         }
-        static private void ParseItemString(BinaryReader reader, dynamic item)
+        static private void ParseItemString(BinaryReader reader, dynamic item, Languages language)
         {
-            var language = reader.ReadInt32();
+            // This can potentially be used to disambiguate between languages as well, as their string counts are unique
+            var stringcount = reader.ReadUInt32();
+
             switch (language)
             {
-            // Japanese
-            case 2:
-                item.ja = DecodeEntry(reader, StringIndex.Name);
-                item.jal = item.ja;
-                break;
-
             // English
-            case 5:
+            case Languages.English:
                 item.en = DecodeEntry(reader, StringIndex.Name);
                 item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
                 break;
 
-            // French
-            case 6:
-                item.fr = DecodeEntry(reader, StringIndex.Name);
-                item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular);
+            // Japanese
+            case Languages.Japanese:
+                item.ja = DecodeEntry(reader, StringIndex.Name);
+                item.jal = item.ja;
                 break;
 
             // German
-            case 9:
+            case Languages.German:
                 item.de = DecodeEntry(reader, StringIndex.Name);
                 item.del = DecodeEntry(reader, StringIndex.GermanLogSingular);
                 break;
 
-            // Shouldn't happen, suggests new format (or new language)
-            default:
-                Stream stream = reader.BaseStream;
-                stream.Position = 0;
-                Console.WriteLine(String.Format("Unknown language format. Item: {0}, Language (#fields): {1}, Data:\n{2}", item.id, language, BitConverter.ToString(reader.ReadBytes((int) stream.Length)).Replace("-", " ")));
+            // French
+            case Languages.French:
+                item.fr = DecodeEntry(reader, StringIndex.Name);
+                item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular);
                 break;
             }
         }

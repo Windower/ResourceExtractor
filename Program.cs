@@ -49,9 +49,10 @@ namespace ResourceExtractor
 
             model = new ExpandoObject();
             model.abilities = new List<dynamic>();
-            model.spells = new List<dynamic>();
             model.buffs = new List<dynamic>();
             model.items = new List<dynamic>();
+            model.monsters = new List<dynamic>();
+            model.spells = new List<dynamic>();
             model.zones = new List<dynamic>();
 
             ResourceParser.Initialize(model);
@@ -72,9 +73,10 @@ namespace ResourceExtractor
                 ApplyFixes();
 
                 Extract("abilities", new string[] { "." });
-                Extract("spells", new string[] { "." });
                 Extract("buffs", new string[] { ".", "(None)", "(Imagery)" });
                 Extract("items", new string[] { "." });
+                Extract("monsters");
+                Extract("spells", new string[] { "." });
                 Extract("zones", new string[] { "none" });
 
                 Console.WriteLine("Resource extraction complete!");
@@ -146,7 +148,7 @@ namespace ResourceExtractor
             return Dir;
         }
 
-        private static void Extract(string name, string[] ignore)
+        private static void Extract(string name, string[] ignore = null)
         {
             DisplayMessage("Generating files for " + name + "...");
 
@@ -159,7 +161,7 @@ namespace ResourceExtractor
 
             foreach (dynamic obj in ((IDictionary<string, dynamic>)model)[name])
             {
-                if (IsValidName(ignore, obj))
+                if (IsValidName(ignore ?? new string[] { }, obj))
                 {
                     XElement xmlelement = new XElement("o");
                     foreach (KeyValuePair<string, object> pair in obj)

@@ -287,7 +287,6 @@ namespace ResourceExtractor
                 using (BinaryReader readerfr = new BinaryReader(stringstreamfr, Encoding.ASCII, true))
                 {
                     item.id = reader.ReadUInt16();
-                    item.category = "General";
 
                     if ((item.id >= 0x0001 && item.id <= 0x0FFF) || (item.id >= 0x2200 && item.id < 0x2800))
                     {
@@ -304,12 +303,10 @@ namespace ResourceExtractor
                     else if ((item.id >= 0x2800 && item.id < 0x4000) || (item.id >= 0x6400 && item.id < 0x7000))
                     {
                         ParseArmorItem(reader, item);
-                        item.category = "Armor";
                     }
                     else if (item.id >= 0x4000 && item.id < 0x5400)
                     {
                         ParseWeaponItem(reader, item);
-                        item.category = "Weapon";
                     }
                     else if (item.id >= 0x7000 && item.id < 0x7400)
                     {
@@ -328,29 +325,45 @@ namespace ResourceExtractor
                     {
                         stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
 
-                        ParseItemString(reader, item, Languages.English);
-                        ParseItemString(readerja, item, Languages.Japanese);
-                        ParseItemString(readerde, item, Languages.German);
-                        ParseItemString(readerfr, item, Languages.French);
+                        if (item.id >= 0xF000 && item.id < 0xF200)
+                        {
+                            item.id -= 0xF000;
 
-                        model.items.Add(item);
+                            ParseBasicStrings(reader, item, Languages.English);
+                            ParseBasicStrings(readerja, item, Languages.Japanese);
+                            ParseBasicStrings(readerde, item, Languages.German);
+                            ParseBasicStrings(readerfr, item, Languages.French);
+
+                            model.monsters.Add(item);
+                        }
+                        else
+                        {
+                            ParseFullStrings(reader, item, Languages.English);
+                            ParseFullStrings(readerja, item, Languages.Japanese);
+                            ParseFullStrings(readerde, item, Languages.German);
+                            ParseFullStrings(readerfr, item, Languages.French);
+
+                            model.items.Add(item);
+                        }
                     }
                 }
             }
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801")]
         private static void ParseBasicItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0E);             // Unknown 02 - 0F
+
+            item.category = "Unknown";
         }
 
         private static void ParseGeneralItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x0A);             // Unknown 02 - 0B
             item.targets = reader.ReadInt16();
-
             reader.ReadBytes(0x0A);             // Unknown 0E - 17
+            
+            item.category = "General";
         }
 
         private static void ParseWeaponItem(BinaryReader reader, dynamic item)
@@ -366,6 +379,8 @@ namespace ResourceExtractor
             reader.ReadBytes(0x02);             // Unknown 26 - 27
             item.recast = reader.ReadUInt32();
             reader.ReadBytes(0x04);             // Unknown 2C - 2F
+
+            item.category = "Weapon";
         }
 
         private static void ParseArmorItem(BinaryReader reader, dynamic item)
@@ -381,6 +396,8 @@ namespace ResourceExtractor
             reader.ReadBytes(0x04);             // Unknown 1C - 1F
             item.recast = reader.ReadUInt32();
             reader.ReadBytes(0x04);             // Unknown 24 - 27
+
+            item.category = "Armor";
         }
 
         private static void ParseUsableItem(BinaryReader reader, dynamic item)
@@ -389,18 +406,22 @@ namespace ResourceExtractor
             item.targets = reader.ReadUInt16();
             item.cast_time = reader.ReadUInt16();
             reader.ReadBytes(0x08);             // Unknown 10 - 17
+
+            item.category = "Usable";
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801")]
         private static void ParseAutomatonItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x16);             // Unknown 02 - 17
+
+            item.category = "Automaton";
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801")]
         private static void ParseMazeItem(BinaryReader reader, dynamic item)
         {
             reader.ReadBytes(0x52);             // Unknown 02 - 53
+
+            item.category = "Maze";
         }
 
         private static void ParseMonstrosityItem(BinaryReader reader, dynamic item)
@@ -420,32 +441,52 @@ namespace ResourceExtractor
             }
         }
 
-        private static void ParseItemString(BinaryReader reader, dynamic item, Languages language)
+        private static void ParseBasicStrings(BinaryReader reader, dynamic item, Languages language)
         {
             // This can potentially be used to disambiguate between languages as well, as their string counts are unique
-            reader.ReadUInt32(); // String Count
+            reader.ReadUInt32(); // String count
 
             switch (language)
             {
-                case Languages.English:
-                    item.en = DecodeEntry(reader, StringIndex.Name);
-                    item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular) ?? item.en;
-                    break;
+            case Languages.English:
+                item.en = DecodeEntry(reader, StringIndex.Name);
+                break;
 
-                case Languages.Japanese:
-                    item.ja = DecodeEntry(reader, StringIndex.Name);
-                    item.jal = DecodeEntry(reader, StringIndex.Name) ?? item.ja;
-                    break;
+            case Languages.Japanese:
+                item.ja = DecodeEntry(reader, StringIndex.Name);
+                break;
 
-                case Languages.German:
-                    item.de = DecodeEntry(reader, StringIndex.Name);
-                    item.del = DecodeEntry(reader, StringIndex.GermanLogSingular) ?? item.de;
-                    break;
+            case Languages.German:
+                item.de = DecodeEntry(reader, StringIndex.Name);
+                break;
 
-                case Languages.French:
-                    item.fr = DecodeEntry(reader, StringIndex.Name);
-                    item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular) ?? item.fr;
-                    break;
+            case Languages.French:
+                item.fr = DecodeEntry(reader, StringIndex.Name);
+                break;
+            }
+        }
+
+        private static void ParseFullStrings(BinaryReader reader, dynamic item, Languages language)
+        {
+            ParseBasicStrings(reader, item, language);
+
+            switch (language)
+            {
+            case Languages.English:
+                item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
+                break;
+
+            case Languages.Japanese:
+                item.jal = DecodeEntry(reader, StringIndex.Name);
+                break;
+
+            case Languages.German:
+                item.del = DecodeEntry(reader, StringIndex.GermanLogSingular);
+                break;
+
+            case Languages.French:
+                item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular);
+                break;
             }
         }
 

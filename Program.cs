@@ -284,7 +284,7 @@ namespace ResourceExtractor
                     using (FileStream streamde = File.Open(GetPath(fileids[2][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     using (FileStream streamfr = File.Open(GetPath(fileids[3][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        model.items.AddRange(ResourceParser.ParseItems(stream, streamja, streamde, streamfr));
+                        ResourceParser.ParseItems(stream, streamja, streamde, streamfr);
                     }
                 }
             }

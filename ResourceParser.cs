@@ -118,10 +118,10 @@ namespace ResourceExtractor
                     ParseMainStream(stream);
                     break;
                 case BlockType.SpellData:
-                    model.spells = ResourceParser.ParseSpells(stream, header.Size);
+                    ResourceParser.ParseSpells(stream, header.Size);
                     break;
                 case BlockType.AbilityData:
-                    model.abilities = ResourceParser.ParseAbilities(stream, header.Size);
+                    ResourceParser.ParseAbilities(stream, header.Size);
                     break;
                 default:
                     Trace.WriteLine(string.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int)header.Type));
@@ -129,10 +129,8 @@ namespace ResourceExtractor
             }
         }
 
-        public static IList<dynamic> ParseAbilities(Stream stream, int length)
+        public static void ParseAbilities(Stream stream, int length)
         {
-            var abilities = new List<dynamic>();
-
             var data = new byte[0x30];
             for (var i = 0; i < length / data.Length; ++i)
             {
@@ -169,16 +167,12 @@ namespace ResourceExtractor
                     ability.prefix = ((AbilityType)ability.type).Prefix();
                 }
 
-                abilities.Add(ability);
+                model.abilities.Add(ability);
             }
-
-            return abilities;
         }
 
-        public static IList<dynamic> ParseSpells(Stream stream, int length)
+        public static void ParseSpells(Stream stream, int length)
         {
-            var spells = new List<dynamic>();
-
             var data = new byte[0x40];
             for (var i = 0; i < length / data.Length; ++i)
             {
@@ -256,16 +250,12 @@ namespace ResourceExtractor
                     }
                 }
 
-                spells.Add(spell);
+                model.spells.Add(spell);
             }
-
-            return spells;
         }
 
-        public static IList<dynamic> ParseItems(Stream stream, Stream streamja, Stream streamde, Stream streamfr)
+        public static void ParseItems(Stream stream, Stream streamja, Stream streamde, Stream streamfr)
         {
-            var items = new List<dynamic>();
-
             byte[] data = new byte[0x200];
             byte[] dataja = new byte[0x200];
             byte[] datade = new byte[0x200];
@@ -343,12 +333,10 @@ namespace ResourceExtractor
                         ParseItemString(readerde, item, Languages.German);
                         ParseItemString(readerfr, item, Languages.French);
 
-                        items.Add(item);
+                        model.items.Add(item);
                     }
                 }
             }
-
-            return items;
         }
 
         [SuppressMessage("Microsoft.Usage", "CA1801")]

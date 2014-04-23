@@ -50,9 +50,9 @@ namespace ResourceExtractor
             model = new ExpandoObject();
             model.abilities = new List<dynamic>();
             model.spells = new List<dynamic>();
-            model.zones = new List<dynamic>();
             model.buffs = new List<dynamic>();
             model.items = new List<dynamic>();
+            model.zones = new List<dynamic>();
 
             ResourceParser.Initialize(model);
 
@@ -64,18 +64,18 @@ namespace ResourceExtractor
                 Directory.CreateDirectory("resources/xml");
                 Directory.CreateDirectory("resources/json");
 
-                LoadMainData();
-                LoadBuffData();
-                LoadZoneData();
-                LoadItemData();
+                LoadMainData(); // Abilities, Spells
+                LoadBuffData(); // Buffs
+                LoadItemData(); // Items, Monstrosity
+                LoadZoneData(); // Zones
 
                 ApplyFixes();
 
                 Extract("abilities", new string[] { "." });
                 Extract("spells", new string[] { "." });
                 Extract("buffs", new string[] { ".", "(None)", "(Imagery)" });
-                Extract("zones", new string[] { "none" });
                 Extract("items", new string[] { "." });
+                Extract("zones", new string[] { "none" });
 
                 Console.WriteLine("Resource extraction complete!");
             }

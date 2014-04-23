@@ -311,14 +311,11 @@ namespace ResourceExtractor
 
             foreach (object o in data)
             {
-                if (model.abilities.Count == 0)
+                var kvp = o as KeyValuePair<string, object>?;
+                if (kvp.HasValue)
                 {
-                    var kvp = o as KeyValuePair<string, object>?;
-                    if (kvp.HasValue)
-                    {
-                        ((IDictionary<string, object>)model)[kvp.Value.Key] = kvp.Value.Value;
-                        continue;
-                    }
+                    ((IDictionary<string, object>)model)[kvp.Value.Key] = kvp.Value.Value;
+                    continue;
                 }
             }
 

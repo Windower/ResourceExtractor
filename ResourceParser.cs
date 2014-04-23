@@ -46,12 +46,16 @@ namespace ResourceExtractor
             EnglishArticle = 1,
             EnglishLogSingular = 2,
             EnglishLogPlural = 3,
+            EnglishDescription = 4,
+            JapaneseDescription = 1,
             FrenchGender = 1,
             FrenchArticle = 2,
             FrenchLogSingular = 3,
             FrenchLogPlural = 4,
+            FrenchDescription = 5,
             GermanLogSingular = 4,
             GermanLogPlural = 7,
+            GermanDescription = 8,
         }
 
         private enum BlockType

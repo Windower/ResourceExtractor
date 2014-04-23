@@ -484,22 +484,22 @@ namespace ResourceExtractor
             }
         }
 
-        private static void DisplayMessage(string message)
+        public static void DisplayMessage(string message)
         {
             Console.WriteLine(message);
         }
 
-        private static void DisplayError()
+        public static void DisplayError()
         {
             DisplayResult("Error!", ConsoleColor.Red);
         }
 
-        private static void DisplaySuccess()
+        public static void DisplaySuccess()
         {
             DisplayResult("Done!", ConsoleColor.Green);
         }
 
-        private static void DisplayResult(bool success)
+        public static void DisplayResult(bool success)
         {
             if (success)
             {

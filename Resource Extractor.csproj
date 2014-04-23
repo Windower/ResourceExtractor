@@ -94,7 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
-    <Compile Include="Container.cs" />
     <Compile Include="Languages.cs" />
     <Compile Include="MagicType.cs" />
     <Compile Include="ExtensionMethods.cs" />

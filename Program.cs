@@ -54,6 +54,8 @@ namespace ResourceExtractor
             model.buffs = new List<dynamic>();
             model.items = new List<dynamic>();
 
+            ResourceParser.Initialize(model);
+
             Dir = GetBaseDirectory();
             if (Dir != null)
             {
@@ -294,30 +296,17 @@ namespace ResourceExtractor
 
         private static void LoadMainData()
         {
-            IList<object> data = null;
-
             DisplayMessage("Loading main data stream...");
             try
             {
-                using (FileStream stream = File.OpenRead(GetPath(0x0051)))
-                {
-                    data = new Container(stream);
-                }
+                ResourceParser.ParseMainStream(File.OpenRead(GetPath(0x0051)));
             }
-            finally
+            catch
             {
-                DisplayResult(data != null);
+                DisplayError();
             }
 
-            foreach (object o in data)
-            {
-                var kvp = o as KeyValuePair<string, object>?;
-                if (kvp.HasValue)
-                {
-                    ((IDictionary<string, object>)model)[kvp.Value.Key] = kvp.Value.Value;
-                    continue;
-                }
-            }
+            DisplaySuccess();
 
             LoadNames("abilities", new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 }, new int[] { 0, 0, 0, 0 });
             LoadNames("spells", new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 }, new int[] { 0, 0, 0, 0 });

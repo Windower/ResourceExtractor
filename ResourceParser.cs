@@ -23,13 +23,23 @@
 namespace ResourceExtractor
 {
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Dynamic;
+    using System.Globalization;
     using System.IO;
+    using System.Runtime.InteropServices;
     using System.Text;
 
     internal static class ResourceParser
     {
+        private static dynamic model;
+
+        public static void Initialize(dynamic model)
+        {
+            ResourceParser.model = model;
+        }
+
         private enum StringIndex
         {
             Name = 0,
@@ -42,6 +52,81 @@ namespace ResourceExtractor
             FrenchLogPlural = 4,
             GermanLogSingular = 4,
             GermanLogPlural = 7,
+        }
+
+        private enum BlockType
+        {
+            ContainerEnd = 0x00,
+            ContainerBegin = 0x01,
+            SpellData = 0x49,
+            AbilityData = 0x53,
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct Header
+        {
+            private int id;
+            private int size;
+            private long padding;
+
+            public int ID
+            {
+                get { return id; }
+            }
+
+            public int Size
+            {
+                get { return (int) (((uint) size >> 3) & ~0xF) - 16; }
+            }
+
+            public BlockType Type
+            {
+                get { return (BlockType) (size & 0x7F); }
+            }
+        }
+
+        public static void ParseMainStream(Stream stream)
+        {
+            Header header = stream.Read<Header>();
+            long block = stream.Position;
+
+            if (header.Type != BlockType.ContainerBegin)
+            {
+                throw new InvalidDataException();
+            }
+
+            stream.Position = block + header.Size;
+
+            while (header.Type != BlockType.ContainerEnd)
+            {
+                header = stream.Read<Header>();
+                block = stream.Position;
+
+                LoadStreamItem(stream, header);
+                stream.Position = block + header.Size;
+            }
+        }
+
+        private static void LoadStreamItem(Stream stream, Header header)
+        {
+            switch (header.Type)
+            {
+                case BlockType.ContainerEnd:
+                    break;
+                case BlockType.ContainerBegin:
+                    stream.Position -= Marshal.SizeOf(typeof(Header));
+                    ParseMainStream(stream);
+                    break;
+                case BlockType.SpellData:
+                    model.spells = ResourceParser.ParseSpells(stream, header.Size);
+                    break;
+                case BlockType.AbilityData:
+                    model.abilities = ResourceParser.ParseAbilities(stream, header.Size);
+                    break;
+                default:
+                    Trace.WriteLine(string.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int)header.Type));
+                    break;
+            }
         }
 
         public static IList<dynamic> ParseAbilities(Stream stream, int length)

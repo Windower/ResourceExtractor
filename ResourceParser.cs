@@ -156,9 +156,9 @@ namespace ResourceExtractor
                 {
                     ability.id = reader.ReadInt16();
                     ability.type = (AbilityType)reader.ReadByte();
-                    reader.ReadBytes(0x03);     // Unknown 03 - 05
-                    // 03: Element/Icon ID
-                    // 04: Related to skill... h2h WS are in the 75-79 range, dagger WS in the 80-85 range, etc.
+                    ability.element = reader.ReadByte() % 8;
+                    reader.ReadBytes(0x01);     // Unknown 04 - 04, related to skill... h2h WS are in the 75-79 range, dagger WS in the 80-85 range, etc.
+                    reader.ReadBytes(0x01);     // Unknown 05 - 05
                     ability.mp_cost = reader.ReadInt16();
                     ability.recast_id = reader.ReadInt16();
                     ability.targets = reader.ReadInt16();

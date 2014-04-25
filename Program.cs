@@ -75,7 +75,7 @@ namespace ResourceExtractor
                 Extract("abilities", new string[] { "." });
                 Extract("buffs", new string[] { ".", "(None)", "(Imagery)" });
                 Extract("items", new string[] { "." });
-                Extract("monsters");
+                Extract("monsters", new string[] { "." });
                 Extract("spells", new string[] { "." });
                 Extract("zones", new string[] { "none" });
 

@@ -98,7 +98,7 @@ namespace ResourceExtractor
 
             Console.Write("Press any key to exit. ");
             Console.CursorVisible = true;
-            ////Console.ReadKey(true);
+            Console.ReadKey(true);
         }
 
         private static string GetBaseDirectory()

@@ -338,7 +338,7 @@ namespace ResourceExtractor
                             ParseBasicStrings(readerde, item, Languages.German);
                             ParseBasicStrings(readerfr, item, Languages.French);
 
-                            model.monsters.Add(item);
+                            model.monstrosity.Add(item);
                         }
                         else
                         {

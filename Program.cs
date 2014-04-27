@@ -52,7 +52,7 @@ namespace ResourceExtractor
             model.abilities = new List<dynamic>();
             model.buffs = new List<dynamic>();
             model.items = new List<dynamic>();
-            model.monsters = new List<dynamic>();
+            model.monstrosity = new List<dynamic>();
             model.spells = new List<dynamic>();
             model.zones = new List<dynamic>();
 

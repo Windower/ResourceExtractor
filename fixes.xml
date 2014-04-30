@@ -668,7 +668,6 @@ IN THE SOFTWARE.
       <a id="398" en="Weakened Daze 3" ja="スタッターステップ3" de="Schuhplattler 3" fr="Stupeur abrutissante 3" enl="Weakened Daze 3" jal="スタッターステップ3" del="Schuhplattler 3" frl="Stupeur abrutissante 3" />
       <a id="399" en="Weakened Daze 4" ja="スタッターステップ4" de="Schuhplattler 4" fr="Stupeur abrutissante 4" enl="Weakened Daze 4" jal="スタッターステップ4" del="Schuhplattler 4" frl="Stupeur abrutissante 4" />
       <a id="400" en="Weakened Daze 5" ja="スタッターステップ5" de="Schuhplattler 5" fr="Stupeur abrutissante 5" enl="Weakened Daze 5" jal="スタッターステップ5" del="Schuhplattler 5" frl="Stupeur abrutissante 5" />
-
     </update>
   </buffs>
   <items>
@@ -688,4 +687,333 @@ IN THE SOFTWARE.
       <i id="29693" />
     </remove>
   </items>
+  <elements>
+    <update>
+      <o id="-1" en="Physical" ja="物的" de="Physikalisch" fr="physiue" />
+      <o id="0" en="Fire" ja="火" de="Feuer" fr="feu" />
+      <o id="1" en="Ice" ja="氷" de="Eis" fr="glace" />
+      <o id="2" en="Wind" ja="風" de="Wind" fr="vent" />
+      <o id="3" en="Earth" ja="土" de="Erde" fr="terre" />
+      <o id="4" en="Lightning" ja="雷" de="Blitz" fr="foudre" />
+      <o id="5" en="Water" ja="水" de="Wasser" fr="l'eau" />
+      <o id="6" en="Light" ja="光" de="Licht" fr="lumière" />
+      <o id="7" en="Dark" ja="闇" de="Dunkel" fr="ténèbres" />
+      <o id="15" en="None" ja="なし" de="Nichts" fr="nul" />
+    </update>
+  </elements>
+  <bags>
+    <update>
+      <o id="0" en="Inventory" access="Everywhere" />
+      <o id="1" en="Safe" access="Mog House" />
+      <o id="2" en="Storage" access="Mog House" />
+      <o id="3" en="Temporary" access="Situational" />
+      <o id="4" en="Locker" access="Mog House" />
+      <o id="5" en="Satchel" access="Everywhere" />
+      <o id="6" en="Sack" access="Everywhere" />
+      <o id="7" en="Case" access="Everywhere" />
+    </update>
+  </bags>
+  <chat>
+    <update>
+      <o id="0" en="say" incoming="9" outgoing="1" />
+      <o id="1" en="shout" incoming="10" outgoing="2" />
+      <o id="3" en="tell" incoming="12" outgoing="4" />
+      <o id="4" en="party" incoming="13" outgoing="5" />
+      <o id="5" en="linkshell" incoming="14" outgoing="6" />
+      <o id="8" en="emote" incoming="15" outgoing="7" />
+      <o id="26" en="yell" incoming="11" outgoing="3" />
+    </update>
+  </chat>
+  <check_ratings>
+    <update>
+      <o id="1" en="Too weak" />
+      <o id="2" en="Extremely easy prey" />
+      <o id="3" en="Easy prey" />
+      <o id="4" en="Decent challenge" />
+      <o id="5" en="Even match" />
+      <o id="6" en="Tough" />
+      <o id="7" en="Very tough" />
+      <o id="8" en="Incredibly tough" />
+    </update>
+  </check_ratings>
+  <days>
+    <update>
+      <o id="0" en="Firesday" ja="火" de="Feuertag" fr="Jour du feu" element="0" />
+      <o id="1" en="Earthsday" ja="土" de="Erdentag" fr="Jour de la terre" element="3" />
+      <o id="2" en="Watersday" ja="水" de="Wassertag" fr="Jour de l'eau" element="5" />
+      <o id="3" en="Windsday" ja="風" de="Windtag" fr="Jour du vent" element="2" />
+      <o id="4" en="Iceday" ja="氷" de="Eistag" fr="Jour de la glace" element="1" />
+      <o id="5" en="Lightningsday" ja="雷" de="Blitztag" fr="Jour de la foudre" element="4" />
+      <o id="6" en="Lightsday" ja="光" de="Lichttag" fr="Jour de la lumière" element="6" />
+      <o id="7" en="Darksday" ja="闇" de="Dunkeltag" fr="Jour des ténèbres" element="7" />
+    </update>
+  </days>
+  <emotes>
+    <update>
+      <o id="1" command="bow" />
+      <o id="2" command="salute" />
+      <o id="3" command="kneel" />
+      <o id="4" command="laugh" />
+      <o id="5" command="cry" />
+      <o id="6" command="no" />
+      <o id="7" command="yes" />
+      <o id="8" command="wave" />
+      <o id="9" command="goodbye" alternative="farewell" />
+      <o id="10" command="welcome" />
+      <o id="11" command="joy" />
+      <o id="12" command="cheer" />
+      <o id="13" command="clap" />
+      <o id="14" command="praise" />
+      <o id="15" command="smile" />
+      <o id="16" command="poke" />
+      <o id="17" command="slap" />
+      <o id="18" command="stagger" />
+      <o id="19" command="sigh" />
+      <o id="20" command="comfort" />
+      <o id="21" command="surprised" />
+      <o id="22" command="amazed" />
+      <o id="23" command="stare" />
+      <o id="24" command="blush" />
+      <o id="25" command="angry" />
+      <o id="26" command="disgusted" alternative="upset" />
+      <o id="27" command="muted" />
+      <o id="28" command="doze" />
+      <o id="29" command="panic" />
+      <o id="30" command="grin" />
+      <o id="31" command="dance" />
+      <o id="32" command="think" />
+      <o id="33" command="fume" />
+      <o id="34" command="doubt" />
+      <o id="35" command="sulk" />
+      <o id="36" command="psych" />
+      <o id="37" command="huh" />
+      <o id="38" command="shocked" />
+      <o id="43" command="hurray" />
+      <o id="44" command="toss" />
+      <o id="65" command="dance1" />
+      <o id="66" command="dance2" />
+      <o id="67" command="dance3" />
+      <o id="68" command="dance4" />
+      <o id="74" command="jobemote WAR" />
+      <o id="75" command="jobemote MNK" />
+      <o id="76" command="jobemote WHM" />
+      <o id="77" command="jobemote BLM" />
+      <o id="78" command="jobemote RDM" />
+      <o id="79" command="jobemote THF" />
+      <o id="80" command="jobemote PLD" />
+      <o id="81" command="jobemote DRK" />
+      <o id="82" command="jobemote BST" />
+      <o id="83" command="jobemote BRD" />
+      <o id="84" command="jobemote RNG" />
+      <o id="85" command="jobemote SAM" />
+      <o id="86" command="jobemote NIN" />
+      <o id="87" command="jobemote DRG" />
+      <o id="88" command="jobemote SMN" />
+      <o id="89" command="jobemote BLU" />
+      <o id="90" command="jobemote COR" />
+      <o id="91" command="jobemote PUP" />
+      <o id="92" command="jobemote DNC" />
+      <o id="93" command="jobemote SCH" />
+      <o id="94" command="jobemote GEO" />
+      <o id="95" command="jobemote RUN" />
+    </update>
+  </emotes>
+  <encumbrance>
+    <update>
+      <o id="121" en="Main and Sub" />
+      <o id="122" en="Head and Neck" />
+      <o id="123" en="Body" />
+      <o id="124" en="Hands" />
+      <o id="125" en="Legs and Feet" />
+      <o id="126" en="Back and Waist" />
+      <o id="127" en="Range and Ammo" />
+      <o id="128" en="Rings and Earrings" />
+    </update>
+  </encumbrance>
+  <jobs>
+    <update>
+      <o id="1" en="Warrior" short="WAR" />
+      <o id="2" en="Monk" short="MNK" />
+      <o id="3" en="White Mage" short="WHM" />
+      <o id="4" en="Black Mage" short="BLM" />
+      <o id="5" en="Red Mage" short="RDM" />
+      <o id="6" en="Thief" short="THF" />
+      <o id="7" en="Paladin" short="PLD" />
+      <o id="8" en="Dark Knight" short="DRK" />
+      <o id="9" en="Beastmaster" short="BST" />
+      <o id="10" en="Bard" short="BRD" />
+      <o id="11" en="Ranger" short="RNG" />
+      <o id="12" en="Samurai" short="SAM" />
+      <o id="13" en="Ninja" short="NIN" />
+      <o id="14" en="Dragoon" short="DRG" />
+      <o id="15" en="Summoner" short="SMN" />
+      <o id="16" en="Blue Mage" short="BLU" />
+      <o id="17" en="Corsair" short="COR" />
+      <o id="18" en="Puppetmaster" short="PUP" />
+      <o id="19" en="Dancer" short="DNC" />
+      <o id="20" en="Scholar" short="SCH" />
+      <o id="21" en="Geomancer" short="GEO" />
+      <o id="22" en="Rune Fencer" short="RUN" />
+      <o id="23" en="Monipulator" short="MON" />
+    </update>
+  </jobs>
+  <moon_phases>
+    <update>
+      <o id="0" en="New Moon" ja="新月" de="Neumond" fr="Nouvelle lune" />
+      <o id="1" en="Waxing Crescent" ja="三日月" de="Zunehmender Mond" fr="Croissant ascendant" />
+      <o id="2" en="Waxing Crescent" ja="七日月" de="Zunehmender Mond" fr="Croissant ascendant" />
+      <o id="3" en="First Quarter Moon" ja="上弦の月" de="Erstquartals-Mond" fr="Premier quartier de lune" />
+      <o id="4" en="Waxing Gibbous" ja="十日夜" de="Zunehmender Mond" fr="Lune gibbeuse ascendante" />
+      <o id="5" en="Waxing Gibbous" ja="十三夜" de="Zunehmender Mond" fr="Lune gibbeuse ascendante" />
+      <o id="6" en="Full Moon" ja="満月" de="Vollmond" fr="Pleine lune" />
+      <o id="7" en="Waning Gibbous" ja="十六夜" de="Abnehmender Mond" fr="Lune gibbeuse descendante" />
+      <o id="8" en="Waning Gibbous" ja="居待月" de="Abnehmender Mond" fr="Lune gibbeuse descendante" />
+      <o id="9" en="Last Quarter Moon" ja="下弦の月" de="Endquartals-Mond" fr="Dernier quartier de lune" />
+      <o id="10" en="Waning Crescent" ja="二十日余月" de="Abnehmender Mond" fr="Croissant descendant" />
+      <o id="11" en="Waning Crescent" ja="二十六夜" de="Abnehmender Mond" fr="Croissant descendant" />
+    </update>
+  </moon_phases>
+  <servers>
+    <update>
+      <o id="2" en="Undine" />
+      <o id="4" en="Bahamut" />
+      <o id="5" en="Shiva" />
+      <o id="8" en="Phoenix" />
+      <o id="9" en="Carbuncle" />
+      <o id="10" en="Fenrir" />
+      <o id="11" en="Sylph" />
+      <o id="12" en="Valefor" />
+      <o id="14" en="Leviathan" />
+      <o id="15" en="Odin" />
+      <o id="19" en="Quetzalcoatl" />
+      <o id="20" en="Siren" />
+      <o id="23" en="Ragnarok" />
+      <o id="26" en="Cerberus" />
+      <o id="28" en="Bismarck" />
+      <o id="30" en="Lakshmi" />
+      <o id="31" en="Asura" />
+    </update>
+  </servers>
+  <skills>
+    <update>
+      <o id="0" en="(N/A)" category="None" />
+      <o id="1" en="Hand-to-Hand" category="Combat" />
+      <o id="2" en="Dagger" category="Combat" />
+      <o id="3" en="Sword" category="Combat" />
+      <o id="4" en="Great Sword" category="Combat" />
+      <o id="5" en="Axe" category="Combat" />
+      <o id="6" en="Great Axe" category="Combat" />
+      <o id="7" en="Scythe" category="Combat" />
+      <o id="8" en="Polearm" category="Combat" />
+      <o id="9" en="Katana" category="Combat" />
+      <o id="10" en="Great Katana" category="Combat" />
+      <o id="11" en="Club" category="Combat" />
+      <o id="12" en="Staff" category="Combat" />
+      <o id="22" en="Automaton Melee" category="Puppet" />
+      <o id="23" en="Automaton Archery" category="Puppet" />
+      <o id="24" en="Automaton Magic" category="Puppet" />
+      <o id="25" en="Archery" category="Combat" />
+      <o id="26" en="Marksmanship" category="Combat" />
+      <o id="27" en="Throwing" category="Combat" />
+      <o id="28" en="Guard" category="Combat" />
+      <o id="29" en="Evasion" category="Combat" />
+      <o id="30" en="Shield" category="Combat" />
+      <o id="31" en="Parrying" category="Combat" />
+      <o id="32" en="Divine Magic" category="Magic" />
+      <o id="33" en="Healing Magic" category="Magic" />
+      <o id="34" en="Enhancing Magic" category="Magic" />
+      <o id="35" en="Enfeebling Magic" category="Magic" />
+      <o id="36" en="Elemental Magic" category="Magic" />
+      <o id="37" en="Dark Magic" category="Magic" />
+      <o id="38" en="Summoning Magic" category="Magic" />
+      <o id="39" en="Ninjutsu" category="Magic" />
+      <o id="40" en="Singing" category="Magic" />
+      <o id="41" en="Stringed Instrument" category="Magic" />
+      <o id="42" en="Wind Instrument" category="Magic" />
+      <o id="43" en="Blue Magic" category="Magic" />
+      <o id="44" en="Geomancy" category="Magic" />
+      <o id="45" en="Handbell" category="Magic" />
+      <o id="48" en="Fishing" category="Synthesis" />
+      <o id="49" en="Woodworking" category="Synthesis" />
+      <o id="50" en="Smithing" category="Synthesis" />
+      <o id="51" en="Goldsmithing" category="Synthesis" />
+      <o id="52" en="Clothcraft" category="Synthesis" />
+      <o id="53" en="Leathercraft" category="Synthesis" />
+      <o id="54" en="Bonecraft" category="Synthesis" />
+      <o id="55" en="Alchemy" category="Synthesis" />
+      <o id="56" en="Cooking" category="Synthesis" />
+      <o id="57" en="Synergy" category="Synthesis" />
+    </update>
+  </skills>
+  <statuses>
+    <update>
+      <o id="0" en="Idle" />
+      <o id="1" en="Engaged" />
+      <o id="2" en="Dead" />
+      <o id="3" en="Engaged dead" />
+      <o id="4" en="Event" />
+      <o id="5" en="Chocobo" />
+      <o id="33" en="Resting" />
+      <o id="34" en="Locked" />
+      <o id="38" en="Fishing fighting" />
+      <o id="39" en="Fishing caught" />
+      <o id="40" en="Fishing broken rod" />
+      <o id="41" en="Fishing broken line" />
+      <o id="42" en="Fishing caught monster" />
+      <o id="43" en="Fishing lost catch" />
+      <o id="44" en="Crafting" />
+      <o id="47" en="Sitting" />
+      <o id="48" en="Kneeling" />
+      <o id="50" en="Fishing" />
+      <o id="51" en="Fishing fighting center" />
+      <o id="52" en="Fishing fighting right" />
+      <o id="53" en="Fishing fighting left" />
+      <o id="56" en="Fishing rod in water" />
+      <o id="57" en="Fishing fish on hook" />
+      <o id="58" en="Fishing caught fish" />
+      <o id="59" en="Fishing rod break" />
+      <o id="60" en="Fishing line break" />
+      <o id="61" en="Fishing monster catch" />
+      <o id="62" en="Fishing no catch or lost" />
+    </update>
+  </statuses>
+  <synth_ranks>
+    <update>
+      <o id="0" en="Amateur" />
+      <o id="1" en="Recruit" />
+      <o id="2" en="Initiate" />
+      <o id="3" en="Novice" />
+      <o id="4" en="Apprentice" />
+      <o id="5" en="Journeyman" />
+      <o id="6" en="Craftsman" />
+      <o id="7" en="Artisan" />
+      <o id="8" en="Adept" />
+      <o id="9" en="Veteran" />
+      <o id="10" en="Expert" />
+    </update>
+  </synth_ranks>
+  <weather>
+    <update>
+      <o id="0" en="Fine patches" ja="快晴" de="Zeitweise bewölkt" fr="Beau temps" element="15" intensity="0" />
+      <o id="1" en="Sunshine" ja="晴れ" de="Sonne" fr="Soleil" element="15" intensity="0" />
+      <o id="2" en="Clouds" ja="くもり" de="Wolken" fr="Nuages" element="15" intensity="0" />
+      <o id="3" en="Fog" ja="霧" de="Nebel" fr="Brume" element="15" intensity="0" />
+      <o id="4" en="Hot spells" ja="熱波" de="Hitze" fr="Brûlant" element="0" intensity="1" />
+      <o id="5" en="Heat waves" ja="灼熱波" de="Hitzewellen" fr="Ardent" element="0" intensity="2" />
+      <o id="6" en="Rain" ja="雨" de="Regen" fr="Pluie" element="5" intensity="1" />
+      <o id="7" en="Squalls" ja="スコール" de="Böen" fr="Averse" element="5" intensity="2" />
+      <o id="8" en="Dust storms" ja="砂塵" de="Staubstürme" fr="Tempêtes de poussière" element="3" intensity="1" />
+      <o id="9" en="Sand storms" ja="砂嵐" de="Sandstürme" fr="Tempêtes de sable" element="3" intensity="2" />
+      <o id="10" en="Winds" ja="風" de="Wind" fr="Vents" element="2" intensity="1" />
+      <o id="11" en="Gales" ja="暴風" de="Orkane" fr="Rafales" element="2" intensity="2" />
+      <o id="12" en="Snow" ja="雪" de="Schnee" fr="Neige" element="1" intensity="1" />
+      <o id="13" en="Blizzards" ja="吹雪" de="Eissturm" fr="Blizzards" element="1" intensity="2" />
+      <o id="14" en="Thunder" ja="雷" de="Donner" fr="Orage" element="4" intensity="1" />
+      <o id="15" en="Thunderstorms" ja="雷雨" de="Gewitter" fr="Gros orage" element="4" intensity="2" />
+      <o id="16" en="Auroras" ja="オーロラ" de="Polarlicht" fr="Aurores boréales" element="6" intensity="1" />
+      <o id="17" en="Stellar glare" ja="神光" de="Sternenflut" fr="Aurores incandescentes" element="6" intensity="2" />
+      <o id="18" en="Gloom" ja="妖霧" de="Dunkelheit" fr="Pénombre" element="7" intensity="1" />
+      <o id="19" en="Darkness" ja="闇" de="Finsternis" fr="Obscurité" element="7" intensity="2" />
+    </update>
+  </weather>
 </fixes>

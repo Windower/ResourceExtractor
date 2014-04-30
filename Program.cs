@@ -75,20 +75,7 @@ namespace ResourceExtractor
 
                 ApplyFixes();
 
-                var IgnoreStrings = new Dictionary<string, string[]>();
-                IgnoreStrings["buffs"] = new string[] { "(None)", "(Imagery)" };
-                IgnoreStrings["zones"] = new string[] { "none" };
-                foreach (var key in ((IDictionary<string, object>)model).Keys)
-                {
-                    if (IgnoreStrings.ContainsKey(key))
-                    {
-                        Extract(key, IgnoreStrings[key]);
-                    }
-                    else
-                    {
-                        Extract(key);
-                    }
-                }
+                WriteData();
 
                 Console.WriteLine("Resource extraction complete!");
             }
@@ -110,6 +97,33 @@ namespace ResourceExtractor
             Console.Write("Press any key to exit. ");
             Console.CursorVisible = true;
             Console.ReadKey(true);
+        }
+
+        private static void WriteData()
+        {
+            // Create manifest file
+            XDocument manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
+
+            var IgnoreStrings = new Dictionary<string, string[]>();
+            IgnoreStrings["buffs"] = new string[] { "(None)", "(Imagery)" };
+            IgnoreStrings["zones"] = new string[] { "none" };
+            foreach (var key in ((IDictionary<string, object>)model).Keys)
+            {
+                if (IgnoreStrings.ContainsKey(key))
+                {
+                    Extract(key, IgnoreStrings[key]);
+                }
+                else
+                {
+                    Extract(key);
+                }
+
+                var element = new XElement("file");
+                element.Value = key;
+                manifest.Root.Add(element);
+            }
+
+            manifest.Save(Path.Combine("resources", "manifest.xml"));
         }
 
         private static string GetBaseDirectory()

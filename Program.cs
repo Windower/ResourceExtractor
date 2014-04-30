@@ -75,12 +75,20 @@ namespace ResourceExtractor
 
                 ApplyFixes();
 
-                Extract("abilities", new string[] { "." });
-                Extract("buffs", new string[] { ".", "(None)", "(Imagery)" });
-                Extract("items", new string[] { "." });
-                Extract("monstrosity", new string[] { "." });
-                Extract("spells", new string[] { "." });
-                Extract("zones", new string[] { "none" });
+                var IgnoreStrings = new Dictionary<string, string[]>();
+                IgnoreStrings["buffs"] = new string[] { "(None)", "(Imagery)" };
+                IgnoreStrings["zones"] = new string[] { "none" };
+                foreach (var key in ((IDictionary<string, object>)model).Keys)
+                {
+                    if (IgnoreStrings.ContainsKey(key))
+                    {
+                        Extract(key, IgnoreStrings[key]);
+                    }
+                    else
+                    {
+                        Extract(key);
+                    }
+                }
 
                 Console.WriteLine("Resource extraction complete!");
             }
@@ -317,7 +325,33 @@ namespace ResourceExtractor
             LoadNames("abilities", new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 }, new int[] { 0, 0, 0, 0 });
             LoadNames("spells", new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 }, new int[] { 0, 0, 0, 0 });
 
-            // TODO: Adjust recast names
+            // TODO: This, but better
+            foreach (var recast in model.ability_recasts)
+            {
+                foreach (var ability in model.abilities)
+                {
+                    if (recast.id == ability.recast_id)
+                    {
+                        recast.en = ability.en;
+                        recast.ja = ability.ja;
+                        recast.de = ability.de;
+                        recast.fr = ability.fr;
+                    }
+                }
+            }
+            foreach (var recast in model.spell_recasts)
+            {
+                foreach (var spell in model.spells)
+                {
+                    if (recast.id == spell.recast_id)
+                    {
+                        recast.en = spell.en;
+                        recast.ja = spell.ja;
+                        recast.de = spell.de;
+                        recast.fr = spell.fr;
+                    }
+                }
+            }
         }
 
         private static IList<IList<IList<string>>> ParseNames(int[] fileids)
@@ -471,7 +505,8 @@ namespace ResourceExtractor
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static bool IsValidName(string[] ignore, dynamic res)
         {
-            return !(string.IsNullOrWhiteSpace(res.en) || ignore.Contains((string)res.en)
+            return !(res.en == "."
+                || string.IsNullOrWhiteSpace(res.en) || ignore.Contains((string)res.en)
                 || string.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string)res.ja)
                 || string.IsNullOrWhiteSpace(res.de) || ignore.Contains((string)res.de)
                 || string.IsNullOrWhiteSpace(res.fr) || ignore.Contains((string)res.fr)

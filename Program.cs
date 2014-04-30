@@ -53,7 +53,9 @@ namespace ResourceExtractor
             model.buffs = new List<dynamic>();
             model.items = new List<dynamic>();
             model.monstrosity = new List<dynamic>();
+            model.ability_recasts = new List<dynamic>();
             model.spells = new List<dynamic>();
+            model.spell_recasts = new List<dynamic>();
             model.zones = new List<dynamic>();
 
             ResourceParser.Initialize(model);
@@ -304,15 +306,18 @@ namespace ResourceExtractor
             {
                 ResourceParser.ParseMainStream(File.OpenRead(GetPath(0x0051)));
             }
-            catch
+            catch (System.Exception e)
             {
                 DisplayError();
+                throw e;
             }
 
             DisplaySuccess();
 
             LoadNames("abilities", new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 }, new int[] { 0, 0, 0, 0 });
             LoadNames("spells", new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 }, new int[] { 0, 0, 0, 0 });
+
+            // TODO: Adjust recast names
         }
 
         private static IList<IList<IList<string>>> ParseNames(int[] fileids)

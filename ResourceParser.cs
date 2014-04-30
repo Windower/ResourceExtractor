@@ -28,6 +28,7 @@ namespace ResourceExtractor
     using System.Dynamic;
     using System.Globalization;
     using System.IO;
+    using System.Linq;
     using System.Runtime.InteropServices;
     using System.Text;
 
@@ -136,6 +137,7 @@ namespace ResourceExtractor
         public static void ParseAbilities(Stream stream, int length)
         {
             var data = new byte[0x30];
+            IDictionary<short, object> recasts = new Dictionary<short, object>();
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
@@ -172,12 +174,22 @@ namespace ResourceExtractor
                 }
 
                 model.abilities.Add(ability);
+
+                // Add to recast dictionary
+                dynamic recast = new ExpandoObject();
+                recast.id = ability.recast_id;
+                recasts[recast.id] = recast;
             }
+
+            // Remove default value
+            recasts.Remove(0);
+            model.ability_recasts.AddRange(recasts.Select(kvp => kvp.Value));
         }
 
         public static void ParseSpells(Stream stream, int length)
         {
             var data = new byte[0x40];
+            IDictionary<short, object> recasts = new Dictionary<short, object>();
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
@@ -255,7 +267,17 @@ namespace ResourceExtractor
                 }
 
                 model.spells.Add(spell);
+
+                // Add to recast dictionary
+                dynamic recast = new ExpandoObject();
+                recast.id = spell.recast_id;
+                recast.recast = spell.recast;
+                recasts[recast.id] = recast;
             }
+
+            // Remove default value
+            recasts.Remove(0);
+            model.spell_recasts.AddRange(recasts.Select(kvp => kvp.Value));
         }
 
         public static void ParseItems(Stream stream, Stream streamja, Stream streamde, Stream streamfr)

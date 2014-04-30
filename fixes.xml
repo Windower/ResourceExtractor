@@ -22,7 +22,7 @@ IN THE SOFTWARE.
 -->
 
 <fixes>
-  <timers>
+  <ability_recasts>
     <update>
       <!-- Shared Timers -->
       <a id="0" en="SP Ability" de="SP Fähigkeit" fr="SP aptitude" ja="SPアビリティ" />
@@ -51,7 +51,7 @@ IN THE SOFTWARE.
       <a id="231" en="Stratagems" de="Schultz' Kriegsl." fr="Stratagèmes" ja="戦術魔道書" />
       <a id="254" en="SP Ability II" de="SP Fähigkeit II" fr="SP aptitude II" ja="SPアビリティII" />
     </update>
-  </timers>
+  </ability_recasts>
   <abilities>
     <update>
       <!-- Ranged Attack -->

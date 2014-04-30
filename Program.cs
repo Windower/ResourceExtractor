@@ -205,11 +205,6 @@ namespace ResourceExtractor
 
             foreach (XElement fixset in fixes.Root.Elements())
             {
-                if (fixset.Name.LocalName == "timers")
-                {
-                    continue;
-                }
-
                 List<dynamic> data = (List<dynamic>)((IDictionary<string, object>)model)[fixset.Name.LocalName];
 
                 XElement update = fixset.Element("update");

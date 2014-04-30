@@ -505,11 +505,8 @@ namespace ResourceExtractor
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static bool IsValidName(string[] ignore, dynamic res)
         {
-            return !(res.en == "."
+            return !((IDictionary<string, object>)res).ContainsKey("en") || !(res.en == "."
                 || string.IsNullOrWhiteSpace(res.en) || ignore.Contains((string)res.en)
-                || string.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string)res.ja)
-                || string.IsNullOrWhiteSpace(res.de) || ignore.Contains((string)res.de)
-                || string.IsNullOrWhiteSpace(res.fr) || ignore.Contains((string)res.fr)
                 || res.en.StartsWith("#", StringComparison.Ordinal));
         }
 

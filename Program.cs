@@ -205,7 +205,12 @@ namespace ResourceExtractor
 
             foreach (XElement fixset in fixes.Root.Elements())
             {
-                List<dynamic> data = (List<dynamic>)((IDictionary<string, object>)model)[fixset.Name.LocalName];
+                var dict = (IDictionary<string, object>)model;
+                if (!dict.ContainsKey(fixset.Name.LocalName))
+                {
+                    dict[fixset.Name.LocalName] = new List<dynamic>();
+                }
+                List<dynamic> data = (List<dynamic>) dict[fixset.Name.LocalName];
 
                 XElement update = fixset.Element("update");
                 if (update != null)

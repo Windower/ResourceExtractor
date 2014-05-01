@@ -168,6 +168,7 @@ namespace ResourceExtractor
                     ability.tp_cost = tp_cost == -1 ? 0 : tp_cost;
                     reader.ReadBytes(0x01);     // Unknown 0E - 0E
                     ability.monster_level = reader.ReadSByte();
+                    ability.range = reader.ReadByte();
 
                     // Derived data
                     ability.prefix = ((AbilityType)ability.type).Prefix();

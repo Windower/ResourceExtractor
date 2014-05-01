@@ -123,6 +123,7 @@ namespace ResourceExtractor
                 manifest.Root.Add(element);
             }
 
+            manifest.Root.ReplaceNodes(manifest.Root.Elements().OrderBy(e => e.Value));
             manifest.Save(Path.Combine("resources", "manifest.xml"));
         }
 

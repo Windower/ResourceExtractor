@@ -63,11 +63,6 @@ namespace ResourceExtractor
             Dir = GetBaseDirectory();
             if (Dir != null)
             {
-                Directory.CreateDirectory("resources");
-                Directory.CreateDirectory("resources/lua");
-                Directory.CreateDirectory("resources/xml");
-                Directory.CreateDirectory("resources/json");
-
                 LoadMainData(); // Abilities, Spells
                 LoadBuffData(); // Buffs
                 LoadItemData(); // Items, Monstrosity
@@ -101,6 +96,11 @@ namespace ResourceExtractor
 
         private static void WriteData()
         {
+            Directory.CreateDirectory("resources");
+            Directory.CreateDirectory("resources/lua");
+            Directory.CreateDirectory("resources/xml");
+            Directory.CreateDirectory("resources/json");
+
             // Create manifest file
             XDocument manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
 

@@ -164,10 +164,10 @@ namespace ResourceExtractor
                     ability.mp_cost = reader.ReadInt16();
                     ability.recast_id = reader.ReadInt16();
                     ability.targets = reader.ReadInt16();
-                    var tp_cost = reader.ReadSByte();   // This is probably two bytes long
+                    var tp_cost = reader.ReadInt16();
                     ability.tp_cost = tp_cost == -1 ? 0 : tp_cost;
-                    reader.ReadBytes(0x02);     // Unknown 0D - 0E
-                    ability.monster_level = reader.ReadByte();
+                    reader.ReadBytes(0x01);     // Unknown 0E - 0E
+                    ability.monster_level = reader.ReadSByte();
 
                     // Derived data
                     ability.prefix = ((AbilityType)ability.type).Prefix();

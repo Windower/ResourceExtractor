@@ -168,7 +168,7 @@ namespace ResourceExtractor
                     ability.tp_cost = tp_cost == -1 ? 0 : tp_cost;
                     reader.ReadBytes(0x01);     // Unknown 0E - 0E
                     ability.monster_level = reader.ReadSByte();
-                    ability.range = reader.ReadByte();
+                    ability.range = reader.ReadSByte();
 
                     // Derived data
                     ability.prefix = ((AbilityType)ability.type).Prefix();
@@ -227,20 +227,21 @@ namespace ResourceExtractor
                     spell.type = (MagicType)reader.ReadInt16();
                     spell.element = reader.ReadByte();
                     reader.ReadByte();          // Unknown 05 - 05, possibly just padding or element being a short
-                    spell.targets = reader.ReadInt16();
+                    spell.targets = reader.ReadUInt16();
                     spell.skill = reader.ReadInt16();
                     spell.mp_cost = reader.ReadInt16();
                     spell.cast_time = reader.ReadByte();
                     spell.recast = reader.ReadByte();
                     var levels = reader.ReadBytes(0x18);
                     spell.recast_id = reader.ReadInt16();
-                    spell.icon_id = reader.ReadByte();
-                    reader.ReadBytes(0x04);
-                    spell.range = reader.ReadByte();
+                    spell.icon_id_nq = reader.ReadInt16();
+                    spell.icon_id_hq = reader.ReadInt16();
+                    spell.requirements = reader.ReadByte();
+                    spell.range = reader.ReadSByte();
 
                     // Derived data
                     spell.prefix = ((MagicType)spell.type).Prefix();
-                    switch ((byte)spell.icon_id)
+                    switch ((byte)spell.icon_id_nq)
                     {
                         case 56:
                         case 57:
@@ -250,7 +251,7 @@ namespace ResourceExtractor
                         case 61:
                         case 62:
                         case 63:
-                            spell.element = spell.icon_id - 56;
+                            spell.element = spell.icon_id_nq - 56;
                             break;
                         case 64:
                             spell.element = -1;

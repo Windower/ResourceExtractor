@@ -165,7 +165,7 @@ namespace ResourceExtractor
                     ability.recast_id = reader.ReadInt16();
                     ability.targets = reader.ReadInt16();
                     ability.tp_cost = reader.ReadInt16();
-                    reader.ReadBytes(0x01);     // Unknown 0E - 0E
+                    reader.ReadBytes(0x01);     // Unknown 0E - 0E, 18 for Ready, 0x16 for Ward, 0x17 for Effusion, 0x00 for every other valid ability
                     ability.monster_level = reader.ReadSByte();
                     ability.range = reader.ReadSByte();
 

@@ -235,6 +235,8 @@ namespace ResourceExtractor
                     var levels = reader.ReadBytes(0x18);
                     spell.recast_id = reader.ReadInt16();
                     spell.icon_id = reader.ReadByte();
+                    reader.ReadBytes(0x04);
+                    spell.range = reader.ReadByte();
 
                     // Derived data
                     spell.prefix = ((MagicType)spell.type).Prefix();

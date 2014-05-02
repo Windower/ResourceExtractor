@@ -23,38 +23,12 @@
 namespace ResourceExtractor
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
     using System.Runtime.InteropServices;
+    using System.Xml.Linq;
 
     internal static class ExtensionMethods
     {
-        public static IList<T> ToList<T>(this T value) where T : struct, IConvertible
-        {
-            if (!typeof(T).IsDefined(typeof(FlagsAttribute), false))
-            {
-                throw new InvalidOperationException("T must be an enumeration type with the [Flags] attribute.");
-            }
-
-            List<T> results = new List<T>();
-
-            var flags = Enum.GetValues(typeof(T));
-            Array.Reverse(flags);
-
-            long temp = value.ToInt64(null);
-            foreach (T flag in flags)
-            {
-                long f = flag.ToInt64(null);
-                if (f != 0 && (temp & f) == f)
-                {
-                    temp &= ~f;
-                    results.Insert(0, flag);
-                }
-            }
-
-            return results;
-        }
-
         public static void RotateRight(this byte[] data, int count)
         {
             for (int i = 0; i < data.Length; i++)
@@ -73,8 +47,7 @@ namespace ResourceExtractor
 
             int key = 0;
 
-            int count = CountBits(data[2]) - CountBits(data[11]) + CountBits(data[12]);
-            count = count < 0 ? -count : count;
+            int count = Math.Abs(CountBits(data[2]) - CountBits(data[11]) + CountBits(data[12]));
             switch (count % 5)
             {
                 case 0: key = 7; break;
@@ -115,7 +88,13 @@ namespace ResourceExtractor
             return Read<T>(stream);
         }
 
-        private static T[] ReadArray<T>(this Stream stream, int count)
+        public static T[] ReadArray<T>(this Stream stream, int count, uint offset)
+        {
+            stream.Position = offset;
+            return stream.ReadArray<T>(count);
+        }
+
+        public static T[] ReadArray<T>(this Stream stream, int count)
         {
             int size = Marshal.SizeOf(typeof(T));
             byte[] data = new byte[size * count];
@@ -145,10 +124,82 @@ namespace ResourceExtractor
             }
         }
 
-        public static T[] ReadArray<T>(this Stream stream, int count, uint offset)
+        // Enum values
+        public static string Prefix(this AbilityType value)
         {
-            stream.Position = offset;
-            return ReadArray<T>(stream, count);
+            switch (value)
+            {
+                case AbilityType.Misc:
+                case AbilityType.JobTrait:
+                    return "/echo";
+                case AbilityType.JobAbility:
+                case AbilityType.CorsairRoll:
+                case AbilityType.CorsairShot:
+                case AbilityType.Samba:
+                case AbilityType.Waltz:
+                case AbilityType.Step:
+                case AbilityType.Jig:
+                case AbilityType.Flourish1:
+                case AbilityType.Flourish2:
+                case AbilityType.Flourish3:
+                case AbilityType.Scholar:
+                case AbilityType.Rune:
+                case AbilityType.Ward:
+                case AbilityType.Effusion:
+                    return "/jobability";
+                case AbilityType.WeaponSkill:
+                    return "/weaponskill";
+                case AbilityType.MonsterSkill:
+                    return "/monsterskill";
+                case AbilityType.PetCommand:
+                case AbilityType.BloodPactWard:
+                case AbilityType.BloodPactRage:
+                case AbilityType.Monster:
+                    return "/pet";
+            }
+
+            return "/unknown";
+        }
+
+        public static string Prefix(this MagicType value)
+        {
+            switch (value)
+            {
+                case MagicType.WhiteMagic:
+                case MagicType.BlackMagic:
+                case MagicType.SummonerPact:
+                case MagicType.BlueMagic:
+                case MagicType.Geomancy:
+                case MagicType.Trust:
+                    return "/magic";
+
+                case MagicType.BardSong:
+                    return "/song";
+
+                case MagicType.Ninjutsu:
+                    return "/ninjutsu";
+            }
+
+            return "/unknown";
+        }
+
+        public static object Parse(this XAttribute value)
+        {
+            string str = (string)value;
+
+            int resint;
+            if (int.TryParse(str, out resint))
+            {
+                return resint;
+            }
+
+            float resfloat;
+            if (float.TryParse(str, out resfloat))
+            {
+                return resfloat;
+            }
+
+            return str;
         }
 
         private static int CountBits(byte b)

@@ -1,5 +1,5 @@
-﻿// <copyright file="MonstrosityItem.cs" company="Windower Team">
-// Copyright © 2013 Windower Team
+﻿// <copyright file="LuaElement.cs" company="Windower Team">
+// Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -20,37 +20,49 @@
 // IN THE SOFTWARE.
 // </copyright>
 
-namespace ResourceExtractor.Formats.Items
+namespace ResourceExtractor.Serializers.Lua
 {
-    using System;
     using System.Collections.Generic;
+    using System.Linq;
 
-    internal sealed class MonstrosityItem : Item
+    internal class LuaElement
     {
-        private IDictionary<int, int> tpmoves = new Dictionary<int, int>();
+        private static List<string> fixedKeys = new List<string> { "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl" };
 
-        internal MonstrosityItem(byte[] data)
-            : base(data)
+        public LuaElement(dynamic obj)
         {
-            this.InitializeStrings(data, 0x70);
+            Attributes = new List<LuaAttribute>();
 
-            for (int i = 0; i < 15; i++)
+            Keys = new HashSet<string>();
+
+            ID = obj.id;
+
+            IDictionary<string, object> o = obj;
+            foreach (var key in fixedKeys)
             {
-                int offset = i * 4;
-                if (data[48 + offset + 2] != 0 & data[48 + offset + 2] != 0xFF & !tpmoves.ContainsKey(data[48 + offset] | data[48 + offset + 1] << 8))
+                if (o.ContainsKey(key))
                 {
-                    tpmoves.Add(data[48 + offset] | data[48 + offset + 1] << 8, data[48 + offset + 2]);
+                    Attributes.Add(new LuaAttribute(key, o[key]));
+                    Keys.Add(key);
                 }
             }
 
+            foreach (var key in from k in o.Keys where !fixedKeys.Contains(k) orderby k select k)
+            {
+                Attributes.Add(new LuaAttribute(key, o[key]));
+                Keys.Add(key);
+            }
         }
 
-        public IDictionary<int,int> TPMoves
+        public HashSet<string> Keys { get; private set; }
+
+        public int ID { get; private set; }
+
+        private List<LuaAttribute> Attributes { get; set; }
+
+        public override string ToString()
         {
-            get
-            {
-                return this.tpmoves;
-            }
+            return "{" + string.Join(",", from Attr in Attributes select Attr.ToString()) + "}";
         }
     }
 }

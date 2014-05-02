@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 // </copyright>
 
-namespace ResourceExtractor.Formats
+namespace ResourceExtractor
 {
     using System;
     using System.Collections;
@@ -28,7 +28,6 @@ namespace ResourceExtractor.Formats
     using System.Globalization;
     using System.IO;
     using System.Runtime.InteropServices;
-    using ResourceExtractor;
 
     internal class DMsgStringList : IList<IList<string>>
     {
@@ -85,14 +84,14 @@ namespace ResourceExtractor.Formats
                     int offset = (int)table[i];
                     int length = (int)(table[i] >> 32);
 
-                    int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
+                    int count = BitConverter.ToInt32(data, offset);
 
                     string[] s = new string[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = data[offset + j * 8 + 4] | data[offset + j * 8 + 5] << 8 | data[offset + j * 8 + 6] << 16 | data[offset + j * 8 + 7] << 24;
-                        int stringtype = data[offset + j * 8 + 8] | data[offset + j * 8 + 9] << 8 | data[offset + j * 8 + 10] << 16 | data[offset + j * 8 + 11] << 24;
+                        int stringoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
+                        int stringtype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
                         if (stringtype == 0)
                         {
@@ -141,14 +140,14 @@ namespace ResourceExtractor.Formats
                 {
                     int offset = i * (int)header.EntrySize;
 
-                    int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
+                    int count = BitConverter.ToInt32(data, offset);
 
                     string[] s = new string[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = data[offset + j * 8 + 4] | data[offset + j * 8 + 5] << 8 | data[offset + j * 8 + 6] << 16 | data[offset + j * 8 + 7] << 24;
-                        int stringtype = data[offset + j * 8 + 8] | data[offset + j * 8 + 9] << 8 | data[offset + j * 8 + 10] << 16 | data[offset + j * 8 + 11] << 24;
+                        int stringoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
+                        int stringtype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
                         if (stringtype == 0)
                         {

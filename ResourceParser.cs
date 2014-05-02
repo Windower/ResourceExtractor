@@ -243,7 +243,7 @@ namespace ResourceExtractor
                     var levels = reader.ReadBytes(0x18);    // Processed into a dictionary spell.levels later
                     spell.recast_id = reader.ReadInt16();
                     spell.icon_id_nq = reader.ReadInt16();
-                    spell.icon_id_hq = reader.ReadInt16();
+                    spell.icon_id = reader.ReadInt16();
                     spell.requirements = reader.ReadByte();
                     spell.range = reader.ReadSByte();
 

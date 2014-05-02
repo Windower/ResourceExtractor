@@ -164,14 +164,23 @@ namespace ResourceExtractor
                     ability.mp_cost = reader.ReadInt16();
                     ability.recast_id = reader.ReadInt16();
                     ability.targets = reader.ReadInt16();
-                    var tp_cost = reader.ReadInt16();
-                    ability.tp_cost = tp_cost == -1 ? 0 : tp_cost;
+                    ability.tp_cost = reader.ReadInt16();
                     reader.ReadBytes(0x01);     // Unknown 0E - 0E
                     ability.monster_level = reader.ReadSByte();
                     ability.range = reader.ReadSByte();
 
                     // Derived data
                     ability.prefix = ((AbilityType)ability.type).Prefix();
+
+                    if (ability.tp_cost == -1)
+                    {
+                        ability.tp_cost = 0;
+                    }
+
+                    if (ability.range == 0xF)
+                    {
+                        ability.range = 0;
+                    }
                 }
 
                 model.abilities.Add(ability);
@@ -232,7 +241,7 @@ namespace ResourceExtractor
                     spell.mp_cost = reader.ReadInt16();
                     spell.cast_time = reader.ReadByte();
                     spell.recast = reader.ReadByte();
-                    var levels = reader.ReadBytes(0x18);
+                    var levels = reader.ReadBytes(0x18);    // Processed into a dictionary spell.levels later
                     spell.recast_id = reader.ReadInt16();
                     spell.icon_id_nq = reader.ReadInt16();
                     spell.icon_id_hq = reader.ReadInt16();
@@ -267,6 +276,11 @@ namespace ResourceExtractor
                         {
                             spell.levels[j] = levels[j];
                         }
+                    }
+
+                    if (spell.range == 0xF)
+                    {
+                        spell.range = 0;
                     }
                 }
 

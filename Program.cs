@@ -329,10 +329,10 @@ namespace ResourceExtractor
             {
                 ResourceParser.ParseMainStream(File.OpenRead(GetPath(0x0051)));
             }
-            catch (System.Exception e)
+            catch
             {
                 DisplayError();
-                throw e;
+                throw;
             }
 
             DisplaySuccess();

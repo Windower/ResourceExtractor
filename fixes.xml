@@ -27,7 +27,6 @@ IN THE SOFTWARE.
       <!-- Shared Timers -->
       <a id="0" en="SP Ability" de="SP Fähigkeit" fr="SP aptitude" ja="SPアビリティ" />
       <a id="10" en="Rune Enchantment" de="Verzauber.-Rune" fr="Runes enchant." ja="エンチャントルーン" />
-      <a id="61" en="Steal/Despoil" de="Stehlen/Fleddern" fr="Vol/Pillage" ja="ぬすむ/ぶんどる" />
       <a id="69" en="Accomp./Collab." de="Accomplice/Kollaborateur" fr="Complice/Acolyte" ja="アカンプリス/コラボレーター" />
       <a id="101" en="Stay/Heel/Leave" de="Verharren/Bei Fuß/Freilassen" fr="Assis !/Au pied !/Va-t'en !" ja="まってろ/もどれ/かえれ" />
       <a id="102" en="Sic/Ready" de="Spezial/Sturm und Drang" fr="Vas-y !/Obéis !" ja="ほんきだせ/しじをさせろ" />

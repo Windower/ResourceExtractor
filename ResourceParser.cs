@@ -159,7 +159,7 @@ namespace ResourceExtractor
                     ability.id = reader.ReadInt16();
                     ability.type = (AbilityType)reader.ReadByte();
                     ability.element = reader.ReadByte() % 8;
-                    ability.icon_id = reader.ReadInt32();
+                    ability.icon_id = reader.ReadInt16();
                     ability.mp_cost = reader.ReadInt16();
                     ability.recast_id = reader.ReadInt16();
                     ability.targets = reader.ReadInt16();

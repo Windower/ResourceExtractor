@@ -914,7 +914,7 @@ IN THE SOFTWARE.
       <o id="25" en="Archery" category="Combat" />
       <o id="26" en="Marksmanship" category="Combat" />
       <o id="27" en="Throwing" category="Combat" />
-      <o id="28" en="Guarding" category="Combat" />
+      <o id="28" en="Guard" category="Combat" />
       <o id="29" en="Evasion" category="Combat" />
       <o id="30" en="Shield" category="Combat" />
       <o id="31" en="Parrying" category="Combat" />

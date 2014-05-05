@@ -407,7 +407,7 @@ namespace ResourceExtractor
         {
             reader.ReadBytes(0x0C);             // Unknown 04 - 0F
 
-            item.category = "Unknown";
+            item.category = "Gil";
         }
 
         private static void ParseGeneralItem(BinaryReader reader, dynamic item)

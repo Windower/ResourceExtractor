@@ -330,38 +330,48 @@ namespace ResourceExtractor
                 using (BinaryReader readerfr = new BinaryReader(stringstreamfr, Encoding.ASCII, true))
                 {
                     item.id = reader.ReadUInt16();
+                    reader.ReadBytes(0x02);         // Unknown 02 - 03 (possibly for future expansion of ID)
 
-                    if ((item.id >= 0x0001 && item.id <= 0x0FFF) || (item.id >= 0x2200 && item.id < 0x2800))
-                    {
-                        ParseGeneralItem(reader, item);
-                    }
-                    else if (item.id >= 0x1000 && item.id < 0x2000)
-                    {
-                        ParseUsableItem(reader, item);
-                    }
-                    else if (item.id >= 0x2000 && item.id < 0x2200)
-                    {
-                        ParseAutomatonItem(reader, item);
-                    }
-                    else if ((item.id >= 0x2800 && item.id < 0x4000) || (item.id >= 0x6400 && item.id < 0x7000))
-                    {
-                        ParseArmorItem(reader, item);
-                    }
-                    else if (item.id >= 0x4000 && item.id < 0x5400)
-                    {
-                        ParseWeaponItem(reader, item);
-                    }
-                    else if (item.id >= 0x7000 && item.id < 0x7400)
-                    {
-                        ParseMazeItem(reader, item);
-                    }
-                    else if (item.id >= 0xF000 && item.id < 0xF200)
+                    if (item.id >= 0xF000 && item.id < 0xF200)
                     {
                         ParseMonstrosityItem(reader, item);
                     }
                     else if (item.id == 0xFFFF)
                     {
-                        ParseBasicItem(reader, item);
+                        ParseGilItem(reader, item);
+                    }
+                    else
+                    {
+                        item.flags = reader.ReadUInt16();
+                        item.stack = reader.ReadUInt16();
+                        item.type = reader.ReadUInt16();
+                        reader.ReadBytes(0x02);     // AH sorting value
+                        item.targets = reader.ReadUInt16();
+
+                        if ((item.id >= 0x0001 && item.id <= 0x0FFF) || (item.id >= 0x2200 && item.id < 0x2800))
+                        {
+                            ParseGeneralItem(reader, item);
+                        }
+                        else if (item.id >= 0x1000 && item.id < 0x2000)
+                        {
+                            ParseUsableItem(reader, item);
+                        }
+                        else if (item.id >= 0x2000 && item.id < 0x2200)
+                        {
+                            ParseAutomatonItem(reader, item);
+                        }
+                        else if ((item.id >= 0x2800 && item.id < 0x4000) || (item.id >= 0x6400 && item.id < 0x7000))
+                        {
+                            ParseArmorItem(reader, item);
+                        }
+                        else if (item.id >= 0x4000 && item.id < 0x5400)
+                        {
+                            ParseWeaponItem(reader, item);
+                        }
+                        else if (item.id >= 0x7000 && item.id < 0x7400)
+                        {
+                            ParseMazeItem(reader, item);
+                        }
                     }
 
                     if (stringstream.Position > 0x02)
@@ -393,17 +403,15 @@ namespace ResourceExtractor
             }
         }
 
-        private static void ParseBasicItem(BinaryReader reader, dynamic item)
+        private static void ParseGilItem(BinaryReader reader, dynamic item)
         {
-            reader.ReadBytes(0x0E);             // Unknown 02 - 0F
+            reader.ReadBytes(0x0C);             // Unknown 04 - 0F
 
             item.category = "Unknown";
         }
 
         private static void ParseGeneralItem(BinaryReader reader, dynamic item)
         {
-            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.targets = reader.ReadInt16();
             reader.ReadBytes(0x0A);             // Unknown 0E - 17
             
             item.category = "General";
@@ -411,8 +419,6 @@ namespace ResourceExtractor
 
         private static void ParseWeaponItem(BinaryReader reader, dynamic item)
         {
-            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.targets = reader.ReadUInt16();
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
@@ -428,8 +434,6 @@ namespace ResourceExtractor
 
         private static void ParseArmorItem(BinaryReader reader, dynamic item)
         {
-            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.targets = reader.ReadUInt16();
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
@@ -445,8 +449,6 @@ namespace ResourceExtractor
 
         private static void ParseUsableItem(BinaryReader reader, dynamic item)
         {
-            reader.ReadBytes(0x0A);             // Unknown 02 - 0B
-            item.targets = reader.ReadUInt16();
             item.cast_time = reader.ReadUInt16();
             reader.ReadBytes(0x08);             // Unknown 10 - 17
 
@@ -455,14 +457,14 @@ namespace ResourceExtractor
 
         private static void ParseAutomatonItem(BinaryReader reader, dynamic item)
         {
-            reader.ReadBytes(0x16);             // Unknown 02 - 17
+            reader.ReadBytes(0x0A);             // Unknown 0E - 17
 
             item.category = "Automaton";
         }
 
         private static void ParseMazeItem(BinaryReader reader, dynamic item)
         {
-            reader.ReadBytes(0x52);             // Unknown 02 - 53
+            reader.ReadBytes(0x46);             // Unknown 0E - 53
 
             item.category = "Maze";
         }

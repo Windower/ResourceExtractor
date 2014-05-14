@@ -710,6 +710,7 @@ IN THE SOFTWARE.
       <o id="5" en="Satchel" access="Everywhere" />
       <o id="6" en="Sack" access="Everywhere" />
       <o id="7" en="Case" access="Everywhere" />
+      <o id="8" en="Wardrobe" access="Everywhere" />
     </update>
   </bags>
   <chat>

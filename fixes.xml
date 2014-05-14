@@ -5334,11 +5334,14 @@ IN THE SOFTWARE.
       <o id="2989" en="Shield Subverter" />
       <o id="2990" en="Absolute Terror" />
       <o id="2991" en="Terric Breath" />
-      <o id="2992" en="Amatsu: Shirahadori" />
-      <o id="2993" en="Bisection" />
-      <o id="2994" en="Leaden Salute" />
-      <o id="2995" en="Akimbo Shot" />
-      <o id="2996" en="Grisly Horizon" />
+      <o id="2992" en="Amatsu: Kagamikaeshi" />
+      <o id="2993" en="Amatsu: Mizumari" />
+      <o id="2994" en="Universal Enlightenment" />
+      <o id="2995" en="Amatsu: Shirahadori" />
+      <o id="2996" en="Bisection" />
+      <o id="2997" en="Leaden Salute" />
+      <o id="2998" en="Akimbo Shot" />
+      <o id="2999" en="Grisly Horizon" />      
     </update>
   </monster_abilities>
 </fixes>

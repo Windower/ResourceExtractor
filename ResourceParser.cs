@@ -151,42 +151,42 @@ namespace ResourceExtractor
                 data[11] = b11;
                 data[12] = b12;
 
-                dynamic ability = new ExpandoObject();
+                dynamic action = new ExpandoObject();
 
                 using (MemoryStream mstream = new MemoryStream(data))
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
-                    ability.id = reader.ReadInt16();
-                    ability.type = (AbilityType)reader.ReadByte();
-                    ability.element = reader.ReadByte() % 8;
-                    ability.icon_id = reader.ReadInt16();
-                    ability.mp_cost = reader.ReadInt16();
-                    ability.recast_id = reader.ReadInt16();
-                    ability.targets = reader.ReadInt16();
-                    ability.tp_cost = reader.ReadInt16();
+                    action.id = reader.ReadInt16();
+                    action.type = (AbilityType)reader.ReadByte();
+                    action.element = reader.ReadByte() % 8;
+                    action.icon_id = reader.ReadInt16();
+                    action.mp_cost = reader.ReadInt16();
+                    action.recast_id = reader.ReadInt16();
+                    action.targets = reader.ReadInt16();
+                    action.tp_cost = reader.ReadInt16();
                     reader.ReadBytes(0x01);     // Unknown 0E - 0E, 18 for Ready, 0x16 for Ward, 0x17 for Effusion, 0x00 for every other valid ability
-                    ability.monster_level = reader.ReadSByte();
-                    ability.range = reader.ReadSByte();
+                    action.monster_level = reader.ReadSByte();
+                    action.range = reader.ReadSByte();
 
                     // Derived data
-                    ability.prefix = ((AbilityType)ability.type).Prefix();
+                    action.prefix = ((AbilityType)action.type).Prefix();
 
-                    if (ability.tp_cost == -1)
+                    if (action.tp_cost == -1)
                     {
-                        ability.tp_cost = 0;
+                        action.tp_cost = 0;
                     }
 
-                    if (ability.range == 0xF)
+                    if (action.range == 0xF)
                     {
-                        ability.range = 0;
+                        action.range = 0;
                     }
                 }
 
-                model.abilities.Add(ability);
+                model.abilities.Add(action);
 
                 // Add to recast dictionary
                 dynamic recast = new ExpandoObject();
-                recast.id = ability.recast_id;
+                recast.id = action.recast_id;
                 recasts[recast.id] = recast;
             }
 

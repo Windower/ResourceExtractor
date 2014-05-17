@@ -126,7 +126,7 @@ namespace ResourceExtractor
                     ResourceParser.ParseSpells(stream, header.Size);
                     break;
                 case BlockType.AbilityData:
-                    ResourceParser.ParseAbilities(stream, header.Size);
+                    ResourceParser.ParseActions(stream, header.Size);
                     break;
                 default:
                     Trace.WriteLine(string.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int)header.Type));
@@ -134,7 +134,7 @@ namespace ResourceExtractor
             }
         }
 
-        public static void ParseAbilities(Stream stream, int length)
+        public static void ParseActions(Stream stream, int length)
         {
             IDictionary<short, object> recasts = new Dictionary<short, object>();
 

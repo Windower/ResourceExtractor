@@ -40,6 +40,7 @@ namespace ResourceExtractor
         private static string[] categories = new string[] {
             "actions",
             "ability_recasts",
+            "buffs",
             "commands",
             "items",
             "job_abilities",
@@ -170,7 +171,7 @@ namespace ResourceExtractor
                     model.monstrosity.Add(action);
                 }
             }
-            ((IDictionary<string, object>)model).Remove("abilities");
+            ((IDictionary<string, object>)model).Remove("actions");
         }
 
         private static void WriteData()

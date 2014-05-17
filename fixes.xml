@@ -51,11 +51,14 @@ IN THE SOFTWARE.
       <a id="254" en="SP Ability II" de="SP Fähigkeit II" fr="SP aptitude II" ja="SPアビリティII" />
     </update>
   </ability_recasts>
-  <abilities>
+  <commands>
     <update>
       <!-- Ranged Attack -->
       <a id="1" prefix="/range" targets="32" />
-
+    </update>
+  </commands>
+  <weapon_skills>
+    <update>
       <!-- Skillchains -->
       <a id="769" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Combo -->
       <a id="770" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shoulder Tackle -->
@@ -537,6 +540,8 @@ IN THE SOFTWARE.
       <a id="988" element="0" /> <!-- Wildfire -->
       <a id="1006" element="6" /> <!-- Uriel Blade -->
     </update>
+  </weapon_skills>
+  <job_abilities>
     <remove>
       <!-- Ability Categories -->
       <a id="55" /> <!-- Pet Commands -->
@@ -554,7 +559,7 @@ IN THE SOFTWARE.
       <a id="263" /> <!-- Flourishes III -->
       <a id="357" /> <!-- Rune Enchantment -->
     </remove>
-  </abilities>
+  </job_abilities>
   <buffs>
     <update>
       <!-- Status Durations -->

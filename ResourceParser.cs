@@ -136,8 +136,9 @@ namespace ResourceExtractor
 
         public static void ParseAbilities(Stream stream, int length)
         {
-            var data = new byte[0x30];
             IDictionary<short, object> recasts = new Dictionary<short, object>();
+
+            var data = new byte[0x30];
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
@@ -157,6 +158,7 @@ namespace ResourceExtractor
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
                     action.id = reader.ReadInt16();
+                    
                     action.type = (AbilityType)reader.ReadByte();
                     action.element = reader.ReadByte() % 8;
                     action.icon_id = reader.ReadInt16();
@@ -182,12 +184,15 @@ namespace ResourceExtractor
                     }
                 }
 
-                model.abilities.Add(action);
+                model.actions.Add(action);
 
-                // Add to recast dictionary
-                dynamic recast = new ExpandoObject();
-                recast.id = action.recast_id;
-                recasts[recast.id] = recast;
+                if (action.id >= 0x0200 && action.id < 0x0400)
+                {
+                    // Add to recast dictionary
+                    dynamic recast = new ExpandoObject();
+                    recast.id = action.recast_id;
+                    recasts[recast.id] = recast;
+                }
             }
 
             // Remove default value

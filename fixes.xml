@@ -2637,173 +2637,46 @@ IN THE SOFTWARE.
   </titles>
   <monster_abilities>
     <update>
-      <o id="1" en="Foot Kick" />
-      <o id="2" en="Dust Cloud" />
-      <o id="3" en="Whirl Claws" />
-      <o id="4" en="Lamb Chop" />
-      <o id="5" en="Rage" />
-      <o id="6" en="Sheep Charge" />
-      <o id="7" en="Sheep Bleat" />
-      <o id="8" en="Sheep Song" />
-      <o id="9" en="Rage" />
-      <o id="10" en="Ram Charge" />
-      <o id="11" en="Rumble" />
-      <o id="12" en="Great Bleat" />
-      <o id="13" en="Petribreath" />
-      <o id="14" en="Roar" />
-      <o id="15" en="Razor Fang" />
       <o id="16" en="Ranged Attack" />
-      <o id="17" en="Claw Cyclone" />
       <o id="18" en="Sheep Charge" />
-      <o id="19" en="Sandblast" />
-      <o id="20" en="Sandpit" />
-      <o id="21" en="Venom Spray" />
       <o id="22" en="Pit Ambush" />
-      <o id="23" en="Mandibular Bite" />
-      <o id="24" en="Sonic Wave" />
-      <o id="25" en="Stomping" />
       <o id="26" en="Back Kick" />
       <o id="27" en="Spinning Tail" />
-      <o id="28" en="Cold Stare" />
-      <o id="29" en="Whistle" />
-      <o id="30" en="Berserk" />
-      <o id="31" en="Healing Breeze" />
-      <o id="32" en="Vicious Claw" />
-      <o id="33" en="Stone Throw" />
-      <o id="34" en="Spinning Claw" />
-      <o id="35" en="Claw Storm" />
-      <o id="36" en="Blank Gaze" />
       <o id="37" en="Whistle Call" />
-      <o id="38" en="Eye Scratch" />
-      <o id="39" en="Magic Fruit" />
-      <o id="40" en="Drill Branch" />
-      <o id="41" en="Pinecone Bomb" />
-      <o id="42" en="Leafstorm" />
-      <o id="43" en="Entangle" />
-      <o id="44" en="Head Butt" />
-      <o id="45" en="Dream Flower" />
-      <o id="46" en="Wild Oats" />
       <o id="47" en="Hundred Fists" />
-      <o id="48" en="Photosynthesis" />
-      <o id="49" en="Leaf Dagger" />
-      <o id="50" en="Scream" />
       <o id="51" en="Substitute" />
-      <o id="52" en="Frogkick" />
-      <o id="53" en="Spore" />
-      <o id="54" en="Queasyshroom" />
-      <o id="55" en="Numbshroom" />
-      <o id="56" en="Shakeshroom" />
       <o id="57" en="Counterspore" />
-      <o id="58" en="Silence Gas" />
-      <o id="59" en="Dark Spore" />
-      <o id="60" en="Impale" />
-      <o id="61" en="Vampiric Lash" />
-      <o id="62" en="Somersault" />
-      <o id="63" en="Bad Breath" />
-      <o id="64" en="Sweet Breath" />
-      <o id="65" en="Needleshot" />
-      <o id="66" en="1000 Needles" />
-      <o id="67" en="Wild Carrot" />
-      <o id="68" en="Photosynthesis" />
-      <o id="69" en="Random Kiss" />
-      <o id="70" en="Absorbing Kiss" />
-      <o id="71" en="Deep Kiss" />
       <o id="72" en="Drill Branch" />
       <o id="73" en="Pinecone Bomb" />
       <o id="74" en="Shuffle" />
       <o id="75" en="Leafstorm" />
       <o id="76" en="Entangle" />
       <o id="77" en="Double Down" />
-      <o id="78" en="Sharp Sting" />
-      <o id="79" en="Pollen" />
-      <o id="80" en="Final Sting" />
       <o id="81" en="Noisy Buzz" />
-      <o id="82" en="Power Attack" />
-      <o id="83" en="Hi-Freq Field" />
-      <o id="84" en="Rhino Attack" />
-      <o id="85" en="Rhino Guard" />
       <o id="86" en="Vulcanian Impact" />
-      <o id="87" en="Spoil" />
-      <o id="88" en="Sticky Thread" />
-      <o id="89" en="Poison Breath" />
-      <o id="90" en="Cocoon" />
       <o id="91" en="Velocious Blade" />
-      <o id="92" en="Numbing Breath" />
-      <o id="93" en="Cold Breath" />
-      <o id="94" en="Mandible Bite" />
-      <o id="95" en="Poison Sting" />
       <o id="96" en="Stunning Tail" />
-      <o id="97" en="Death Scissors" />
-      <o id="98" en="Wild Rage" />
-      <o id="99" en="Earth Pounder" />
-      <o id="100" en="Sharp Strike" />
       <o id="101" en="Heavy Blow" />
       <o id="102" en="Heavy Whisk" />
       <o id="103" en="Bionic Boost" />
       <o id="104" en="Flying Hip Press" />
       <o id="105" en="Earthshock" />
-      <o id="106" en="Double Claw" />
-      <o id="107" en="Grapple" />
-      <o id="108" en="Filamented Hold" />
-      <o id="109" en="Spinning Top" />
-      <o id="110" en="Tail Blow" />
-      <o id="111" en="Fireball" />
-      <o id="112" en="Blockhead" />
-      <o id="113" en="Brain Crush" />
-      <o id="114" en="Baleful Gaze" />
-      <o id="115" en="Plaguebreath" />
-      <o id="116" en="Infrasonics" />
-      <o id="117" en="Secretion" />
-      <o id="118" en="Ripper Fang" />
       <o id="119" en="Backlash Tail" />
-      <o id="120" en="Foul Breath" />
-      <o id="121" en="Frost Breath" />
-      <o id="122" en="Thunderbolt" />
-      <o id="123" en="Chomp Rush" />
-      <o id="124" en="Scythe Tail" />
       <o id="125" en="Chameleon Skin" />
-      <o id="126" en="Tail Roll" />
-      <o id="127" en="Tusk" />
-      <o id="128" en="Scutum" />
-      <o id="129" en="Bone Crunch" />
-      <o id="130" en="Awful Eye" />
-      <o id="131" en="Heavy Bellow" />
       <o id="132" en="Vanity Dive" />
       <o id="133" en="Empty Beleaguer" />
       <o id="134" en="Mirage" />
       <o id="135" en="Aura of Persistence" />
-      <o id="136" en="Ultrasonics" />
-      <o id="137" en="Sonic Boom" />
-      <o id="138" en="Blood Drain" />
-      <o id="139" en="Jet Stream" />
       <o id="140" en="Smite of Fury" />
       <o id="141" en="Flurry of Rage" />
       <o id="142" en="Whispers of Ire" />
-      <o id="143" en="Blind Vortex" />
-      <o id="144" en="Giga Scream" />
-      <o id="145" en="Dread Dive" />
-      <o id="146" en="Feather Barrier" />
-      <o id="147" en="Stormwind" />
       <o id="148" en="Smite of Rage" />
       <o id="149" en="Dire Whorl" />
-      <o id="150" en="Hammer Beak" />
-      <o id="151" en="Poison Pick" />
-      <o id="152" en="Sound Vacuum" />
       <o id="153" en="Tail Rod" />
-      <o id="154" en="Sound Blast" />
-      <o id="155" en="Baleful Gaze" />
       <o id="156" en="Ranged Attack" />
       <o id="157" en="Eagle Eye Shot" />
-      <o id="158" en="Suction" />
-      <o id="159" en="Acid Mist" />
-      <o id="160" en="Sand Breath" />
-      <o id="161" en="Drainkiss" />
-      <o id="162" en="Regeneration" />
       <o id="163" en="Scission Thrust" />
-      <o id="164" en="TP Drainkiss" />
-      <o id="165" en="MP Drainkiss" />
       <o id="166" en="Sonic Blade" />
-      <o id="167" en="Brain Drain" />
       <o id="168" en="Full-force Blow" />
       <o id="169" en="Gastric Bomb" />
       <o id="170" en="Sandspin" />
@@ -2811,39 +2684,11 @@ IN THE SOFTWARE.
       <o id="172" en="MP Absorption" />
       <o id="173" en="Sound Vacuum" />
       <o id="174" en="Buff Drain" />
-      <o id="175" en="Fluid Spread" />
-      <o id="176" en="Fluid Toss" />
-      <o id="177" en="Digest" />
-      <o id="178" en="Soporific" />
-      <o id="179" en="Palsy Pollen" />
-      <o id="180" en="Gloeosuccus" />
-      <o id="181" en="Death Ray" />
-      <o id="182" en="Hex Eye" />
-      <o id="183" en="Petro Gaze" />
-      <o id="184" en="Catharsis" />
       <o id="185" en="Microquake" />
-      <o id="186" en="Bubble Shower" />
-      <o id="187" en="Bubble Curtain" />
-      <o id="188" en="Big Scissors" />
-      <o id="189" en="Scissor Guard" />
       <o id="190" en="Intimidate" />
       <o id="191" en="Percussive Foin" />
-      <o id="192" en="Metallic Body" />
-      <o id="193" en="Intimidate" />
-      <o id="194" en="Aqua Ball" />
-      <o id="195" en="Splash Breath" />
-      <o id="196" en="Screwdriver" />
-      <o id="197" en="Water Wall" />
-      <o id="198" en="Water Shield" />
       <o id="199" en="Aqua Lens" />
-      <o id="200" en="Tentacle" />
       <o id="201" en="Gravity Wheel" />
-      <o id="202" en="Ink Jet" />
-      <o id="203" en="Hard Membrane" />
-      <o id="204" en="Cross Attack" />
-      <o id="205" en="Regeneration" />
-      <o id="206" en="Maelstrom" />
-      <o id="207" en="Whirlwind" />
       <o id="208" en="Psychomancy" />
       <o id="209" en="Howling" />
       <o id="210" en="Poison Breath" />
@@ -2860,10 +2705,6 @@ IN THE SOFTWARE.
       <o id="221" en="Dark Sphere" />
       <o id="222" en="Hell Slash" />
       <o id="223" en="Horror Cloud" />
-      <o id="224" en="Petrifactive Breath" />
-      <o id="225" en="Frenzied Rage" />
-      <o id="226" en="Pounce" />
-      <o id="227" en="Charged Whisker" />
       <o id="228" en="Black Cloud" />
       <o id="229" en="Blood Saber" />
       <o id="230" en="Whip Tongue" />
@@ -2873,33 +2714,18 @@ IN THE SOFTWARE.
       <o id="234" en="Undead Mold" />
       <o id="235" en="Call of the Grave" />
       <o id="236" en="Abyss Blast" />
-      <o id="237" en="Rampant Gnaw" />
-      <o id="238" en="Big Horn" />
-      <o id="239" en="Snort" />
-      <o id="240" en="Rabid Dance" />
-      <o id="241" en="Lowing" />
       <o id="242" en="Triclip" />
       <o id="243" en="Back Swish" />
       <o id="244" en="Mow" />
       <o id="245" en="Frightful Roar" />
       <o id="246" en="Mortal Ray" />
       <o id="247" en="Unblest Armor" />
-      <o id="248" en="Gas Shell" />
-      <o id="249" en="Venom Shell" />
-      <o id="250" en="Palsynyxis" />
-      <o id="251" en="Painful Whip" />
-      <o id="252" en="Suctorial Tentacle" />
       <o id="253" en="Self-Destruct" />
       <o id="254" en="Berserk" />
       <o id="255" en="Self-Destruct" />
       <o id="256" en="Heat Wave" />
       <o id="257" en="Smite of Rage" />
       <o id="258" en="Whirl of Rage" />
-      <o id="259" en="Toxic Spit" />
-      <o id="260" en="Geist Wall" />
-      <o id="261" en="Numbing Noise" />
-      <o id="262" en="Nimble Snap" />
-      <o id="263" en="Cyclotail" />
       <o id="264" en="Double Ray" />
       <o id="265" en="Spinning Attack" />
       <o id="266" en="Spectral Barrier" />
@@ -2956,18 +2782,8 @@ IN THE SOFTWARE.
       <o id="317" en="Self-Destruct" />
       <o id="318" en="Self-Destruct" />
       <o id="319" en="Self-Destruct" />
-      <o id="320" en="Back Heel" />
-      <o id="321" en="Jettatura" />
-      <o id="322" en="Nihility Song" />
-      <o id="323" en="Choke Breath" />
-      <o id="324" en="Fantod" />
-      <o id="325" en="Blow" />
       <o id="326" en="Cacodemonia" />
-      <o id="327" en="Beatdown" />
-      <o id="328" en="Uppercut" />
       <o id="329" en="Hekaton Punch" />
-      <o id="330" en="Blank Gaze" />
-      <o id="331" en="Antiphase" />
       <o id="332" en="Death Trap" />
       <o id="333" en="Mortal Ray" />
       <o id="334" en="Goblin Rush" />
@@ -3001,27 +2817,17 @@ IN THE SOFTWARE.
       <o id="362" en="Double Kick" />
       <o id="363" en="Parry" />
       <o id="364" en="Sweep" />
-      <o id="365" en="Snowball" />
-      <o id="366" en="Helldive" />
-      <o id="367" en="Wing Cutter" />
       <o id="368" en="(Vulture 1)" />
       <o id="369" en="(Vulture 2)" />
       <o id="370" en="(Vulture 3)" />
       <o id="371" en="(Vulture 4)" />
-      <o id="372" en="Wild Horn" />
-      <o id="373" en="Thunderbolt" />
       <o id="374" en="Kick Out" />
-      <o id="375" en="Shock Wave" />
-      <o id="376" en="Flame Armor" />
-      <o id="377" en="Howl" />
-      <o id="378" en="Meteor" />
       <o id="379" en="Burst" />
       <o id="380" en="Flame Arrow" />
       <o id="381" en="Firebomb" />
       <o id="382" en="Blastbomb" />
       <o id="383" en="Fountain" />
       <o id="384" en="Touchdown" />
-      <o id="385" en="Recoil Dive" />
       <o id="386" en="Flame Breath" />
       <o id="387" en="Poison Breath" />
       <o id="388" en="Wind Breath" />
@@ -3032,16 +2838,11 @@ IN THE SOFTWARE.
       <o id="393" en="Voidsong" />
       <o id="394" en="Thornsong" />
       <o id="395" en="Lodesong" />
-      <o id="396" en="Blaster" />
-      <o id="397" en="Chaotic Eye" />
       <o id="398" en="Double Whammy" />
       <o id="399" en="Scurvy" />
       <o id="400" en="Guilded Torpor" />
       <o id="401" en="Calamitous Collapse" />
       <o id="402" en="Catapult" />
-      <o id="403" en="Cursed Sphere" />
-      <o id="404" en="Venom" />
-      <o id="405" en="Snow Cloud" />
       <o id="406" en="Lightning Roar" />
       <o id="407" en="Ice Roar" />
       <o id="408" en="Impact Roar" />
@@ -3065,9 +2866,6 @@ IN THE SOFTWARE.
       <o id="426" en="Crystal Weapon" />
       <o id="427" en="Bludgeon" />
       <o id="428" en="Deal Out" />
-      <o id="429" en="Sprout Spin" />
-      <o id="430" en="Slumber Powder" />
-      <o id="431" en="Sprout Smack" />
       <o id="432" en="Mighty Strikes" />
       <o id="433" en="Benediction" />
       <o id="434" en="Hundred Fists" />
@@ -3097,14 +2895,7 @@ IN THE SOFTWARE.
       <o id="458" en="Camouflage" />
       <o id="459" en="Barrage" />
       <o id="460" en="Shadowbind" />
-      <o id="461" en="Venom Breath" />
       <o id="462" en="Jump" />
-      <o id="463" en="Critical Bite" />
-      <o id="464" en="Venom Sting" />
-      <o id="465" en="Stasis" />
-      <o id="466" en="Venom Storm" />
-      <o id="467" en="Earthbreaker" />
-      <o id="468" en="Evasion" />
       <o id="469" en="Impale" />
       <o id="470" en="Drain Whip" />
       <o id="471" en="Bad Breath" />
@@ -3177,22 +2968,6 @@ IN THE SOFTWARE.
       <o id="538" en="Sand Shield" />
       <o id="539" en="Sand Trap" />
       <o id="540" en="Jamming Wave" />
-      <o id="541" en="Deadly Hold" />
-      <o id="542" en="Tail Swing" />
-      <o id="543" en="Tail Smash" />
-      <o id="544" en="Heat Breath" />
-      <o id="545" en="Riddle" />
-      <o id="546" en="Great Sandstorm" />
-      <o id="547" en="Great Whirlwind" />
-      <o id="548" en="Tortoise Song" />
-      <o id="549" en="Head Butt" />
-      <o id="550" en="Tortoise Stomp" />
-      <o id="551" en="Harden Shell" />
-      <o id="552" en="Earth Breath" />
-      <o id="553" en="Aqua Breath" />
-      <o id="554" en="Sickle Slash" />
-      <o id="555" en="Acid Spray" />
-      <o id="556" en="Spider Web" />
       <o id="557" en="Dispelling Wind" />
       <o id="558" en="Deadly Drive" />
       <o id="559" en="Wind Wall" />
@@ -3401,7 +3176,6 @@ IN THE SOFTWARE.
       <o id="767" en="Astral Flow" />
       <o id="768" en="Warp Out" />
       <o id="769" en="Warp In" />
-      <o id="770" en="Arbor Storm" />
       <o id="771" en="Combo" />
       <o id="772" en="Tackle" />
       <o id="773" en="One-Inch Punch" />
@@ -3494,7 +3268,6 @@ IN THE SOFTWARE.
       <o id="861" en="Lead Breath" />
       <o id="862" en="Lead Breath" />
       <o id="863" en="Frag Bomb" />
-      <o id="864" en="10,000 Needles" />
       <o id="865" en="Eagle Eye Shot" />
       <o id="866" en="Eagle Eye Shot" />
       <o id="867" en="Ore Toss" />
@@ -3526,13 +3299,6 @@ IN THE SOFTWARE.
       <o id="896" en="Hecatomb Wave" />
       <o id="897" en="Eagle Eye Shot" />
       <o id="898" en="Ranged Attack" />
-      <o id="899" en="Subsonics" />
-      <o id="900" en="Marrow Drain" />
-      <o id="901" en="Slipstream" />
-      <o id="902" en="Turbulence" />
-      <o id="903" en="Broadside Barrage" />
-      <o id="904" en="Blind Side Barrage" />
-      <o id="905" en="Damnation Dive" />
       <o id="906" en="Inferno" />
       <o id="907" en="Earthen Fury" />
       <o id="908" en="Tidal Wave" />
@@ -3688,32 +3454,22 @@ IN THE SOFTWARE.
       <o id="1058" en="Cyclone Wing" />
       <o id="1059" en="Absolute Terror" />
       <o id="1060" en="Horrid Roar" />
-      <o id="1061" en="Mucus Spread" />
       <o id="1062" en="WZ_SLIME_04" />
-      <o id="1063" en="Epoxy Spread" />
       <o id="1064" en="WZ_EYES_04" />
       <o id="1065" en="WZ_CRAWL_03" />
       <o id="1066" en="Gerjis' Grip" />
       <o id="1067" en="WZ_BEES_04" />
-      <o id="1068" en="Debilitating Drone" />
       <o id="1069" en="WZ_TRSAP_03" />
       <o id="1070" en="Final Retribution" />
       <o id="1071" en="Eagle Eye Shot" />
       <o id="1072" en="Ink Jet" />
       <o id="1073" en="Gala Macabre" />
-      <o id="1074" en="Hoof Volley" />
       <o id="1075" en="Counterstance" />
       <o id="1076" en="Extremely Bad Breath" />
-      <o id="1077" en="Contagion Transfer" />
       <o id="1078" en="Contamination" />
-      <o id="1079" en="Toxic Pick" />
       <o id="1080" en="Frenzied Rage" />
       <o id="1081" en="Charm" />
       <o id="1082" en="Infernal Pestilence" />
-      <o id="1083" en="Bane" />
-      <o id="1084" en="Crossthrash" />
-      <o id="1085" en="Knife Edge Circle" />
-      <o id="1086" en="Train Fall" />
       <o id="1091" en="Dual Strike" />
       <o id="1092" en="Siphon Discharge" />
       <o id="1093" en="Mantle Pierce" />
@@ -3728,10 +3484,6 @@ IN THE SOFTWARE.
       <o id="1102" en="Plasma Charge" />
       <o id="1103" en="Chthonian Ray" />
       <o id="1104" en="Apocalyptic Ray" />
-      <o id="1105" en="Viscid Secretion" />
-      <o id="1106" en="Wild Ginseng" />
-      <o id="1107" en="Hungry Crunch" />
-      <o id="1108" en="Mighty Snort" />
       <o id="1109" en="Tail Thrust" />
       <o id="1110" en="Temporal Shift" />
       <o id="1111" en="Sinuate Rush" />
@@ -3763,7 +3515,6 @@ IN THE SOFTWARE.
       <o id="1138" en="Amatsu: Hanaikusa" />
       <o id="1139" en="Amatsu: Tsukikage" />
       <o id="1141" en="Oisoya" />
-      <o id="1145" en="Soul Accretion" />
       <o id="1147" en="Explosive Impulse" />
       <o id="1148" en="Ocher Blast" />
       <o id="1149" en="Ocher Blast" />
@@ -3960,11 +3711,9 @@ IN THE SOFTWARE.
       <o id="1345" en="Sound Vacuum" />
       <o id="1346" en="Sound Blast" />
       <o id="1347" en="Baleful Gaze" />
-      <o id="1348" en="Miasmic Breath" />
       <o id="1349" en="Miasmic Breath" />
       <o id="1350" en="Fragrant Breath" />
       <o id="1351" en="Fragrant Breath" />
-      <o id="1352" en="Putrid Breath" />
       <o id="1353" en="Putrid Breath" />
       <o id="1354" en="Extremely Bad Breath" />
       <o id="1355" en="Vampiric Lash" />
@@ -3981,8 +3730,6 @@ IN THE SOFTWARE.
       <o id="1366" en="Cursed Sphere" />
       <o id="1367" en="Venom" />
       <o id="1368" en="Debilitating Drone" />
-      <o id="1369" en="2000 Needles" />
-      <o id="1370" en="4000 Needles" />
       <o id="1371" en="Needleshot" />
       <o id="1372" en="Heat Breath" />
       <o id="1373" en="Riddle" />
@@ -4036,7 +3783,6 @@ IN THE SOFTWARE.
       <o id="1421" en="Roar" />
       <o id="1422" en="Razor Fang" />
       <o id="1423" en="Claw Cyclone" />
-      <o id="1424" en="Predatory Glare" />
       <o id="1425" en="Crossthrash" />
       <o id="1426" en="Ripper Fang" />
       <o id="1428" en="Foul Breath" />
@@ -4049,30 +3795,11 @@ IN THE SOFTWARE.
       <o id="1435" en="Filamented Hold" />
       <o id="1436" en="Spinning Top" />
       <o id="1437" en="Gnash" />
-      <o id="1438" en="Vile Belch" />
-      <o id="1439" en="Hypnic Lamp" />
-      <o id="1440" en="Seismic Tail" />
-      <o id="1441" en="Seaspray" />
-      <o id="1442" en="Leeching Current" />
-      <o id="1443" en="Pecking Flurry" />
-      <o id="1444" en="Snatch Morsel" />
-      <o id="1445" en="Feather Tickle" />
       <o id="1446" en="Wisecrack" />
-      <o id="1447" en="Barrier Tusk" />
-      <o id="1448" en="Onrush" />
-      <o id="1449" en="Stampede" />
-      <o id="1450" en="Flailing Trunk" />
-      <o id="1451" en="Voracious Trunk" />
-      <o id="1452" en="Proboscis Shower" />
       <o id="1453" en="Abrasive Tantara" />
       <o id="1454" en="Deafening Tantara" />
       <o id="1455" en="Frenetic Rip" />
       <o id="1456" en="Bugle Call" />
-      <o id="1457" en="Yawn" />
-      <o id="1458" en="Wing Slap" />
-      <o id="1459" en="Beak Lunge" />
-      <o id="1460" en="Frigid Shuffle" />
-      <o id="1461" en="Wing Whirl" />
       <o id="1462" en="Crosswind" />
       <o id="1464" en="Wind Shear" />
       <o id="1465" en="Obfuscate" />
@@ -4131,18 +3858,10 @@ IN THE SOFTWARE.
       <o id="1526" en="Animating Wail" />
       <o id="1527" en="Fortifying Wail" />
       <o id="1528" en="Unblest Jambiya" />
-      <o id="1529" en="Lava Spit" />
-      <o id="1530" en="Sulfurous Breath" />
       <o id="1531" en="Scorching Lash" />
-      <o id="1532" en="Ululation" />
-      <o id="1533" en="Magma Hoplon" />
-      <o id="1534" en="Gates of Hades" />
-      <o id="1535" en="Incinerate" />
       <o id="1536" en="Nullsong" />
-      <o id="1537" en="Vampiric Root" />
       <o id="1538" en="Perdition" />
       <o id="1539" en="Malediction" />
-      <o id="1540" en="Piercing Shriek" />
       <o id="1541" en="Rushing Slash" />
       <o id="1542" en="Decussate" />
       <o id="1543" en="Tyrannic Blare" />
@@ -4160,18 +3879,6 @@ IN THE SOFTWARE.
       <o id="1556" en="Pinning Shot" />
       <o id="1557" en="Calcifying Deluge" />
       <o id="1558" en="Gorgon Dance" />
-      <o id="1559" en="Amber Scutum" />
-      <o id="1560" en="Vitriolic Spray" />
-      <o id="1561" en="Thermal Pulse" />
-      <o id="1562" en="Cannonball" />
-      <o id="1563" en="Heat Barrier" />
-      <o id="1564" en="Vitriolic Shower" />
-      <o id="1565" en="Amplification" />
-      <o id="1566" en="Boiling Point" />
-      <o id="1567" en="Xenoglossia" />
-      <o id="1568" en="Amorphic Spikes" />
-      <o id="1569" en="Amorphic Scythe" />
-      <o id="1570" en="Synergism" />
       <o id="1571" en="Metastasis" />
       <o id="1572" en="Pyric Blast" />
       <o id="1573" en="Polar Bulwark" />
@@ -4181,7 +3888,6 @@ IN THE SOFTWARE.
       <o id="1578" en="Trembling" />
       <o id="1579" en="Serpentine Tail" />
       <o id="1580" en="Nerve Gas" />
-      <o id="1581" en="Feeble Bleat" />
       <o id="1582" en="Mine Blast" />
       <o id="1583" en="Rushing Slash" />
       <o id="1584" en="Rushing Stab" />
@@ -4191,7 +3897,6 @@ IN THE SOFTWARE.
       <o id="1588" en="Pit Ambush" />
       <o id="1589" en="Mandibular Bite" />
       <o id="1590" en="Sharp Sting" />
-      <o id="1591" en="Frenzy Pollen" />
       <o id="1592" en="Final Sting" />
       <o id="1593" en="Sling Bomb" />
       <o id="1594" en="Formation Attack" />
@@ -4286,12 +3991,6 @@ IN THE SOFTWARE.
       <o id="1692" en="Mana Converter" />
       <o id="1693" en="Ranged Attack" />
       <o id="1694" en="Belly Dance" />
-      <o id="1695" en="Magma Fan" />
-      <o id="1696" en="Erratic Flutter" />
-      <o id="1697" en="Proboscis" />
-      <o id="1698" en="Erosion Dust" />
-      <o id="1699" en="Exuviation" />
-      <o id="1700" en="Fire Break" />
       <o id="1701" en="Frog Song" />
       <o id="1702" en="Magic Hammer" />
       <o id="1703" en="Water Bomb" />
@@ -4307,7 +4006,6 @@ IN THE SOFTWARE.
       <o id="1713" en="Reprobation" />
       <o id="1714" en="Eclosion" />
       <o id="1721" en="Deathgnash" />
-      <o id="1722" en="Abominable Belch" />
       <o id="1724" en="Boreas Mantle" />
       <o id="1726" en="Nullifying Dropkick" />
       <o id="1727" en="Auroral Uppercut" />
@@ -4419,12 +4117,7 @@ IN THE SOFTWARE.
       <o id="1840" en="Clobber" />
       <o id="1841" en="Granite Skin" />
       <o id="1842" en="Blazing Angon" />
-      <o id="1843" en="Batterhorn" />
       <o id="1844" en="Clobber" />
-      <o id="1845" en="Demoralizing Roar" />
-      <o id="1846" en="Boiling Blood" />
-      <o id="1847" en="Granite Skin" />
-      <o id="1848" en="Crippling Slam" />
       <o id="1849" en="Mijin Gakure" />
       <o id="1850" en="Bloodrake" />
       <o id="1851" en="Decollation" />
@@ -4466,46 +4159,12 @@ IN THE SOFTWARE.
       <o id="1891" en="Divine Judgement" />
       <o id="1894" en="Snatch Morsel" />
       <o id="1895" en="1000 Needles" />
-      <o id="1896" en="Aqua Fortis" />
-      <o id="1897" en="Regurgitation" />
-      <o id="1898" en="Delta Thrust" />
-      <o id="1899" en="Torpefying Charge" />
       <o id="1900" en="Grim Glower" />
-      <o id="1901" en="Calcifying Mist" />
-      <o id="1902" en="Insipid Nip" />
-      <o id="1903" en="Pandemic Nip" />
-      <o id="1904" en="Bombilation" />
-      <o id="1905" en="Cimicine Discharge" />
-      <o id="1906" en="Emetic Discharge" />
-      <o id="1907" en="Seedspray" />
-      <o id="1908" en="Viscid Emission" />
-      <o id="1909" en="Rotten Stench" />
       <o id="1910" en="Floral Bouquet" />
-      <o id="1911" en="Bloody Caress" />
       <o id="1912" en="Bloody Caress" />
       <o id="1913" en="Soothing Aroma" />
-      <o id="1914" en="Fevered Pitch" />
       <o id="1915" en="Call of the Moon" />
       <o id="1916" en="Call of the Moon" />
-      <o id="1917" en="Plenilune Embrace" />
-      <o id="1918" en="Plenilune Embrace" />
-      <o id="1919" en="Nox Blast" />
-      <o id="1920" en="Asuran Claws" />
-      <o id="1921" en="Cacophony" />
-      <o id="1922" en="Sudden Lunge" />
-      <o id="1923" en="Noisome Powder" />
-      <o id="1924" en="Nepenthean Hum" />
-      <o id="1925" en="Spiral Spin" />
-      <o id="1926" en="Spiral Burst" />
-      <o id="1927" en="Fuscous Ooze" />
-      <o id="1928" en="Purulent Ooze" />
-      <o id="1929" en="Corrosive Ooze" />
-      <o id="1930" en="Mucilaginous Ooze" />
-      <o id="1931" en="Dustvoid" />
-      <o id="1932" en="Slaverous Gale" />
-      <o id="1933" en="Aeolian Void" />
-      <o id="1934" en="Extreme Purgation" />
-      <o id="1935" en="Desiccation" />
       <o id="1936" en="Doomvoid" />
       <o id="1937" en="Zephyr Arrow" />
       <o id="1938" en="Lethe Arrows" />
@@ -4521,16 +4180,11 @@ IN THE SOFTWARE.
       <o id="1948" en="Ore Lob" />
       <o id="1949" en="Feathered Furore" />
       <o id="1950" en="Dark Invocation" />
-      <o id="1951" en="Disorienting Waul" />
-      <o id="1952" en="Microspores" />
-      <o id="1953" en="Blink of Peril" />
-      <o id="1954" en="Petal Pirouette" />
       <o id="1960" en="Nocturnal Combustion" />
       <o id="1961" en="Berserk" />
       <o id="1962" en="Penumbral Impact" />
       <o id="1963" en="Dark Wave" />
       <o id="1964" en="Tartarean Storm" />
-      <o id="1965" en="Hell Scissors" />
       <o id="1966" en="Hurricane Breath" />
       <o id="1967" en="Ore Toss" />
       <o id="1968" en="Head Butt" />
@@ -4670,18 +4324,15 @@ IN THE SOFTWARE.
       <o id="2128" en="Orbital Earthrend" />
       <o id="2129" en="Tongue Lash" />
       <o id="2130" en="Cobra Clamp" />
-      <o id="2131" en="Fatal Scream" />
       <o id="2132" en="Dirty Breath" />
       <o id="2133" en="Lethal Triclip" />
       <o id="2134" en="Accursed Armor" />
-      <o id="2135" en="Amnesic Blast" />
       <o id="2136" en="Oppressive Glare" />
       <o id="2137" en="Ritual Bind" />
       <o id="2138" en="Moribund Hack" />
       <o id="2139" en="Mine Blast" />
       <o id="2150" en="Roar" />
       <o id="2151" en="Charged Whisker" />
-      <o id="2154" en="Demonic Flower" />
       <o id="2155" en="Phantasmal Dance" />
       <o id="2156" en="Thunderous Yowl" />
       <o id="2157" en="Feather Maelstrom" />
@@ -4698,19 +4349,8 @@ IN THE SOFTWARE.
       <o id="2169" en="Bloody Claw" />
       <o id="2170" en="Shadow Burst" />
       <o id="2171" en="Tail Lash" />
-      <o id="2172" en="Bloody Beak" />
       <o id="2173" en="Feral Peck" />
-      <o id="2174" en="Warped Wail" />
-      <o id="2175" en="Reaving Wind" />
-      <o id="2176" en="Storm Wing" />
-      <o id="2177" en="Calamitous Wind" />
-      <o id="2179" en="Severing Fang" />
       <o id="2180" en="Sub-zero Smash" />
-      <o id="2181" en="Aqua Blast" />
-      <o id="2182" en="Frozen Mist" />
-      <o id="2183" en="Hydro Wave" />
-      <o id="2184" en="Ice Guillotine" />
-      <o id="2185" en="Aqua Cannon" />
       <o id="2186" en="Thorned Stance" />
       <o id="2187" en="Sensual Dance" />
       <o id="2188" en="Dancer's Fury" />
@@ -4767,11 +4407,6 @@ IN THE SOFTWARE.
       <o id="2241" en="Dark Overload" />
       <o id="2253" en="Hypothermal Combustion" />
       <o id="2255" en="Corpse Breath" />
-      <o id="2256" en="Venom Shower" />
-      <o id="2257" en="Mega Scissors" />
-      <o id="2258" en="Cytokinesis" />
-      <o id="2260" en="Gravitic Horn" />
-      <o id="2261" en="Quake Blast" />
       <o id="2262" en="Norn Arrows" />
       <o id="2263" en="Dexter Wing" />
       <o id="2264" en="Sinister Wing" />
@@ -4800,11 +4435,6 @@ IN THE SOFTWARE.
       <o id="2287" en="Spawn Shadow" />
       <o id="2288" en="Soma Wall" />
       <o id="2289" en="Doom Arc" />
-      <o id="2292" en="Fluid Spread" />
-      <o id="2293" en="Fluid Toss" />
-      <o id="2294" en="Dissolve" />
-      <o id="2295" en="Mucus Spread" />
-      <o id="2296" en="Epoxy Spread" />
       <o id="2300" en="Ofnir" />
       <o id="2301" en="Valfodr" />
       <o id="2302" en="Yggr" />
@@ -4823,16 +4453,12 @@ IN THE SOFTWARE.
       <o id="2315" en="Stygian Sphere" />
       <o id="2316" en="Malign Invocation" />
       <o id="2317" en="Shadow Wreck" />
-      <o id="2318" en="Thousand Spears" />
       <o id="2319" en="Tainting Breath" />
       <o id="2320" en="Mercurial Strike" />
       <o id="2321" en="Mercurial Strike" />
       <o id="2322" en="Colossal Slam" />
-      <o id="2323" en="Phaeosynthesis" />
       <o id="2324" en="Pandora's Curse" />
       <o id="2325" en="Pandora's Gift" />
-      <o id="2329" en="Testudo Tremor" />
-      <o id="2330" en="Ecliptic Meteor" />
       <o id="2331" en="Inspirit" />
       <o id="2332" en="Debonair Rush" />
       <o id="2333" en="Iridal Pierce" />
@@ -4841,18 +4467,8 @@ IN THE SOFTWARE.
       <o id="2336" en="Darkling Blade" />
       <o id="2337" en="Demonic Shear" />
       <o id="2338" en="Quietus Sphere" />
-      <o id="2343" en="Tepal Twist" />
-      <o id="2344" en="Bloom Fouette" />
-      <o id="2345" en="Petalback Spin" />
-      <o id="2346" en="Mortal Blast" />
       <o id="2347" en="Heat Breath" />
-      <o id="2348" en="Gorge" />
-      <o id="2349" en="Disgorge" />
       <o id="2350" en="Carousel" />
-      <o id="2351" en="Agaricus" />
-      <o id="2352" en="Terminal Sting" />
-      <o id="2353" en="Booming Bleat" />
-      <o id="2354" en="Vacant Gaze" />
       <o id="2355" en="Blaster" />
       <o id="2356" en="Wild Carrot" />
       <o id="2357" en="Spiral Spin" />
@@ -4880,9 +4496,6 @@ IN THE SOFTWARE.
       <o id="2382" en="Hadal Summons" />
       <o id="2383" en="Mayhem Lantern" />
       <o id="2384" en="Ruinous Scythe" />
-      <o id="2385" en="Psyche Suction" />
-      <o id="2386" en="Vermilion Wind" />
-      <o id="2387" en="Tyrant Tusk" />
       <o id="2388" en="Somnial Durance" />
       <o id="2389" en="Mud Stream" />
       <o id="2390" en="Rancor Smash" />
@@ -4912,17 +4525,12 @@ IN THE SOFTWARE.
       <o id="2434" en="Dark Moon" />
       <o id="2435" en="Dark Sun" />
       <o id="2436" en="Royal Decree" />
-      <o id="2437" en="Virulent Haze" />
       <o id="2438" en="Cyclonic Blight" />
-      <o id="2439" en="Torment Tusk" />
       <o id="2440" en="Baleful Roar" />
       <o id="2441" en="Infinite Terror" />
       <o id="2442" en="Lithic Breath" />
-      <o id="2443" en="Tarsal Slam" />
       <o id="2444" en="Enthrall" />
-      <o id="2445" en="Acheron Flame" />
       <o id="2446" en="Terra Wing" />
-      <o id="2447" en="Dread Wind" />
       <o id="2448" en="??? Needles" />
       <o id="2449" en="White Wind" />
       <o id="2450" en="Smokebomb" />
@@ -4969,9 +4577,6 @@ IN THE SOFTWARE.
       <o id="2500" en="Death Prophet" />
       <o id="2501" en="Sakra Storm" />
       <o id="2502" en="Kaleidoscopic Fury" />
-      <o id="2503" en="Telsonic Tempest" />
-      <o id="2504" en="Preternatural Gleam" />
-      <o id="2505" en="Chupa Blossom" />
       <o id="2506" en="Hell Slash" />
       <o id="2507" en="Horror Cloud" />
       <o id="2508" en="Black Cloud" />
@@ -4979,9 +4584,6 @@ IN THE SOFTWARE.
       <o id="2510" en="Malediction" />
       <o id="2511" en="Crepuscule Blade" />
       <o id="2512" en="Deathly Glare" />
-      <o id="2513" en="Blighted Bouquet" />
-      <o id="2514" en="Booming Bombination" />
-      <o id="2515" en="Gush o' Goo" />
       <o id="2518" en="Flank Opening" />
       <o id="2519" en="Tabbiyaa Gambit" />
       <o id="2520" en="Shah Mat" />
@@ -5012,16 +4614,8 @@ IN THE SOFTWARE.
       <o id="2555" en="Keraunos Quill" />
       <o id="2556" en="Bilrost Squall" />
       <o id="2557" en="Dunur Strike" />
-      <o id="2558" en="Yawn" />
-      <o id="2559" en="Wing Slap" />
-      <o id="2560" en="Beak Lunge" />
-      <o id="2561" en="Frigid Shuffle" />
-      <o id="2562" en="Wing Whirl" />
-      <o id="2563" en="Whiteout" />
-      <o id="2564" en="Keratinous Crush" />
       <o id="2565" en="Accurst Spear" />
       <o id="2566" en="Eldritch Wind" />
-      <o id="2567" en="Rhinowrecker" />
       <o id="2568" en="Cloudscourge" />
       <o id="2569" en="Louring Skies" />
       <o id="2570" en="Exponential Burst" />
@@ -5062,7 +4656,6 @@ IN THE SOFTWARE.
       <o id="2628" en="Deracinator" />
       <o id="2629" en="Beautiful Death" />
       <o id="2630" en="Exorender" />
-      <o id="2631" en="Tropic Tenor" />
       <o id="2632" en="Dark Recital" />
       <o id="2633" en="Usurping Scepter" />
       <o id="2634" en="Gen'ei Ryodan" />
@@ -5105,26 +4698,14 @@ IN THE SOFTWARE.
       <o id="2674" en="Subduction" />
       <o id="2675" en="Tectonic Shift" />
       <o id="2676" en="Unrelenting Brand" />
-      <o id="2677" en="Searing Effulgence" />
       <o id="2678" en="Blazing Shriek" />
       <o id="2679" en="Volcanic Wrath" />
-      <o id="2680" en="Tarichutoxin" />
-      <o id="2681" en="Caliginosity" />
       <o id="2683" en="Mighty Strikes" />
       <o id="2684" en="Invincible" />
       <o id="2685" en="Eagle Eye Shot" />
       <o id="2686" en="Chainspell" />
       <o id="2687" en="Benediction" />
       <o id="2688" en="Manafont" />
-      <o id="2689" en="Nature's Meditation" />
-      <o id="2690" en="Sensilla Blades" />
-      <o id="2691" en="Tegmina Buffet" />
-      <o id="2692" en="Sanguinary Slash" />
-      <o id="2693" en="Orthopterror" />
-      <o id="2694" en="Tempestuous Upheaval" />
-      <o id="2695" en="Slice 'n' Dice" />
-      <o id="2696" en="Blackout" />
-      <o id="2697" en="Smouldering Swarm" />
       <o id="2701" en="Impenetrable Carapace" />
       <o id="2702" en="Rending Deluge" />
       <o id="2703" en="Sundering Snip" />
@@ -5139,10 +4720,6 @@ IN THE SOFTWARE.
       <o id="2715" en="Crepuscular Grasp" />
       <o id="2716" en="Necrotic Brume" />
       <o id="2717" en="Terminal Bloom" />
-      <o id="2718" en="Foul Waters" />
-      <o id="2719" en="Pestilent Plume" />
-      <o id="2720" en="Deadening Haze" />
-      <o id="2721" en="Venomous Vapor" />
       <o id="2722" en="Consecration" />
       <o id="2723" en="Sacred Caper" />
       <o id="2724" en="Phototrophic Blessing" />
@@ -5181,17 +4758,11 @@ IN THE SOFTWARE.
       <o id="2768" en="Batholithic Shell" />
       <o id="2769" en="Pyroclastic Surge" />
       <o id="2770" en="Incinerating Lahar" />
-      <o id="2774" en="Retinal Glare" />
-      <o id="2775" en="Sylvan Slumber" />
-      <o id="2776" en="Crushing Gaze" />
-      <o id="2777" en="Vaskania" />
       <o id="2781" en="Flesh Syphon" />
       <o id="2782" en="Umbral Expunction" />
       <o id="2783" en="Sticky Situation" />
       <o id="2784" en="Abdominal Assault" />
       <o id="2785" en="Mandibular Massacre" />
-      <o id="2787" en="Whirling Inferno" />
-      <o id="2788" en="Benumbing Blaze" />
       <o id="2789" en="Concentric Pulse" />
       <o id="2790" en="Foul Waters" />
       <o id="2791" en="Pestilent Plume" />
@@ -5248,10 +4819,6 @@ IN THE SOFTWARE.
       <o id="2858" en="Gambit" />
       <o id="2859" en="Bellatrix of Light" />
       <o id="2860" en="Bellatrix of Shadows" />
-      <o id="2867" en="Fighting Stance a" />
-      <o id="2868" en="Fighting Stance ï¿½" />
-      <o id="2869" en="Fighting Stance ?" />
-      <o id="2870" en="Fighting Stance d" />
       <o id="2874" en="Barreling Smash" />
       <o id="2875" en="Sweeping Gouge" />
       <o id="2876" en="Zealous Snort" />
@@ -5262,7 +4829,6 @@ IN THE SOFTWARE.
       <o id="2884" en="Permafrost Requiem" />
       <o id="2885" en="Glacial Tomb" />
       <o id="2886" en="Glassy Nova" />
-      <o id="2890" en="Frenetic Flurry" />
       <o id="2893" en="Dazing Discord" />
       <o id="2894" en="Steaming Rage" />
       <o id="2896" en="Shining Salvo" />

@@ -45,6 +45,7 @@ namespace ResourceExtractor
             "items",
             "job_abilities",
             "job_traits",
+            "monster_abilities",
             "monstrosity",
             "pet_commands",
             "spells",
@@ -168,7 +169,7 @@ namespace ResourceExtractor
                     act.Remove("mp_cost");
                     act.Remove("type");
 
-                    model.monstrosity.Add(action);
+                    model.monster_abilities.Add(action);
                 }
             }
             ((IDictionary<string, object>)model).Remove("actions");
@@ -320,14 +321,12 @@ namespace ResourceExtractor
                 {
                     foreach (XElement fix in update.Elements())
                     {
-                        var elements = from e in data
-                                       where e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture)
-                                       select e;
+                        var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 
                         if (!elements.Any())
                         {
                             dynamic el = new ExpandoObject();
-                            IDictionary<string, object> del = (IDictionary<string, object>)el;
+                            IDictionary<string, object> del = el;
 
                             foreach (XAttribute attr in fix.Attributes())
                             {

@@ -47,7 +47,6 @@ namespace ResourceExtractor
             "job_traits",
             "monster_abilities",
             "monstrosity",
-            "pet_commands",
             "spells",
             "spell_recasts",
             "weapon_skills",
@@ -128,24 +127,13 @@ namespace ResourceExtractor
                     model.weapon_skills.Add(action);
                 }
                 // Job ability
-                else if (action.id >= 0x0200 && action.id < 0x0400)
+                else if (action.id >= 0x0200 && action.id < 0x0600)
                 {
                     action.id -= 0x0200;
 
                     act.Remove("monster_level");
 
                     model.job_abilities.Add(action);
-                }
-                // Pet commands
-                else if (action.id >= 0x0400 && action.id < 0x0600)
-                {
-                    action.id -= 0x0400;
-
-                    act.Remove("monster_level");
-                    act.Remove("recast_id");
-                    act.Remove("tp_cost");
-
-                    model.pet_commands.Add(action);
                 }
                 // Job traits
                 else if (action.id >= 0x0600 && action.id < 0x0700)
@@ -165,6 +153,7 @@ namespace ResourceExtractor
                 else if (action.id >= 0x0700)
                 {
                     action.id -= 0x0700;
+                    action.id += 0x0100;
 
                     act.Remove("mp_cost");
                     act.Remove("type");
@@ -178,6 +167,9 @@ namespace ResourceExtractor
         private static void WriteData()
         {
             Directory.CreateDirectory("resources");
+            Directory.Delete("resources/lua", true);
+            Directory.Delete("resources/xml", true);
+            Directory.Delete("resources/json", true);
             Directory.CreateDirectory("resources/lua");
             Directory.CreateDirectory("resources/xml");
             Directory.CreateDirectory("resources/json");

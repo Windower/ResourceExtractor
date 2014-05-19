@@ -477,7 +477,7 @@ namespace ResourceExtractor
         private static void ParseMonstrosityItem(BinaryReader reader, dynamic item)
         {
             item.tp_moves = new Dictionary<ushort, sbyte>();
-            reader.ReadBytes(0x2E);             // Unknown 02 - 2F
+            reader.ReadBytes(0x2C);             // Unknown 04 - 2F
             for (var i = 0x00; i < 0x10; ++i)
             {
                 var move = reader.ReadUInt16();

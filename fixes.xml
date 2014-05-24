@@ -837,29 +837,29 @@ IN THE SOFTWARE.
   </encumbrance>
   <jobs>
     <update>
-      <o id="1" en="Warrior" short="WAR" />
-      <o id="2" en="Monk" short="MNK" />
-      <o id="3" en="White Mage" short="WHM" />
-      <o id="4" en="Black Mage" short="BLM" />
-      <o id="5" en="Red Mage" short="RDM" />
-      <o id="6" en="Thief" short="THF" />
-      <o id="7" en="Paladin" short="PLD" />
-      <o id="8" en="Dark Knight" short="DRK" />
-      <o id="9" en="Beastmaster" short="BST" />
-      <o id="10" en="Bard" short="BRD" />
-      <o id="11" en="Ranger" short="RNG" />
-      <o id="12" en="Samurai" short="SAM" />
-      <o id="13" en="Ninja" short="NIN" />
-      <o id="14" en="Dragoon" short="DRG" />
-      <o id="15" en="Summoner" short="SMN" />
-      <o id="16" en="Blue Mage" short="BLU" />
-      <o id="17" en="Corsair" short="COR" />
-      <o id="18" en="Puppetmaster" short="PUP" />
-      <o id="19" en="Dancer" short="DNC" />
-      <o id="20" en="Scholar" short="SCH" />
-      <o id="21" en="Geomancer" short="GEO" />
-      <o id="22" en="Rune Fencer" short="RUN" />
-      <o id="23" en="Monipulator" short="MON" />
+      <o id="1" en="Warrior" ens="WAR" ja="戦士" jas="戦" />
+      <o id="2" en="Monk" ens="MNK" ja="モンク" jas="モ" />
+      <o id="3" en="White Mage" ens="WHM" ja="白魔道士" jas="白" />
+      <o id="4" en="Black Mage" ens="BLM" ja="黒魔道士" jas="黒" />
+      <o id="5" en="Red Mage" ens="RDM" ja="赤魔道士" jas="赤" />
+      <o id="6" en="Thief" ens="THF" ja="シーフ" jas="シ" />
+      <o id="7" en="Paladin" ens="PLD" ja="ナイト" jas="ナ" />
+      <o id="8" en="Dark Knight" ens="DRK" ja="暗黒騎士" jas="暗" />
+      <o id="9" en="Beastmaster" ens="BST" ja="獣使い" jas="獣" />
+      <o id="10" en="Bard" ens="BRD" ja="吟遊詩人" jas="吟" />
+      <o id="11" en="Ranger" ens="RNG" ja="狩人" jas="狩" />
+      <o id="12" en="Samurai" ens="SAM" ja="侍" jas="侍" />
+      <o id="13" en="Ninja" ens="NIN" ja="忍者" jas="忍" />
+      <o id="14" en="Dragoon" ens="DRG" ja="竜騎士" jas="竜" />
+      <o id="15" en="Summoner" ens="SMN" ja="召喚士" jas="召" />
+      <o id="16" en="Blue Mage" ens="BLU" ja="青魔道士" jas="青" />
+      <o id="17" en="Corsair" ens="COR" ja="コルセア" jas="コ" />
+      <o id="18" en="Puppetmaster" ens="PUP" ja="からくり士" jas="か" />
+      <o id="19" en="Dancer" ens="DNC" ja="踊り子" jas="踊" />
+      <o id="20" en="Scholar" ens="SCH" ja="学者" jas="学" />
+      <o id="21" en="Geomancer" ens="GEO" ja="風水士" jas="風" />
+      <o id="22" en="Rune Fencer" ens="RUN" ja="魔導剣士" jas="剣" />
+      <o id="23" en="Monipulator" ens="MON" ja="" jas="" />
     </update>
   </jobs>
   <moon_phases>
@@ -901,53 +901,53 @@ IN THE SOFTWARE.
   </servers>
   <skills>
     <update>
-      <o id="0" en="(N/A)" category="None" />
-      <o id="1" en="Hand-to-Hand" category="Combat" />
-      <o id="2" en="Dagger" category="Combat" />
-      <o id="3" en="Sword" category="Combat" />
-      <o id="4" en="Great Sword" category="Combat" />
-      <o id="5" en="Axe" category="Combat" />
-      <o id="6" en="Great Axe" category="Combat" />
-      <o id="7" en="Scythe" category="Combat" />
-      <o id="8" en="Polearm" category="Combat" />
-      <o id="9" en="Katana" category="Combat" />
-      <o id="10" en="Great Katana" category="Combat" />
-      <o id="11" en="Club" category="Combat" />
-      <o id="12" en="Staff" category="Combat" />
-      <o id="22" en="Automaton Melee" category="Puppet" />
-      <o id="23" en="Automaton Archery" category="Puppet" />
-      <o id="24" en="Automaton Magic" category="Puppet" />
-      <o id="25" en="Archery" category="Combat" />
-      <o id="26" en="Marksmanship" category="Combat" />
-      <o id="27" en="Throwing" category="Combat" />
-      <o id="28" en="Guard" category="Combat" />
-      <o id="29" en="Evasion" category="Combat" />
-      <o id="30" en="Shield" category="Combat" />
-      <o id="31" en="Parrying" category="Combat" />
-      <o id="32" en="Divine Magic" category="Magic" />
-      <o id="33" en="Healing Magic" category="Magic" />
-      <o id="34" en="Enhancing Magic" category="Magic" />
-      <o id="35" en="Enfeebling Magic" category="Magic" />
-      <o id="36" en="Elemental Magic" category="Magic" />
-      <o id="37" en="Dark Magic" category="Magic" />
-      <o id="38" en="Summoning Magic" category="Magic" />
-      <o id="39" en="Ninjutsu" category="Magic" />
-      <o id="40" en="Singing" category="Magic" />
-      <o id="41" en="Stringed Instrument" category="Magic" />
-      <o id="42" en="Wind Instrument" category="Magic" />
-      <o id="43" en="Blue Magic" category="Magic" />
-      <o id="44" en="Geomancy" category="Magic" />
-      <o id="45" en="Handbell" category="Magic" />
-      <o id="48" en="Fishing" category="Synthesis" />
-      <o id="49" en="Woodworking" category="Synthesis" />
-      <o id="50" en="Smithing" category="Synthesis" />
-      <o id="51" en="Goldsmithing" category="Synthesis" />
-      <o id="52" en="Clothcraft" category="Synthesis" />
-      <o id="53" en="Leathercraft" category="Synthesis" />
-      <o id="54" en="Bonecraft" category="Synthesis" />
-      <o id="55" en="Alchemy" category="Synthesis" />
-      <o id="56" en="Cooking" category="Synthesis" />
-      <o id="57" en="Synergy" category="Synthesis" />
+      <o id="0" en="(N/A)" ja="(N/A)" category="None" />
+      <o id="1" en="Hand-to-Hand" ja="格闘" category="Combat" />
+      <o id="2" en="Dagger" ja="短剣" category="Combat" />
+      <o id="3" en="Sword" ja="片手剣" category="Combat" />
+      <o id="4" en="Great Sword" ja="両手剣" category="Combat" />
+      <o id="5" en="Axe" ja="片手斧" category="Combat" />
+      <o id="6" en="Great Axe" ja="両手斧" category="Combat" />
+      <o id="7" en="Scythe" ja="両手鎌" category="Combat" />
+      <o id="8" en="Polearm" ja="両手槍" category="Combat" />
+      <o id="9" en="Katana" ja="片手刀" category="Combat" />
+      <o id="10" en="Great Katana" ja="両手刀" category="Combat" />
+      <o id="11" en="Club" ja="片手棍" category="Combat" />
+      <o id="12" en="Staff" ja="両手棍" category="Combat" />
+      <o id="22" en="Automaton Melee" ja="白兵戦" category="Puppet" />
+      <o id="23" en="Automaton Archery" ja="射撃戦" category="Puppet" />
+      <o id="24" en="Automaton Magic" ja="魔法戦" category="Puppet" />
+      <o id="25" en="Archery" ja="弓術" category="Combat" />
+      <o id="26" en="Marksmanship" ja="射撃" category="Combat" />
+      <o id="27" en="Throwing" ja="投てき" category="Combat" />
+      <o id="28" en="Guard" ja="ガード" category="Combat" />
+      <o id="29" en="Evasion" ja="回避" category="Combat" />
+      <o id="30" en="Shield" ja="盾" category="Combat" />
+      <o id="31" en="Parrying" ja="受け流し" category="Combat" />
+      <o id="32" en="Divine Magic" ja="神聖魔法" category="Magic" />
+      <o id="33" en="Healing Magic" ja="回復魔法" category="Magic" />
+      <o id="34" en="Enhancing Magic" ja="強化魔法" category="Magic" />
+      <o id="35" en="Enfeebling Magic" ja="弱体魔法" category="Magic" />
+      <o id="36" en="Elemental Magic" ja="精霊魔法" category="Magic" />
+      <o id="37" en="Dark Magic" ja="暗黒魔法" category="Magic" />
+      <o id="38" en="Summoning Magic" ja="召喚魔法" category="Magic" />
+      <o id="39" en="Ninjutsu" ja="忍術" category="Magic" />
+      <o id="40" en="Singing" ja="歌唱" category="Magic" />
+      <o id="41" en="Stringed Instrument" ja="弦楽器" category="Magic" />
+      <o id="42" en="Wind Instrument" ja="管楽器" category="Magic" />
+      <o id="43" en="Blue Magic" ja="青魔法" category="Magic" />
+      <o id="44" en="Geomancy" ja="風水魔法" category="Magic" />
+      <o id="45" en="Handbell" ja="風水鈴" category="Magic" />
+      <o id="48" en="Fishing" ja="釣り" category="Synthesis" />
+      <o id="49" en="Woodworking" ja="木工" category="Synthesis" />
+      <o id="50" en="Smithing" ja="鍛冶" category="Synthesis" />
+      <o id="51" en="Goldsmithing" ja="彫金" category="Synthesis" />
+      <o id="52" en="Clothcraft" ja="裁縫" category="Synthesis" />
+      <o id="53" en="Leathercraft" ja="革細工" category="Synthesis" />
+      <o id="54" en="Bonecraft" ja="骨細工" category="Synthesis" />
+      <o id="55" en="Alchemy" ja="錬金術" category="Synthesis" />
+      <o id="56" en="Cooking" ja="調理" category="Synthesis" />
+      <o id="57" en="Synergy" ja="錬成" category="Synthesis" />
     </update>
   </skills>
   <statuses>
@@ -1043,23 +1043,23 @@ IN THE SOFTWARE.
   </slots>
   <races>
     <update>
-      <o id="0" en="Precomposed NPC" gender="None" />
-      <o id="1" en="Hume ♂" gender="♂" />
-      <o id="2" en="Hume ♀" gender="♀" />
-      <o id="3" en="Elvaan ♂" gender="♂" />
-      <o id="4" en="Elvaan ♀" gender="♀" />
-      <o id="5" en="Tarutaru ♂" gender="♂" />
-      <o id="6" en="Tarutaru ♀" gender="♀" />
-      <o id="7" en="Mithra" gender="♀" />
-      <o id="8" en="Galka" gender="♂" />
-      <o id="29" en="Mithra Child" gender="♀" />
-      <o id="30" en="Elv Hume Child ♀" gender="♀" />
-      <o id="31" en="Elv Hume Child ♂" gender="♂" />
-      <o id="32" en="Chocobo Rounsey" gender="None" />
-      <o id="33" en="Chocobo Destrier" gender="None" />
-      <o id="34" en="Chocobo Palfrey" gender="None" />
-      <o id="35" en="Chocobo Courser" gender="None" />
-      <o id="36" en="Chocobo Jennet" gender="None" />
+      <o id="0" en="Precomposed NPC" ja="NPC" gender="None" />
+      <o id="1" en="Hume ♂" ja="ヒューム ♂" gender="♂" />
+      <o id="2" en="Hume ♀" ja="ヒューム ♀" gender="♀" />
+      <o id="3" en="Elvaan ♂" ja="エㇽバン  ♂" gender="♂" />
+      <o id="4" en="Elvaan ♀" ja="エㇽバン  ♀" gender="♀" />
+      <o id="5" en="Tarutaru ♂" ja="タルタル ♂" gender="♂" />
+      <o id="6" en="Tarutaru ♀" ja="タルタル ♀" gender="♀" />
+      <o id="7" en="Mithra" ja="ミスラ" gender="♀" />
+      <o id="8" en="Galka" ja="ガㇽカ" gender="♂" />
+      <o id="29" en="Mithra Child" ja="ミスラの子" gender="♀" />
+      <o id="30" en="Elv Hume Child ♀" ja="エㇽ　ヒュームの子 ♀" gender="♀" />
+      <o id="31" en="Elv Hume Child ♂" ja="エㇽ　ヒュームの子 ♂" gender="♂" />
+      <o id="32" en="Chocobo Rounsey" ja="チョコボ 黄" gender="None" />
+      <o id="33" en="Chocobo Destrier" ja="チョコボ 黒" gender="None" />
+      <o id="34" en="Chocobo Palfrey" ja="チョコボ 赤" gender="None" />
+      <o id="35" en="Chocobo Courser" ja="チョコボ 青" gender="None" />
+      <o id="36" en="Chocobo Jennet" ja="チョコボ 緑" gender="None" />
     </update>
   </races>
   <action_messages>
@@ -1783,11 +1783,12 @@ IN THE SOFTWARE.
       <o id="727" en="You receive a bonus of ${number} bonecraft guild points!" color="121" />
       <o id="728" en="You receive a bonus of ${number} alchemy guild points!" color="121" />
       <o id="729" en="You receive a bonus of ${number} cooking guild points!" color="121" />
-      <o id="730" en="${actor} uses ${weapon_skill}${lb}${target}'s TP is reduced to ${number}." color="101" />
+      <o id="730" en="${actor} uses ${ability}${lb}${target}'s TP is reduced to ${number}." color="101" />
       <o id="731" en="Average item level: ${number}." color="101" />
       <o id="732" en="Skillchain: Universal Enlightenment.${lb}${target} takes ${number} points of damage" color="D" />
       <o id="733" en="${target}:" color="91" />
       <o id="734" en="${actor} uses ${ability} on ${target}." color="91" />
+      <o id="735" en="Capacity chain #${number}!${lb}${actor} gains ${number2} capacity points." color="91" />
     </update>
   </action_messages>
   <titles>
@@ -4914,7 +4915,30 @@ IN THE SOFTWARE.
       <o id="3253" en="Leaden Salute" />
       <o id="3254" en="Akimbo Shot" />
       <o id="3255" en="Grisly Horizon" />
+      <o id="3256" en="Hane Fubuki" />
+      <o id="3257" en="Shibaraku" />
+      <o id="3258" en="Shiko no Mitate" />
+      <o id="3259" en="Happobarai" />
+      <o id="3260" en="Rinpyotosha" />
+      <o id="3261" en="Bomb Toss" />
+      <o id="3262" en="Goblin Rush" />
+      <o id="3263" en="Bear Killer" />
+      <o id="3264" en="Salvation Scythe" />
+      <o id="3265" en="Elemental Sforzo" />
+      <o id="3266" en="Liement" />
+      <o id="3275" en="Burning Memories" />
+      <o id="3276" en="Kagedourou" />
+      <o id="3277" en="Karakuridourou" />
+      <o id="3278" en="Tsujikaze" />
+      <o id="3279" en="Sleepytime Boomboom" />
+      <o id="3280" en="Smelled It and Dealt It" />
+      <o id="3281" en="Somnic Shell" />
+      <o id="3282" en="Contaminating Concoction" />
+      <o id="3283" en="Iniquitous Stab" />
+      <o id="3284" en="Shockstorm Edge" />
+      <o id="3285" en="Choreographed Carnage" />
+      <o id="3286" en="Lock and Load" />
+      <o id="3287" en="Lunge" />
     </update>
   </monster_abilities>
 </fixes>
-

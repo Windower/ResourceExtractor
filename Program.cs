@@ -156,6 +156,7 @@ namespace ResourceExtractor
                     action.id += 0x0100;
 
                     act.Remove("mp_cost");
+                    act.Remove("recast_id");
                     act.Remove("type");
 
                     model.monster_abilities.Add(action);

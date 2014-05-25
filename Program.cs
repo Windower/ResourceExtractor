@@ -168,12 +168,15 @@ namespace ResourceExtractor
         private static void WriteData()
         {
             Directory.CreateDirectory("resources");
-            Directory.Delete("resources/lua", true);
-            Directory.Delete("resources/xml", true);
-            Directory.Delete("resources/json", true);
-            Directory.CreateDirectory("resources/lua");
-            Directory.CreateDirectory("resources/xml");
-            Directory.CreateDirectory("resources/json");
+            foreach (var dir in new string[] { "lua", "xml", "json" })
+            {
+                string path = "resources/" + dir;
+                if (Directory.Exists(path))
+                {
+                    Directory.Delete(path, true);
+                }
+                Directory.CreateDirectory(path);
+            }
 
             // Create manifest file
             XDocument manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));

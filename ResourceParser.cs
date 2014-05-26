@@ -1,4 +1,4 @@
-﻿// <copyright file="ResourceParser.cs" company="Windower Team">
+// <copyright file="ResourceParser.cs" company="Windower Team">
 // Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -428,11 +428,19 @@ namespace ResourceExtractor
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            reader.ReadBytes(0x0D);             // Unknown 18 - 24
+
+            item.dmg = reader.ReadUInt16();
+            item.delay = reader.ReadInt16();
+            item.dps = reader.ReadUInt16();
+            item.skill = reader.ReadByte();
+            reader.ReadByte();                  // jug_size. Who cares?
+            reader.ReadBytes(0x04);             // Unknown
+            item.max_charges = reader.ReadByte();
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x02);             // Unknown 26 - 27
-            item.recast = reader.ReadUInt32();
-            reader.ReadBytes(0x04);             // Unknown 2C - 2F
+            reader.ReadBytes(0x02);             // UseDelay
+            item.recast = reader.ReadUInt32();  // ReUseDelay
+            reader.ReadBytes(0x02);             // Unknown
+            item.ilevel = reader.ReadUInt16();
 
             item.category = "Weapon";
         }
@@ -443,11 +451,14 @@ namespace ResourceExtractor
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            reader.ReadBytes(0x03);             // Unknown 18 - 1A
+            item.shield_size = reader.ReadUInt16();
+            item.max_charges = reader.ReadByte();
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x04);             // Unknown 1C - 1F
-            item.recast = reader.ReadUInt32();
-            reader.ReadBytes(0x04);             // Unknown 24 - 27
+            reader.ReadBytes(0x02);             //UseDelay
+            reader.ReadBytes(0x02);             // Unknown
+            item.recast = reader.ReadUInt32();  //ReUseDelay
+            reader.ReadBytes(0x02);             // Unknown
+            item.ilevel = reader.ReadUInt16();
 
             item.category = "Armor";
         }

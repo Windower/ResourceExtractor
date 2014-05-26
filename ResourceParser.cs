@@ -424,6 +424,9 @@ namespace ResourceExtractor
 
         private static void ParseWeaponItem(BinaryReader reader, dynamic item)
         {
+            byte jug;
+            byte max_charges;
+            ushort item_level;
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
@@ -433,32 +436,44 @@ namespace ResourceExtractor
             item.delay = reader.ReadInt16();
             item.dps = reader.ReadUInt16();
             item.skill = reader.ReadByte();
-            reader.ReadByte();                  // jug_size. Who cares?
-            reader.ReadBytes(0x04);             // Unknown
-            item.max_charges = reader.ReadByte();
+            
+            jug = reader.ReadByte();
+            if ( jug > 0) { item.jug_size = jug; } 
+            reader.ReadBytes(0x04);             // Unknown 0x20 - 0x23 (inclusive)
+            max_charges = reader.ReadByte();
+            if ( max_charges > 0) { item.max_charges = max_charges; }
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x02);             // UseDelay
-            item.recast = reader.ReadUInt32();  // ReUseDelay
-            reader.ReadBytes(0x02);             // Unknown
-            item.ilevel = reader.ReadUInt16();
+            item.cast_delay = reader.ReadUInt16();
+            item.recast_delay = reader.ReadUInt32();
+            reader.ReadBytes(0x02);             // Unknown  0x2C - 0x2D (inclusive)
+            item_level = reader.ReadUInt16();
+            if (item_level > 0) { item.item_level = item_level; }
 
             item.category = "Weapon";
         }
 
         private static void ParseArmorItem(BinaryReader reader, dynamic item)
         {
+            ushort shield_size;
+            byte charges;
+            ushort item_level;
+
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            item.shield_size = reader.ReadUInt16();
-            item.max_charges = reader.ReadByte();
+            shield_size = reader.ReadUInt16();
+            if (shield_size > 0) { item.shield_size = shield_size; }
+            charges = reader.ReadByte();
+            if (charges > 0) { item.max_charges = charges; }
+
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x02);             //UseDelay
-            reader.ReadBytes(0x02);             // Unknown
-            item.recast = reader.ReadUInt32();  //ReUseDelay
-            reader.ReadBytes(0x02);             // Unknown
-            item.ilevel = reader.ReadUInt16();
+            item.cast_delay = reader.ReadBytes(0x02);
+            reader.ReadBytes(0x02);             // Unknown 0x1E - 0x1F (inclusive)
+            item.recast_delay = reader.ReadUInt32();
+            reader.ReadBytes(0x02);             // Unknown 0x26 - 0x27 (inclusive)
+            item_level = reader.ReadUInt16();
+            if (item_level > 0) { item.item_level = item_level; }
 
             item.category = "Armor";
         }

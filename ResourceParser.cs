@@ -559,10 +559,12 @@ namespace ResourceExtractor
             {
             case Languages.English:
                 item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
+                //item.endesc = DecodeEntry(reader, StringIndex.EnglishDescription);
                 break;
 
             case Languages.Japanese:
                 item.jal = DecodeEntry(reader, StringIndex.Name);
+                //item.jadesc = DecodeEntry(reader, StringIndex.JapaneseDescription);
                 break;
 
             case Languages.German:

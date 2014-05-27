@@ -1,4 +1,4 @@
-﻿// <copyright file="ResourceParser.cs" company="Windower Team">
+// <copyright file="ResourceParser.cs" company="Windower Team">
 // Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -424,30 +424,56 @@ namespace ResourceExtractor
 
         private static void ParseWeaponItem(BinaryReader reader, dynamic item)
         {
+            byte jug;
+            byte max_charges;
+            ushort item_level;
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            reader.ReadBytes(0x0D);             // Unknown 18 - 24
+
+            item.dmg = reader.ReadUInt16();
+            item.delay = reader.ReadInt16();
+            item.dps = reader.ReadUInt16();
+            item.skill = reader.ReadByte();
+            
+            jug = reader.ReadByte();
+            if ( jug > 0) { item.jug_size = jug; } 
+            reader.ReadBytes(0x04);             // Unknown 0x20 - 0x23 (inclusive)
+            max_charges = reader.ReadByte();
+            if ( max_charges > 0) { item.max_charges = max_charges; }
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x02);             // Unknown 26 - 27
-            item.recast = reader.ReadUInt32();
-            reader.ReadBytes(0x04);             // Unknown 2C - 2F
+            item.cast_delay = reader.ReadUInt16();
+            item.recast_delay = reader.ReadUInt32();
+            reader.ReadBytes(0x02);             // Unknown  0x2C - 0x2D (inclusive)
+            item_level = reader.ReadUInt16();
+            if (item_level > 0) { item.item_level = item_level; }
 
             item.category = "Weapon";
         }
 
         private static void ParseArmorItem(BinaryReader reader, dynamic item)
         {
+            ushort shield_size;
+            byte charges;
+            ushort item_level;
+
             item.level = reader.ReadUInt16();
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            reader.ReadBytes(0x03);             // Unknown 18 - 1A
+            shield_size = reader.ReadUInt16();
+            if (shield_size > 0) { item.shield_size = shield_size; }
+            charges = reader.ReadByte();
+            if (charges > 0) { item.max_charges = charges; }
+
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x04);             // Unknown 1C - 1F
-            item.recast = reader.ReadUInt32();
-            reader.ReadBytes(0x04);             // Unknown 24 - 27
+            item.cast_delay = reader.ReadBytes(0x02);
+            reader.ReadBytes(0x02);             // Unknown 0x1E - 0x1F (inclusive)
+            item.recast_delay = reader.ReadUInt32();
+            reader.ReadBytes(0x02);             // Unknown 0x26 - 0x27 (inclusive)
+            item_level = reader.ReadUInt16();
+            if (item_level > 0) { item.item_level = item_level; }
 
             item.category = "Armor";
         }

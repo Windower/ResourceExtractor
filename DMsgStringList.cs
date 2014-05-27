@@ -108,7 +108,7 @@ namespace ResourceExtractor
                                 stringlength++;
                             }
 
-                            s[j] = FF11ShiftJISDecoder.Decode(data, stringoffset, stringlength);
+                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, stringoffset, stringlength);
                         }
                     }
 
@@ -164,7 +164,7 @@ namespace ResourceExtractor
                                 length++;
                             }
 
-                            s[j] = FF11ShiftJISDecoder.Decode(data, stringoffset, length);
+                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, stringoffset, length);
 
                             break;
                         }

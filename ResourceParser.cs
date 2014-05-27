@@ -560,7 +560,7 @@ namespace ResourceExtractor
                     length = (int)(stream.Position - dataorigin) - 1;
                     stream.Position = dataorigin;
 
-                    var res = FF11ShiftJISDecoder.Decode(reader.ReadBytes(length), 0, length);
+                    var res = ShiftJISFF11Encoding.ShiftJISFF11.GetString(reader.ReadBytes(length), 0, length);
                     stream.Position = origin;
                     return res;
 

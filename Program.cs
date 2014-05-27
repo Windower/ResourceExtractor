@@ -37,6 +37,21 @@ namespace ResourceExtractor
     internal class Program
     {
         private static dynamic model;
+        private static string[] categories = new string[] {
+            "actions",
+            "ability_recasts",
+            "buffs",
+            "commands",
+            "items",
+            "job_abilities",
+            "job_traits",
+            "monster_abilities",
+            "monstrosity",
+            "spells",
+            "spell_recasts",
+            "weapon_skills",
+            "zones",
+        };
 
         private static string Dir { get; set; }
 
@@ -49,14 +64,11 @@ namespace ResourceExtractor
             Console.CursorVisible = false;
 
             model = new ExpandoObject();
-            model.abilities = new List<dynamic>();
-            model.buffs = new List<dynamic>();
-            model.items = new List<dynamic>();
-            model.monstrosity = new List<dynamic>();
-            model.ability_recasts = new List<dynamic>();
-            model.spells = new List<dynamic>();
-            model.spell_recasts = new List<dynamic>();
-            model.zones = new List<dynamic>();
+            foreach (var category in categories)
+            {
+                ((IDictionary<string, object>)model)[category] = new List<dynamic>();
+            }
+
 
             ResourceParser.Initialize(model);
 
@@ -67,6 +79,8 @@ namespace ResourceExtractor
                 LoadBuffData(); // Buffs
                 LoadItemData(); // Items, Monstrosity
                 LoadZoneData(); // Zones
+
+                PostProcess();
 
                 ApplyFixes();
 
@@ -94,12 +108,75 @@ namespace ResourceExtractor
             Console.ReadKey(true);
         }
 
+        private static void PostProcess()
+        {
+            // Split abilities into categories
+            foreach (var action in model.actions)
+            {
+                IDictionary<string, object> act = action;
+
+                // Weapon skill
+                if (action.id >= 0x0000 && action.id < 0x0200)
+                {
+                    act.Remove("monster_level");
+                    act.Remove("mp_cost");
+                    act.Remove("recast_id");
+                    act.Remove("tp_cost");
+                    act.Remove("type");
+
+                    model.weapon_skills.Add(action);
+                }
+                // Job ability
+                else if (action.id >= 0x0200 && action.id < 0x0600)
+                {
+                    action.id -= 0x0200;
+
+                    act.Remove("monster_level");
+
+                    model.job_abilities.Add(action);
+                }
+                // Job traits
+                else if (action.id >= 0x0600 && action.id < 0x0700)
+                {
+                    action.id -= 0x0600;
+
+                    act.Remove("monster_level");
+                    act.Remove("mp_cost");
+                    act.Remove("prefix");
+                    act.Remove("recast_id");
+                    act.Remove("tp_cost");
+                    act.Remove("type");
+
+                    model.job_traits.Add(action);
+                }
+                // Monstrosity
+                else if (action.id >= 0x0700)
+                {
+                    action.id -= 0x0700;
+                    action.id += 0x0100;
+
+                    act.Remove("mp_cost");
+                    act.Remove("recast_id");
+                    act.Remove("type");
+
+                    model.monster_abilities.Add(action);
+                }
+            }
+            ((IDictionary<string, object>)model).Remove("actions");
+        }
+
         private static void WriteData()
         {
             Directory.CreateDirectory("resources");
-            Directory.CreateDirectory("resources/lua");
-            Directory.CreateDirectory("resources/xml");
-            Directory.CreateDirectory("resources/json");
+            foreach (var dir in new string[] { "lua", "xml", "json" })
+            {
+                string path = "resources/" + dir;
+                if (Directory.Exists(path))
+                {
+                    Directory.Delete(path, true);
+                }
+                Directory.CreateDirectory(path);
+            }
 
             // Create manifest file
             XDocument manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
@@ -240,14 +317,12 @@ namespace ResourceExtractor
                 {
                     foreach (XElement fix in update.Elements())
                     {
-                        var elements = from e in data
-                                       where e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture)
-                                       select e;
+                        var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 
                         if (!elements.Any())
                         {
                             dynamic el = new ExpandoObject();
-                            IDictionary<string, object> del = (IDictionary<string, object>)el;
+                            IDictionary<string, object> del = el;
 
                             foreach (XAttribute attr in fix.Attributes())
                             {
@@ -337,20 +412,20 @@ namespace ResourceExtractor
 
             DisplaySuccess();
 
-            LoadNames("abilities", new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 }, new int[] { 0, 0, 0, 0 });
+            LoadNames("actions", new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 }, new int[] { 0, 0, 0, 0 });
             LoadNames("spells", new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 }, new int[] { 0, 0, 0, 0 });
 
             // TODO: This, but better
             foreach (var recast in model.ability_recasts)
             {
-                foreach (var ability in model.abilities)
+                foreach (var action in model.actions)
                 {
-                    if (recast.id == ability.recast_id)
+                    if (recast.id == action.recast_id)
                     {
-                        recast.en = ability.en;
-                        recast.ja = ability.ja;
-                        recast.de = ability.de;
-                        recast.fr = ability.fr;
+                        recast.en = action.en;
+                        recast.ja = action.ja;
+                        recast.de = action.de;
+                        recast.fr = action.fr;
                     }
                 }
             }

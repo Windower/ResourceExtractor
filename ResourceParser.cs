@@ -126,7 +126,7 @@ namespace ResourceExtractor
                     ResourceParser.ParseSpells(stream, header.Size);
                     break;
                 case BlockType.AbilityData:
-                    ResourceParser.ParseAbilities(stream, header.Size);
+                    ResourceParser.ParseActions(stream, header.Size);
                     break;
                 default:
                     Trace.WriteLine(string.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int)header.Type));
@@ -134,10 +134,11 @@ namespace ResourceExtractor
             }
         }
 
-        public static void ParseAbilities(Stream stream, int length)
+        public static void ParseActions(Stream stream, int length)
         {
-            var data = new byte[0x30];
             IDictionary<short, object> recasts = new Dictionary<short, object>();
+
+            var data = new byte[0x30];
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
@@ -151,43 +152,47 @@ namespace ResourceExtractor
                 data[11] = b11;
                 data[12] = b12;
 
-                dynamic ability = new ExpandoObject();
+                dynamic action = new ExpandoObject();
 
                 using (MemoryStream mstream = new MemoryStream(data))
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
-                    ability.id = reader.ReadInt16();
-                    ability.type = (AbilityType)reader.ReadByte();
-                    ability.element = reader.ReadByte() % 8;
-                    ability.icon_id = reader.ReadInt16();
-                    ability.mp_cost = reader.ReadInt16();
-                    ability.recast_id = reader.ReadInt16();
-                    ability.targets = reader.ReadInt16();
-                    ability.tp_cost = reader.ReadInt16();
+                    action.id = reader.ReadInt16();
+                    
+                    action.type = (AbilityType)reader.ReadByte();
+                    action.element = reader.ReadByte() % 8;
+                    action.icon_id = reader.ReadInt16();
+                    action.mp_cost = reader.ReadInt16();
+                    action.recast_id = reader.ReadInt16();
+                    action.targets = reader.ReadInt16();
+                    action.tp_cost = reader.ReadInt16();
                     reader.ReadBytes(0x01);     // Unknown 0E - 0E, 18 for Ready, 0x16 for Ward, 0x17 for Effusion, 0x00 for every other valid ability
-                    ability.monster_level = reader.ReadSByte();
-                    ability.range = reader.ReadSByte();
+                    action.monster_level = reader.ReadSByte();
+                    action.range = reader.ReadSByte();
 
                     // Derived data
-                    ability.prefix = ((AbilityType)ability.type).Prefix();
+                    action.prefix = ((AbilityType)action.type).Prefix();
 
-                    if (ability.tp_cost == -1)
+                    if (action.tp_cost == -1)
                     {
-                        ability.tp_cost = 0;
+                        action.tp_cost = 0;
                     }
 
-                    if (ability.range == 0xF)
+                    if (action.range == 0xF)
                     {
-                        ability.range = 0;
+                        action.range = 0;
                     }
                 }
 
-                model.abilities.Add(ability);
+                model.actions.Add(action);
 
-                // Add to recast dictionary
-                dynamic recast = new ExpandoObject();
-                recast.id = ability.recast_id;
-                recasts[recast.id] = recast;
+                if (action.id >= 0x0200 && action.id < 0x0400)
+                {
+                    // Add to recast dictionary
+                    dynamic recast = new ExpandoObject();
+                    recast.id = action.recast_id;
+                    recasts[recast.id] = recast;
+                }
             }
 
             // Remove default value
@@ -330,6 +335,11 @@ namespace ResourceExtractor
                 using (BinaryReader readerfr = new BinaryReader(stringstreamfr, Encoding.ASCII, true))
                 {
                     item.id = reader.ReadUInt16();
+                    if (item.id == 0x0000)
+                    {
+                        continue;
+                    }
+
                     reader.ReadBytes(0x02);         // Unknown 02 - 03 (possibly for future expansion of ID)
 
                     if (item.id >= 0xF000 && item.id < 0xF200)
@@ -374,30 +384,27 @@ namespace ResourceExtractor
                         }
                     }
 
-                    if (stringstream.Position > 0x02)
+                    stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
+
+                    if (item.id >= 0xF000 && item.id < 0xF200)
                     {
-                        stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
+                        item.id -= 0xF000;
 
-                        if (item.id >= 0xF000 && item.id < 0xF200)
-                        {
-                            item.id -= 0xF000;
+                        ParseBasicStrings(reader, item, Languages.English);
+                        ParseBasicStrings(readerja, item, Languages.Japanese);
+                        ParseBasicStrings(readerde, item, Languages.German);
+                        ParseBasicStrings(readerfr, item, Languages.French);
 
-                            ParseBasicStrings(reader, item, Languages.English);
-                            ParseBasicStrings(readerja, item, Languages.Japanese);
-                            ParseBasicStrings(readerde, item, Languages.German);
-                            ParseBasicStrings(readerfr, item, Languages.French);
+                        model.monstrosity.Add(item);
+                    }
+                    else
+                    {
+                        ParseFullStrings(reader, item, Languages.English);
+                        ParseFullStrings(readerja, item, Languages.Japanese);
+                        ParseFullStrings(readerde, item, Languages.German);
+                        ParseFullStrings(readerfr, item, Languages.French);
 
-                            model.monstrosity.Add(item);
-                        }
-                        else
-                        {
-                            ParseFullStrings(reader, item, Languages.English);
-                            ParseFullStrings(readerja, item, Languages.Japanese);
-                            ParseFullStrings(readerde, item, Languages.German);
-                            ParseFullStrings(readerfr, item, Languages.French);
-
-                            model.items.Add(item);
-                        }
+                        model.items.Add(item);
                     }
                 }
             }
@@ -423,11 +430,28 @@ namespace ResourceExtractor
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            reader.ReadBytes(0x0D);             // Unknown 18 - 24
+
+            item.damage = reader.ReadUInt16();
+            item.delay = reader.ReadInt16();
+            reader.ReadBytes(0x02);             // Weapon DPS
+            item.skill = reader.ReadByte();
+            
+            reader.ReadBytes(0x05);             // Unknown 1F - 23
+                                                // POLUtils claims that 0x1F is jug size, but seems incorrect
+            byte max_charges = reader.ReadByte();
+            if (max_charges > 0)
+            {
+                item.max_charges = max_charges;
+            }
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x02);             // Unknown 26 - 27
-            item.recast = reader.ReadUInt32();
-            reader.ReadBytes(0x04);             // Unknown 2C - 2F
+            item.cast_delay = reader.ReadUInt16();
+            item.recast_delay = reader.ReadUInt32();
+            reader.ReadBytes(0x02);             // Unknown 2C - 2D
+            ushort item_level = reader.ReadUInt16();
+            if (item_level > 0)
+            {
+                item.item_level = item_level;
+            }
 
             item.category = "Weapon";
         }
@@ -438,11 +462,27 @@ namespace ResourceExtractor
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            reader.ReadBytes(0x03);             // Unknown 18 - 1A
+            ushort shield_size = reader.ReadUInt16();
+            if (shield_size > 0)
+            {
+                item.shield_size = shield_size;
+            }
+            byte charges = reader.ReadByte();
+            if (charges > 0)
+            {
+                item.max_charges = charges;
+            }
+
             item.cast_time = reader.ReadByte();
-            reader.ReadBytes(0x04);             // Unknown 1C - 1F
-            item.recast = reader.ReadUInt32();
-            reader.ReadBytes(0x04);             // Unknown 24 - 27
+            item.cast_delay = reader.ReadUInt16();
+            reader.ReadBytes(0x02);             // Unknown 1E - 1F
+            item.recast_delay = reader.ReadUInt32();
+            reader.ReadBytes(0x02);             // Unknown 26 - 27
+            ushort item_level = reader.ReadUInt16();
+            if (item_level > 0)
+            {
+                item.item_level = item_level;
+            }
 
             item.category = "Armor";
         }
@@ -472,7 +512,7 @@ namespace ResourceExtractor
         private static void ParseMonstrosityItem(BinaryReader reader, dynamic item)
         {
             item.tp_moves = new Dictionary<ushort, sbyte>();
-            reader.ReadBytes(0x2E);             // Unknown 02 - 2F
+            reader.ReadBytes(0x2C);             // Unknown 04 - 2F
             for (var i = 0x00; i < 0x10; ++i)
             {
                 var move = reader.ReadUInt16();
@@ -519,10 +559,12 @@ namespace ResourceExtractor
             {
             case Languages.English:
                 item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
+                //item.endesc = DecodeEntry(reader, StringIndex.EnglishDescription);
                 break;
 
             case Languages.Japanese:
                 item.jal = DecodeEntry(reader, StringIndex.Name);
+                //item.jadesc = DecodeEntry(reader, StringIndex.JapaneseDescription);
                 break;
 
             case Languages.German:

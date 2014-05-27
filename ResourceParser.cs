@@ -335,6 +335,11 @@ namespace ResourceExtractor
                 using (BinaryReader readerfr = new BinaryReader(stringstreamfr, Encoding.ASCII, true))
                 {
                     item.id = reader.ReadUInt16();
+                    if (item.id == 0x0000)
+                    {
+                        continue;
+                    }
+
                     reader.ReadBytes(0x02);         // Unknown 02 - 03 (possibly for future expansion of ID)
 
                     if (item.id >= 0xF000 && item.id < 0xF200)
@@ -379,30 +384,27 @@ namespace ResourceExtractor
                         }
                     }
 
-                    if (stringstream.Position > 0x02)
+                    stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
+
+                    if (item.id >= 0xF000 && item.id < 0xF200)
                     {
-                        stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
+                        item.id -= 0xF000;
 
-                        if (item.id >= 0xF000 && item.id < 0xF200)
-                        {
-                            item.id -= 0xF000;
+                        ParseBasicStrings(reader, item, Languages.English);
+                        ParseBasicStrings(readerja, item, Languages.Japanese);
+                        ParseBasicStrings(readerde, item, Languages.German);
+                        ParseBasicStrings(readerfr, item, Languages.French);
 
-                            ParseBasicStrings(reader, item, Languages.English);
-                            ParseBasicStrings(readerja, item, Languages.Japanese);
-                            ParseBasicStrings(readerde, item, Languages.German);
-                            ParseBasicStrings(readerfr, item, Languages.French);
+                        model.monstrosity.Add(item);
+                    }
+                    else
+                    {
+                        ParseFullStrings(reader, item, Languages.English);
+                        ParseFullStrings(readerja, item, Languages.Japanese);
+                        ParseFullStrings(readerde, item, Languages.German);
+                        ParseFullStrings(readerfr, item, Languages.French);
 
-                            model.monstrosity.Add(item);
-                        }
-                        else
-                        {
-                            ParseFullStrings(reader, item, Languages.English);
-                            ParseFullStrings(readerja, item, Languages.Japanese);
-                            ParseFullStrings(readerde, item, Languages.German);
-                            ParseFullStrings(readerfr, item, Languages.French);
-
-                            model.items.Add(item);
-                        }
+                        model.items.Add(item);
                     }
                 }
             }

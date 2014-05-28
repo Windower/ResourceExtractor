@@ -27,7 +27,21 @@ namespace ResourceExtractor
 
     internal class ShiftJISFF11Encoding : Encoding
     {
+        public enum Context { None, Dialog }
+
         public static readonly Encoding ShiftJISFF11 = new ShiftJISFF11Encoding();
+
+        private Context context;
+
+        public ShiftJISFF11Encoding()
+            : this(Context.None)
+        {
+        }
+
+        public ShiftJISFF11Encoding(Context context)
+        {
+            this.context = context;
+        }
 
         public override int GetByteCount(char[] chars, int index, int count)
         {
@@ -45,7 +59,7 @@ namespace ResourceExtractor
             int end = index + count;
 
             int written = 0;
-            for (int i = begin; i != end; i++)
+            for (int i = begin; i < end; i++)
             {
                 int b = bytes[i];
                 if (b == 0xFD)
@@ -54,14 +68,18 @@ namespace ResourceExtractor
                     int temp = Math.Min(4, end - i);
                     i += temp;
                     written += temp;
-                    if (i != end && ++i != end)
+                    if (i < end && ++i < end)
                     {
                         written++;
                     }
                 }
+                else if (b == 0x0A && context != Context.Dialog)
+                {
+                    written++;
+                }
                 else
                 {
-                    int c = decode_lut[b];
+                    int c = decodeLut[b];
                     if (c >= 0xD800 && c <= 0xDEFF)
                     {
                         written++;
@@ -72,7 +90,7 @@ namespace ResourceExtractor
                     else if (c == 0xDF00) { /* skip */ }
                     else if (c >= 0xDF01 && c <= 0xDFFF)
                     {
-                        if (++i != end)
+                        if (++i < end)
                         {
                             written++;
                         }
@@ -92,7 +110,7 @@ namespace ResourceExtractor
             int end = byteIndex + byteCount;
 
             int written = 0;
-            for (int i = begin; i != end; i++)
+            for (int i = begin; i < end; i++)
             {
                 int b = bytes[i];
                 if (b == 0xFD)
@@ -101,7 +119,7 @@ namespace ResourceExtractor
                     written++;
 
                     int count = 4;
-                    while (count-- > 0 && ++i != end)
+                    while (count-- > 0 && ++i < end)
                     {
                         b = bytes[i];
                         if (b != 0)
@@ -112,7 +130,7 @@ namespace ResourceExtractor
                         written++;
                     }
 
-                    if (i != end && ++i != end)
+                    if (i < end && ++i < end)
                     {
                         b = bytes[i];
                         if (b != 0)
@@ -123,16 +141,21 @@ namespace ResourceExtractor
                         written++;
                     }
                 }
+                else if (b == 0x0A && context != Context.Dialog)
+                {
+                    chars[charIndex + written] = '\n';
+                    written++;
+                }
                 else
                 {
-                    int c = decode_lut[b];
+                    int c = decodeLut[b];
                     if (c >= 0xD800 && c <= 0xDEFF)
                     {
                         chars[charIndex + written] = (char)((c & 0xFF) | 0xF700);
                         written++;
 
                         int count = (c >> 8) - 0xD8;
-                        while (count-- > 0 && ++i != end)
+                        while (count-- > 0 && ++i < end)
                         {
                             b = bytes[i];
                             if (b != 0)
@@ -146,25 +169,25 @@ namespace ResourceExtractor
                     else if (c == 0xDF00) { /* skip */ }
                     else if (c >= 0xDF01 && c <= 0xDFFF)
                     {
-                        if (++i != end)
+                        if (++i < end)
                         {
                             b = bytes[i];
                             if (b == 0)
                             {
-                                chars[charIndex + written] = (char)b;
+                                chars[charIndex + written] = '\0';
                                 written++;
                             }
                             else
                             {
                                 b = 32 + (c & 0xFF) * 224 + b - 0x1F;
-                                if (b >= decode_lut.Length)
+                                if (b >= decodeLut.Length)
                                 {
                                     chars[charIndex + written] = '\uFFFD';
                                     written++;
                                 }
                                 else
                                 {
-                                    chars[charIndex + written] = (char)decode_lut[b];
+                                    chars[charIndex + written] = (char)decodeLut[b];
                                     written++;
                                 }
                             }
@@ -191,7 +214,7 @@ namespace ResourceExtractor
             return byteCount;
         }
 
-        ushort[] decode_lut =
+        private static readonly ushort[] decodeLut =
         {
             // Single-Byte Look-up-Table
             0x0000, 0xFFFD, 0xFFFD, 0xFFFD, 0xFFFD, 0xFFFD, 0xFFFD, 0x000A, 0xFFFD, 0xFFFD, 0xD90A, 0xFFFD, 0xD90C, 0xFFFD, 0xFFFD, 0xFFFD,
@@ -861,11 +884,11 @@ namespace ResourceExtractor
             0x99EE, 0x99F1, 0x99F2, 0x99FB, 0x99F8, 0x9A01, 0x9A0F, 0x9A05, 0x99E2, 0x9A19, 0x9A2B, 0x9A37, 0x9A45, 0x9A42, 0x9A40, 0x9A43,
             0x9A3E, 0x9A3E, 0x9A55, 0x9A4D, 0x9A5B, 0x9A57, 0x9A5F, 0x9A62, 0x9A65, 0x9A64, 0x9A69, 0x9A6B, 0x9A6A, 0x9AAD, 0x9AB0, 0x9ABC,
             0x9AC0, 0x9ACF, 0x9AD1, 0x9AD3, 0x9AD4, 0x9ADE, 0x9ADF, 0x9AE2, 0x9AE3, 0x9AE6, 0x9AEF, 0x9AEB, 0x9AEE, 0x9AF4, 0x9AF1, 0x9AF7,
-            0x9AFB, 0x9B06, 0x9B18, 0x9B1A, 0x9B1F, 0x9B22, 0x9B23, 0x9B25, 0x9B43, 0x9B4F, 0x9B4D, 0x9B4E, 0x9B51, 0x9B58, 0x9B74, 0x9B93,
-            0x9B83, 0x9B91, 0x9B96, 0x9B97, 0x9B9F, 0x9BA0, 0x9BA8, 0x9BB4, 0x9BC0, 0x9BCA, 0x9BB9, 0x9BC6, 0x9BCF, 0x9BD1, 0x9BD2, 0x9BE3,
-            0x9BE2, 0x9BE4, 0x9BD4, 0x9BE1, 0x9C3A, 0x9BF2, 0x9BF1, 0x9BF0, 0x9C15, 0x9C14, 0x9C09, 0x9C13, 0x9C0C, 0x9C06, 0x9C08, 0x9C12,
-            0x9C0A, 0x9C04, 0x9C2E, 0x9C1B, 0x9C25, 0x9C24, 0x9C21, 0x9C30, 0x9C47, 0x9C32, 0x9C46, 0x9C3E, 0x9C5A, 0x9C60, 0x9C67, 0x9C76,
-            0x9C78, 0x9CE7, 0x9CEC, 0x9CF0, 0x9D09, 0x9D08, 0x9CEB, 0x9D03, 0x9B27, 0x9B28, 0x9B29, 0x9B2A, 0x9B2E, 0x9B2F, 0x9B32, 0x9B44,
+            0x9AFB, 0x9B06, 0x9B18, 0x9B1A, 0x9B1F, 0x9B22, 0x9B23, 0x9B25, 0x9B27, 0x9B28, 0x9B29, 0x9B2A, 0x9B2E, 0x9B2F, 0x9B32, 0x9B44,
+            0x9B43, 0x9B4F, 0x9B4D, 0x9B4E, 0x9B51, 0x9B58, 0x9B74, 0x9B93, 0x9B83, 0x9B91, 0x9B96, 0x9B97, 0x9B9F, 0x9BA0, 0x9BA8, 0x9BB4,
+            0x9BC0, 0x9BCA, 0x9BB9, 0x9BC6, 0x9BCF, 0x9BD1, 0x9BD2, 0x9BE3, 0x9BE2, 0x9BE4, 0x9BD4, 0x9BE1, 0x9C3A, 0x9BF2, 0x9BF1, 0x9BF0,
+            0x9C15, 0x9C14, 0x9C09, 0x9C13, 0x9C0C, 0x9C06, 0x9C08, 0x9C12, 0x9C0A, 0x9C04, 0x9C2E, 0x9C1B, 0x9C25, 0x9C24, 0x9C21, 0x9C30,
+            0x9C47, 0x9C32, 0x9C46, 0x9C3E, 0x9C5A, 0x9C60, 0x9C67, 0x9C76, 0x9C78, 0x9CE7, 0x9CEC, 0x9CF0, 0x9D09, 0x9D08, 0x9CEB, 0x9D03,
             0x9D06, 0x9D2A, 0x9D26, 0x9DAF, 0x9D23, 0x9D1F, 0x9D44, 0x9D15, 0x9D12, 0x9D41, 0x9D3F, 0x9D3E, 0x9D46, 0x9D48, 0x9D5E, 0x9D64,
 
             // Plane EA

@@ -1025,7 +1025,7 @@ IN THE SOFTWARE.
     <update>
       <o id="0" en="Main" />
       <o id="1" en="Sub" />
-      <o id="2" en="Ranged" />
+      <o id="2" en="Range" />
       <o id="3" en="Ammo" />
       <o id="4" en="Head" />
       <o id="5" en="Body" />

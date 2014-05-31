@@ -171,11 +171,11 @@ namespace ResourceExtractor
             foreach (var dir in new string[] { "lua", "xml", "json" })
             {
                 string path = "resources/" + dir;
-                if (Directory.Exists(path))
-                {
-                    Directory.Delete(path, true);
-                }
                 Directory.CreateDirectory(path);
+                foreach (var file in Directory.EnumerateFiles(path))
+                {
+                    File.Delete(file);
+                }
             }
 
             // Create manifest file

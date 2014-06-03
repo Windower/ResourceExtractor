@@ -29,9 +29,9 @@ namespace ResourceExtractor
     using System.IO;
     using System.Runtime.InteropServices;
 
-    internal class DMsgStringList : IList<IList<string>>
+    internal class DMsgStringList : IList<IList<object>>
     {
-        private IList<string>[] strings;
+        private IList<object>[] strings;
 
         internal DMsgStringList(Stream stream)
         {
@@ -77,9 +77,9 @@ namespace ResourceExtractor
                     }
                 }
 
-                this.strings = new IList<string>[header.Count];
+                strings = new IList<object>[header.Count];
 
-                for (int i = 0; i < this.strings.Length; i++)
+                for (int i = 0; i < strings.Length; i++)
                 {
                     int offset = (int)table[i];
                     int length = (int)(table[i] >> 32);
@@ -112,7 +112,7 @@ namespace ResourceExtractor
                         }
                     }
 
-                    this.strings[i] = s;
+                    strings[i] = s;
                 }
             }
             else
@@ -134,9 +134,9 @@ namespace ResourceExtractor
                     }
                 }
 
-                this.strings = new IList<string>[header.Count];
+                strings = new IList<object>[header.Count];
 
-                for (int i = 0; i < this.strings.Length; i++)
+                for (int i = 0; i < strings.Length; i++)
                 {
                     int offset = i * (int)header.EntrySize;
 
@@ -165,69 +165,67 @@ namespace ResourceExtractor
                             }
 
                             s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, stringoffset, length);
-
-                            break;
                         }
                     }
 
-                    this.strings[i] = s;
+                    strings[i] = s;
                 }
             }
         }
 
-        bool ICollection<IList<string>>.IsReadOnly
+        bool ICollection<IList<object>>.IsReadOnly
         {
             get { return true; }
         }
 
         public int Count
         {
-            get { return this.strings.Length; }
+            get { return strings.Length; }
         }
 
-        public IList<string> this[int index]
+        public IList<object> this[int index]
         {
-            get { return this.strings[index]; }
+            get { return strings[index]; }
 
             set { throw new NotSupportedException(); }
         }
 
-        int IList<IList<string>>.IndexOf(IList<string> item)
+        int IList<IList<object>>.IndexOf(IList<object> item)
         {
-            return ((IList<IList<string>>)this.strings).IndexOf(item);
+            return ((IList<IList<object>>)strings).IndexOf(item);
         }
 
-        bool ICollection<IList<string>>.Contains(IList<string> item)
+        bool ICollection<IList<object>>.Contains(IList<object> item)
         {
-            return ((ICollection<IList<string>>)this.strings).Contains(item);
+            return ((ICollection<IList<object>>)strings).Contains(item);
         }
 
-        void ICollection<IList<string>>.CopyTo(IList<string>[] array, int arrayIndex)
+        void ICollection<IList<object>>.CopyTo(IList<object>[] array, int arrayIndex)
         {
-            this.strings.CopyTo(array, arrayIndex);
+            strings.CopyTo(array, arrayIndex);
         }
 
-        public IEnumerator<IList<string>> GetEnumerator()
+        public IEnumerator<IList<object>> GetEnumerator()
         {
-            return ((IList<IList<string>>)this.strings).GetEnumerator();
+            return ((IList<IList<object>>)strings).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.strings.GetEnumerator();
+            return strings.GetEnumerator();
         }
 
-        public void Add(IList<string> item)
+        public void Add(IList<object> item)
         {
             throw new NotSupportedException();
         }
 
-        public void Insert(int index, IList<string> item)
+        public void Insert(int index, IList<object> item)
         {
             throw new NotSupportedException();
         }
 
-        public bool Remove(IList<string> item)
+        public bool Remove(IList<object> item)
         {
             throw new NotSupportedException();
         }
@@ -258,42 +256,42 @@ namespace ResourceExtractor
 
             public long Format
             {
-                get { return this.format; }
+                get { return format; }
             }
 
             public bool Encrypted
             {
-                get { return this.encrypted != 0; }
+                get { return encrypted != 0; }
             }
 
             public long Version
             {
-                get { return this.version; }
+                get { return version; }
             }
 
             public uint HeaderSize
             {
-                get { return this.headersize; }
+                get { return headersize; }
             }
 
             public uint TableSize
             {
-                get { return this.tablesize; }
+                get { return tablesize; }
             }
 
             public uint EntrySize
             {
-                get { return this.entrysize; }
+                get { return entrysize; }
             }
 
             public int DataSize
             {
-                get { return this.datasize; }
+                get { return datasize; }
             }
 
             public int Count
             {
-                get { return this.count; }
+                get { return count; }
             }
         }
     }

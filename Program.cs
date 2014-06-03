@@ -45,6 +45,7 @@ namespace ResourceExtractor
             "items",
             "job_abilities",
             "job_traits",
+            "key_items",
             "monster_abilities",
             "monstrosity",
             "spells",
@@ -75,10 +76,11 @@ namespace ResourceExtractor
             Dir = GetBaseDirectory();
             if (Dir != null)
             {
-                LoadMainData(); // Abilities, Spells
-                LoadBuffData(); // Buffs
-                LoadItemData(); // Items, Monstrosity
-                LoadZoneData(); // Zones
+                LoadMainData();     // Abilities, Spells
+                LoadBuffData();     // Buffs
+                LoadKeyItemData();  // Key items
+                LoadItemData();     // Items, Monstrosity
+                LoadZoneData();     // Zones
 
                 PostProcess();
 
@@ -444,13 +446,13 @@ namespace ResourceExtractor
             }
         }
 
-        private static IList<IList<IList<string>>> ParseNames(int[] fileids)
+        private static IList<IList<IList<object>>> ParseNames(int[] fileids)
         {
-            IList<IList<IList<string>>> names = null;
+            IList<IList<IList<object>>> names = null;
 
             try
             {
-                IList<IList<IList<string>>> tmp = new List<IList<IList<string>>>();
+                IList<IList<IList<object>>> tmp = new List<IList<IList<object>>>();
 
                 foreach (int id in fileids)
                 {
@@ -472,7 +474,7 @@ namespace ResourceExtractor
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void AddNames(dynamic obj, IList<IList<IList<string>>> names, int[] indices, int[] logindices)
+        private static void AddNames(dynamic obj, IList<IList<IList<object>>> names, int[] indices, int[] logindices)
         {
             obj.en = names[(int)Languages.English][obj.id][indices[(int)Languages.English]];
             obj.ja = names[(int)Languages.Japanese][obj.id][indices[(int)Languages.Japanese]];
@@ -488,14 +490,14 @@ namespace ResourceExtractor
             }
         }
 
-        private static void LoadNames(string name, int[] fileids, int[] indices, int[] logindices = null)
+        private static IList<IList<IList<object>>> LoadNames(string name, int[] fileids, int[] indices, int[] logindices = null)
         {
             DisplayMessage("Loading " + name + " names...");
 
-            IList<IList<IList<string>>> names = ParseNames(fileids);
+            IList<IList<IList<object>>> names = ParseNames(fileids);
             if (names == null)
             {
-                return;
+                return null;
             }
 
             var dict = (List<dynamic>)((IDictionary<string, object>)model)[name];
@@ -520,6 +522,8 @@ namespace ResourceExtractor
                     dict.Add(obj);
                 }
             }
+
+            return names;
         }
 
         private static void LoadBuffData()
@@ -527,14 +531,19 @@ namespace ResourceExtractor
             LoadNames("buffs", new int[] { 0xD9AD, 0xD935, 0xDA2C, 0xDBD0 }, new int[] { 0, 0, 1, 2 }, new int[] { 1, 0, 1, 2 });
         }
 
+        private static void LoadKeyItemData()
+        {
+            LoadNames("key_items", new int[] { 0xD98F, 0xD917, 0xDA11, 0xDBB5 }, new int[] { 4, 1, 4, 5 });
+        }
+
         private static void LoadZoneData()
         {
             LoadNames("zones", new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 }, new int[] { 0, 0, 0, 0 });
         }
 
-        private static IList<IList<IList<string>>> LoadMonsterAbilityNames()
+        private static IList<IList<IList<object>>> LoadMonsterAbilityNames()
         {
-            IList<IList<IList<string>>> result = null;
+            IList<IList<IList<object>>> result = null;
 
             try
             {
@@ -542,7 +551,7 @@ namespace ResourceExtractor
 
                 int[] fileids = new int[] { 0x1B7B, 0x1B8C, 0xDA2B, 0xDBCF };
 
-                result = new List<IList<IList<string>>>();
+                result = new List<IList<IList<object>>>();
 
                 foreach (int id in fileids)
                 {
@@ -562,9 +571,9 @@ namespace ResourceExtractor
             return result;
         }
 
-        private static IList<IList<IList<string>>> LoadActionMessages()
+        private static IList<IList<IList<object>>> LoadActionMessages()
         {
-            IList<IList<IList<string>>> result = null;
+            IList<IList<IList<object>>> result = null;
 
             try
             {
@@ -572,7 +581,7 @@ namespace ResourceExtractor
 
                 int[] fileids = new int[] { 0x1B73, 0x1B72, 0xDA28, 0xDBCC };
 
-                result = new List<IList<IList<string>>>();
+                result = new List<IList<IList<object>>>();
 
                 foreach (int id in fileids)
                 {

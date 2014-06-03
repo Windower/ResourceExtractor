@@ -86,15 +86,18 @@ namespace ResourceExtractor
 
                     int count = BitConverter.ToInt32(data, offset);
 
-                    object[] s = new string[count];
+                    object[] s = new object[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4) + offset + 0x1C;
+                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4) + offset;
                         int entrytype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
-                        if (entrytype == 0)
+                        switch (entrytype)
                         {
+                        case 0:
+                            entryoffset += 0x1C;
+
                             int stringlength = 0;
                             for (int k = 0; k < length; k++)
                             {
@@ -107,10 +110,10 @@ namespace ResourceExtractor
                             }
 
                             s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, entryoffset, stringlength);
-                        }
-                        else if (entrytype == 1)
-                        {
-                            s[j] = BitConverter.ToUInt32(data, entryoffset);
+                            break;
+                        case 1:
+                            s[j] = BitConverter.ToInt32(data, entryoffset);
+                            break;
                         }
                     }
 
@@ -144,16 +147,17 @@ namespace ResourceExtractor
 
                     int count = BitConverter.ToInt32(data, offset);
 
-                    string[] s = new string[count];
+                    object[] s = new object[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
+                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4) + offset;
                         int entrytype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
-                        if (entrytype == 0)
+                        switch (entrytype)
                         {
-                            entryoffset += offset + 28;
+                        case 0:
+                            entryoffset += 0x1C;
 
                             int length = 0;
                             for (int k = 0; k < header.EntrySize; k++)
@@ -167,6 +171,10 @@ namespace ResourceExtractor
                             }
 
                             s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, entryoffset, length);
+                            break;
+                        case 1:
+                            s[j] = BitConverter.ToInt32(data, entryoffset);
+                            break;
                         }
                     }
 

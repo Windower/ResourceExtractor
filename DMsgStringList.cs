@@ -31,7 +31,7 @@ namespace ResourceExtractor
 
     internal class DMsgStringList : IList<IList<object>>
     {
-        private IList<object>[] strings;
+        private IList<object>[] objects;
 
         internal DMsgStringList(Stream stream)
         {
@@ -77,30 +77,30 @@ namespace ResourceExtractor
                     }
                 }
 
-                strings = new IList<object>[header.Count];
+                objects = new IList<object>[header.Count];
 
-                for (int i = 0; i < strings.Length; i++)
+                for (int i = 0; i < objects.Length; i++)
                 {
                     int offset = (int)table[i];
                     int length = (int)(table[i] >> 32);
 
                     int count = BitConverter.ToInt32(data, offset);
 
-                    string[] s = new string[count];
+                    object[] s = new string[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
-                        int stringtype = BitConverter.ToInt32(data, offset + j * 8 + 8);
+                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
+                        int entrytype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
-                        if (stringtype == 0)
+                        if (entrytype == 0)
                         {
-                            stringoffset += offset + 28;
+                            entryoffset += offset + 28;
 
                             int stringlength = 0;
                             for (int k = 0; k < length; k++)
                             {
-                                if (data[stringoffset + k] == 0)
+                                if (data[entryoffset + k] == 0)
                                 {
                                     break;
                                 }
@@ -108,11 +108,11 @@ namespace ResourceExtractor
                                 stringlength++;
                             }
 
-                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, stringoffset, stringlength);
+                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, entryoffset, stringlength);
                         }
                     }
 
-                    strings[i] = s;
+                    objects[i] = s;
                 }
             }
             else
@@ -134,9 +134,9 @@ namespace ResourceExtractor
                     }
                 }
 
-                strings = new IList<object>[header.Count];
+                objects = new IList<object>[header.Count];
 
-                for (int i = 0; i < strings.Length; i++)
+                for (int i = 0; i < objects.Length; i++)
                 {
                     int offset = i * (int)header.EntrySize;
 
@@ -146,17 +146,17 @@ namespace ResourceExtractor
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
-                        int stringtype = BitConverter.ToInt32(data, offset + j * 8 + 8);
+                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4);
+                        int entrytype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
-                        if (stringtype == 0)
+                        if (entrytype == 0)
                         {
-                            stringoffset += offset + 28;
+                            entryoffset += offset + 28;
 
                             int length = 0;
                             for (int k = 0; k < header.EntrySize; k++)
                             {
-                                if (data[stringoffset + k] == 0)
+                                if (data[entryoffset + k] == 0)
                                 {
                                     break;
                                 }
@@ -164,11 +164,11 @@ namespace ResourceExtractor
                                 length++;
                             }
 
-                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, stringoffset, length);
+                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, entryoffset, length);
                         }
                     }
 
-                    strings[i] = s;
+                    objects[i] = s;
                 }
             }
         }
@@ -180,39 +180,39 @@ namespace ResourceExtractor
 
         public int Count
         {
-            get { return strings.Length; }
+            get { return objects.Length; }
         }
 
         public IList<object> this[int index]
         {
-            get { return strings[index]; }
+            get { return objects[index]; }
 
             set { throw new NotSupportedException(); }
         }
 
         int IList<IList<object>>.IndexOf(IList<object> item)
         {
-            return ((IList<IList<object>>)strings).IndexOf(item);
+            return ((IList<IList<object>>)objects).IndexOf(item);
         }
 
         bool ICollection<IList<object>>.Contains(IList<object> item)
         {
-            return ((ICollection<IList<object>>)strings).Contains(item);
+            return ((ICollection<IList<object>>)objects).Contains(item);
         }
 
         void ICollection<IList<object>>.CopyTo(IList<object>[] array, int arrayIndex)
         {
-            strings.CopyTo(array, arrayIndex);
+            objects.CopyTo(array, arrayIndex);
         }
 
         public IEnumerator<IList<object>> GetEnumerator()
         {
-            return ((IList<IList<object>>)strings).GetEnumerator();
+            return ((IList<IList<object>>)objects).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return strings.GetEnumerator();
+            return objects.GetEnumerator();
         }
 
         public void Add(IList<object> item)

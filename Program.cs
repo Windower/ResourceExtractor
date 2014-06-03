@@ -165,6 +165,13 @@ namespace ResourceExtractor
                 }
             }
             ((IDictionary<string, object>)model).Remove("actions");
+
+            // Re-index key items by their real ID
+            foreach (dynamic ki in model.key_items)
+            {
+                ki.id = ki.real_id;
+                ((IDictionary<string, object>)ki).Remove("real_id");
+            }
         }
 
         private static void WriteData()
@@ -533,7 +540,24 @@ namespace ResourceExtractor
 
         private static void LoadKeyItemData()
         {
-            LoadNames("key_items", new int[] { 0xD98F, 0xD917, 0xDA11, 0xDBB5 }, new int[] { 4, 1, 4, 5 });
+            var data = LoadNames("key_items", new int[] { 0xD98F, 0xD917, 0xDA11, 0xDBB5 }, new int[] { 4, 1, 4, 5 });
+            var category = "";
+            for (var i = data[0].Count - 1; i >= 0; --i)
+            {
+                dynamic ki = model.key_items[i];
+                if (ki.en.StartsWith("-"))
+                {
+                    category = ki.en.Substring(1);
+                    model.key_items.Remove(ki);
+                }
+                else
+                {
+                    ki.real_id = data[0][i][0];
+                    ki.category = category;
+                    //ki.endesc = data[(int)Languages.English][i][6];
+                    //ki.jadesc = data[(int)Languages.Japanese][i][2];
+                }
+            }
         }
 
         private static void LoadZoneData()

@@ -463,8 +463,7 @@ namespace ResourceExtractor
 
                 foreach (int id in fileids)
                 {
-                    string path = GetPath(id);
-                    using (FileStream stream = File.OpenRead(path))
+                    using (FileStream stream = File.OpenRead(GetPath(id)))
                     {
                         tmp.Add(new DMsgStringList(stream));
                     }
@@ -485,8 +484,16 @@ namespace ResourceExtractor
         {
             obj.en = names[(int)Languages.English][obj.id][indices[(int)Languages.English]];
             obj.ja = names[(int)Languages.Japanese][obj.id][indices[(int)Languages.Japanese]];
-            obj.de = names[(int)Languages.German][obj.id][indices[(int)Languages.German]];
-            obj.fr = names[(int)Languages.French][obj.id][indices[(int)Languages.French]];
+            try {
+                obj.de = names[(int) Languages.German][obj.id][indices[(int) Languages.German]];
+            } catch (IndexOutOfRangeException) {
+                obj.de = "";
+            }
+            try {
+                obj.fr = names[(int) Languages.French][obj.id][indices[(int) Languages.French]];
+            } catch (IndexOutOfRangeException) {
+                obj.fr = "";
+            }
 
             if (logindices != null)
             {

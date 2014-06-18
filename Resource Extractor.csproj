@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
+    <Compile Include="DMsgString.cs" />
     <Compile Include="Fixes.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ModelObject.cs" />

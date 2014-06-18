@@ -129,6 +129,19 @@ namespace ResourceExtractor
             map.Remove(item);
         }
 
+        public void Merge(ModelObject other)
+        {
+            foreach (var pair in other)
+            {
+                map[pair.Key] = pair.Value;
+            }
+        }
+
+        public bool ContainsKey(string key)
+        {
+            return map.ContainsKey(key);
+        }
+
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
         {
             foreach (var pair in map)

@@ -152,7 +152,7 @@ namespace ResourceExtractor
                 data[11] = b11;
                 data[12] = b12;
 
-                dynamic action = new ExpandoObject();
+                dynamic action = new ModelObject();
 
                 using (MemoryStream mstream = new MemoryStream(data))
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
@@ -189,7 +189,7 @@ namespace ResourceExtractor
                 if (action.id >= 0x0200 && action.id < 0x0400)
                 {
                     // Add to recast dictionary
-                    dynamic recast = new ExpandoObject();
+                    dynamic recast = new ModelObject();
                     recast.id = action.recast_id;
                     recasts[recast.id] = recast;
                 }
@@ -231,7 +231,7 @@ namespace ResourceExtractor
                     continue;
                 }
 
-                dynamic spell = new ExpandoObject();
+                dynamic spell = new ModelObject();
 
                 using (MemoryStream mstream = new MemoryStream(data))
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
@@ -291,7 +291,7 @@ namespace ResourceExtractor
                 model.spells.Add(spell);
 
                 // Add to recast dictionary
-                dynamic recast = new ExpandoObject();
+                dynamic recast = new ModelObject();
                 recast.id = spell.recast_id;
                 recast.recast = spell.recast;
                 recasts[recast.id] = recast;
@@ -318,7 +318,7 @@ namespace ResourceExtractor
                 streamde.Read(datade, 0, datade.Length);
                 streamfr.Read(datafr, 0, datafr.Length);
 
-                dynamic item = new ExpandoObject();
+                dynamic item = new ModelObject();
 
                 data.RotateRight(5);
                 dataja.RotateRight(5);

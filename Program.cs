@@ -54,6 +54,102 @@ namespace ResourceExtractor
             "weapon_skills",
             "zones",
         };
+        private static Dictionary<string, Dictionary<ushort, Dictionary<string, int>>> dat_lut = new Dictionary<string, Dictionary<ushort, Dictionary<string, int>>> {
+            {"actions", new Dictionary<ushort, Dictionary<string, int>> {
+                {0xD995, new Dictionary<string, int> {
+                    {"en", 0},
+                }},
+                {0xD91D, new Dictionary<string, int> {
+                    {"ja", 0},
+                }},
+                {0xDA0D, new Dictionary<string, int> {
+                    {"de", 0},
+                }},
+                {0xDBB1, new Dictionary<string, int> {
+                    {"fr", 0},
+                }},
+            }},
+            {"buffs", new Dictionary<ushort, Dictionary<string, int>> {
+                {0xD9AD, new Dictionary<string, int> {
+                    {"en", 0},
+                    {"enl", 1},
+                }},
+                {0xD935, new Dictionary<string, int> {
+                    {"ja", 0},
+                    {"jal", 0},
+                }},
+                {0xDA2C, new Dictionary<string, int> {
+                    {"de", 1},
+                    {"del", 1},
+                }},
+                {0xDBD0, new Dictionary<string, int> {
+                    {"fr", 2},
+                    {"frl", 2},
+                }},
+            }},
+            {"key_items", new Dictionary<ushort, Dictionary<string, int>> {
+                {0xD98F, new Dictionary<string, int> {
+                    {"id", 0},
+                    {"en", 4},
+                    //{"endesc", 6},
+                }},
+                {0xD917, new Dictionary<string, int> {
+                    {"ja", 1},
+                    //{"jadesc", 2},
+                }},
+                {0xDA11, new Dictionary<string, int> {
+                    {"de", 4},
+                }},
+                {0xDBB5, new Dictionary<string, int> {
+                    {"fr", 5},
+                }},
+            }},
+            {"regions", new Dictionary<ushort, Dictionary<string, int>> {
+                {0xD966, new Dictionary<string, int> {
+                    {"en", 0},
+                }},
+                {0xD8EE, new Dictionary<string, int> {
+                    {"ja", 0},
+                }},
+                {0xD9DE, new Dictionary<string, int> {
+                    {"de", 0},
+                }},
+                {0xDB82, new Dictionary<string, int> {
+                    {"fr", 0},
+                }},
+            }},
+            {"spells", new Dictionary<ushort, Dictionary<string, int>> {
+                {0xD996, new Dictionary<string, int> {
+                    {"en", 0},
+                }},
+                {0xD91E, new Dictionary<string, int> {
+                    {"ja", 0},
+                }},
+                {0xDA0E, new Dictionary<string, int> {
+                    {"de", 0},
+                }},
+                {0xDBB2, new Dictionary<string, int> {
+                    {"fr", 0},
+                }},
+            }},
+            {"zones", new Dictionary<ushort, Dictionary<string, int>> {
+                {0xD8A9, new Dictionary<string, int> {
+                    {"en", 0},
+                }},
+                {0xD8AA, new Dictionary<string, int> {
+                    {"search", 0},
+                }},
+                {0xD8EF, new Dictionary<string, int> {
+                    {"ja", 0},
+                }},
+                {0xD9DF, new Dictionary<string, int> {
+                    {"de", 0},
+                }},
+                {0xDB83, new Dictionary<string, int> {
+                    {"fr", 0},
+                }},
+            }},
+        };
 
         private static string Dir { get; set; }
 
@@ -63,39 +159,38 @@ namespace ResourceExtractor
             try
             {
 #endif
-            Console.CursorVisible = false;
+                Console.CursorVisible = false;
 
-            model = new ExpandoObject();
-            foreach (var category in categories)
-            {
-                ((IDictionary<string, object>)model)[category] = new List<dynamic>();
-            }
+                model = new ModelObject();
+                foreach (var category in categories)
+                {
+                    model[category] = new List<dynamic>();
+                }
 
+                ResourceParser.Initialize(model);
 
-            ResourceParser.Initialize(model);
+                Dir = GetBaseDirectory();
+                if (Dir != null)
+                {
+                    LoadMainData();     // Abilities, Spells
+                    LoadBuffData();     // Buffs
+                    LoadKeyItemData();  // Key items
+                    LoadItemData();     // Items, Monstrosity
+                    LoadRegionData();   // Regions
+                    LoadZoneData();     // Zones
 
-            Dir = GetBaseDirectory();
-            if (Dir != null)
-            {
-                LoadMainData();     // Abilities, Spells
-                LoadBuffData();     // Buffs
-                LoadKeyItemData();  // Key items
-                LoadItemData();     // Items, Monstrosity
-                LoadRegionData();   // Regions
-                LoadZoneData();     // Zones
+                    PostProcess();
 
-                PostProcess();
+                    ApplyFixes();
 
-                ApplyFixes();
+                    WriteData();
 
-                WriteData();
-
-                Console.WriteLine("Resource extraction complete!");
-            }
-            else
-            {
-                Console.WriteLine("Unable to locate Final Fantasy XI installation.");
-            }
+                    Console.WriteLine("Resource extraction complete!");
+                }
+                else
+                {
+                    Console.WriteLine("Unable to locate Final Fantasy XI installation.");
+                }
 #if !DEBUG
             }
             catch
@@ -117,16 +212,14 @@ namespace ResourceExtractor
             // Split abilities into categories
             foreach (var action in model.actions)
             {
-                IDictionary<string, object> act = action;
-
                 // Weapon skill
                 if (action.id >= 0x0000 && action.id < 0x0200)
                 {
-                    act.Remove("monster_level");
-                    act.Remove("mp_cost");
-                    act.Remove("recast_id");
-                    act.Remove("tp_cost");
-                    act.Remove("type");
+                    action.monster_level = null;
+                    action.mp_cost = null;
+                    action.recast_id = null;
+                    action.tp_cost = null;
+                    action.type = null;
 
                     model.weapon_skills.Add(action);
                 }
@@ -135,7 +228,7 @@ namespace ResourceExtractor
                 {
                     action.id -= 0x0200;
 
-                    act.Remove("monster_level");
+                    action.monster_level = null;
 
                     model.job_abilities.Add(action);
                 }
@@ -144,12 +237,12 @@ namespace ResourceExtractor
                 {
                     action.id -= 0x0600;
 
-                    act.Remove("monster_level");
-                    act.Remove("mp_cost");
-                    act.Remove("prefix");
-                    act.Remove("recast_id");
-                    act.Remove("tp_cost");
-                    act.Remove("type");
+                    action.monster_level = null;
+                    action.mp_cost = null;
+                    action.prefix = null;
+                    action.recast_id = null;
+                    action.tp_cost = null;
+                    action.type = null;
 
                     model.job_traits.Add(action);
                 }
@@ -159,20 +252,29 @@ namespace ResourceExtractor
                     action.id -= 0x0700;
                     action.id += 0x0100;
 
-                    act.Remove("mp_cost");
-                    act.Remove("recast_id");
-                    act.Remove("type");
+                    action.mp_cost = null;
+                    action.recast_id = null;
+                    action.type = null;
 
                     model.monster_abilities.Add(action);
                 }
             }
-            ((IDictionary<string, object>)model).Remove("actions");
+            model.actions = null;
 
             // Re-index key items by their real ID
-            foreach (dynamic ki in model.key_items)
+            var category = "";
+            for (var i = model.key_items.Count - 1; i >= 0; --i)
             {
-                ki.id = ki.real_id;
-                ((IDictionary<string, object>)ki).Remove("real_id");
+                dynamic ki = model.key_items[i];
+                if (ki.en.StartsWith("-"))
+                {
+                    category = ki.en.Substring(1);
+                    model.key_items.Remove(ki);
+                }
+                else
+                {
+                    ki.category = category;
+                }
             }
         }
 
@@ -195,19 +297,19 @@ namespace ResourceExtractor
             var IgnoreStrings = new Dictionary<string, string[]>();
             IgnoreStrings["buffs"] = new string[] { "(None)", "(Imagery)" };
             IgnoreStrings["zones"] = new string[] { "none" };
-            foreach (var key in ((IDictionary<string, object>)model).Keys)
+            foreach (var pair in model)
             {
-                if (IgnoreStrings.ContainsKey(key))
+                if (IgnoreStrings.ContainsKey(pair.Key))
                 {
-                    Extract(key, IgnoreStrings[key]);
+                    Extract(pair.Key, IgnoreStrings[pair.Key]);
                 }
                 else
                 {
-                    Extract(key);
+                    Extract(pair.Key);
                 }
 
                 var element = new XElement("file");
-                element.Value = key;
+                element.Value = pair.Key;
                 manifest.Root.Add(element);
             }
 
@@ -270,28 +372,28 @@ namespace ResourceExtractor
             try
             {
 #endif
-            XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
-            LuaFile lua = new LuaFile(name);
+                XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
+                LuaFile lua = new LuaFile(name);
 
-            foreach (dynamic obj in ((IDictionary<string, dynamic>)model)[name])
-            {
-                if (IsValidName(ignore ?? new string[] { }, obj))
+                foreach (dynamic obj in model[name])
                 {
-                    XElement xmlelement = new XElement("o");
-                    foreach (KeyValuePair<string, object> pair in obj)
+                    if (IsValidName(ignore ?? new string[] { }, obj))
                     {
-                        xmlelement.SetAttributeValue(pair.Key, pair.Value);
+                        XElement xmlelement = new XElement("o");
+                        foreach (var pair in obj)
+                        {
+                            xmlelement.SetAttributeValue(pair.Key, pair.Value);
+                        }
+
+                        xml.Root.Add(xmlelement);
+                        lua.Add(obj);
                     }
-
-                    xml.Root.Add(xmlelement);
-                    lua.Add(obj);
                 }
-            }
 
-            xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
+                xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-            xml.Save(Path.Combine("resources", "xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", name)));
-            lua.Save();
+                xml.Save(Path.Combine("resources", "xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", name)));
+                lua.Save();
 
 #if !DEBUG
             }
@@ -312,57 +414,55 @@ namespace ResourceExtractor
             try
             {
 #endif
-            XDocument fixes = XDocument.Load("fixes.xml");
+                XDocument fixes = XDocument.Load("fixes.xml");
 
-            foreach (XElement fixset in fixes.Root.Elements())
-            {
-                var dict = (IDictionary<string, object>)model;
-                if (!dict.ContainsKey(fixset.Name.LocalName))
+                foreach (XElement fixset in fixes.Root.Elements())
                 {
-                    dict[fixset.Name.LocalName] = new List<dynamic>();
-                }
-                List<dynamic> data = (List<dynamic>) dict[fixset.Name.LocalName];
-
-                XElement update = fixset.Element("update");
-                if (update != null)
-                {
-                    foreach (XElement fix in update.Elements())
+                    if (!model.ContainsKey(fixset.Name.LocalName))
                     {
-                        var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+                        model[fixset.Name.LocalName] = new List<dynamic>();
+                    }
+                    List<dynamic> data = (List<dynamic>)model[fixset.Name.LocalName];
 
-                        if (!elements.Any())
+                    XElement update = fixset.Element("update");
+                    if (update != null)
+                    {
+                        foreach (XElement fix in update.Elements())
                         {
-                            dynamic el = new ExpandoObject();
-                            IDictionary<string, object> del = el;
+                            var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 
-                            foreach (XAttribute attr in fix.Attributes())
+                            if (!elements.Any())
                             {
-                                del[attr.Name.LocalName] = attr.Parse();
+                                dynamic el = new ModelObject();
+
+                                foreach (XAttribute attr in fix.Attributes())
+                                {
+                                    el[attr.Name.LocalName] = attr.Parse();
+                                }
+
+                                data.Add(el);
+                                continue;
                             }
-
-                            data.Add(el);
-                            continue;
-                        }
-                        else
-                        {
-                            var element = (IDictionary<string, object>)elements.Single();
-                            foreach (XAttribute attr in fix.Attributes())
+                            else
                             {
-                                element[attr.Name.LocalName] = attr.Parse();
+                                var element = elements.Single();
+                                foreach (XAttribute attr in fix.Attributes())
+                                {
+                                    element[attr.Name.LocalName] = attr.Parse();
+                                }
                             }
                         }
                     }
-                }
 
-                XElement remove = fixset.Element("remove");
-                if (remove != null)
-                {
-                    foreach (XElement fix in remove.Elements())
+                    XElement remove = fixset.Element("remove");
+                    if (remove != null)
                     {
-                        ((List<dynamic>)data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+                        foreach (XElement fix in remove.Elements())
+                        {
+                            ((List<dynamic>)data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+                        }
                     }
                 }
-            }
 #if !DEBUG
             }
             catch
@@ -425,8 +525,8 @@ namespace ResourceExtractor
 
             DisplaySuccess();
 
-            LoadNames("actions", new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 }, new int[] { 0, 0, 0, 0 });
-            LoadNames("spells", new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 }, new int[] { 0, 0, 0, 0 });
+            ParseFields("actions");
+            ParseFields("spells");
 
             // TODO: This, but better
             foreach (var recast in model.ability_recasts)
@@ -459,141 +559,78 @@ namespace ResourceExtractor
             }
         }
 
-        private static IList<IList<IList<object>>> ParseNames(int[] fileids)
+        private static void ParseFields(string name)
         {
-            IList<IList<IList<object>>> names = null;
+            bool result = false;
 
             try
             {
-                IList<IList<IList<object>>> tmp = new List<IList<IList<object>>>();
+                dynamic[] parsed = null;
 
-                foreach (int id in fileids)
+                foreach (var filepair in dat_lut[name])
                 {
-                    using (FileStream stream = File.OpenRead(GetPath(id)))
+                    using (FileStream stream = File.OpenRead(GetPath(filepair.Key)))
                     {
-                        tmp.Add(new DMsgStringList(stream));
+                        var single = DMsgParser.Parse(stream, filepair.Value);
+                        if (parsed == null)
+                        {
+                            parsed = single;
+                            continue;
+                        }
+
+                        for (var i = 0; i < Math.Min(parsed.Length, single.Length); ++i)
+                        {
+                            parsed[i].Merge(single[i]);
+                        }
                     }
                 }
 
-                names = tmp;
+                if (model[name].Count > 0)
+                {
+                    foreach (var obj in model[name])
+                    {
+                        obj.Merge(parsed[obj.id]);
+                    }
+                }
+                else
+                {
+                    for (var i = 0; i < parsed.Length; ++i)
+                    {
+                        dynamic obj = new ModelObject();
+                        obj.id = i;
+
+                        obj.Merge(parsed[i]);
+
+                        model[name].Add(obj);
+                    }
+                }
+
+                result = true;
             }
             finally
             {
-                DisplayResult(names != null);
+                DisplayResult(result);
             }
-
-            return names;
-        }
-
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void AddNames(dynamic obj, IList<IList<IList<object>>> names, int[] indices, int[] logindices)
-        {
-            obj.en = names[(int)Languages.English][obj.id][indices[(int)Languages.English]];
-            obj.ja = names[(int)Languages.Japanese][obj.id][indices[(int)Languages.Japanese]];
-            // Remove this after July 2014
-            try
-            {
-                obj.de = names[(int) Languages.German][obj.id][indices[(int) Languages.German]];
-            }
-            catch (IndexOutOfRangeException)
-            {
-                obj.de = "";
-            }
-            try
-            {
-                obj.fr = names[(int) Languages.French][obj.id][indices[(int) Languages.French]];
-            }
-            catch (IndexOutOfRangeException)
-            {
-                obj.fr = "";
-            }
-
-            if (logindices != null)
-            {
-                obj.enl = names[(int)Languages.English][obj.id][logindices[(int)Languages.English]];
-                obj.jal = names[(int)Languages.Japanese][obj.id][logindices[(int)Languages.Japanese]];
-                // Remove this after July 2014
-                obj.del = names[(int)Languages.German][obj.id][logindices[(int)Languages.German]];
-                obj.frl = names[(int)Languages.French][obj.id][logindices[(int)Languages.French]];
-            }
-        }
-
-        private static IList<IList<IList<object>>> LoadNames(string name, int[] fileids, int[] indices, int[] logindices = null)
-        {
-            DisplayMessage("Loading " + name + " names...");
-
-            IList<IList<IList<object>>> names = ParseNames(fileids);
-            if (names == null)
-            {
-                return null;
-            }
-
-            var dict = (List<dynamic>)((IDictionary<string, object>)model)[name];
-
-            if (dict.Any())
-            {
-                foreach (var obj in dict)
-                {
-                    AddNames(obj, names, indices, logindices);
-                }
-            }
-            else
-            {
-                for (int id = 0; id < names[0].Count; ++id)
-                {
-                    dynamic obj;
-                    obj = new ExpandoObject();
-                    obj.id = id;
-
-                    AddNames(obj, names, indices, logindices);
-
-                    dict.Add(obj);
-                }
-            }
-
-            return names;
         }
 
         private static void LoadBuffData()
         {
-            LoadNames("buffs", new int[] { 0xD9AD, 0xD935, 0xDA2C, 0xDBD0 }, new int[] { 0, 0, 1, 2 }, new int[] { 1, 0, 1, 2 });
+            ParseFields("buffs");
         }
 
         private static void LoadKeyItemData()
         {
-            var data = LoadNames("key_items", new int[] { 0xD98F, 0xD917, 0xDA11, 0xDBB5 }, new int[] { 4, 1, 4, 5 });
-            var category = "";
-            for (var i = data[0].Count - 1; i >= 0; --i)
-            {
-                dynamic ki = model.key_items[i];
-                if (ki.en.StartsWith("-"))
-                {
-                    category = ki.en.Substring(1);
-                    model.key_items.Remove(ki);
-                }
-                else
-                {
-                    ki.real_id = data[0][i][0];
-                    ki.category = category;
-                    //ki.endesc = data[(int)Languages.English][i][6];
-                    //ki.jadesc = data[(int)Languages.Japanese][i][2];
-                }
-            }
+            ParseFields("key_items");
         }
 
         private static void LoadRegionData()
         {
-            LoadNames("regions", new int[] { 0xD966, 0xD8EE, 0xD9DE, 0xDB82 }, new int[] { 0, 0, 0, 0 });
+            ParseFields("regions");
         }
 
         private static void LoadZoneData()
         {
-            LoadNames("zones", new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 }, new int[] { 0, 0, 0, 0 });
-            var searchnames = ParseNames(new int[] { 0xD8AA })[0];
-            for (var i = 0; i < searchnames.Count; ++i)
-            {
-                model.zones[i].search = searchnames[i][0];
-            }
+            ParseFields("zones");
         }
 
         private static IList<IList<IList<object>>> LoadMonsterAbilityNames()
@@ -659,7 +696,7 @@ namespace ResourceExtractor
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static bool IsValidName(string[] ignore, dynamic res)
         {
-            return !((IDictionary<string, object>)res).ContainsKey("en") || !(res.en == "."
+            return !res.ContainsKey("en") || !(res.en == "."
                 || string.IsNullOrWhiteSpace(res.en) || ignore.Contains((string)res.en)
                 || res.en.StartsWith("#", StringComparison.Ordinal));
         }

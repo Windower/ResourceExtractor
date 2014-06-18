@@ -37,19 +37,24 @@ namespace ResourceExtractor.Serializers.Lua
 
             ID = obj.id;
 
-            IDictionary<string, object> o = obj;
             foreach (var key in fixedKeys)
             {
-                if (o.ContainsKey(key))
+                if (obj.ContainsKey(key))
                 {
-                    Attributes.Add(new LuaAttribute(key, o[key]));
+                    Attributes.Add(new LuaAttribute(key, obj[key]));
                     Keys.Add(key);
                 }
             }
 
-            foreach (var key in from k in o.Keys where !fixedKeys.Contains(k) orderby k select k)
+            // TODO: Prettier
+            var OtherKeys = new List<string>();
+            foreach (var pair in obj)
             {
-                Attributes.Add(new LuaAttribute(key, o[key]));
+                OtherKeys.Add(pair.Key);
+            }
+            foreach (var key in OtherKeys.Where(key => !fixedKeys.Contains(key)).OrderBy(key => key))
+            {
+                Attributes.Add(new LuaAttribute(key, obj[key]));
                 Keys.Add(key);
             }
         }

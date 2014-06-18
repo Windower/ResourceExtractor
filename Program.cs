@@ -385,6 +385,7 @@ namespace ResourceExtractor
                     {
                         new int[] { 0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975 },
                         new int[] { 0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD },
+                        // Remove this after July 2014
                         new int[] { 0xDA07, 0xDA08, 0xDA0B, 0xDA0A, 0xDA09, 0xDA0C, 0xD9EB, 0xD9EC, 0xD9EF, 0xD9ED },
                         new int[] { 0xDBAB, 0xDBAC, 0xDBAF, 0xDBAE, 0xDBAD, 0xDBB0, 0xDB8F, 0xDB90, 0xDB93, 0xDB91 },
                     };
@@ -393,6 +394,7 @@ namespace ResourceExtractor
                 {
                     using (FileStream stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     using (FileStream streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    // Remove this after July 2014
                     using (FileStream streamde = File.Open(GetPath(fileids[2][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     using (FileStream streamfr = File.Open(GetPath(fileids[3][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
@@ -433,6 +435,7 @@ namespace ResourceExtractor
                     {
                         recast.en = action.en;
                         recast.ja = action.ja;
+                        // Remove this after July 2014
                         recast.de = action.de;
                         recast.fr = action.fr;
                     }
@@ -446,6 +449,7 @@ namespace ResourceExtractor
                     {
                         recast.en = spell.en;
                         recast.ja = spell.ja;
+                        // Remove this after July 2014
                         recast.de = spell.de;
                         recast.fr = spell.fr;
                     }
@@ -484,14 +488,21 @@ namespace ResourceExtractor
         {
             obj.en = names[(int)Languages.English][obj.id][indices[(int)Languages.English]];
             obj.ja = names[(int)Languages.Japanese][obj.id][indices[(int)Languages.Japanese]];
-            try {
+            // Remove this after July 2014
+            try
+            {
                 obj.de = names[(int) Languages.German][obj.id][indices[(int) Languages.German]];
-            } catch (IndexOutOfRangeException) {
+            }
+            catch (IndexOutOfRangeException)
+            {
                 obj.de = "";
             }
-            try {
+            try
+            {
                 obj.fr = names[(int) Languages.French][obj.id][indices[(int) Languages.French]];
-            } catch (IndexOutOfRangeException) {
+            }
+            catch (IndexOutOfRangeException)
+            {
                 obj.fr = "";
             }
 
@@ -499,6 +510,7 @@ namespace ResourceExtractor
             {
                 obj.enl = names[(int)Languages.English][obj.id][logindices[(int)Languages.English]];
                 obj.jal = names[(int)Languages.Japanese][obj.id][logindices[(int)Languages.Japanese]];
+                // Remove this after July 2014
                 obj.del = names[(int)Languages.German][obj.id][logindices[(int)Languages.German]];
                 obj.frl = names[(int)Languages.French][obj.id][logindices[(int)Languages.French]];
             }
@@ -570,6 +582,11 @@ namespace ResourceExtractor
         private static void LoadZoneData()
         {
             LoadNames("zones", new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 }, new int[] { 0, 0, 0, 0 });
+            var searchnames = ParseNames(new int[] { 0xD8AA })[0];
+            for (var i = 0; i < searchnames.Count; ++i)
+            {
+                model.zones[i].search = searchnames[i][0];
+            }
         }
 
         private static IList<IList<IList<object>>> LoadMonsterAbilityNames()

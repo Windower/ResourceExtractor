@@ -172,12 +172,10 @@ namespace ResourceExtractor
                 Dir = GetBaseDirectory();
                 if (Dir != null)
                 {
-                    LoadMainData();     // Abilities, Spells
-                    LoadBuffData();     // Buffs
-                    LoadKeyItemData();  // Key items
                     LoadItemData();     // Items, Monstrosity
-                    LoadRegionData();   // Regions
-                    LoadZoneData();     // Zones
+                    LoadMainData();     // Abilities, Spells
+
+                    ParseStringTables();
 
                     PostProcess();
 
@@ -209,6 +207,38 @@ namespace ResourceExtractor
 
         private static void PostProcess()
         {
+            // Populate ability recast table with proper names
+            foreach (var recast in model.ability_recasts)
+            {
+                foreach (var action in model.actions)
+                {
+                    if (recast.id == action.recast_id)
+                    {
+                        recast.en = action.en;
+                        recast.ja = action.ja;
+                        // Remove this after July 2014
+                        recast.de = action.de;
+                        recast.fr = action.fr;
+                    }
+                }
+            }
+
+            // Populate spell recast table with proper names
+            foreach (var recast in model.spell_recasts)
+            {
+                foreach (var spell in model.spells)
+                {
+                    if (recast.id == spell.recast_id)
+                    {
+                        recast.en = spell.en;
+                        recast.ja = spell.ja;
+                        // Remove this after July 2014
+                        recast.de = spell.de;
+                        recast.fr = spell.fr;
+                    }
+                }
+            }
+
             // Split abilities into categories
             foreach (var action in model.actions)
             {
@@ -524,38 +554,14 @@ namespace ResourceExtractor
             }
 
             DisplaySuccess();
+        }
 
-            ParseFields("actions");
-            ParseFields("spells");
-
-            // TODO: This, but better
-            foreach (var recast in model.ability_recasts)
+        private static void ParseStringTables()
+        {
+            foreach (var pair in dat_lut)
             {
-                foreach (var action in model.actions)
-                {
-                    if (recast.id == action.recast_id)
-                    {
-                        recast.en = action.en;
-                        recast.ja = action.ja;
-                        // Remove this after July 2014
-                        recast.de = action.de;
-                        recast.fr = action.fr;
-                    }
-                }
-            }
-            foreach (var recast in model.spell_recasts)
-            {
-                foreach (var spell in model.spells)
-                {
-                    if (recast.id == spell.recast_id)
-                    {
-                        recast.en = spell.en;
-                        recast.ja = spell.ja;
-                        // Remove this after July 2014
-                        recast.de = spell.de;
-                        recast.fr = spell.fr;
-                    }
-                }
+                Console.WriteLine("Loading {0} fields...", pair.Key);
+                ParseFields(pair.Key);
             }
         }
 
@@ -611,26 +617,6 @@ namespace ResourceExtractor
             {
                 DisplayResult(result);
             }
-        }
-
-        private static void LoadBuffData()
-        {
-            ParseFields("buffs");
-        }
-
-        private static void LoadKeyItemData()
-        {
-            ParseFields("key_items");
-        }
-
-        private static void LoadRegionData()
-        {
-            ParseFields("regions");
-        }
-
-        private static void LoadZoneData()
-        {
-            ParseFields("zones");
         }
 
         private static IList<IList<IList<object>>> LoadMonsterAbilityNames()

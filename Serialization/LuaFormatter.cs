@@ -170,7 +170,24 @@ namespace ResourceExtractor.Serialization
 
         private void SerializeString(TextWriter writer, object value)
         {
-            writer.Write("'" + value.ToString().Replace("'", "\\'") + "'");
+            var temp = new StringBuilder().Append(value);
+            temp.Replace("\\", "\\\\");
+            temp.Replace("'", "\\'");
+            temp.Replace("\r\n", "\\n");
+            temp.Replace("\n", "\\n");
+            temp.Replace("\r", "\\n");
+            temp.Replace("\t", "\\t");
+            for (int i = 0; i < temp.Length; i++)
+            {
+                char c = temp[i];
+                if (c < 0x20)
+                {
+                    temp[i] = '\\';
+                    temp.Insert(i + 1, ((int)c).ToString("000", CultureInfo.InvariantCulture));
+                    i += 3;
+                }
+            }
+            writer.Write(temp.Insert(0, '\'').Append('\''));
         }
 
         private void SerializeTable(TextWriter writer, object value)

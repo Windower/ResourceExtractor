@@ -48,6 +48,7 @@ namespace ResourceExtractor
             "key_items",
             "monster_abilities",
             "monstrosity",
+            "regions",
             "spells",
             "spell_recasts",
             "weapon_skills",
@@ -80,6 +81,7 @@ namespace ResourceExtractor
                 LoadBuffData();     // Buffs
                 LoadKeyItemData();  // Key items
                 LoadItemData();     // Items, Monstrosity
+                LoadRegionData();   // Regions
                 LoadZoneData();     // Zones
 
                 PostProcess();
@@ -577,6 +579,11 @@ namespace ResourceExtractor
                     //ki.jadesc = data[(int)Languages.Japanese][i][2];
                 }
             }
+        }
+
+        private static void LoadRegionData()
+        {
+            LoadNames("regions", new int[] { 0xD966, 0xD8EE, 0xD9DE, 0xDB82 }, new int[] { 0, 0, 0, 0 });
         }
 
         private static void LoadZoneData()

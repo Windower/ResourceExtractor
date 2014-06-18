@@ -94,6 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
+    <Compile Include="Fixes.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ModelObject.cs" />
+    <Compile Include="Serialization\LuaFormatter.cs" />
     <Compile Include="ShiftJISFF11Encoding.cs" />
     <Compile Include="Languages.cs" />
     <Compile Include="MagicType.cs" />
@@ -137,6 +141,7 @@
     <CodeAnalysisDictionary Include="CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fixes-example.xml" />
     <Content Include="fixes.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>

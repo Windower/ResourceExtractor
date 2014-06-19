@@ -36,57 +36,58 @@ namespace ResourceExtractor
             }
 
             Header header = stream.Read<Header>(0);
+            // First valid value was included in the header to get the table size
+            stream.Position -= 4;
 
             if (header.FileSize != stream.Length - 4)
             {
                 throw new InvalidOperationException("Data is corrupt.");
             }
 
-            var table = stream.ReadArray<uint>(header.TableSize);
-            for (var i = 0; i < table.Length; ++i)
+            var data = new byte[header.FileSize];
+            stream.Read(data, 0, data.Length);
+            for (var i = 0; i < data.Length; ++i)
             {
-                table[i] ^= 0x80;
+                data[i] ^= 0x80;
             }
+            var table = new MemoryStream(data).ReadArray<int>((int)header.TableSize);
 
-            dynamic objects = new ModelObject[header.TableSize / 4];
+            dynamic objects = new ModelObject[header.TableSize];
 
             for (var i = 0; i < table.Length; ++i)
             {
-                var index = table[i];
-                var length = (i + 1 < table.Length ? table[i + 1] : stream.Length) - table[i];
-                var data = stream.ReadArray<byte>((int)length);
-                for (var j = 0; j < data.Length; ++j)
-                {
-                    data[j] ^= 0x80;
-                }
+                var offset = table[i];
+                var length = (int)(i + 1 < table.Length ? table[i + 1] : data.Length) - offset;
 
-                var value = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data);
+                for (; data[offset + length - 1] == 0; --length) ;
 
-                objects[i][key] = value;
+                objects[i] = new ModelObject {
+                    {key, ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, offset, length)}
+                };
             }
 
             return objects;
         }
 
-        [StructLayout(LayoutKind.Sequential, Pack = 4, Size = 4)]
+        [StructLayout(LayoutKind.Sequential, Pack = 4, Size = 8)]
         private struct Header
         {
-            private ushort fileSize;
-            private ushort tableSize;
+            private int fileSize;
+            private int tableSize;
 
-            public ushort FileSize
+            public int FileSize
             {
                 get
                 {
-                    return fileSize;
+                    return fileSize - 0x10000000;
                 }
             }
 
-            public ushort TableSize
+            public int TableSize
             {
                 get
                 {
-                    return tableSize;
+                    return (int)(tableSize ^ 0x80808080) / 4;
                 }
             }
         }

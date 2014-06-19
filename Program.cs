@@ -38,21 +38,16 @@ namespace ResourceExtractor
     {
         private static dynamic model;
         private static string[] categories = new string[] {
+            "action_messages",
             "actions",
             "ability_recasts",
-            "buffs",
-            "commands",
             "items",
             "job_abilities",
             "job_traits",
-            "key_items",
-            "monster_abilities",
             "monstrosity",
-            "regions",
             "spells",
             "spell_recasts",
             "weapon_skills",
-            "zones",
         };
         private static Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> DatLut = new Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> {
             //TODO: Comment in once special char parsing has been added
@@ -159,6 +154,20 @@ namespace ResourceExtractor
                     {0, "fr"},
                 }},
             }},
+            {"titles", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD998, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD920, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA10, new Dictionary<int, string> {
+                    {1, "de"},
+                }},
+                {0xDBB4, new Dictionary<int, string> {
+                    {2, "fr"},
+                }},
+            }},
             {"zones", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD8A9, new Dictionary<int, string> {
                     {0, "en"},
@@ -192,6 +201,10 @@ namespace ResourceExtractor
                 foreach (var category in categories)
                 {
                     model[category] = new List<dynamic>();
+                }
+                foreach (var pair in DatLut)
+                {
+                    model[pair.Key] = new List<dynamic>();
                 }
 
                 ResourceParser.Initialize(model);
@@ -388,6 +401,7 @@ namespace ResourceExtractor
 
             var IgnoreStrings = new Dictionary<string, string[]>();
             IgnoreStrings["buffs"] = new string[] { "(None)", "(Imagery)" };
+            IgnoreStrings["titles"] = new string[] { "0" };
             IgnoreStrings["zones"] = new string[] { "none" };
             foreach (var pair in model)
             {

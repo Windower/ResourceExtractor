@@ -582,7 +582,7 @@ namespace ResourceExtractor
                 {
                     using (FileStream stream = File.OpenRead(GetPath(filepair.Key)))
                     {
-                        var single = DMsgParser.Parse(stream, filepair.Value);
+                        var single = DatParser.Parse(stream, filepair.Value);
                         if (parsed == null)
                         {
                             parsed = single;

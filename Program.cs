@@ -101,6 +101,20 @@ namespace ResourceExtractor
                     {5, "fr"},
                 }},
             }},
+            {"monster_abilities", new Dictionary<ushort, Dictionary<int, string>> {
+                {0x1B7B, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0x1B7A, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA2B, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDBCF, new Dictionary<int, string> {
+                    {0, "fr"},
+                }},
+            }},
             {"regions", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD966, new Dictionary<int, string> {
                     {0, "en"},
@@ -287,16 +301,23 @@ namespace ResourceExtractor
                     action.id -= 0x0700;
                     action.id += 0x0100;
 
+                    action.en = null;
+                    action.ja = null;
+                    action.de = null;
+                    action.fr = null;
                     action.mp_cost = null;
                     action.recast_id = null;
                     action.type = null;
 
-                    model.monster_abilities.Add(action);
+                    if (action.id - 0x100 < model.monster_abilities.Count)
+                    {
+                        model.monster_abilities[action.id - 0x100].Merge(action);
+                    }
                 }
             }
             model.actions = null;
 
-            // Re-index key items by their real ID
+            // Add categories to key items
             var category = "";
             for (var i = model.key_items.Count - 1; i >= 0; --i)
             {
@@ -622,36 +643,6 @@ namespace ResourceExtractor
             {
                 DisplayResult(result);
             }
-        }
-
-        private static IList<IList<IList<object>>> LoadMonsterAbilityNames()
-        {
-            IList<IList<IList<object>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading monster ability names...");
-
-                int[] fileids = new int[] { 0x1B7B, 0x1B8C, 0xDA2B, 0xDBCF };
-
-                result = new List<IList<IList<object>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        // TODO: Format is wrong
-                        result.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                DisplayResult(result != null);
-            }
-
-            return result;
         }
 
         private static IList<IList<IList<object>>> LoadActionMessages()

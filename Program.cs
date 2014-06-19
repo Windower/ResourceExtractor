@@ -55,6 +55,22 @@ namespace ResourceExtractor
             "zones",
         };
         private static Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> DatLut = new Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> {
+            //TODO: Comment in once special char parsing has been added
+
+            //{"action_messages", new Dictionary<ushort, Dictionary<int, string>> {
+            //    {0x1B73, new Dictionary<int, string> {
+            //        {0, "en"},
+            //    }},
+            //    {0x1B72, new Dictionary<int, string> {
+            //        {0, "ja"},
+            //    }},
+            //    {0xDA28, new Dictionary<int, string> {
+            //        {0, "de"},
+            //    }},
+            //    {0xDBCC, new Dictionary<int, string> {
+            //        {0, "fr"},
+            //    }},
+            //}},
             {"actions", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD995, new Dictionary<int, string> {
                     {0, "en"},
@@ -312,13 +328,15 @@ namespace ResourceExtractor
                         action.id -= 0x0700;
                         action.id += 0x0100;
 
+                        action.mp_cost = null;
+                        action.recast_id = null;
+                        action.type = null;
+
+                        // Remove names, as they are parsed separately
                         action.en = null;
                         action.ja = null;
                         action.de = null;
                         action.fr = null;
-                        action.mp_cost = null;
-                        action.recast_id = null;
-                        action.type = null;
 
                         if (action.id - 0x100 < model.monster_abilities.Count)
                         {
@@ -661,36 +679,6 @@ namespace ResourceExtractor
             {
                 DisplayResult(result);
             }
-        }
-
-        private static IList<IList<IList<object>>> LoadActionMessages()
-        {
-            IList<IList<IList<object>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading action messages...");
-
-                int[] fileids = new int[] { 0x1B73, 0x1B72, 0xDA28, 0xDBCC };
-
-                result = new List<IList<IList<object>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        // TODO: Format is wrong
-                        result.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                DisplayResult(result != null);
-            }
-
-            return result;
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]

@@ -28,7 +28,7 @@ namespace ResourceExtractor
     using System.Runtime.InteropServices;
     internal class DialogString
     {
-        internal static string[] Parse(Stream stream)
+        internal static dynamic[] Parse(Stream stream, string key)
         {
             if (stream == null)
             {
@@ -48,7 +48,7 @@ namespace ResourceExtractor
                 table[i] ^= 0x80;
             }
 
-            var objects = new string[header.TableSize / 4];
+            dynamic objects = new ModelObject[header.TableSize / 4];
 
             for (var i = 0; i < table.Length; ++i)
             {
@@ -60,7 +60,9 @@ namespace ResourceExtractor
                     data[j] ^= 0x80;
                 }
 
-                objects[i] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data);
+                var value = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data);
+
+                objects[i][key] = value;
             }
 
             return objects;

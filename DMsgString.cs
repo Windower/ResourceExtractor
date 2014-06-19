@@ -31,7 +31,7 @@ namespace ResourceExtractor
 
     internal class DMsgParser
     {
-        internal static dynamic[] Parse(Stream stream, Dictionary<string, int> fields = null)
+        internal static dynamic[] Parse(Stream stream, Dictionary<int, string> fields)
         {
             if (stream == null)
             {
@@ -86,18 +86,6 @@ namespace ResourceExtractor
                 }
             }
 
-            fields = fields ?? new Dictionary<string, int>();
-
-            var rfields = new Dictionary<int, IList<string>>();
-            foreach (var field in fields)
-            {
-                if (!rfields.ContainsKey(field.Value))
-                {
-                    rfields[field.Value] = new List<string>();
-                }
-                rfields[field.Value].Add(field.Key);
-            }
-
             dynamic objects = new ModelObject[header.Count];
 
             int length = (int)header.EntrySize;
@@ -120,7 +108,7 @@ namespace ResourceExtractor
 
                 for (int j = 0; j < count; j++)
                 {
-                    if (!rfields.ContainsKey(j))
+                    if (!fields.ContainsKey(j))
                     {
                         continue;
                     }
@@ -155,10 +143,7 @@ namespace ResourceExtractor
                         break;
                     }
 
-                    foreach (var key in rfields[j])
-                    {
-                        resource[key] = value;
-                    }
+                    resource[fields[j]] = value;
                 }
 
                 objects[i] = resource;

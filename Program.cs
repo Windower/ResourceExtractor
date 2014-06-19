@@ -54,99 +54,96 @@ namespace ResourceExtractor
             "weapon_skills",
             "zones",
         };
-        private static Dictionary<string, Dictionary<ushort, Dictionary<string, int>>> dat_lut = new Dictionary<string, Dictionary<ushort, Dictionary<string, int>>> {
-            {"actions", new Dictionary<ushort, Dictionary<string, int>> {
-                {0xD995, new Dictionary<string, int> {
-                    {"en", 0},
+        private static Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> DatLut = new Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> {
+            {"actions", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD995, new Dictionary<int, string> {
+                    {0, "en"},
                 }},
-                {0xD91D, new Dictionary<string, int> {
-                    {"ja", 0},
+                {0xD91D, new Dictionary<int, string> {
+                    {0, "ja"},
                 }},
-                {0xDA0D, new Dictionary<string, int> {
-                    {"de", 0},
+                {0xDA0D, new Dictionary<int, string> {
+                    {0, "de"},
                 }},
-                {0xDBB1, new Dictionary<string, int> {
-                    {"fr", 0},
-                }},
-            }},
-            {"buffs", new Dictionary<ushort, Dictionary<string, int>> {
-                {0xD9AD, new Dictionary<string, int> {
-                    {"en", 0},
-                    {"enl", 1},
-                }},
-                {0xD935, new Dictionary<string, int> {
-                    {"ja", 0},
-                    {"jal", 0},
-                }},
-                {0xDA2C, new Dictionary<string, int> {
-                    {"de", 1},
-                    {"del", 1},
-                }},
-                {0xDBD0, new Dictionary<string, int> {
-                    {"fr", 2},
-                    {"frl", 2},
+                {0xDBB1, new Dictionary<int, string> {
+                    {0, "fr"},
                 }},
             }},
-            {"key_items", new Dictionary<ushort, Dictionary<string, int>> {
-                {0xD98F, new Dictionary<string, int> {
-                    {"id", 0},
-                    {"en", 4},
-                    //{"endesc", 6},
+            {"buffs", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD9AD, new Dictionary<int, string> {
+                    {0, "en"},
+                    {1, "enl"},
                 }},
-                {0xD917, new Dictionary<string, int> {
-                    {"ja", 1},
-                    //{"jadesc", 2},
+                {0xD935, new Dictionary<int, string> {
+                    {0, "ja"},
                 }},
-                {0xDA11, new Dictionary<string, int> {
-                    {"de", 4},
+                {0xDA2C, new Dictionary<int, string> {
+                    {1, "de"},
                 }},
-                {0xDBB5, new Dictionary<string, int> {
-                    {"fr", 5},
+                {0xDBD0, new Dictionary<int, string> {
+                    {2, "fr"},
                 }},
             }},
-            {"regions", new Dictionary<ushort, Dictionary<string, int>> {
-                {0xD966, new Dictionary<string, int> {
-                    {"en", 0},
+            {"key_items", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD98F, new Dictionary<int, string> {
+                    {0, "id"},
+                    {4, "en"},
+                    //{6, "endesc"},
                 }},
-                {0xD8EE, new Dictionary<string, int> {
-                    {"ja", 0},
+                {0xD917, new Dictionary<int, string> {
+                    {1, "ja"},
+                    //{2, "jadesc"},
                 }},
-                {0xD9DE, new Dictionary<string, int> {
-                    {"de", 0},
+                {0xDA11, new Dictionary<int, string> {
+                    {4, "de"},
                 }},
-                {0xDB82, new Dictionary<string, int> {
-                    {"fr", 0},
-                }},
-            }},
-            {"spells", new Dictionary<ushort, Dictionary<string, int>> {
-                {0xD996, new Dictionary<string, int> {
-                    {"en", 0},
-                }},
-                {0xD91E, new Dictionary<string, int> {
-                    {"ja", 0},
-                }},
-                {0xDA0E, new Dictionary<string, int> {
-                    {"de", 0},
-                }},
-                {0xDBB2, new Dictionary<string, int> {
-                    {"fr", 0},
+                {0xDBB5, new Dictionary<int, string> {
+                    {5, "fr"},
                 }},
             }},
-            {"zones", new Dictionary<ushort, Dictionary<string, int>> {
-                {0xD8A9, new Dictionary<string, int> {
-                    {"en", 0},
+            {"regions", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD966, new Dictionary<int, string> {
+                    {0, "en"},
                 }},
-                {0xD8AA, new Dictionary<string, int> {
-                    {"search", 0},
+                {0xD8EE, new Dictionary<int, string> {
+                    {0, "ja"},
                 }},
-                {0xD8EF, new Dictionary<string, int> {
-                    {"ja", 0},
+                {0xD9DE, new Dictionary<int, string> {
+                    {0, "de"},
                 }},
-                {0xD9DF, new Dictionary<string, int> {
-                    {"de", 0},
+                {0xDB82, new Dictionary<int, string> {
+                    {0, "fr"},
                 }},
-                {0xDB83, new Dictionary<string, int> {
-                    {"fr", 0},
+            }},
+            {"spells", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD996, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD91E, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA0E, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDBB2, new Dictionary<int, string> {
+                    {0, "fr"},
+                }},
+            }},
+            {"zones", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD8A9, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD8AA, new Dictionary<int, string> {
+                    {0, "search"},
+                }},
+                {0xD8EF, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xD9DF, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDB83, new Dictionary<int, string> {
+                    {0, "fr"},
                 }},
             }},
         };
@@ -207,6 +204,14 @@ namespace ResourceExtractor
 
         private static void PostProcess()
         {
+            // Add log names for non-english languages
+            foreach (var buff in model.buffs)
+            {
+                buff.jal = buff.ja;
+                buff.del = buff.de;
+                buff.frl = buff.fr;
+            }
+
             // Populate ability recast table with proper names
             foreach (var recast in model.ability_recasts)
             {
@@ -558,7 +563,7 @@ namespace ResourceExtractor
 
         private static void ParseStringTables()
         {
-            foreach (var pair in dat_lut)
+            foreach (var pair in DatLut)
             {
                 Console.WriteLine("Loading {0} fields...", pair.Key);
                 ParseFields(pair.Key);
@@ -573,7 +578,7 @@ namespace ResourceExtractor
             {
                 dynamic[] parsed = null;
 
-                foreach (var filepair in dat_lut[name])
+                foreach (var filepair in DatLut[name])
                 {
                     using (FileStream stream = File.OpenRead(GetPath(filepair.Key)))
                     {

@@ -26,7 +26,7 @@ namespace ResourceExtractor
     using System.Collections.Generic;
     using System.IO;
     using System.Runtime.InteropServices;
-    internal class DialogString
+    internal class DialogParser
     {
         internal static dynamic[] Parse(Stream stream, string key)
         {

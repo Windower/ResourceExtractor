@@ -94,8 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
-    <Compile Include="DialogString.cs" />
-    <Compile Include="DMsgString.cs" />
+    <Compile Include="DatParser.cs" />
+    <Compile Include="DialogParser.cs" />
+    <Compile Include="DMsgParser.cs" />
     <Compile Include="Fixes.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ModelObject.cs" />

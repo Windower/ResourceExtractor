@@ -181,18 +181,23 @@ namespace ResourceExtractor
                 ResourceParser.Initialize(model);
 
                 Dir = GetBaseDirectory();
+                Console.WriteLine();
                 if (Dir != null)
                 {
                     LoadItemData();     // Items, Monstrosity
                     LoadMainData();     // Abilities, Spells
 
                     ParseStringTables();
+                    Console.WriteLine();
 
                     PostProcess();
+                    Console.WriteLine();
 
                     ApplyFixes();
+                    Console.WriteLine();
 
                     WriteData();
+                    Console.WriteLine();
 
                     Console.WriteLine("Resource extraction complete!");
                 }
@@ -210,6 +215,7 @@ namespace ResourceExtractor
                 }
             }
 #endif
+            Console.WriteLine();
 
             Console.Write("Press any key to exit. ");
             Console.CursorVisible = true;
@@ -218,119 +224,131 @@ namespace ResourceExtractor
 
         private static void PostProcess()
         {
-            // Add log names for non-english languages
-            foreach (var buff in model.buffs)
-            {
-                buff.jal = buff.ja;
-                buff.del = buff.de;
-                buff.frl = buff.fr;
-            }
+            Console.WriteLine("Post-processing parsed data...");
 
-            // Populate ability recast table with proper names
-            foreach (var recast in model.ability_recasts)
+            bool success = false;
+            try
             {
+                // Add log names for non-english languages
+                foreach (var buff in model.buffs)
+                {
+                    buff.jal = buff.ja;
+                    buff.del = buff.de;
+                    buff.frl = buff.fr;
+                }
+
+                // Populate ability recast table with proper names
+                foreach (var recast in model.ability_recasts)
+                {
+                    foreach (var action in model.actions)
+                    {
+                        if (recast.id == action.recast_id)
+                        {
+                            recast.en = action.en;
+                            recast.ja = action.ja;
+                            // Remove this after July 2014
+                            recast.de = action.de;
+                            recast.fr = action.fr;
+                        }
+                    }
+                }
+
+                // Populate spell recast table with proper names
+                foreach (var recast in model.spell_recasts)
+                {
+                    foreach (var spell in model.spells)
+                    {
+                        if (recast.id == spell.recast_id)
+                        {
+                            recast.en = spell.en;
+                            recast.ja = spell.ja;
+                            // Remove this after July 2014
+                            recast.de = spell.de;
+                            recast.fr = spell.fr;
+                        }
+                    }
+                }
+
+                // Split abilities into categories
                 foreach (var action in model.actions)
                 {
-                    if (recast.id == action.recast_id)
+                    // Weapon skill
+                    if (action.id >= 0x0000 && action.id < 0x0200)
                     {
-                        recast.en = action.en;
-                        recast.ja = action.ja;
-                        // Remove this after July 2014
-                        recast.de = action.de;
-                        recast.fr = action.fr;
+                        action.monster_level = null;
+                        action.mp_cost = null;
+                        action.recast_id = null;
+                        action.tp_cost = null;
+                        action.type = null;
+
+                        model.weapon_skills.Add(action);
+                    }
+                    // Job ability
+                    else if (action.id >= 0x0200 && action.id < 0x0600)
+                    {
+                        action.id -= 0x0200;
+
+                        action.monster_level = null;
+
+                        model.job_abilities.Add(action);
+                    }
+                    // Job traits
+                    else if (action.id >= 0x0600 && action.id < 0x0700)
+                    {
+                        action.id -= 0x0600;
+
+                        action.monster_level = null;
+                        action.mp_cost = null;
+                        action.prefix = null;
+                        action.recast_id = null;
+                        action.tp_cost = null;
+                        action.type = null;
+
+                        model.job_traits.Add(action);
+                    }
+                    // Monstrosity
+                    else if (action.id >= 0x0700)
+                    {
+                        action.id -= 0x0700;
+                        action.id += 0x0100;
+
+                        action.en = null;
+                        action.ja = null;
+                        action.de = null;
+                        action.fr = null;
+                        action.mp_cost = null;
+                        action.recast_id = null;
+                        action.type = null;
+
+                        if (action.id - 0x100 < model.monster_abilities.Count)
+                        {
+                            model.monster_abilities[action.id - 0x100].Merge(action);
+                        }
                     }
                 }
-            }
+                model.actions = null;
 
-            // Populate spell recast table with proper names
-            foreach (var recast in model.spell_recasts)
-            {
-                foreach (var spell in model.spells)
+                // Add categories to key items
+                var category = "";
+                for (var i = model.key_items.Count - 1; i >= 0; --i)
                 {
-                    if (recast.id == spell.recast_id)
+                    dynamic ki = model.key_items[i];
+                    if (ki.en.StartsWith("-"))
                     {
-                        recast.en = spell.en;
-                        recast.ja = spell.ja;
-                        // Remove this after July 2014
-                        recast.de = spell.de;
-                        recast.fr = spell.fr;
+                        category = ki.en.Substring(1);
+                        model.key_items.Remove(ki);
+                    }
+                    else
+                    {
+                        ki.category = category;
                     }
                 }
+
+                success = true;
             }
-
-            // Split abilities into categories
-            foreach (var action in model.actions)
+            finally
             {
-                // Weapon skill
-                if (action.id >= 0x0000 && action.id < 0x0200)
-                {
-                    action.monster_level = null;
-                    action.mp_cost = null;
-                    action.recast_id = null;
-                    action.tp_cost = null;
-                    action.type = null;
-
-                    model.weapon_skills.Add(action);
-                }
-                // Job ability
-                else if (action.id >= 0x0200 && action.id < 0x0600)
-                {
-                    action.id -= 0x0200;
-
-                    action.monster_level = null;
-
-                    model.job_abilities.Add(action);
-                }
-                // Job traits
-                else if (action.id >= 0x0600 && action.id < 0x0700)
-                {
-                    action.id -= 0x0600;
-
-                    action.monster_level = null;
-                    action.mp_cost = null;
-                    action.prefix = null;
-                    action.recast_id = null;
-                    action.tp_cost = null;
-                    action.type = null;
-
-                    model.job_traits.Add(action);
-                }
-                // Monstrosity
-                else if (action.id >= 0x0700)
-                {
-                    action.id -= 0x0700;
-                    action.id += 0x0100;
-
-                    action.en = null;
-                    action.ja = null;
-                    action.de = null;
-                    action.fr = null;
-                    action.mp_cost = null;
-                    action.recast_id = null;
-                    action.type = null;
-
-                    if (action.id - 0x100 < model.monster_abilities.Count)
-                    {
-                        model.monster_abilities[action.id - 0x100].Merge(action);
-                    }
-                }
-            }
-            model.actions = null;
-
-            // Add categories to key items
-            var category = "";
-            for (var i = model.key_items.Count - 1; i >= 0; --i)
-            {
-                dynamic ki = model.key_items[i];
-                if (ki.en.StartsWith("-"))
-                {
-                    category = ki.en.Substring(1);
-                    model.key_items.Remove(ki);
-                }
-                else
-                {
-                    ki.category = category;
-                }
+                DisplayResult(success);
             }
         }
 

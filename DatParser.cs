@@ -31,7 +31,7 @@ namespace ResourceExtractor
     {
         public static dynamic[] Parse(Stream stream, Dictionary<int, string> fields)
         {
-            var format = stream.Read<long>();
+            var format = stream.Read<ulong>();
             stream.Position = 0;
 
             // DMsg format
@@ -41,7 +41,7 @@ namespace ResourceExtractor
             }
 
             // Dialog format
-            if (format % 0x10000000 == stream.Length - 4)
+            if (format % 0x10000000 == (ulong) stream.Length - 4)
             {
                 return DialogParser.Parse(stream, fields[0]);
             }

@@ -59,6 +59,8 @@ namespace ResourceExtractor
                 {
                     data[j] ^= 0x80;
                 }
+
+                objects[i] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data);
             }
 
             return objects;

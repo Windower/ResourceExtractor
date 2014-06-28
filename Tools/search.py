@@ -4,7 +4,7 @@ import os
 import errno
 import re
 
-parser = argparse.ArgumentParser(desc='Tool to search FFXI DAT files for certain strings')
+parser = argparse.ArgumentParser(description='Tool to search FFXI DAT files for certain strings')
 parser.add_argument('match', nargs='?', default=None)
 parser.add_argument('-a', '--all', action='store_const', const=True, default=False)
 parser.add_argument('-d', '--decode', action='store_const', const=False, default=True)
@@ -13,6 +13,8 @@ parser.add_argument('-v', '--verbose', action='store_const', const=True, default
 
 args = parser.parse_args()
 
+search_term = re.sub('\\\\x(\d\d)', lambda match: chr(int(match.group(1), 16)), args.match) if args.match else None
+
 root = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 match_arrays = {}
@@ -20,6 +22,7 @@ dmsg = bytearray(ord(c) for c in 'd_msg\0\0\0')
 xistr = bytearray(ord(c) for c in 'XISTRING')
 b = bytearray([1])
 lut = {}
+p = re.compile('\d+')
 
 def getdat(path):
     tokens = p.findall(path)
@@ -85,9 +88,9 @@ def decode(index_or_path):
 
             out.write(bytearray(c ^ enc for c in f.read()))
 
-        if args.match:
+        if search_term:
             collection = {}
-            collection[args.match] = set(['/'.join(outpath.split('/')[-3:])])
+            collection[search_term] = set(['/'.join(outpath.split('/')[-3:])])
 
             decfile = root + 'DEC/decoded.txt'
             if os.path.exists(decfile):
@@ -107,21 +110,19 @@ def decode(index_or_path):
             with open(decfile, 'w') as f:
                 for name in sorted(collection):
                     f.write(name + ':\r\n')
-                    for path in collection[name]:
-                        f.write('    ' + path + '\r\n')
+                    for ids in sorted((int(tokens[0]), int(tokens[1])) for tokens in (p.findall(path) for path in collection[name])):
+                        f.write('    ROM/%u/%u.DAT\r\n' % (ids[0], ids[1]))
                     f.write('\r\n')
 
-if args.match:
-    match_name = bytearray(args.match.encode('shift-jis'))
+if search_term:
+    match_name = bytearray(search_term.encode('shift-jis'))
     match_arrays[0x00] = match_name
     match_arrays[0xff] = bytearray(c ^ 0xFF for c in match_name)
     match_arrays[0x80] = bytearray(c ^ 0x80 for c in match_name)
 
     print()
-    print('Searching for "%s"' % args.match)
+    print('Searching for "%s"' % search_term)
     print('----------------')
-
-    p = re.compile('\d+')
 
     for name in (x for x in os.listdir() if x.startswith('ROM') or x == '0'):
         if not args.all and name != 'ROM':

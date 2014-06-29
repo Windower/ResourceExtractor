@@ -535,6 +535,25 @@ IN THE SOFTWARE.
       <a id="238" element="6" /> <!-- Uriel Blade -->
     </update>
   </weapon_skills>
+  <job_abilities>
+    <remove>
+      <!-- Ability Categories -->
+      <a id="55" /> <!-- Pet Commands -->
+      <a id="91" /> <!-- Blood Pact: Rage -->
+      <a id="97" /> <!-- Phantom Roll -->
+      <a id="124" /> <!-- Quick Draw -->
+      <a id="172" /> <!-- Blood Pact: Ward -->
+      <a id="182" /> <!-- Sambas -->
+      <a id="183" /> <!-- Waltzes -->
+      <a id="198" /> <!-- Jigs -->
+      <a id="199" /> <!-- Steps -->
+      <a id="200" /> <!-- Flourishes I -->
+      <a id="213" /> <!-- Flourishes II -->
+      <a id="223" /> <!-- Stratagems -->
+      <a id="263" /> <!-- Flourishes III -->
+      <a id="357" /> <!-- Rune Enchantment -->
+    </remove>
+  </job_abilities>
   <buffs>
     <update>
       <!-- Status Durations -->

@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 // </copyright>
 
-namespace ResourceExtractor.Formats
+namespace ResourceExtractor
 {
     using System;
     using System.Collections;
@@ -28,11 +28,10 @@ namespace ResourceExtractor.Formats
     using System.Globalization;
     using System.IO;
     using System.Runtime.InteropServices;
-    using ResourceExtractor;
 
-    internal class DMsgStringList : IList<IList<string>>
+    internal class DMsgStringList : IList<IList<object>>
     {
-        private IList<string>[] strings;
+        private IList<object>[] objects;
 
         internal DMsgStringList(Stream stream)
         {
@@ -78,30 +77,31 @@ namespace ResourceExtractor.Formats
                     }
                 }
 
-                this.strings = new IList<string>[header.Count];
+                objects = new IList<object>[header.Count];
 
-                for (int i = 0; i < this.strings.Length; i++)
+                for (int i = 0; i < objects.Length; i++)
                 {
                     int offset = (int)table[i];
                     int length = (int)(table[i] >> 32);
 
-                    int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
+                    int count = BitConverter.ToInt32(data, offset);
 
-                    string[] s = new string[count];
+                    object[] s = new object[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = data[offset + j * 8 + 4] | data[offset + j * 8 + 5] << 8 | data[offset + j * 8 + 6] << 16 | data[offset + j * 8 + 7] << 24;
-                        int stringtype = data[offset + j * 8 + 8] | data[offset + j * 8 + 9] << 8 | data[offset + j * 8 + 10] << 16 | data[offset + j * 8 + 11] << 24;
+                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4) + offset;
+                        int entrytype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
-                        if (stringtype == 0)
+                        switch (entrytype)
                         {
-                            stringoffset += offset + 28;
+                        case 0:
+                            entryoffset += 0x1C;
 
                             int stringlength = 0;
                             for (int k = 0; k < length; k++)
                             {
-                                if (data[stringoffset + k] == 0)
+                                if (data[entryoffset + k] == 0)
                                 {
                                     break;
                                 }
@@ -109,11 +109,15 @@ namespace ResourceExtractor.Formats
                                 stringlength++;
                             }
 
-                            s[j] = FF11ShiftJISDecoder.Decode(data, stringoffset, stringlength);
+                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, entryoffset, stringlength);
+                            break;
+                        case 1:
+                            s[j] = BitConverter.ToInt32(data, entryoffset);
+                            break;
                         }
                     }
 
-                    this.strings[i] = s;
+                    objects[i] = s;
                 }
             }
             else
@@ -135,29 +139,30 @@ namespace ResourceExtractor.Formats
                     }
                 }
 
-                this.strings = new IList<string>[header.Count];
+                objects = new IList<object>[header.Count];
 
-                for (int i = 0; i < this.strings.Length; i++)
+                for (int i = 0; i < objects.Length; i++)
                 {
                     int offset = i * (int)header.EntrySize;
 
-                    int count = data[offset] | data[offset + 1] << 8 | data[offset + 2] << 16 | data[offset + 3] << 24;
+                    int count = BitConverter.ToInt32(data, offset);
 
-                    string[] s = new string[count];
+                    object[] s = new object[count];
 
                     for (int j = 0; j < count; j++)
                     {
-                        int stringoffset = data[offset + j * 8 + 4] | data[offset + j * 8 + 5] << 8 | data[offset + j * 8 + 6] << 16 | data[offset + j * 8 + 7] << 24;
-                        int stringtype = data[offset + j * 8 + 8] | data[offset + j * 8 + 9] << 8 | data[offset + j * 8 + 10] << 16 | data[offset + j * 8 + 11] << 24;
+                        int entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4) + offset;
+                        int entrytype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
-                        if (stringtype == 0)
+                        switch (entrytype)
                         {
-                            stringoffset += offset + 28;
+                        case 0:
+                            entryoffset += 0x1C;
 
                             int length = 0;
                             for (int k = 0; k < header.EntrySize; k++)
                             {
-                                if (data[stringoffset + k] == 0)
+                                if (data[entryoffset + k] == 0)
                                 {
                                     break;
                                 }
@@ -165,70 +170,72 @@ namespace ResourceExtractor.Formats
                                 length++;
                             }
 
-                            s[j] = FF11ShiftJISDecoder.Decode(data, stringoffset, length);
-
+                            s[j] = ShiftJISFF11Encoding.ShiftJISFF11.GetString(data, entryoffset, length);
+                            break;
+                        case 1:
+                            s[j] = BitConverter.ToInt32(data, entryoffset);
                             break;
                         }
                     }
 
-                    this.strings[i] = s;
+                    objects[i] = s;
                 }
             }
         }
 
-        bool ICollection<IList<string>>.IsReadOnly
+        bool ICollection<IList<object>>.IsReadOnly
         {
             get { return true; }
         }
 
         public int Count
         {
-            get { return this.strings.Length; }
+            get { return objects.Length; }
         }
 
-        public IList<string> this[int index]
+        public IList<object> this[int index]
         {
-            get { return this.strings[index]; }
+            get { return objects[index]; }
 
             set { throw new NotSupportedException(); }
         }
 
-        int IList<IList<string>>.IndexOf(IList<string> item)
+        int IList<IList<object>>.IndexOf(IList<object> item)
         {
-            return ((IList<IList<string>>)this.strings).IndexOf(item);
+            return ((IList<IList<object>>)objects).IndexOf(item);
         }
 
-        bool ICollection<IList<string>>.Contains(IList<string> item)
+        bool ICollection<IList<object>>.Contains(IList<object> item)
         {
-            return ((ICollection<IList<string>>)this.strings).Contains(item);
+            return ((ICollection<IList<object>>)objects).Contains(item);
         }
 
-        void ICollection<IList<string>>.CopyTo(IList<string>[] array, int arrayIndex)
+        void ICollection<IList<object>>.CopyTo(IList<object>[] array, int arrayIndex)
         {
-            this.strings.CopyTo(array, arrayIndex);
+            objects.CopyTo(array, arrayIndex);
         }
 
-        public IEnumerator<IList<string>> GetEnumerator()
+        public IEnumerator<IList<object>> GetEnumerator()
         {
-            return ((IList<IList<string>>)this.strings).GetEnumerator();
+            return ((IList<IList<object>>)objects).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.strings.GetEnumerator();
+            return objects.GetEnumerator();
         }
 
-        public void Add(IList<string> item)
+        public void Add(IList<object> item)
         {
             throw new NotSupportedException();
         }
 
-        public void Insert(int index, IList<string> item)
+        public void Insert(int index, IList<object> item)
         {
             throw new NotSupportedException();
         }
 
-        public bool Remove(IList<string> item)
+        public bool Remove(IList<object> item)
         {
             throw new NotSupportedException();
         }
@@ -259,42 +266,42 @@ namespace ResourceExtractor.Formats
 
             public long Format
             {
-                get { return this.format; }
+                get { return format; }
             }
 
             public bool Encrypted
             {
-                get { return this.encrypted != 0; }
+                get { return encrypted != 0; }
             }
 
             public long Version
             {
-                get { return this.version; }
+                get { return version; }
             }
 
             public uint HeaderSize
             {
-                get { return this.headersize; }
+                get { return headersize; }
             }
 
             public uint TableSize
             {
-                get { return this.tablesize; }
+                get { return tablesize; }
             }
 
             public uint EntrySize
             {
-                get { return this.entrysize; }
+                get { return entrysize; }
             }
 
             public int DataSize
             {
-                get { return this.datasize; }
+                get { return datasize; }
             }
 
             public int Count
             {
-                get { return this.count; }
+                get { return count; }
             }
         }
     }

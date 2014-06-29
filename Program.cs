@@ -26,18 +26,169 @@ namespace ResourceExtractor
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
+    using System.Dynamic;
     using System.Globalization;
     using System.IO;
     using System.Linq;
-    using System.Security.Cryptography;
     using System.Xml.Linq;
     using Microsoft.Win32;
-    using ResourceExtractor.Formats;
-    using ResourceExtractor.Formats.Items;
-    using System.Text;
+    using ResourceExtractor.Serializers.Lua;
 
     internal class Program
     {
+        private static dynamic model;
+        private static string[] categories = new string[] {
+            "action_messages",
+            "actions",
+            "ability_recasts",
+            "items",
+            "job_abilities",
+            "job_traits",
+            "monstrosity",
+            "spells",
+            "spell_recasts",
+            "weapon_skills",
+        };
+        private static Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> DatLut = new Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> {
+            //TODO: Comment in once special char parsing has been added
+
+            //{"action_messages", new Dictionary<ushort, Dictionary<int, string>> {
+            //    {0x1B73, new Dictionary<int, string> {
+            //        {0, "en"},
+            //    }},
+            //    {0x1B72, new Dictionary<int, string> {
+            //        {0, "ja"},
+            //    }},
+            //    {0xDA28, new Dictionary<int, string> {
+            //        {0, "de"},
+            //    }},
+            //    {0xDBCC, new Dictionary<int, string> {
+            //        {0, "fr"},
+            //    }},
+            //}},
+            {"actions", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD995, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD91D, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA0D, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDBB1, new Dictionary<int, string> {
+                    {0, "fr"},
+                }},
+            }},
+            {"buffs", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD9AD, new Dictionary<int, string> {
+                    {0, "en"},
+                    {1, "enl"},
+                }},
+                {0xD935, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA2C, new Dictionary<int, string> {
+                    {1, "de"},
+                }},
+                {0xDBD0, new Dictionary<int, string> {
+                    {2, "fr"},
+                }},
+            }},
+            {"key_items", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD98F, new Dictionary<int, string> {
+                    {0, "id"},
+                    {4, "en"},
+                    //{6, "endesc"},
+                }},
+                {0xD917, new Dictionary<int, string> {
+                    {1, "ja"},
+                    //{2, "jadesc"},
+                }},
+                {0xDA11, new Dictionary<int, string> {
+                    {4, "de"},
+                }},
+                {0xDBB5, new Dictionary<int, string> {
+                    {5, "fr"},
+                }},
+            }},
+            {"monster_abilities", new Dictionary<ushort, Dictionary<int, string>> {
+                {0x1B7B, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0x1B7A, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA2B, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDBCF, new Dictionary<int, string> {
+                    {0, "fr"},
+                }},
+            }},
+            {"regions", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD966, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD8EE, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xD9DE, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDB82, new Dictionary<int, string> {
+                    {0, "fr"},
+                }},
+            }},
+            {"spells", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD996, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD91E, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA0E, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDBB2, new Dictionary<int, string> {
+                    {0, "fr"},
+                }},
+            }},
+            {"titles", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD998, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD920, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xDA10, new Dictionary<int, string> {
+                    {1, "de"},
+                }},
+                {0xDBB4, new Dictionary<int, string> {
+                    {2, "fr"},
+                }},
+            }},
+            {"zones", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD8A9, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD8AA, new Dictionary<int, string> {
+                    {0, "search"},
+                }},
+                {0xD8EF, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+                {0xD9DF, new Dictionary<int, string> {
+                    {0, "de"},
+                }},
+                {0xDB83, new Dictionary<int, string> {
+                    {0, "fr"},
+                }},
+            }},
+        };
+
+        private static string Dir { get; set; }
+
         private static void Main()
         {
 #if !DEBUG
@@ -46,30 +197,42 @@ namespace ResourceExtractor
 #endif
                 Console.CursorVisible = false;
 
-                string basedirectory = GetBaseDirectory();
-                if (basedirectory != null)
+                model = new ModelObject();
+                foreach (var category in categories)
                 {
-                    Directory.CreateDirectory("resources");
-                    Directory.CreateDirectory("resources/lua");
-                    Directory.CreateDirectory("resources/xml");
+                    model[category] = new List<dynamic>();
+                }
+                foreach (var pair in DatLut)
+                {
+                    model[pair.Key] = new List<dynamic>();
+                }
 
-                    ExtractItems(basedirectory);
+                ResourceParser.Initialize(model);
 
-                    IList<object> data = LoadSpellAbilityData(basedirectory);
-                    ExtractSpells(basedirectory, data);
-                    ExtractAbilities(basedirectory, data);
-                    ExtractAreas(basedirectory);
-                    ExtractStatuses(basedirectory);
-                    //ExtractMonsterAbilities(basedirectory); //Format is wrong
-                    //ExtractActionMessages(basedirectory); //Format is wrong
+                Dir = GetBaseDirectory();
+                Console.WriteLine();
+                if (Dir != null)
+                {
+                    LoadItemData();     // Items, Monstrosity
+                    LoadMainData();     // Abilities, Spells
+
+                    ParseStringTables();
+                    Console.WriteLine();
+
+                    PostProcess();
+                    Console.WriteLine();
 
                     ApplyFixes();
+                    Console.WriteLine();
 
-                    Console.WriteLine("\nResource extraction complete!");
+                    WriteData();
+                    Console.WriteLine();
+
+                    Console.WriteLine("Resource extraction complete!");
                 }
                 else
                 {
-                    Console.WriteLine("\nUnable to locate Final Fantasy XI installation.");
+                    Console.WriteLine("Unable to locate Final Fantasy XI installation.");
                 }
 #if !DEBUG
             }
@@ -81,53 +244,188 @@ namespace ResourceExtractor
                 }
             }
 #endif
+            Console.WriteLine();
 
-            Console.Write("\nPress any key to exit. ");
+            Console.Write("Press any key to exit. ");
             Console.CursorVisible = true;
             Console.ReadKey(true);
         }
 
-        /// Start Lua Code
-        private static string Targ_string(ValidTargets Targs)
+        private static void PostProcess()
         {
-            List<string> strings = new List<string>();
-            foreach (ValidTargets i in Targs.ToList())
-            {
-                strings.Add( "[\"" + i.ToString() + "\"]=true");
-            }
-            return string.Join(", ", strings);
-        }
+            Console.WriteLine("Post-processing parsed data...");
 
-        private static string Jobs_string(byte[] Levels)
-        {
-            List<string> strings = new List<string>();
-            Job count = 0;
-            foreach (byte i in Levels)
+            bool success = false;
+            try
             {
-                if (i != 0xFF)
+                // Add log names for non-english languages
+                foreach (var buff in model.buffs)
                 {
-                    strings.Add( "[\"" + count.ToString() + "\"]=" + i);
+                    buff.jal = buff.ja;
+                    buff.del = buff.de;
+                    buff.frl = buff.fr;
                 }
-                count += 1;
+
+                // Populate ability recast table with proper names
+                foreach (var recast in model.ability_recasts)
+                {
+                    foreach (var action in model.actions)
+                    {
+                        if (recast.id == action.recast_id)
+                        {
+                            recast.en = action.en;
+                            recast.ja = action.ja;
+                            // Remove this after July 2014
+                            recast.de = action.de;
+                            recast.fr = action.fr;
+                        }
+                    }
+                }
+
+                // Populate spell recast table with proper names
+                foreach (var recast in model.spell_recasts)
+                {
+                    foreach (var spell in model.spells)
+                    {
+                        if (recast.id == spell.recast_id)
+                        {
+                            recast.en = spell.en;
+                            recast.ja = spell.ja;
+                            // Remove this after July 2014
+                            recast.de = spell.de;
+                            recast.fr = spell.fr;
+                        }
+                    }
+                }
+
+                // Split abilities into categories
+                foreach (var action in model.actions)
+                {
+                    // Weapon skill
+                    if (action.id >= 0x0000 && action.id < 0x0200)
+                    {
+                        action.monster_level = null;
+                        action.mp_cost = null;
+                        action.recast_id = null;
+                        action.tp_cost = null;
+                        action.type = null;
+
+                        model.weapon_skills.Add(action);
+                    }
+                    // Job ability
+                    else if (action.id >= 0x0200 && action.id < 0x0600)
+                    {
+                        action.id -= 0x0200;
+
+                        action.monster_level = null;
+
+                        model.job_abilities.Add(action);
+                    }
+                    // Job traits
+                    else if (action.id >= 0x0600 && action.id < 0x0700)
+                    {
+                        action.id -= 0x0600;
+
+                        action.monster_level = null;
+                        action.mp_cost = null;
+                        action.prefix = null;
+                        action.recast_id = null;
+                        action.tp_cost = null;
+                        action.type = null;
+
+                        model.job_traits.Add(action);
+                    }
+                    // Monstrosity
+                    else if (action.id >= 0x0700)
+                    {
+                        action.id -= 0x0700;
+                        action.id += 0x0100;
+
+                        action.mp_cost = null;
+                        action.recast_id = null;
+                        action.type = null;
+
+                        // Remove names, as they are parsed separately
+                        action.en = null;
+                        action.ja = null;
+                        action.de = null;
+                        action.fr = null;
+
+                        if (action.id - 0x100 < model.monster_abilities.Count)
+                        {
+                            model.monster_abilities[action.id - 0x100].Merge(action);
+                        }
+                    }
+                }
+                model.actions = null;
+
+                // Add categories to key items
+                var category = "";
+                for (var i = model.key_items.Count - 1; i >= 0; --i)
+                {
+                    dynamic ki = model.key_items[i];
+                    if (ki.en.StartsWith("-"))
+                    {
+                        category = ki.en.Substring(1);
+                        model.key_items.Remove(ki);
+                    }
+                    else
+                    {
+                        ki.category = category;
+                    }
+                }
+
+                success = true;
             }
-            return string.Join(", ", strings);
-        }
-
-        private static string TPMove_string(IDictionary<int,int> TPMoves)
-        {
-            List<string> strings = new List<string>();
-
-            foreach (int i in TPMoves.Keys)
+            finally
             {
-                strings.Add("[" + i + "]=" + TPMoves[i]);
+                DisplayResult(success);
             }
-            return string.Join(", ", strings);
         }
-        /// End Lua Code
+
+        private static void WriteData()
+        {
+            Directory.CreateDirectory("resources");
+            foreach (var dir in new string[] { "lua", "xml", "json" })
+            {
+                string path = "resources/" + dir;
+                Directory.CreateDirectory(path);
+                foreach (var file in Directory.EnumerateFiles(path))
+                {
+                    File.Delete(file);
+                }
+            }
+
+            // Create manifest file
+            XDocument manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
+
+            var IgnoreStrings = new Dictionary<string, string[]>();
+            IgnoreStrings["buffs"] = new string[] { "(None)", "(Imagery)" };
+            IgnoreStrings["titles"] = new string[] { "0" };
+            IgnoreStrings["zones"] = new string[] { "none" };
+            foreach (var pair in model)
+            {
+                if (IgnoreStrings.ContainsKey(pair.Key))
+                {
+                    Extract(pair.Key, IgnoreStrings[pair.Key]);
+                }
+                else
+                {
+                    Extract(pair.Key);
+                }
+
+                var element = new XElement("file");
+                element.Value = pair.Key;
+                manifest.Root.Add(element);
+            }
+
+            manifest.Root.ReplaceNodes(manifest.Root.Elements().OrderBy(e => e.Value));
+            manifest.Save(Path.Combine("resources", "manifest.xml"));
+        }
 
         private static string GetBaseDirectory()
         {
-            string basedirectory = null;
+            Dir = null;
 
             DisplayMessage("Locating Final Fantasy XI installation directory...");
 
@@ -152,7 +450,7 @@ namespace ResourceExtractor
 
                         if (key != null)
                         {
-                            basedirectory = key.GetValue("0001") as string;
+                            Dir = key.GetValue("0001") as string;
                         }
                     }
                     finally
@@ -166,688 +464,55 @@ namespace ResourceExtractor
             }
             finally
             {
-                if (basedirectory == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(Dir != null);
             }
 
-            return basedirectory;
+            return Dir;
         }
 
-        private static void ExtractItems(string basedirectory)
+        private static void Extract(string name, string[] ignore = null)
         {
-            IList<IDictionary<int, Item>> items = LoadItems(basedirectory);
-            if (items == null)
-            {
-                DisplayMessage("\nA problem occurred while loading item data.");
-                return;
-            }
-
-            DisplayMessage("Generating xml files...");
-#if !DEBUG
-            try
-            {
-#endif
-                XDocument armor = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
-                XDocument general = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
-                XDocument weapons = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("items"));
-                /// Start Lua Code
-                using (System.IO.StreamWriter lua_items = new System.IO.StreamWriter("resources/lua/items.lua"))
-                {
-                    lua_items.WriteLine("local items = {");
-                    /// End Lua Code
-
-                    string[] ignore = { "." };
-
-                    foreach (int id in items[0].Keys)
-                    {
-                        Item item = items[0][id];
-                        string name = item.Name;
-                        /// Start Lua Code
-                        string category = "General";
-                        /// End Lua Code
-
-                        if (IsValidName(ignore, name))
-                        {
-                            Item jp = items[1][id];
-                            Item de = items[2][id];
-                            Item fr = items[3][id];
-
-                            EquippableItem equip = item as EquippableItem;
-                            if (equip != null)
-                            {
-                                XElement root;
-                                if (item is WeaponItem)
-                                {
-                                    /// Start Lua Code
-                                    category = "Weapons";
-                                    /// End Lua Code
-                                    root = weapons.Root;
-                                }
-                                else
-                                {
-                                    /// Start Lua Code
-                                    category = "Armor";
-                                    /// End Lua Code
-                                    root = armor.Root;
-                                }
-
-                                root.Add(new XElement("i",
-                                    new XAttribute("id", id),
-                                    new XAttribute("enl", item.LogName),
-                                    new XAttribute("fr", fr.Name),
-                                    new XAttribute("frl", fr.LogName),
-                                    new XAttribute("de", de.Name),
-                                    new XAttribute("del", de.LogName),
-                                    new XAttribute("jp", jp.Name),
-                                    new XAttribute("jpl", string.Empty),
-                                    new XAttribute("slots", String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Slots)),
-                                    new XAttribute("jobs", String.Format(CultureInfo.InvariantCulture, "{0:X8}", equip.Jobs)),
-                                    new XAttribute("races", String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Races)),
-                                    new XAttribute("level", equip.Level),
-                                    new XAttribute("targets", equip.ValidTargets),
-                                    new XAttribute("casttime", equip.CastTime),
-                                    new XAttribute("recast", equip.Recast),
-                                    name));
-
-                                /// Start Lua Code
-                                lua_items.WriteLine("    [{0}] = {{ id={0},prefix=\'/item\',english=\'{1}\',english_log=\'{2}\',french=\'{3}\',french_log=\'{4}\',german=\'{5}\',german_log=\'{6}\',japanese=\'{7}\',japanese_log=\'\',targets={{{8}}},cast_time={9},recast={10},category=\'{11}\',level={12},slots=0x{13},jobs=0x{14},races=0x{15} }},", id, name.Replace("'", "\\'"), item.LogName.Trim().Replace("'", "\\'"), fr.Name.Replace("'", "\\'"), fr.LogName.Trim().Replace("'", "\\'"), de.Name.Trim().Replace("'", "\\'"), de.LogName.Trim().Replace("'", "\\'"), jp.Name.Trim().Replace("'", "\\'"), Targ_string(equip.ValidTargets), equip.CastTime, equip.Recast, category, equip.Level, String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Slots), String.Format(CultureInfo.InvariantCulture, "{0:X8}", equip.Jobs), String.Format(CultureInfo.InvariantCulture, "{0:X4}", equip.Races));
-                                /// End Lua Code
-                            }
-                            else
-                            {
-                                XElement element = new XElement("i",
-                                        new XAttribute("id", id),
-                                        new XAttribute("enl", item.LogName),
-                                        new XAttribute("fr", fr.Name),
-                                        new XAttribute("frl", fr.LogName),
-                                        new XAttribute("de", de.Name),
-                                        new XAttribute("del", de.LogName),
-                                        new XAttribute("jp", jp.Name),
-                                        new XAttribute("jpl", string.Empty),
-                                        name);
-                                
-                                GeneralItem generalitem = item as GeneralItem;
-                                if (generalitem != null)
-                                {
-                                    element.Add(new XAttribute("targets", generalitem.ValidTargets));
-                                    /// Start Lua Code
-                                    lua_items.WriteLine("    [{0}] = {{ id={0},english=\'{1}\',english_log=\'{2}\',french=\'{3}\',french_log=\'{4}\',german=\'{5}\',german_log=\'{6}\',japanese=\'{7}\',japanese_log=\'\',targets={{{8}}},cast_time=0,category=\'{9}\' }},", id, name.Replace("'", "\\'"), item.LogName.Trim().Replace("'", "\\'"), fr.Name.Replace("'", "\\'"), fr.LogName.Trim().Replace("'", "\\'"), de.Name.Trim().Replace("'", "\\'"), de.LogName.Trim().Replace("'", "\\'"), jp.Name.Trim().Replace("'", "\\'"), Targ_string(generalitem.ValidTargets), category);
-                                    /// End Lua Code
-                                }
-
-                                UsableItem usableitem = item as UsableItem;
-                                if (usableitem != null)
-                                {
-                                    element.Add(new XAttribute("targets", usableitem.ValidTargets));
-                                    element.Add(new XAttribute("casttime", usableitem.CastTime));
-                                    /// Start Lua Code
-                                    lua_items.WriteLine("    [{0}] = {{ id={0},prefix=\'/item\',english=\'{1}\',english_log=\'{2}\',french=\'{3}\',french_log=\'{4}\',german=\'{5}\',german_log=\'{6}\',japanese=\'{7}\',japanese_log=\'\',targets={{{8}}},cast_time={9},category=\'{10}\' }},", id, name.Replace("'", "\\'"), item.LogName.Trim().Replace("'", "\\'"), fr.Name.Replace("'", "\\'"), fr.LogName.Trim().Replace("'", "\\'"), de.Name.Trim().Replace("'", "\\'"), de.LogName.Trim().Replace("'", "\\'"), jp.Name.Trim().Replace("'", "\\'"), Targ_string(usableitem.ValidTargets), usableitem.CastTime, category);
-                                    /// End Lua Code
-                                }
-
-                                /// Start Lua Code
-                                MazeItem mazeitem = item as MazeItem;
-                                BasicItem basicitem = item as BasicItem;
-                                AutomatonItem automatonitem = item as AutomatonItem;
-                                if (mazeitem != null | basicitem != null | automatonitem != null)
-                                {
-                                    lua_items.WriteLine("    [{0}] = {{ id={0},english=\'{1}\',english_log=\'{2}\',french=\'{3}\',french_log=\'{4}\',german=\'{5}\',german_log=\'{6}\',japanese=\'{7}\',japanese_log=\'\',category=\'{8}\' }},", id, name.Replace("'", "\\'"), item.LogName.Trim().Replace("'", "\\'"), fr.Name.Replace("'", "\\'"), fr.LogName.Trim().Replace("'", "\\'"), de.Name.Trim().Replace("'", "\\'"), de.LogName.Trim().Replace("'", "\\'"), jp.Name.Trim().Replace("'", "\\'"), category);
-                                }
-
-                                MonstrosityItem monstrosityitem = item as MonstrosityItem;
-                                if (monstrosityitem != null)
-                                {
-                                    lua_items.WriteLine("    [{0}] = {{ id={0},english=\'{1}\',english_log=\'{2}\',french=\'{3}\',french_log=\'{4}\',german=\'{5}\',german_log=\'{6}\',japanese=\'{7}\',japanese_log=\'\',category=\'{8}\',tp_moves={{{9}}} }},", id, name.Replace("'", "\\'"), item.LogName.Trim().Replace("'", "\\'"), fr.Name.Replace("'", "\\'"), fr.LogName.Trim().Replace("'", "\\'"), de.Name.Trim().Replace("'", "\\'"), de.LogName.Trim().Replace("'", "\\'"), jp.Name.Trim().Replace("'", "\\'"), category, TPMove_string(monstrosityitem.TPMoves));
-                                }
-                                /// End Lua Code
-
-                                general.Root.Add(element);
-                            }
-                        }
-                    }
-                    /// Start Lua Code
-                    lua_items.WriteLine("}\n\nreturn items, {\"id\",\"prefix\",\"english\",\"english_log\",\"french\",\"french_log\",\"german\",\"german_log\",\"japanese\",\"japanese_log\",\"category\",\"tp_moves\",\"targets\",\"mp_cost\",\"cast_time\",\"recast\",\"level\",\"slots\",\"jobs\",\"races\"}");
-                }
-                /// End Lua Code
-
-                armor.Root.ReplaceNodes(armor.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-                general.Root.ReplaceNodes(general.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-                weapons.Root.ReplaceNodes(weapons.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-
-                armor.Save(Path.Combine("resources/xml", "items_armor.xml"));
-                general.Save(Path.Combine("resources/xml", "items_general.xml"));
-                weapons.Save(Path.Combine("resources/xml", "items_weapons.xml"));
-#if !DEBUG
-            }
-            catch
-            {
-                DisplayResult("Error", ConsoleColor.DarkRed);
-                throw;
-            }
-#endif
-
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
-        }
-
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void ExtractSpells(string basedirectory, IList<object> datalist)
-        {
-            IList<SpellData> data = null;
-            foreach (object o in datalist)
-            {
-                data = o as IList<SpellData>;
-                if (data != null)
-                {
-                    break;
-                }
-            }
-
-            if (data == null)
-            {
-                DisplayMessage("\nUnable to find spell data.");
-                return;
-            }
-
-            IList<IList<IList<string>>> names = LoadSpellNames(basedirectory);
-            if (names == null)
-            {
-                DisplayMessage("\nA problem occurred while loading spell names.");
-                return;
-            }
-
-            if (names == null)
-            {
-                return;
-            }
+            DisplayMessage("Generating files for " + name + "...");
 
 #if !DEBUG
             try
             {
 #endif
-                DisplayMessage("Generating xml file...");
+                XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
+                LuaFile lua = new LuaFile(name);
 
-                XDocument spells = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("spells"));
-                /// Start Lua Code
-                using (System.IO.StreamWriter lua_spells = new System.IO.StreamWriter("resources/lua/spells.lua"))
+                foreach (dynamic obj in model[name])
                 {
-                    lua_spells.WriteLine("local spells = {");
-                    /// End Lua Code
-
-                    string[] ignore = { "." };
-
-                    foreach (SpellData spell in data)
+                    if (IsValidName(ignore ?? new string[] { }, obj))
                     {
-                        if (!spell.Valid)
+                        XElement xmlelement = new XElement("o");
+                        foreach (var pair in obj)
                         {
-                            continue;
+                            xmlelement.SetAttributeValue(pair.Key, pair.Value);
                         }
 
-                        int id = spell.Index;
-                        string en = names[0][id][0];
-                        string jp = names[1][id][0];
-                        string de = names[2][id][0];
-                        string fr = names[3][id][0];
-
-                        if (IsValidName(ignore, en, de, fr, jp))
-                        {
-                            string prefix = "/unknown";
-                            switch (spell.MagicType)
-                            {
-                                case MagicType.WhiteMagic:
-                                case MagicType.BlackMagic:
-                                case MagicType.SummonerPact:
-                                case MagicType.BlueMagic:
-                                case MagicType.Geomancy:
-                                case MagicType.Trust:
-                                    prefix = "/magic";
-                                    break;
-
-                                case MagicType.BardSong:
-                                    prefix = "/song";
-                                    break;
-
-                                case MagicType.Ninjutsu:
-                                    prefix = "/ninjutsu";
-                                    break;
-                            }
-
-                            Element element = spell.Element;
-                            switch (spell.IconId)
-                            {
-                                case 56: element = Element.Fire; break;
-                                case 57: element = Element.Ice; break;
-                                case 58: element = Element.Wind; break;
-                                case 59: element = Element.Earth; break;
-                                case 60: element = Element.Thunder; break;
-                                case 61: element = Element.Water; break;
-                                case 62: element = Element.Light; break;
-                                case 63: element = Element.Dark; break;
-                                case 64: element = Element.None; break;
-                            }
-
-                            spells.Root.Add(new XElement("s",
-                                new XAttribute("id", spell.Id),
-                                new XAttribute("index", spell.Index),
-                                new XAttribute("prefix", prefix),
-                                new XAttribute("english", en),
-                                new XAttribute("german", de),
-                                new XAttribute("french", fr),
-                                new XAttribute("japanese", jp),
-                                new XAttribute("type", spell.MagicType),
-                                new XAttribute("element", element),
-                                new XAttribute("targets", spell.ValidTargets),
-                                new XAttribute("skill", spell.Skill),
-                                new XAttribute("mpcost", spell.MPCost),
-                                new XAttribute("casttime", spell.CastTime),
-                                new XAttribute("recast", spell.Recast),
-                                new XAttribute("alias", string.Empty)));
-                            /// Start Lua Code
-                            lua_spells.WriteLine("    [{1}] = {{ id={1},recast_id={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets={{{9}}},skill=\"{10}\",mp_cost=\"{11}\",cast_time={12},recast={13},jobs={{{14}}},alias=\"{15}\" }},", spell.Id, spell.Index, prefix, en, fr, de, jp, spell.MagicType.ToString(), element, Targ_string(spell.ValidTargets), spell.Skill, spell.MPCost, spell.CastTime, spell.Recast, Jobs_string(spell.Levels), string.Empty);
-                            /// End Lua Code
-                        }
-                    }
-                    /// Start Lua Code
-                    lua_spells.WriteLine("}\n\nreturn spells, {\"id\",\"recast_id\",\"prefix\",\"english\",\"french\",\"german\",\"japanese\",\"type\",\"element\",\"targets\",\"skill\",\"mp_cost\",\"cast_time\",\"recast\",\"jobs\",\"alias\"}");
-                }
-                /// End Lua Code
-
-                spells.Root.ReplaceNodes(spells.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-
-                spells.Save(Path.Combine("resources/xml", "spells.xml"));
-#if !DEBUG
-            }
-            catch
-            {
-                DisplayResult("Error", ConsoleColor.DarkRed);
-                throw;
-            }
-#endif
-
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
-        }
-
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void ExtractAbilities(string basedirectory, IList<object> datalist)
-        {
-            IList<AbilityData> data = null;
-            foreach (object o in datalist)
-            {
-                data = o as IList<AbilityData>;
-                if (data != null)
-                {
-                    break;
-                }
-            }
-
-            if (data == null)
-            {
-                DisplayMessage("\nUnable to find ability data.");
-                return;
-            }
-
-            IList<IList<IList<string>>> names = LoadAbilityNames(basedirectory);
-            if (names == null)
-            {
-                DisplayMessage("\nA problem occurred while loading ability names.");
-                return;
-            }
-
-#if !DEBUG
-            try
-            {
-#endif
-                DisplayMessage("Generating xml file...");
-
-                XDocument abilities = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("abils"));
-                /// Start Lua Code
-                using (System.IO.StreamWriter lua_abilities = new System.IO.StreamWriter("resources/lua/abilities.lua"))
-                {
-                    lua_abilities.WriteLine("local abilities = {");
-                    /// End Lua Code
-
-                    string[] ignore = { "." };
-
-                    foreach (AbilityData ability in data)
-                    {
-                        int id = ability.Id;
-                        string en = names[0][id][0];
-                        string jp = names[1][id][0];
-                        string de = names[2][id][0];
-                        string fr = names[3][id][0];
-
-                        if (IsValidName(ignore, en, de, fr, jp) && !en.StartsWith("#", StringComparison.Ordinal))
-                        {
-                            string prefix = "/unknown";
-                            switch (ability.AbilityType)
-                            {
-                                case AbilityType.Misc:
-                                case AbilityType.JobTrait:
-                                    prefix = "/echo";
-                                    break;
-
-                                case AbilityType.JobAbility:
-                                case AbilityType.CorsairRoll:
-                                case AbilityType.CorsairShot:
-                                case AbilityType.Samba:
-                                case AbilityType.Waltz:
-                                case AbilityType.Step:
-                                case AbilityType.Jig:
-                                case AbilityType.Flourish1:
-                                case AbilityType.Flourish2:
-                                case AbilityType.Flourish3:
-                                case AbilityType.Scholar:
-                                case AbilityType.Rune:
-                                case AbilityType.Ward:
-                                case AbilityType.Effusion:
-                                    prefix = "/jobability";
-                                    break;
-
-                                case AbilityType.WeaponSkill:
-                                    prefix = "/weaponskill";
-                                    break;
-
-                                case AbilityType.MonsterSkill:
-                                    prefix = "/monsterskill";
-                                    break;
-
-                                case AbilityType.PetCommand:
-                                case AbilityType.BloodPactWard:
-                                case AbilityType.BloodPactRage:
-                                case AbilityType.Monster:
-                                    prefix = "/pet";
-                                    break;
-                            }
-
-                            abilities.Root.Add(new XElement("a",
-                                new XAttribute("id", id),
-                                new XAttribute("index", ability.TimerId),
-                                new XAttribute("prefix", prefix),
-                                new XAttribute("english", en),
-                                new XAttribute("german", de),
-                                new XAttribute("french", fr),
-                                new XAttribute("japanese", jp),
-                                new XAttribute("type", ability.AbilityType),
-                                new XAttribute("element", Element.None),
-                                new XAttribute("targets", ability.ValidTargets),
-                                new XAttribute("skill", "Ability"),
-                                new XAttribute("mpcost", ability.MPCost),
-                                new XAttribute("tpcost", ability.TPCost),
-                                new XAttribute("casttime", 0),
-                                new XAttribute("recast", 0),
-                                new XAttribute("alias", string.Empty)));
-                            /// Start Lua Code
-                            if (ability.MonsterLevel != 0xFF)
-                            {
-                                lua_abilities.WriteLine("    [{0}] = {{ id={0},recast_id={1},prefix=\"{2}\",english=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\",type=\"{7}\",element=\"{8}\",targets={{{9}}},skill=\"Ability\",mp_cost={10},tp_cost={11},cast_time=0,recast=0,monster_level={12},alias=\"{13}\" }},", ability.Id, ability.TimerId, prefix, en, fr, de, jp, ability.AbilityType.ToString(), Element.None, Targ_string(ability.ValidTargets), ability.MPCost, ability.TPCost, ability.MonsterLevel, string.Empty);
-                            }
-                            /// End Lua Code
-                        }
-                    }
-                    /// Start Lua Code
-                    lua_abilities.WriteLine("}\n\nreturn abilities, {\"id\",\"recast_id\",\"prefix\",\"english\",\"french\",\"german\",\"japanese\",\"type\",\"element\",\"targets\",\"skill\",\"mp_cost\",\"tp_cost\",\"cast_time\",\"recast\",\"monster_level\",\"alias\"}");
-                }
-                /// End Lua Code
-
-                abilities.Root.ReplaceNodes(abilities.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-
-                abilities.Save(Path.Combine("resources/xml", "abils.xml"));
-#if !DEBUG
-            }
-            catch
-            {
-                DisplayResult("Error", ConsoleColor.DarkRed);
-                throw;
-            }
-#endif
-
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
-        }
-
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void ExtractAreas(string basedirectory)
-        {
-            IList<IList<IList<string>>> names = LoadAreaNames(basedirectory);
-            if (names == null)
-            {
-                DisplayMessage("\nA problem occurred while loading area names.");
-                return;
-            }
-
-#if !DEBUG
-            try
-            {
-#endif
-                DisplayMessage("Generating xml file...");
-
-                XDocument areas = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("areas"));
-                /// Start Lua Code
-                using (System.IO.StreamWriter lua_zones = new System.IO.StreamWriter("resources/lua/zones.lua"))
-                {
-                    lua_zones.WriteLine("local zones = {");
-                    /// End Lua Code
-
-                    int count = names[0].Count;
-
-                    string[] ignore = { "none" };
-
-                    for (int id = 0; id < count; id++)
-                    {
-                        string en = names[0][id][0];
-                        string jp = names[1][id][0];
-                        string de = names[2][id][0];
-                        string fr = names[3][id][0];
-
-                        if (IsValidName(ignore, en, de, fr, jp))
-                        {
-                            areas.Root.Add(new XElement("a",
-                                new XAttribute("id", id),
-                                new XAttribute("fr", fr),
-                                new XAttribute("de", de),
-                                new XAttribute("jp", jp),
-                                en));
-                            /// Start Lua Code
-                            lua_zones.WriteLine("    [{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}},", id, en, fr, de, jp);
-                            /// End Lua Code
-                        }
-                    }
-                    /// Start Lua Code
-                    lua_zones.WriteLine("}\n\nreturn zones, {\"id\",\"english\",\"french\",\"german\",\"japanese\"}");
-                }
-                /// End Lua Code
-
-                areas.Root.ReplaceNodes(areas.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-
-                areas.Save(Path.Combine("resources/xml", "areas.xml"));
-#if !DEBUG
-            }
-            catch
-            {
-                DisplayResult("Error", ConsoleColor.DarkRed);
-                throw;
-            }
-#endif
-
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
-        }
-
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void ExtractStatuses(string basedirectory)
-        {
-            IList<IList<IList<string>>> names = LoadStatusNames(basedirectory);
-            if (names == null)
-            {
-                DisplayMessage("\nA problem occurred while loading status names.");
-                return;
-            }
-
-#if !DEBUG
-            try
-            {
-#endif
-                DisplayMessage("Generating xml file...");
-
-                XDocument statuses = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("status"));
-                /// Start Lua Code
-                using (System.IO.StreamWriter lua_buffs = new System.IO.StreamWriter("resources/lua/buffs.lua"))
-                {
-                    lua_buffs.WriteLine("local buffs = {");
-                    /// End Lua Code
-
-                    int count = names[0].Count;
-
-                    string[] ignore = { ".", "(None)", "(Imagery)" };
-
-                    for (int id = 0; id < count; id++)
-                    {
-                        string en = names[0][id][0];
-                        string jp = names[1][id][0];
-                        string de = names[2][id][1];
-                        string fr = names[3][id][2];
-                        string enl = names[0][id][1];
-
-                        if (IsValidName(ignore, en, de, fr, jp))
-                        {
-                            statuses.Root.Add(new XElement("b",
-                                new XAttribute("id", id),
-                                new XAttribute("duration", 0),
-                                new XAttribute("fr", fr),
-                                new XAttribute("de", de),
-                                new XAttribute("jp", jp),
-                                new XAttribute("enLog", enl),
-                                en));
-                            /// Start Lua Code
-                            lua_buffs.WriteLine("    [{0}] = {{ id={0},duration={1},english=\"{2}\",english_log=\"{3}\",french=\"{4}\",german=\"{5}\",japanese=\"{6}\"}},", id, 0, en, enl, fr, de, jp);
-                            /// End Lua Code
-                        }
-                    }
-                    /// Start Lua Code
-                    lua_buffs.WriteLine("}\n\nreturn buffs, {\"id\",\"duration\",\"english\",\"english_log\",\"french\",\"german\",\"japanese\"}");
-                }
-                /// End Lua Code
-
-                statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
-
-                statuses.Save(Path.Combine("resources/xml", "status.xml"));
-#if !DEBUG
-            }
-            catch
-            {
-                DisplayResult("Error", ConsoleColor.DarkRed);
-                throw;
-            }
-#endif
-
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
-        }
-
-        /// Start Lua Code
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void ExtractMonsterAbilities(string basedirectory)
-        {
-            IList<IList<IList<string>>> names = LoadMonsterAbilityNames(basedirectory);
-            if (names == null)
-            {
-                DisplayMessage("\nA problem occurred while loading monster ability names.");
-                return;
-            }
-
-#if !DEBUG
-            try
-            {
-#endif
-            using (System.IO.StreamWriter lua_monster_abilities = new System.IO.StreamWriter("resources/lua/monster_abilities.lua"))
-            {
-                lua_monster_abilities.WriteLine("local monster_abilities = {");
-
-                int count = names[0].Count;
-
-                string[] ignore = { "." };
-
-                for (int id = 0; id < count; id++)
-                {
-                    string en = names[0][id][0];
-                    string jp = names[1][id][0];
-                    string de = names[2][id][1];
-                    string fr = names[3][id][2];
-
-                    if (IsValidName(ignore, en, de, fr, jp))
-                    {
-                        lua_monster_abilities.WriteLine("    [{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}},", id, en, fr, de, jp);
+                        xml.Root.Add(xmlelement);
+                        lua.Add(obj);
                     }
                 }
-                lua_monster_abilities.WriteLine("}\n\nreturn monster_abilities, {\"id\",\"english\",\"french\",\"german\",\"japanese\"}");
-            }
+
+                xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
+
+                xml.Save(Path.Combine("resources", "xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", name)));
+                lua.Save();
 
 #if !DEBUG
             }
             catch
             {
-                DisplayResult("Error", ConsoleColor.DarkRed);
+                DisplayError();
                 throw;
             }
 #endif
 
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
+            DisplaySuccess();
         }
 
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
-        private static void ExtractActionMessages(string basedirectory)
-        {
-            IList<IList<IList<string>>> names = LoadActionMessages(basedirectory);
-            if (names == null)
-            {
-                DisplayMessage("\nA problem occurred while loading action messages.");
-                return;
-            }
-
-#if !DEBUG
-            try
-            {
-#endif
-            using (System.IO.StreamWriter lua_action_messages = new System.IO.StreamWriter("resources/lua/action_messages.lua"))
-            {
-                lua_action_messages.WriteLine("local action_messages = {");
-
-                int count = names[0].Count;
-
-                string[] ignore = { "." };
-
-                for (int id = 0; id < count; id++)
-                {
-                    string en = names[0][id][0];
-                    string jp = names[1][id][0];
-                    string de = names[2][id][1];
-                    string fr = names[3][id][2];
-
-                    if (IsValidName(ignore, en, de, fr, jp))
-                    {
-                        lua_action_messages.WriteLine("    [{0}] = {{ id={0},english=\"{1}\",french=\"{2}\",german=\"{3}\",japanese=\"{4}\"}},", id, en, fr, de, jp);
-                    }
-                }
-                lua_action_messages.WriteLine("}\n\nreturn action_messages, {\"id\",\"english\",\"french\",\"german\",\"japanese\"}");
-            }
-
-#if !DEBUG
-            }
-            catch
-            {
-                DisplayResult("Error", ConsoleColor.DarkRed);
-                throw;
-            }
-#endif
-
-            DisplayResult("Done!", ConsoleColor.DarkGreen);
-        }
-        /// End Lua Code
-
-
-        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static void ApplyFixes()
         {
             DisplayMessage("Applying fixes...");
@@ -859,54 +524,37 @@ namespace ResourceExtractor
 
                 foreach (XElement fixset in fixes.Root.Elements())
                 {
-                    string path = Path.Combine("resources/xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", fixset.Name.LocalName));
-                    XDocument list = XDocument.Load(path);
-
-                    string key = (string)fixset.Attribute("key") ?? "id";
+                    if (!model.ContainsKey(fixset.Name.LocalName))
+                    {
+                        model[fixset.Name.LocalName] = new List<dynamic>();
+                    }
+                    List<dynamic> data = (List<dynamic>)model[fixset.Name.LocalName];
 
                     XElement update = fixset.Element("update");
                     if (update != null)
                     {
                         foreach (XElement fix in update.Elements())
                         {
-                            IEnumerable<XElement> elements = from e in list.Root.Elements(fix.Name.LocalName)
-                                                             where (string)e.Attribute(key) == (string)fix.Attribute(key)
-                                                             select e;
+                            var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 
-                            if (elements.Count() <= 0)
+                            if (!elements.Any())
                             {
-                                list.Root.Add(fix);
+                                dynamic el = new ModelObject();
+
+                                foreach (XAttribute attr in fix.Attributes())
+                                {
+                                    el[attr.Name.LocalName] = attr.Parse();
+                                }
+
+                                data.Add(el);
+                                continue;
                             }
                             else
                             {
+                                var element = elements.Single();
                                 foreach (XAttribute attr in fix.Attributes())
                                 {
-                                    string name = attr.Name.LocalName;
-                                    if (name == key)
-                                    {
-                                        continue;
-                                    }
-
-                                    foreach (XElement e in elements)
-                                    {
-                                        XAttribute a = e.Attribute(name);
-                                        if (a == null)
-                                        {
-                                            e.Add(new XAttribute(attr));
-                                        }
-                                        else
-                                        {
-                                            a.Value = attr.Value;
-                                        }
-                                    }
-                                }
-
-                                if (!fix.IsEmpty)
-                                {
-                                    foreach (XElement e in elements)
-                                    {
-                                        e.Value = fix.Value;
-                                    }
+                                    element[attr.Name.LocalName] = attr.Parse();
                                 }
                             }
                         }
@@ -917,36 +565,25 @@ namespace ResourceExtractor
                     {
                         foreach (XElement fix in remove.Elements())
                         {
-                            IEnumerable<XElement> elements = from e in list.Root.Elements(fix.Name.LocalName)
-                                                             where (string)e.Attribute(key) == (string)fix.Attribute(key)
-                                                             select e;
-
-                            foreach (XElement e in elements)
-                            {
-                                e.Remove();
-                            }
+                            ((List<dynamic>)data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
                         }
                     }
-
-                    list.Root.ReplaceNodes(list.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute(key) ?? 0)));
-
-                    list.Save(path);
                 }
 #if !DEBUG
             }
             catch
             {
-                DisplayResult("Error", ConsoleColor.DarkRed);
+                DisplayError();
                 throw;
             }
 #endif
 
-                DisplayResult("Done!", ConsoleColor.DarkGreen);
+            DisplaySuccess();
         }
 
-        private static IList<IDictionary<int, Item>> LoadItems(string basedirectory)
+        private static void LoadItemData()
         {
-            IList<IDictionary<int, Item>> result = null;
+            model.items = new List<dynamic>();
 
             try
             {
@@ -956,334 +593,155 @@ namespace ResourceExtractor
                     {
                         new int[] { 0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975 },
                         new int[] { 0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD },
-                        new int[] { 0xDA07, 0xDA08, 0xDA0B, 0xDA0A, 0xDA09, 0xD9EB, 0xD9EC, 0xD9EF, 0xDA0C, 0xD9ED },
-                        new int[] { 0xDBAB, 0xDBAC, 0xDBAF, 0xDBAE, 0xDBAD, 0xDB8F, 0xDB90, 0xDB93, 0xDBB0, 0xDB91 },
+                        // Remove this after July 2014
+                        new int[] { 0xDA07, 0xDA08, 0xDA0B, 0xDA0A, 0xDA09, 0xDA0C, 0xD9EB, 0xD9EC, 0xD9EF, 0xD9ED },
+                        new int[] { 0xDBAB, 0xDBAC, 0xDBAF, 0xDBAE, 0xDBAD, 0xDBB0, 0xDB8F, 0xDB90, 0xDB93, 0xDB91 },
                     };
 
-                result = new List<IDictionary<int, Item>>();
-
-                byte[] data = new byte[0x200];
-                foreach (int[] ids in fileids)
+                for (var i = 0; i < fileids[0].Length; ++i)
                 {
-                    IDictionary<int, Item> items = new Dictionary<int, Item>();
-                    result.Add(items);
-
-                    foreach (int id in ids)
+                    using (FileStream stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (FileStream streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    // Remove this after July 2014
+                    using (FileStream streamde = File.Open(GetPath(fileids[2][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (FileStream streamfr = File.Open(GetPath(fileids[3][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        string path = GetPath(basedirectory, id);
+                        ResourceParser.ParseItems(stream, streamja, streamde, streamfr);
+                    }
+                }
+            }
+            finally
+            {
+                DisplayResult(model.items.Count != 0);
+            }
+        }
 
-                        using (FileStream stream = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+        private static void LoadMainData()
+        {
+            DisplayMessage("Loading main data stream...");
+            try
+            {
+                ResourceParser.ParseMainStream(File.OpenRead(GetPath(0x0051)));
+            }
+            catch
+            {
+                DisplayError();
+                throw;
+            }
+
+            DisplaySuccess();
+        }
+
+        private static void ParseStringTables()
+        {
+            foreach (var pair in DatLut)
+            {
+                Console.WriteLine("Loading {0} fields...", pair.Key);
+                ParseFields(pair.Key);
+            }
+        }
+
+        private static void ParseFields(string name)
+        {
+            bool result = false;
+
+            try
+            {
+                dynamic[] parsed = null;
+
+                foreach (var filepair in DatLut[name])
+                {
+                    using (FileStream stream = File.OpenRead(GetPath(filepair.Key)))
+                    {
+                        var single = DatParser.Parse(stream, filepair.Value);
+                        if (parsed == null)
                         {
-                            int count = (int)(stream.Length / 0xC00);
-                            for (int i = 0; i < count; i++)
-                            {
-                                stream.Position = i * 0xC00;
-                                stream.Read(data, 0, data.Length);
-                                Item item = Item.CreateItem(data);
-                                if (!items.ContainsKey(item.Id))
-                                {
-                                    items.Add(item.Id, item);
-                                }
-                            }
+                            parsed = single;
+                            continue;
+                        }
+
+                        for (var i = 0; i < Math.Min(parsed.Length, single.Length); ++i)
+                        {
+                            parsed[i].Merge(single[i]);
                         }
                     }
                 }
-            }
-            finally
-            {
-                if (result == null)
+
+                if (model[name].Count > 0)
                 {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            return result;
-        }
-
-        private static IList<object> LoadSpellAbilityData(string basedirectory)
-        {
-            IList<object> result = null;
-
-            try
-            {
-                DisplayMessage("Loading spell and ability data...");
-
-                string path = GetPath(basedirectory, 0x0051);
-                using (FileStream stream = File.OpenRead(path))
-                {
-                    result = new Container(stream);
-                }
-            }
-            finally
-            {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            return result;
-        }
-
-        private static IList<IList<IList<string>>> LoadSpellNames(string basedirectory)
-        {
-            IList<IList<IList<string>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading spell names...");
-
-                int[] fileids = new int[] { 0xD996, 0xD91E, 0xDA0E, 0xDBB2 };
-
-                result = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(basedirectory, id);
-                    using (FileStream stream = File.OpenRead(path))
+                    foreach (var obj in model[name])
                     {
-                        result.Add(new DMsgStringList(stream));
+                        obj.Merge(parsed[obj.id]);
                     }
                 }
-            }
-            finally
-            {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
                 else
                 {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            return result;
-        }
-
-        private static IList<IList<IList<string>>> LoadAbilityNames(string basedirectory)
-        {
-            IList<IList<IList<string>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading ability names...");
-
-                int[] fileids = new int[] { 0xD995, 0xD91D, 0xDA0D, 0xDBB1 };
-
-                result = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(basedirectory, id);
-                    using (FileStream stream = File.OpenRead(path))
+                    for (var i = 0; i < parsed.Length; ++i)
                     {
-                        result.Add(new DMsgStringList(stream));
+                        dynamic obj = new ModelObject();
+                        obj.id = i;
+
+                        obj.Merge(parsed[i]);
+
+                        model[name].Add(obj);
                     }
                 }
+
+                result = true;
             }
             finally
             {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
+                DisplayResult(result);
             }
-
-            return result;
         }
 
-        private static IList<IList<IList<string>>> LoadAreaNames(string basedirectory)
+        [SuppressMessage("Microsoft.Maintainability", "CA1502")]
+        private static bool IsValidName(string[] ignore, dynamic res)
         {
-            IList<IList<IList<string>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading area names...");
-
-                int[] fileids = new int[] { 0xD8A9, 0xD8EF, 0xD9DF, 0xDB83 };
-
-                result = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(basedirectory, id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        result.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            return result;
+            return !res.ContainsKey("en") || !(res.en == "."
+                || string.IsNullOrWhiteSpace(res.en) || ignore.Contains((string)res.en)
+                || res.en.StartsWith("#", StringComparison.Ordinal));
         }
 
-        private static IList<IList<IList<string>>> LoadStatusNames(string basedirectory)
+        private static string GetPath(int id)
         {
-            IList<IList<IList<string>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading status names...");
-
-                int[] fileids = new int[] { 0xD9AD, 0xD935, 0xDA2C, 0xDBD0 };
-
-                result = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(basedirectory, id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        result.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            return result;
-        }
-
-        /// Start Lua Code
-        private static IList<IList<IList<string>>> LoadMonsterAbilityNames(string basedirectory)
-        {
-            IList<IList<IList<string>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading monster ability names...");
-
-                int[] fileids = new int[] { 0x1B7B, 0x1B8C, 0xDA2B, 0xDBCF };
-
-                result = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(basedirectory, id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        /// Format is wrong
-                        result.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            return result;
-        }
-
-        private static IList<IList<IList<string>>> LoadActionMessages(string basedirectory)
-        {
-            IList<IList<IList<string>>> result = null;
-
-            try
-            {
-                DisplayMessage("Loading action messages...");
-
-                int[] fileids = new int[] { 0x1B73, 0x1B72, 0xDA28, 0xDBCC };
-
-                result = new List<IList<IList<string>>>();
-
-                foreach (int id in fileids)
-                {
-                    string path = GetPath(basedirectory, id);
-                    using (FileStream stream = File.OpenRead(path))
-                    {
-                        // Format is wrong
-                        result.Add(new DMsgStringList(stream));
-                    }
-                }
-            }
-            finally
-            {
-                if (result == null)
-                {
-                    DisplayResult("Error", ConsoleColor.DarkRed);
-                }
-                else
-                {
-                    DisplayResult("Done!", ConsoleColor.DarkGreen);
-                }
-            }
-
-            return result;
-        }
-        /// End Lua Code
-
-        private static bool IsValidName(string[] ignore, params string[] names)
-        {
-            foreach (string name in names)
-            {
-                if (string.IsNullOrWhiteSpace(name) || ignore.Contains(name))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private static string GetPath(string basedirectory, int id)
-        {
-            string ftable = Path.Combine(basedirectory, "FTABLE.DAT");
+            string ftable = Path.Combine(Dir, "FTABLE.DAT");
 
             using (FileStream fstream = File.OpenRead(ftable))
             {
                 fstream.Position = id * 2;
                 int file = fstream.ReadByte() | fstream.ReadByte() << 8;
-                return Path.Combine(
-                    basedirectory, "ROM",
+                return Path.Combine(Dir, "ROM",
                     string.Format(CultureInfo.InvariantCulture, "{0}", file >> 7),
                     string.Format(CultureInfo.InvariantCulture, "{0}.DAT", file & 0x7F));
             }
         }
 
-        private static void DisplayMessage(string message)
+        public static void DisplayMessage(string message)
         {
             Console.WriteLine(message);
+        }
+
+        public static void DisplayError()
+        {
+            DisplayResult("Error!", ConsoleColor.Red);
+        }
+
+        public static void DisplaySuccess()
+        {
+            DisplayResult("Done!", ConsoleColor.Green);
+        }
+
+        public static void DisplayResult(bool success)
+        {
+            if (success)
+            {
+                DisplaySuccess();
+            }
+            else
+            {
+                DisplayError();
+            }
         }
 
         private static void DisplayResult(string result, ConsoleColor color)

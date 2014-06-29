@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ResourceExtractor</RootNamespace>
     <AssemblyName>resource-extractor</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -40,6 +41,7 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>codeanalysis.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +53,7 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>codeanalysis.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -70,6 +73,7 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>codeanalysis.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
@@ -80,6 +84,7 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>codeanalysis.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -89,35 +94,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
-    <Compile Include="Formats\Items\AutomatonItem.cs" />
-    <Compile Include="Formats\Items\MonstrosityItem.cs" />
-    <Compile Include="Job.cs" />
-    <Compile Include="MagicType.cs" />
-    <Compile Include="Element.cs" />
-    <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="FF11ShiftJISDecoder.cs" />
-    <Compile Include="Formats\Container.cs" />
-    <Compile Include="Formats\AbilityData.cs" />
-    <Compile Include="Formats\SpellData.cs" />
+    <Compile Include="DatParser.cs" />
+    <Compile Include="DialogParser.cs" />
+    <Compile Include="DMsgParser.cs" />
+    <Compile Include="Fixes.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Formats\Items\ArmorItem.cs" />
-    <Compile Include="Formats\Items\BasicItem.cs" />
-    <Compile Include="Formats\Items\EnglishStrings.cs" />
-    <Compile Include="Formats\Items\EquippableItem.cs" />
-    <Compile Include="Formats\Items\FrenchStrings.cs" />
-    <Compile Include="Formats\Items\GeneralItem.cs" />
-    <Compile Include="Formats\Items\GermanStrings.cs" />
-    <Compile Include="Formats\Items\Item.cs" />
-    <Compile Include="Formats\Items\JapaneseStrings.cs" />
-    <Compile Include="Formats\Items\MazeItem.cs" />
-    <Compile Include="Formats\Items\Strings.cs" />
-    <Compile Include="Formats\Items\UsableItem.cs" />
-    <Compile Include="Formats\Items\WeaponItem.cs" />
+    <Compile Include="ModelObject.cs" />
+    <Compile Include="Serialization\LuaFormatter.cs" />
+    <Compile Include="ShiftJISFF11Encoding.cs" />
+    <Compile Include="Languages.cs" />
+    <Compile Include="MagicType.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Formats\DMsgStringList.cs" />
-    <Compile Include="Skill.cs" />
-    <Compile Include="ValidTargets.cs" />
+    <Compile Include="DMsgStringList.cs" />
+    <Compile Include="ResourceParser.cs" />
+    <Compile Include="Serializers\Lua\LuaAttribute.cs" />
+    <Compile Include="Serializers\Lua\LuaElement.cs" />
+    <Compile Include="Serializers\Lua\LuaFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
@@ -150,6 +144,7 @@
     <CodeAnalysisDictionary Include="CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fixes-example.xml" />
     <Content Include="fixes.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>

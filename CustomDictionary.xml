@@ -25,6 +25,7 @@ IN THE SOFTWARE.
   <Words>
     <Recognized>
       <Word>equippable</Word>
+      <Word>lua</Word>
     </Recognized>
   </Words>
 </Dictionary>

@@ -1,4 +1,4 @@
-﻿// <copyright file="BasicItem.cs" company="Windower Team">
+﻿// <copyright file="Languages.cs" company="Windower Team">
 // Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,14 +20,13 @@
 // IN THE SOFTWARE.
 // </copyright>
 
-namespace ResourceExtractor.Formats.Items
+namespace ResourceExtractor
 {
-    internal sealed class BasicItem : Item
+    internal enum Languages
     {
-        internal BasicItem(byte[] data)
-            : base(data)
-        {
-            this.InitializeStrings(data, 0x10);
-        }
+        English = 0,
+        Japanese = 1,
+        German = 2,
+        French = 3,
     }
 }

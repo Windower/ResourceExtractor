@@ -1,4 +1,4 @@
-﻿// <copyright file="Job.cs" company="Windower Team">
+﻿// <copyright file="DatParser.cs" company="Windower Team">
 // Copyright © 2013-2014 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,31 +22,31 @@
 
 namespace ResourceExtractor
 {
-    internal enum Job
+    using System.Text;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Runtime.InteropServices;
+
+    internal class DatParser
     {
-        DEB = 0,
-        WAR = 1,
-        MNK = 2,
-        WHM = 3,
-        BLM = 4,
-        RDM = 5,
-        THF = 6,
-        PLD = 7,
-        DRK = 8,
-        BST = 9,
-        BRD = 10,
-        RNG = 11,
-        SAM = 12,
-        NIN = 13,
-        DRG = 14,
-        SMN = 15,
-        BLU = 16,
-        COR = 17,
-        PUP = 18,
-        DNC = 19,
-        SCH = 20,
-        GEO = 21,
-        RUN = 22,
-        MON = 23
+        public static dynamic[] Parse(Stream stream, Dictionary<int, string> fields)
+        {
+            var format = stream.Read<ulong>();
+            stream.Position = 0;
+
+            // DMsg format
+            if (format == 0x00000067736D5F64)
+            {
+                return DMsgParser.Parse(stream, fields);
+            }
+
+            // Dialog format
+            if (format % 0x10000000 == (ulong) stream.Length - 4)
+            {
+                return DialogParser.Parse(stream, fields[0]);
+            }
+
+            throw new InvalidDataException("Unknown DAT format.");
+        }
     }
 }

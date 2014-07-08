@@ -550,7 +550,7 @@ IN THE SOFTWARE.
       <b id="39" duration="300" /> <!-- Aquaveil -->
       <b id="40" duration="1800" /> <!-- Protect -->
       <b id="41" duration="1800" /> <!-- Shell -->
-      <b id="42" duration="60" /> <!-- Regen -->
+      <b id="42" duration="75" /> <!-- Regen -->
       <b id="43" duration="150" /> <!-- Refresh -->
       <b id="44" duration="45" /> <!-- Mighty Strikes -->
       <b id="45" duration="180" /> <!-- Boost -->
@@ -584,7 +584,20 @@ IN THE SOFTWARE.
       <b id="75" duration="180" /> <!-- Arcane Circle -->
       <b id="78" duration="60" /> <!-- Divine Seal -->
       <b id="79" duration="60" /> <!-- Elemental Seal -->
+      <b id="80" duration="300" /> <!-- STR Boost -->
+      <b id="81" duration="300" /> <!-- DEX Boost -->
+      <b id="82" duration="300" /> <!-- VIT Boost -->
+      <b id="83" duration="300" /> <!-- AGI Boost -->
+      <b id="84" duration="300" /> <!-- INT Boost -->
+      <b id="85" duration="300" /> <!-- MND Boost -->
+      <b id="86" duration="300" /> <!-- CHR Boost -->
       <b id="87" duration="60" /> <!-- Trick Attack -->
+      <b id="94" duration="180" /> <!-- Enfire -->
+      <b id="95" duration="180" /> <!-- Enblizzard -->
+      <b id="96" duration="180" /> <!-- Enaero -->
+      <b id="97" duration="180" /> <!-- Enstone -->
+      <b id="98" duration="180" /> <!-- Enthunder -->
+      <b id="99" duration="180" /> <!-- Enwater -->
       <b id="100" duration="150" /> <!-- Barfire -->
       <b id="101" duration="150" /> <!-- Barblizzard -->
       <b id="102" duration="150" /> <!-- Baraero -->
@@ -601,6 +614,7 @@ IN THE SOFTWARE.
       <b id="113" duration="3600" /> <!-- Reraise -->
       <b id="114" duration="15" /> <!-- Cover -->
       <b id="115" duration="60" /> <!-- Unlimited Shot -->
+      <b id="116" duration="180" /> <!-- Phalanx -->
       <b id="117" duration="180" /> <!-- Warding Circle -->
       <b id="118" duration="180" /> <!-- Ancient Circle -->
       <b id="126" duration="60" /> <!-- Spirit Surge -->
@@ -610,7 +624,24 @@ IN THE SOFTWARE.
       <b id="169" duration="60" /> <!-- Potency -->
       <b id="170" duration="180" /> <!-- Regain -->
       <b id="171" duration="60" /> <!-- Pax -->
+      <b id="173" duration="60" /> <!-- Dread Spikes -->
+      <b id="178" duration="180" /> <!-- Firestorm -->
+      <b id="179" duration="180" /> <!-- Hailstorm -->
+      <b id="180" duration="180" /> <!-- Windstorm -->
+      <b id="181" duration="180" /> <!-- Sandstorm -->
+      <b id="182" duration="180" /> <!-- Thunderstorm -->
+      <b id="183" duration="180" /> <!-- Rainstorm -->
+      <b id="184" duration="180" /> <!-- Aurorastorm -->
+      <b id="185" duration="180" /> <!-- Voidstorm -->
+      <b id="228" duration="90" /> <!-- Embrava -->
       <b id="252" duration="1800" /> <!-- Chocobo -->
+      <b id="275" duration="180" /> <!-- Auspice -->
+      <b id="277" duration="180" /> <!-- Enfire II -->
+      <b id="278" duration="180" /> <!-- Enblizzard II -->
+      <b id="279" duration="180" /> <!-- Enaero II -->
+      <b id="280" duration="180" /> <!-- Enstone II -->
+      <b id="281" duration="180" /> <!-- Enthunder II -->
+      <b id="282" duration="180" /> <!-- Enwater II -->
       <b id="341" duration="180" /> <!-- Formless Strikes -->
       <b id="342" duration="60" /> <!-- Assassin's Charge -->
       <b id="343" duration="60" /> <!-- Feint -->
@@ -625,6 +656,9 @@ IN THE SOFTWARE.
       <b id="368" duration="90" /> <!-- Drain Samba -->
       <b id="369" duration="90" /> <!-- Aspir Samba -->
       <b id="370" duration="90" /> <!-- Haste Samba -->
+      <b id="403" duration="60" /> <!-- Reprisal -->
+      <b id="407" duration="180" /> <!-- Klimaform -->
+      <b id="568" duration="30" /> <!-- Foil -->
 
       <!-- DNC moves -->
       <a id="381" en="Finishing Move 1" ja="フィニシングムーブ1" enl="Finishing Move 1" jal="フィニシングムーブ1" del="Tanzmanöver 1" frl="Mouvement final 1" />

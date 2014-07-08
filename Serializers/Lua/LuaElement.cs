@@ -27,7 +27,7 @@ namespace ResourceExtractor.Serializers.Lua
 
     internal class LuaElement
     {
-        private static List<string> fixedKeys = new List<string> { "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl" };
+        private static List<string> fixedKeys = new List<string> { "id", "en", "ja", "enl", "jal", };
 
         public LuaElement(dynamic obj)
         {

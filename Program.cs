@@ -73,12 +73,6 @@ namespace ResourceExtractor
                 {0xD91D, new Dictionary<int, string> {
                     {0, "ja"},
                 }},
-                {0xDA0D, new Dictionary<int, string> {
-                    {0, "de"},
-                }},
-                {0xDBB1, new Dictionary<int, string> {
-                    {0, "fr"},
-                }},
             }},
             {"buffs", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD9AD, new Dictionary<int, string> {
@@ -87,12 +81,6 @@ namespace ResourceExtractor
                 }},
                 {0xD935, new Dictionary<int, string> {
                     {0, "ja"},
-                }},
-                {0xDA2C, new Dictionary<int, string> {
-                    {1, "de"},
-                }},
-                {0xDBD0, new Dictionary<int, string> {
-                    {2, "fr"},
                 }},
             }},
             {"key_items", new Dictionary<ushort, Dictionary<int, string>> {
@@ -105,12 +93,6 @@ namespace ResourceExtractor
                     {1, "ja"},
                     //{2, "jadesc"},
                 }},
-                {0xDA11, new Dictionary<int, string> {
-                    {4, "de"},
-                }},
-                {0xDBB5, new Dictionary<int, string> {
-                    {5, "fr"},
-                }},
             }},
             {"monster_abilities", new Dictionary<ushort, Dictionary<int, string>> {
                 {0x1B7B, new Dictionary<int, string> {
@@ -118,12 +100,6 @@ namespace ResourceExtractor
                 }},
                 {0x1B7A, new Dictionary<int, string> {
                     {0, "ja"},
-                }},
-                {0xDA2B, new Dictionary<int, string> {
-                    {0, "de"},
-                }},
-                {0xDBCF, new Dictionary<int, string> {
-                    {0, "fr"},
                 }},
             }},
             {"regions", new Dictionary<ushort, Dictionary<int, string>> {
@@ -133,12 +109,6 @@ namespace ResourceExtractor
                 {0xD8EE, new Dictionary<int, string> {
                     {0, "ja"},
                 }},
-                {0xD9DE, new Dictionary<int, string> {
-                    {0, "de"},
-                }},
-                {0xDB82, new Dictionary<int, string> {
-                    {0, "fr"},
-                }},
             }},
             {"spells", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD996, new Dictionary<int, string> {
@@ -147,12 +117,6 @@ namespace ResourceExtractor
                 {0xD91E, new Dictionary<int, string> {
                     {0, "ja"},
                 }},
-                {0xDA0E, new Dictionary<int, string> {
-                    {0, "de"},
-                }},
-                {0xDBB2, new Dictionary<int, string> {
-                    {0, "fr"},
-                }},
             }},
             {"titles", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD998, new Dictionary<int, string> {
@@ -160,12 +124,6 @@ namespace ResourceExtractor
                 }},
                 {0xD920, new Dictionary<int, string> {
                     {0, "ja"},
-                }},
-                {0xDA10, new Dictionary<int, string> {
-                    {1, "de"},
-                }},
-                {0xDBB4, new Dictionary<int, string> {
-                    {2, "fr"},
                 }},
             }},
             {"zones", new Dictionary<ushort, Dictionary<int, string>> {
@@ -177,12 +135,6 @@ namespace ResourceExtractor
                 }},
                 {0xD8EF, new Dictionary<int, string> {
                     {0, "ja"},
-                }},
-                {0xD9DF, new Dictionary<int, string> {
-                    {0, "de"},
-                }},
-                {0xDB83, new Dictionary<int, string> {
-                    {0, "fr"},
                 }},
             }},
         };
@@ -262,8 +214,6 @@ namespace ResourceExtractor
                 foreach (var buff in model.buffs)
                 {
                     buff.jal = buff.ja;
-                    buff.del = buff.de;
-                    buff.frl = buff.fr;
                 }
 
                 // Populate ability recast table with proper names
@@ -275,9 +225,6 @@ namespace ResourceExtractor
                         {
                             recast.en = action.en;
                             recast.ja = action.ja;
-                            // Remove this after July 2014
-                            recast.de = action.de;
-                            recast.fr = action.fr;
                         }
                     }
                 }
@@ -291,9 +238,6 @@ namespace ResourceExtractor
                         {
                             recast.en = spell.en;
                             recast.ja = spell.ja;
-                            // Remove this after July 2014
-                            recast.de = spell.de;
-                            recast.fr = spell.fr;
                         }
                     }
                 }
@@ -348,8 +292,6 @@ namespace ResourceExtractor
                         // Remove names, as they are parsed separately
                         action.en = null;
                         action.ja = null;
-                        action.de = null;
-                        action.fr = null;
 
                         if (action.id - 0x100 < model.monster_abilities.Count)
                         {
@@ -593,20 +535,14 @@ namespace ResourceExtractor
                     {
                         new int[] { 0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975 },
                         new int[] { 0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD },
-                        // Remove this after July 2014
-                        new int[] { 0xDA07, 0xDA08, 0xDA0B, 0xDA0A, 0xDA09, 0xDA0C, 0xD9EB, 0xD9EC, 0xD9EF, 0xD9ED },
-                        new int[] { 0xDBAB, 0xDBAC, 0xDBAF, 0xDBAE, 0xDBAD, 0xDBB0, 0xDB8F, 0xDB90, 0xDB93, 0xDB91 },
                     };
 
                 for (var i = 0; i < fileids[0].Length; ++i)
                 {
                     using (FileStream stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     using (FileStream streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    // Remove this after July 2014
-                    using (FileStream streamde = File.Open(GetPath(fileids[2][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    using (FileStream streamfr = File.Open(GetPath(fileids[3][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        ResourceParser.ParseItems(stream, streamja, streamde, streamfr);
+                        ResourceParser.ParseItems(stream, streamja);
                     }
                 }
             }

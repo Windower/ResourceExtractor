@@ -25,30 +25,30 @@ IN THE SOFTWARE.
   <ability_recasts>
     <update>
       <!-- Shared Timers -->
-      <a id="0" en="SP Ability" de="SP Fähigkeit" fr="SP aptitude" ja="SPアビリティ" />
-      <a id="10" en="Rune Enchantment" de="Verzauber.-Rune" fr="Runes enchant." ja="エンチャントルーン" />
-      <a id="69" en="Accomp./Collab." de="Accomplice/Kollaborateur" fr="Complice/Acolyte" ja="アカンプリス/コラボレーター" />
-      <a id="101" en="Stay/Heel/Leave" de="Verharren/Bei Fuß/Freilassen" fr="Assis !/Au pied !/Va-t'en !" ja="まってろ/もどれ/かえれ" />
-      <a id="102" en="Sic/Ready" de="Spezial/Sturm und Drang" fr="Vas-y !/Obéis !" ja="ほんきだせ/しじをさせろ" />
-      <a id="126" en="Unlimited/Double Shot" de="Dauerschuss/Doppelschuss" fr="Tirs illimités/Double tir" ja="エンドレスショット/ダブルショット" />
-      <a id="158" en="Jump/Spirit Jump" de="Sprung/Seelensprung" fr="Saut/Saut d'esprit" ja="ジャンプ/スピリットジャンプ" />
-      <a id="159" en="High/Soul Jump" de="Hochsprung/Psycho-Sprung" fr="Saut aérien/Saut de l'âme" ja="ハイジャンプ/ソウルジャンプ" />
-      <a id="173" en="Blood Pact: Rage" de="Blutsbund: Zorn" fr="Pacte sang : rage" ja="契約の履行:幻術" />
-      <a id="174" en="Blood Pact: Ward" de="Blutsbund: Hilfe" fr="Pacte sang : abri" ja="契約の履行:験術" />
-      <a id="193" en="Phantom Roll" de="Phantom-Wurf" fr="Jet fantôme" ja="ファントムロール" />
-      <a id="195" en="Quick Draw" de="Schnellschuss" fr="Tirage vif" ja="クイックドロー" />
-      <a id="210" en="Maneuvers" de="Manöver" fr="Manœuvres" ja="マニューバ" />
-      <a id="215" en="Healing Waltz" de="Kur-Walzer" fr="Valse curative" ja="ヒーリングワルツ" />
-      <a id="216" en="Sambas" de="Samba-Rhythmen" fr="Sambas" ja="サンバモード" />
-      <a id="217" en="Curing Waltz" de="Heilender Walzer" fr="Valse Soin" ja="ケアルワルツ" />
-      <a id="218" en="Jigs" de="Tango-Rhythmen" fr="Gigues" ja="ジグモード" />
-      <a id="220" en="Steps" de="Tanzschritte" fr="Pas" ja="ステップ" />
-      <a id="221" en="Flourishes I" de="Polka-Rhythmen" fr="Pirouettes I" ja="フラリッシュI" />
-      <a id="222" en="Flourishes II" de="Polka-R. II" fr="Pirouettes II" ja="フラリッシュII" />
-      <a id="225" en="Divine Waltz" de="Walzer der Göttin" fr="Valse divine" ja="ディバインワルツ" />
-      <a id="226" en="Flourishes III" de="Polka-Rhythm. III" fr="Pirouettes III" ja="フラリッシュIII" />
-      <a id="231" en="Stratagems" de="Schultz' Kriegsl." fr="Stratagèmes" ja="戦術魔道書" />
-      <a id="254" en="SP Ability II" de="SP Fähigkeit II" fr="SP aptitude II" ja="SPアビリティII" />
+      <a id="0" en="SP Ability" ja="SPアビリティ" />
+      <a id="10" en="Rune Enchantment" ja="エンチャントルーン" />
+      <a id="69" en="Accomp./Collab." ja="アカンプリス/コラボレーター" />
+      <a id="101" en="Stay/Heel/Leave" ja="まってろ/もどれ/かえれ" />
+      <a id="102" en="Sic/Ready" ja="ほんきだせ/しじをさせろ" />
+      <a id="126" en="Unlimited/Double Shot" ja="エンドレスショット/ダブルショット" />
+      <a id="158" en="Jump/Spirit Jump" ja="ジャンプ/スピリットジャンプ" />
+      <a id="159" en="High/Soul Jump" ja="ハイジャンプ/ソウルジャンプ" />
+      <a id="173" en="Blood Pact: Rage" ja="契約の履行:幻術" />
+      <a id="174" en="Blood Pact: Ward" ja="契約の履行:験術" />
+      <a id="193" en="Phantom Roll" ja="ファントムロール" />
+      <a id="195" en="Quick Draw" ja="クイックドロー" />
+      <a id="210" en="Maneuvers" ja="マニューバ" />
+      <a id="215" en="Healing Waltz" ja="ヒーリングワルツ" />
+      <a id="216" en="Sambas" ja="サンバモード" />
+      <a id="217" en="Curing Waltz" ja="ケアルワルツ" />
+      <a id="218" en="Jigs" ja="ジグモード" />
+      <a id="220" en="Steps" ja="ステップ" />
+      <a id="221" en="Flourishes I" ja="フラリッシュI" />
+      <a id="222" en="Flourishes II" ja="フラリッシュII" />
+      <a id="225" en="Divine Waltz" ja="ディバインワルツ" />
+      <a id="226" en="Flourishes III" ja="フラリッシュIII" />
+      <a id="231" en="Stratagems" ja="戦術魔道書" />
+      <a id="254" en="SP Ability II" ja="SPアビリティII" />
     </update>
   </ability_recasts>
   <weapon_skills>
@@ -627,26 +627,26 @@ IN THE SOFTWARE.
       <b id="370" duration="90" /> <!-- Haste Samba -->
 
       <!-- DNC moves -->
-      <a id="381" en="Finishing Move 1" ja="フィニシングムーブ1" de="Tanzmanöver 1" fr="Mouvement final 1" enl="Finishing Move 1" jal="フィニシングムーブ1" del="Tanzmanöver 1" frl="Mouvement final 1" />
-      <a id="382" en="Finishing Move 2" ja="フィニシングムーブ2" de="Tanzmanöver 2" fr="Mouvement final 2" enl="Finishing Move 2" jal="フィニシングムーブ2" del="Tanzmanöver 2" frl="Mouvement final 2" />
-      <a id="383" en="Finishing Move 3" ja="フィニシングムーブ3" de="Tanzmanöver 3" fr="Mouvement final 3" enl="Finishing Move 3" jal="フィニシングムーブ3" del="Tanzmanöver 3" frl="Mouvement final 3" />
-      <a id="384" en="Finishing Move 4" ja="フィニシングムーブ4" de="Tanzmanöver 4" fr="Mouvement final 4" enl="Finishing Move 4" jal="フィニシングムーブ4" del="Tanzmanöver 4" frl="Mouvement final 4" />
-      <a id="385" en="Finishing Move 5" ja="フィニシングムーブ5" de="Tanzmanöver 5" fr="Mouvement final 5" enl="Finishing Move 5" jal="フィニシングムーブ5" del="Tanzmanöver 5" frl="Mouvement final 5" />
-      <a id="386" en="Lethargic Daze 1" ja="クイックステップ1" de="Pirouette 1" fr="Stupeur ankylosante 1" enl="Lethargic Daze 1" jal="クイックステップ1" del="Pirouette 1" frl="Stupeur ankylosante 1" />
-      <a id="387" en="Lethargic Daze 2" ja="クイックステップ2" de="Pirouette 2" fr="Stupeur ankylosante 2" enl="Lethargic Daze 2" jal="クイックステップ2" del="Pirouette 2" frl="Stupeur ankylosante 2" />
-      <a id="388" en="Lethargic Daze 3" ja="クイックステップ3" de="Pirouette 3" fr="Stupeur ankylosante 3" enl="Lethargic Daze 3" jal="クイックステップ3" del="Pirouette 3" frl="Stupeur ankylosante 3" />
-      <a id="389" en="Lethargic Daze 4" ja="クイックステップ4" de="Pirouette 4" fr="Stupeur ankylosante 4" enl="Lethargic Daze 4" jal="クイックステップ4" del="Pirouette 4" frl="Stupeur ankylosante 4" />
-      <a id="390" en="Lethargic Daze 5" ja="クイックステップ5" de="Pirouette 5" fr="Stupeur ankylosante 5" enl="Lethargic Daze 5" jal="クイックステップ5" del="Pirouette 5" frl="Stupeur ankylosante 5" />
-      <a id="391" en="Sluggish Daze 1" ja="ボックスステップ1" de="Ausfallschritt 1" fr="Stupeur débilitante 1" enl="Sluggish Daze 1" jal="ボックスステップ1" del="Ausfallschritt 1" frl="Stupeur débilitante 1" />
-      <a id="392" en="Sluggish Daze 2" ja="ボックスステップ2" de="Ausfallschritt 2" fr="Stupeur débilitante 2" enl="Sluggish Daze 2" jal="ボックスステップ2" del="Ausfallschritt 2" frl="Stupeur débilitante 2" />
-      <a id="393" en="Sluggish Daze 3" ja="ボックスステップ3" de="Ausfallschritt 3" fr="Stupeur débilitante 3" enl="Sluggish Daze 3" jal="ボックスステップ3" del="Ausfallschritt 3" frl="Stupeur débilitante 3" />
-      <a id="394" en="Sluggish Daze 4" ja="ボックスステップ4" de="Ausfallschritt 4" fr="Stupeur débilitante 4" enl="Sluggish Daze 4" jal="ボックスステップ4" del="Ausfallschritt 4" frl="Stupeur débilitante 4" />
-      <a id="395" en="Sluggish Daze 5" ja="ボックスステップ5" de="Ausfallschritt 5" fr="Stupeur débilitante 5" enl="Sluggish Daze 5" jal="ボックスステップ5" del="Ausfallschritt 5" frl="Stupeur débilitante 5" />
-      <a id="396" en="Weakened Daze 1" ja="スタッターステップ1" de="Schuhplattler 1" fr="Stupeur abrutissante 1" enl="Weakened Daze 1" jal="スタッターステップ1" del="Schuhplattler 1" frl="Stupeur abrutissante 1" />
-      <a id="397" en="Weakened Daze 2" ja="スタッターステップ2" de="Schuhplattler 2" fr="Stupeur abrutissante 2" enl="Weakened Daze 2" jal="スタッターステップ2" del="Schuhplattler 2" frl="Stupeur abrutissante 2" />
-      <a id="398" en="Weakened Daze 3" ja="スタッターステップ3" de="Schuhplattler 3" fr="Stupeur abrutissante 3" enl="Weakened Daze 3" jal="スタッターステップ3" del="Schuhplattler 3" frl="Stupeur abrutissante 3" />
-      <a id="399" en="Weakened Daze 4" ja="スタッターステップ4" de="Schuhplattler 4" fr="Stupeur abrutissante 4" enl="Weakened Daze 4" jal="スタッターステップ4" del="Schuhplattler 4" frl="Stupeur abrutissante 4" />
-      <a id="400" en="Weakened Daze 5" ja="スタッターステップ5" de="Schuhplattler 5" fr="Stupeur abrutissante 5" enl="Weakened Daze 5" jal="スタッターステップ5" del="Schuhplattler 5" frl="Stupeur abrutissante 5" />
+      <a id="381" en="Finishing Move 1" ja="フィニシングムーブ1" enl="Finishing Move 1" jal="フィニシングムーブ1" del="Tanzmanöver 1" frl="Mouvement final 1" />
+      <a id="382" en="Finishing Move 2" ja="フィニシングムーブ2" enl="Finishing Move 2" jal="フィニシングムーブ2" del="Tanzmanöver 2" frl="Mouvement final 2" />
+      <a id="383" en="Finishing Move 3" ja="フィニシングムーブ3" enl="Finishing Move 3" jal="フィニシングムーブ3" del="Tanzmanöver 3" frl="Mouvement final 3" />
+      <a id="384" en="Finishing Move 4" ja="フィニシングムーブ4" enl="Finishing Move 4" jal="フィニシングムーブ4" del="Tanzmanöver 4" frl="Mouvement final 4" />
+      <a id="385" en="Finishing Move 5" ja="フィニシングムーブ5" enl="Finishing Move 5" jal="フィニシングムーブ5" del="Tanzmanöver 5" frl="Mouvement final 5" />
+      <a id="386" en="Lethargic Daze 1" ja="クイックステップ1" enl="Lethargic Daze 1" jal="クイックステップ1" del="Pirouette 1" frl="Stupeur ankylosante 1" />
+      <a id="387" en="Lethargic Daze 2" ja="クイックステップ2" enl="Lethargic Daze 2" jal="クイックステップ2" del="Pirouette 2" frl="Stupeur ankylosante 2" />
+      <a id="388" en="Lethargic Daze 3" ja="クイックステップ3" enl="Lethargic Daze 3" jal="クイックステップ3" del="Pirouette 3" frl="Stupeur ankylosante 3" />
+      <a id="389" en="Lethargic Daze 4" ja="クイックステップ4" enl="Lethargic Daze 4" jal="クイックステップ4" del="Pirouette 4" frl="Stupeur ankylosante 4" />
+      <a id="390" en="Lethargic Daze 5" ja="クイックステップ5" enl="Lethargic Daze 5" jal="クイックステップ5" del="Pirouette 5" frl="Stupeur ankylosante 5" />
+      <a id="391" en="Sluggish Daze 1" ja="ボックスステップ1" enl="Sluggish Daze 1" jal="ボックスステップ1" del="Ausfallschritt 1" frl="Stupeur débilitante 1" />
+      <a id="392" en="Sluggish Daze 2" ja="ボックスステップ2" enl="Sluggish Daze 2" jal="ボックスステップ2" del="Ausfallschritt 2" frl="Stupeur débilitante 2" />
+      <a id="393" en="Sluggish Daze 3" ja="ボックスステップ3" enl="Sluggish Daze 3" jal="ボックスステップ3" del="Ausfallschritt 3" frl="Stupeur débilitante 3" />
+      <a id="394" en="Sluggish Daze 4" ja="ボックスステップ4" enl="Sluggish Daze 4" jal="ボックスステップ4" del="Ausfallschritt 4" frl="Stupeur débilitante 4" />
+      <a id="395" en="Sluggish Daze 5" ja="ボックスステップ5" enl="Sluggish Daze 5" jal="ボックスステップ5" del="Ausfallschritt 5" frl="Stupeur débilitante 5" />
+      <a id="396" en="Weakened Daze 1" ja="スタッターステップ1" enl="Weakened Daze 1" jal="スタッターステップ1" del="Schuhplattler 1" frl="Stupeur abrutissante 1" />
+      <a id="397" en="Weakened Daze 2" ja="スタッターステップ2" enl="Weakened Daze 2" jal="スタッターステップ2" del="Schuhplattler 2" frl="Stupeur abrutissante 2" />
+      <a id="398" en="Weakened Daze 3" ja="スタッターステップ3" enl="Weakened Daze 3" jal="スタッターステップ3" del="Schuhplattler 3" frl="Stupeur abrutissante 3" />
+      <a id="399" en="Weakened Daze 4" ja="スタッターステップ4" enl="Weakened Daze 4" jal="スタッターステップ4" del="Schuhplattler 4" frl="Stupeur abrutissante 4" />
+      <a id="400" en="Weakened Daze 5" ja="スタッターステップ5" enl="Weakened Daze 5" jal="スタッターステップ5" del="Schuhplattler 5" frl="Stupeur abrutissante 5" />
     </update>
   </buffs>
   <items>
@@ -668,16 +668,16 @@ IN THE SOFTWARE.
   </items>
   <elements>
     <update>
-      <o id="-1" en="Physical" ja="物的" de="Physikalisch" fr="physiue" />
-      <o id="0" en="Fire" ja="火" de="Feuer" fr="feu" />
-      <o id="1" en="Ice" ja="氷" de="Eis" fr="glace" />
-      <o id="2" en="Wind" ja="風" de="Wind" fr="vent" />
-      <o id="3" en="Earth" ja="土" de="Erde" fr="terre" />
-      <o id="4" en="Lightning" ja="雷" de="Blitz" fr="foudre" />
-      <o id="5" en="Water" ja="水" de="Wasser" fr="l'eau" />
-      <o id="6" en="Light" ja="光" de="Licht" fr="lumière" />
-      <o id="7" en="Dark" ja="闇" de="Dunkel" fr="ténèbres" />
-      <o id="15" en="None" ja="なし" de="Nichts" fr="nul" />
+      <o id="-1" en="Physical" ja="物的" />
+      <o id="0" en="Fire" ja="火" />
+      <o id="1" en="Ice" ja="氷" />
+      <o id="2" en="Wind" ja="風" />
+      <o id="3" en="Earth" ja="土" />
+      <o id="4" en="Lightning" ja="雷" />
+      <o id="5" en="Water" ja="水" />
+      <o id="6" en="Light" ja="光" />
+      <o id="7" en="Dark" ja="闇" />
+      <o id="15" en="None" ja="なし" />
     </update>
   </elements>
   <bags>
@@ -718,14 +718,14 @@ IN THE SOFTWARE.
   </check_ratings>
   <days>
     <update>
-      <o id="0" en="Firesday" ja="火" de="Feuertag" fr="Jour du feu" element="0" />
-      <o id="1" en="Earthsday" ja="土" de="Erdentag" fr="Jour de la terre" element="3" />
-      <o id="2" en="Watersday" ja="水" de="Wassertag" fr="Jour de l'eau" element="5" />
-      <o id="3" en="Windsday" ja="風" de="Windtag" fr="Jour du vent" element="2" />
-      <o id="4" en="Iceday" ja="氷" de="Eistag" fr="Jour de la glace" element="1" />
-      <o id="5" en="Lightningsday" ja="雷" de="Blitztag" fr="Jour de la foudre" element="4" />
-      <o id="6" en="Lightsday" ja="光" de="Lichttag" fr="Jour de la lumière" element="6" />
-      <o id="7" en="Darksday" ja="闇" de="Dunkeltag" fr="Jour des ténèbres" element="7" />
+      <o id="0" en="Firesday" ja="火" element="0" />
+      <o id="1" en="Earthsday" ja="土" element="3" />
+      <o id="2" en="Watersday" ja="水" element="5" />
+      <o id="3" en="Windsday" ja="風" element="2" />
+      <o id="4" en="Iceday" ja="氷" element="1" />
+      <o id="5" en="Lightningsday" ja="雷" element="4" />
+      <o id="6" en="Lightsday" ja="光" element="6" />
+      <o id="7" en="Darksday" ja="闇" element="7" />
     </update>
   </days>
   <emotes>
@@ -839,18 +839,18 @@ IN THE SOFTWARE.
   </jobs>
   <moon_phases>
     <update>
-      <o id="0" en="New Moon" ja="新月" de="Neumond" fr="Nouvelle lune" />
-      <o id="1" en="Waxing Crescent" ja="三日月" de="Zunehmender Mond" fr="Croissant ascendant" />
-      <o id="2" en="Waxing Crescent" ja="七日月" de="Zunehmender Mond" fr="Croissant ascendant" />
-      <o id="3" en="First Quarter Moon" ja="上弦の月" de="Erstquartals-Mond" fr="Premier quartier de lune" />
-      <o id="4" en="Waxing Gibbous" ja="十日夜" de="Zunehmender Mond" fr="Lune gibbeuse ascendante" />
-      <o id="5" en="Waxing Gibbous" ja="十三夜" de="Zunehmender Mond" fr="Lune gibbeuse ascendante" />
-      <o id="6" en="Full Moon" ja="満月" de="Vollmond" fr="Pleine lune" />
-      <o id="7" en="Waning Gibbous" ja="十六夜" de="Abnehmender Mond" fr="Lune gibbeuse descendante" />
-      <o id="8" en="Waning Gibbous" ja="居待月" de="Abnehmender Mond" fr="Lune gibbeuse descendante" />
-      <o id="9" en="Last Quarter Moon" ja="下弦の月" de="Endquartals-Mond" fr="Dernier quartier de lune" />
-      <o id="10" en="Waning Crescent" ja="二十日余月" de="Abnehmender Mond" fr="Croissant descendant" />
-      <o id="11" en="Waning Crescent" ja="二十六夜" de="Abnehmender Mond" fr="Croissant descendant" />
+      <o id="0" en="New Moon" ja="新月" />
+      <o id="1" en="Waxing Crescent" ja="三日月" />
+      <o id="2" en="Waxing Crescent" ja="七日月" />
+      <o id="3" en="First Quarter Moon" ja="上弦の月" />
+      <o id="4" en="Waxing Gibbous" ja="十日夜" />
+      <o id="5" en="Waxing Gibbous" ja="十三夜" />
+      <o id="6" en="Full Moon" ja="満月" />
+      <o id="7" en="Waning Gibbous" ja="十六夜" />
+      <o id="8" en="Waning Gibbous" ja="居待月" />
+      <o id="9" en="Last Quarter Moon" ja="下弦の月" />
+      <o id="10" en="Waning Crescent" ja="二十日余月" />
+      <o id="11" en="Waning Crescent" ja="二十六夜" />
     </update>
   </moon_phases>
   <servers>
@@ -974,26 +974,26 @@ IN THE SOFTWARE.
   </synth_ranks>
   <weather>
     <update>
-      <o id="0" en="Fine patches" ja="快晴" de="Zeitweise bewölkt" fr="Beau temps" element="15" intensity="0" />
-      <o id="1" en="Sunshine" ja="晴れ" de="Sonne" fr="Soleil" element="15" intensity="0" />
-      <o id="2" en="Clouds" ja="くもり" de="Wolken" fr="Nuages" element="15" intensity="0" />
-      <o id="3" en="Fog" ja="霧" de="Nebel" fr="Brume" element="15" intensity="0" />
-      <o id="4" en="Hot spells" ja="熱波" de="Hitze" fr="Brûlant" element="0" intensity="1" />
-      <o id="5" en="Heat waves" ja="灼熱波" de="Hitzewellen" fr="Ardent" element="0" intensity="2" />
-      <o id="6" en="Rain" ja="雨" de="Regen" fr="Pluie" element="5" intensity="1" />
-      <o id="7" en="Squalls" ja="スコール" de="Böen" fr="Averse" element="5" intensity="2" />
-      <o id="8" en="Dust storms" ja="砂塵" de="Staubstürme" fr="Tempêtes de poussière" element="3" intensity="1" />
-      <o id="9" en="Sand storms" ja="砂嵐" de="Sandstürme" fr="Tempêtes de sable" element="3" intensity="2" />
-      <o id="10" en="Winds" ja="風" de="Wind" fr="Vents" element="2" intensity="1" />
-      <o id="11" en="Gales" ja="暴風" de="Orkane" fr="Rafales" element="2" intensity="2" />
-      <o id="12" en="Snow" ja="雪" de="Schnee" fr="Neige" element="1" intensity="1" />
-      <o id="13" en="Blizzards" ja="吹雪" de="Eissturm" fr="Blizzards" element="1" intensity="2" />
-      <o id="14" en="Thunder" ja="雷" de="Donner" fr="Orage" element="4" intensity="1" />
-      <o id="15" en="Thunderstorms" ja="雷雨" de="Gewitter" fr="Gros orage" element="4" intensity="2" />
-      <o id="16" en="Auroras" ja="オーロラ" de="Polarlicht" fr="Aurores boréales" element="6" intensity="1" />
-      <o id="17" en="Stellar glare" ja="神光" de="Sternenflut" fr="Aurores incandescentes" element="6" intensity="2" />
-      <o id="18" en="Gloom" ja="妖霧" de="Dunkelheit" fr="Pénombre" element="7" intensity="1" />
-      <o id="19" en="Darkness" ja="闇" de="Finsternis" fr="Obscurité" element="7" intensity="2" />
+      <o id="0" en="Fine patches" ja="快晴" element="15" intensity="0" />
+      <o id="1" en="Sunshine" ja="晴れ" element="15" intensity="0" />
+      <o id="2" en="Clouds" ja="くもり" element="15" intensity="0" />
+      <o id="3" en="Fog" ja="霧" element="15" intensity="0" />
+      <o id="4" en="Hot spells" ja="熱波" element="0" intensity="1" />
+      <o id="5" en="Heat waves" ja="灼熱波" element="0" intensity="2" />
+      <o id="6" en="Rain" ja="雨" element="5" intensity="1" />
+      <o id="7" en="Squalls" ja="スコール" element="5" intensity="2" />
+      <o id="8" en="Dust storms" ja="砂塵" element="3" intensity="1" />
+      <o id="9" en="Sand storms" ja="砂嵐" element="3" intensity="2" />
+      <o id="10" en="Winds" ja="風" element="2" intensity="1" />
+      <o id="11" en="Gales" ja="暴風" element="2" intensity="2" />
+      <o id="12" en="Snow" ja="雪" element="1" intensity="1" />
+      <o id="13" en="Blizzards" ja="吹雪" element="1" intensity="2" />
+      <o id="14" en="Thunder" ja="雷" element="4" intensity="1" />
+      <o id="15" en="Thunderstorms" ja="雷雨" element="4" intensity="2" />
+      <o id="16" en="Auroras" ja="オーロラ" element="6" intensity="1" />
+      <o id="17" en="Stellar glare" ja="神光" element="6" intensity="2" />
+      <o id="18" en="Gloom" ja="妖霧" element="7" intensity="1" />
+      <o id="19" en="Darkness" ja="闇" element="7" intensity="2" />
     </update>
   </weather>
   <slots>

@@ -26,7 +26,5 @@ namespace ResourceExtractor
     {
         English = 0,
         Japanese = 1,
-        German = 2,
-        French = 3,
     }
 }

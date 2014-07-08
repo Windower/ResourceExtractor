@@ -49,14 +49,6 @@ namespace ResourceExtractor
             EnglishLogPlural = 3,
             EnglishDescription = 4,
             JapaneseDescription = 1,
-            FrenchGender = 1,
-            FrenchArticle = 2,
-            FrenchLogSingular = 3,
-            FrenchLogPlural = 4,
-            FrenchDescription = 5,
-            GermanLogSingular = 4,
-            GermanLogPlural = 7,
-            GermanDescription = 8,
         }
 
         private enum BlockType
@@ -302,37 +294,27 @@ namespace ResourceExtractor
             model.spell_recasts.AddRange(recasts.Select(kvp => kvp.Value));
         }
 
-        public static void ParseItems(Stream stream, Stream streamja, Stream streamde, Stream streamfr)
+        public static void ParseItems(Stream stream, Stream streamja)
         {
             byte[] data = new byte[0x200];
             byte[] dataja = new byte[0x200];
-            byte[] datade = new byte[0x200];
-            byte[] datafr = new byte[0x200];
             int count = (int)(stream.Length / 0xC00);
             for (int i = 0; i < count; i++)
             {
-                stream.Position = streamja.Position = streamde.Position = streamfr.Position = i * 0xC00;
+                stream.Position = streamja.Position = i * 0xC00;
 
                 stream.Read(data, 0, data.Length);
                 streamja.Read(dataja, 0, dataja.Length);
-                streamde.Read(datade, 0, datade.Length);
-                streamfr.Read(datafr, 0, datafr.Length);
 
                 dynamic item = new ModelObject();
 
                 data.RotateRight(5);
                 dataja.RotateRight(5);
-                datade.RotateRight(5);
-                datafr.RotateRight(5);
 
                 using (Stream stringstream = new MemoryStream(data))
                 using (Stream stringstreamja = new MemoryStream(dataja))
-                using (Stream stringstreamde = new MemoryStream(datade))
-                using (Stream stringstreamfr = new MemoryStream(datafr))
                 using (BinaryReader reader = new BinaryReader(stringstream, Encoding.ASCII, true))
                 using (BinaryReader readerja = new BinaryReader(stringstreamja, Encoding.ASCII, true))
-                using (BinaryReader readerde = new BinaryReader(stringstreamde, Encoding.ASCII, true))
-                using (BinaryReader readerfr = new BinaryReader(stringstreamfr, Encoding.ASCII, true))
                 {
                     item.id = reader.ReadUInt16();
                     if (item.id == 0x0000)
@@ -384,7 +366,7 @@ namespace ResourceExtractor
                         }
                     }
 
-                    stringstreamfr.Position = stringstreamde.Position = stringstreamja.Position = stringstream.Position;
+                    stringstreamja.Position = stringstream.Position;
 
                     if (item.id >= 0xF000 && item.id < 0xF200)
                     {
@@ -392,8 +374,6 @@ namespace ResourceExtractor
 
                         ParseBasicStrings(reader, item, Languages.English);
                         ParseBasicStrings(readerja, item, Languages.Japanese);
-                        ParseBasicStrings(readerde, item, Languages.German);
-                        ParseBasicStrings(readerfr, item, Languages.French);
 
                         model.monstrosity.Add(item);
                     }
@@ -401,8 +381,6 @@ namespace ResourceExtractor
                     {
                         ParseFullStrings(reader, item, Languages.English);
                         ParseFullStrings(readerja, item, Languages.Japanese);
-                        ParseFullStrings(readerde, item, Languages.German);
-                        ParseFullStrings(readerfr, item, Languages.French);
 
                         model.items.Add(item);
                     }
@@ -540,14 +518,6 @@ namespace ResourceExtractor
             case Languages.Japanese:
                 item.ja = DecodeEntry(reader, StringIndex.Name);
                 break;
-
-            case Languages.German:
-                item.de = DecodeEntry(reader, StringIndex.Name);
-                break;
-
-            case Languages.French:
-                item.fr = DecodeEntry(reader, StringIndex.Name);
-                break;
             }
         }
 
@@ -565,14 +535,6 @@ namespace ResourceExtractor
             case Languages.Japanese:
                 item.jal = DecodeEntry(reader, StringIndex.Name);
                 //item.jadesc = DecodeEntry(reader, StringIndex.JapaneseDescription);
-                break;
-
-            case Languages.German:
-                item.del = DecodeEntry(reader, StringIndex.GermanLogSingular);
-                break;
-
-            case Languages.French:
-                item.frl = DecodeEntry(reader, StringIndex.FrenchLogSingular);
                 break;
             }
         }

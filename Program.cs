@@ -74,6 +74,11 @@ namespace ResourceExtractor
                     {0, "ja"},
                 }},
             }},
+            {"auto_translates", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD971, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+            }},
             {"buffs", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD9AD, new Dictionary<int, string> {
                     {0, "en"},
@@ -298,7 +303,6 @@ namespace ResourceExtractor
                         }
                     }
                 }
-                model.actions = null;
 
                 // Add categories to key items
                 var category = "";
@@ -317,10 +321,41 @@ namespace ResourceExtractor
                 }
 
                 // Shift monster abilities up by 0x100
-                foreach (dynamic monster_ability in model.monster_abilities)
+                foreach (var monster_ability in model.monster_abilities)
                 {
                     monster_ability.id += 0x100;
                 }
+
+                // Fill in linked auto-translate names
+                foreach (var at in model.auto_translates)
+                {
+                    if (at.en.StartsWith("@"))
+                    {
+                        int id = int.Parse(at.en.Substring(2), NumberStyles.HexNumber);
+
+                        switch ((char)at.en[1])
+                        {
+                        case 'A':
+                            at.en = model.zones[id].en;
+                            at.ja = model.zones[id].ja;
+                            break;
+                        case 'C':
+                            at.en = model.spells[id].en;
+                            at.ja = model.spells[id].ja;
+                            break;
+                        //case 'J':
+                        //    at.en = model.jobs[id].en;
+                        //    at.ja = model.jobs[id].ja;
+                        //    break;
+                        case 'Y':
+                            at.en = model.actions[id].en;
+                            at.ja = model.actions[id].ja;
+                            break;
+                        }
+                    }
+                }
+
+                model.actions = null;
 
                 success = true;
             }

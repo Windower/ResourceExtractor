@@ -41,21 +41,41 @@ namespace ResourceExtractor
             {
                 while (stream.Position < stream.Length)
                 {
-                    reader.ReadBytes(0x02);
+                    reader.ReadByte();
+                    var language = reader.ReadByte();
                     int id = 0x100 * reader.ReadByte() | reader.ReadByte();
+
+                    dynamic entry = new ModelObject();
+                    entry.id = id;
+
+                    string name;
 
                     if ((id & 0xFF) == 0)
                     {
-                        reader.ReadBytes(0x48);
+                        var bracket_name_data = reader.ReadBytes(0x20);
+                        var name_data = reader.ReadBytes(0x20);
+                        var phrases = reader.ReadInt32();
+                        var block_size = reader.ReadInt32();
+
+                        var length = 0;
+                        for (; name_data[length] != 0x00; ++length);
+
+                        name = ShiftJISFF11Encoding.ShiftJISFF11.GetString(name_data, 0, length);
                     }
                     else
                     {
                         var length = reader.ReadByte();
-                        objects.Add(new ModelObject {
-                            {"id", id},
-                            {key, ShiftJISFF11Encoding.ShiftJISFF11.GetString(reader.ReadBytes(length), 0, length - 1)},
-                        });
+                        name = ShiftJISFF11Encoding.ShiftJISFF11.GetString(reader.ReadBytes(length), 0, length - 1);
+
+                        if (language == 1)
+                        {
+                            reader.ReadBytes(reader.ReadByte());
+                        }
                     }
+
+                    entry[key] = name;
+
+                    objects.Add(entry);
                 }
             }
 

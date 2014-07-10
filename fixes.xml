@@ -846,6 +846,7 @@ IN THE SOFTWARE.
   </encumbrance>
   <jobs>
     <update>
+      <o id="0" jas="" />
       <o id="1" jas="戦" />
       <o id="2" jas="モ" />
       <o id="3" jas="白" />
@@ -868,7 +869,7 @@ IN THE SOFTWARE.
       <o id="20" jas="学" />
       <o id="21" jas="風" />
       <o id="22" jas="剣" />
-      <o id="23" jas="" />
+      <o id="23" en="Monipulator" ens="MON" jas="" />
     </update>
     <remove>
       <o id="24" />

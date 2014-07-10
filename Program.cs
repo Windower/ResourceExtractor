@@ -283,7 +283,6 @@ namespace ResourceExtractor
                     else if (action.id >= 0x0700)
                     {
                         action.id -= 0x0700;
-                        action.id += 0x0100;
 
                         action.mp_cost = null;
                         action.recast_id = null;
@@ -293,9 +292,9 @@ namespace ResourceExtractor
                         action.en = null;
                         action.ja = null;
 
-                        if (action.id - 0x100 < model.monster_abilities.Count)
+                        if (action.id < model.monster_abilities.Count)
                         {
-                            model.monster_abilities[action.id - 0x100].Merge(action);
+                            model.monster_abilities[action.id].Merge(action);
                         }
                     }
                 }
@@ -315,6 +314,12 @@ namespace ResourceExtractor
                     {
                         ki.category = category;
                     }
+                }
+
+                // Shift monster abilities up by 0x100
+                foreach (dynamic monster_ability in model.monster_abilities)
+                {
+                    monster_ability.id += 0x100;
                 }
 
                 success = true;

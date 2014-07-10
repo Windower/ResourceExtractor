@@ -5,7 +5,7 @@ import errno
 import re
 
 parser = argparse.ArgumentParser(description='Tool to search FFXI DAT files for certain strings')
-parser.add_argument('match', nargs='?', default=None)
+parser.add_argument('matches', nargs='*', default=[])
 parser.add_argument('-a', '--all', action='store_const', const=True, default=False)
 parser.add_argument('-d', '--decode', action='store_const', const=False, default=True)
 parser.add_argument('-c', '--console', action='store_const', const=True, default=False)
@@ -13,7 +13,7 @@ parser.add_argument('-v', '--verbose', action='store_const', const=True, default
 
 args = parser.parse_args()
 
-search_term = re.sub('\\\\x(\d\d)', lambda match: chr(int(match.group(1), 16)), args.match) if args.match else None
+search_terms = [re.sub('\\\\x(\d\d)', lambda match: chr(int(match.group(1), 16)), match) for match in args.matches] if args.matches else []
 
 root = os.path.dirname(os.path.realpath(__file__)) + '/'
 
@@ -32,10 +32,10 @@ def getdat(path):
         with open('FTABLE.DAT', 'rb') as ftable:
             b = ftable.read(2)
             while b:
-                lut[b[0] | (b[1] << 8)] = (ftable.tell() - 2) / 2
+                lut[b[0] | (b[1] << 8)] = (ftable.tell() - 2) >> 1
                 b = ftable.read(2)
 
-    return lut[id]
+    return lut[id] if id in lut else 0
 
 def getpath(dat):
     with open('FTABLE.DAT', 'rb') as ftable:
@@ -62,7 +62,7 @@ def getenc(f):
     f.seek(0x08)
     return 0x00
 
-def getmatch(f):
+def getmatches(f):
     return match_arrays[getenc(f)]
 
 matches = {}
@@ -88,9 +88,9 @@ def decode(index_or_path):
 
             out.write(bytearray(c ^ enc for c in f.read()))
 
-        if search_term:
+        if search_terms:
             collection = {}
-            collection[search_term] = set(['/'.join(outpath.split('/')[-3:])])
+            collection[', '.join(search_terms)] = set(['/'.join(outpath.split('/')[-3:])])
 
             decfile = root + 'DEC/decoded.txt'
             if os.path.exists(decfile):
@@ -114,14 +114,14 @@ def decode(index_or_path):
                         f.write('    ROM/%u/%u.DAT\r\n' % (ids[0], ids[1]))
                     f.write('\r\n')
 
-if search_term:
-    match_name = bytearray(search_term.encode('shift-jis'))
-    match_arrays[0x00] = match_name
-    match_arrays[0xff] = bytearray(c ^ 0xFF for c in match_name)
-    match_arrays[0x80] = bytearray(c ^ 0x80 for c in match_name)
+if search_terms:
+    match_names = [bytearray(search_term.encode('shift-jis')) for search_term in search_terms]
+    match_arrays[0x00] = [match_name for match_name in match_names]
+    match_arrays[0xff] = [bytearray(c ^ 0xFF for c in match_name) for match_name in match_names]
+    match_arrays[0x80] = [bytearray(c ^ 0x80 for c in match_name) for match_name in match_names]
 
     print()
-    print('Searching for "%s"' % search_term)
+    print('Searching for %d term%s: %s' % (len(search_terms), 's' if len(search_terms) > 1 else '', ', '.join(search_terms)))
     print('----------------')
 
     for name in (x for x in os.listdir() if x.startswith('ROM') or x == '0'):
@@ -139,7 +139,9 @@ if search_term:
             for filename in (f for f in files if f.endswith('.DAT')):
                 lookup = subdir + '/' + filename
                 with open(lookup, 'rb') as f:
-                    if getmatch(f) in f.read():
+                    needles = getmatches(f)
+                    haystack = f.read()
+                    if all(needle in haystack for needle in needles):
                         print('    Found ID 0x%.4X: %s' % (getdat(lookup), lookup))
                         matches[len(matches) + 1] = lookup
                         if args.decode:

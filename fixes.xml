@@ -661,26 +661,26 @@ IN THE SOFTWARE.
       <b id="568" duration="30" /> <!-- Foil -->
 
       <!-- DNC moves -->
-      <a id="381" en="Finishing Move 1" ja="フィニシングムーブ1" enl="Finishing Move 1" jal="フィニシングムーブ1" del="Tanzmanöver 1" frl="Mouvement final 1" />
-      <a id="382" en="Finishing Move 2" ja="フィニシングムーブ2" enl="Finishing Move 2" jal="フィニシングムーブ2" del="Tanzmanöver 2" frl="Mouvement final 2" />
-      <a id="383" en="Finishing Move 3" ja="フィニシングムーブ3" enl="Finishing Move 3" jal="フィニシングムーブ3" del="Tanzmanöver 3" frl="Mouvement final 3" />
-      <a id="384" en="Finishing Move 4" ja="フィニシングムーブ4" enl="Finishing Move 4" jal="フィニシングムーブ4" del="Tanzmanöver 4" frl="Mouvement final 4" />
-      <a id="385" en="Finishing Move 5" ja="フィニシングムーブ5" enl="Finishing Move 5" jal="フィニシングムーブ5" del="Tanzmanöver 5" frl="Mouvement final 5" />
-      <a id="386" en="Lethargic Daze 1" ja="クイックステップ1" enl="Lethargic Daze 1" jal="クイックステップ1" del="Pirouette 1" frl="Stupeur ankylosante 1" />
-      <a id="387" en="Lethargic Daze 2" ja="クイックステップ2" enl="Lethargic Daze 2" jal="クイックステップ2" del="Pirouette 2" frl="Stupeur ankylosante 2" />
-      <a id="388" en="Lethargic Daze 3" ja="クイックステップ3" enl="Lethargic Daze 3" jal="クイックステップ3" del="Pirouette 3" frl="Stupeur ankylosante 3" />
-      <a id="389" en="Lethargic Daze 4" ja="クイックステップ4" enl="Lethargic Daze 4" jal="クイックステップ4" del="Pirouette 4" frl="Stupeur ankylosante 4" />
-      <a id="390" en="Lethargic Daze 5" ja="クイックステップ5" enl="Lethargic Daze 5" jal="クイックステップ5" del="Pirouette 5" frl="Stupeur ankylosante 5" />
-      <a id="391" en="Sluggish Daze 1" ja="ボックスステップ1" enl="Sluggish Daze 1" jal="ボックスステップ1" del="Ausfallschritt 1" frl="Stupeur débilitante 1" />
-      <a id="392" en="Sluggish Daze 2" ja="ボックスステップ2" enl="Sluggish Daze 2" jal="ボックスステップ2" del="Ausfallschritt 2" frl="Stupeur débilitante 2" />
-      <a id="393" en="Sluggish Daze 3" ja="ボックスステップ3" enl="Sluggish Daze 3" jal="ボックスステップ3" del="Ausfallschritt 3" frl="Stupeur débilitante 3" />
-      <a id="394" en="Sluggish Daze 4" ja="ボックスステップ4" enl="Sluggish Daze 4" jal="ボックスステップ4" del="Ausfallschritt 4" frl="Stupeur débilitante 4" />
-      <a id="395" en="Sluggish Daze 5" ja="ボックスステップ5" enl="Sluggish Daze 5" jal="ボックスステップ5" del="Ausfallschritt 5" frl="Stupeur débilitante 5" />
-      <a id="396" en="Weakened Daze 1" ja="スタッターステップ1" enl="Weakened Daze 1" jal="スタッターステップ1" del="Schuhplattler 1" frl="Stupeur abrutissante 1" />
-      <a id="397" en="Weakened Daze 2" ja="スタッターステップ2" enl="Weakened Daze 2" jal="スタッターステップ2" del="Schuhplattler 2" frl="Stupeur abrutissante 2" />
-      <a id="398" en="Weakened Daze 3" ja="スタッターステップ3" enl="Weakened Daze 3" jal="スタッターステップ3" del="Schuhplattler 3" frl="Stupeur abrutissante 3" />
-      <a id="399" en="Weakened Daze 4" ja="スタッターステップ4" enl="Weakened Daze 4" jal="スタッターステップ4" del="Schuhplattler 4" frl="Stupeur abrutissante 4" />
-      <a id="400" en="Weakened Daze 5" ja="スタッターステップ5" enl="Weakened Daze 5" jal="スタッターステップ5" del="Schuhplattler 5" frl="Stupeur abrutissante 5" />
+      <a id="381" en="Finishing Move 1" ja="フィニシングムーブ1" enl="Finishing Move 1" jal="フィニシングムーブ1" />
+      <a id="382" en="Finishing Move 2" ja="フィニシングムーブ2" enl="Finishing Move 2" jal="フィニシングムーブ2" />
+      <a id="383" en="Finishing Move 3" ja="フィニシングムーブ3" enl="Finishing Move 3" jal="フィニシングムーブ3" />
+      <a id="384" en="Finishing Move 4" ja="フィニシングムーブ4" enl="Finishing Move 4" jal="フィニシングムーブ4" />
+      <a id="385" en="Finishing Move 5" ja="フィニシングムーブ5" enl="Finishing Move 5" jal="フィニシングムーブ5" />
+      <a id="386" en="Lethargic Daze 1" ja="クイックステップ1" enl="Lethargic Daze 1" jal="クイックステップ1" />
+      <a id="387" en="Lethargic Daze 2" ja="クイックステップ2" enl="Lethargic Daze 2" jal="クイックステップ2" />
+      <a id="388" en="Lethargic Daze 3" ja="クイックステップ3" enl="Lethargic Daze 3" jal="クイックステップ3" />
+      <a id="389" en="Lethargic Daze 4" ja="クイックステップ4" enl="Lethargic Daze 4" jal="クイックステップ4" />
+      <a id="390" en="Lethargic Daze 5" ja="クイックステップ5" enl="Lethargic Daze 5" jal="クイックステップ5" />
+      <a id="391" en="Sluggish Daze 1" ja="ボックスステップ1" enl="Sluggish Daze 1" jal="ボックスステップ1" />
+      <a id="392" en="Sluggish Daze 2" ja="ボックスステップ2" enl="Sluggish Daze 2" jal="ボックスステップ2" />
+      <a id="393" en="Sluggish Daze 3" ja="ボックスステップ3" enl="Sluggish Daze 3" jal="ボックスステップ3" />
+      <a id="394" en="Sluggish Daze 4" ja="ボックスステップ4" enl="Sluggish Daze 4" jal="ボックスステップ4" />
+      <a id="395" en="Sluggish Daze 5" ja="ボックスステップ5" enl="Sluggish Daze 5" jal="ボックスステップ5" />
+      <a id="396" en="Weakened Daze 1" ja="スタッターステップ1" enl="Weakened Daze 1" jal="スタッターステップ1" />
+      <a id="397" en="Weakened Daze 2" ja="スタッターステップ2" enl="Weakened Daze 2" jal="スタッターステップ2" />
+      <a id="398" en="Weakened Daze 3" ja="スタッターステップ3" enl="Weakened Daze 3" jal="スタッターステップ3" />
+      <a id="399" en="Weakened Daze 4" ja="スタッターステップ4" enl="Weakened Daze 4" jal="スタッターステップ4" />
+      <a id="400" en="Weakened Daze 5" ja="スタッターステップ5" enl="Weakened Daze 5" jal="スタッターステップ5" />
     </update>
   </buffs>
   <items>

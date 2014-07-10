@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
+    <Compile Include="ATParser.cs" />
     <Compile Include="DatParser.cs" />
     <Compile Include="DialogParser.cs" />
     <Compile Include="DMsgParser.cs" />

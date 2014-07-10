@@ -44,6 +44,7 @@ namespace ResourceExtractor
             "items",
             "job_abilities",
             "job_traits",
+            "jobs",
             "monstrosity",
             "spells",
             "spell_recasts",
@@ -85,6 +86,17 @@ namespace ResourceExtractor
                     {1, "enl"},
                 }},
                 {0xD935, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+            }},
+            {"jobs", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD8AB, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD8AC, new Dictionary<int, string> {
+                    {0, "ens"},
+                }},
+                {0xD8F0, new Dictionary<int, string> {
                     {0, "ja"},
                 }},
             }},
@@ -343,10 +355,10 @@ namespace ResourceExtractor
                             at.en = model.spells[id].en;
                             at.ja = model.spells[id].ja;
                             break;
-                        //case 'J':
-                        //    at.en = model.jobs[id].en;
-                        //    at.ja = model.jobs[id].ja;
-                        //    break;
+                        case 'J':
+                            at.en = model.jobs[id].en;
+                            at.ja = model.jobs[id].ja;
+                            break;
                         case 'Y':
                             at.en = model.actions[id].en;
                             at.ja = model.actions[id].ja;

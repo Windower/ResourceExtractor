@@ -79,6 +79,9 @@ namespace ResourceExtractor
                 {0xD971, new Dictionary<int, string> {
                     {0, "en"},
                 }},
+                {0xD8F9, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
             }},
             {"buffs", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD9AD, new Dictionary<int, string> {
@@ -330,6 +333,22 @@ namespace ResourceExtractor
                     {
                         ki.category = category;
                     }
+                }
+
+                // Move item descriptions into separate table
+                //TODO: Remove when shared resources are implemented
+                model.item_descriptions = new List<dynamic> { };
+                foreach (var item in model.items)
+                {
+                    dynamic item_description = new ModelObject();
+                    item_description.id = item.id;
+                    item_description.en = item.endesc;
+                    item_description.ja = item.jadesc;
+
+                    item.endesc = null;
+                    item.jadesc = null;
+
+                    model.item_descriptions.Add(item_description);
                 }
 
                 // Shift monster abilities up by 0x100

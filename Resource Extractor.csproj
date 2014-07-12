@@ -104,9 +104,7 @@
     <Compile Include="Formats\Items\BasicItem.cs" />
     <Compile Include="Formats\Items\EnglishStrings.cs" />
     <Compile Include="Formats\Items\EquippableItem.cs" />
-    <Compile Include="Formats\Items\FrenchStrings.cs" />
     <Compile Include="Formats\Items\GeneralItem.cs" />
-    <Compile Include="Formats\Items\GermanStrings.cs" />
     <Compile Include="Formats\Items\Item.cs" />
     <Compile Include="Formats\Items\JapaneseStrings.cs" />
     <Compile Include="Formats\Items\MazeItem.cs" />

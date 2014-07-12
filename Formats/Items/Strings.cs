@@ -52,8 +52,6 @@ namespace ResourceExtractor.Formats.Items
             {
                 case 2: return new JapaneseStrings(data, offset);
                 case 5: return new EnglishStrings(data, offset);
-                case 6: return new FrenchStrings(data, offset);
-                case 9: return new GermanStrings(data, offset);
             }
 
             return new UnknownStrings(data, offset);

@@ -592,7 +592,20 @@ IN THE SOFTWARE.
       <b id="75" duration="180" /> <!-- Arcane Circle -->
       <b id="78" duration="60" /> <!-- Divine Seal -->
       <b id="79" duration="60" /> <!-- Elemental Seal -->
+      <b id="80" duration="300" /> <!-- STR Boost -->
+      <b id="81" duration="300" /> <!-- DEX Boost -->
+      <b id="82" duration="300" /> <!-- VIT Boost -->
+      <b id="83" duration="300" /> <!-- AGI Boost -->
+      <b id="84" duration="300" /> <!-- INT Boost -->
+      <b id="85" duration="300" /> <!-- MND Boost -->
+      <b id="86" duration="300" /> <!-- CHR Boost -->
       <b id="87" duration="60" /> <!-- Trick Attack -->
+      <b id="94" duration="180" /> <!-- Enfire -->
+      <b id="95" duration="180" /> <!-- Enblizzard -->
+      <b id="96" duration="180" /> <!-- Enaero -->
+      <b id="97" duration="180" /> <!-- Enstone -->
+      <b id="98" duration="180" /> <!-- Enthunder -->
+      <b id="99" duration="180" /> <!-- Enwater -->
       <b id="100" duration="150" /> <!-- Barfire -->
       <b id="101" duration="150" /> <!-- Barblizzard -->
       <b id="102" duration="150" /> <!-- Baraero -->
@@ -618,7 +631,53 @@ IN THE SOFTWARE.
       <b id="169" duration="60" /> <!-- Potency -->
       <b id="170" duration="180" /> <!-- Regain -->
       <b id="171" duration="60" /> <!-- Pax -->
+      <b id="173" duration="60" /> <!-- Dread Spikes -->
+      <b id="178" duration="180" /> <!-- Firestorm -->
+      <b id="179" duration="180" /> <!-- Hailstorm -->
+      <b id="180" duration="180" /> <!-- Windstorm -->
+      <b id="181" duration="180" /> <!-- Sandstorm -->
+      <b id="182" duration="180" /> <!-- Thunderstorm -->
+      <b id="183" duration="180" /> <!-- Rainstorm -->
+      <b id="184" duration="180" /> <!-- Aurorastorm -->
+      <b id="185" duration="180" /> <!-- Voidstorm -->
+      <b id="195" duration="120" /> <!-- Paeon -->
+      <b id="196" duration="120" /> <!-- Ballad -->
+      <b id="197" duration="120" /> <!-- Minne -->
+      <b id="198" duration="120" /> <!-- Minuet -->
+      <b id="199" duration="120" /> <!-- Madrigal -->
+      <b id="200" duration="120" /> <!-- Prelude -->
+      <b id="201" duration="120" /> <!-- Mambo -->
+      <b id="202" duration="120" /> <!-- Aubade -->
+      <b id="203" duration="120" /> <!-- Pastoral -->
+      <b id="204" duration="120" /> <!-- Hum -->
+      <b id="205" duration="120" /> <!-- Fantasia -->
+      <b id="206" duration="120" /> <!-- Operetta -->
+      <b id="207" duration="120" /> <!-- Capriccio -->
+      <b id="208" duration="120" /> <!-- Serenade -->
+      <b id="209" duration="120" /> <!-- Round -->
+      <b id="210" duration="120" /> <!-- Gavotte -->
+      <b id="211" duration="120" /> <!-- Fugue -->
+      <b id="212" duration="120" /> <!-- Rhapsody -->
+      <b id="213" duration="120" /> <!-- Aria -->
+      <b id="214" duration="120" /> <!-- March -->
+      <b id="215" duration="120" /> <!-- Etude -->
+      <b id="216" duration="120" /> <!-- Carol -->
+      <b id="217" duration="120" /> <!-- Threnody -->
+      <b id="218" duration="120" /> <!-- Hymnus -->
+      <b id="219" duration="120" /> <!-- Mazurka -->
+      <b id="220" duration="120" /> <!-- Sirvente -->
+      <b id="221" duration="120" /> <!-- Dirge -->
+      <b id="222" duration="120" /> <!-- Scherzo -->
+      <b id="223" duration="120" /> <!-- Nocturne -->
+      <b id="228" duration="90" /> <!-- Embrava -->
       <b id="252" duration="1800" /> <!-- Chocobo -->
+      <b id="275" duration="180" /> <!-- Auspice -->
+      <b id="277" duration="180" /> <!-- Enfire II -->
+      <b id="278" duration="180" /> <!-- Enblizzard II -->
+      <b id="279" duration="180" /> <!-- Enaero II -->
+      <b id="280" duration="180" /> <!-- Enstone II -->
+      <b id="281" duration="180" /> <!-- Enthunder II -->
+      <b id="282" duration="180" /> <!-- Enwater II -->
       <b id="341" duration="180" /> <!-- Formless Strikes -->
       <b id="342" duration="60" /> <!-- Assassin's Charge -->
       <b id="343" duration="60" /> <!-- Feint -->
@@ -633,6 +692,9 @@ IN THE SOFTWARE.
       <b id="368" duration="90" /> <!-- Drain Samba -->
       <b id="369" duration="90" /> <!-- Aspir Samba -->
       <b id="370" duration="90" /> <!-- Haste Samba -->
+      <b id="403" duration="60" /> <!-- Reprisal -->
+      <b id="407" duration="180" /> <!-- Klimaform -->
+      <b id="568" duration="30" /> <!-- Foil -->
 
       <!-- DNC moves -->
       <b id="381" enLog="Finishing Move 1" jp="フィニシングムーブ1" de="Tanzmanöver 1" fr="Mouvement final 1">Finishing Move 1</b>

@@ -364,24 +364,43 @@ namespace ResourceExtractor
                     {
                         int id = int.Parse(at.en.Substring(2), NumberStyles.HexNumber);
 
+                        string key;
                         switch ((char)at.en[1])
                         {
                         case 'A':
-                            at.en = model.zones[id].en;
-                            at.ja = model.zones[id].ja;
+                            key = "zones";
                             break;
                         case 'C':
-                            at.en = model.spells[id].en;
-                            at.ja = model.spells[id].ja;
+                            key = "spells";
                             break;
                         case 'J':
-                            at.en = model.jobs[id].en;
-                            at.ja = model.jobs[id].ja;
+                            key = "jobs";
                             break;
                         case 'Y':
-                            at.en = model.actions[id].en;
-                            at.ja = model.actions[id].ja;
+                            key = "actions";
                             break;
+                        default:
+                            throw new InvalidDataException(string.Format("Unknown auto-translate code: {0}", at.en));
+                        }
+                        
+                        dynamic item = null;
+                        foreach (var i in model[key])
+                        {
+                            if (i.id == id)
+                            {
+                                item = i;
+                                break;
+                            }
+                        }
+
+                        if (item != null)
+                        {
+                            at.en = item.en;
+                            at.ja = item.ja;
+                        }
+                        else
+                        {
+                            //throw new InvalidDataException(string.Format("Unknown auto-translate ID for {0}: {1}", key, id));
                         }
                     }
                 }

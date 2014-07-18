@@ -65,6 +65,224 @@ IN THE SOFTWARE.
       <s id="418" alias="ichi|utsu1" /> <!-- Utsusemi: Ichi -->
       <s id="419" alias="ni|utsu2" /> <!-- Utsusemi: Ni -->
 
+      <s id="43" duration="1800" /> <!-- Protect -->
+      <s id="44" duration="1800" /> <!-- Protect II -->
+      <s id="45" duration="1800" /> <!-- Protect III -->
+      <s id="46" duration="1800" /> <!-- Protect IV -->
+      <s id="47" duration="1800" /> <!-- Protect V -->
+      <s id="48" duration="1800" /> <!-- Shell -->
+      <s id="49" duration="1800" /> <!-- Shell II -->
+      <s id="50" duration="1800" /> <!-- Shell III -->
+      <s id="51" duration="1800" /> <!-- Shell IV -->
+      <s id="52" duration="1800" /> <!-- Shell V -->
+      <s id="53" duration="300" /> <!-- Blink -->
+      <s id="54" duration="300" /> <!-- Stoneskin -->
+      <s id="55" duration="600" /> <!-- Aquaveil -->
+      <s id="57" duration="180" /> <!-- Haste -->
+      <s id="66" duration="600" /> <!-- Barfire -->
+      <s id="67" duration="600" /> <!-- Barblizzard -->
+      <s id="68" duration="600" /> <!-- Baraero -->
+      <s id="69" duration="600" /> <!-- Barstone -->
+      <s id="70" duration="600" /> <!-- Barthunder -->
+      <s id="71" duration="600" /> <!-- Barwater -->
+      <s id="72" duration="600" /> <!-- Barsleep -->
+      <s id="73" duration="600" /> <!-- Barpoison -->
+      <s id="74" duration="600" /> <!-- Barparalyze -->
+      <s id="75" duration="600" /> <!-- Barblind -->
+      <s id="76" duration="600" /> <!-- Barsilence -->
+      <s id="77" duration="600" /> <!-- Barpetrify -->
+      <s id="78" duration="600" /> <!-- Barvirus -->
+      <s id="96" duration="180" /> <!-- Auspice -->
+      <s id="97" duration="60" /> <!-- Reprisal -->
+      <s id="99" duration="180" /> <!-- Sandstorm -->
+      <s id="100" duration="180" /> <!-- Enfire -->
+      <s id="101" duration="180" /> <!-- Enblizzard -->
+      <s id="102" duration="180" /> <!-- Enaero -->
+      <s id="103" duration="180" /> <!-- Enstone -->
+      <s id="104" duration="180" /> <!-- Enthunder -->
+      <s id="105" duration="180" /> <!-- Enwater -->
+      <s id="106" duration="180" /> <!-- Phalanx -->
+      <s id="107" duration="120" /> <!-- Phalanx II -->
+      <s id="108" duration="75" /> <!-- Regen -->
+      <s id="109" duration="150" /> <!-- Refresh -->
+      <s id="110" duration="60" /> <!-- Regen II -->
+      <s id="111" duration="60" /> <!-- Regen III -->
+      <s id="113" duration="180" /> <!-- Rainstorm -->
+      <s id="114" duration="180" /> <!-- Windstorm -->
+      <s id="115" duration="180" /> <!-- Firestorm -->
+      <s id="116" duration="180" /> <!-- Hailstorm -->
+      <s id="117" duration="180" /> <!-- Thunderstorm -->
+      <s id="118" duration="180" /> <!-- Voidstorm -->
+      <s id="119" duration="180" /> <!-- Aurorastorm -->
+      <s id="135" duration="3600" /> <!-- Reraise -->
+      <s id="249" duration="180" /> <!-- Blaze Spikes -->
+      <s id="250" duration="180" /> <!-- Ice Spikes -->
+      <s id="251" duration="180" /> <!-- Shock Spikes -->
+      <s id="277" duration="60" /> <!-- Dread Spikes -->
+      <s id="287" duration="180" /> <!-- Klimaform -->
+      <s id="308" duration="60" /> <!-- Animus Augeo -->
+      <s id="309" duration="60" /> <!-- Animus Minuo -->
+      <s id="312" duration="180" /> <!-- Enfire II -->
+      <s id="313" duration="180" /> <!-- Enblizzard II -->
+      <s id="314" duration="180" /> <!-- Enaero II -->
+      <s id="315" duration="180" /> <!-- Enstone II -->
+      <s id="316" duration="180" /> <!-- Enthunder II -->
+      <s id="317" duration="180" /> <!-- Enwater II -->
+      <s id="318" duration="180" /> <!-- Monomi: Ichi -->
+      <s id="353" duration="180" /> <!-- Tonko: Ichi -->
+      <s id="354" duration="300" /> <!-- Tonko: Ni -->
+      <s id="338" duration="600" /> <!-- Utsusemi: Ichi -->
+      <s id="339" duration="600" /> <!-- Utsusemi: Ni -->
+      <s id="378" duration="120" /> <!-- Army's Paeon -->
+      <s id="379" duration="120" /> <!-- Army's Paeon II -->
+      <s id="380" duration="120" /> <!-- Army's Paeon III -->
+      <s id="381" duration="120" /> <!-- Army's Paeon IV -->
+      <s id="382" duration="120" /> <!-- Army's Paeon V -->
+      <s id="383" duration="120" /> <!-- Army's Paeon VI -->
+      <s id="384" duration="120" /> <!-- Army's Paeon VII -->
+      <s id="385" duration="120" /> <!-- Army's Paeon VIII -->
+      <s id="386" duration="120" /> <!-- Mage's Ballad -->
+      <s id="387" duration="120" /> <!-- Mage's Ballad II -->
+      <s id="388" duration="120" /> <!-- Mage's Ballad III -->
+      <s id="389" duration="120" /> <!-- Knight's Minne -->
+      <s id="390" duration="120" /> <!-- Knight's Minne II -->
+      <s id="391" duration="120" /> <!-- Knight's Minne III -->
+      <s id="392" duration="120" /> <!-- Knight's Minne IV -->
+      <s id="393" duration="120" /> <!-- Knight's Minne V -->
+      <s id="394" duration="120" /> <!-- Valor Minuet -->
+      <s id="395" duration="120" /> <!-- Valor Minuet II -->
+      <s id="396" duration="120" /> <!-- Valor Minuet III -->
+      <s id="397" duration="120" /> <!-- Valor Minuet IV -->
+      <s id="398" duration="120" /> <!-- Valor Minuet V -->
+      <s id="399" duration="120" /> <!-- Sword Madrigal -->
+      <s id="400" duration="120" /> <!-- Blade Madrigal -->
+      <s id="401" duration="120" /> <!-- Hunter's Prelude -->
+      <s id="402" duration="120" /> <!-- Archer's Prelude -->
+      <s id="403" duration="120" /> <!-- Sheepfoe Mambo -->
+      <s id="404" duration="120" /> <!-- Dragonfoe Mambo -->
+      <s id="405" duration="120" /> <!-- Fowl Aubade -->
+      <s id="406" duration="120" /> <!-- Herb Pastoral -->
+      <s id="407" duration="120" /> <!-- Chocobo Hum -->
+      <s id="408" duration="120" /> <!-- Shining Fantasia -->
+      <s id="409" duration="120" /> <!-- Scop's Operetta -->
+      <s id="410" duration="120" /> <!-- Puppet's Operetta -->
+      <s id="411" duration="120" /> <!-- Jester's Operetta -->
+      <s id="412" duration="120" /> <!-- Gold Capriccio -->
+      <s id="413" duration="120" /> <!-- Devotee Serenade -->
+      <s id="414" duration="120" /> <!-- Warding Round -->
+      <s id="415" duration="120" /> <!-- Goblin Gavotte -->
+      <s id="416" duration="120" /> <!-- Cactuar Fugue -->
+      <s id="417" duration="120" /> <!-- Moogle Rhapsody -->
+      <s id="418" duration="120" /> <!-- Protected Aria -->
+      <s id="419" duration="120" /> <!-- Advancing March -->
+      <s id="420" duration="120" /> <!-- Victory March -->
+      <s id="421" duration="120" /> <!-- Battlefield Elegy -->
+      <s id="422" duration="120" /> <!-- Carnage Elegy -->
+      <s id="423" duration="120" /> <!-- Massacre Elegy -->
+      <s id="424" duration="120" /> <!-- Sinewy Etude -->
+      <s id="425" duration="120" /> <!-- Dextrous Etude -->
+      <s id="426" duration="120" /> <!-- Vivacious Etude -->
+      <s id="427" duration="120" /> <!-- Quick Etude -->
+      <s id="428" duration="120" /> <!-- Learned Etude -->
+      <s id="429" duration="120" /> <!-- Spirited Etude -->
+      <s id="430" duration="120" /> <!-- Enchanting Etude -->
+      <s id="431" duration="120" /> <!-- Herculean Etude -->
+      <s id="432" duration="120" /> <!-- Uncanny Etude -->
+      <s id="433" duration="120" /> <!-- Vital Etude -->
+      <s id="434" duration="120" /> <!-- Swift Etude -->
+      <s id="435" duration="120" /> <!-- Sage Etude -->
+      <s id="436" duration="120" /> <!-- Logical Etude -->
+      <s id="437" duration="120" /> <!-- Bewitching Etude -->
+      <s id="438" duration="120" /> <!-- Fire Carol -->
+      <s id="439" duration="120" /> <!-- Ice Carol -->
+      <s id="440" duration="120" /> <!-- Wind Carol -->
+      <s id="441" duration="120" /> <!-- Earth Carol -->
+      <s id="442" duration="120" /> <!-- Lightning Carol -->
+      <s id="443" duration="120" /> <!-- Water Carol -->
+      <s id="444" duration="120" /> <!-- Light Carol -->
+      <s id="445" duration="120" /> <!-- Dark Carol -->
+      <s id="446" duration="120" /> <!-- Fire Carol II -->
+      <s id="447" duration="120" /> <!-- Ice Carol II -->
+      <s id="448" duration="120" /> <!-- Wind Carol II -->
+      <s id="449" duration="120" /> <!-- Earth Carol II -->
+      <s id="450" duration="120" /> <!-- Lightning Carol II -->
+      <s id="451" duration="120" /> <!-- Water Carol II -->
+      <s id="452" duration="120" /> <!-- Light Carol II -->
+      <s id="453" duration="120" /> <!-- Dark Carol II -->
+      <s id="454" duration="120" /> <!-- Fire Threnody -->
+      <s id="455" duration="120" /> <!-- Ice Threnody -->
+      <s id="456" duration="120" /> <!-- Wind Threnody -->
+      <s id="457" duration="120" /> <!-- Earth Threnody -->
+      <s id="458" duration="120" /> <!-- Ltng. Threnody -->
+      <s id="459" duration="120" /> <!-- Water Threnody -->
+      <s id="460" duration="120" /> <!-- Light Threnody -->
+      <s id="461" duration="120" /> <!-- Dark Threnody -->
+      <s id="462" duration="120" /> <!-- Magic Finale -->
+      <s id="463" duration="120" /> <!-- Foe Lullaby -->
+      <s id="464" duration="120" /> <!-- Goddess's Hymnus -->
+      <s id="465" duration="120" /> <!-- Chocobo Mazurka -->
+      <s id="466" duration="120" /> <!-- Maiden's Virelai -->
+      <s id="467" duration="120" /> <!-- Raptor Mazurka -->
+      <s id="468" duration="120" /> <!-- Foe Sirvente -->
+      <s id="469" duration="120" /> <!-- Adventurer's Dirge -->
+      <s id="470" duration="120" /> <!-- Sentinel's Scherzo -->
+      <s id="471" duration="120" /> <!-- Foe Lullaby II -->
+      <s id="472" duration="120" /> <!-- Pining Nocturne -->
+      <s id="473" duration="150" /> <!-- Refresh II -->
+      <s id="476" duration="300" /> <!-- Crusade -->
+      <s id="477" duration="60" /> <!-- Regen IV -->
+      <s id="478" duration="90" /> <!-- Embrava -->
+      <s id="479" duration="300" /> <!-- Boost-STR -->
+      <s id="480" duration="300" /> <!-- Boost-DEX -->
+      <s id="481" duration="300" /> <!-- Boost-VIT -->
+      <s id="482" duration="300" /> <!-- Boost-AGI -->
+      <s id="483" duration="300" /> <!-- Boost-INT -->
+      <s id="484" duration="300" /> <!-- Boost-MND -->
+      <s id="485" duration="300" /> <!-- Boost-CHR -->
+      <s id="486" duration="300" /> <!-- Gain-STR -->
+      <s id="487" duration="300" /> <!-- Gain-DEX -->
+      <s id="488" duration="300" /> <!-- Gain-VIT -->
+      <s id="489" duration="300" /> <!-- Gain-AGI -->
+      <s id="490" duration="300" /> <!-- Gain-INT -->
+      <s id="491" duration="300" /> <!-- Gain-MND -->
+      <s id="492" duration="300" /> <!-- Gain-CHR -->
+      <s id="493" duration="180" /> <!-- Temper -->
+      <s id="495" duration="180" /> <!-- Adloquium -->
+      <s id="504" duration="60" /> <!-- Regen V -->
+      <s id="505" duration="300" /> <!-- Gekka: Ichi -->
+      <s id="506" duration="180" /> <!-- Yain: Ichi -->
+      <s id="507" duration="180" /> <!-- Myoshin: Ichi -->
+      <s id="509" duration="180" /> <!-- Kakka: Ichi -->
+      <s id="510" duration="60" /> <!-- Migawari: Ichi -->
+      <s id="511" duration="180" /> <!-- Haste II -->
+      <s id="517" duration="300" /> <!-- Metallic Body -->
+      <s id="530" duration="300" /> <!-- Refueling -->
+      <s id="538" duration="30" /> <!-- Memento Mori -->
+      <s id="547" duration="90" /> <!-- Cocoon -->
+      <s id="574" duration="30" /> <!-- Feather Barrier -->
+      <s id="613" duration="120" /> <!-- Reactor Cool -->
+      <s id="614" duration="60" /> <!-- Saline Coat -->
+      <s id="615" duration="60" /> <!-- Plasma Charge -->
+      <s id="632" duration="90" /> <!-- Diamondhide -->
+      <s id="636" duration="180" /> <!-- Warm-Up -->
+      <s id="642" duration="90" /> <!-- Amplification -->
+      <s id="647" duration="300" /> <!-- Zephyr Mantle -->
+      <s id="655" duration="60" /> <!-- Triumphant Roar -->
+      <s id="661" duration="300" /> <!-- Animating Wail -->
+      <s id="662" duration="300" /> <!-- Battery Charge -->
+      <s id="664" duration="60" /> <!-- Regeneration -->
+      <s id="685" duration="60" /> <!-- Barrier Tusk -->
+      <s id="668" duration="300" /> <!-- Magic Barrier -->
+      <s id="674" duration="180" /> <!-- Fantod -->
+      <s id="679" duration="300" /> <!-- Occultation -->
+      <s id="696" duration="60" /> <!-- O. Counterstance -->
+      <s id="710" duration="300" /> <!-- Erratic Flutter -->
+      <s id="737" duration="90" /> <!-- Harden Shell -->
+      <s id="741" duration="300" /> <!-- Pyric Bulwark -->
+      <s id="840" duration="30" /> <!-- Foil -->
+      <s id="845" duration="180" /> <!-- Flurry -->
+      <s id="846" duration="180" /> <!-- Flurry II -->
+
       <!-- Triggers -->
       <s id="10000" index="10000" prefix="/trigger" english="Trigger0" japanese="Trigger0" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
       <s id="10001" index="10001" prefix="/trigger" english="Trigger1" japanese="Trigger1" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
@@ -524,6 +742,64 @@ IN THE SOFTWARE.
       <a id="219" element="Ice" /> <!-- Numbing Shot -->
       <a id="220" element="Fire" /> <!-- Wildfire -->
       <a id="238" element="Light" /> <!-- Uriel Blade -->
+
+      <!-- Buff durations -->
+      <a id="528" duration="45" /> <!-- Mighty Strikes -->
+      <a id="529" duration="45" /> <!-- Hundred Fists -->
+      <a id="531" duration="60" /> <!-- Manafont -->
+      <a id="532" duration="60" /> <!-- Chainspell -->
+      <a id="533" duration="30" /> <!-- Perfect Dodge -->
+      <a id="534" duration="30" /> <!-- Invincible -->
+      <a id="535" duration="30" /> <!-- Blood Weapon -->
+      <a id="537" duration="180" /> <!-- Soul Voice -->
+      <a id="539" duration="30" /> <!-- Meikyo Shisui -->
+      <a id="541" duration="60" /> <!-- Spirit Surge -->
+      <a id="542" duration="180" /> <!-- Astral Flow -->
+      <a id="543" duration="180" /> <!-- Berserk -->
+      <a id="544" duration="30" /> <!-- Warcry -->
+      <a id="545" duration="180" /> <!-- Defender -->
+      <a id="546" duration="180" /> <!-- Aggressor -->
+      <a id="548" duration="120" /> <!-- Focus -->
+      <a id="549" duration="120" /> <!-- Dodge -->
+      <a id="551" duration="180" /> <!-- Boost -->
+      <a id="552" duration="300" /> <!-- Counterstance -->
+      <a id="554" duration="30" /> <!-- Flee -->
+      <a id="556" duration="60" /> <!-- Sneak Attack -->
+      <a id="559" duration="180" /> <!-- Holy Circle -->
+      <a id="560" duration="30" /> <!-- Sentinel -->
+      <a id="561" duration="60" /> <!-- Souleater -->
+      <a id="562" duration="180" /> <!-- Arcane Circle -->
+      <a id="563" duration="180" /> <!-- Last Resort -->
+      <a id="571" duration="60" /> <!-- Sharpshot -->
+      <a id="572" duration="60" /> <!-- Barrage -->
+      <a id="574" duration="30" /> <!-- Third Eye -->
+      <a id="576" duration="180" /> <!-- Warding Circle -->
+      <a id="577" duration="180" /> <!-- Ancient Circle -->
+      <a id="586" duration="60" /> <!-- Divine Seal -->
+      <a id="587" duration="60" /> <!-- Elemental Seal -->
+      <a id="588" duration="60" /> <!-- Trick Attack -->
+      <a id="591" duration="15" /> <!-- Cover -->
+      <a id="598" duration="60" /> <!-- Unlimited Shot -->
+      <a id="606" duration="30" /> <!-- Chain Affinity -->
+      <a id="607" duration="30" /> <!-- Burst Affinity -->
+      <a id="664" duration="180" /> <!-- Formless Strikes -->
+      <a id="667" duration="60" /> <!-- Assassin's Charge -->
+      <a id="668" duration="60" /> <!-- Feint -->
+      <a id="669" duration="60" /> <!-- Fealty -->
+      <a id="671" duration="60" /> <!-- Dark Seal -->
+      <a id="672" duration="180" /> <!-- Diabolic Eye -->
+      <a id="674" duration="180" /> <!-- Killer Instinct -->
+      <a id="675" duration="60" /> <!-- Nightingale -->
+      <a id="679" duration="60" /> <!-- Troubadour -->
+      <a id="685" duration="300" /> <!-- Hasso -->
+      <a id="686" duration="300" /> <!-- Seigan -->
+      <a id="696" duration="90" /> <!-- Drain Samba -->
+      <a id="697" duration="90" /> <!-- Drain Samba II -->
+      <a id="698" duration="90" /> <!-- Drain Samba III -->
+      <a id="699" duration="90" /> <!-- Aspir Samba -->
+      <a id="700" duration="90" /> <!-- Aspir Samba II -->
+      <a id="701" duration="90" /> <!-- Haste Samba -->
+      <a id="1026" duration="180" /> <!-- Shining Ruby -->
     </update>
     <remove>
       <!-- Ability Categories -->
@@ -545,167 +821,6 @@ IN THE SOFTWARE.
   </abils>
   <status key="id">
     <update>
-      <!-- Status Durations -->
-      <b id="0" duration="3600" /> <!-- KO -->
-      <b id="1" duration="300" /> <!-- Weakness -->
-      <b id="32" duration="30" /> <!-- Flee -->
-      <b id="33" duration="180" /> <!-- Haste -->
-      <b id="34" duration="180" /> <!-- Blaze Spikes -->
-      <b id="35" duration="180" /> <!-- Ice Spikes -->
-      <b id="36" duration="300" /> <!-- Blink -->
-      <b id="37" duration="300" /> <!-- Stoneskin -->
-      <b id="38" duration="180" /> <!-- Shock Spikes -->
-      <b id="39" duration="600" /> <!-- Aquaveil -->
-      <b id="40" duration="1800" /> <!-- Protect -->
-      <b id="41" duration="1800" /> <!-- Shell -->
-      <b id="42" duration="75" /> <!-- Regen -->
-      <b id="43" duration="150" /> <!-- Refresh -->
-      <b id="44" duration="45" /> <!-- Mighty Strikes -->
-      <b id="45" duration="180" /> <!-- Boost -->
-      <b id="46" duration="45" /> <!-- Hundred Fists -->
-      <b id="47" duration="60" /> <!-- Manafont -->
-      <b id="48" duration="60" /> <!-- Chainspell -->
-      <b id="49" duration="30" /> <!-- Perfect Dodge -->
-      <b id="50" duration="30" /> <!-- Invincible -->
-      <b id="51" duration="30" /> <!-- Blood Weapon -->
-      <b id="52" duration="180" /> <!-- Soul Voice -->
-      <b id="54" duration="30" /> <!-- Meikyo Shisui -->
-      <b id="55" duration="180" /> <!-- Astral Flow -->
-      <b id="56" duration="180" /> <!-- Berserk -->
-      <b id="57" duration="180" /> <!-- Defender -->
-      <b id="58" duration="180" /> <!-- Aggressor -->
-      <b id="59" duration="120" /> <!-- Focus -->
-      <b id="60" duration="120" /> <!-- Dodge -->
-      <b id="61" duration="300" /> <!-- Counterstance -->
-      <b id="62" duration="30" /> <!-- Sentinel -->
-      <b id="63" duration="60" /> <!-- Souleater -->
-      <b id="64" duration="180" /> <!-- Last Resort -->
-      <b id="65" duration="60" /> <!-- Sneak Attack -->
-      <b id="67" duration="30" /> <!-- Third Eye -->
-      <b id="68" duration="30" /> <!-- Warcry -->
-      <b id="69" duration="300" /> <!-- Invisible -->
-      <b id="70" duration="300" /> <!-- Deodorize -->
-      <b id="71" duration="300" /> <!-- Sneak -->
-      <b id="72" duration="60" /> <!-- Sharpshot -->
-      <b id="73" duration="60" /> <!-- Barrage -->
-      <b id="74" duration="180" /> <!-- Holy Circle -->
-      <b id="75" duration="180" /> <!-- Arcane Circle -->
-      <b id="78" duration="60" /> <!-- Divine Seal -->
-      <b id="79" duration="60" /> <!-- Elemental Seal -->
-      <b id="119" duration="300" /> <!-- STR Boost -->
-      <b id="120" duration="300" /> <!-- DEX Boost -->
-      <b id="121" duration="300" /> <!-- VIT Boost -->
-      <b id="122" duration="300" /> <!-- AGI Boost -->
-      <b id="123" duration="300" /> <!-- INT Boost -->
-      <b id="124" duration="300" /> <!-- MND Boost -->
-      <b id="125" duration="300" /> <!-- CHR Boost -->
-      <b id="87" duration="60" /> <!-- Trick Attack -->
-      <b id="94" duration="180" /> <!-- Enfire -->
-      <b id="95" duration="180" /> <!-- Enblizzard -->
-      <b id="96" duration="180" /> <!-- Enaero -->
-      <b id="97" duration="180" /> <!-- Enstone -->
-      <b id="98" duration="180" /> <!-- Enthunder -->
-      <b id="99" duration="180" /> <!-- Enwater -->
-      <b id="100" duration="600" /> <!-- Barfire -->
-      <b id="101" duration="600" /> <!-- Barblizzard -->
-      <b id="102" duration="600" /> <!-- Baraero -->
-      <b id="103" duration="600" /> <!-- Barstone -->
-      <b id="104" duration="600" /> <!-- Barthunder -->
-      <b id="105" duration="600" /> <!-- Barwater -->
-      <b id="106" duration="600" /> <!-- Barsleep -->
-      <b id="107" duration="600" /> <!-- Barpoison -->
-      <b id="108" duration="600" /> <!-- Barparalyze -->
-      <b id="109" duration="600" /> <!-- Barblind -->
-      <b id="110" duration="600" /> <!-- Barsilence -->
-      <b id="111" duration="600" /> <!-- Barpetrify -->
-      <b id="112" duration="600" /> <!-- Barvirus -->
-      <b id="113" duration="3600" /> <!-- Reraise -->
-      <b id="114" duration="15" /> <!-- Cover -->
-      <b id="115" duration="60" /> <!-- Unlimited Shot -->
-      <b id="116" duration="180" /> <!-- Phalanx -->
-      <b id="117" duration="180" /> <!-- Warding Circle -->
-      <b id="118" duration="180" /> <!-- Ancient Circle -->
-      <b id="126" duration="60" /> <!-- Spirit Surge -->
-      <b id="154" duration="180" /> <!-- Shining Ruby -->
-      <b id="164" duration="30" /> <!-- Chain Affinity -->
-      <b id="165" duration="30" /> <!-- Burst Affinity -->
-      <b id="169" duration="60" /> <!-- Potency -->
-      <b id="170" duration="180" /> <!-- Regain -->
-      <b id="171" duration="60" /> <!-- Pax -->
-      <b id="173" duration="60" /> <!-- Dread Spikes -->
-      <b id="178" duration="180" /> <!-- Firestorm -->
-      <b id="179" duration="180" /> <!-- Hailstorm -->
-      <b id="180" duration="180" /> <!-- Windstorm -->
-      <b id="181" duration="180" /> <!-- Sandstorm -->
-      <b id="182" duration="180" /> <!-- Thunderstorm -->
-      <b id="183" duration="180" /> <!-- Rainstorm -->
-      <b id="184" duration="180" /> <!-- Aurorastorm -->
-      <b id="185" duration="180" /> <!-- Voidstorm -->
-      <b id="195" duration="120" /> <!-- Paeon -->
-      <b id="196" duration="120" /> <!-- Ballad -->
-      <b id="197" duration="120" /> <!-- Minne -->
-      <b id="198" duration="120" /> <!-- Minuet -->
-      <b id="199" duration="120" /> <!-- Madrigal -->
-      <b id="200" duration="120" /> <!-- Prelude -->
-      <b id="201" duration="120" /> <!-- Mambo -->
-      <b id="202" duration="120" /> <!-- Aubade -->
-      <b id="203" duration="120" /> <!-- Pastoral -->
-      <b id="204" duration="120" /> <!-- Hum -->
-      <b id="205" duration="120" /> <!-- Fantasia -->
-      <b id="206" duration="120" /> <!-- Operetta -->
-      <b id="207" duration="120" /> <!-- Capriccio -->
-      <b id="208" duration="120" /> <!-- Serenade -->
-      <b id="209" duration="120" /> <!-- Round -->
-      <b id="210" duration="120" /> <!-- Gavotte -->
-      <b id="211" duration="120" /> <!-- Fugue -->
-      <b id="212" duration="120" /> <!-- Rhapsody -->
-      <b id="213" duration="120" /> <!-- Aria -->
-      <b id="214" duration="120" /> <!-- March -->
-      <b id="215" duration="120" /> <!-- Etude -->
-      <b id="216" duration="120" /> <!-- Carol -->
-      <b id="217" duration="120" /> <!-- Threnody -->
-      <b id="218" duration="120" /> <!-- Hymnus -->
-      <b id="219" duration="120" /> <!-- Mazurka -->
-      <b id="220" duration="120" /> <!-- Sirvente -->
-      <b id="221" duration="120" /> <!-- Dirge -->
-      <b id="222" duration="120" /> <!-- Scherzo -->
-      <b id="223" duration="120" /> <!-- Nocturne -->
-      <b id="228" duration="90" /> <!-- Embrava -->
-      <b id="252" duration="1800" /> <!-- Chocobo -->
-      <b id="265" duration="180" /> <!-- Flurry -->
-      <b id="275" duration="180" /> <!-- Auspice -->
-      <b id="277" duration="180" /> <!-- Enfire II -->
-      <b id="278" duration="180" /> <!-- Enblizzard II -->
-      <b id="279" duration="180" /> <!-- Enaero II -->
-      <b id="280" duration="180" /> <!-- Enstone II -->
-      <b id="281" duration="180" /> <!-- Enthunder II -->
-      <b id="282" duration="180" /> <!-- Enwater II -->
-      <b id="341" duration="180" /> <!-- Formless Strikes -->
-      <b id="342" duration="60" /> <!-- Assassin's Charge -->
-      <b id="343" duration="60" /> <!-- Feint -->
-      <b id="344" duration="60" /> <!-- Fealty -->
-      <b id="345" duration="60" /> <!-- Dark Seal -->
-      <b id="346" duration="180" /> <!-- Diabolic Eye -->
-      <b id="347" duration="60" /> <!-- Nightingale -->
-      <b id="348" duration="60" /> <!-- Troubadour -->
-      <b id="349" duration="180" /> <!-- Killer Instinct -->
-      <b id="353" duration="300" /> <!-- Hasso -->
-      <b id="354" duration="300" /> <!-- Seigan -->
-      <b id="368" duration="90" /> <!-- Drain Samba -->
-      <b id="369" duration="90" /> <!-- Aspir Samba -->
-      <b id="370" duration="90" /> <!-- Haste Samba -->
-      <b id="403" duration="60" /> <!-- Reprisal -->
-      <b id="407" duration="180" /> <!-- Klimaform -->
-      <b id="513" duration="180" /> <!-- Bolster -->
-      <b id="522" duration="30" /> <!-- Elemental Sforzo -->
-      <b id="531" duration="120" /> <!-- Vallation -->
-      <b id="532" duration="120" /> <!-- Swordplay -->
-      <b id="533" duration="120" /> <!-- Pflug -->
-      <b id="535" duration="120" /> <!-- Valiance -->
-      <b id="537" duration="10" /> <!-- Liement -->
-      <b id="568" duration="30" /> <!-- Foil -->
-      <b id="570" duration="90" /> <!-- Battuta -->
-
       <!-- DNC moves -->
       <b id="381" enLog="Finishing Move 1" jp="フィニシングムーブ1">Finishing Move 1</b>
       <b id="382" enLog="Finishing Move 2" jp="フィニシングムーブ2">Finishing Move 2</b>

@@ -411,42 +411,42 @@ namespace ResourceExtractor
                         string prefix = "/unknown";
                         switch (ability.AbilityType)
                         {
-                            case AbilityType.Misc:
-                            case AbilityType.JobTrait:
-                                prefix = "/echo";
-                                break;
+                        case AbilityType.Misc:
+                        case AbilityType.JobTrait:
+                            prefix = "/echo";
+                            break;
 
-                            case AbilityType.JobAbility:
-                            case AbilityType.CorsairRoll:
-                            case AbilityType.CorsairShot:
-                            case AbilityType.Samba:
-                            case AbilityType.Waltz:
-                            case AbilityType.Step:
-                            case AbilityType.Jig:
-                            case AbilityType.Flourish1:
-                            case AbilityType.Flourish2:
-                            case AbilityType.Flourish3:
-                            case AbilityType.Scholar:
-                            case AbilityType.Rune:
-                            case AbilityType.Ward:
-                            case AbilityType.Effusion:
-                                prefix = "/jobability";
-                                break;
+                        case AbilityType.JobAbility:
+                        case AbilityType.CorsairRoll:
+                        case AbilityType.CorsairShot:
+                        case AbilityType.Samba:
+                        case AbilityType.Waltz:
+                        case AbilityType.Step:
+                        case AbilityType.Jig:
+                        case AbilityType.Flourish1:
+                        case AbilityType.Flourish2:
+                        case AbilityType.Flourish3:
+                        case AbilityType.Scholar:
+                        case AbilityType.Rune:
+                        case AbilityType.Ward:
+                        case AbilityType.Effusion:
+                            prefix = "/jobability";
+                            break;
 
-                            case AbilityType.WeaponSkill:
-                                prefix = "/weaponskill";
-                                break;
+                        case AbilityType.WeaponSkill:
+                            prefix = "/weaponskill";
+                            break;
 
-                            case AbilityType.MonsterSkill:
-                                prefix = "/monsterskill";
-                                break;
+                        case AbilityType.MonsterSkill:
+                            prefix = "/monsterskill";
+                            break;
 
-                            case AbilityType.PetCommand:
-                            case AbilityType.BloodPactWard:
-                            case AbilityType.BloodPactRage:
-                            case AbilityType.Monster:
-                                prefix = "/pet";
-                                break;
+                        case AbilityType.PetCommand:
+                        case AbilityType.BloodPactWard:
+                        case AbilityType.BloodPactRage:
+                        case AbilityType.Monster:
+                            prefix = "/pet";
+                            break;
                         }
 
                         abilities.Root.Add(new XElement("a",

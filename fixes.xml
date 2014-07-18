@@ -555,7 +555,7 @@ IN THE SOFTWARE.
       <b id="36" duration="300" /> <!-- Blink -->
       <b id="37" duration="300" /> <!-- Stoneskin -->
       <b id="38" duration="180" /> <!-- Shock Spikes -->
-      <b id="39" duration="300" /> <!-- Aquaveil -->
+      <b id="39" duration="600" /> <!-- Aquaveil -->
       <b id="40" duration="1800" /> <!-- Protect -->
       <b id="41" duration="1800" /> <!-- Shell -->
       <b id="42" duration="60" /> <!-- Regen -->
@@ -606,19 +606,19 @@ IN THE SOFTWARE.
       <b id="97" duration="180" /> <!-- Enstone -->
       <b id="98" duration="180" /> <!-- Enthunder -->
       <b id="99" duration="180" /> <!-- Enwater -->
-      <b id="100" duration="150" /> <!-- Barfire -->
-      <b id="101" duration="150" /> <!-- Barblizzard -->
-      <b id="102" duration="150" /> <!-- Baraero -->
-      <b id="103" duration="150" /> <!-- Barstone -->
-      <b id="104" duration="150" /> <!-- Barthunder -->
-      <b id="105" duration="150" /> <!-- Barwater -->
-      <b id="106" duration="480" /> <!-- Barsleep -->
-      <b id="107" duration="480" /> <!-- Barpoison -->
-      <b id="108" duration="480" /> <!-- Barparalyze -->
-      <b id="109" duration="480" /> <!-- Barblind -->
-      <b id="110" duration="480" /> <!-- Barsilence -->
-      <b id="111" duration="480" /> <!-- Barpetrify -->
-      <b id="112" duration="480" /> <!-- Barvirus -->
+      <b id="100" duration="600" /> <!-- Barfire -->
+      <b id="101" duration="600" /> <!-- Barblizzard -->
+      <b id="102" duration="600" /> <!-- Baraero -->
+      <b id="103" duration="600" /> <!-- Barstone -->
+      <b id="104" duration="600" /> <!-- Barthunder -->
+      <b id="105" duration="600" /> <!-- Barwater -->
+      <b id="106" duration="600" /> <!-- Barsleep -->
+      <b id="107" duration="600" /> <!-- Barpoison -->
+      <b id="108" duration="600" /> <!-- Barparalyze -->
+      <b id="109" duration="600" /> <!-- Barblind -->
+      <b id="110" duration="600" /> <!-- Barsilence -->
+      <b id="111" duration="600" /> <!-- Barpetrify -->
+      <b id="112" duration="600" /> <!-- Barvirus -->
       <b id="113" duration="3600" /> <!-- Reraise -->
       <b id="114" duration="15" /> <!-- Cover -->
       <b id="115" duration="60" /> <!-- Unlimited Shot -->
@@ -672,6 +672,7 @@ IN THE SOFTWARE.
       <b id="223" duration="120" /> <!-- Nocturne -->
       <b id="228" duration="90" /> <!-- Embrava -->
       <b id="252" duration="1800" /> <!-- Chocobo -->
+      <b id="265" duration="180" /> <!-- Flurry -->
       <b id="275" duration="180" /> <!-- Auspice -->
       <b id="277" duration="180" /> <!-- Enfire II -->
       <b id="278" duration="180" /> <!-- Enblizzard II -->

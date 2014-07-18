@@ -592,13 +592,13 @@ IN THE SOFTWARE.
       <b id="75" duration="180" /> <!-- Arcane Circle -->
       <b id="78" duration="60" /> <!-- Divine Seal -->
       <b id="79" duration="60" /> <!-- Elemental Seal -->
-      <b id="80" duration="300" /> <!-- STR Boost -->
-      <b id="81" duration="300" /> <!-- DEX Boost -->
-      <b id="82" duration="300" /> <!-- VIT Boost -->
-      <b id="83" duration="300" /> <!-- AGI Boost -->
-      <b id="84" duration="300" /> <!-- INT Boost -->
-      <b id="85" duration="300" /> <!-- MND Boost -->
-      <b id="86" duration="300" /> <!-- CHR Boost -->
+      <b id="119" duration="300" /> <!-- STR Boost -->
+      <b id="120" duration="300" /> <!-- DEX Boost -->
+      <b id="121" duration="300" /> <!-- VIT Boost -->
+      <b id="122" duration="300" /> <!-- AGI Boost -->
+      <b id="123" duration="300" /> <!-- INT Boost -->
+      <b id="124" duration="300" /> <!-- MND Boost -->
+      <b id="125" duration="300" /> <!-- CHR Boost -->
       <b id="87" duration="60" /> <!-- Trick Attack -->
       <b id="94" duration="180" /> <!-- Enfire -->
       <b id="95" duration="180" /> <!-- Enblizzard -->

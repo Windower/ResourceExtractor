@@ -695,29 +695,36 @@ IN THE SOFTWARE.
       <b id="370" duration="90" /> <!-- Haste Samba -->
       <b id="403" duration="60" /> <!-- Reprisal -->
       <b id="407" duration="180" /> <!-- Klimaform -->
+      <b id="522" duration="30" /> <!-- Elemental Sforzo -->
+      <b id="531" duration="120" /> <!-- Vallation -->
+      <b id="532" duration="120" /> <!-- Swordplay -->
+      <b id="533" duration="120" /> <!-- Pflug -->
+      <b id="535" duration="120" /> <!-- Valiance -->
+      <b id="537" duration="10" /> <!-- Liement -->
       <b id="568" duration="30" /> <!-- Foil -->
+      <b id="570" duration="90" /> <!-- Battuta -->
 
       <!-- DNC moves -->
-      <b id="381" enLog="Finishing Move 1" jp="フィニシングムーブ1" de="Tanzmanöver 1" fr="Mouvement final 1">Finishing Move 1</b>
-      <b id="382" enLog="Finishing Move 2" jp="フィニシングムーブ2" de="Tanzmanöver 2" fr="Mouvement final 2">Finishing Move 2</b>
-      <b id="383" enLog="Finishing Move 3" jp="フィニシングムーブ3" de="Tanzmanöver 3" fr="Mouvement final 3">Finishing Move 3</b>
-      <b id="384" enLog="Finishing Move 4" jp="フィニシングムーブ4" de="Tanzmanöver 4" fr="Mouvement final 4">Finishing Move 4</b>
-      <b id="385" enLog="Finishing Move 5" jp="フィニシングムーブ5" de="Tanzmanöver 5" fr="Mouvement final 5">Finishing Move 5</b>
-      <b id="386" enLog="Lethargic Daze 1" jp="クイックステップ1" de="Pirouette 1" fr="Stupeur ankylosante 1">Lethargic Daze 1</b>
-      <b id="387" enLog="Lethargic Daze 2" jp="クイックステップ2" de="Pirouette 2" fr="Stupeur ankylosante 2">Lethargic Daze 2</b>
-      <b id="388" enLog="Lethargic Daze 3" jp="クイックステップ3" de="Pirouette 3" fr="Stupeur ankylosante 3">Lethargic Daze 3</b>
-      <b id="389" enLog="Lethargic Daze 4" jp="クイックステップ4" de="Pirouette 4" fr="Stupeur ankylosante 4">Lethargic Daze 4</b>
-      <b id="390" enLog="Lethargic Daze 5" jp="クイックステップ5" de="Pirouette 5" fr="Stupeur ankylosante 5">Lethargic Daze 5</b>
-      <b id="391" enLog="Sluggish Daze 1" jp="ボックスステップ1" de="Ausfallschritt 1" fr="Stupeur débilitante 1">Sluggish Daze 1</b>
-      <b id="392" enLog="Sluggish Daze 2" jp="ボックスステップ2" de="Ausfallschritt 2" fr="Stupeur débilitante 2">Sluggish Daze 2</b>
-      <b id="393" enLog="Sluggish Daze 3" jp="ボックスステップ3" de="Ausfallschritt 3" fr="Stupeur débilitante 3">Sluggish Daze 3</b>
-      <b id="394" enLog="Sluggish Daze 4" jp="ボックスステップ4" de="Ausfallschritt 4" fr="Stupeur débilitante 4">Sluggish Daze 4</b>
-      <b id="395" enLog="Sluggish Daze 5" jp="ボックスステップ5" de="Ausfallschritt 5" fr="Stupeur débilitante 5">Sluggish Daze 5</b>
-      <b id="396" enLog="Weakened Daze 1" jp="スタッターステップ1" de="Schuhplattler 1" fr="Stupeur abrutissante 1">Weakened Daze 1</b>
-      <b id="397" enLog="Weakened Daze 2" jp="スタッターステップ2" de="Schuhplattler 2" fr="Stupeur abrutissante 2">Weakened Daze 2</b>
-      <b id="398" enLog="Weakened Daze 3" jp="スタッターステップ3" de="Schuhplattler 3" fr="Stupeur abrutissante 3">Weakened Daze 3</b>
-      <b id="399" enLog="Weakened Daze 4" jp="スタッターステップ4" de="Schuhplattler 4" fr="Stupeur abrutissante 4">Weakened Daze 4</b>
-      <b id="400" enLog="Weakened Daze 5" jp="スタッターステップ5" de="Schuhplattler 5" fr="Stupeur abrutissante 5">Weakened Daze 5</b>
+      <b id="381" enLog="Finishing Move 1" jp="フィニシングムーブ1">Finishing Move 1</b>
+      <b id="382" enLog="Finishing Move 2" jp="フィニシングムーブ2">Finishing Move 2</b>
+      <b id="383" enLog="Finishing Move 3" jp="フィニシングムーブ3">Finishing Move 3</b>
+      <b id="384" enLog="Finishing Move 4" jp="フィニシングムーブ4">Finishing Move 4</b>
+      <b id="385" enLog="Finishing Move 5" jp="フィニシングムーブ5">Finishing Move 5</b>
+      <b id="386" enLog="Lethargic Daze 1" jp="クイックステップ1">Lethargic Daze 1</b>
+      <b id="387" enLog="Lethargic Daze 2" jp="クイックステップ2">Lethargic Daze 2</b>
+      <b id="388" enLog="Lethargic Daze 3" jp="クイックステップ3">Lethargic Daze 3</b>
+      <b id="389" enLog="Lethargic Daze 4" jp="クイックステップ4">Lethargic Daze 4</b>
+      <b id="390" enLog="Lethargic Daze 5" jp="クイックステップ5">Lethargic Daze 5</b>
+      <b id="391" enLog="Sluggish Daze 1" jp="ボックスステップ1">Sluggish Daze 1</b>
+      <b id="392" enLog="Sluggish Daze 2" jp="ボックスステップ2">Sluggish Daze 2</b>
+      <b id="393" enLog="Sluggish Daze 3" jp="ボックスステップ3">Sluggish Daze 3</b>
+      <b id="394" enLog="Sluggish Daze 4" jp="ボックスステップ4">Sluggish Daze 4</b>
+      <b id="395" enLog="Sluggish Daze 5" jp="ボックスステップ5">Sluggish Daze 5</b>
+      <b id="396" enLog="Weakened Daze 1" jp="スタッターステップ1">Weakened Daze 1</b>
+      <b id="397" enLog="Weakened Daze 2" jp="スタッターステップ2">Weakened Daze 2</b>
+      <b id="398" enLog="Weakened Daze 3" jp="スタッターステップ3">Weakened Daze 3</b>
+      <b id="399" enLog="Weakened Daze 4" jp="スタッターステップ4">Weakened Daze 4</b>
+      <b id="400" enLog="Weakened Daze 5" jp="スタッターステップ5">Weakened Daze 5</b>
 
     </update>
   </status>

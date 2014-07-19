@@ -35,6 +35,7 @@ namespace ResourceExtractor.Formats
         private ValidTargets validtargets;
         private int tpcost;
         private int monsterlevel;
+        public int duration;
 
         private AbilityData(byte[] data)
         {
@@ -55,6 +56,7 @@ namespace ResourceExtractor.Formats
             this.validtargets = (ValidTargets)(data[10] | data[11] << 8);
             this.tpcost = data[12];
             this.monsterlevel = data[15];
+            this.duration = 0;
         }
 
         public int Id

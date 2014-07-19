@@ -39,6 +39,7 @@ namespace ResourceExtractor.Formats
         private byte[] levels = new byte[24];
         private int id;
         private int iconid;
+        public int duration;
 
         private bool valid;
 
@@ -72,6 +73,8 @@ namespace ResourceExtractor.Formats
             {
                 this.valid |= data[14 + i] != 0xFF;
             }
+
+            duration = 0;
         }
 
         public int Index

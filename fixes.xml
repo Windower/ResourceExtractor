@@ -782,6 +782,31 @@ IN THE SOFTWARE.
       <a id="598" duration="60" /> <!-- Unlimited Shot -->
       <a id="606" duration="30" /> <!-- Chain Affinity -->
       <a id="607" duration="30" /> <!-- Burst Affinity -->
+      <a id="610" duration="300" /> <!-- Fighter's Roll -->
+      <a id="611" duration="300" /> <!-- Monk's Roll -->
+      <a id="612" duration="300" /> <!-- Healer's Roll -->
+      <a id="613" duration="300" /> <!-- Wizard's Roll -->
+      <a id="614" duration="300" /> <!-- Warlock's Roll -->
+      <a id="615" duration="300" /> <!-- Rogue's Roll -->
+      <a id="616" duration="300" /> <!-- Gallant's Roll -->
+      <a id="617" duration="300" /> <!-- Chaos Roll -->
+      <a id="618" duration="300" /> <!-- Beast Roll -->
+      <a id="619" duration="300" /> <!-- Choral Roll -->
+      <a id="620" duration="300" /> <!-- Hunter's Roll -->
+      <a id="621" duration="300" /> <!-- Samurai Roll -->
+      <a id="622" duration="300" /> <!-- Ninja Roll -->
+      <a id="623" duration="300" /> <!-- Drachen Roll -->
+      <a id="624" duration="300" /> <!-- Evoker's Roll -->
+      <a id="625" duration="300" /> <!-- Magus's Roll -->
+      <a id="626" duration="300" /> <!-- Corsair's Roll -->
+      <a id="627" duration="300" /> <!-- Puppet Roll -->
+      <a id="628" duration="300" /> <!-- Dancer's Roll -->
+      <a id="629" duration="300" /> <!-- Scholar's Roll -->
+      <a id="630" duration="300" /> <!-- Bolter's Roll -->
+      <a id="631" duration="300" /> <!-- Caster's Roll -->
+      <a id="632" duration="300" /> <!-- Courser's Roll -->
+      <a id="633" duration="300" /> <!-- Blitzer's Roll -->
+      <a id="634" duration="300" /> <!-- Tactician's Roll -->
       <a id="664" duration="180" /> <!-- Formless Strikes -->
       <a id="667" duration="60" /> <!-- Assassin's Charge -->
       <a id="668" duration="60" /> <!-- Feint -->
@@ -799,6 +824,10 @@ IN THE SOFTWARE.
       <a id="699" duration="90" /> <!-- Aspir Samba -->
       <a id="700" duration="90" /> <!-- Aspir Samba II -->
       <a id="701" duration="90" /> <!-- Haste Samba -->
+      <a id="814" duration="300" /> <!-- Allies' Roll -->
+      <a id="815" duration="300" /> <!-- Miser's Roll -->
+      <a id="816" duration="300" /> <!-- Companion's Roll -->
+      <a id="817" duration="300" /> <!-- Avenger's Roll -->
       <a id="1026" duration="180" /> <!-- Shining Ruby -->
     </update>
     <remove>

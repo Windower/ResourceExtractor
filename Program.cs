@@ -345,6 +345,7 @@ namespace ResourceExtractor
                             new XAttribute("mpcost", spell.MPCost),
                             new XAttribute("casttime", spell.CastTime),
                             new XAttribute("recast", spell.Recast),
+                            new XAttribute("duration", spell.duration),
                             new XAttribute("alias", string.Empty)));
                     }
                 }
@@ -463,6 +464,7 @@ namespace ResourceExtractor
                             new XAttribute("tpcost", ability.TPCost),
                             new XAttribute("casttime", 0),
                             new XAttribute("recast", 0),
+                            new XAttribute("duration", ability.duration),
                             new XAttribute("alias", string.Empty)));
                     }
                 }

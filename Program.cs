@@ -261,6 +261,85 @@ namespace ResourceExtractor
                         }
                     }
                 }
+                // Add categories to key items
+                var category = "";
+                for (var i = model.key_items.Count - 1; i >= 0; --i)
+                {
+                    dynamic ki = model.key_items[i];
+                    if (ki.en.StartsWith("-"))
+                    {
+                        category = ki.en.Substring(1);
+                        model.key_items.Remove(ki);
+                    }
+                    else
+                    {
+                        ki.category = category;
+                    }
+                }
+
+                // Move item descriptions into separate table
+                //TODO: Remove when shared resources are implemented
+                model.item_descriptions = new List<dynamic> { };
+                foreach (var item in model.items)
+                {
+                    dynamic item_description = new ModelObject();
+                    item_description.id = item.id;
+                    item_description.en = item.endesc;
+                    item_description.ja = item.jadesc;
+
+                    item.endesc = null;
+                    item.jadesc = null;
+
+                    model.item_descriptions.Add(item_description);
+                }
+
+                // Fill in linked auto-translate names
+                foreach (var at in model.auto_translates)
+                {
+                    if (at.en.StartsWith("@"))
+                    {
+                        int id = int.Parse(at.en.Substring(2), NumberStyles.HexNumber);
+
+                        string key;
+                        switch ((char)at.en[1])
+                        {
+                        case 'A':
+                            key = "zones";
+                            break;
+                        case 'C':
+                            key = "spells";
+                            break;
+                        case 'J':
+                            key = "jobs";
+                            break;
+                        case 'Y':
+                            key = "actions";
+                            break;
+                        default:
+                            throw new InvalidDataException(string.Format("Unknown auto-translate code: {0}", at.en));
+                        }
+                        
+                        dynamic item = null;
+                        foreach (var i in model[key])
+                        {
+                            if (i.id == id)
+                            {
+                                item = i;
+                                break;
+                            }
+                        }
+
+                        if (item != null)
+                        {
+                            at.en = item.en;
+                            at.ja = item.ja;
+                        }
+                        else
+                        {
+                            //throw new InvalidDataException(string.Format("Unknown auto-translate ID for {0}: {1}", key, id));
+                        }
+                    }
+                }
 
                 // Split abilities into categories
                 foreach (var action in model.actions)
@@ -319,90 +398,11 @@ namespace ResourceExtractor
                     }
                 }
 
-                // Add categories to key items
-                var category = "";
-                for (var i = model.key_items.Count - 1; i >= 0; --i)
-                {
-                    dynamic ki = model.key_items[i];
-                    if (ki.en.StartsWith("-"))
-                    {
-                        category = ki.en.Substring(1);
-                        model.key_items.Remove(ki);
-                    }
-                    else
-                    {
-                        ki.category = category;
-                    }
-                }
-
-                // Move item descriptions into separate table
-                //TODO: Remove when shared resources are implemented
-                model.item_descriptions = new List<dynamic> { };
-                foreach (var item in model.items)
-                {
-                    dynamic item_description = new ModelObject();
-                    item_description.id = item.id;
-                    item_description.en = item.endesc;
-                    item_description.ja = item.jadesc;
-
-                    item.endesc = null;
-                    item.jadesc = null;
-
-                    model.item_descriptions.Add(item_description);
-                }
 
                 // Shift monster abilities up by 0x100
                 foreach (var monster_ability in model.monster_abilities)
                 {
                     monster_ability.id += 0x100;
-                }
-
-                // Fill in linked auto-translate names
-                foreach (var at in model.auto_translates)
-                {
-                    if (at.en.StartsWith("@"))
-                    {
-                        int id = int.Parse(at.en.Substring(2), NumberStyles.HexNumber);
-
-                        string key;
-                        switch ((char)at.en[1])
-                        {
-                        case 'A':
-                            key = "zones";
-                            break;
-                        case 'C':
-                            key = "spells";
-                            break;
-                        case 'J':
-                            key = "jobs";
-                            break;
-                        case 'Y':
-                            key = "actions";
-                            break;
-                        default:
-                            throw new InvalidDataException(string.Format("Unknown auto-translate code: {0}", at.en));
-                        }
-                        
-                        dynamic item = null;
-                        foreach (var i in model[key])
-                        {
-                            if (i.id == id)
-                            {
-                                item = i;
-                                break;
-                            }
-                        }
-
-                        if (item != null)
-                        {
-                            at.en = item.en;
-                            at.ja = item.ja;
-                        }
-                        else
-                        {
-                            //throw new InvalidDataException(string.Format("Unknown auto-translate ID for {0}: {1}", key, id));
-                        }
-                    }
                 }
 
                 model.actions = null;

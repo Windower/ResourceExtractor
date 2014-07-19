@@ -22,393 +22,393 @@ IN THE SOFTWARE.
 -->
 
 <fixes>
-  <spells key="id">
+  <spells key="index">
     <update>
       <!-- Quick-Aliases -->
-      <s id="1" alias="c1|c" /> <!-- Cure -->
-      <s id="2" alias="c2" /> <!-- Cure II -->
-      <s id="3" alias="c3" /> <!-- Cure III -->
-      <s id="4" alias="c4" /> <!-- Cure IV -->
-      <s id="5" alias="c5" /> <!-- Cure V -->
-      <s id="6" alias="c6" /> <!-- Cure VI -->
-      <s id="15" alias="r1|r" /> <!-- Raise -->
-      <s id="16" alias="r2" /> <!-- Raise II -->
-      <s id="17" alias="r3" /> <!-- Raise III -->
-      <s id="38" alias="bga" /> <!-- Banishga -->
-      <s id="39" alias="bga2" /> <!-- Banishga II -->
-      <s id="60" alias="pro1|pro" /> <!-- Protectra -->
-      <s id="61" alias="pro2" /> <!-- Protectra II -->
-      <s id="62" alias="pro3" /> <!-- Protectra III -->
-      <s id="63" alias="pro4" /> <!-- Protectra IV -->
-      <s id="64" alias="pro5" /> <!-- Protectra V -->
-      <s id="65" alias="she1|she|sh1|sh" /> <!-- Shellra -->
-      <s id="66" alias="she2|sh2" /> <!-- Shellra II -->
-      <s id="67" alias="she3|sh3" /> <!-- Shellra III -->
-      <s id="68" alias="she4|sh4" /> <!-- Shellra IV -->
-      <s id="69" alias="she5|sh5" /> <!-- Shellra V -->
-      <s id="70" alias="bl" /> <!-- Blink -->
-      <s id="71" alias="ss" /> <!-- Stoneskin -->
-      <s id="120" alias="re1|re" /> <!-- Regen -->
-      <s id="121" alias="re2" /> <!-- Regen II -->
-      <s id="122" alias="re3" /> <!-- Regen III -->
-      <s id="123" alias="re4" /> <!-- Regen IV -->
-      <s id="124" alias="re5" /> <!-- Regen V -->
-      <s id="154" alias="holla" /> <!-- Teleport-Holla -->
-      <s id="155" alias="dem" /> <!-- Teleport-Dem -->
-      <s id="156" alias="mea" /> <!-- Teleport-Mea -->
-      <s id="157" alias="yhoat" /> <!-- Teleport-Yhoat -->
-      <s id="158" alias="altep" /> <!-- Teleport-Altep -->
-      <s id="159" alias="vahzl" /> <!-- Teleport-Vahzl -->
-      <s id="160" alias="jugner" /> <!-- Recall-Jugner -->
-      <s id="161" alias="pash|pashh" /> <!-- Recall-Pashh -->
-      <s id="162" alias="meri|meriph" /> <!-- Recall-Meriph -->
-      <s id="418" alias="ichi|utsu1" /> <!-- Utsusemi: Ichi -->
-      <s id="419" alias="ni|utsu2" /> <!-- Utsusemi: Ni -->
+      <s index="1" alias="c1|c" /> <!-- Cure -->
+      <s index="2" alias="c2" /> <!-- Cure II -->
+      <s index="3" alias="c3" /> <!-- Cure III -->
+      <s index="4" alias="c4" /> <!-- Cure IV -->
+      <s index="5" alias="c5" /> <!-- Cure V -->
+      <s index="6" alias="c6" /> <!-- Cure VI -->
+      <s index="12" alias="r1|r" /> <!-- Raise -->
+      <s index="13" alias="r2" /> <!-- Raise II -->
+      <s index="140" alias="r3" /> <!-- Raise III -->
+      <s index="38" alias="bga" /> <!-- Banishga -->
+      <s index="39" alias="bga2" /> <!-- Banishga II -->
+      <s index="125" alias="pro1|pro" /> <!-- Protectra -->
+      <s index="126" alias="pro2" /> <!-- Protectra II -->
+      <s index="127" alias="pro3" /> <!-- Protectra III -->
+      <s index="128" alias="pro4" /> <!-- Protectra IV -->
+      <s index="129" alias="pro5" /> <!-- Protectra V -->
+      <s index="130" alias="she1|she|sh1|sh" /> <!-- Shellra -->
+      <s index="131" alias="she2|sh2" /> <!-- Shellra II -->
+      <s index="132" alias="she3|sh3" /> <!-- Shellra III -->
+      <s index="133" alias="she4|sh4" /> <!-- Shellra IV -->
+      <s index="134" alias="she5|sh5" /> <!-- Shellra V -->
+      <s index="53" alias="bl" /> <!-- Blink -->
+      <s index="54" alias="ss" /> <!-- Stoneskin -->
+      <s index="108" alias="re1|re" /> <!-- Regen -->
+      <s index="110" alias="re2" /> <!-- Regen II -->
+      <s index="111" alias="re3" /> <!-- Regen III -->
+      <s index="477" alias="re4" /> <!-- Regen IV -->
+      <s index="504" alias="re5" /> <!-- Regen V -->
+      <s index="122" alias="holla" /> <!-- Teleport-Holla -->
+      <s index="123" alias="dem" /> <!-- Teleport-Dem -->
+      <s index="124" alias="mea" /> <!-- Teleport-Mea -->
+      <s index="120" alias="yhoat" /> <!-- Teleport-Yhoat -->
+      <s index="121" alias="altep" /> <!-- Teleport-Altep -->
+      <s index="139" alias="vahzl" /> <!-- Teleport-Vahzl -->
+      <s index="81" alias="jugner" /> <!-- Recall-Jugner -->
+      <s index="82" alias="pash|pashh" /> <!-- Recall-Pashh -->
+      <s index="83" alias="meri|meriph" /> <!-- Recall-Meriph -->
+      <s index="338" alias="ichi|utsu1" /> <!-- Utsusemi: Ichi -->
+      <s index="339" alias="ni|utsu2" /> <!-- Utsusemi: Ni -->
 
-      <s id="43" duration="1800" /> <!-- Protect -->
-      <s id="44" duration="1800" /> <!-- Protect II -->
-      <s id="45" duration="1800" /> <!-- Protect III -->
-      <s id="46" duration="1800" /> <!-- Protect IV -->
-      <s id="47" duration="1800" /> <!-- Protect V -->
-      <s id="48" duration="1800" /> <!-- Shell -->
-      <s id="49" duration="1800" /> <!-- Shell II -->
-      <s id="50" duration="1800" /> <!-- Shell III -->
-      <s id="51" duration="1800" /> <!-- Shell IV -->
-      <s id="52" duration="1800" /> <!-- Shell V -->
-      <s id="53" duration="300" /> <!-- Blink -->
-      <s id="54" duration="300" /> <!-- Stoneskin -->
-      <s id="55" duration="600" /> <!-- Aquaveil -->
-      <s id="57" duration="180" /> <!-- Haste -->
-      <s id="66" duration="600" /> <!-- Barfire -->
-      <s id="67" duration="600" /> <!-- Barblizzard -->
-      <s id="68" duration="600" /> <!-- Baraero -->
-      <s id="69" duration="600" /> <!-- Barstone -->
-      <s id="70" duration="600" /> <!-- Barthunder -->
-      <s id="71" duration="600" /> <!-- Barwater -->
-      <s id="72" duration="600" /> <!-- Barsleep -->
-      <s id="73" duration="600" /> <!-- Barpoison -->
-      <s id="74" duration="600" /> <!-- Barparalyze -->
-      <s id="75" duration="600" /> <!-- Barblind -->
-      <s id="76" duration="600" /> <!-- Barsilence -->
-      <s id="77" duration="600" /> <!-- Barpetrify -->
-      <s id="78" duration="600" /> <!-- Barvirus -->
-      <s id="96" duration="180" /> <!-- Auspice -->
-      <s id="97" duration="60" /> <!-- Reprisal -->
-      <s id="99" duration="180" /> <!-- Sandstorm -->
-      <s id="100" duration="180" /> <!-- Enfire -->
-      <s id="101" duration="180" /> <!-- Enblizzard -->
-      <s id="102" duration="180" /> <!-- Enaero -->
-      <s id="103" duration="180" /> <!-- Enstone -->
-      <s id="104" duration="180" /> <!-- Enthunder -->
-      <s id="105" duration="180" /> <!-- Enwater -->
-      <s id="106" duration="180" /> <!-- Phalanx -->
-      <s id="107" duration="120" /> <!-- Phalanx II -->
-      <s id="108" duration="75" /> <!-- Regen -->
-      <s id="109" duration="150" /> <!-- Refresh -->
-      <s id="110" duration="60" /> <!-- Regen II -->
-      <s id="111" duration="60" /> <!-- Regen III -->
-      <s id="113" duration="180" /> <!-- Rainstorm -->
-      <s id="114" duration="180" /> <!-- Windstorm -->
-      <s id="115" duration="180" /> <!-- Firestorm -->
-      <s id="116" duration="180" /> <!-- Hailstorm -->
-      <s id="117" duration="180" /> <!-- Thunderstorm -->
-      <s id="118" duration="180" /> <!-- Voidstorm -->
-      <s id="119" duration="180" /> <!-- Aurorastorm -->
-      <s id="135" duration="3600" /> <!-- Reraise -->
-      <s id="249" duration="180" /> <!-- Blaze Spikes -->
-      <s id="250" duration="180" /> <!-- Ice Spikes -->
-      <s id="251" duration="180" /> <!-- Shock Spikes -->
-      <s id="277" duration="60" /> <!-- Dread Spikes -->
-      <s id="287" duration="180" /> <!-- Klimaform -->
-      <s id="308" duration="60" /> <!-- Animus Augeo -->
-      <s id="309" duration="60" /> <!-- Animus Minuo -->
-      <s id="312" duration="180" /> <!-- Enfire II -->
-      <s id="313" duration="180" /> <!-- Enblizzard II -->
-      <s id="314" duration="180" /> <!-- Enaero II -->
-      <s id="315" duration="180" /> <!-- Enstone II -->
-      <s id="316" duration="180" /> <!-- Enthunder II -->
-      <s id="317" duration="180" /> <!-- Enwater II -->
-      <s id="318" duration="180" /> <!-- Monomi: Ichi -->
-      <s id="353" duration="180" /> <!-- Tonko: Ichi -->
-      <s id="354" duration="300" /> <!-- Tonko: Ni -->
-      <s id="338" duration="600" /> <!-- Utsusemi: Ichi -->
-      <s id="339" duration="600" /> <!-- Utsusemi: Ni -->
-      <s id="378" duration="120" /> <!-- Army's Paeon -->
-      <s id="379" duration="120" /> <!-- Army's Paeon II -->
-      <s id="380" duration="120" /> <!-- Army's Paeon III -->
-      <s id="381" duration="120" /> <!-- Army's Paeon IV -->
-      <s id="382" duration="120" /> <!-- Army's Paeon V -->
-      <s id="383" duration="120" /> <!-- Army's Paeon VI -->
-      <s id="384" duration="120" /> <!-- Army's Paeon VII -->
-      <s id="385" duration="120" /> <!-- Army's Paeon VIII -->
-      <s id="386" duration="120" /> <!-- Mage's Ballad -->
-      <s id="387" duration="120" /> <!-- Mage's Ballad II -->
-      <s id="388" duration="120" /> <!-- Mage's Ballad III -->
-      <s id="389" duration="120" /> <!-- Knight's Minne -->
-      <s id="390" duration="120" /> <!-- Knight's Minne II -->
-      <s id="391" duration="120" /> <!-- Knight's Minne III -->
-      <s id="392" duration="120" /> <!-- Knight's Minne IV -->
-      <s id="393" duration="120" /> <!-- Knight's Minne V -->
-      <s id="394" duration="120" /> <!-- Valor Minuet -->
-      <s id="395" duration="120" /> <!-- Valor Minuet II -->
-      <s id="396" duration="120" /> <!-- Valor Minuet III -->
-      <s id="397" duration="120" /> <!-- Valor Minuet IV -->
-      <s id="398" duration="120" /> <!-- Valor Minuet V -->
-      <s id="399" duration="120" /> <!-- Sword Madrigal -->
-      <s id="400" duration="120" /> <!-- Blade Madrigal -->
-      <s id="401" duration="120" /> <!-- Hunter's Prelude -->
-      <s id="402" duration="120" /> <!-- Archer's Prelude -->
-      <s id="403" duration="120" /> <!-- Sheepfoe Mambo -->
-      <s id="404" duration="120" /> <!-- Dragonfoe Mambo -->
-      <s id="405" duration="120" /> <!-- Fowl Aubade -->
-      <s id="406" duration="120" /> <!-- Herb Pastoral -->
-      <s id="407" duration="120" /> <!-- Chocobo Hum -->
-      <s id="408" duration="120" /> <!-- Shining Fantasia -->
-      <s id="409" duration="120" /> <!-- Scop's Operetta -->
-      <s id="410" duration="120" /> <!-- Puppet's Operetta -->
-      <s id="411" duration="120" /> <!-- Jester's Operetta -->
-      <s id="412" duration="120" /> <!-- Gold Capriccio -->
-      <s id="413" duration="120" /> <!-- Devotee Serenade -->
-      <s id="414" duration="120" /> <!-- Warding Round -->
-      <s id="415" duration="120" /> <!-- Goblin Gavotte -->
-      <s id="416" duration="120" /> <!-- Cactuar Fugue -->
-      <s id="417" duration="120" /> <!-- Moogle Rhapsody -->
-      <s id="418" duration="120" /> <!-- Protected Aria -->
-      <s id="419" duration="120" /> <!-- Advancing March -->
-      <s id="420" duration="120" /> <!-- Victory March -->
-      <s id="421" duration="120" /> <!-- Battlefield Elegy -->
-      <s id="422" duration="120" /> <!-- Carnage Elegy -->
-      <s id="423" duration="120" /> <!-- Massacre Elegy -->
-      <s id="424" duration="120" /> <!-- Sinewy Etude -->
-      <s id="425" duration="120" /> <!-- Dextrous Etude -->
-      <s id="426" duration="120" /> <!-- Vivacious Etude -->
-      <s id="427" duration="120" /> <!-- Quick Etude -->
-      <s id="428" duration="120" /> <!-- Learned Etude -->
-      <s id="429" duration="120" /> <!-- Spirited Etude -->
-      <s id="430" duration="120" /> <!-- Enchanting Etude -->
-      <s id="431" duration="120" /> <!-- Herculean Etude -->
-      <s id="432" duration="120" /> <!-- Uncanny Etude -->
-      <s id="433" duration="120" /> <!-- Vital Etude -->
-      <s id="434" duration="120" /> <!-- Swift Etude -->
-      <s id="435" duration="120" /> <!-- Sage Etude -->
-      <s id="436" duration="120" /> <!-- Logical Etude -->
-      <s id="437" duration="120" /> <!-- Bewitching Etude -->
-      <s id="438" duration="120" /> <!-- Fire Carol -->
-      <s id="439" duration="120" /> <!-- Ice Carol -->
-      <s id="440" duration="120" /> <!-- Wind Carol -->
-      <s id="441" duration="120" /> <!-- Earth Carol -->
-      <s id="442" duration="120" /> <!-- Lightning Carol -->
-      <s id="443" duration="120" /> <!-- Water Carol -->
-      <s id="444" duration="120" /> <!-- Light Carol -->
-      <s id="445" duration="120" /> <!-- Dark Carol -->
-      <s id="446" duration="120" /> <!-- Fire Carol II -->
-      <s id="447" duration="120" /> <!-- Ice Carol II -->
-      <s id="448" duration="120" /> <!-- Wind Carol II -->
-      <s id="449" duration="120" /> <!-- Earth Carol II -->
-      <s id="450" duration="120" /> <!-- Lightning Carol II -->
-      <s id="451" duration="120" /> <!-- Water Carol II -->
-      <s id="452" duration="120" /> <!-- Light Carol II -->
-      <s id="453" duration="120" /> <!-- Dark Carol II -->
-      <s id="454" duration="120" /> <!-- Fire Threnody -->
-      <s id="455" duration="120" /> <!-- Ice Threnody -->
-      <s id="456" duration="120" /> <!-- Wind Threnody -->
-      <s id="457" duration="120" /> <!-- Earth Threnody -->
-      <s id="458" duration="120" /> <!-- Ltng. Threnody -->
-      <s id="459" duration="120" /> <!-- Water Threnody -->
-      <s id="460" duration="120" /> <!-- Light Threnody -->
-      <s id="461" duration="120" /> <!-- Dark Threnody -->
-      <s id="462" duration="120" /> <!-- Magic Finale -->
-      <s id="463" duration="120" /> <!-- Foe Lullaby -->
-      <s id="464" duration="120" /> <!-- Goddess's Hymnus -->
-      <s id="465" duration="120" /> <!-- Chocobo Mazurka -->
-      <s id="466" duration="120" /> <!-- Maiden's Virelai -->
-      <s id="467" duration="120" /> <!-- Raptor Mazurka -->
-      <s id="468" duration="120" /> <!-- Foe Sirvente -->
-      <s id="469" duration="120" /> <!-- Adventurer's Dirge -->
-      <s id="470" duration="120" /> <!-- Sentinel's Scherzo -->
-      <s id="471" duration="120" /> <!-- Foe Lullaby II -->
-      <s id="472" duration="120" /> <!-- Pining Nocturne -->
-      <s id="473" duration="150" /> <!-- Refresh II -->
-      <s id="476" duration="300" /> <!-- Crusade -->
-      <s id="477" duration="60" /> <!-- Regen IV -->
-      <s id="478" duration="90" /> <!-- Embrava -->
-      <s id="479" duration="300" /> <!-- Boost-STR -->
-      <s id="480" duration="300" /> <!-- Boost-DEX -->
-      <s id="481" duration="300" /> <!-- Boost-VIT -->
-      <s id="482" duration="300" /> <!-- Boost-AGI -->
-      <s id="483" duration="300" /> <!-- Boost-INT -->
-      <s id="484" duration="300" /> <!-- Boost-MND -->
-      <s id="485" duration="300" /> <!-- Boost-CHR -->
-      <s id="486" duration="300" /> <!-- Gain-STR -->
-      <s id="487" duration="300" /> <!-- Gain-DEX -->
-      <s id="488" duration="300" /> <!-- Gain-VIT -->
-      <s id="489" duration="300" /> <!-- Gain-AGI -->
-      <s id="490" duration="300" /> <!-- Gain-INT -->
-      <s id="491" duration="300" /> <!-- Gain-MND -->
-      <s id="492" duration="300" /> <!-- Gain-CHR -->
-      <s id="493" duration="180" /> <!-- Temper -->
-      <s id="495" duration="180" /> <!-- Adloquium -->
-      <s id="504" duration="60" /> <!-- Regen V -->
-      <s id="505" duration="300" /> <!-- Gekka: Ichi -->
-      <s id="506" duration="180" /> <!-- Yain: Ichi -->
-      <s id="507" duration="180" /> <!-- Myoshin: Ichi -->
-      <s id="509" duration="180" /> <!-- Kakka: Ichi -->
-      <s id="510" duration="60" /> <!-- Migawari: Ichi -->
-      <s id="511" duration="180" /> <!-- Haste II -->
-      <s id="517" duration="300" /> <!-- Metallic Body -->
-      <s id="530" duration="300" /> <!-- Refueling -->
-      <s id="538" duration="30" /> <!-- Memento Mori -->
-      <s id="547" duration="90" /> <!-- Cocoon -->
-      <s id="574" duration="30" /> <!-- Feather Barrier -->
-      <s id="613" duration="120" /> <!-- Reactor Cool -->
-      <s id="614" duration="60" /> <!-- Saline Coat -->
-      <s id="615" duration="60" /> <!-- Plasma Charge -->
-      <s id="632" duration="90" /> <!-- Diamondhide -->
-      <s id="636" duration="180" /> <!-- Warm-Up -->
-      <s id="642" duration="90" /> <!-- Amplification -->
-      <s id="647" duration="300" /> <!-- Zephyr Mantle -->
-      <s id="655" duration="60" /> <!-- Triumphant Roar -->
-      <s id="661" duration="300" /> <!-- Animating Wail -->
-      <s id="662" duration="300" /> <!-- Battery Charge -->
-      <s id="664" duration="60" /> <!-- Regeneration -->
-      <s id="685" duration="60" /> <!-- Barrier Tusk -->
-      <s id="668" duration="300" /> <!-- Magic Barrier -->
-      <s id="674" duration="180" /> <!-- Fantod -->
-      <s id="679" duration="300" /> <!-- Occultation -->
-      <s id="696" duration="60" /> <!-- O. Counterstance -->
-      <s id="710" duration="300" /> <!-- Erratic Flutter -->
-      <s id="737" duration="90" /> <!-- Harden Shell -->
-      <s id="741" duration="300" /> <!-- Pyric Bulwark -->
-      <s id="840" duration="30" /> <!-- Foil -->
-      <s id="845" duration="180" /> <!-- Flurry -->
-      <s id="846" duration="180" /> <!-- Flurry II -->
+      <s index="43" duration="1800" /> <!-- Protect -->
+      <s index="44" duration="1800" /> <!-- Protect II -->
+      <s index="45" duration="1800" /> <!-- Protect III -->
+      <s index="46" duration="1800" /> <!-- Protect IV -->
+      <s index="47" duration="1800" /> <!-- Protect V -->
+      <s index="48" duration="1800" /> <!-- Shell -->
+      <s index="49" duration="1800" /> <!-- Shell II -->
+      <s index="50" duration="1800" /> <!-- Shell III -->
+      <s index="51" duration="1800" /> <!-- Shell IV -->
+      <s index="52" duration="1800" /> <!-- Shell V -->
+      <s index="53" duration="300" /> <!-- Blink -->
+      <s index="54" duration="300" /> <!-- Stoneskin -->
+      <s index="55" duration="600" /> <!-- Aquaveil -->
+      <s index="57" duration="180" /> <!-- Haste -->
+      <s index="66" duration="600" /> <!-- Barfire -->
+      <s index="67" duration="600" /> <!-- Barblizzard -->
+      <s index="68" duration="600" /> <!-- Baraero -->
+      <s index="69" duration="600" /> <!-- Barstone -->
+      <s index="70" duration="600" /> <!-- Barthunder -->
+      <s index="71" duration="600" /> <!-- Barwater -->
+      <s index="72" duration="600" /> <!-- Barsleep -->
+      <s index="73" duration="600" /> <!-- Barpoison -->
+      <s index="74" duration="600" /> <!-- Barparalyze -->
+      <s index="75" duration="600" /> <!-- Barblind -->
+      <s index="76" duration="600" /> <!-- Barsilence -->
+      <s index="77" duration="600" /> <!-- Barpetrify -->
+      <s index="78" duration="600" /> <!-- Barvirus -->
+      <s index="96" duration="180" /> <!-- Auspice -->
+      <s index="97" duration="60" /> <!-- Reprisal -->
+      <s index="99" duration="180" /> <!-- Sandstorm -->
+      <s index="100" duration="180" /> <!-- Enfire -->
+      <s index="101" duration="180" /> <!-- Enblizzard -->
+      <s index="102" duration="180" /> <!-- Enaero -->
+      <s index="103" duration="180" /> <!-- Enstone -->
+      <s index="104" duration="180" /> <!-- Enthunder -->
+      <s index="105" duration="180" /> <!-- Enwater -->
+      <s index="106" duration="180" /> <!-- Phalanx -->
+      <s index="107" duration="120" /> <!-- Phalanx II -->
+      <s index="108" duration="75" /> <!-- Regen -->
+      <s index="109" duration="150" /> <!-- Refresh -->
+      <s index="110" duration="60" /> <!-- Regen II -->
+      <s index="111" duration="60" /> <!-- Regen III -->
+      <s index="113" duration="180" /> <!-- Rainstorm -->
+      <s index="114" duration="180" /> <!-- Windstorm -->
+      <s index="115" duration="180" /> <!-- Firestorm -->
+      <s index="116" duration="180" /> <!-- Hailstorm -->
+      <s index="117" duration="180" /> <!-- Thunderstorm -->
+      <s index="118" duration="180" /> <!-- Voidstorm -->
+      <s index="119" duration="180" /> <!-- Aurorastorm -->
+      <s index="135" duration="3600" /> <!-- Reraise -->
+      <s index="249" duration="180" /> <!-- Blaze Spikes -->
+      <s index="250" duration="180" /> <!-- Ice Spikes -->
+      <s index="251" duration="180" /> <!-- Shock Spikes -->
+      <s index="277" duration="60" /> <!-- Dread Spikes -->
+      <s index="287" duration="180" /> <!-- Klimaform -->
+      <s index="308" duration="60" /> <!-- Animus Augeo -->
+      <s index="309" duration="60" /> <!-- Animus Minuo -->
+      <s index="312" duration="180" /> <!-- Enfire II -->
+      <s index="313" duration="180" /> <!-- Enblizzard II -->
+      <s index="314" duration="180" /> <!-- Enaero II -->
+      <s index="315" duration="180" /> <!-- Enstone II -->
+      <s index="316" duration="180" /> <!-- Enthunder II -->
+      <s index="317" duration="180" /> <!-- Enwater II -->
+      <s index="318" duration="180" /> <!-- Monomi: Ichi -->
+      <s index="353" duration="180" /> <!-- Tonko: Ichi -->
+      <s index="354" duration="300" /> <!-- Tonko: Ni -->
+      <s index="338" duration="600" /> <!-- Utsusemi: Ichi -->
+      <s index="339" duration="600" /> <!-- Utsusemi: Ni -->
+      <s index="378" duration="120" /> <!-- Army's Paeon -->
+      <s index="379" duration="120" /> <!-- Army's Paeon II -->
+      <s index="380" duration="120" /> <!-- Army's Paeon III -->
+      <s index="381" duration="120" /> <!-- Army's Paeon IV -->
+      <s index="382" duration="120" /> <!-- Army's Paeon V -->
+      <s index="383" duration="120" /> <!-- Army's Paeon VI -->
+      <s index="384" duration="120" /> <!-- Army's Paeon VII -->
+      <s index="385" duration="120" /> <!-- Army's Paeon VIII -->
+      <s index="386" duration="120" /> <!-- Mage's Ballad -->
+      <s index="387" duration="120" /> <!-- Mage's Ballad II -->
+      <s index="388" duration="120" /> <!-- Mage's Ballad III -->
+      <s index="389" duration="120" /> <!-- Knight's Minne -->
+      <s index="390" duration="120" /> <!-- Knight's Minne II -->
+      <s index="391" duration="120" /> <!-- Knight's Minne III -->
+      <s index="392" duration="120" /> <!-- Knight's Minne IV -->
+      <s index="393" duration="120" /> <!-- Knight's Minne V -->
+      <s index="394" duration="120" /> <!-- Valor Minuet -->
+      <s index="395" duration="120" /> <!-- Valor Minuet II -->
+      <s index="396" duration="120" /> <!-- Valor Minuet III -->
+      <s index="397" duration="120" /> <!-- Valor Minuet IV -->
+      <s index="398" duration="120" /> <!-- Valor Minuet V -->
+      <s index="399" duration="120" /> <!-- Sword Madrigal -->
+      <s index="400" duration="120" /> <!-- Blade Madrigal -->
+      <s index="401" duration="120" /> <!-- Hunter's Prelude -->
+      <s index="402" duration="120" /> <!-- Archer's Prelude -->
+      <s index="403" duration="120" /> <!-- Sheepfoe Mambo -->
+      <s index="404" duration="120" /> <!-- Dragonfoe Mambo -->
+      <s index="405" duration="120" /> <!-- Fowl Aubade -->
+      <s index="406" duration="120" /> <!-- Herb Pastoral -->
+      <s index="407" duration="120" /> <!-- Chocobo Hum -->
+      <s index="408" duration="120" /> <!-- Shining Fantasia -->
+      <s index="409" duration="120" /> <!-- Scop's Operetta -->
+      <s index="410" duration="120" /> <!-- Puppet's Operetta -->
+      <s index="411" duration="120" /> <!-- Jester's Operetta -->
+      <s index="412" duration="120" /> <!-- Gold Capriccio -->
+      <s index="413" duration="120" /> <!-- Devotee Serenade -->
+      <s index="414" duration="120" /> <!-- Warding Round -->
+      <s index="415" duration="120" /> <!-- Goblin Gavotte -->
+      <s index="416" duration="120" /> <!-- Cactuar Fugue -->
+      <s index="417" duration="120" /> <!-- Moogle Rhapsody -->
+      <s index="418" duration="120" /> <!-- Protected Aria -->
+      <s index="419" duration="120" /> <!-- Advancing March -->
+      <s index="420" duration="120" /> <!-- Victory March -->
+      <s index="421" duration="120" /> <!-- Battlefield Elegy -->
+      <s index="422" duration="120" /> <!-- Carnage Elegy -->
+      <s index="423" duration="120" /> <!-- Massacre Elegy -->
+      <s index="424" duration="120" /> <!-- Sinewy Etude -->
+      <s index="425" duration="120" /> <!-- Dextrous Etude -->
+      <s index="426" duration="120" /> <!-- Vivacious Etude -->
+      <s index="427" duration="120" /> <!-- Quick Etude -->
+      <s index="428" duration="120" /> <!-- Learned Etude -->
+      <s index="429" duration="120" /> <!-- Spirited Etude -->
+      <s index="430" duration="120" /> <!-- Enchanting Etude -->
+      <s index="431" duration="120" /> <!-- Herculean Etude -->
+      <s index="432" duration="120" /> <!-- Uncanny Etude -->
+      <s index="433" duration="120" /> <!-- Vital Etude -->
+      <s index="434" duration="120" /> <!-- Swift Etude -->
+      <s index="435" duration="120" /> <!-- Sage Etude -->
+      <s index="436" duration="120" /> <!-- Logical Etude -->
+      <s index="437" duration="120" /> <!-- Bewitching Etude -->
+      <s index="438" duration="120" /> <!-- Fire Carol -->
+      <s index="439" duration="120" /> <!-- Ice Carol -->
+      <s index="440" duration="120" /> <!-- Wind Carol -->
+      <s index="441" duration="120" /> <!-- Earth Carol -->
+      <s index="442" duration="120" /> <!-- Lightning Carol -->
+      <s index="443" duration="120" /> <!-- Water Carol -->
+      <s index="444" duration="120" /> <!-- Light Carol -->
+      <s index="445" duration="120" /> <!-- Dark Carol -->
+      <s index="446" duration="120" /> <!-- Fire Carol II -->
+      <s index="447" duration="120" /> <!-- Ice Carol II -->
+      <s index="448" duration="120" /> <!-- Wind Carol II -->
+      <s index="449" duration="120" /> <!-- Earth Carol II -->
+      <s index="450" duration="120" /> <!-- Lightning Carol II -->
+      <s index="451" duration="120" /> <!-- Water Carol II -->
+      <s index="452" duration="120" /> <!-- Light Carol II -->
+      <s index="453" duration="120" /> <!-- Dark Carol II -->
+      <s index="454" duration="120" /> <!-- Fire Threnody -->
+      <s index="455" duration="120" /> <!-- Ice Threnody -->
+      <s index="456" duration="120" /> <!-- Wind Threnody -->
+      <s index="457" duration="120" /> <!-- Earth Threnody -->
+      <s index="458" duration="120" /> <!-- Ltng. Threnody -->
+      <s index="459" duration="120" /> <!-- Water Threnody -->
+      <s index="460" duration="120" /> <!-- Light Threnody -->
+      <s index="461" duration="120" /> <!-- Dark Threnody -->
+      <s index="462" duration="120" /> <!-- Magic Finale -->
+      <s index="463" duration="120" /> <!-- Foe Lullaby -->
+      <s index="464" duration="120" /> <!-- Goddess's Hymnus -->
+      <s index="465" duration="120" /> <!-- Chocobo Mazurka -->
+      <s index="466" duration="120" /> <!-- Maiden's Virelai -->
+      <s index="467" duration="120" /> <!-- Raptor Mazurka -->
+      <s index="468" duration="120" /> <!-- Foe Sirvente -->
+      <s index="469" duration="120" /> <!-- Adventurer's Dirge -->
+      <s index="470" duration="120" /> <!-- Sentinel's Scherzo -->
+      <s index="471" duration="120" /> <!-- Foe Lullaby II -->
+      <s index="472" duration="120" /> <!-- Pining Nocturne -->
+      <s index="473" duration="150" /> <!-- Refresh II -->
+      <s index="476" duration="300" /> <!-- Crusade -->
+      <s index="477" duration="60" /> <!-- Regen IV -->
+      <s index="478" duration="90" /> <!-- Embrava -->
+      <s index="479" duration="300" /> <!-- Boost-STR -->
+      <s index="480" duration="300" /> <!-- Boost-DEX -->
+      <s index="481" duration="300" /> <!-- Boost-VIT -->
+      <s index="482" duration="300" /> <!-- Boost-AGI -->
+      <s index="483" duration="300" /> <!-- Boost-INT -->
+      <s index="484" duration="300" /> <!-- Boost-MND -->
+      <s index="485" duration="300" /> <!-- Boost-CHR -->
+      <s index="486" duration="300" /> <!-- Gain-STR -->
+      <s index="487" duration="300" /> <!-- Gain-DEX -->
+      <s index="488" duration="300" /> <!-- Gain-VIT -->
+      <s index="489" duration="300" /> <!-- Gain-AGI -->
+      <s index="490" duration="300" /> <!-- Gain-INT -->
+      <s index="491" duration="300" /> <!-- Gain-MND -->
+      <s index="492" duration="300" /> <!-- Gain-CHR -->
+      <s index="493" duration="180" /> <!-- Temper -->
+      <s index="495" duration="180" /> <!-- Adloquium -->
+      <s index="504" duration="60" /> <!-- Regen V -->
+      <s index="505" duration="300" /> <!-- Gekka: Ichi -->
+      <s index="506" duration="180" /> <!-- Yain: Ichi -->
+      <s index="507" duration="180" /> <!-- Myoshin: Ichi -->
+      <s index="509" duration="180" /> <!-- Kakka: Ichi -->
+      <s index="510" duration="60" /> <!-- Migawari: Ichi -->
+      <s index="511" duration="180" /> <!-- Haste II -->
+      <s index="517" duration="300" /> <!-- Metallic Body -->
+      <s index="530" duration="300" /> <!-- Refueling -->
+      <s index="538" duration="30" /> <!-- Memento Mori -->
+      <s index="547" duration="90" /> <!-- Cocoon -->
+      <s index="574" duration="30" /> <!-- Feather Barrier -->
+      <s index="613" duration="120" /> <!-- Reactor Cool -->
+      <s index="614" duration="60" /> <!-- Saline Coat -->
+      <s index="615" duration="60" /> <!-- Plasma Charge -->
+      <s index="632" duration="90" /> <!-- Diamondhide -->
+      <s index="636" duration="180" /> <!-- Warm-Up -->
+      <s index="642" duration="90" /> <!-- Amplification -->
+      <s index="647" duration="300" /> <!-- Zephyr Mantle -->
+      <s index="655" duration="60" /> <!-- Triumphant Roar -->
+      <s index="661" duration="300" /> <!-- Animating Wail -->
+      <s index="662" duration="300" /> <!-- Battery Charge -->
+      <s index="664" duration="60" /> <!-- Regeneration -->
+      <s index="685" duration="60" /> <!-- Barrier Tusk -->
+      <s index="668" duration="300" /> <!-- Magic Barrier -->
+      <s index="674" duration="180" /> <!-- Fantod -->
+      <s index="679" duration="300" /> <!-- Occultation -->
+      <s index="696" duration="60" /> <!-- O. Counterstance -->
+      <s index="710" duration="300" /> <!-- Erratic Flutter -->
+      <s index="737" duration="90" /> <!-- Harden Shell -->
+      <s index="741" duration="300" /> <!-- Pyric Bulwark -->
+      <s index="840" duration="30" /> <!-- Foil -->
+      <s index="845" duration="180" /> <!-- Flurry -->
+      <s index="846" duration="180" /> <!-- Flurry II -->
 
       <!-- Triggers -->
-      <s id="10000" index="10000" prefix="/trigger" english="Trigger0" japanese="Trigger0" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10001" index="10001" prefix="/trigger" english="Trigger1" japanese="Trigger1" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10002" index="10002" prefix="/trigger" english="Trigger2" japanese="Trigger2" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10003" index="10003" prefix="/trigger" english="Trigger3" japanese="Trigger3" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10004" index="10004" prefix="/trigger" english="Trigger4" japanese="Trigger4" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10005" index="10005" prefix="/trigger" english="Trigger5" japanese="Trigger5" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10006" index="10006" prefix="/trigger" english="Trigger6" japanese="Trigger6" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10007" index="10007" prefix="/trigger" english="Trigger7" japanese="Trigger7" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10008" index="10008" prefix="/trigger" english="Trigger8" japanese="Trigger8" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10009" index="10009" prefix="/trigger" english="Trigger9" japanese="Trigger9" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10010" index="10010" prefix="/trigger" english="Trigger10" japanese="Trigger10" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10011" index="10011" prefix="/trigger" english="Trigger11" japanese="Trigger11" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10012" index="10012" prefix="/trigger" english="Trigger12" japanese="Trigger12" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10013" index="10013" prefix="/trigger" english="Trigger13" japanese="Trigger13" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10014" index="10014" prefix="/trigger" english="Trigger14" japanese="Trigger14" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10015" index="10015" prefix="/trigger" english="Trigger15" japanese="Trigger15" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10016" index="10016" prefix="/trigger" english="Trigger16" japanese="Trigger16" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10017" index="10017" prefix="/trigger" english="Trigger17" japanese="Trigger17" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10018" index="10018" prefix="/trigger" english="Trigger18" japanese="Trigger18" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10019" index="10019" prefix="/trigger" english="Trigger19" japanese="Trigger19" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10020" index="10020" prefix="/trigger" english="Trigger20" japanese="Trigger20" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10021" index="10021" prefix="/trigger" english="Trigger21" japanese="Trigger21" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10022" index="10022" prefix="/trigger" english="Trigger22" japanese="Trigger22" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10023" index="10023" prefix="/trigger" english="Trigger23" japanese="Trigger23" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10024" index="10024" prefix="/trigger" english="Trigger24" japanese="Trigger24" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10025" index="10025" prefix="/trigger" english="Trigger25" japanese="Trigger25" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10026" index="10026" prefix="/trigger" english="Trigger26" japanese="Trigger26" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10027" index="10027" prefix="/trigger" english="Trigger27" japanese="Trigger27" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10028" index="10028" prefix="/trigger" english="Trigger28" japanese="Trigger28" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10029" index="10029" prefix="/trigger" english="Trigger29" japanese="Trigger29" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10030" index="10030" prefix="/trigger" english="Trigger30" japanese="Trigger30" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10031" index="10031" prefix="/trigger" english="Trigger31" japanese="Trigger31" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10032" index="10032" prefix="/trigger" english="Trigger32" japanese="Trigger32" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10033" index="10033" prefix="/trigger" english="Trigger33" japanese="Trigger33" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10034" index="10034" prefix="/trigger" english="Trigger34" japanese="Trigger34" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10035" index="10035" prefix="/trigger" english="Trigger35" japanese="Trigger35" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10036" index="10036" prefix="/trigger" english="Trigger36" japanese="Trigger36" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10037" index="10037" prefix="/trigger" english="Trigger37" japanese="Trigger37" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10038" index="10038" prefix="/trigger" english="Trigger38" japanese="Trigger38" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10039" index="10039" prefix="/trigger" english="Trigger39" japanese="Trigger39" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10040" index="10040" prefix="/trigger" english="Trigger40" japanese="Trigger40" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10041" index="10041" prefix="/trigger" english="Trigger41" japanese="Trigger41" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10042" index="10042" prefix="/trigger" english="Trigger42" japanese="Trigger42" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10043" index="10043" prefix="/trigger" english="Trigger43" japanese="Trigger43" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10044" index="10044" prefix="/trigger" english="Trigger44" japanese="Trigger44" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10045" index="10045" prefix="/trigger" english="Trigger45" japanese="Trigger45" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10046" index="10046" prefix="/trigger" english="Trigger46" japanese="Trigger46" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10047" index="10047" prefix="/trigger" english="Trigger47" japanese="Trigger47" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10048" index="10048" prefix="/trigger" english="Trigger48" japanese="Trigger48" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10049" index="10049" prefix="/trigger" english="Trigger49" japanese="Trigger49" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10050" index="10050" prefix="/trigger" english="Trigger50" japanese="Trigger50" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10051" index="10051" prefix="/trigger" english="Trigger51" japanese="Trigger51" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10052" index="10052" prefix="/trigger" english="Trigger52" japanese="Trigger52" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10053" index="10053" prefix="/trigger" english="Trigger53" japanese="Trigger53" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10054" index="10054" prefix="/trigger" english="Trigger54" japanese="Trigger54" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10055" index="10055" prefix="/trigger" english="Trigger55" japanese="Trigger55" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10056" index="10056" prefix="/trigger" english="Trigger56" japanese="Trigger56" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10057" index="10057" prefix="/trigger" english="Trigger57" japanese="Trigger57" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10058" index="10058" prefix="/trigger" english="Trigger58" japanese="Trigger58" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10059" index="10059" prefix="/trigger" english="Trigger59" japanese="Trigger59" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10060" index="10060" prefix="/trigger" english="Trigger60" japanese="Trigger60" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10061" index="10061" prefix="/trigger" english="Trigger61" japanese="Trigger61" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10062" index="10062" prefix="/trigger" english="Trigger62" japanese="Trigger62" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10063" index="10063" prefix="/trigger" english="Trigger63" japanese="Trigger63" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10064" index="10064" prefix="/trigger" english="Trigger64" japanese="Trigger64" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10065" index="10065" prefix="/trigger" english="Trigger65" japanese="Trigger65" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10066" index="10066" prefix="/trigger" english="Trigger66" japanese="Trigger66" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10067" index="10067" prefix="/trigger" english="Trigger67" japanese="Trigger67" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10068" index="10068" prefix="/trigger" english="Trigger68" japanese="Trigger68" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10069" index="10069" prefix="/trigger" english="Trigger69" japanese="Trigger69" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10070" index="10070" prefix="/trigger" english="Trigger70" japanese="Trigger70" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10071" index="10071" prefix="/trigger" english="Trigger71" japanese="Trigger71" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10072" index="10072" prefix="/trigger" english="Trigger72" japanese="Trigger72" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10073" index="10073" prefix="/trigger" english="Trigger73" japanese="Trigger73" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10074" index="10074" prefix="/trigger" english="Trigger74" japanese="Trigger74" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10075" index="10075" prefix="/trigger" english="Trigger75" japanese="Trigger75" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10076" index="10076" prefix="/trigger" english="Trigger76" japanese="Trigger76" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10077" index="10077" prefix="/trigger" english="Trigger77" japanese="Trigger77" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10078" index="10078" prefix="/trigger" english="Trigger78" japanese="Trigger78" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10079" index="10079" prefix="/trigger" english="Trigger79" japanese="Trigger79" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10080" index="10080" prefix="/trigger" english="Trigger80" japanese="Trigger80" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10081" index="10081" prefix="/trigger" english="Trigger81" japanese="Trigger81" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10082" index="10082" prefix="/trigger" english="Trigger82" japanese="Trigger82" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10083" index="10083" prefix="/trigger" english="Trigger83" japanese="Trigger83" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10084" index="10084" prefix="/trigger" english="Trigger84" japanese="Trigger84" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10085" index="10085" prefix="/trigger" english="Trigger85" japanese="Trigger85" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10086" index="10086" prefix="/trigger" english="Trigger86" japanese="Trigger86" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10087" index="10087" prefix="/trigger" english="Trigger87" japanese="Trigger87" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10088" index="10088" prefix="/trigger" english="Trigger88" japanese="Trigger88" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10089" index="10089" prefix="/trigger" english="Trigger89" japanese="Trigger89" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10090" index="10090" prefix="/trigger" english="Trigger90" japanese="Trigger90" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10091" index="10091" prefix="/trigger" english="Trigger91" japanese="Trigger91" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10092" index="10092" prefix="/trigger" english="Trigger92" japanese="Trigger92" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10093" index="10093" prefix="/trigger" english="Trigger93" japanese="Trigger93" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10094" index="10094" prefix="/trigger" english="Trigger94" japanese="Trigger94" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10095" index="10095" prefix="/trigger" english="Trigger95" japanese="Trigger95" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10096" index="10096" prefix="/trigger" english="Trigger96" japanese="Trigger96" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10097" index="10097" prefix="/trigger" english="Trigger97" japanese="Trigger97" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10098" index="10098" prefix="/trigger" english="Trigger98" japanese="Trigger98" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="10099" index="10099" prefix="/trigger" english="Trigger99" japanese="Trigger99" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20000" index="20000" prefix="/trigger" english="Update" japanese="Update" type="trigger" element="trigger" targets="Self" skill="ControlTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20001" index="20001" prefix="/trigger" english="Reset" japanese="Reset" type="trigger" element="trigger" targets="Self" skill="ControlTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20002" index="20002" prefix="/trigger" english="Trigger" japanese="Trigger" type="trigger" element="trigger" targets="Self" skill="GenericTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20003" index="20003" prefix="/trigger" english="ClassTrigger" japanese="ClassTrigger" type="trigger" element="trigger" targets="Self" skill="GenericTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20004" index="20004" prefix="/trigger" english="FireTrigger" japanese="FireTrigger" type="trigger" element="Fire" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20005" index="20005" prefix="/trigger" english="IceTrigger" japanese="IceTrigger" type="trigger" element="Ice" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20006" index="20006" prefix="/trigger" english="WindTrigger" japanese="WindTrigger" type="trigger" element="Wind" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20007" index="20007" prefix="/trigger" english="EarthTrigger" japanese="EarthTrigger" type="trigger" element="Earth" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20008" index="20008" prefix="/trigger" english="ThunderTrigger" japanese="ThunderTrigger" type="trigger" element="Thunder" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20009" index="20009" prefix="/trigger" english="WaterTrigger" japanese="WaterTrigger" type="trigger" element="Water" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20010" index="20010" prefix="/trigger" english="LightTrigger" japanese="LightTrigger" type="trigger" element="Light" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20011" index="20011" prefix="/trigger" english="DarkTrigger" japanese="DarkTrigger" type="trigger" element="Dark" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20012" index="20012" prefix="/trigger" english="AnyElementTrigger" japanese="AnyElementTrigger" type="trigger" element="Any" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20013" index="20013" prefix="/trigger" english="AllElementTrigger" japanese="AllElementTrigger" type="trigger" element="All" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20014" index="20014" prefix="/trigger" english="NoneElementTrigger" japanese="NoneElementTrigger" type="trigger" element="None" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20015" index="20015" prefix="/trigger" english="IdleMode" japanese="IdleMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20016" index="20016" prefix="/trigger" english="CycleIdleMode" japanese="CycleIdleMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20017" index="20017" prefix="/trigger" english="RestingMode" japanese="RestingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20018" index="20018" prefix="/trigger" english="CycleRestingMode" japanese="CycleRestingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20019" index="20019" prefix="/trigger" english="CombatMode" japanese="CombatMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20020" index="20020" prefix="/trigger" english="CycleCombatMode" japanese="CycleCombatMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20021" index="20021" prefix="/trigger" english="CastingMode" japanese="CastingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20022" index="20022" prefix="/trigger" english="CycleCastingMode" japanese="CycleCastingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20023" index="20023" prefix="/trigger" english="PhysicalDefense" japanese="PhysicalDefense" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
-      <s id="20024" index="20024" prefix="/trigger" english="MagicalDefense" japanese="MagicalDefense" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" alias="" />
+      <s id="10000" index="10000" prefix="/trigger" english="Trigger0" japanese="Trigger0" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10001" index="10001" prefix="/trigger" english="Trigger1" japanese="Trigger1" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10002" index="10002" prefix="/trigger" english="Trigger2" japanese="Trigger2" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10003" index="10003" prefix="/trigger" english="Trigger3" japanese="Trigger3" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10004" index="10004" prefix="/trigger" english="Trigger4" japanese="Trigger4" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10005" index="10005" prefix="/trigger" english="Trigger5" japanese="Trigger5" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10006" index="10006" prefix="/trigger" english="Trigger6" japanese="Trigger6" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10007" index="10007" prefix="/trigger" english="Trigger7" japanese="Trigger7" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10008" index="10008" prefix="/trigger" english="Trigger8" japanese="Trigger8" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10009" index="10009" prefix="/trigger" english="Trigger9" japanese="Trigger9" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10010" index="10010" prefix="/trigger" english="Trigger10" japanese="Trigger10" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10011" index="10011" prefix="/trigger" english="Trigger11" japanese="Trigger11" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10012" index="10012" prefix="/trigger" english="Trigger12" japanese="Trigger12" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10013" index="10013" prefix="/trigger" english="Trigger13" japanese="Trigger13" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10014" index="10014" prefix="/trigger" english="Trigger14" japanese="Trigger14" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10015" index="10015" prefix="/trigger" english="Trigger15" japanese="Trigger15" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10016" index="10016" prefix="/trigger" english="Trigger16" japanese="Trigger16" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10017" index="10017" prefix="/trigger" english="Trigger17" japanese="Trigger17" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10018" index="10018" prefix="/trigger" english="Trigger18" japanese="Trigger18" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10019" index="10019" prefix="/trigger" english="Trigger19" japanese="Trigger19" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10020" index="10020" prefix="/trigger" english="Trigger20" japanese="Trigger20" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10021" index="10021" prefix="/trigger" english="Trigger21" japanese="Trigger21" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10022" index="10022" prefix="/trigger" english="Trigger22" japanese="Trigger22" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10023" index="10023" prefix="/trigger" english="Trigger23" japanese="Trigger23" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10024" index="10024" prefix="/trigger" english="Trigger24" japanese="Trigger24" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10025" index="10025" prefix="/trigger" english="Trigger25" japanese="Trigger25" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10026" index="10026" prefix="/trigger" english="Trigger26" japanese="Trigger26" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10027" index="10027" prefix="/trigger" english="Trigger27" japanese="Trigger27" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10028" index="10028" prefix="/trigger" english="Trigger28" japanese="Trigger28" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10029" index="10029" prefix="/trigger" english="Trigger29" japanese="Trigger29" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10030" index="10030" prefix="/trigger" english="Trigger30" japanese="Trigger30" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10031" index="10031" prefix="/trigger" english="Trigger31" japanese="Trigger31" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10032" index="10032" prefix="/trigger" english="Trigger32" japanese="Trigger32" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10033" index="10033" prefix="/trigger" english="Trigger33" japanese="Trigger33" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10034" index="10034" prefix="/trigger" english="Trigger34" japanese="Trigger34" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10035" index="10035" prefix="/trigger" english="Trigger35" japanese="Trigger35" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10036" index="10036" prefix="/trigger" english="Trigger36" japanese="Trigger36" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10037" index="10037" prefix="/trigger" english="Trigger37" japanese="Trigger37" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10038" index="10038" prefix="/trigger" english="Trigger38" japanese="Trigger38" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10039" index="10039" prefix="/trigger" english="Trigger39" japanese="Trigger39" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10040" index="10040" prefix="/trigger" english="Trigger40" japanese="Trigger40" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10041" index="10041" prefix="/trigger" english="Trigger41" japanese="Trigger41" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10042" index="10042" prefix="/trigger" english="Trigger42" japanese="Trigger42" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10043" index="10043" prefix="/trigger" english="Trigger43" japanese="Trigger43" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10044" index="10044" prefix="/trigger" english="Trigger44" japanese="Trigger44" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10045" index="10045" prefix="/trigger" english="Trigger45" japanese="Trigger45" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10046" index="10046" prefix="/trigger" english="Trigger46" japanese="Trigger46" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10047" index="10047" prefix="/trigger" english="Trigger47" japanese="Trigger47" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10048" index="10048" prefix="/trigger" english="Trigger48" japanese="Trigger48" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10049" index="10049" prefix="/trigger" english="Trigger49" japanese="Trigger49" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10050" index="10050" prefix="/trigger" english="Trigger50" japanese="Trigger50" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10051" index="10051" prefix="/trigger" english="Trigger51" japanese="Trigger51" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10052" index="10052" prefix="/trigger" english="Trigger52" japanese="Trigger52" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10053" index="10053" prefix="/trigger" english="Trigger53" japanese="Trigger53" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10054" index="10054" prefix="/trigger" english="Trigger54" japanese="Trigger54" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10055" index="10055" prefix="/trigger" english="Trigger55" japanese="Trigger55" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10056" index="10056" prefix="/trigger" english="Trigger56" japanese="Trigger56" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10057" index="10057" prefix="/trigger" english="Trigger57" japanese="Trigger57" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10058" index="10058" prefix="/trigger" english="Trigger58" japanese="Trigger58" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10059" index="10059" prefix="/trigger" english="Trigger59" japanese="Trigger59" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10060" index="10060" prefix="/trigger" english="Trigger60" japanese="Trigger60" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10061" index="10061" prefix="/trigger" english="Trigger61" japanese="Trigger61" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10062" index="10062" prefix="/trigger" english="Trigger62" japanese="Trigger62" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10063" index="10063" prefix="/trigger" english="Trigger63" japanese="Trigger63" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10064" index="10064" prefix="/trigger" english="Trigger64" japanese="Trigger64" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10065" index="10065" prefix="/trigger" english="Trigger65" japanese="Trigger65" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10066" index="10066" prefix="/trigger" english="Trigger66" japanese="Trigger66" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10067" index="10067" prefix="/trigger" english="Trigger67" japanese="Trigger67" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10068" index="10068" prefix="/trigger" english="Trigger68" japanese="Trigger68" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10069" index="10069" prefix="/trigger" english="Trigger69" japanese="Trigger69" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10070" index="10070" prefix="/trigger" english="Trigger70" japanese="Trigger70" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10071" index="10071" prefix="/trigger" english="Trigger71" japanese="Trigger71" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10072" index="10072" prefix="/trigger" english="Trigger72" japanese="Trigger72" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10073" index="10073" prefix="/trigger" english="Trigger73" japanese="Trigger73" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10074" index="10074" prefix="/trigger" english="Trigger74" japanese="Trigger74" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10075" index="10075" prefix="/trigger" english="Trigger75" japanese="Trigger75" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10076" index="10076" prefix="/trigger" english="Trigger76" japanese="Trigger76" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10077" index="10077" prefix="/trigger" english="Trigger77" japanese="Trigger77" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10078" index="10078" prefix="/trigger" english="Trigger78" japanese="Trigger78" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10079" index="10079" prefix="/trigger" english="Trigger79" japanese="Trigger79" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10080" index="10080" prefix="/trigger" english="Trigger80" japanese="Trigger80" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10081" index="10081" prefix="/trigger" english="Trigger81" japanese="Trigger81" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10082" index="10082" prefix="/trigger" english="Trigger82" japanese="Trigger82" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10083" index="10083" prefix="/trigger" english="Trigger83" japanese="Trigger83" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10084" index="10084" prefix="/trigger" english="Trigger84" japanese="Trigger84" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10085" index="10085" prefix="/trigger" english="Trigger85" japanese="Trigger85" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10086" index="10086" prefix="/trigger" english="Trigger86" japanese="Trigger86" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10087" index="10087" prefix="/trigger" english="Trigger87" japanese="Trigger87" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10088" index="10088" prefix="/trigger" english="Trigger88" japanese="Trigger88" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10089" index="10089" prefix="/trigger" english="Trigger89" japanese="Trigger89" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10090" index="10090" prefix="/trigger" english="Trigger90" japanese="Trigger90" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10091" index="10091" prefix="/trigger" english="Trigger91" japanese="Trigger91" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10092" index="10092" prefix="/trigger" english="Trigger92" japanese="Trigger92" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10093" index="10093" prefix="/trigger" english="Trigger93" japanese="Trigger93" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10094" index="10094" prefix="/trigger" english="Trigger94" japanese="Trigger94" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10095" index="10095" prefix="/trigger" english="Trigger95" japanese="Trigger95" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10096" index="10096" prefix="/trigger" english="Trigger96" japanese="Trigger96" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10097" index="10097" prefix="/trigger" english="Trigger97" japanese="Trigger97" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10098" index="10098" prefix="/trigger" english="Trigger98" japanese="Trigger98" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="10099" index="10099" prefix="/trigger" english="Trigger99" japanese="Trigger99" type="trigger" element="trigger" targets="Self" skill="trigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20000" index="20000" prefix="/trigger" english="Update" japanese="Update" type="trigger" element="trigger" targets="Self" skill="ControlTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20001" index="20001" prefix="/trigger" english="Reset" japanese="Reset" type="trigger" element="trigger" targets="Self" skill="ControlTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20002" index="20002" prefix="/trigger" english="Trigger" japanese="Trigger" type="trigger" element="trigger" targets="Self" skill="GenericTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20003" index="20003" prefix="/trigger" english="ClassTrigger" japanese="ClassTrigger" type="trigger" element="trigger" targets="Self" skill="GenericTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20004" index="20004" prefix="/trigger" english="FireTrigger" japanese="FireTrigger" type="trigger" element="Fire" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20005" index="20005" prefix="/trigger" english="IceTrigger" japanese="IceTrigger" type="trigger" element="Ice" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20006" index="20006" prefix="/trigger" english="WindTrigger" japanese="WindTrigger" type="trigger" element="Wind" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20007" index="20007" prefix="/trigger" english="EarthTrigger" japanese="EarthTrigger" type="trigger" element="Earth" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20008" index="20008" prefix="/trigger" english="ThunderTrigger" japanese="ThunderTrigger" type="trigger" element="Thunder" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20009" index="20009" prefix="/trigger" english="WaterTrigger" japanese="WaterTrigger" type="trigger" element="Water" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20010" index="20010" prefix="/trigger" english="LightTrigger" japanese="LightTrigger" type="trigger" element="Light" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20011" index="20011" prefix="/trigger" english="DarkTrigger" japanese="DarkTrigger" type="trigger" element="Dark" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20012" index="20012" prefix="/trigger" english="AnyElementTrigger" japanese="AnyElementTrigger" type="trigger" element="Any" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20013" index="20013" prefix="/trigger" english="AllElementTrigger" japanese="AllElementTrigger" type="trigger" element="All" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20014" index="20014" prefix="/trigger" english="NoneElementTrigger" japanese="NoneElementTrigger" type="trigger" element="None" targets="Self" skill="ElementalTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20015" index="20015" prefix="/trigger" english="IdleMode" japanese="IdleMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20016" index="20016" prefix="/trigger" english="CycleIdleMode" japanese="CycleIdleMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20017" index="20017" prefix="/trigger" english="RestingMode" japanese="RestingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20018" index="20018" prefix="/trigger" english="CycleRestingMode" japanese="CycleRestingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20019" index="20019" prefix="/trigger" english="CombatMode" japanese="CombatMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20020" index="20020" prefix="/trigger" english="CycleCombatMode" japanese="CycleCombatMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20021" index="20021" prefix="/trigger" english="CastingMode" japanese="CastingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20022" index="20022" prefix="/trigger" english="CycleCastingMode" japanese="CycleCastingMode" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20023" index="20023" prefix="/trigger" english="PhysicalDefense" japanese="PhysicalDefense" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <s id="20024" index="20024" prefix="/trigger" english="MagicalDefense" japanese="MagicalDefense" type="trigger" element="trigger" targets="Self" skill="CombatTrigger" mpcost="0" casttime="0" recast="0" duration="0" alias="" />
     </update>
   </spells>
   <abils key="id">
@@ -422,42 +422,42 @@ IN THE SOFTWARE.
       <a id="728" alias="cel|cele" />
 
       <!-- Shared Timers -->
-      <a id="-25" index="0" prefix="/jobability" english="SP Ability" japanese="SPアビリティ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-24" index="10" prefix="/jobability" english="Rune Enchantment" japanese="エンチャントルーン" type="Rune" element="None" targets="Self" skill="Ability" mpcost="1" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-23" index="61" prefix="/jobability" english="Steal/Despoil" japanese="ぬすむ/ぶんどる" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-22" index="69" prefix="/jobability" english="Accomp./Collab." japanese="アカンプリス/コラボレーター" type="JobAbility" element="None" targets="Self, Party" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-21" index="101" prefix="/pet" english="Stay/Heel/Leave" japanese="まってろ/もどれ/かえれ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-20" index="102" prefix="/pet" english="Sic/Ready" japanese="ほんきだせ/しじをさせろ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-19" index="126" prefix="/jobability" english="Unlimited/Double Shot" japanese="エンドレスショット/ダブルショット" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-18" index="158" prefix="/jobability" english="Jump/Spirit Jump" japanese="ジャンプ/スピリットジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-17" index="159" prefix="/jobability" english="High/Soul Jump" japanese="ハイジャンプ/ソウルジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-16" index="173" prefix="/pet" english="Blood Pact: Rage" japanese="契約の履行:幻術" type="PetCommand" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-15" index="174" prefix="/pet" english="Blood Pact: Ward" japanese="契約の履行:験術" type="PetCommand" element="None" targets="Self, Party, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-14" index="193" prefix="/jobability" english="Phantom Roll" japanese="ファントムロール" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-13" index="195" prefix="/jobability" english="Quick Draw" japanese="クイックドロー" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-12" index="210" prefix="/pet" english="Maneuvers" japanese="マニューバ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-11" index="215" prefix="/jobability" english="Healing Waltz" japanese="ヒーリングワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-10" index="216" prefix="/jobability" english="Sambas" japanese="サンバモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-9" index="217" prefix="/jobability" english="Curing Waltz" japanese="ケアルワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-8" index="218" prefix="/jobability" english="Jigs" japanese="ジグモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-7" index="220" prefix="/jobability" english="Steps" japanese="ステップ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-6" index="221" prefix="/jobability" english="Flourishes I" japanese="フラリッシュI" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-5" index="222" prefix="/jobability" english="Flourishes II" japanese="フラリッシュII" type="JobAbility" element="None" targets="Self, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-4" index="225" prefix="/jobability" english="Divine Waltz" japanese="ディバインワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-3" index="226" prefix="/jobability" english="Flourishes III" japanese="フラリッシュIII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-2" index="231" prefix="/jobability" english="Stratagems" japanese="戦術魔道書" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="-1" index="254" prefix="/jobability" english="SP Ability II" japanese="SPアビリティII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="-25" index="0" prefix="/jobability" english="SP Ability" japanese="SPアビリティ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-24" index="10" prefix="/jobability" english="Rune Enchantment" japanese="エンチャントルーン" type="Rune" element="None" targets="Self" skill="Ability" mpcost="1" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-23" index="61" prefix="/jobability" english="Steal/Despoil" japanese="ぬすむ/ぶんどる" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-22" index="69" prefix="/jobability" english="Accomp./Collab." japanese="アカンプリス/コラボレーター" type="JobAbility" element="None" targets="Self, Party" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-21" index="101" prefix="/pet" english="Stay/Heel/Leave" japanese="まってろ/もどれ/かえれ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-20" index="102" prefix="/pet" english="Sic/Ready" japanese="ほんきだせ/しじをさせろ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-19" index="126" prefix="/jobability" english="Unlimited/Double Shot" japanese="エンドレスショット/ダブルショット" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-18" index="158" prefix="/jobability" english="Jump/Spirit Jump" japanese="ジャンプ/スピリットジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-17" index="159" prefix="/jobability" english="High/Soul Jump" japanese="ハイジャンプ/ソウルジャンプ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-16" index="173" prefix="/pet" english="Blood Pact: Rage" japanese="契約の履行:幻術" type="PetCommand" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-15" index="174" prefix="/pet" english="Blood Pact: Ward" japanese="契約の履行:験術" type="PetCommand" element="None" targets="Self, Party, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-14" index="193" prefix="/jobability" english="Phantom Roll" japanese="ファントムロール" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-13" index="195" prefix="/jobability" english="Quick Draw" japanese="クイックドロー" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-12" index="210" prefix="/pet" english="Maneuvers" japanese="マニューバ" type="PetCommand" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-11" index="215" prefix="/jobability" english="Healing Waltz" japanese="ヒーリングワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-10" index="216" prefix="/jobability" english="Sambas" japanese="サンバモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-9" index="217" prefix="/jobability" english="Curing Waltz" japanese="ケアルワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-8" index="218" prefix="/jobability" english="Jigs" japanese="ジグモード" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-7" index="220" prefix="/jobability" english="Steps" japanese="ステップ" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-6" index="221" prefix="/jobability" english="Flourishes I" japanese="フラリッシュI" type="JobAbility" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-5" index="222" prefix="/jobability" english="Flourishes II" japanese="フラリッシュII" type="JobAbility" element="None" targets="Self, Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-4" index="225" prefix="/jobability" english="Divine Waltz" japanese="ディバインワルツ" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-3" index="226" prefix="/jobability" english="Flourishes III" japanese="フラリッシュIII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-2" index="231" prefix="/jobability" english="Stratagems" japanese="戦術魔道書" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="-1" index="254" prefix="/jobability" english="SP Ability II" japanese="SPアビリティII" type="JobAbility" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
 
       <!-- Misc Crap -->
-      <a id="513" index="0" prefix="/range" english="Ranged" japanese="飛び道具" type="Misc" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="514" index="0" prefix="/echo" english="Weapon Abilities" japanese="武器技" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="515" index="0" prefix="/echo" english="Fish" japanese="釣る" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="516" index="0" prefix="/echo" english="Dig" japanese="掘る" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="517" index="0" prefix="/echo" english="White Magic" japanese="白魔法" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="518" index="0" prefix="/echo" english="Black Magic" japanese="黒魔法" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="519" index="0" prefix="/echo" english="Summon Magic" japanese="召喚魔法" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="520" index="0" prefix="/echo" english="Song" japanese="歌" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
-      <a id="521" index="0" prefix="/echo" english="Ninjutsu" japanese="忍術" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" alias="" />
+      <a id="513" index="0" prefix="/range" english="Ranged" japanese="飛び道具" type="Misc" element="None" targets="Enemy" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="514" index="0" prefix="/echo" english="Weapon Abilities" japanese="武器技" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="515" index="0" prefix="/echo" english="Fish" japanese="釣る" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="516" index="0" prefix="/echo" english="Dig" japanese="掘る" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="517" index="0" prefix="/echo" english="White Magic" japanese="白魔法" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="518" index="0" prefix="/echo" english="Black Magic" japanese="黒魔法" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="519" index="0" prefix="/echo" english="Summon Magic" japanese="召喚魔法" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="520" index="0" prefix="/echo" english="Song" japanese="歌" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
+      <a id="521" index="0" prefix="/echo" english="Ninjutsu" japanese="忍術" type="Misc" element="None" targets="Self" skill="Ability" mpcost="0" tpcost="0" casttime="0" recast="0" duration="0" alias="" />
 
       <!-- Corsair Shots -->
       <a id="637" element="Fire" />

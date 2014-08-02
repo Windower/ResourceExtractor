@@ -111,6 +111,13 @@ IN THE SOFTWARE.
       <o id="303" duration="300" /> <!-- Miser's Roll -->
       <o id="304" duration="300" /> <!-- Companion's Roll -->
       <o id="305" duration="300" /> <!-- Avenger's Roll -->
+      <o id="366" duration="120" /> <!-- Vallation -->
+      <o id="367" duration="120" /> <!-- Swordplay -->
+      <o id="369" duration="120" /> <!-- Pflug -->
+      <o id="371" duration="180" /> <!-- Valiance -->
+      <o id="373" duration="10" /> <!-- Liement -->
+      <o id="374" duration="30" /> <!-- One For All -->
+      <o id="376" duration="90" /> <!-- Battuta -->
       <o id="514" duration="180" /> <!-- Shining Ruby -->
     </update>
   </job_abilities>

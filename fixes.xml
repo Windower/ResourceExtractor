@@ -647,19 +647,34 @@ IN THE SOFTWARE.
       <o id="54" duration="300" /> <!-- Stoneskin -->
       <o id="55" duration="600" /> <!-- Aquaveil -->
       <o id="57" duration="180" /> <!-- Haste -->
-      <o id="66" duration="600" /> <!-- Barfire -->
-      <o id="67" duration="600" /> <!-- Barblizzard -->
-      <o id="68" duration="600" /> <!-- Baraero -->
-      <o id="69" duration="600" /> <!-- Barstone -->
-      <o id="70" duration="600" /> <!-- Barthunder -->
-      <o id="71" duration="600" /> <!-- Barwater -->
-      <o id="72" duration="600" /> <!-- Barsleep -->
-      <o id="73" duration="600" /> <!-- Barpoison -->
-      <o id="74" duration="600" /> <!-- Barparalyze -->
-      <o id="75" duration="600" /> <!-- Barblind -->
-      <o id="76" duration="600" /> <!-- Barsilence -->
-      <o id="77" duration="600" /> <!-- Barpetrify -->
-      <o id="78" duration="600" /> <!-- Barvirus -->
+      <o id="60" duration="480" /> <!-- Barfire -->
+      <o id="61" duration="480" /> <!-- Barblizzard -->
+      <o id="62" duration="480" /> <!-- Baraero -->
+      <o id="63" duration="480" /> <!-- Barstone -->
+      <o id="64" duration="480" /> <!-- Barthunder -->
+      <o id="65" duration="480" /> <!-- Barwater -->
+      <o id="66" duration="480" /> <!-- Barfira -->
+      <o id="67" duration="480" /> <!-- Barblizzara -->
+      <o id="68" duration="480" /> <!-- Baraera -->
+      <o id="69" duration="480" /> <!-- Barstonra -->
+      <o id="70" duration="480" /> <!-- Barthundera -->
+      <o id="71" duration="480" /> <!-- Barwatera -->
+      <o id="72" duration="480" /> <!-- Barsleep -->
+      <o id="73" duration="480" /> <!-- Barpoison -->
+      <o id="74" duration="480" /> <!-- Barparalyze -->
+      <o id="75" duration="480" /> <!-- Barblind -->
+      <o id="76" duration="480" /> <!-- Barsilence -->
+      <o id="77" duration="480" /> <!-- Barpetrify -->
+      <o id="78" duration="480" /> <!-- Barvirus -->
+      <o id="84" duration="480" /> <!-- Baramnesia -->
+      <o id="85" duration="480" /> <!-- Baramnesra -->
+      <o id="86" duration="480" /> <!-- Barsleepra -->
+      <o id="87" duration="480" /> <!-- Barpoisonra -->
+      <o id="88" duration="480" /> <!-- Barparalyzra -->
+      <o id="89" duration="480" /> <!-- Barblindra -->
+      <o id="90" duration="480" /> <!-- Barsilencera -->
+      <o id="91" duration="480" /> <!-- Barpetra -->
+      <o id="92" duration="480" /> <!-- Barvira -->
       <o id="96" duration="180" /> <!-- Auspice -->
       <o id="97" duration="60" /> <!-- Reprisal -->
       <o id="99" duration="180" /> <!-- Sandstorm -->
@@ -682,7 +697,19 @@ IN THE SOFTWARE.
       <o id="117" duration="180" /> <!-- Thunderstorm -->
       <o id="118" duration="180" /> <!-- Voidstorm -->
       <o id="119" duration="180" /> <!-- Aurorastorm -->
+      <o id="125" duration="1800" /> <!-- Protectra -->
+      <o id="126" duration="1800" /> <!-- Protectra II -->
+      <o id="127" duration="1800" /> <!-- Protectra III -->
+      <o id="128" duration="1800" /> <!-- Protectra IV -->
+      <o id="129" duration="1800" /> <!-- Protectra V -->
+      <o id="130" duration="1800" /> <!-- Shellra -->
+      <o id="131" duration="1800" /> <!-- Shellra II -->
+      <o id="132" duration="1800" /> <!-- Shellra III -->
+      <o id="133" duration="1800" /> <!-- Shellra IV -->
+      <o id="134" duration="1800" /> <!-- Shellra V -->
       <o id="135" duration="3600" /> <!-- Reraise -->
+      <o id="141" duration="3600" /> <!-- Reraise II -->
+      <o id="142" duration="3600" /> <!-- Reraise III -->
       <o id="249" duration="180" /> <!-- Blaze Spikes -->
       <o id="250" duration="180" /> <!-- Ice Spikes -->
       <o id="251" duration="180" /> <!-- Shock Spikes -->

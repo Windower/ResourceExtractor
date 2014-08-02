@@ -726,9 +726,15 @@ namespace ResourceExtractor
         [SuppressMessage("Microsoft.Maintainability", "CA1502")]
         private static bool IsValidName(string[] ignore, dynamic res)
         {
-            return !res.ContainsKey("en") || !(res.en == "."
+            return
+                // English
+                (!res.ContainsKey("en") || !(res.en == "."
                 || string.IsNullOrWhiteSpace(res.en) || ignore.Contains((string)res.en)
-                || res.en.StartsWith("#", StringComparison.Ordinal));
+                || res.en.StartsWith("#", StringComparison.Ordinal)))
+                // Japanese
+                && (!res.ContainsKey("ja") || !(res.ja == "."
+                || string.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string)res.ja)
+                || res.ja.StartsWith("#", StringComparison.Ordinal)));
         }
 
         private static string GetPath(int id)

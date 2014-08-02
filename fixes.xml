@@ -1064,7 +1064,7 @@ IN THE SOFTWARE.
       <o id="20" jas="学" />
       <o id="21" jas="風" />
       <o id="22" jas="剣" />
-      <o id="23" en="Monipulator" ens="MON" jas="" />
+      <o id="23" en="Monipulator" ens="MON" ja="モンストロス" jas="MON" />
     </update>
     <remove>
       <o id="24" />

@@ -245,6 +245,7 @@ namespace ResourceExtractor
                         {
                             recast.en = action.en;
                             recast.ja = action.ja;
+                            break;
                         }
                     }
                 }
@@ -258,6 +259,7 @@ namespace ResourceExtractor
                         {
                             recast.en = spell.en;
                             recast.ja = spell.ja;
+                            break;
                         }
                     }
                 }

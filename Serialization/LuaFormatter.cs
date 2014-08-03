@@ -50,7 +50,7 @@ namespace ResourceExtractor.Serialization
             Context = new StreamingContext(StreamingContextStates.File);
             KeyPriority = new List<string>()
             {
-                "id", "en", "ja", "de", "fr", "enl", "jal", "del", "frl"
+                "id", "en", "ja", "enl", "jal"
             };
         }
 

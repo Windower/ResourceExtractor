@@ -41,9 +41,15 @@ namespace ResourceExtractor
             }
 
             // Dialog format
-            if (format % 0x10000000 == (ulong) stream.Length - 4)
+            if ((format & 0x10000000) > 0 && format % 0x10000000 == (ulong) stream.Length - 4)
             {
                 return DialogParser.Parse(stream, fields[0]);
+            }
+
+            // Auto-translate files (no specific format)
+            if ((format & 0xFFFFFCFF) == 0x00010002)
+            {
+                return ATParser.Parse(stream, fields[0]);
             }
 
             throw new InvalidDataException("Unknown DAT format.");

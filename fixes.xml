@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Copyright © 2013-2014 Windower Team
 
@@ -22,662 +22,925 @@ IN THE SOFTWARE.
 -->
 
 <fixes>
+  <job_abilities>
+    <update>
+      <o id="16" duration="45" /> <!-- Mighty Strikes -->
+      <o id="17" duration="45" /> <!-- Hundred Fists -->
+      <o id="19" duration="60" /> <!-- Manafont -->
+      <o id="20" duration="60" /> <!-- Chainspell -->
+      <o id="21" duration="30" /> <!-- Perfect Dodge -->
+      <o id="22" duration="30" /> <!-- Invincible -->
+      <o id="23" duration="30" /> <!-- Blood Weapon -->
+      <o id="25" duration="180" /> <!-- Soul Voice -->
+      <o id="27" duration="30" /> <!-- Meikyo Shisui -->
+      <o id="29" duration="60" /> <!-- Spirit Surge -->
+      <o id="30" duration="180" /> <!-- Astral Flow -->
+      <o id="31" duration="180" /> <!-- Berserk -->
+      <o id="32" duration="30" /> <!-- Warcry -->
+      <o id="33" duration="180" /> <!-- Defender -->
+      <o id="34" duration="180" /> <!-- Aggressor -->
+      <o id="36" duration="120" /> <!-- Focus -->
+      <o id="37" duration="120" /> <!-- Dodge -->
+      <o id="39" duration="180" /> <!-- Boost -->
+      <o id="40" duration="300" /> <!-- Counterstance -->
+      <o id="42" duration="30" /> <!-- Flee -->
+      <o id="44" duration="60" /> <!-- Sneak Attack -->
+      <o id="47" duration="180" /> <!-- Holy Circle -->
+      <o id="48" duration="30" /> <!-- Sentinel -->
+      <o id="49" duration="60" /> <!-- Souleater -->
+      <o id="50" duration="180" /> <!-- Arcane Circle -->
+      <o id="51" duration="180" /> <!-- Last Resort -->
+      <o id="59" duration="60" /> <!-- Sharpshot -->
+      <o id="60" duration="60" /> <!-- Barrage -->
+      <o id="62" duration="30" /> <!-- Third Eye -->
+      <o id="64" duration="180" /> <!-- Warding Circle -->
+      <o id="65" duration="180" /> <!-- Ancient Circle -->
+      <o id="74" duration="60" /> <!-- Divine Seal -->
+      <o id="75" duration="60" /> <!-- Elemental Seal -->
+      <o id="76" duration="60" /> <!-- Trick Attack -->
+      <o id="79" duration="15" /> <!-- Cover -->
+      <o id="86" duration="60" /> <!-- Unlimited Shot -->
+      <o id="94" duration="30" /> <!-- Chain Affinity -->
+      <o id="95" duration="30" /> <!-- Burst Affinity -->
+      <o id="98" duration="300" /> <!-- Fighter's Roll -->
+      <o id="99" duration="300" /> <!-- Monk's Roll -->
+      <o id="100" duration="300" /> <!-- Healer's Roll -->
+      <o id="101" duration="300" /> <!-- Wizard's Roll -->
+      <o id="102" duration="300" /> <!-- Warlock's Roll -->
+      <o id="103" duration="300" /> <!-- Rogue's Roll -->
+      <o id="104" duration="300" /> <!-- Gallant's Roll -->
+      <o id="105" duration="300" /> <!-- Chaos Roll -->
+      <o id="106" duration="300" /> <!-- Beast Roll -->
+      <o id="107" duration="300" /> <!-- Choral Roll -->
+      <o id="108" duration="300" /> <!-- Hunter's Roll -->
+      <o id="109" duration="300" /> <!-- Samurai Roll -->
+      <o id="110" duration="300" /> <!-- Ninja Roll -->
+      <o id="111" duration="300" /> <!-- Drachen Roll -->
+      <o id="112" duration="300" /> <!-- Evoker's Roll -->
+      <o id="113" duration="300" /> <!-- Magus's Roll -->
+      <o id="114" duration="300" /> <!-- Corsair's Roll -->
+      <o id="115" duration="300" /> <!-- Puppet Roll -->
+      <o id="116" duration="300" /> <!-- Dancer's Roll -->
+      <o id="117" duration="300" /> <!-- Scholar's Roll -->
+      <o id="118" duration="300" /> <!-- Bolter's Roll -->
+      <o id="119" duration="300" /> <!-- Caster's Roll -->
+      <o id="120" duration="300" /> <!-- Courser's Roll -->
+      <o id="121" duration="300" /> <!-- Blitzer's Roll -->
+      <o id="122" duration="300" /> <!-- Tactician's Roll -->
+      <o id="152" duration="180" /> <!-- Formless Strikes -->
+      <o id="155" duration="60" /> <!-- Assassin's Charge -->
+      <o id="156" duration="60" /> <!-- Feint -->
+      <o id="157" duration="60" /> <!-- Fealty -->
+      <o id="159" duration="60" /> <!-- Dark Seal -->
+      <o id="160" duration="180" /> <!-- Diabolic Eye -->
+      <o id="162" duration="180" /> <!-- Killer Instinct -->
+      <o id="163" duration="60" /> <!-- Nightingale -->
+      <o id="164" duration="60" /> <!-- Troubadour -->
+      <o id="173" duration="300" /> <!-- Hasso -->
+      <o id="174" duration="300" /> <!-- Seigan -->
+      <o id="184" duration="90" /> <!-- Drain Samba -->
+      <o id="185" duration="90" /> <!-- Drain Samba II -->
+      <o id="186" duration="90" /> <!-- Drain Samba III -->
+      <o id="187" duration="90" /> <!-- Aspir Samba -->
+      <o id="188" duration="90" /> <!-- Aspir Samba II -->
+      <o id="189" duration="90" /> <!-- Haste Samba -->
+      <o id="229" duration="60" /> <!-- Pianissimo -->
+      <o id="283" duration="60" /> <!-- Tenuto -->
+      <o id="284" duration="60" /> <!-- Marcato -->
+      <o id="302" duration="300" /> <!-- Allies' Roll -->
+      <o id="303" duration="300" /> <!-- Miser's Roll -->
+      <o id="304" duration="300" /> <!-- Companion's Roll -->
+      <o id="305" duration="300" /> <!-- Avenger's Roll -->
+      <o id="366" duration="120" /> <!-- Vallation -->
+      <o id="367" duration="120" /> <!-- Swordplay -->
+      <o id="369" duration="120" /> <!-- Pflug -->
+      <o id="371" duration="180" /> <!-- Valiance -->
+      <o id="373" duration="10" /> <!-- Liement -->
+      <o id="374" duration="30" /> <!-- One For All -->
+      <o id="376" duration="90" /> <!-- Battuta -->
+      <o id="514" duration="180" /> <!-- Shining Ruby -->
+    </update>
+  </job_abilities>
   <ability_recasts>
     <update>
       <!-- Shared Timers -->
-      <a id="0" en="SP Ability" de="SP Fähigkeit" fr="SP aptitude" ja="SPアビリティ" />
-      <a id="10" en="Rune Enchantment" de="Verzauber.-Rune" fr="Runes enchant." ja="エンチャントルーン" />
-      <a id="69" en="Accomp./Collab." de="Accomplice/Kollaborateur" fr="Complice/Acolyte" ja="アカンプリス/コラボレーター" />
-      <a id="101" en="Stay/Heel/Leave" de="Verharren/Bei Fuß/Freilassen" fr="Assis !/Au pied !/Va-t'en !" ja="まってろ/もどれ/かえれ" />
-      <a id="102" en="Sic/Ready" de="Spezial/Sturm und Drang" fr="Vas-y !/Obéis !" ja="ほんきだせ/しじをさせろ" />
-      <a id="126" en="Unlimited/Double Shot" de="Dauerschuss/Doppelschuss" fr="Tirs illimités/Double tir" ja="エンドレスショット/ダブルショット" />
-      <a id="158" en="Jump/Spirit Jump" de="Sprung/Seelensprung" fr="Saut/Saut d'esprit" ja="ジャンプ/スピリットジャンプ" />
-      <a id="159" en="High/Soul Jump" de="Hochsprung/Psycho-Sprung" fr="Saut aérien/Saut de l'âme" ja="ハイジャンプ/ソウルジャンプ" />
-      <a id="173" en="Blood Pact: Rage" de="Blutsbund: Zorn" fr="Pacte sang : rage" ja="契約の履行:幻術" />
-      <a id="174" en="Blood Pact: Ward" de="Blutsbund: Hilfe" fr="Pacte sang : abri" ja="契約の履行:験術" />
-      <a id="193" en="Phantom Roll" de="Phantom-Wurf" fr="Jet fantôme" ja="ファントムロール" />
-      <a id="195" en="Quick Draw" de="Schnellschuss" fr="Tirage vif" ja="クイックドロー" />
-      <a id="210" en="Maneuvers" de="Manöver" fr="Manœuvres" ja="マニューバ" />
-      <a id="215" en="Healing Waltz" de="Kur-Walzer" fr="Valse curative" ja="ヒーリングワルツ" />
-      <a id="216" en="Sambas" de="Samba-Rhythmen" fr="Sambas" ja="サンバモード" />
-      <a id="217" en="Curing Waltz" de="Heilender Walzer" fr="Valse Soin" ja="ケアルワルツ" />
-      <a id="218" en="Jigs" de="Tango-Rhythmen" fr="Gigues" ja="ジグモード" />
-      <a id="220" en="Steps" de="Tanzschritte" fr="Pas" ja="ステップ" />
-      <a id="221" en="Flourishes I" de="Polka-Rhythmen" fr="Pirouettes I" ja="フラリッシュI" />
-      <a id="222" en="Flourishes II" de="Polka-R. II" fr="Pirouettes II" ja="フラリッシュII" />
-      <a id="225" en="Divine Waltz" de="Walzer der Göttin" fr="Valse divine" ja="ディバインワルツ" />
-      <a id="226" en="Flourishes III" de="Polka-Rhythm. III" fr="Pirouettes III" ja="フラリッシュIII" />
-      <a id="231" en="Stratagems" de="Schultz' Kriegsl." fr="Stratagèmes" ja="戦術魔道書" />
-      <a id="254" en="SP Ability II" de="SP Fähigkeit II" fr="SP aptitude II" ja="SPアビリティII" />
+      <o id="0" en="SP Ability" ja="SPアビリティ" />
+      <o id="6" en="Warrior's Charge" ja="ウォリアーチャージ" />
+      <o id="10" en="Rune Enchantment" ja="エンチャントルーン" />
+      <o id="60" en="Steal" ja="ぬすむ" />
+      <o id="69" en="Accomp./Collab." ja="アカンプリス/コラボレーター" />
+      <o id="101" en="Stay/Heel/Leave" ja="まってろ/もどれ/かえれ" />
+      <o id="102" en="Sic/Ready" ja="ほんきだせ/しじをさせろ" />
+      <o id="126" en="Unlimited/Double Shot" ja="エンドレスショット/ダブルショット" />
+      <o id="158" en="Jump/Spirit Jump" ja="ジャンプ/スピリットジャンプ" />
+      <o id="159" en="High/Soul Jump" ja="ハイジャンプ/ソウルジャンプ" />
+      <o id="173" en="Blood Pact: Rage" ja="契約の履行:幻術" />
+      <o id="174" en="Blood Pact: Ward" ja="契約の履行:験術" />
+      <o id="193" en="Phantom Roll" ja="ファントムロール" />
+      <o id="195" en="Quick Draw" ja="クイックドロー" />
+      <o id="210" en="Maneuvers" ja="マニューバ" />
+      <o id="215" en="Healing Waltz" ja="ヒーリングワルツ" />
+      <o id="216" en="Sambas" ja="サンバモード" />
+      <o id="217" en="Curing Waltz" ja="ケアルワルツ" />
+      <o id="218" en="Jigs" ja="ジグモード" />
+      <o id="220" en="Steps" ja="ステップ" />
+      <o id="221" en="Flourishes I" ja="フラリッシュI" />
+      <o id="222" en="Flourishes II" ja="フラリッシュII" />
+      <o id="225" en="Divine Waltz" ja="ディバインワルツ" />
+      <o id="226" en="Flourishes III" ja="フラリッシュIII" />
+      <o id="231" en="Stratagems" ja="戦術魔道書" />
+      <o id="244" en="Ecl.Attr./Last.Eman." ja="サークルエンリッチ/エンデュアエマネイト" />
+      <o id="254" en="SP Ability II" ja="SPアビリティII" />
+      <o id="255" en="Ready" ja="しじをさせろ" />
     </update>
   </ability_recasts>
   <weapon_skills>
     <update>
       <!-- Skillchains -->
-      <a id="1" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Combo -->
-      <a id="2" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shoulder Tackle -->
-      <a id="3" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- One Inch Punch -->
-      <a id="4" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Backhand Blow -->
-      <a id="5" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Raging Fists -->
-      <a id="6" skillchain_a="Liquefaction" skillchain_b="Impaction" skillchain_c="" /> <!-- Spinning Attack -->
-      <a id="7" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Howling Fist -->
-      <a id="8" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Dragon Kick -->
-      <a id="9" skillchain_a="Gravitation" skillchain_b="Liquefaction" skillchain_c="" /> <!-- Asuran Fists -->
-      <a id="10" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Final Heaven -->
-      <a id="11" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Ascetic's Fury -->
-      <a id="12" skillchain_a="Gravitation" skillchain_b="Liquefaction" skillchain_c="" /> <!-- Stringing Pummel -->
-      <a id="13" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Tornado Kick -->
-      <a id="14" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Victory Smite -->
-      <a id="15" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shijin Spiral -->
-      <a id="16" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Wasp Sting -->
-      <a id="17" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Viper Bite -->
-      <a id="18" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Shadowstitch -->
-      <a id="19" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Gust Slash -->
-      <a id="20" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Cyclone -->
-      <a id="21" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Energy Steal -->
-      <a id="22" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Energy Drain -->
-      <a id="23" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Dancing Edge -->
-      <a id="24" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Shark Bite -->
-      <a id="25" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Evisceration -->
-      <a id="26" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Mercy Stroke -->
-      <a id="27" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Mandalic Stab -->
-      <a id="28" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Mordant Rime -->
-      <a id="29" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Pyrrhic Kleos -->
-      <a id="30" skillchain_a="Impaction" skillchain_b="Scission" skillchain_c="Detonation" /> <!-- Aeolian Edge -->
-      <a id="31" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Rudra's Storm -->
-      <a id="32" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Fast Blade -->
-      <a id="33" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Burning Blade -->
-      <a id="34" skillchain_a="Liquefaction" skillchain_b="Detonation" skillchain_c="" /> <!-- Red Lotus Blade -->
-      <a id="35" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Flat Blade -->
-      <a id="36" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Shining Blade -->
-      <a id="37" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Seraph Blade -->
-      <a id="38" skillchain_a="Reverberation" skillchain_b="Impaction" skillchain_c="" /> <!-- Circle Blade -->
-      <a id="39" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Spirits Within -->
-      <a id="40" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Vorpal Blade -->
-      <a id="41" skillchain_a="Gravitation" skillchain_b="" skillchain_c="" /> <!-- Swift Blade -->
-      <a id="42" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Savage Blade -->
-      <a id="43" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Knights of Round -->
-      <a id="44" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Death Blossom -->
-      <a id="45" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Atonement -->
-      <a id="46" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Expiacion -->
-      <a id="47" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Sanguine Blade -->
-      <a id="48" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Hard Slash -->
-      <a id="49" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Power Slash -->
-      <a id="50" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Frostbite -->
-      <a id="51" skillchain_a="Induration" skillchain_b="Detonation" skillchain_c="" /> <!-- Freezebite -->
-      <a id="52" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Shockwave -->
-      <a id="53" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Crescent Moon -->
-      <a id="54" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Sickle Moon -->
-      <a id="55" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Spinning Slash -->
-      <a id="56" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Ground Strike -->
-      <a id="57" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Scourge -->
-      <a id="58" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Herculean Slash -->
-      <a id="59" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Torcleaver -->
-      <a id="60" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Resolution -->
-      <a id="64" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Raging Axe -->
-      <a id="65" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Smash Axe -->
-      <a id="66" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Gale Axe -->
-      <a id="67" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Avalanche Axe -->
-      <a id="68" skillchain_a="Liquefaction" skillchain_b="Scission" skillchain_c="Impaction" /> <!-- Spinning Axe -->
-      <a id="69" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Rampage -->
-      <a id="70" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Calamity -->
-      <a id="71" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Mistral Axe -->
-      <a id="72" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Decimation -->
-      <a id="73" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Onslaught -->
-      <a id="74" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Primal Rend -->
-      <a id="75" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Bora Axe -->
-      <a id="76" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Cloudsplitter -->
-      <a id="77" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Ruinator -->
-      <a id="80" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shield Break -->
-      <a id="81" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Iron Tempest -->
-      <a id="82" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Sturmwind -->
-      <a id="83" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Armor Break -->
-      <a id="84" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Keen Edge -->
-      <a id="85" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Weapon Break -->
-      <a id="86" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Raging Rush -->
-      <a id="87" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Full Break -->
-      <a id="88" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Steel Cyclone -->
-      <a id="89" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Metatron Torment -->
-      <a id="90" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- King's Justice -->
-      <a id="91" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Fell Cleave -->
-      <a id="92" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Ukko's Fury -->
-      <a id="93" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Upheaval -->
-      <a id="96" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Slice -->
-      <a id="97" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Dark Harvest -->
-      <a id="98" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shadow of Death -->
-      <a id="99" skillchain_a="Compression" skillchain_b="Scission" skillchain_c="" /> <!-- Nightmare Scythe -->
-      <a id="100" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Spinning Scythe -->
-      <a id="101" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Vorpal Scythe -->
-      <a id="102" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Guillotine -->
-      <a id="103" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Cross Reaper -->
-      <a id="104" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Spiral Hell -->
-      <a id="105" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Catastrophe -->
-      <a id="106" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Insurgency -->
-      <a id="107" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Infernal Scythe -->
-      <a id="108" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Quietus -->
-      <a id="109" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Entropy -->
-      <a id="112" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Double Thrust -->
-      <a id="113" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Thunder Thrust -->
-      <a id="114" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Raiden Thrust -->
-      <a id="115" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Leg Sweep -->
-      <a id="116" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Penta Thrust -->
-      <a id="117" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Vorpal Thrust -->
-      <a id="118" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Skewer -->
-      <a id="119" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Wheeling Thrust -->
-      <a id="120" skillchain_a="Gravitation" skillchain_b="Induration" skillchain_c="" /> <!-- Impulse Drive -->
-      <a id="121" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Geirskogul -->
-      <a id="122" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Drakesbane -->
-      <a id="123" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Sonic Thrust -->
-      <a id="124" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Camlann's Torment -->
-      <a id="125" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Stardiver -->
-      <a id="128" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Blade: Rin -->
-      <a id="129" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Blade: Retsu -->
-      <a id="130" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Blade: Teki -->
-      <a id="131" skillchain_a="Induration" skillchain_b="Detonation" skillchain_c="" /> <!-- Blade: To -->
-      <a id="132" skillchain_a="Impaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blade: Chi -->
-      <a id="133" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Blade: Ei -->
-      <a id="134" skillchain_a="Impaction" skillchain_b="Detonation" skillchain_c="" /> <!-- Blade: Jin -->
-      <a id="135" skillchain_a="Gravitation" skillchain_b="" skillchain_c="" /> <!-- Blade: Ten -->
-      <a id="136" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blade: Ku -->
-      <a id="137" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Blade: Metsu -->
-      <a id="138" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Blade: Kamu -->
-      <a id="139" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Blade: Yu -->
-      <a id="140" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Blade: Hi -->
-      <a id="141" skillchain_a="Fusion" skillchain_b="Impaction" skillchain_c="" /> <!-- Blade: Shun -->
-      <a id="144" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Tachi: Enpi -->
-      <a id="145" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Tachi: Hobaku -->
-      <a id="146" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Tachi: Goten -->
-      <a id="147" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Tachi: Kagero -->
-      <a id="148" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Tachi: Jinpu -->
-      <a id="149" skillchain_a="Reverberation" skillchain_b="Impaction" skillchain_c="" /> <!-- Tachi: Koki -->
-      <a id="150" skillchain_a="Induration" skillchain_b="Detonation" skillchain_c="" /> <!-- Tachi: Yukikaze -->
-      <a id="151" skillchain_a="Distortion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Tachi: Gekko -->
-      <a id="152" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Tachi: Kasha -->
-      <a id="153" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Tachi: Kaiten -->
-      <a id="154" skillchain_a="Gravitation" skillchain_b="Induration" skillchain_c="" /> <!-- Tachi: Rana -->
-      <a id="155" skillchain_a="Compression" skillchain_b="Scission" skillchain_c="" /> <!-- Tachi: Ageha -->
-      <a id="156" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Tachi: Fudo -->
-      <a id="157" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Tachi: Shoha -->
-      <a id="160" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shining Strike -->
-      <a id="161" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Seraph Strike -->
-      <a id="162" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Brainshaker -->
-      <a id="163" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Starlight -->
-      <a id="164" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Moonlight -->
-      <a id="165" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Skullbreaker -->
-      <a id="166" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- True Strike -->
-      <a id="167" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Judgment -->
-      <a id="168" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Hexa Strike -->
-      <a id="169" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Black Halo -->
-      <a id="170" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Randgrith -->
-      <a id="171" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Mystic Boon -->
-      <a id="172" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Flash Nova -->
-      <a id="173" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dagan -->
-      <a id="174" skillchain_a="Fusion" skillchain_b="Impaction" skillchain_c="" /> <!-- Realmrazer -->
-      <a id="176" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Heavy Swing -->
-      <a id="177" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Rock Crusher -->
-      <a id="178" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Earth Crusher -->
-      <a id="179" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Starburst -->
-      <a id="180" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Sunburst -->
-      <a id="181" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Shell Crusher -->
-      <a id="182" skillchain_a="Liquefaction" skillchain_b="Impaction" skillchain_c="" /> <!-- Full Swing -->
-      <a id="183" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Spirit Taker -->
-      <a id="184" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Retribution -->
-      <a id="185" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Gate of Tartarus -->
-      <a id="186" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Vidohunir -->
-      <a id="187" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Garland of Bliss -->
-      <a id="188" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Omniscience -->
-      <a id="189" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Cataclysm -->
-      <a id="190" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Myrkr -->
-      <a id="191" skillchain_a="Gravitation" skillchain_b="Induration" skillchain_c="" /> <!-- Shattersoul -->
-      <a id="192" skillchain_a="Liquefaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Flaming Arrow -->
-      <a id="193" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Piercing Arrow -->
-      <a id="194" skillchain_a="Liquefaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Dulling Arrow -->
-      <a id="196" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="Detonation" /> <!-- Sidewinder -->
-      <a id="197" skillchain_a="Induration" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blast Arrow -->
-      <a id="198" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Arching Arrow -->
-      <a id="199" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Empyreal Arrow -->
-      <a id="200" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Namas Arrow -->
-      <a id="201" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Refulgent Arrow -->
-      <a id="202" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Jishnu's Radiance -->
-      <a id="203" skillchain_a="Fragmentation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Apex Arrow -->
-      <a id="208" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Hot Shot -->
-      <a id="209" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Split Shot -->
-      <a id="210" skillchain_a="Liquefaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Sniper Shot -->
-      <a id="212" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="Detonation" /> <!-- Slug Shot -->
-      <a id="213" skillchain_a="Induration" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blast Shot -->
-      <a id="214" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Heavy Shot -->
-      <a id="215" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Detonator -->
-      <a id="216" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Coronach -->
-      <a id="217" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Trueflight -->
-      <a id="218" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Leaden Salute -->
-      <a id="219" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Numbing Shot -->
-      <a id="220" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Wildfire -->
-      <a id="221" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Last Stand -->
-      <a id="224" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Exenterator -->
-      <a id="225" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
-      <a id="226" skillchain_a="Gravitation" skillchain_b="Scission" skillchain_c="" /> <!-- Requiescat -->
-      <a id="238" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Uriel Blade -->
-      <a id="239" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Glory Slash -->
-      <a id="240" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Tartarus Torpor -->
-      <a id="241" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Netherspikes -->
-      <a id="242" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Carnal Nightmare -->
-      <a id="243" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Aegis Schism -->
-      <a id="244" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dancing Chains -->
-      <a id="245" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Barbed Crescent -->
-      <a id="246" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Shackled Fists -->
-      <a id="247" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Foxfire -->
-      <a id="248" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Grim Halo -->
-      <a id="249" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Netherspikes -->
-      <a id="250" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Carnal Nightmare -->
-      <a id="251" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Aegis Schism -->
-      <a id="252" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dancing Chains -->
-      <a id="253" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Barbed Crescent -->
-      <a id="254" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Vulcan Shot -->
-      <a id="255" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dimensional Death -->
+      <o id="1" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Combo -->
+      <o id="2" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shoulder Tackle -->
+      <o id="3" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- One Inch Punch -->
+      <o id="4" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Backhand Blow -->
+      <o id="5" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Raging Fists -->
+      <o id="6" skillchain_a="Liquefaction" skillchain_b="Impaction" skillchain_c="" /> <!-- Spinning Attack -->
+      <o id="7" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Howling Fist -->
+      <o id="8" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Dragon Kick -->
+      <o id="9" skillchain_a="Gravitation" skillchain_b="Liquefaction" skillchain_c="" /> <!-- Asuran Fists -->
+      <o id="10" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Final Heaven -->
+      <o id="11" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Ascetic's Fury -->
+      <o id="12" skillchain_a="Gravitation" skillchain_b="Liquefaction" skillchain_c="" /> <!-- Stringing Pummel -->
+      <o id="13" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Tornado Kick -->
+      <o id="14" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Victory Smite -->
+      <o id="15" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shijin Spiral -->
+      <o id="16" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Wasp Sting -->
+      <o id="17" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Viper Bite -->
+      <o id="18" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Shadowstitch -->
+      <o id="19" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Gust Slash -->
+      <o id="20" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Cyclone -->
+      <o id="21" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Energy Steal -->
+      <o id="22" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Energy Drain -->
+      <o id="23" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Dancing Edge -->
+      <o id="24" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Shark Bite -->
+      <o id="25" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Evisceration -->
+      <o id="26" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Mercy Stroke -->
+      <o id="27" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Mandalic Stab -->
+      <o id="28" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Mordant Rime -->
+      <o id="29" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Pyrrhic Kleos -->
+      <o id="30" skillchain_a="Impaction" skillchain_b="Scission" skillchain_c="Detonation" /> <!-- Aeolian Edge -->
+      <o id="31" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Rudra's Storm -->
+      <o id="32" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Fast Blade -->
+      <o id="33" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Burning Blade -->
+      <o id="34" skillchain_a="Liquefaction" skillchain_b="Detonation" skillchain_c="" /> <!-- Red Lotus Blade -->
+      <o id="35" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Flat Blade -->
+      <o id="36" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Shining Blade -->
+      <o id="37" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Seraph Blade -->
+      <o id="38" skillchain_a="Reverberation" skillchain_b="Impaction" skillchain_c="" /> <!-- Circle Blade -->
+      <o id="39" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Spirits Within -->
+      <o id="40" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Vorpal Blade -->
+      <o id="41" skillchain_a="Gravitation" skillchain_b="" skillchain_c="" /> <!-- Swift Blade -->
+      <o id="42" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Savage Blade -->
+      <o id="43" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Knights of Round -->
+      <o id="44" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Death Blossom -->
+      <o id="45" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Atonement -->
+      <o id="46" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Expiacion -->
+      <o id="47" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Sanguine Blade -->
+      <o id="48" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Hard Slash -->
+      <o id="49" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Power Slash -->
+      <o id="50" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Frostbite -->
+      <o id="51" skillchain_a="Induration" skillchain_b="Detonation" skillchain_c="" /> <!-- Freezebite -->
+      <o id="52" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Shockwave -->
+      <o id="53" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Crescent Moon -->
+      <o id="54" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Sickle Moon -->
+      <o id="55" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Spinning Slash -->
+      <o id="56" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Ground Strike -->
+      <o id="57" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Scourge -->
+      <o id="58" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Herculean Slash -->
+      <o id="59" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Torcleaver -->
+      <o id="60" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Resolution -->
+      <o id="64" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Raging Axe -->
+      <o id="65" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Smash Axe -->
+      <o id="66" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Gale Axe -->
+      <o id="67" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Avalanche Axe -->
+      <o id="68" skillchain_a="Liquefaction" skillchain_b="Scission" skillchain_c="Impaction" /> <!-- Spinning Axe -->
+      <o id="69" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Rampage -->
+      <o id="70" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Calamity -->
+      <o id="71" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Mistral Axe -->
+      <o id="72" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Decimation -->
+      <o id="73" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Onslaught -->
+      <o id="74" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Primal Rend -->
+      <o id="75" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Bora Axe -->
+      <o id="76" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Cloudsplitter -->
+      <o id="77" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Ruinator -->
+      <o id="80" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shield Break -->
+      <o id="81" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Iron Tempest -->
+      <o id="82" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Sturmwind -->
+      <o id="83" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Armor Break -->
+      <o id="84" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Keen Edge -->
+      <o id="85" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Weapon Break -->
+      <o id="86" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Raging Rush -->
+      <o id="87" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Full Break -->
+      <o id="88" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Steel Cyclone -->
+      <o id="89" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Metatron Torment -->
+      <o id="90" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- King's Justice -->
+      <o id="91" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Fell Cleave -->
+      <o id="92" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Ukko's Fury -->
+      <o id="93" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Upheaval -->
+      <o id="96" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Slice -->
+      <o id="97" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Dark Harvest -->
+      <o id="98" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shadow of Death -->
+      <o id="99" skillchain_a="Compression" skillchain_b="Scission" skillchain_c="" /> <!-- Nightmare Scythe -->
+      <o id="100" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Spinning Scythe -->
+      <o id="101" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Vorpal Scythe -->
+      <o id="102" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Guillotine -->
+      <o id="103" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Cross Reaper -->
+      <o id="104" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Spiral Hell -->
+      <o id="105" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Catastrophe -->
+      <o id="106" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Insurgency -->
+      <o id="107" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Infernal Scythe -->
+      <o id="108" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Quietus -->
+      <o id="109" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Entropy -->
+      <o id="112" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Double Thrust -->
+      <o id="113" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Thunder Thrust -->
+      <o id="114" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Raiden Thrust -->
+      <o id="115" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Leg Sweep -->
+      <o id="116" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Penta Thrust -->
+      <o id="117" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Vorpal Thrust -->
+      <o id="118" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Skewer -->
+      <o id="119" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Wheeling Thrust -->
+      <o id="120" skillchain_a="Gravitation" skillchain_b="Induration" skillchain_c="" /> <!-- Impulse Drive -->
+      <o id="121" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Geirskogul -->
+      <o id="122" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Drakesbane -->
+      <o id="123" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Sonic Thrust -->
+      <o id="124" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Camlann's Torment -->
+      <o id="125" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Stardiver -->
+      <o id="128" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Blade: Rin -->
+      <o id="129" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Blade: Retsu -->
+      <o id="130" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Blade: Teki -->
+      <o id="131" skillchain_a="Induration" skillchain_b="Detonation" skillchain_c="" /> <!-- Blade: To -->
+      <o id="132" skillchain_a="Impaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blade: Chi -->
+      <o id="133" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Blade: Ei -->
+      <o id="134" skillchain_a="Impaction" skillchain_b="Detonation" skillchain_c="" /> <!-- Blade: Jin -->
+      <o id="135" skillchain_a="Gravitation" skillchain_b="" skillchain_c="" /> <!-- Blade: Ten -->
+      <o id="136" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blade: Ku -->
+      <o id="137" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Blade: Metsu -->
+      <o id="138" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Blade: Kamu -->
+      <o id="139" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Blade: Yu -->
+      <o id="140" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Blade: Hi -->
+      <o id="141" skillchain_a="Fusion" skillchain_b="Impaction" skillchain_c="" /> <!-- Blade: Shun -->
+      <o id="144" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Tachi: Enpi -->
+      <o id="145" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Tachi: Hobaku -->
+      <o id="146" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Tachi: Goten -->
+      <o id="147" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Tachi: Kagero -->
+      <o id="148" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Tachi: Jinpu -->
+      <o id="149" skillchain_a="Reverberation" skillchain_b="Impaction" skillchain_c="" /> <!-- Tachi: Koki -->
+      <o id="150" skillchain_a="Induration" skillchain_b="Detonation" skillchain_c="" /> <!-- Tachi: Yukikaze -->
+      <o id="151" skillchain_a="Distortion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Tachi: Gekko -->
+      <o id="152" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Tachi: Kasha -->
+      <o id="153" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Tachi: Kaiten -->
+      <o id="154" skillchain_a="Gravitation" skillchain_b="Induration" skillchain_c="" /> <!-- Tachi: Rana -->
+      <o id="155" skillchain_a="Compression" skillchain_b="Scission" skillchain_c="" /> <!-- Tachi: Ageha -->
+      <o id="156" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Tachi: Fudo -->
+      <o id="157" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Tachi: Shoha -->
+      <o id="160" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shining Strike -->
+      <o id="161" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Seraph Strike -->
+      <o id="162" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Brainshaker -->
+      <o id="163" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Starlight -->
+      <o id="164" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Moonlight -->
+      <o id="165" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Skullbreaker -->
+      <o id="166" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- True Strike -->
+      <o id="167" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Judgment -->
+      <o id="168" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Hexa Strike -->
+      <o id="169" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Black Halo -->
+      <o id="170" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Randgrith -->
+      <o id="171" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Mystic Boon -->
+      <o id="172" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Flash Nova -->
+      <o id="173" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dagan -->
+      <o id="174" skillchain_a="Fusion" skillchain_b="Impaction" skillchain_c="" /> <!-- Realmrazer -->
+      <o id="176" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Heavy Swing -->
+      <o id="177" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Rock Crusher -->
+      <o id="178" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Earth Crusher -->
+      <o id="179" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Starburst -->
+      <o id="180" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Sunburst -->
+      <o id="181" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Shell Crusher -->
+      <o id="182" skillchain_a="Liquefaction" skillchain_b="Impaction" skillchain_c="" /> <!-- Full Swing -->
+      <o id="183" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Spirit Taker -->
+      <o id="184" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Retribution -->
+      <o id="185" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Gate of Tartarus -->
+      <o id="186" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Vidohunir -->
+      <o id="187" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Garland of Bliss -->
+      <o id="188" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Omniscience -->
+      <o id="189" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Cataclysm -->
+      <o id="190" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Myrkr -->
+      <o id="191" skillchain_a="Gravitation" skillchain_b="Induration" skillchain_c="" /> <!-- Shattersoul -->
+      <o id="192" skillchain_a="Liquefaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Flaming Arrow -->
+      <o id="193" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Piercing Arrow -->
+      <o id="194" skillchain_a="Liquefaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Dulling Arrow -->
+      <o id="196" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="Detonation" /> <!-- Sidewinder -->
+      <o id="197" skillchain_a="Induration" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blast Arrow -->
+      <o id="198" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Arching Arrow -->
+      <o id="199" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Empyreal Arrow -->
+      <o id="200" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Namas Arrow -->
+      <o id="201" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Refulgent Arrow -->
+      <o id="202" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Jishnu's Radiance -->
+      <o id="203" skillchain_a="Fragmentation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Apex Arrow -->
+      <o id="208" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Hot Shot -->
+      <o id="209" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Split Shot -->
+      <o id="210" skillchain_a="Liquefaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Sniper Shot -->
+      <o id="212" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="Detonation" /> <!-- Slug Shot -->
+      <o id="213" skillchain_a="Induration" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blast Shot -->
+      <o id="214" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Heavy Shot -->
+      <o id="215" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Detonator -->
+      <o id="216" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Coronach -->
+      <o id="217" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Trueflight -->
+      <o id="218" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Leaden Salute -->
+      <o id="219" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Numbing Shot -->
+      <o id="220" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Wildfire -->
+      <o id="221" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Last Stand -->
+      <o id="224" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Exenterator -->
+      <o id="225" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
+      <o id="226" skillchain_a="Gravitation" skillchain_b="Scission" skillchain_c="" /> <!-- Requiescat -->
+      <o id="238" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Uriel Blade -->
+      <o id="239" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Glory Slash -->
+      <o id="240" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Tartarus Torpor -->
+      <o id="241" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Netherspikes -->
+      <o id="242" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Carnal Nightmare -->
+      <o id="243" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Aegis Schism -->
+      <o id="244" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dancing Chains -->
+      <o id="245" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Barbed Crescent -->
+      <o id="246" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Shackled Fists -->
+      <o id="247" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Foxfire -->
+      <o id="248" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Grim Halo -->
+      <o id="249" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Netherspikes -->
+      <o id="250" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Carnal Nightmare -->
+      <o id="251" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Aegis Schism -->
+      <o id="252" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dancing Chains -->
+      <o id="253" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Barbed Crescent -->
+      <o id="254" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Vulcan Shot -->
+      <o id="255" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dimensional Death -->
 
       <!-- Skills -->
-      <a id="1" skill="1" /> <!-- Combo -->
-      <a id="2" skill="1" /> <!-- Shoulder Tackle -->
-      <a id="3" skill="1" /> <!-- One Inch Punch -->
-      <a id="4" skill="1" /> <!-- Backhand Blow -->
-      <a id="5" skill="1" /> <!-- Raging Fists -->
-      <a id="6" skill="1" /> <!-- Spinning Attack -->
-      <a id="7" skill="1" /> <!-- Howling Fist -->
-      <a id="8" skill="1" /> <!-- Dragon Kick -->
-      <a id="9" skill="1" /> <!-- Asuran Fists -->
-      <a id="10" skill="1" /> <!-- Final Heaven -->
-      <a id="11" skill="1" /> <!-- Ascetic's Fury -->
-      <a id="12" skill="1" /> <!-- Stringing Pummel -->
-      <a id="13" skill="1" /> <!-- Tornado Kick -->
-      <a id="14" skill="1" /> <!-- Victory Smite -->
-      <a id="15" skill="1" /> <!-- Shijin Spiral -->
-      <a id="16" skill="2" /> <!-- Wasp Sting -->
-      <a id="17" skill="2" /> <!-- Viper Bite -->
-      <a id="18" skill="2" /> <!-- Shadowstitch -->
-      <a id="19" skill="2" /> <!-- Gust Slash -->
-      <a id="20" skill="2" /> <!-- Cyclone -->
-      <a id="21" skill="2" /> <!-- Energy Steal -->
-      <a id="22" skill="2" /> <!-- Energy Drain -->
-      <a id="23" skill="2" /> <!-- Dancing Edge -->
-      <a id="24" skill="2" /> <!-- Shark Bite -->
-      <a id="25" skill="2" /> <!-- Evisceration -->
-      <a id="26" skill="2" /> <!-- Mercy Stroke -->
-      <a id="27" skill="2" /> <!-- Mandalic Stab -->
-      <a id="28" skill="2" /> <!-- Mordant Rime -->
-      <a id="29" skill="2" /> <!-- Pyrrhic Kleos -->
-      <a id="30" skill="2" /> <!-- Aeolian Edge -->
-      <a id="31" skill="2" /> <!-- Rudra's Storm -->
-      <a id="32" skill="3" /> <!-- Fast Blade -->
-      <a id="33" skill="3" /> <!-- Burning Blade -->
-      <a id="34" skill="3" /> <!-- Red Lotus Blade -->
-      <a id="35" skill="3" /> <!-- Flat Blade -->
-      <a id="36" skill="3" /> <!-- Shining Blade -->
-      <a id="37" skill="3" /> <!-- Seraph Blade -->
-      <a id="38" skill="3" /> <!-- Circle Blade -->
-      <a id="39" skill="3" /> <!-- Spirits Within -->
-      <a id="40" skill="3" /> <!-- Vorpal Blade -->
-      <a id="41" skill="3" /> <!-- Swift Blade -->
-      <a id="42" skill="3" /> <!-- Savage Blade -->
-      <a id="43" skill="3" /> <!-- Knights of Round -->
-      <a id="44" skill="3" /> <!-- Death Blossom -->
-      <a id="45" skill="3" /> <!-- Atonement -->
-      <a id="46" skill="3" /> <!-- Expiacion -->
-      <a id="47" skill="3" /> <!-- Sanguine Blade -->
-      <a id="48" skill="4" /> <!-- Hard Slash -->
-      <a id="49" skill="4" /> <!-- Power Slash -->
-      <a id="50" skill="4" /> <!-- Frostbite -->
-      <a id="51" skill="4" /> <!-- Freezebite -->
-      <a id="52" skill="4" /> <!-- Shockwave -->
-      <a id="53" skill="4" /> <!-- Crescent Moon -->
-      <a id="54" skill="4" /> <!-- Sickle Moon -->
-      <a id="55" skill="4" /> <!-- Spinning Slash -->
-      <a id="56" skill="4" /> <!-- Ground Strike -->
-      <a id="57" skill="4" /> <!-- Scourge -->
-      <a id="58" skill="4" /> <!-- Herculean Slash -->
-      <a id="59" skill="4" /> <!-- Torcleaver -->
-      <a id="60" skill="4" /> <!-- Resolution -->
-      <a id="64" skill="5" /> <!-- Raging Axe -->
-      <a id="65" skill="5" /> <!-- Smash Axe -->
-      <a id="66" skill="5" /> <!-- Gale Axe -->
-      <a id="67" skill="5" /> <!-- Avalanche Axe -->
-      <a id="68" skill="5" /> <!-- Spinning Axe -->
-      <a id="69" skill="5" /> <!-- Rampage -->
-      <a id="70" skill="5" /> <!-- Calamity -->
-      <a id="71" skill="5" /> <!-- Mistral Axe -->
-      <a id="72" skill="5" /> <!-- Decimation -->
-      <a id="73" skill="5" /> <!-- Onslaught -->
-      <a id="74" skill="5" /> <!-- Primal Rend -->
-      <a id="75" skill="5" /> <!-- Bora Axe -->
-      <a id="76" skill="5" /> <!-- Cloudsplitter -->
-      <a id="77" skill="5" /> <!-- Ruinator -->
-      <a id="80" skill="6" /> <!-- Shield Break -->
-      <a id="81" skill="6" /> <!-- Iron Tempest -->
-      <a id="82" skill="6" /> <!-- Sturmwind -->
-      <a id="83" skill="6" /> <!-- Armor Break -->
-      <a id="84" skill="6" /> <!-- Keen Edge -->
-      <a id="85" skill="6" /> <!-- Weapon Break -->
-      <a id="86" skill="6" /> <!-- Raging Rush -->
-      <a id="87" skill="6" /> <!-- Full Break -->
-      <a id="88" skill="6" /> <!-- Steel Cyclone -->
-      <a id="89" skill="6" /> <!-- Metatron Torment -->
-      <a id="90" skill="6" /> <!-- King's Justice -->
-      <a id="91" skill="6" /> <!-- Fell Cleave -->
-      <a id="92" skill="6" /> <!-- Ukko's Fury -->
-      <a id="93" skill="6" /> <!-- Upheaval -->
-      <a id="96" skill="7" /> <!-- Slice -->
-      <a id="97" skill="7" /> <!-- Dark Harvest -->
-      <a id="98" skill="7" /> <!-- Shadow of Death -->
-      <a id="99" skill="7" /> <!-- Nightmare Scythe -->
-      <a id="100" skill="7" /> <!-- Spinning Scythe -->
-      <a id="101" skill="7" /> <!-- Vorpal Scythe -->
-      <a id="102" skill="7" /> <!-- Guillotine -->
-      <a id="103" skill="7" /> <!-- Cross Reaper -->
-      <a id="104" skill="7" /> <!-- Spiral Hell -->
-      <a id="105" skill="7" /> <!-- Catastrophe -->
-      <a id="106" skill="7" /> <!-- Insurgency -->
-      <a id="107" skill="7" /> <!-- Infernal Scythe -->
-      <a id="108" skill="7" /> <!-- Quietus -->
-      <a id="109" skill="7" /> <!-- Entropy -->
-      <a id="112" skill="8" /> <!-- Double Thrust -->
-      <a id="113" skill="8" /> <!-- Thunder Thrust -->
-      <a id="114" skill="8" /> <!-- Raiden Thrust -->
-      <a id="115" skill="8" /> <!-- Leg Sweep -->
-      <a id="116" skill="8" /> <!-- Penta Thrust -->
-      <a id="117" skill="8" /> <!-- Vorpal Thrust -->
-      <a id="118" skill="8" /> <!-- Skewer -->
-      <a id="119" skill="8" /> <!-- Wheeling Thrust -->
-      <a id="120" skill="8" /> <!-- Impulse Drive -->
-      <a id="121" skill="8" /> <!-- Geirskogul -->
-      <a id="122" skill="8" /> <!-- Drakesbane -->
-      <a id="123" skill="8" /> <!-- Sonic Thrust -->
-      <a id="124" skill="8" /> <!-- Camlann's Torment -->
-      <a id="125" skill="8" /> <!-- Stardiver -->
-      <a id="128" skill="9" /> <!-- Blade: Rin -->
-      <a id="129" skill="9" /> <!-- Blade: Retsu -->
-      <a id="130" skill="9" /> <!-- Blade: Teki -->
-      <a id="131" skill="9" /> <!-- Blade: To -->
-      <a id="132" skill="9" /> <!-- Blade: Chi -->
-      <a id="133" skill="9" /> <!-- Blade: Ei -->
-      <a id="134" skill="9" /> <!-- Blade: Jin -->
-      <a id="135" skill="9" /> <!-- Blade: Ten -->
-      <a id="136" skill="9" /> <!-- Blade: Ku -->
-      <a id="137" skill="9" /> <!-- Blade: Metsu -->
-      <a id="138" skill="9" /> <!-- Blade: Kamu -->
-      <a id="139" skill="9" /> <!-- Blade: Yu -->
-      <a id="140" skill="9" /> <!-- Blade: Hi -->
-      <a id="141" skill="9" /> <!-- Blade: Shun -->
-      <a id="144" skill="10" /> <!-- Tachi: Enpi -->
-      <a id="145" skill="10" /> <!-- Tachi: Hobaku -->
-      <a id="146" skill="10" /> <!-- Tachi: Goten -->
-      <a id="147" skill="10" /> <!-- Tachi: Kagero -->
-      <a id="148" skill="10" /> <!-- Tachi: Jinpu -->
-      <a id="149" skill="10" /> <!-- Tachi: Koki -->
-      <a id="150" skill="10" /> <!-- Tachi: Yukikaze -->
-      <a id="151" skill="10" /> <!-- Tachi: Gekko -->
-      <a id="152" skill="10" /> <!-- Tachi: Kasha -->
-      <a id="153" skill="10" /> <!-- Tachi: Kaiten -->
-      <a id="154" skill="10" /> <!-- Tachi: Rana -->
-      <a id="155" skill="10" /> <!-- Tachi: Ageha -->
-      <a id="156" skill="10" /> <!-- Tachi: Fudo -->
-      <a id="157" skill="10" /> <!-- Tachi: Shoha -->
-      <a id="160" skill="11" /> <!-- Shining Strike -->
-      <a id="161" skill="11" /> <!-- Seraph Strike -->
-      <a id="162" skill="11" /> <!-- Brainshaker -->
-      <a id="163" skill="11" /> <!-- Starlight -->
-      <a id="164" skill="11" /> <!-- Moonlight -->
-      <a id="165" skill="11" /> <!-- Skullbreaker -->
-      <a id="166" skill="11" /> <!-- True Strike -->
-      <a id="167" skill="11" /> <!-- Judgment -->
-      <a id="168" skill="11" /> <!-- Hexa Strike -->
-      <a id="169" skill="11" /> <!-- Black Halo -->
-      <a id="170" skill="11" /> <!-- Randgrith -->
-      <a id="171" skill="11" /> <!-- Mystic Boon -->
-      <a id="172" skill="11" /> <!-- Flash Nova -->
-      <a id="173" skill="11" /> <!-- Dagan -->
-      <a id="174" skill="11" /> <!-- Realmrazer -->
-      <a id="176" skill="12" /> <!-- Heavy Swing -->
-      <a id="177" skill="12" /> <!-- Rock Crusher -->
-      <a id="178" skill="12" /> <!-- Earth Crusher -->
-      <a id="179" skill="12" /> <!-- Starburst -->
-      <a id="180" skill="12" /> <!-- Sunburst -->
-      <a id="181" skill="12" /> <!-- Shell Crusher -->
-      <a id="182" skill="12" /> <!-- Full Swing -->
-      <a id="183" skill="12" /> <!-- Spirit Taker -->
-      <a id="184" skill="12" /> <!-- Retribution -->
-      <a id="185" skill="12" /> <!-- Gate of Tartarus -->
-      <a id="186" skill="12" /> <!-- Vidohunir -->
-      <a id="187" skill="12" /> <!-- Garland of Bliss -->
-      <a id="188" skill="12" /> <!-- Omniscience -->
-      <a id="189" skill="12" /> <!-- Cataclysm -->
-      <a id="190" skill="12" /> <!-- Myrkr -->
-      <a id="191" skill="12" /> <!-- Shattersoul -->
-      <a id="192" skill="25" /> <!-- Flaming Arrow -->
-      <a id="193" skill="25" /> <!-- Piercing Arrow -->
-      <a id="194" skill="25" /> <!-- Dulling Arrow -->
-      <a id="196" skill="25" /> <!-- Sidewinder -->
-      <a id="197" skill="25" /> <!-- Blast Arrow -->
-      <a id="198" skill="25" /> <!-- Arching Arrow -->
-      <a id="199" skill="25" /> <!-- Empyreal Arrow -->
-      <a id="200" skill="25" /> <!-- Namas Arrow -->
-      <a id="201" skill="25" /> <!-- Refulgent Arrow -->
-      <a id="202" skill="25" /> <!-- Jishnu's Radiance -->
-      <a id="203" skill="25" /> <!-- Apex Arrow -->
-      <a id="208" skill="26" /> <!-- Hot Shot -->
-      <a id="209" skill="26" /> <!-- Split Shot -->
-      <a id="210" skill="26" /> <!-- Sniper Shot -->
-      <a id="212" skill="26" /> <!-- Slug Shot -->
-      <a id="213" skill="26" /> <!-- Blast Shot -->
-      <a id="214" skill="26" /> <!-- Heavy Shot -->
-      <a id="215" skill="26" /> <!-- Detonator -->
-      <a id="216" skill="26" /> <!-- Coronach -->
-      <a id="217" skill="26" /> <!-- Trueflight -->
-      <a id="218" skill="26" /> <!-- Leaden Salute -->
-      <a id="219" skill="26" /> <!-- Numbing Shot -->
-      <a id="220" skill="26" /> <!-- Wildfire -->
-      <a id="221" skill="26" /> <!-- Last Stand -->
-      <a id="224" skill="2" /> <!-- Exenterator -->
-      <a id="225" skill="3" /> <!-- Chant du Cygne -->
-      <a id="226" skill="3" /> <!-- Requiescat -->
-      <a id="238" skill="2" /> <!-- Uriel Blade -->
-      <a id="239" skill="2" /> <!-- Glory Slash -->
-      <a id="240" skill="12" /> <!-- Tartarus Torpor -->
+      <o id="1" skill="1" /> <!-- Combo -->
+      <o id="2" skill="1" /> <!-- Shoulder Tackle -->
+      <o id="3" skill="1" /> <!-- One Inch Punch -->
+      <o id="4" skill="1" /> <!-- Backhand Blow -->
+      <o id="5" skill="1" /> <!-- Raging Fists -->
+      <o id="6" skill="1" /> <!-- Spinning Attack -->
+      <o id="7" skill="1" /> <!-- Howling Fist -->
+      <o id="8" skill="1" /> <!-- Dragon Kick -->
+      <o id="9" skill="1" /> <!-- Asuran Fists -->
+      <o id="10" skill="1" /> <!-- Final Heaven -->
+      <o id="11" skill="1" /> <!-- Ascetic's Fury -->
+      <o id="12" skill="1" /> <!-- Stringing Pummel -->
+      <o id="13" skill="1" /> <!-- Tornado Kick -->
+      <o id="14" skill="1" /> <!-- Victory Smite -->
+      <o id="15" skill="1" /> <!-- Shijin Spiral -->
+      <o id="16" skill="2" /> <!-- Wasp Sting -->
+      <o id="17" skill="2" /> <!-- Viper Bite -->
+      <o id="18" skill="2" /> <!-- Shadowstitch -->
+      <o id="19" skill="2" /> <!-- Gust Slash -->
+      <o id="20" skill="2" /> <!-- Cyclone -->
+      <o id="21" skill="2" /> <!-- Energy Steal -->
+      <o id="22" skill="2" /> <!-- Energy Drain -->
+      <o id="23" skill="2" /> <!-- Dancing Edge -->
+      <o id="24" skill="2" /> <!-- Shark Bite -->
+      <o id="25" skill="2" /> <!-- Evisceration -->
+      <o id="26" skill="2" /> <!-- Mercy Stroke -->
+      <o id="27" skill="2" /> <!-- Mandalic Stab -->
+      <o id="28" skill="2" /> <!-- Mordant Rime -->
+      <o id="29" skill="2" /> <!-- Pyrrhic Kleos -->
+      <o id="30" skill="2" /> <!-- Aeolian Edge -->
+      <o id="31" skill="2" /> <!-- Rudra's Storm -->
+      <o id="32" skill="3" /> <!-- Fast Blade -->
+      <o id="33" skill="3" /> <!-- Burning Blade -->
+      <o id="34" skill="3" /> <!-- Red Lotus Blade -->
+      <o id="35" skill="3" /> <!-- Flat Blade -->
+      <o id="36" skill="3" /> <!-- Shining Blade -->
+      <o id="37" skill="3" /> <!-- Seraph Blade -->
+      <o id="38" skill="3" /> <!-- Circle Blade -->
+      <o id="39" skill="3" /> <!-- Spirits Within -->
+      <o id="40" skill="3" /> <!-- Vorpal Blade -->
+      <o id="41" skill="3" /> <!-- Swift Blade -->
+      <o id="42" skill="3" /> <!-- Savage Blade -->
+      <o id="43" skill="3" /> <!-- Knights of Round -->
+      <o id="44" skill="3" /> <!-- Death Blossom -->
+      <o id="45" skill="3" /> <!-- Atonement -->
+      <o id="46" skill="3" /> <!-- Expiacion -->
+      <o id="47" skill="3" /> <!-- Sanguine Blade -->
+      <o id="48" skill="4" /> <!-- Hard Slash -->
+      <o id="49" skill="4" /> <!-- Power Slash -->
+      <o id="50" skill="4" /> <!-- Frostbite -->
+      <o id="51" skill="4" /> <!-- Freezebite -->
+      <o id="52" skill="4" /> <!-- Shockwave -->
+      <o id="53" skill="4" /> <!-- Crescent Moon -->
+      <o id="54" skill="4" /> <!-- Sickle Moon -->
+      <o id="55" skill="4" /> <!-- Spinning Slash -->
+      <o id="56" skill="4" /> <!-- Ground Strike -->
+      <o id="57" skill="4" /> <!-- Scourge -->
+      <o id="58" skill="4" /> <!-- Herculean Slash -->
+      <o id="59" skill="4" /> <!-- Torcleaver -->
+      <o id="60" skill="4" /> <!-- Resolution -->
+      <o id="64" skill="5" /> <!-- Raging Axe -->
+      <o id="65" skill="5" /> <!-- Smash Axe -->
+      <o id="66" skill="5" /> <!-- Gale Axe -->
+      <o id="67" skill="5" /> <!-- Avalanche Axe -->
+      <o id="68" skill="5" /> <!-- Spinning Axe -->
+      <o id="69" skill="5" /> <!-- Rampage -->
+      <o id="70" skill="5" /> <!-- Calamity -->
+      <o id="71" skill="5" /> <!-- Mistral Axe -->
+      <o id="72" skill="5" /> <!-- Decimation -->
+      <o id="73" skill="5" /> <!-- Onslaught -->
+      <o id="74" skill="5" /> <!-- Primal Rend -->
+      <o id="75" skill="5" /> <!-- Bora Axe -->
+      <o id="76" skill="5" /> <!-- Cloudsplitter -->
+      <o id="77" skill="5" /> <!-- Ruinator -->
+      <o id="80" skill="6" /> <!-- Shield Break -->
+      <o id="81" skill="6" /> <!-- Iron Tempest -->
+      <o id="82" skill="6" /> <!-- Sturmwind -->
+      <o id="83" skill="6" /> <!-- Armor Break -->
+      <o id="84" skill="6" /> <!-- Keen Edge -->
+      <o id="85" skill="6" /> <!-- Weapon Break -->
+      <o id="86" skill="6" /> <!-- Raging Rush -->
+      <o id="87" skill="6" /> <!-- Full Break -->
+      <o id="88" skill="6" /> <!-- Steel Cyclone -->
+      <o id="89" skill="6" /> <!-- Metatron Torment -->
+      <o id="90" skill="6" /> <!-- King's Justice -->
+      <o id="91" skill="6" /> <!-- Fell Cleave -->
+      <o id="92" skill="6" /> <!-- Ukko's Fury -->
+      <o id="93" skill="6" /> <!-- Upheaval -->
+      <o id="96" skill="7" /> <!-- Slice -->
+      <o id="97" skill="7" /> <!-- Dark Harvest -->
+      <o id="98" skill="7" /> <!-- Shadow of Death -->
+      <o id="99" skill="7" /> <!-- Nightmare Scythe -->
+      <o id="100" skill="7" /> <!-- Spinning Scythe -->
+      <o id="101" skill="7" /> <!-- Vorpal Scythe -->
+      <o id="102" skill="7" /> <!-- Guillotine -->
+      <o id="103" skill="7" /> <!-- Cross Reaper -->
+      <o id="104" skill="7" /> <!-- Spiral Hell -->
+      <o id="105" skill="7" /> <!-- Catastrophe -->
+      <o id="106" skill="7" /> <!-- Insurgency -->
+      <o id="107" skill="7" /> <!-- Infernal Scythe -->
+      <o id="108" skill="7" /> <!-- Quietus -->
+      <o id="109" skill="7" /> <!-- Entropy -->
+      <o id="112" skill="8" /> <!-- Double Thrust -->
+      <o id="113" skill="8" /> <!-- Thunder Thrust -->
+      <o id="114" skill="8" /> <!-- Raiden Thrust -->
+      <o id="115" skill="8" /> <!-- Leg Sweep -->
+      <o id="116" skill="8" /> <!-- Penta Thrust -->
+      <o id="117" skill="8" /> <!-- Vorpal Thrust -->
+      <o id="118" skill="8" /> <!-- Skewer -->
+      <o id="119" skill="8" /> <!-- Wheeling Thrust -->
+      <o id="120" skill="8" /> <!-- Impulse Drive -->
+      <o id="121" skill="8" /> <!-- Geirskogul -->
+      <o id="122" skill="8" /> <!-- Drakesbane -->
+      <o id="123" skill="8" /> <!-- Sonic Thrust -->
+      <o id="124" skill="8" /> <!-- Camlann's Torment -->
+      <o id="125" skill="8" /> <!-- Stardiver -->
+      <o id="128" skill="9" /> <!-- Blade: Rin -->
+      <o id="129" skill="9" /> <!-- Blade: Retsu -->
+      <o id="130" skill="9" /> <!-- Blade: Teki -->
+      <o id="131" skill="9" /> <!-- Blade: To -->
+      <o id="132" skill="9" /> <!-- Blade: Chi -->
+      <o id="133" skill="9" /> <!-- Blade: Ei -->
+      <o id="134" skill="9" /> <!-- Blade: Jin -->
+      <o id="135" skill="9" /> <!-- Blade: Ten -->
+      <o id="136" skill="9" /> <!-- Blade: Ku -->
+      <o id="137" skill="9" /> <!-- Blade: Metsu -->
+      <o id="138" skill="9" /> <!-- Blade: Kamu -->
+      <o id="139" skill="9" /> <!-- Blade: Yu -->
+      <o id="140" skill="9" /> <!-- Blade: Hi -->
+      <o id="141" skill="9" /> <!-- Blade: Shun -->
+      <o id="144" skill="10" /> <!-- Tachi: Enpi -->
+      <o id="145" skill="10" /> <!-- Tachi: Hobaku -->
+      <o id="146" skill="10" /> <!-- Tachi: Goten -->
+      <o id="147" skill="10" /> <!-- Tachi: Kagero -->
+      <o id="148" skill="10" /> <!-- Tachi: Jinpu -->
+      <o id="149" skill="10" /> <!-- Tachi: Koki -->
+      <o id="150" skill="10" /> <!-- Tachi: Yukikaze -->
+      <o id="151" skill="10" /> <!-- Tachi: Gekko -->
+      <o id="152" skill="10" /> <!-- Tachi: Kasha -->
+      <o id="153" skill="10" /> <!-- Tachi: Kaiten -->
+      <o id="154" skill="10" /> <!-- Tachi: Rana -->
+      <o id="155" skill="10" /> <!-- Tachi: Ageha -->
+      <o id="156" skill="10" /> <!-- Tachi: Fudo -->
+      <o id="157" skill="10" /> <!-- Tachi: Shoha -->
+      <o id="160" skill="11" /> <!-- Shining Strike -->
+      <o id="161" skill="11" /> <!-- Seraph Strike -->
+      <o id="162" skill="11" /> <!-- Brainshaker -->
+      <o id="163" skill="11" /> <!-- Starlight -->
+      <o id="164" skill="11" /> <!-- Moonlight -->
+      <o id="165" skill="11" /> <!-- Skullbreaker -->
+      <o id="166" skill="11" /> <!-- True Strike -->
+      <o id="167" skill="11" /> <!-- Judgment -->
+      <o id="168" skill="11" /> <!-- Hexa Strike -->
+      <o id="169" skill="11" /> <!-- Black Halo -->
+      <o id="170" skill="11" /> <!-- Randgrith -->
+      <o id="171" skill="11" /> <!-- Mystic Boon -->
+      <o id="172" skill="11" /> <!-- Flash Nova -->
+      <o id="173" skill="11" /> <!-- Dagan -->
+      <o id="174" skill="11" /> <!-- Realmrazer -->
+      <o id="176" skill="12" /> <!-- Heavy Swing -->
+      <o id="177" skill="12" /> <!-- Rock Crusher -->
+      <o id="178" skill="12" /> <!-- Earth Crusher -->
+      <o id="179" skill="12" /> <!-- Starburst -->
+      <o id="180" skill="12" /> <!-- Sunburst -->
+      <o id="181" skill="12" /> <!-- Shell Crusher -->
+      <o id="182" skill="12" /> <!-- Full Swing -->
+      <o id="183" skill="12" /> <!-- Spirit Taker -->
+      <o id="184" skill="12" /> <!-- Retribution -->
+      <o id="185" skill="12" /> <!-- Gate of Tartarus -->
+      <o id="186" skill="12" /> <!-- Vidohunir -->
+      <o id="187" skill="12" /> <!-- Garland of Bliss -->
+      <o id="188" skill="12" /> <!-- Omniscience -->
+      <o id="189" skill="12" /> <!-- Cataclysm -->
+      <o id="190" skill="12" /> <!-- Myrkr -->
+      <o id="191" skill="12" /> <!-- Shattersoul -->
+      <o id="192" skill="25" /> <!-- Flaming Arrow -->
+      <o id="193" skill="25" /> <!-- Piercing Arrow -->
+      <o id="194" skill="25" /> <!-- Dulling Arrow -->
+      <o id="196" skill="25" /> <!-- Sidewinder -->
+      <o id="197" skill="25" /> <!-- Blast Arrow -->
+      <o id="198" skill="25" /> <!-- Arching Arrow -->
+      <o id="199" skill="25" /> <!-- Empyreal Arrow -->
+      <o id="200" skill="25" /> <!-- Namas Arrow -->
+      <o id="201" skill="25" /> <!-- Refulgent Arrow -->
+      <o id="202" skill="25" /> <!-- Jishnu's Radiance -->
+      <o id="203" skill="25" /> <!-- Apex Arrow -->
+      <o id="208" skill="26" /> <!-- Hot Shot -->
+      <o id="209" skill="26" /> <!-- Split Shot -->
+      <o id="210" skill="26" /> <!-- Sniper Shot -->
+      <o id="212" skill="26" /> <!-- Slug Shot -->
+      <o id="213" skill="26" /> <!-- Blast Shot -->
+      <o id="214" skill="26" /> <!-- Heavy Shot -->
+      <o id="215" skill="26" /> <!-- Detonator -->
+      <o id="216" skill="26" /> <!-- Coronach -->
+      <o id="217" skill="26" /> <!-- Trueflight -->
+      <o id="218" skill="26" /> <!-- Leaden Salute -->
+      <o id="219" skill="26" /> <!-- Numbing Shot -->
+      <o id="220" skill="26" /> <!-- Wildfire -->
+      <o id="221" skill="26" /> <!-- Last Stand -->
+      <o id="224" skill="2" /> <!-- Exenterator -->
+      <o id="225" skill="3" /> <!-- Chant du Cygne -->
+      <o id="226" skill="3" /> <!-- Requiescat -->
+      <o id="238" skill="2" /> <!-- Uriel Blade -->
+      <o id="239" skill="2" /> <!-- Glory Slash -->
+      <o id="240" skill="12" /> <!-- Tartarus Torpor -->
 
       <!-- Elemental Weapon Skills -->
-      <a id="19" element="2" /> <!-- Gust Slash -->
-      <a id="20" element="2" /> <!-- Cyclone -->
-      <a id="21" element="7" /> <!-- Energy Steal -->
-      <a id="22" element="7" /> <!-- Energy Drain -->
-      <a id="30" element="2" /> <!-- Aeolian Edge -->
-      <a id="33" element="0" /> <!-- Burning Blade -->
-      <a id="34" element="0" /> <!-- Red Lotus Blade -->
-      <a id="36" element="6" /> <!-- Shining Blade -->
-      <a id="37" element="6" /> <!-- Seraph Blade -->
-      <a id="39" element="15" /> <!-- Spirits Within -->
-      <a id="45" element="15" /> <!-- Atonement -->
-      <a id="47" element="7" /> <!-- Sanguine Blade -->
-      <a id="50" element="1" /> <!-- Frostbite -->
-      <a id="51" element="1" /> <!-- Freezebite -->
-      <a id="58" element="1" /> <!-- Herculean Slash -->
-      <a id="74" element="6" /> <!-- Primal Rend -->
-      <a id="76" element="4" /> <!-- Cloudsplitter -->
-      <a id="97" element="7" /> <!-- Dark Harvest -->
-      <a id="98" element="7" /> <!-- Shadow of Death -->
-      <a id="99" element="7" /> <!-- Nightmare Scythe -->
-      <a id="107" element="7" /> <!-- Infernal Scythe -->
-      <a id="113" element="4" /> <!-- 4 Thrust -->
-      <a id="114" element="4" /> <!-- Raiden Thrust -->
-      <a id="130" element="5" /> <!-- Blade: Teki -->
-      <a id="131" element="1" /> <!-- Blade: To -->
-      <a id="132" element="3" /> <!-- Blade: Chi -->
-      <a id="133" element="7" /> <!-- Blade: Ei -->
-      <a id="139" element="5" /> <!-- Blade: Yu -->
-      <a id="146" element="4" /> <!-- Tachi: Goten -->
-      <a id="147" element="0" /> <!-- Tachi: Kagero -->
-      <a id="148" element="2" /> <!-- Tachi: Jinpu -->
-      <a id="149" element="6" /> <!-- Tachi: Koki -->
-      <a id="160" element="6" /> <!-- Shining Strike -->
-      <a id="161" element="6" /> <!-- Seraph Strike -->
-      <a id="172" element="6" /> <!-- Flash Nova -->
-      <a id="177" element="3" /> <!-- Rock Crusher -->
-      <a id="178" element="3" /> <!-- 3 Crusher -->
-      <a id="179" element="6" /> <!-- Starburst -->
-      <a id="180" element="6" /> <!-- Sunburst -->
-      <a id="186" element="7" /> <!-- Vidohunir -->
-      <a id="187" element="6" /> <!-- Garland of Bliss -->
-      <a id="188" element="7" /> <!-- Omniscience -->
-      <a id="189" element="7" /> <!-- Cataclysm -->
-      <a id="192" element="0" /> <!-- Flaming Arrow -->
-      <a id="208" element="0" /> <!-- Hot Shot -->
-      <a id="217" element="6" /> <!-- Trueflight -->
-      <a id="218" element="7" /> <!-- Leaden Salute -->
-      <a id="219" element="1" /> <!-- Numbing Shot -->
-      <a id="220" element="0" /> <!-- Wildfire -->
-      <a id="238" element="6" /> <!-- Uriel Blade -->
+      <o id="19" element="2" /> <!-- Gust Slash -->
+      <o id="20" element="2" /> <!-- Cyclone -->
+      <o id="21" element="7" /> <!-- Energy Steal -->
+      <o id="22" element="7" /> <!-- Energy Drain -->
+      <o id="30" element="2" /> <!-- Aeolian Edge -->
+      <o id="33" element="0" /> <!-- Burning Blade -->
+      <o id="34" element="0" /> <!-- Red Lotus Blade -->
+      <o id="36" element="6" /> <!-- Shining Blade -->
+      <o id="37" element="6" /> <!-- Seraph Blade -->
+      <o id="39" element="15" /> <!-- Spirits Within -->
+      <o id="45" element="15" /> <!-- Atonement -->
+      <o id="47" element="7" /> <!-- Sanguine Blade -->
+      <o id="50" element="1" /> <!-- Frostbite -->
+      <o id="51" element="1" /> <!-- Freezebite -->
+      <o id="58" element="1" /> <!-- Herculean Slash -->
+      <o id="74" element="6" /> <!-- Primal Rend -->
+      <o id="76" element="4" /> <!-- Cloudsplitter -->
+      <o id="97" element="7" /> <!-- Dark Harvest -->
+      <o id="98" element="7" /> <!-- Shadow of Death -->
+      <o id="99" element="7" /> <!-- Nightmare Scythe -->
+      <o id="107" element="7" /> <!-- Infernal Scythe -->
+      <o id="113" element="4" /> <!-- 4 Thrust -->
+      <o id="114" element="4" /> <!-- Raiden Thrust -->
+      <o id="130" element="5" /> <!-- Blade: Teki -->
+      <o id="131" element="1" /> <!-- Blade: To -->
+      <o id="132" element="3" /> <!-- Blade: Chi -->
+      <o id="133" element="7" /> <!-- Blade: Ei -->
+      <o id="139" element="5" /> <!-- Blade: Yu -->
+      <o id="146" element="4" /> <!-- Tachi: Goten -->
+      <o id="147" element="0" /> <!-- Tachi: Kagero -->
+      <o id="148" element="2" /> <!-- Tachi: Jinpu -->
+      <o id="149" element="6" /> <!-- Tachi: Koki -->
+      <o id="160" element="6" /> <!-- Shining Strike -->
+      <o id="161" element="6" /> <!-- Seraph Strike -->
+      <o id="172" element="6" /> <!-- Flash Nova -->
+      <o id="177" element="3" /> <!-- Rock Crusher -->
+      <o id="178" element="3" /> <!-- 3 Crusher -->
+      <o id="179" element="6" /> <!-- Starburst -->
+      <o id="180" element="6" /> <!-- Sunburst -->
+      <o id="186" element="7" /> <!-- Vidohunir -->
+      <o id="187" element="6" /> <!-- Garland of Bliss -->
+      <o id="188" element="7" /> <!-- Omniscience -->
+      <o id="189" element="7" /> <!-- Cataclysm -->
+      <o id="192" element="0" /> <!-- Flaming Arrow -->
+      <o id="208" element="0" /> <!-- Hot Shot -->
+      <o id="217" element="6" /> <!-- Trueflight -->
+      <o id="218" element="7" /> <!-- Leaden Salute -->
+      <o id="219" element="1" /> <!-- Numbing Shot -->
+      <o id="220" element="0" /> <!-- Wildfire -->
+      <o id="238" element="6" /> <!-- Uriel Blade -->
     </update>
   </weapon_skills>
+  <spells>
+    <update>
+      <o id="43" duration="1800" /> <!-- Protect -->
+      <o id="44" duration="1800" /> <!-- Protect II -->
+      <o id="45" duration="1800" /> <!-- Protect III -->
+      <o id="46" duration="1800" /> <!-- Protect IV -->
+      <o id="47" duration="1800" /> <!-- Protect V -->
+      <o id="48" duration="1800" /> <!-- Shell -->
+      <o id="49" duration="1800" /> <!-- Shell II -->
+      <o id="50" duration="1800" /> <!-- Shell III -->
+      <o id="51" duration="1800" /> <!-- Shell IV -->
+      <o id="52" duration="1800" /> <!-- Shell V -->
+      <o id="53" duration="300" /> <!-- Blink -->
+      <o id="54" duration="300" /> <!-- Stoneskin -->
+      <o id="55" duration="600" /> <!-- Aquaveil -->
+      <o id="57" duration="180" /> <!-- Haste -->
+      <o id="60" duration="480" /> <!-- Barfire -->
+      <o id="61" duration="480" /> <!-- Barblizzard -->
+      <o id="62" duration="480" /> <!-- Baraero -->
+      <o id="63" duration="480" /> <!-- Barstone -->
+      <o id="64" duration="480" /> <!-- Barthunder -->
+      <o id="65" duration="480" /> <!-- Barwater -->
+      <o id="66" duration="480" /> <!-- Barfira -->
+      <o id="67" duration="480" /> <!-- Barblizzara -->
+      <o id="68" duration="480" /> <!-- Baraera -->
+      <o id="69" duration="480" /> <!-- Barstonra -->
+      <o id="70" duration="480" /> <!-- Barthundera -->
+      <o id="71" duration="480" /> <!-- Barwatera -->
+      <o id="72" duration="480" /> <!-- Barsleep -->
+      <o id="73" duration="480" /> <!-- Barpoison -->
+      <o id="74" duration="480" /> <!-- Barparalyze -->
+      <o id="75" duration="480" /> <!-- Barblind -->
+      <o id="76" duration="480" /> <!-- Barsilence -->
+      <o id="77" duration="480" /> <!-- Barpetrify -->
+      <o id="78" duration="480" /> <!-- Barvirus -->
+      <o id="84" duration="480" /> <!-- Baramnesia -->
+      <o id="85" duration="480" /> <!-- Baramnesra -->
+      <o id="86" duration="480" /> <!-- Barsleepra -->
+      <o id="87" duration="480" /> <!-- Barpoisonra -->
+      <o id="88" duration="480" /> <!-- Barparalyzra -->
+      <o id="89" duration="480" /> <!-- Barblindra -->
+      <o id="90" duration="480" /> <!-- Barsilencera -->
+      <o id="91" duration="480" /> <!-- Barpetra -->
+      <o id="92" duration="480" /> <!-- Barvira -->
+      <o id="96" duration="180" /> <!-- Auspice -->
+      <o id="97" duration="60" /> <!-- Reprisal -->
+      <o id="99" duration="180" /> <!-- Sandstorm -->
+      <o id="100" duration="180" /> <!-- Enfire -->
+      <o id="101" duration="180" /> <!-- Enblizzard -->
+      <o id="102" duration="180" /> <!-- Enaero -->
+      <o id="103" duration="180" /> <!-- Enstone -->
+      <o id="104" duration="180" /> <!-- Enthunder -->
+      <o id="105" duration="180" /> <!-- Enwater -->
+      <o id="106" duration="180" /> <!-- Phalanx -->
+      <o id="107" duration="120" /> <!-- Phalanx II -->
+      <o id="108" duration="75" /> <!-- Regen -->
+      <o id="109" duration="150" /> <!-- Refresh -->
+      <o id="110" duration="60" /> <!-- Regen II -->
+      <o id="111" duration="60" /> <!-- Regen III -->
+      <o id="113" duration="180" /> <!-- Rainstorm -->
+      <o id="114" duration="180" /> <!-- Windstorm -->
+      <o id="115" duration="180" /> <!-- Firestorm -->
+      <o id="116" duration="180" /> <!-- Hailstorm -->
+      <o id="117" duration="180" /> <!-- Thunderstorm -->
+      <o id="118" duration="180" /> <!-- Voidstorm -->
+      <o id="119" duration="180" /> <!-- Aurorastorm -->
+      <o id="125" duration="1800" /> <!-- Protectra -->
+      <o id="126" duration="1800" /> <!-- Protectra II -->
+      <o id="127" duration="1800" /> <!-- Protectra III -->
+      <o id="128" duration="1800" /> <!-- Protectra IV -->
+      <o id="129" duration="1800" /> <!-- Protectra V -->
+      <o id="130" duration="1800" /> <!-- Shellra -->
+      <o id="131" duration="1800" /> <!-- Shellra II -->
+      <o id="132" duration="1800" /> <!-- Shellra III -->
+      <o id="133" duration="1800" /> <!-- Shellra IV -->
+      <o id="134" duration="1800" /> <!-- Shellra V -->
+      <o id="135" duration="3600" /> <!-- Reraise -->
+      <o id="141" duration="3600" /> <!-- Reraise II -->
+      <o id="142" duration="3600" /> <!-- Reraise III -->
+      <o id="249" duration="180" /> <!-- Blaze Spikes -->
+      <o id="250" duration="180" /> <!-- Ice Spikes -->
+      <o id="251" duration="180" /> <!-- Shock Spikes -->
+      <o id="277" duration="60" /> <!-- Dread Spikes -->
+      <o id="287" duration="180" /> <!-- Klimaform -->
+      <o id="308" duration="60" /> <!-- Animus Augeo -->
+      <o id="309" duration="60" /> <!-- Animus Minuo -->
+      <o id="312" duration="180" /> <!-- Enfire II -->
+      <o id="313" duration="180" /> <!-- Enblizzard II -->
+      <o id="314" duration="180" /> <!-- Enaero II -->
+      <o id="315" duration="180" /> <!-- Enstone II -->
+      <o id="316" duration="180" /> <!-- Enthunder II -->
+      <o id="317" duration="180" /> <!-- Enwater II -->
+      <o id="318" duration="180" /> <!-- Monomi: Ichi -->
+      <o id="353" duration="180" /> <!-- Tonko: Ichi -->
+      <o id="354" duration="300" /> <!-- Tonko: Ni -->
+      <o id="338" duration="600" /> <!-- Utsusemi: Ichi -->
+      <o id="339" duration="600" /> <!-- Utsusemi: Ni -->
+      <o id="378" duration="120" /> <!-- Army's Paeon -->
+      <o id="379" duration="120" /> <!-- Army's Paeon II -->
+      <o id="380" duration="120" /> <!-- Army's Paeon III -->
+      <o id="381" duration="120" /> <!-- Army's Paeon IV -->
+      <o id="382" duration="120" /> <!-- Army's Paeon V -->
+      <o id="383" duration="120" /> <!-- Army's Paeon VI -->
+      <o id="384" duration="120" /> <!-- Army's Paeon VII -->
+      <o id="385" duration="120" /> <!-- Army's Paeon VIII -->
+      <o id="386" duration="120" /> <!-- Mage's Ballad -->
+      <o id="387" duration="120" /> <!-- Mage's Ballad II -->
+      <o id="388" duration="120" /> <!-- Mage's Ballad III -->
+      <o id="389" duration="120" /> <!-- Knight's Minne -->
+      <o id="390" duration="120" /> <!-- Knight's Minne II -->
+      <o id="391" duration="120" /> <!-- Knight's Minne III -->
+      <o id="392" duration="120" /> <!-- Knight's Minne IV -->
+      <o id="393" duration="120" /> <!-- Knight's Minne V -->
+      <o id="394" duration="120" /> <!-- Valor Minuet -->
+      <o id="395" duration="120" /> <!-- Valor Minuet II -->
+      <o id="396" duration="120" /> <!-- Valor Minuet III -->
+      <o id="397" duration="120" /> <!-- Valor Minuet IV -->
+      <o id="398" duration="120" /> <!-- Valor Minuet V -->
+      <o id="399" duration="120" /> <!-- Sword Madrigal -->
+      <o id="400" duration="120" /> <!-- Blade Madrigal -->
+      <o id="401" duration="120" /> <!-- Hunter's Prelude -->
+      <o id="402" duration="120" /> <!-- Archer's Prelude -->
+      <o id="403" duration="120" /> <!-- Sheepfoe Mambo -->
+      <o id="404" duration="120" /> <!-- Dragonfoe Mambo -->
+      <o id="405" duration="120" /> <!-- Fowl Aubade -->
+      <o id="406" duration="120" /> <!-- Herb Pastoral -->
+      <o id="407" duration="120" /> <!-- Chocobo Hum -->
+      <o id="408" duration="120" /> <!-- Shining Fantasia -->
+      <o id="409" duration="120" /> <!-- Scop's Operetta -->
+      <o id="410" duration="120" /> <!-- Puppet's Operetta -->
+      <o id="411" duration="120" /> <!-- Jester's Operetta -->
+      <o id="412" duration="120" /> <!-- Gold Capriccio -->
+      <o id="413" duration="120" /> <!-- Devotee Serenade -->
+      <o id="414" duration="120" /> <!-- Warding Round -->
+      <o id="415" duration="120" /> <!-- Goblin Gavotte -->
+      <o id="416" duration="120" /> <!-- Cactuar Fugue -->
+      <o id="417" duration="120" /> <!-- Moogle Rhapsody -->
+      <o id="418" duration="120" /> <!-- Protected Aria -->
+      <o id="419" duration="120" /> <!-- Advancing March -->
+      <o id="420" duration="120" /> <!-- Victory March -->
+      <o id="421" duration="120" /> <!-- Battlefield Elegy -->
+      <o id="422" duration="120" /> <!-- Carnage Elegy -->
+      <o id="423" duration="120" /> <!-- Massacre Elegy -->
+      <o id="424" duration="120" /> <!-- Sinewy Etude -->
+      <o id="425" duration="120" /> <!-- Dextrous Etude -->
+      <o id="426" duration="120" /> <!-- Vivacious Etude -->
+      <o id="427" duration="120" /> <!-- Quick Etude -->
+      <o id="428" duration="120" /> <!-- Learned Etude -->
+      <o id="429" duration="120" /> <!-- Spirited Etude -->
+      <o id="430" duration="120" /> <!-- Enchanting Etude -->
+      <o id="431" duration="120" /> <!-- Herculean Etude -->
+      <o id="432" duration="120" /> <!-- Uncanny Etude -->
+      <o id="433" duration="120" /> <!-- Vital Etude -->
+      <o id="434" duration="120" /> <!-- Swift Etude -->
+      <o id="435" duration="120" /> <!-- Sage Etude -->
+      <o id="436" duration="120" /> <!-- Logical Etude -->
+      <o id="437" duration="120" /> <!-- Bewitching Etude -->
+      <o id="438" duration="120" /> <!-- Fire Carol -->
+      <o id="439" duration="120" /> <!-- Ice Carol -->
+      <o id="440" duration="120" /> <!-- Wind Carol -->
+      <o id="441" duration="120" /> <!-- Earth Carol -->
+      <o id="442" duration="120" /> <!-- Lightning Carol -->
+      <o id="443" duration="120" /> <!-- Water Carol -->
+      <o id="444" duration="120" /> <!-- Light Carol -->
+      <o id="445" duration="120" /> <!-- Dark Carol -->
+      <o id="446" duration="120" /> <!-- Fire Carol II -->
+      <o id="447" duration="120" /> <!-- Ice Carol II -->
+      <o id="448" duration="120" /> <!-- Wind Carol II -->
+      <o id="449" duration="120" /> <!-- Earth Carol II -->
+      <o id="450" duration="120" /> <!-- Lightning Carol II -->
+      <o id="451" duration="120" /> <!-- Water Carol II -->
+      <o id="452" duration="120" /> <!-- Light Carol II -->
+      <o id="453" duration="120" /> <!-- Dark Carol II -->
+      <o id="454" duration="120" /> <!-- Fire Threnody -->
+      <o id="455" duration="120" /> <!-- Ice Threnody -->
+      <o id="456" duration="120" /> <!-- Wind Threnody -->
+      <o id="457" duration="120" /> <!-- Earth Threnody -->
+      <o id="458" duration="120" /> <!-- Ltng. Threnody -->
+      <o id="459" duration="120" /> <!-- Water Threnody -->
+      <o id="460" duration="120" /> <!-- Light Threnody -->
+      <o id="461" duration="120" /> <!-- Dark Threnody -->
+      <o id="462" duration="120" /> <!-- Magic Finale -->
+      <o id="463" duration="120" /> <!-- Foe Lullaby -->
+      <o id="464" duration="120" /> <!-- Goddess's Hymnus -->
+      <o id="465" duration="120" /> <!-- Chocobo Mazurka -->
+      <o id="466" duration="120" /> <!-- Maiden's Virelai -->
+      <o id="467" duration="120" /> <!-- Raptor Mazurka -->
+      <o id="468" duration="120" /> <!-- Foe Sirvente -->
+      <o id="469" duration="120" /> <!-- Adventurer's Dirge -->
+      <o id="470" duration="120" /> <!-- Sentinel's Scherzo -->
+      <o id="471" duration="120" /> <!-- Foe Lullaby II -->
+      <o id="472" duration="120" /> <!-- Pining Nocturne -->
+      <o id="473" duration="150" /> <!-- Refresh II -->
+      <o id="476" duration="300" /> <!-- Crusade -->
+      <o id="477" duration="60" /> <!-- Regen IV -->
+      <o id="478" duration="90" /> <!-- Embrava -->
+      <o id="479" duration="300" /> <!-- Boost-STR -->
+      <o id="480" duration="300" /> <!-- Boost-DEX -->
+      <o id="481" duration="300" /> <!-- Boost-VIT -->
+      <o id="482" duration="300" /> <!-- Boost-AGI -->
+      <o id="483" duration="300" /> <!-- Boost-INT -->
+      <o id="484" duration="300" /> <!-- Boost-MND -->
+      <o id="485" duration="300" /> <!-- Boost-CHR -->
+      <o id="486" duration="300" /> <!-- Gain-STR -->
+      <o id="487" duration="300" /> <!-- Gain-DEX -->
+      <o id="488" duration="300" /> <!-- Gain-VIT -->
+      <o id="489" duration="300" /> <!-- Gain-AGI -->
+      <o id="490" duration="300" /> <!-- Gain-INT -->
+      <o id="491" duration="300" /> <!-- Gain-MND -->
+      <o id="492" duration="300" /> <!-- Gain-CHR -->
+      <o id="493" duration="180" /> <!-- Temper -->
+      <o id="495" duration="180" /> <!-- Adloquium -->
+      <o id="504" duration="60" /> <!-- Regen V -->
+      <o id="505" duration="300" /> <!-- Gekka: Ichi -->
+      <o id="506" duration="180" /> <!-- Yain: Ichi -->
+      <o id="507" duration="180" /> <!-- Myoshin: Ichi -->
+      <o id="509" duration="180" /> <!-- Kakka: Ichi -->
+      <o id="510" duration="60" /> <!-- Migawari: Ichi -->
+      <o id="511" duration="180" /> <!-- Haste II -->
+      <o id="517" duration="300" /> <!-- Metallic Body -->
+      <o id="530" duration="300" /> <!-- Refueling -->
+      <o id="538" duration="30" /> <!-- Memento Mori -->
+      <o id="547" duration="90" /> <!-- Cocoon -->
+      <o id="574" duration="30" /> <!-- Feather Barrier -->
+      <o id="613" duration="120" /> <!-- Reactor Cool -->
+      <o id="614" duration="60" /> <!-- Saline Coat -->
+      <o id="615" duration="60" /> <!-- Plasma Charge -->
+      <o id="632" duration="90" /> <!-- Diamondhide -->
+      <o id="636" duration="180" /> <!-- Warm-Up -->
+      <o id="642" duration="90" /> <!-- Amplification -->
+      <o id="647" duration="300" /> <!-- Zephyr Mantle -->
+      <o id="655" duration="60" /> <!-- Triumphant Roar -->
+      <o id="661" duration="300" /> <!-- Animating Wail -->
+      <o id="662" duration="300" /> <!-- Battery Charge -->
+      <o id="664" duration="60" /> <!-- Regeneration -->
+      <o id="685" duration="60" /> <!-- Barrier Tusk -->
+      <o id="668" duration="300" /> <!-- Magic Barrier -->
+      <o id="674" duration="180" /> <!-- Fantod -->
+      <o id="679" duration="300" /> <!-- Occultation -->
+      <o id="696" duration="60" /> <!-- O. Counterstance -->
+      <o id="700" duration="60" /> <!-- Nat. Meditation -->
+      <o id="710" duration="300" /> <!-- Erratic Flutter -->
+      <o id="737" duration="90" /> <!-- Harden Shell -->
+      <o id="741" duration="300" /> <!-- Pyric Bulwark -->
+      <o id="840" duration="30" /> <!-- Foil -->
+      <o id="845" duration="180" /> <!-- Flurry -->
+      <o id="846" duration="180" /> <!-- Flurry II -->
+    </update>
+  </spells>
   <buffs>
     <update>
-      <!-- Status Durations -->
-      <b id="0" duration="3600" /> <!-- KO -->
-      <b id="1" duration="300" /> <!-- Weakness -->
-      <b id="32" duration="30" /> <!-- Flee -->
-      <b id="33" duration="180" /> <!-- Haste -->
-      <b id="34" duration="180" /> <!-- Blaze Spikes -->
-      <b id="35" duration="180" /> <!-- Ice Spikes -->
-      <b id="36" duration="300" /> <!-- Blink -->
-      <b id="37" duration="300" /> <!-- Stoneskin -->
-      <b id="38" duration="180" /> <!-- Shock Spikes -->
-      <b id="39" duration="300" /> <!-- Aquaveil -->
-      <b id="40" duration="1800" /> <!-- Protect -->
-      <b id="41" duration="1800" /> <!-- Shell -->
-      <b id="42" duration="60" /> <!-- Regen -->
-      <b id="43" duration="150" /> <!-- Refresh -->
-      <b id="44" duration="45" /> <!-- Mighty Strikes -->
-      <b id="45" duration="180" /> <!-- Boost -->
-      <b id="46" duration="45" /> <!-- Hundred Fists -->
-      <b id="47" duration="60" /> <!-- Manafont -->
-      <b id="48" duration="60" /> <!-- Chainspell -->
-      <b id="49" duration="30" /> <!-- Perfect Dodge -->
-      <b id="50" duration="30" /> <!-- Invincible -->
-      <b id="51" duration="30" /> <!-- Blood Weapon -->
-      <b id="52" duration="180" /> <!-- Soul Voice -->
-      <b id="54" duration="30" /> <!-- Meikyo Shisui -->
-      <b id="55" duration="180" /> <!-- Astral Flow -->
-      <b id="56" duration="180" /> <!-- Berserk -->
-      <b id="57" duration="180" /> <!-- Defender -->
-      <b id="58" duration="180" /> <!-- Aggressor -->
-      <b id="59" duration="120" /> <!-- Focus -->
-      <b id="60" duration="120" /> <!-- Dodge -->
-      <b id="61" duration="300" /> <!-- Counterstance -->
-      <b id="62" duration="30" /> <!-- Sentinel -->
-      <b id="63" duration="60" /> <!-- Souleater -->
-      <b id="64" duration="180" /> <!-- Last Resort -->
-      <b id="65" duration="60" /> <!-- Sneak Attack -->
-      <b id="67" duration="30" /> <!-- Third Eye -->
-      <b id="68" duration="30" /> <!-- Warcry -->
-      <b id="69" duration="300" /> <!-- Invisible -->
-      <b id="70" duration="300" /> <!-- Deodorize -->
-      <b id="71" duration="300" /> <!-- Sneak -->
-      <b id="72" duration="60" /> <!-- Sharpshot -->
-      <b id="73" duration="60" /> <!-- Barrage -->
-      <b id="74" duration="180" /> <!-- Holy Circle -->
-      <b id="75" duration="180" /> <!-- Arcane Circle -->
-      <b id="78" duration="60" /> <!-- Divine Seal -->
-      <b id="79" duration="60" /> <!-- Elemental Seal -->
-      <b id="87" duration="60" /> <!-- Trick Attack -->
-      <b id="100" duration="150" /> <!-- Barfire -->
-      <b id="101" duration="150" /> <!-- Barblizzard -->
-      <b id="102" duration="150" /> <!-- Baraero -->
-      <b id="103" duration="150" /> <!-- Barstone -->
-      <b id="104" duration="150" /> <!-- Barthunder -->
-      <b id="105" duration="150" /> <!-- Barwater -->
-      <b id="106" duration="480" /> <!-- Barsleep -->
-      <b id="107" duration="480" /> <!-- Barpoison -->
-      <b id="108" duration="480" /> <!-- Barparalyze -->
-      <b id="109" duration="480" /> <!-- Barblind -->
-      <b id="110" duration="480" /> <!-- Barsilence -->
-      <b id="111" duration="480" /> <!-- Barpetrify -->
-      <b id="112" duration="480" /> <!-- Barvirus -->
-      <b id="113" duration="3600" /> <!-- Reraise -->
-      <b id="114" duration="15" /> <!-- Cover -->
-      <b id="115" duration="60" /> <!-- Unlimited Shot -->
-      <b id="117" duration="180" /> <!-- Warding Circle -->
-      <b id="118" duration="180" /> <!-- Ancient Circle -->
-      <b id="126" duration="60" /> <!-- Spirit Surge -->
-      <b id="154" duration="180" /> <!-- Shining Ruby -->
-      <b id="164" duration="30" /> <!-- Chain Affinity -->
-      <b id="165" duration="30" /> <!-- Burst Affinity -->
-      <b id="169" duration="60" /> <!-- Potency -->
-      <b id="170" duration="180" /> <!-- Regain -->
-      <b id="171" duration="60" /> <!-- Pax -->
-      <b id="252" duration="1800" /> <!-- Chocobo -->
-      <b id="341" duration="180" /> <!-- Formless Strikes -->
-      <b id="342" duration="60" /> <!-- Assassin's Charge -->
-      <b id="343" duration="60" /> <!-- Feint -->
-      <b id="344" duration="60" /> <!-- Fealty -->
-      <b id="345" duration="60" /> <!-- Dark Seal -->
-      <b id="346" duration="180" /> <!-- Diabolic Eye -->
-      <b id="347" duration="60" /> <!-- Nightingale -->
-      <b id="348" duration="60" /> <!-- Troubadour -->
-      <b id="349" duration="180" /> <!-- Killer Instinct -->
-      <b id="353" duration="300" /> <!-- Hasso -->
-      <b id="354" duration="300" /> <!-- Seigan -->
-      <b id="368" duration="90" /> <!-- Drain Samba -->
-      <b id="369" duration="90" /> <!-- Aspir Samba -->
-      <b id="370" duration="90" /> <!-- Haste Samba -->
-
       <!-- DNC moves -->
-      <a id="381" en="Finishing Move 1" ja="フィニシングムーブ1" de="Tanzmanöver 1" fr="Mouvement final 1" enl="Finishing Move 1" jal="フィニシングムーブ1" del="Tanzmanöver 1" frl="Mouvement final 1" />
-      <a id="382" en="Finishing Move 2" ja="フィニシングムーブ2" de="Tanzmanöver 2" fr="Mouvement final 2" enl="Finishing Move 2" jal="フィニシングムーブ2" del="Tanzmanöver 2" frl="Mouvement final 2" />
-      <a id="383" en="Finishing Move 3" ja="フィニシングムーブ3" de="Tanzmanöver 3" fr="Mouvement final 3" enl="Finishing Move 3" jal="フィニシングムーブ3" del="Tanzmanöver 3" frl="Mouvement final 3" />
-      <a id="384" en="Finishing Move 4" ja="フィニシングムーブ4" de="Tanzmanöver 4" fr="Mouvement final 4" enl="Finishing Move 4" jal="フィニシングムーブ4" del="Tanzmanöver 4" frl="Mouvement final 4" />
-      <a id="385" en="Finishing Move 5" ja="フィニシングムーブ5" de="Tanzmanöver 5" fr="Mouvement final 5" enl="Finishing Move 5" jal="フィニシングムーブ5" del="Tanzmanöver 5" frl="Mouvement final 5" />
-      <a id="386" en="Lethargic Daze 1" ja="クイックステップ1" de="Pirouette 1" fr="Stupeur ankylosante 1" enl="Lethargic Daze 1" jal="クイックステップ1" del="Pirouette 1" frl="Stupeur ankylosante 1" />
-      <a id="387" en="Lethargic Daze 2" ja="クイックステップ2" de="Pirouette 2" fr="Stupeur ankylosante 2" enl="Lethargic Daze 2" jal="クイックステップ2" del="Pirouette 2" frl="Stupeur ankylosante 2" />
-      <a id="388" en="Lethargic Daze 3" ja="クイックステップ3" de="Pirouette 3" fr="Stupeur ankylosante 3" enl="Lethargic Daze 3" jal="クイックステップ3" del="Pirouette 3" frl="Stupeur ankylosante 3" />
-      <a id="389" en="Lethargic Daze 4" ja="クイックステップ4" de="Pirouette 4" fr="Stupeur ankylosante 4" enl="Lethargic Daze 4" jal="クイックステップ4" del="Pirouette 4" frl="Stupeur ankylosante 4" />
-      <a id="390" en="Lethargic Daze 5" ja="クイックステップ5" de="Pirouette 5" fr="Stupeur ankylosante 5" enl="Lethargic Daze 5" jal="クイックステップ5" del="Pirouette 5" frl="Stupeur ankylosante 5" />
-      <a id="391" en="Sluggish Daze 1" ja="ボックスステップ1" de="Ausfallschritt 1" fr="Stupeur débilitante 1" enl="Sluggish Daze 1" jal="ボックスステップ1" del="Ausfallschritt 1" frl="Stupeur débilitante 1" />
-      <a id="392" en="Sluggish Daze 2" ja="ボックスステップ2" de="Ausfallschritt 2" fr="Stupeur débilitante 2" enl="Sluggish Daze 2" jal="ボックスステップ2" del="Ausfallschritt 2" frl="Stupeur débilitante 2" />
-      <a id="393" en="Sluggish Daze 3" ja="ボックスステップ3" de="Ausfallschritt 3" fr="Stupeur débilitante 3" enl="Sluggish Daze 3" jal="ボックスステップ3" del="Ausfallschritt 3" frl="Stupeur débilitante 3" />
-      <a id="394" en="Sluggish Daze 4" ja="ボックスステップ4" de="Ausfallschritt 4" fr="Stupeur débilitante 4" enl="Sluggish Daze 4" jal="ボックスステップ4" del="Ausfallschritt 4" frl="Stupeur débilitante 4" />
-      <a id="395" en="Sluggish Daze 5" ja="ボックスステップ5" de="Ausfallschritt 5" fr="Stupeur débilitante 5" enl="Sluggish Daze 5" jal="ボックスステップ5" del="Ausfallschritt 5" frl="Stupeur débilitante 5" />
-      <a id="396" en="Weakened Daze 1" ja="スタッターステップ1" de="Schuhplattler 1" fr="Stupeur abrutissante 1" enl="Weakened Daze 1" jal="スタッターステップ1" del="Schuhplattler 1" frl="Stupeur abrutissante 1" />
-      <a id="397" en="Weakened Daze 2" ja="スタッターステップ2" de="Schuhplattler 2" fr="Stupeur abrutissante 2" enl="Weakened Daze 2" jal="スタッターステップ2" del="Schuhplattler 2" frl="Stupeur abrutissante 2" />
-      <a id="398" en="Weakened Daze 3" ja="スタッターステップ3" de="Schuhplattler 3" fr="Stupeur abrutissante 3" enl="Weakened Daze 3" jal="スタッターステップ3" del="Schuhplattler 3" frl="Stupeur abrutissante 3" />
-      <a id="399" en="Weakened Daze 4" ja="スタッターステップ4" de="Schuhplattler 4" fr="Stupeur abrutissante 4" enl="Weakened Daze 4" jal="スタッターステップ4" del="Schuhplattler 4" frl="Stupeur abrutissante 4" />
-      <a id="400" en="Weakened Daze 5" ja="スタッターステップ5" de="Schuhplattler 5" fr="Stupeur abrutissante 5" enl="Weakened Daze 5" jal="スタッターステップ5" del="Schuhplattler 5" frl="Stupeur abrutissante 5" />
+      <o id="381" en="Finishing Move 1" ja="フィニシングムーブ1" enl="Finishing Move 1" jal="フィニシングムーブ1" />
+      <o id="382" en="Finishing Move 2" ja="フィニシングムーブ2" enl="Finishing Move 2" jal="フィニシングムーブ2" />
+      <o id="383" en="Finishing Move 3" ja="フィニシングムーブ3" enl="Finishing Move 3" jal="フィニシングムーブ3" />
+      <o id="384" en="Finishing Move 4" ja="フィニシングムーブ4" enl="Finishing Move 4" jal="フィニシングムーブ4" />
+      <o id="385" en="Finishing Move 5" ja="フィニシングムーブ5" enl="Finishing Move 5" jal="フィニシングムーブ5" />
+      <o id="386" en="Lethargic Daze 1" ja="クイックステップ1" enl="Lethargic Daze 1" jal="クイックステップ1" />
+      <o id="387" en="Lethargic Daze 2" ja="クイックステップ2" enl="Lethargic Daze 2" jal="クイックステップ2" />
+      <o id="388" en="Lethargic Daze 3" ja="クイックステップ3" enl="Lethargic Daze 3" jal="クイックステップ3" />
+      <o id="389" en="Lethargic Daze 4" ja="クイックステップ4" enl="Lethargic Daze 4" jal="クイックステップ4" />
+      <o id="390" en="Lethargic Daze 5" ja="クイックステップ5" enl="Lethargic Daze 5" jal="クイックステップ5" />
+      <o id="391" en="Sluggish Daze 1" ja="ボックスステップ1" enl="Sluggish Daze 1" jal="ボックスステップ1" />
+      <o id="392" en="Sluggish Daze 2" ja="ボックスステップ2" enl="Sluggish Daze 2" jal="ボックスステップ2" />
+      <o id="393" en="Sluggish Daze 3" ja="ボックスステップ3" enl="Sluggish Daze 3" jal="ボックスステップ3" />
+      <o id="394" en="Sluggish Daze 4" ja="ボックスステップ4" enl="Sluggish Daze 4" jal="ボックスステップ4" />
+      <o id="395" en="Sluggish Daze 5" ja="ボックスステップ5" enl="Sluggish Daze 5" jal="ボックスステップ5" />
+      <o id="396" en="Weakened Daze 1" ja="スタッターステップ1" enl="Weakened Daze 1" jal="スタッターステップ1" />
+      <o id="397" en="Weakened Daze 2" ja="スタッターステップ2" enl="Weakened Daze 2" jal="スタッターステップ2" />
+      <o id="398" en="Weakened Daze 3" ja="スタッターステップ3" enl="Weakened Daze 3" jal="スタッターステップ3" />
+      <o id="399" en="Weakened Daze 4" ja="スタッターステップ4" enl="Weakened Daze 4" jal="スタッターステップ4" />
+      <o id="400" en="Weakened Daze 5" ja="スタッターステップ5" enl="Weakened Daze 5" jal="スタッターステップ5" />
     </update>
   </buffs>
   <items>
     <remove>
-      <i id="29681" />
-      <i id="29682" />
-      <i id="29683" />
-      <i id="29684" />
-      <i id="29685" />
-      <i id="29686" />
-      <i id="29687" />
-      <i id="29688" />
-      <i id="29689" />
-      <i id="29690" />
-      <i id="29691" />
-      <i id="29692" />
-      <i id="29693" />
+      <o id="29681" />
+      <o id="29682" />
+      <o id="29683" />
+      <o id="29684" />
+      <o id="29685" />
+      <o id="29686" />
+      <o id="29687" />
+      <o id="29688" />
+      <o id="29689" />
+      <o id="29690" />
+      <o id="29691" />
+      <o id="29692" />
+      <o id="29693" />
     </remove>
   </items>
   <elements>
     <update>
-      <o id="-1" en="Physical" ja="物的" de="Physikalisch" fr="physiue" />
-      <o id="0" en="Fire" ja="火" de="Feuer" fr="feu" />
-      <o id="1" en="Ice" ja="氷" de="Eis" fr="glace" />
-      <o id="2" en="Wind" ja="風" de="Wind" fr="vent" />
-      <o id="3" en="Earth" ja="土" de="Erde" fr="terre" />
-      <o id="4" en="Lightning" ja="雷" de="Blitz" fr="foudre" />
-      <o id="5" en="Water" ja="水" de="Wasser" fr="l'eau" />
-      <o id="6" en="Light" ja="光" de="Licht" fr="lumière" />
-      <o id="7" en="Dark" ja="闇" de="Dunkel" fr="ténèbres" />
-      <o id="15" en="None" ja="なし" de="Nichts" fr="nul" />
+      <o id="-1" en="Physical" ja="物的" />
+      <o id="0" en="Fire" ja="火" />
+      <o id="1" en="Ice" ja="氷" />
+      <o id="2" en="Wind" ja="風" />
+      <o id="3" en="Earth" ja="土" />
+      <o id="4" en="Lightning" ja="雷" />
+      <o id="5" en="Water" ja="水" />
+      <o id="6" en="Light" ja="光" />
+      <o id="7" en="Dark" ja="闇" />
+      <o id="15" en="None" ja="なし" />
     </update>
   </elements>
   <bags>
@@ -718,14 +981,14 @@ IN THE SOFTWARE.
   </check_ratings>
   <days>
     <update>
-      <o id="0" en="Firesday" ja="火" de="Feuertag" fr="Jour du feu" element="0" />
-      <o id="1" en="Earthsday" ja="土" de="Erdentag" fr="Jour de la terre" element="3" />
-      <o id="2" en="Watersday" ja="水" de="Wassertag" fr="Jour de l'eau" element="5" />
-      <o id="3" en="Windsday" ja="風" de="Windtag" fr="Jour du vent" element="2" />
-      <o id="4" en="Iceday" ja="氷" de="Eistag" fr="Jour de la glace" element="1" />
-      <o id="5" en="Lightningsday" ja="雷" de="Blitztag" fr="Jour de la foudre" element="4" />
-      <o id="6" en="Lightsday" ja="光" de="Lichttag" fr="Jour de la lumière" element="6" />
-      <o id="7" en="Darksday" ja="闇" de="Dunkeltag" fr="Jour des ténèbres" element="7" />
+      <o id="0" en="Firesday" ja="火" element="0" />
+      <o id="1" en="Earthsday" ja="土" element="3" />
+      <o id="2" en="Watersday" ja="水" element="5" />
+      <o id="3" en="Windsday" ja="風" element="2" />
+      <o id="4" en="Iceday" ja="氷" element="1" />
+      <o id="5" en="Lightningsday" ja="雷" element="4" />
+      <o id="6" en="Lightsday" ja="光" element="6" />
+      <o id="7" en="Darksday" ja="闇" element="7" />
     </update>
   </days>
   <emotes>
@@ -812,45 +1075,56 @@ IN THE SOFTWARE.
   </encumbrance>
   <jobs>
     <update>
-      <o id="1" en="Warrior" ens="WAR" ja="戦士" jas="戦" />
-      <o id="2" en="Monk" ens="MNK" ja="モンク" jas="モ" />
-      <o id="3" en="White Mage" ens="WHM" ja="白魔道士" jas="白" />
-      <o id="4" en="Black Mage" ens="BLM" ja="黒魔道士" jas="黒" />
-      <o id="5" en="Red Mage" ens="RDM" ja="赤魔道士" jas="赤" />
-      <o id="6" en="Thief" ens="THF" ja="シーフ" jas="シ" />
-      <o id="7" en="Paladin" ens="PLD" ja="ナイト" jas="ナ" />
-      <o id="8" en="Dark Knight" ens="DRK" ja="暗黒騎士" jas="暗" />
-      <o id="9" en="Beastmaster" ens="BST" ja="獣使い" jas="獣" />
-      <o id="10" en="Bard" ens="BRD" ja="吟遊詩人" jas="詩" />
-      <o id="11" en="Ranger" ens="RNG" ja="狩人" jas="狩" />
-      <o id="12" en="Samurai" ens="SAM" ja="侍" jas="侍" />
-      <o id="13" en="Ninja" ens="NIN" ja="忍者" jas="忍" />
-      <o id="14" en="Dragoon" ens="DRG" ja="竜騎士" jas="竜" />
-      <o id="15" en="Summoner" ens="SMN" ja="召喚士" jas="召" />
-      <o id="16" en="Blue Mage" ens="BLU" ja="青魔道士" jas="青" />
-      <o id="17" en="Corsair" ens="COR" ja="コルセア" jas="コ" />
-      <o id="18" en="Puppetmaster" ens="PUP" ja="からくり士" jas="か" />
-      <o id="19" en="Dancer" ens="DNC" ja="踊り子" jas="踊" />
-      <o id="20" en="Scholar" ens="SCH" ja="学者" jas="学" />
-      <o id="21" en="Geomancer" ens="GEO" ja="風水士" jas="風" />
-      <o id="22" en="Rune Fencer" ens="RUN" ja="魔導剣士" jas="剣" />
-      <o id="23" en="Monipulator" ens="MON" ja="" jas="" />
+      <o id="0" jas="" />
+      <o id="1" jas="戦" />
+      <o id="2" jas="モ" />
+      <o id="3" jas="白" />
+      <o id="4" jas="黒" />
+      <o id="5" jas="赤" />
+      <o id="6" jas="シ" />
+      <o id="7" jas="ナ" />
+      <o id="8" jas="暗" />
+      <o id="9" jas="獣" />
+      <o id="10" jas="詩" />
+      <o id="11" jas="狩" />
+      <o id="12" jas="侍" />
+      <o id="13" jas="忍" />
+      <o id="14" jas="竜" />
+      <o id="15" jas="召" />
+      <o id="16" jas="青" />
+      <o id="17" jas="コ" />
+      <o id="18" jas="か" />
+      <o id="19" jas="踊" />
+      <o id="20" jas="学" />
+      <o id="21" jas="風" />
+      <o id="22" jas="剣" />
+      <o id="23" en="Monipulator" ens="MON" ja="モンストロス" jas="MON" />
     </update>
+    <remove>
+      <o id="24" />
+      <o id="25" />
+      <o id="26" />
+      <o id="27" />
+      <o id="28" />
+      <o id="29" />
+      <o id="30" />
+      <o id="31" />
+    </remove>
   </jobs>
   <moon_phases>
     <update>
-      <o id="0" en="New Moon" ja="新月" de="Neumond" fr="Nouvelle lune" />
-      <o id="1" en="Waxing Crescent" ja="三日月" de="Zunehmender Mond" fr="Croissant ascendant" />
-      <o id="2" en="Waxing Crescent" ja="七日月" de="Zunehmender Mond" fr="Croissant ascendant" />
-      <o id="3" en="First Quarter Moon" ja="上弦の月" de="Erstquartals-Mond" fr="Premier quartier de lune" />
-      <o id="4" en="Waxing Gibbous" ja="十日夜" de="Zunehmender Mond" fr="Lune gibbeuse ascendante" />
-      <o id="5" en="Waxing Gibbous" ja="十三夜" de="Zunehmender Mond" fr="Lune gibbeuse ascendante" />
-      <o id="6" en="Full Moon" ja="満月" de="Vollmond" fr="Pleine lune" />
-      <o id="7" en="Waning Gibbous" ja="十六夜" de="Abnehmender Mond" fr="Lune gibbeuse descendante" />
-      <o id="8" en="Waning Gibbous" ja="居待月" de="Abnehmender Mond" fr="Lune gibbeuse descendante" />
-      <o id="9" en="Last Quarter Moon" ja="下弦の月" de="Endquartals-Mond" fr="Dernier quartier de lune" />
-      <o id="10" en="Waning Crescent" ja="二十日余月" de="Abnehmender Mond" fr="Croissant descendant" />
-      <o id="11" en="Waning Crescent" ja="二十六夜" de="Abnehmender Mond" fr="Croissant descendant" />
+      <o id="0" en="New Moon" ja="新月" />
+      <o id="1" en="Waxing Crescent" ja="三日月" />
+      <o id="2" en="Waxing Crescent" ja="七日月" />
+      <o id="3" en="First Quarter Moon" ja="上弦の月" />
+      <o id="4" en="Waxing Gibbous" ja="十日夜" />
+      <o id="5" en="Waxing Gibbous" ja="十三夜" />
+      <o id="6" en="Full Moon" ja="満月" />
+      <o id="7" en="Waning Gibbous" ja="十六夜" />
+      <o id="8" en="Waning Gibbous" ja="居待月" />
+      <o id="9" en="Last Quarter Moon" ja="下弦の月" />
+      <o id="10" en="Waning Crescent" ja="二十日余月" />
+      <o id="11" en="Waning Crescent" ja="二十六夜" />
     </update>
   </moon_phases>
   <servers>
@@ -974,26 +1248,26 @@ IN THE SOFTWARE.
   </synth_ranks>
   <weather>
     <update>
-      <o id="0" en="Fine patches" ja="快晴" de="Zeitweise bewölkt" fr="Beau temps" element="15" intensity="0" />
-      <o id="1" en="Sunshine" ja="晴れ" de="Sonne" fr="Soleil" element="15" intensity="0" />
-      <o id="2" en="Clouds" ja="くもり" de="Wolken" fr="Nuages" element="15" intensity="0" />
-      <o id="3" en="Fog" ja="霧" de="Nebel" fr="Brume" element="15" intensity="0" />
-      <o id="4" en="Hot spells" ja="熱波" de="Hitze" fr="Brûlant" element="0" intensity="1" />
-      <o id="5" en="Heat waves" ja="灼熱波" de="Hitzewellen" fr="Ardent" element="0" intensity="2" />
-      <o id="6" en="Rain" ja="雨" de="Regen" fr="Pluie" element="5" intensity="1" />
-      <o id="7" en="Squalls" ja="スコール" de="Böen" fr="Averse" element="5" intensity="2" />
-      <o id="8" en="Dust storms" ja="砂塵" de="Staubstürme" fr="Tempêtes de poussière" element="3" intensity="1" />
-      <o id="9" en="Sand storms" ja="砂嵐" de="Sandstürme" fr="Tempêtes de sable" element="3" intensity="2" />
-      <o id="10" en="Winds" ja="風" de="Wind" fr="Vents" element="2" intensity="1" />
-      <o id="11" en="Gales" ja="暴風" de="Orkane" fr="Rafales" element="2" intensity="2" />
-      <o id="12" en="Snow" ja="雪" de="Schnee" fr="Neige" element="1" intensity="1" />
-      <o id="13" en="Blizzards" ja="吹雪" de="Eissturm" fr="Blizzards" element="1" intensity="2" />
-      <o id="14" en="Thunder" ja="雷" de="Donner" fr="Orage" element="4" intensity="1" />
-      <o id="15" en="Thunderstorms" ja="雷雨" de="Gewitter" fr="Gros orage" element="4" intensity="2" />
-      <o id="16" en="Auroras" ja="オーロラ" de="Polarlicht" fr="Aurores boréales" element="6" intensity="1" />
-      <o id="17" en="Stellar glare" ja="神光" de="Sternenflut" fr="Aurores incandescentes" element="6" intensity="2" />
-      <o id="18" en="Gloom" ja="妖霧" de="Dunkelheit" fr="Pénombre" element="7" intensity="1" />
-      <o id="19" en="Darkness" ja="闇" de="Finsternis" fr="Obscurité" element="7" intensity="2" />
+      <o id="0" en="Fine patches" ja="快晴" element="15" intensity="0" />
+      <o id="1" en="Sunshine" ja="晴れ" element="15" intensity="0" />
+      <o id="2" en="Clouds" ja="くもり" element="15" intensity="0" />
+      <o id="3" en="Fog" ja="霧" element="15" intensity="0" />
+      <o id="4" en="Hot spells" ja="熱波" element="0" intensity="1" />
+      <o id="5" en="Heat waves" ja="灼熱波" element="0" intensity="2" />
+      <o id="6" en="Rain" ja="雨" element="5" intensity="1" />
+      <o id="7" en="Squalls" ja="スコール" element="5" intensity="2" />
+      <o id="8" en="Dust storms" ja="砂塵" element="3" intensity="1" />
+      <o id="9" en="Sand storms" ja="砂嵐" element="3" intensity="2" />
+      <o id="10" en="Winds" ja="風" element="2" intensity="1" />
+      <o id="11" en="Gales" ja="暴風" element="2" intensity="2" />
+      <o id="12" en="Snow" ja="雪" element="1" intensity="1" />
+      <o id="13" en="Blizzards" ja="吹雪" element="1" intensity="2" />
+      <o id="14" en="Thunder" ja="雷" element="4" intensity="1" />
+      <o id="15" en="Thunderstorms" ja="雷雨" element="4" intensity="2" />
+      <o id="16" en="Auroras" ja="オーロラ" element="6" intensity="1" />
+      <o id="17" en="Stellar glare" ja="神光" element="6" intensity="2" />
+      <o id="18" en="Gloom" ja="妖霧" element="7" intensity="1" />
+      <o id="19" en="Darkness" ja="闇" element="7" intensity="2" />
     </update>
   </weather>
   <slots>

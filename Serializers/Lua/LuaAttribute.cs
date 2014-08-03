@@ -53,7 +53,7 @@ namespace ResourceExtractor.Serializers.Lua
         {
             if (value is string || value is Enum)
             {
-                return "\"" + value.ToString().Replace("\"", "\\\"") + "\"";
+                return "\"" + value.ToString().Replace("\"", "\\\"").Replace("\n", "\\n") + "\"";
             }
 
             var vdict = value as IDictionary;

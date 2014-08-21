@@ -1295,7 +1295,7 @@ IN THE SOFTWARE.
   </slots>
   <races>
     <update>
-      <o id="0" en="Precomposed NPC" ja="NPC" gender="None" />
+      <o id="0" en="Precomposed NPC" ja="合成済みのNPC" gender="None" />
       <o id="1" en="Hume ♂" ja="ヒューム♂" gender="♂" />
       <o id="2" en="Hume ♀" ja="ヒューム♀" gender="♀" />
       <o id="3" en="Elvaan ♂" ja="エㇽバン♂" gender="♂" />

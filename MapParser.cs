@@ -36,6 +36,8 @@ namespace ResourceExtractor
             Console.CursorVisible = true;
             var Key = Console.ReadKey();
             Console.CursorVisible = false;
+            Console.Write("\n");
+
             if (Key.KeyChar != 'y')
             {
                 return;

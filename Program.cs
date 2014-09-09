@@ -559,6 +559,11 @@ namespace ResourceExtractor
 
                 for (int id = 0; id < count; id++)
                 {
+                    if (id >= names[1].Count)
+                    {
+                        break;
+                    }
+
                     string en = names[0][id][0];
                     string jp = names[1][id][0];
                     string enl = names[0][id][1];

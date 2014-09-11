@@ -604,7 +604,7 @@ namespace ResourceExtractor
                     {
                         foreach (XElement fix in remove.Elements())
                         {
-                            ((List<dynamic>)data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+                            data.RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
                         }
                     }
                 }

@@ -61,7 +61,7 @@ namespace ResourceExtractor
                     Buffer[4 * Pixel + 0] = Color.B;
                     Buffer[4 * Pixel + 1] = Color.G;
                     Buffer[4 * Pixel + 2] = Color.R;
-                    Buffer[4 * Pixel + 3] = Color.A;
+                    Buffer[4 * Pixel + 3] = 255;
                 }
             }
 

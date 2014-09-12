@@ -54,7 +54,7 @@ namespace ResourceExtractor
                             Buffer[Index + 0] = TexelBlock[Lookup].B;
                             Buffer[Index + 1] = TexelBlock[Lookup].G;
                             Buffer[Index + 2] = TexelBlock[Lookup].R;
-                            Buffer[Index + 3] = TexelBlock[Lookup].A;
+                            Buffer[Index + 3] = 255;
                         }
                     }
                 }

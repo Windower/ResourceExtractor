@@ -31,26 +31,36 @@ namespace ResourceExtractor
         internal static Bitmap Parse(BinaryReader reader, ImageHeader header)
         {
             var Format = (header.Type == ImageType.DXT2 || header.Type == ImageType.DXT4) ? PixelFormat.Format32bppPArgb : PixelFormat.Format32bppArgb;
-
             var Result = new Bitmap(header.Width, header.Height, Format);
-
-            var x = 0;
-            var y = 0;
+            var Raw = Result.LockBits(new Rectangle(0, 0, Result.Width, Result.Height), ImageLockMode.WriteOnly, Result.PixelFormat);
 
             var TexelBlockCount = (header.Width * header.Height) / (4 * 4);
-
-            for (var i = 0; i < TexelBlockCount; ++i)
+            unsafe
             {
-                var TexelBlock = ReadTexelBlock(reader, header.Type);
-                for (int j = 0; j < 16; ++j)
-                    Result.SetPixel(x + (j % 4), y + (j - (j % 4)) / 4, TexelBlock[j]);
-                x += 4;
-                if (x >= header.Width)
+                var Buffer = (byte*)Raw.Scan0; 
+
+                for (var Texel = 0; Texel < TexelBlockCount; ++Texel)
                 {
-                    y += 4;
-                    x = 0;
+                    var TexelBlock = ReadTexelBlock(reader, header.Type);
+                    var PixelOffsetX = 4 * (Texel % (header.Width / 4));
+                    var PixelOffsetY = 4 * (Texel / (header.Width / 4)) * (Raw.Stride / 4);
+
+                    var Index = 4 * (PixelOffsetX + PixelOffsetY);
+                    for (var Y = 0; Y < 4; ++Y, Index += Raw.Stride - 16)
+                    {
+                        for (var X = 0; X < 4; ++X, Index += 4)
+                        {
+                            var Lookup = X + 4 * Y;
+                            Buffer[Index + 0] = TexelBlock[Lookup].B;
+                            Buffer[Index + 1] = TexelBlock[Lookup].G;
+                            Buffer[Index + 2] = TexelBlock[Lookup].R;
+                            Buffer[Index + 3] = TexelBlock[Lookup].A;
+                        }
+                    }
                 }
             }
+
+            Result.UnlockBits(Raw);
 
             return Result;
         }

@@ -28,7 +28,7 @@ namespace ResourceExtractor
 
     internal static class DxtParser
     {
-        internal static Bitmap Parse(BinaryReader reader, ImageHeader header)
+        internal static Bitmap Parse(BinaryReader reader, ImageHeader header, bool ignoreAlpha = false)
         {
             var Format = (header.Type == ImageType.DXT2 || header.Type == ImageType.DXT4) ? PixelFormat.Format32bppPArgb : PixelFormat.Format32bppArgb;
             var Result = new Bitmap(header.Width, header.Height, Format);
@@ -54,7 +54,7 @@ namespace ResourceExtractor
                             Buffer[Index + 0] = TexelBlock[Lookup].B;
                             Buffer[Index + 1] = TexelBlock[Lookup].G;
                             Buffer[Index + 2] = TexelBlock[Lookup].R;
-                            Buffer[Index + 3] = 255;
+                            Buffer[Index + 3] = ignoreAlpha ? (byte)255 : TexelBlock[Lookup].A;
                         }
                     }
                 }

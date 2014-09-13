@@ -28,7 +28,7 @@ namespace ResourceExtractor
 
     internal static class BitmapParser
     {
-        internal static Bitmap Parse(BinaryReader reader, ImageHeader header)
+        internal static Bitmap Parse(BinaryReader reader, ImageHeader header, bool ignoreAlpha = false)
         {
             var Result = new Bitmap(header.Width, header.Height, PixelFormat.Format32bppArgb);
             var Raw = Result.LockBits(new Rectangle(0, 0, Result.Width, Result.Height), ImageLockMode.WriteOnly, Result.PixelFormat);
@@ -61,7 +61,7 @@ namespace ResourceExtractor
                     Buffer[4 * Pixel + 0] = Color.B;
                     Buffer[4 * Pixel + 1] = Color.G;
                     Buffer[4 * Pixel + 2] = Color.R;
-                    Buffer[4 * Pixel + 3] = 255;
+                    Buffer[4 * Pixel + 3] = ignoreAlpha ? (byte)255 : Color.A;
                 }
             }
 

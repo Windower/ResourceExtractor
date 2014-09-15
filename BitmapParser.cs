@@ -50,8 +50,6 @@ namespace ResourceExtractor
                         Palette[i] = ReadColor(reader, 32);
                     }
 
-                    BitFields = new byte[PixelCount];
-                    var PixelStride = PixelCount / Result.Width;
                     BitFields = reader.ReadBytes(PixelCount);
                 }
 

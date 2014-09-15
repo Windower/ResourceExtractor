@@ -28,7 +28,7 @@ namespace ResourceExtractor
 
     internal class ImageParser
     {
-        internal static Bitmap Parse(Stream stream)
+        internal static Bitmap Parse(Stream stream, bool ignoreAlpha = false)
         {
             Bitmap Result = null;
 
@@ -37,20 +37,23 @@ namespace ResourceExtractor
 
             using (BinaryReader Reader = new BinaryReader(stream))
             {
-                // Unknown 8 bytes
-                Reader.ReadBytes(8);
+                switch (Header.Type)
+                {
+                case ImageType.DXT1:
+                case ImageType.DXT2:
+                case ImageType.DXT3:
+                case ImageType.DXT4:
+                case ImageType.DXT5:
+                    // Unknown 8 bytes
+                    Reader.ReadBytes(8);
 
-                if (Flag == 0xA1)
-                {
-                    Result = DxtParser.Parse(Reader, Header);
-                }
-                else if (Flag == 0xB1 || Flag == 0x91)
-                {
-                    Result = BitmapParser.Parse(Reader, Header);
-                }
-                else
-                {
-                    //throw new InvalidDataException(string.Format("Flag not supported: {0}", Flag));
+                    Result = DxtParser.Parse(Reader, Header, ignoreAlpha);
+                    break;
+                case ImageType.Bitmap:
+                    Result = BitmapParser.Parse(Reader, Header, ignoreAlpha);
+                    break;
+                default:
+                    throw new InvalidDataException(string.Format("Image type {0} not supported: {1}", Header.Type, Flag));
                 }
             }
 

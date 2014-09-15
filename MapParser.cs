@@ -60,7 +60,7 @@ namespace ResourceExtractor
 
                         using (FileStream Stream = File.Open(Program.GetPath(MapPair.Value), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                         {
-                            var Image = ImageParser.Parse(Stream);
+                            var Image = ImageParser.Parse(Stream, true);
                             using (FileStream OutFile = File.Open(string.Format("resources/maps/{0}_{1}.png", Zone, Map), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
                             {
                                 Image.Save(OutFile, ImageFormat.Png);

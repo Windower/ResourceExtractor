@@ -197,7 +197,22 @@ namespace ResourceExtractor
                     ApplyFixes();
                     Console.WriteLine();
 
+                    // Clear directories
+                    Directory.CreateDirectory("resources");
+                    foreach (var dir in new string[] { "lua", "xml", "json", "maps" })
+                    {
+                        string path = "resources/" + dir;
+                        Directory.CreateDirectory(path);
+                        foreach (var file in Directory.EnumerateFiles(path))
+                        {
+                            File.Delete(file);
+                        }
+                    }
+
                     WriteData();
+                    Console.WriteLine();
+
+                    MapParser.Extract();
                     Console.WriteLine();
 
                     Console.WriteLine("Resource extraction complete!");
@@ -233,7 +248,8 @@ namespace ResourceExtractor
                 // Add log names for non-english languages
                 foreach (var buff in model.buffs)
                 {
-                    buff.jal = buff.ja;
+                    if (buff.ContainsKey("ja"))
+                        buff.jal = buff.ja;
                 }
 
                 // Populate ability recast table with proper names
@@ -419,17 +435,6 @@ namespace ResourceExtractor
 
         private static void WriteData()
         {
-            Directory.CreateDirectory("resources");
-            foreach (var dir in new string[] { "lua", "xml", "json" })
-            {
-                string path = "resources/" + dir;
-                Directory.CreateDirectory(path);
-                foreach (var file in Directory.EnumerateFiles(path))
-                {
-                    File.Delete(file);
-                }
-            }
-
             // Create manifest file
             XDocument manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
 
@@ -599,7 +604,7 @@ namespace ResourceExtractor
                     {
                         foreach (XElement fix in remove.Elements())
                         {
-                            ((List<dynamic>)data).RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+                            data.RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
                         }
                     }
                 }
@@ -737,7 +742,7 @@ namespace ResourceExtractor
                 || res.ja.StartsWith("#", StringComparison.Ordinal)));
         }
 
-        private static string GetPath(int id)
+        public static string GetPath(int id)
         {
             string ftable = Path.Combine(Dir, "FTABLE.DAT");
 

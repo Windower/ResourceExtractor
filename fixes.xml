@@ -105,6 +105,7 @@ IN THE SOFTWARE.
       <o id="188" duration="90" /> <!-- Aspir Samba II -->
       <o id="189" duration="90" /> <!-- Haste Samba -->
       <o id="229" duration="60" /> <!-- Pianissimo -->
+      <o id="269" duration="180" /> <!-- Impetus -->
       <o id="283" duration="60" /> <!-- Tenuto -->
       <o id="284" duration="60" /> <!-- Marcato -->
       <o id="302" duration="300" /> <!-- Allies' Roll -->
@@ -724,6 +725,8 @@ IN THE SOFTWARE.
       <o id="287" duration="180" /> <!-- Klimaform -->
       <o id="308" duration="60" /> <!-- Animus Augeo -->
       <o id="309" duration="60" /> <!-- Animus Minuo -->
+      <o id="310" duration="180" /> <!-- Enlight -->
+      <o id="311" duration="180" /> <!-- Endark -->
       <o id="312" duration="180" /> <!-- Enfire II -->
       <o id="313" duration="180" /> <!-- Enblizzard II -->
       <o id="314" duration="180" /> <!-- Enaero II -->
@@ -1292,7 +1295,7 @@ IN THE SOFTWARE.
   </slots>
   <races>
     <update>
-      <o id="0" en="Precomposed NPC" ja="NPC" gender="None" />
+      <o id="0" en="Precomposed NPC" ja="合成済みのNPC" gender="None" />
       <o id="1" en="Hume ♂" ja="ヒューム♂" gender="♂" />
       <o id="2" en="Hume ♀" ja="ヒューム♀" gender="♀" />
       <o id="3" en="Elvaan ♂" ja="エㇽバン♂" gender="♂" />
@@ -1694,23 +1697,23 @@ IN THE SOFTWARE.
       <o id="379" en="${actor} uses ${ability}.${lb}Magic Burst!${lb}${target} takes ${number} points of damage." color="D" />
       <o id="380" en="${merit skill} modification has risen to level ${number}." color="1" />
       <o id="381" en="${merit skill} modification has dropped to level ${number}." color="1" />
-      <o id="382" en="${actor}'s ranged attack hits ${target}.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
+      <o id="382" en="${actor}'s ranged attack hits ${target}.${lb}${target} recovers ${number} hit points!" color="H" />
       <o id="383" en="${target}'s spikes restore ${number} HP to ${actor}." color="1" suffix="HP" />
       <o id="384" en="Additional effect: ${target} recovers ${number} HP." color="H" suffix="HP" />
-      <o id="385" en="Skillchain: Light.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="386" en="Skillchain: Darkness.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="387" en="Skillchain: Gravitation.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="388" en="Skillchain: Fragmentation.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="389" en="Skillchain: Distortion.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="390" en="Skillchain: Fusion.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="391" en="Skillchain: Compression.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="392" en="Skillchain: Liquefaction.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="393" en="Skillchain: Induration.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="394" en="Skillchain: Reverberation.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="395" en="Skillchain: Transfixion.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="396" en="Skillchain: Scission.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="397" en="Skillchain: Detonation.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
-      <o id="398" en="Skillchain: Impaction.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
+      <o id="385" en="Skillchain: Light.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="386" en="Skillchain: Darkness.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="387" en="Skillchain: Gravitation.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="388" en="Skillchain: Fragmentation.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="389" en="Skillchain: Distortion.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="390" en="Skillchain: Fusion.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="391" en="Skillchain: Compression.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="392" en="Skillchain: Liquefaction.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="393" en="Skillchain: Induration.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="394" en="Skillchain: Reverberation.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="395" en="Skillchain: Transfixion.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="396" en="Skillchain: Scission.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="397" en="Skillchain: Detonation.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="398" en="Skillchain: Impaction.${lb}${target} recovers ${number} hit points!" color="H" />
       <o id="399" en="${actor} uses a ${item}.${lb}All of ${target}'s Petras vanish!" color="1" />
       <o id="400" en="${actor} uses a ${item}.${lb}${number} of ${target}'s status ailments disappears!" color="81" />
       <o id="401" en="${actor} uses a ${item}.${lb}${number} of ${target}'s effects disappears!" color="81" />
@@ -1955,7 +1958,7 @@ IN THE SOFTWARE.
       <o id="648" en="${actor} leads the casting of ${spell}.${lb}${target} takes ${number} points of damage." color="D" />
       <o id="649" en="A member of another party is readying ${spell} against your target.${lb}You cannot cast the same spell at this time." color="1" />
       <o id="650" en="${actor} leads the casting of ${spell}.${lb}Magic Burst!${lb}${target} takes ${number} points of damage." color="D" />
-      <o id="651" en="${actor} leads the casting of ${spell}.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
+      <o id="651" en="${actor} leads the casting of ${spell}.${lb}${target} recovers ${number} hit points!" color="H" />
       <o id="652" en="Additional effect: ${target} loses ${number} TP." color="56" suffix="TP" />
       <o id="653" en="${actor} casts ${spell}.${lb}${target} resists the spell.${lb}Immunobreak!" color="R" />
       <o id="654" en="${target} resists the spell.${lb}Immunobreak!" color="R" />

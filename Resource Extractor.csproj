@@ -74,6 +74,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>codeanalysis.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
@@ -85,9 +86,12 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>codeanalysis.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
@@ -95,11 +99,19 @@
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
     <Compile Include="ATParser.cs" />
+    <Compile Include="BitmapParser.cs" />
     <Compile Include="DatParser.cs" />
     <Compile Include="DialogParser.cs" />
     <Compile Include="DMsgParser.cs" />
+    <Compile Include="DxtParser.cs" />
     <Compile Include="Fixes.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Content Include="MapDats.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="ImageHeader.cs" />
+    <Compile Include="ImageParser.cs" />
+    <Compile Include="MapParser.cs" />
     <Compile Include="ModelObject.cs" />
     <Compile Include="Serialization\LuaFormatter.cs" />
     <Compile Include="ShiftJISFF11Encoding.cs" />

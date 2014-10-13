@@ -60,12 +60,6 @@ namespace ResourceExtractor
             //    {0x1B72, new Dictionary<int, string> {
             //        {0, "ja"},
             //    }},
-            //    {0xDA28, new Dictionary<int, string> {
-            //        {0, "de"},
-            //    }},
-            //    {0xDBCC, new Dictionary<int, string> {
-            //        {0, "fr"},
-            //    }},
             //}},
             {"actions", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD995, new Dictionary<int, string> {

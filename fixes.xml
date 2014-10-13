@@ -860,28 +860,28 @@ IN THE SOFTWARE.
       <o id="509" duration="180" /> <!-- Kakka: Ichi -->
       <o id="510" duration="60" /> <!-- Migawari: Ichi -->
       <o id="511" duration="180" /> <!-- Haste II -->
-      <o id="517" duration="300" /> <!-- Metallic Body -->
+      <o id="517" duration="900" /> <!-- Metallic Body -->
       <o id="530" duration="300" /> <!-- Refueling -->
-      <o id="538" duration="30" /> <!-- Memento Mori -->
+      <o id="538" duration="60" /> <!-- Memento Mori -->
       <o id="547" duration="90" /> <!-- Cocoon -->
       <o id="574" duration="30" /> <!-- Feather Barrier -->
-      <o id="613" duration="120" /> <!-- Reactor Cool -->
-      <o id="614" duration="60" /> <!-- Saline Coat -->
-      <o id="615" duration="60" /> <!-- Plasma Charge -->
+      <o id="613" duration="180" /> <!-- Reactor Cool -->
+      <o id="614" duration="120" /> <!-- Saline Coat -->
+      <o id="615" duration="750" /> <!-- Plasma Charge -->
       <o id="632" duration="90" /> <!-- Diamondhide -->
       <o id="636" duration="180" /> <!-- Warm-Up -->
       <o id="642" duration="90" /> <!-- Amplification -->
-      <o id="647" duration="300" /> <!-- Zephyr Mantle -->
-      <o id="655" duration="60" /> <!-- Triumphant Roar -->
+      <o id="647" duration="900" /> <!-- Zephyr Mantle -->
+      <o id="655" duration="90" /> <!-- Triumphant Roar -->
       <o id="661" duration="300" /> <!-- Animating Wail -->
       <o id="662" duration="300" /> <!-- Battery Charge -->
-      <o id="664" duration="60" /> <!-- Regeneration -->
-      <o id="685" duration="60" /> <!-- Barrier Tusk -->
-      <o id="668" duration="300" /> <!-- Magic Barrier -->
+      <o id="664" duration="90" /> <!-- Regeneration -->
+      <o id="685" duration="180" /> <!-- Barrier Tusk -->
+      <o id="668" duration="900" /> <!-- Magic Barrier -->
       <o id="674" duration="180" /> <!-- Fantod -->
       <o id="679" duration="300" /> <!-- Occultation -->
-      <o id="696" duration="60" /> <!-- O. Counterstance -->
-      <o id="700" duration="60" /> <!-- Nat. Meditation -->
+      <o id="696" duration="180" /> <!-- O. Counterstance -->
+      <o id="700" duration="90" /> <!-- Nat. Meditation -->
       <o id="710" duration="300" /> <!-- Erratic Flutter -->
       <o id="737" duration="90" /> <!-- Harden Shell -->
       <o id="741" duration="300" /> <!-- Pyric Bulwark -->

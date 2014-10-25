@@ -2043,4 +2043,229 @@ IN THE SOFTWARE.
       <o id="735" en="Capacity chain #${number}!${lb}${actor} gains ${number2} capacity points." color="91" />
     </update>
   </action_messages>
+  <items>
+    <update>
+      <o id="3950" storable="1" storing_npc="Lola" /> <!-- Pulchridopt Wing -->
+      <o id="4036" storable="1" storing_npc="Lola" /> <!-- Lebondopt Wing -->
+      <o id="2955" storable="1" storing_npc="Shami" /> <!-- Kindred's Crest -->
+      <o id="2956" storable="1" storing_npc="Shami" /> <!-- H. Kindred Crest -->
+      <o id="1127" storable="1" storing_npc="Shami" /> <!-- Kindred's Seal -->
+      <o id="2957" storable="1" storing_npc="Shami" /> <!-- S. Kindred Crest -->
+      <o id="1126" storable="1" storing_npc="Shami" /> <!-- Beastmen's Seal -->
+      <o id="155" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Stocking -->
+      <o id="325" storable="1" storing_npc="Event Item NPC" /> <!-- G. Bamboo Grass -->
+      <o id="179" storable="1" storing_npc="Event Item NPC" /> <!-- Jeweled Egg -->
+      <o id="11266" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Top -->
+      <o id="11268" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Top -->
+      <o id="203" storable="1" storing_npc="Event Item NPC" /> <!-- Bomb Lantern -->
+      <o id="13822" storable="1" storing_npc="Event Item NPC" /> <!-- Lady's Yukata -->
+      <o id="16119" storable="1" storing_npc="Event Item NPC" /> <!-- Nomad Cap -->
+      <o id="11276" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Top +1 -->
+      <o id="11278" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Top +1 -->
+      <o id="11280" storable="1" storing_npc="Event Item NPC" /> <!-- Elder Gilet +1 -->
+      <o id="18436" storable="1" storing_npc="Event Item NPC" /> <!-- Lotus Katana -->
+      <o id="86" storable="1" storing_npc="Event Item NPC" /> <!-- San d'Orian Tree -->
+      <o id="16145" storable="1" storing_npc="Event Item NPC" /> <!-- Lunar Cap -->
+      <o id="118" storable="1" storing_npc="Event Item NPC" /> <!-- Lamp Egg -->
+      <o id="11316" storable="1" storing_npc="Event Item NPC" /> <!-- Otokogusa Yukata -->
+      <o id="140" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Platter -->
+      <o id="180" storable="1" storing_npc="Event Item NPC" /> <!-- Bonbori -->
+      <o id="15410" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Trunks -->
+      <o id="15412" storable="1" storing_npc="Event Item NPC" /> <!-- Tarutaru Trunks -->
+      <o id="204" storable="1" storing_npc="Event Item NPC" /> <!-- Pumpkin Lantern -->
+      <o id="15416" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Shorts +1 -->
+      <o id="15418" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Shorts +1 -->
+      <o id="455" storable="1" storing_npc="Event Item NPC" /> <!-- Egg Buffet -->
+      <o id="15424" storable="1" storing_npc="Event Item NPC" /> <!-- Taru. Shorts +1 -->
+      <o id="264" storable="1" storing_npc="Event Item NPC" /> <!-- Stuffed Chocobo -->
+      <o id="15177" storable="1" storing_npc="Event Item NPC" /> <!-- Horror Head II -->
+      <o id="15179" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Hat +1 -->
+      <o id="3622" storable="1" storing_npc="Event Item NPC" /> <!-- Jack-o'-Pricket -->
+      <o id="13916" storable="1" storing_npc="Event Item NPC" /> <!-- Pumpkin Head -->
+      <o id="3623" storable="1" storing_npc="Event Item NPC" /> <!-- Djinn Pricket -->
+      <o id="17831" storable="1" storing_npc="Event Item NPC" /> <!-- Hardwood Katana -->
+      <o id="3624" storable="1" storing_npc="Event Item NPC" /> <!-- Korrigan Pricket -->
+      <o id="15199" storable="1" storing_npc="Event Item NPC" /> <!-- Guide Beret -->
+      <o id="18863" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Bell -->
+      <o id="18102" storable="1" storing_npc="Event Item NPC" /> <!-- Pitchfork -->
+      <o id="265" storable="1" storing_npc="Event Item NPC" /> <!-- Adamant. Statue -->
+      <o id="141" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Coffer -->
+      <o id="14450" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Gilet -->
+      <o id="181" storable="1" storing_npc="Event Item NPC" /> <!-- San d'Orian Flag -->
+      <o id="14454" storable="1" storing_npc="Event Item NPC" /> <!-- Tarutaru Maillot -->
+      <o id="197" storable="1" storing_npc="Event Item NPC" /> <!-- Clockwork Egg -->
+      <o id="205" storable="1" storing_npc="Event Item NPC" /> <!-- Mandra Lantern -->
+      <o id="14460" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Top +1 -->
+      <o id="14462" storable="1" storing_npc="Event Item NPC" /> <!-- Mithra Top +1 -->
+      <o id="457" storable="1" storing_npc="Event Item NPC" /> <!-- Cushaw Lantern -->
+      <o id="14472" storable="1" storing_npc="Event Item NPC" /> <!-- Tarutaru Top +1 -->
+      <o id="15753" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Boots +1 -->
+      <o id="18441" storable="1" storing_npc="Event Item NPC" /> <!-- Shinai -->
+      <o id="87" storable="1" storing_npc="Event Item NPC" /> <!-- Kadomatsu -->
+      <o id="115" storable="1" storing_npc="Event Item NPC" /> <!-- Bastokan Tree -->
+      <o id="119" storable="1" storing_npc="Event Item NPC" /> <!-- Flower Egg -->
+      <o id="3641" storable="1" storing_npc="Event Item NPC" /> <!-- Kabuto-kazari -->
+      <o id="3642" storable="1" storing_npc="Event Item NPC" /> <!-- Katana-kazari -->
+      <o id="3643" storable="1" storing_npc="Event Item NPC" /> <!-- Carillon Vermeil -->
+      <o id="3644" storable="1" storing_npc="Event Item NPC" /> <!-- Aeolsglocke -->
+      <o id="17748" storable="1" storing_npc="Event Item NPC" /> <!-- Ibushi Shinai -->
+      <o id="3646" storable="1" storing_npc="Event Item NPC" /> <!-- Mandra. Pricket -->
+      <o id="14532" storable="1" storing_npc="Event Item NPC" /> <!-- Otoko Yukata -->
+      <o id="14534" storable="1" storing_npc="Event Item NPC" /> <!-- Otokogimi Yukata -->
+      <o id="16321" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Trunks -->
+      <o id="16323" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Trunks -->
+      <o id="16325" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Trunks -->
+      <o id="16327" storable="1" storing_npc="Event Item NPC" /> <!-- Savage Shorts -->
+      <o id="16329" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Trunks +1 -->
+      <o id="16076" storable="1" storing_npc="Event Item NPC" /> <!-- Coven Hat -->
+      <o id="16333" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Trunks +1 -->
+      <o id="16335" storable="1" storing_npc="Event Item NPC" /> <!-- Savage Shorts +1 -->
+      <o id="17565" storable="1" storing_npc="Event Item NPC" /> <!-- Trick Staff -->
+      <o id="18844" storable="1" storing_npc="Event Item NPC" /> <!-- Miracle Wand -->
+      <o id="11500" storable="1" storing_npc="Event Item NPC" /> <!-- Chocobo Beret -->
+      <o id="18864" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Bell +1 -->
+      <o id="18103" storable="1" storing_npc="Event Item NPC" /> <!-- Pitchfork +1 -->
+      <o id="269" storable="1" storing_npc="Event Item NPC" /> <!-- S. Lord Statue -->
+      <o id="183" storable="1" storing_npc="Event Item NPC" /> <!-- Windurstian Flag -->
+      <o id="11267" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Gilet -->
+      <o id="199" storable="1" storing_npc="Event Item NPC" /> <!-- Hatchling Egg -->
+      <o id="13821" storable="1" storing_npc="Event Item NPC" /> <!-- Lord's Yukata -->
+      <o id="215" storable="1" storing_npc="Event Item NPC" /> <!-- Festival Dolls -->
+      <o id="16120" storable="1" storing_npc="Event Item NPC" /> <!-- Redeyes -->
+      <o id="11277" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Maillot +1 -->
+      <o id="11279" storable="1" storing_npc="Event Item NPC" /> <!-- Savage Top +1 -->
+      <o id="270" storable="1" storing_npc="Event Item NPC" /> <!-- Odin Statue -->
+      <o id="88" storable="1" storing_npc="Event Item NPC" /> <!-- Timepiece -->
+      <o id="16144" storable="1" storing_npc="Event Item NPC" /> <!-- Sol Cap -->
+      <o id="11301" storable="1" storing_npc="Event Item NPC" /> <!-- Eerie Cloak +1 -->
+      <o id="116" storable="1" storing_npc="Event Item NPC" /> <!-- Windurstian Tree -->
+      <o id="271" storable="1" storing_npc="Event Item NPC" /> <!-- Alexander Statue -->
+      <o id="11319" storable="1" storing_npc="Event Item NPC" /> <!-- Ominaeshi Yukata -->
+      <o id="176" storable="1" storing_npc="Event Item NPC" /> <!-- Snowman Knight -->
+      <o id="15409" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Shorts -->
+      <o id="15411" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Shorts -->
+      <o id="15413" storable="1" storing_npc="Event Item NPC" /> <!-- Mithra Shorts -->
+      <o id="415" storable="1" storing_npc="Event Item NPC" /> <!-- Aldebaran Horn -->
+      <o id="16182" storable="1" storing_npc="Event Item NPC" /> <!-- Town Mog. Shield -->
+      <o id="15419" storable="1" storing_npc="Event Item NPC" /> <!-- Taru. Trunks +1 -->
+      <o id="15421" storable="1" storing_npc="Event Item NPC" /> <!-- Galka Trunks +1 -->
+      <o id="15423" storable="1" storing_npc="Event Item NPC" /> <!-- Tarutaru Shorts -->
+      <o id="16378" storable="1" storing_npc="Event Item NPC" /> <!-- Dinner Hose -->
+      <o id="11355" storable="1" storing_npc="Event Item NPC" /> <!-- Dinner Jacket -->
+      <o id="11318" storable="1" storing_npc="Event Item NPC" /> <!-- Otokoeshi Yukata -->
+      <o id="15176" storable="1" storing_npc="Event Item NPC" /> <!-- Pumpkin Head II -->
+      <o id="15178" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Hat -->
+      <o id="320" storable="1" storing_npc="Event Item NPC" /> <!-- Harpsichord -->
+      <o id="11317" storable="1" storing_npc="Event Item NPC" /> <!-- Onnagusa Yukata -->
+      <o id="11290" storable="1" storing_npc="Event Item NPC" /> <!-- Tidal Talisman -->
+      <o id="11300" storable="1" storing_npc="Event Item NPC" /> <!-- Eerie Cloak -->
+      <o id="16336" storable="1" storing_npc="Event Item NPC" /> <!-- Elder Trunks +1 -->
+      <o id="17566" storable="1" storing_npc="Event Item NPC" /> <!-- Treat Staff -->
+      <o id="13917" storable="1" storing_npc="Event Item NPC" /> <!-- Horror Head -->
+      <o id="16109" storable="1" storing_npc="Event Item NPC" /> <!-- Egg Helm -->
+      <o id="13820" storable="1" storing_npc="Event Item NPC" /> <!-- Omina Yukata -->
+      <o id="15198" storable="1" storing_npc="Event Item NPC" /> <!-- Sprout Beret -->
+      <o id="16331" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Trunks +1 -->
+      <o id="16330" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Shorts +1 -->
+      <o id="15204" storable="1" storing_npc="Event Item NPC" /> <!-- Mandragora Beret -->
+      <o id="16328" storable="1" storing_npc="Event Item NPC" /> <!-- Elder Trunks -->
+      <o id="13819" storable="1" storing_npc="Event Item NPC" /> <!-- Onoko Yukata -->
+      <o id="3645" storable="1" storing_npc="Event Item NPC" /> <!-- Leafbell -->
+      <o id="14451" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Top -->
+      <o id="11275" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Gilet +1 -->
+      <o id="177" storable="1" storing_npc="Event Item NPC" /> <!-- Snowman Miner -->
+      <o id="14453" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Top -->
+      <o id="193" storable="1" storing_npc="Event Item NPC" /> <!-- Adv. Certificate -->
+      <o id="14457" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Gilet +1 -->
+      <o id="14459" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Gilet +1 -->
+      <o id="14461" storable="1" storing_npc="Event Item NPC" /> <!-- Taru. Maillot +1 -->
+      <o id="14463" storable="1" storing_npc="Event Item NPC" /> <!-- Galka Gilet +1 -->
+      <o id="11274" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Top +1 -->
+      <o id="11273" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Gilet +1 -->
+      <o id="11272" storable="1" storing_npc="Event Item NPC" /> <!-- Elder Gilet -->
+      <o id="14471" storable="1" storing_npc="Event Item NPC" /> <!-- Tarutaru Top -->
+      <o id="11271" storable="1" storing_npc="Event Item NPC" /> <!-- Savage Top -->
+      <o id="11270" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Top -->
+      <o id="15752" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Boots -->
+      <o id="11269" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Maillot -->
+      <o id="11265" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Gilet -->
+      <o id="267" storable="1" storing_npc="Event Item NPC" /> <!-- Fafnir Statue -->
+      <o id="196" storable="1" storing_npc="Event Item NPC" /> <!-- Melodious Egg -->
+      <o id="14520" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Robe +1 -->
+      <o id="17588" storable="1" storing_npc="Event Item NPC" /> <!-- Treat Staff II -->
+      <o id="15420" storable="1" storing_npc="Event Item NPC" /> <!-- Mithra Shorts +1 -->
+      <o id="16183" storable="1" storing_npc="Event Item NPC" /> <!-- Nomad Mog. Shield -->
+      <o id="18399" storable="1" storing_npc="Event Item NPC" /> <!-- Charm Wand -->
+      <o id="117" storable="1" storing_npc="Event Item NPC" /> <!-- Wing Egg -->
+      <o id="15417" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Trunks +1 -->
+      <o id="458" storable="1" storing_npc="Event Item NPC" /> <!-- Calabazilla Lant. -->
+      <o id="15415" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Trunks +1 -->
+      <o id="138" storable="1" storing_npc="Event Item NPC" /> <!-- Jeunoan Tree -->
+      <o id="266" storable="1" storing_npc="Event Item NPC" /> <!-- Behemoth Statue -->
+      <o id="154" storable="1" storing_npc="Event Item NPC" /> <!-- Miniature Airship -->
+      <o id="323" storable="1" storing_npc="Event Item NPC" /> <!-- R. Bamboo Grass -->
+      <o id="15414" storable="1" storing_npc="Event Item NPC" /> <!-- Galka Trunks -->
+      <o id="178" storable="1" storing_npc="Event Item NPC" /> <!-- Snowman Mage -->
+      <o id="456" storable="1" storing_npc="Event Item NPC" /> <!-- Pepo Lantern -->
+      <o id="14519" storable="1" storing_npc="Event Item NPC" /> <!-- Dream Robe -->
+      <o id="15408" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Trunks -->
+      <o id="182" storable="1" storing_npc="Event Item NPC" /> <!-- Bastokan Flag -->
+      <o id="14456" storable="1" storing_npc="Event Item NPC" /> <!-- Galka Gilet -->
+      <o id="17074" storable="1" storing_npc="Event Item NPC" /> <!-- Chocobo Wand -->
+      <o id="192" storable="1" storing_npc="Event Item NPC" /> <!-- Hoary Spire -->
+      <o id="14458" storable="1" storing_npc="Event Item NPC" /> <!-- Hume Top +1 -->
+      <o id="14533" storable="1" storing_npc="Event Item NPC" /> <!-- Onago Yukata -->
+      <o id="14535" storable="1" storing_npc="Event Item NPC" /> <!-- Onnagimi Yukata -->
+      <o id="16322" storable="1" storing_npc="Event Item NPC" /> <!-- Custom Shorts -->
+      <o id="16324" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Shorts -->
+      <o id="16326" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Shorts -->
+      <o id="324" storable="1" storing_npc="Event Item NPC" /> <!-- B. Bamboo Grass -->
+      <o id="16075" storable="1" storing_npc="Event Item NPC" /> <!-- Witch Hat -->
+      <o id="16332" storable="1" storing_npc="Event Item NPC" /> <!-- Magna Shorts +1 -->
+      <o id="16334" storable="1" storing_npc="Event Item NPC" /> <!-- Wonder Shorts +1 -->
+      <o id="11491" storable="1" storing_npc="Event Item NPC" /> <!-- S. Bunny Hat +1 -->
+      <o id="18842" storable="1" storing_npc="Event Item NPC" /> <!-- Nmd. Moogle Rod -->
+      <o id="18846" storable="1" storing_npc="Event Item NPC" /> <!-- Battledore -->
+      <o id="17830" storable="1" storing_npc="Event Item NPC" /> <!-- Wooden Katana -->
+      <o id="14455" storable="1" storing_npc="Event Item NPC" /> <!-- Mithra Top -->
+      <o id="14452" storable="1" storing_npc="Event Item NPC" /> <!-- Elvaan Gilet -->
+      <o id="16118" storable="1" storing_npc="Event Item NPC" /> <!-- Moogle Cap -->
+      <o id="17749" storable="1" storing_npc="Event Item NPC" /> <!-- Ibushi Shinai +1 -->
+      <o id="8711" storable="1" storing_npc="RoE NPCs" /> <!-- Copper Voucher -->
+      <o id="8957" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snoworb Stone -->
+      <o id="8958" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snoworb Stone +1 -->
+      <o id="8959" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snoworb Stone +2 -->
+      <o id="8960" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leaforb Stone -->
+      <o id="8961" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leaforb Stone +1 -->
+      <o id="8930" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowslit Stone -->
+      <o id="8962" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leaforb Stone +2 -->
+      <o id="8931" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowslit Stone +1 -->
+      <o id="8932" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowslit Stone +2 -->
+      <o id="3951" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Wailing Stone -->
+      <o id="8934" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leafslit Stone +1 -->
+      <o id="8935" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leafslit Stone +2 -->
+      <o id="3952" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Wailing Stone +1 -->
+      <o id="8939" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowtip Stone -->
+      <o id="8940" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowtip Stone +1 -->
+      <o id="8941" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowtip Stone +2 -->
+      <o id="8942" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leaftip Stone -->
+      <o id="8943" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leaftip Stone +1 -->
+      <o id="8944" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leaftip Stone +2 -->
+      <o id="3954" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Ghastly Stone -->
+      <o id="4033" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Verdigris St. -->
+      <o id="8948" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowdim Stone -->
+      <o id="8949" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowdim Stone +1 -->
+      <o id="4034" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Verdigris St. +1 -->
+      <o id="8951" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leafdim Stone -->
+      <o id="8933" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leafslit Stone -->
+      <o id="8952" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leafdim Stone +1 -->
+      <o id="3956" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Ghastly Stone +2 -->
+      <o id="8953" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Leafdim Stone +2 -->
+      <o id="8950" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Snowdim Stone +2 -->
+      <o id="4035" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Verdigris St. +2 -->
+      <o id="3953" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Wailing Stone +2 -->
+      <o id="3955" storable="1" storing_npc="Divainy-Gamainy" /> <!-- Ghastly Stone +1 -->
+      <o id="1875" storable="1" storing_npc="Sagheera" /> <!-- Anct. Beastcoin -->
+    </update>
+  </items>
 </fixes>

@@ -236,7 +236,7 @@ namespace ResourceExtractor
                     spell.skill = reader.ReadInt16();
                     spell.mp_cost = reader.ReadInt16();
                     spell.cast_time = reader.ReadByte();
-                    spell.recast = reader.ReadByte();
+                    spell.recast = reader.ReadByte() / 4.0;
                     var levels = reader.ReadBytes(0x18);    // Processed into a dictionary spell.levels later
                     spell.recast_id = reader.ReadInt16();
                     spell.icon_id_nq = reader.ReadInt16();

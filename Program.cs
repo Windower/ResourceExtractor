@@ -47,7 +47,6 @@ namespace ResourceExtractor
             "jobs",
             "monstrosity",
             "spells",
-            "spell_recasts",
             "weapon_skills",
         };
         private static Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> DatLut = new Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> {
@@ -260,19 +259,6 @@ namespace ResourceExtractor
                     }
                 }
 
-                // Populate spell recast table with proper names
-                foreach (var recast in model.spell_recasts)
-                {
-                    foreach (var spell in model.spells)
-                    {
-                        if (recast.id == spell.recast_id)
-                        {
-                            recast.en = spell.en;
-                            recast.ja = spell.ja;
-                            break;
-                        }
-                    }
-                }
                 // Add categories to key items
                 var category = "";
                 for (var i = model.key_items.Count - 1; i >= 0; --i)

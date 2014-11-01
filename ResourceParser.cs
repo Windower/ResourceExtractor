@@ -195,7 +195,6 @@ namespace ResourceExtractor
         public static void ParseSpells(Stream stream, int length)
         {
             var data = new byte[0x40];
-            IDictionary<short, object> recasts = new Dictionary<short, object>();
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
@@ -231,14 +230,17 @@ namespace ResourceExtractor
                     spell.id = reader.ReadInt16();
                     spell.type = (MagicType)reader.ReadInt16();
                     spell.element = reader.ReadByte();
-                    reader.ReadByte();          // Unknown 05 - 05, possibly just padding or element being a short
+                    reader.ReadBytes(0x01);                 // Unknown 05 - 05, possibly just padding or element being a short
                     spell.targets = reader.ReadUInt16();
                     spell.skill = reader.ReadInt16();
                     spell.mp_cost = reader.ReadInt16();
                     spell.cast_time = reader.ReadByte();
                     spell.recast = reader.ReadByte() / 4.0;
                     var levels = reader.ReadBytes(0x18);    // Processed into a dictionary spell.levels later
-                    spell.recast_id = reader.ReadInt16();
+                    // SE changed spell recast times in memory to be indexed by spell ID, not recast ID
+                    //spell.recast_id = reader.ReadInt16();
+                    reader.ReadBytes(0x02);
+                    spell.recast_id = spell.id;
                     spell.icon_id_nq = reader.ReadInt16();
                     spell.icon_id = reader.ReadInt16();
                     spell.requirements = reader.ReadByte();
@@ -281,17 +283,7 @@ namespace ResourceExtractor
                 }
 
                 model.spells.Add(spell);
-
-                // Add to recast dictionary
-                dynamic recast = new ModelObject();
-                recast.id = spell.recast_id;
-                recast.recast = spell.recast;
-                recasts[recast.id] = recast;
             }
-
-            // Remove default value
-            recasts.Remove(0);
-            model.spell_recasts.AddRange(recasts.Select(kvp => kvp.Value));
         }
 
         public static void ParseItems(Stream stream, Stream streamja)

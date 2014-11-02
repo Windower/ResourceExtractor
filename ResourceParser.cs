@@ -413,7 +413,7 @@ namespace ResourceExtractor
             {
                 item.max_charges = max_charges;
             }
-            item.cast_time = reader.ReadByte();
+            item.cast_time = reader.ReadByte() / 4.0;
             item.cast_delay = reader.ReadUInt16();
             item.recast_delay = reader.ReadUInt32();
             reader.ReadBytes(0x02);             // Unknown 2C - 2D
@@ -443,7 +443,7 @@ namespace ResourceExtractor
                 item.max_charges = charges;
             }
 
-            item.cast_time = reader.ReadByte();
+            item.cast_time = reader.ReadByte() / 4.0;
             item.cast_delay = reader.ReadUInt16();
             reader.ReadBytes(0x02);             // Unknown 1E - 1F
             item.recast_delay = reader.ReadUInt32();
@@ -459,7 +459,7 @@ namespace ResourceExtractor
 
         private static void ParseUsableItem(BinaryReader reader, dynamic item)
         {
-            item.cast_time = reader.ReadUInt16();
+            item.cast_time = reader.ReadUInt16() / 4.0;
             reader.ReadBytes(0x08);             // Unknown 10 - 17
 
             item.category = "Usable";

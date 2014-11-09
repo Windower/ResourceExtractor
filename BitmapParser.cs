@@ -71,7 +71,7 @@ namespace ResourceExtractor
 
         private static Color DecodeRGB565(ushort C)
         {
-            return Color.FromArgb(((C & 0xF800) >> 11) * 0xFF / 0x1F, ((C & 0x07E0) >> 5) * 0xFF / 0x1F, (C & 0x001F) * 0xFF / 0x1F);
+            return Color.FromArgb(((C & 0xF800) >> 11) * 0xFF / 0x1F, ((C & 0x07E0) >> 5) * 0xFF / 0x3F, (C & 0x001F) * 0xFF / 0x1F);
         }
 
         public static Color ReadColor(BinaryReader reader, int bitDepth)

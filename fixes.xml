@@ -723,8 +723,8 @@ IN THE SOFTWARE.
       <o id="251" duration="180" /> <!-- Shock Spikes -->
       <o id="277" duration="60" /> <!-- Dread Spikes -->
       <o id="287" duration="180" /> <!-- Klimaform -->
-      <o id="308" duration="60" /> <!-- Animus Augeo -->
-      <o id="309" duration="60" /> <!-- Animus Minuo -->
+      <o id="308" duration="180" /> <!-- Animus Augeo -->
+      <o id="309" duration="180" /> <!-- Animus Minuo -->
       <o id="310" duration="180" /> <!-- Enlight -->
       <o id="311" duration="180" /> <!-- Endark -->
       <o id="312" duration="180" /> <!-- Enfire II -->

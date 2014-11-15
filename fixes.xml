@@ -968,6 +968,7 @@ IN THE SOFTWARE.
       <o id="5" en="linkshell" incoming="14" outgoing="6" />
       <o id="8" en="emote" incoming="15" outgoing="7" />
       <o id="26" en="yell" incoming="11" outgoing="3" />
+      <o id="33" en="unity" incoming="212" outgoing="212" />
     </update>
   </chat>
   <check_ratings>

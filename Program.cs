@@ -51,7 +51,7 @@ namespace ResourceExtractor
                 {
                     Directory.CreateDirectory("resources");
                     Directory.CreateDirectory("resources/lua");
-                    Directory.CreateDirectory("resources/xml");
+                    Directory.CreateDirectory("resources/data");
 
                     ExtractItems(basedirectory);
 
@@ -228,9 +228,9 @@ namespace ResourceExtractor
                 general.Root.ReplaceNodes(general.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
                 weapons.Root.ReplaceNodes(weapons.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                armor.Save(Path.Combine("resources/xml", "items_armor.xml"));
-                general.Save(Path.Combine("resources/xml", "items_general.xml"));
-                weapons.Save(Path.Combine("resources/xml", "items_weapons.xml"));
+                armor.Save(Path.Combine("resources/data", "items_armor.xml"));
+                general.Save(Path.Combine("resources/data", "items_general.xml"));
+                weapons.Save(Path.Combine("resources/data", "items_weapons.xml"));
 #if !DEBUG
             }
             catch
@@ -352,7 +352,7 @@ namespace ResourceExtractor
 
                 spells.Root.ReplaceNodes(spells.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                spells.Save(Path.Combine("resources/xml", "spells.xml"));
+                spells.Save(Path.Combine("resources/data", "spells.xml"));
 #if !DEBUG
             }
             catch
@@ -471,7 +471,7 @@ namespace ResourceExtractor
 
                 abilities.Root.ReplaceNodes(abilities.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                abilities.Save(Path.Combine("resources/xml", "abils.xml"));
+                abilities.Save(Path.Combine("resources/data", "abils.xml"));
 #if !DEBUG
             }
             catch
@@ -522,7 +522,7 @@ namespace ResourceExtractor
 
                 areas.Root.ReplaceNodes(areas.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                areas.Save(Path.Combine("resources/xml", "areas.xml"));
+                areas.Save(Path.Combine("resources/data", "areas.xml"));
 #if !DEBUG
             }
             catch
@@ -581,7 +581,7 @@ namespace ResourceExtractor
 
                 statuses.Root.ReplaceNodes(statuses.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                statuses.Save(Path.Combine("resources/xml", "status.xml"));
+                statuses.Save(Path.Combine("resources/data", "status.xml"));
 #if !DEBUG
             }
             catch
@@ -606,7 +606,7 @@ namespace ResourceExtractor
 
                 foreach (XElement fixset in fixes.Root.Elements())
                 {
-                    string path = Path.Combine("resources/xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", fixset.Name.LocalName));
+                    string path = Path.Combine("resources/data", string.Format(CultureInfo.InvariantCulture, "{0}.xml", fixset.Name.LocalName));
                     XDocument list = XDocument.Load(path);
 
                     string key = (string)fixset.Attribute("key") ?? "id";

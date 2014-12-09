@@ -429,26 +429,42 @@ namespace ResourceExtractor
         private static void ParseArmorItem(BinaryReader reader, dynamic item)
         {
             item.level = reader.ReadUInt16();
+            if (item.id == 10800)
+            {
+
+            }
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
+            reader.ReadBytes(0x02);             // Unknown 16 - 17
             ushort shield_size = reader.ReadUInt16();
             if (shield_size > 0)
             {
                 item.shield_size = shield_size;
             }
-            byte charges = reader.ReadByte();
-            if (charges > 0)
+            byte max_charges = reader.ReadByte();
+            if (max_charges > 0)
             {
-                item.max_charges = charges;
+                item.max_charges = max_charges;
             }
 
-            item.cast_time = reader.ReadByte() / 4.0;
-            item.cast_delay = reader.ReadUInt16();
-            reader.ReadBytes(0x02);             // Unknown 1E - 1F
-            item.recast_delay = reader.ReadUInt32();
-            reader.ReadBytes(0x02);             // Unknown 26 - 27
-            ushort item_level = reader.ReadUInt16();
+            var cast_time = reader.ReadByte() / 4.0;
+            //if (cast_time > 0)
+            {
+                item.cast_time = cast_time;
+            }
+            var cast_delay = reader.ReadUInt16();
+            //if (cast_delay > 0)
+            {
+                item.cast_delay = cast_delay;
+            }
+            var recast_delay = reader.ReadUInt32();
+            //if (recast_delay > 0)
+            {
+                item.recast_delay = recast_delay;
+            }
+            reader.ReadBytes(0x02);             // Unknown 24 - 25
+            var item_level = reader.ReadUInt16();
             if (item_level > 0)
             {
                 item.item_level = item_level;

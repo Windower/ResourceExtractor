@@ -282,8 +282,8 @@ namespace ResourceExtractor
                 {
                     dynamic item_description = new ModelObject();
                     item_description.id = item.id;
-                    item_description.en = item.endesc;
-                    item_description.ja = item.jadesc;
+                    item_description.en = item.endesc ?? "";
+                    item_description.ja = item.jadesc ?? "";
 
                     item.endesc = null;
                     item.jadesc = null;
@@ -609,13 +609,15 @@ namespace ResourceExtractor
                 DisplayMessage("Loading item data...");
 
                 int[][] fileids =
-                    {
+                    { //                                    Armor   Weapons
                         new int[] { 0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975 },
                         new int[] { 0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD },
                     };
 
                 for (var i = 0; i < fileids[0].Length; ++i)
                 {
+                    //TODO: Fixe weapon DAT structure
+                    if (i == 4) continue;
                     using (FileStream stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     using (FileStream streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {

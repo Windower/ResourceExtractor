@@ -282,8 +282,8 @@ namespace ResourceExtractor
                 {
                     dynamic item_description = new ModelObject();
                     item_description.id = item.id;
-                    item_description.en = item.endesc ?? "";
-                    item_description.ja = item.jadesc ?? "";
+                    item_description.en = item.endesc;
+                    item_description.ja = item.jadesc;
 
                     item.endesc = null;
                     item.jadesc = null;

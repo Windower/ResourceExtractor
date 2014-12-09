@@ -507,6 +507,7 @@ namespace ResourceExtractor
                         XElement xmlelement = new XElement("o");
                         foreach (var pair in obj)
                         {
+                            //TODO: Level dictionaries are currently messed up on XML output
                             xmlelement.SetAttributeValue(pair.Key, pair.Value);
                         }
 

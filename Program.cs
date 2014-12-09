@@ -617,8 +617,6 @@ namespace ResourceExtractor
 
                 for (var i = 0; i < fileids[0].Length; ++i)
                 {
-                    //TODO: Fixe weapon DAT structure
-                    if (i == 4) continue;
                     using (FileStream stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     using (FileStream streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {

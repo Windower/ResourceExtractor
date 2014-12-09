@@ -401,13 +401,14 @@ namespace ResourceExtractor
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
 
+            reader.ReadBytes(0x04);             // Unknown 18 - 1B
             item.damage = reader.ReadUInt16();
             item.delay = reader.ReadInt16();
             reader.ReadBytes(0x02);             // Weapon DPS
             item.skill = reader.ReadByte();
             
-            reader.ReadBytes(0x05);             // Unknown 1F - 23
-                                                // POLUtils claims that 0x1F is jug size, but seems incorrect
+            reader.ReadBytes(0x05);             // Unknown 23 - 27
+                                                // POLUtils claims that 0x23 is jug size, but seems incorrect
             byte max_charges = reader.ReadByte();
             if (max_charges > 0)
             {
@@ -416,7 +417,7 @@ namespace ResourceExtractor
             item.cast_time = reader.ReadByte() / 4.0;
             item.cast_delay = reader.ReadUInt16();
             item.recast_delay = reader.ReadUInt32();
-            reader.ReadBytes(0x02);             // Unknown 2C - 2D
+            reader.ReadBytes(0x02);             // Unknown 30 - 31
             ushort item_level = reader.ReadUInt16();
             if (item_level > 0)
             {

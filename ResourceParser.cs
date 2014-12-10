@@ -437,7 +437,13 @@ namespace ResourceExtractor
             item.slots = reader.ReadUInt16();
             item.races = reader.ReadUInt16();
             item.jobs = reader.ReadUInt32();
-            reader.ReadBytes(0x02);             // Unknown 16 - 17
+            byte superior_level = reader.ReadByte();
+            reader.ReadByte();                  // Unknown 17
+            if (superior_level > 0) 
+            { 
+                item.superior_level = superior_level; 
+            }
+
             ushort shield_size = reader.ReadUInt16();
             if (shield_size > 0)
             {

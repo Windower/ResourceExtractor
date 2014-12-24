@@ -242,7 +242,9 @@ namespace ResourceExtractor
                 foreach (var buff in model.buffs)
                 {
                     if (buff.ContainsKey("ja"))
+                    {
                         buff.jal = buff.ja;
+                    }
                 }
 
                 // Populate ability recast table with proper names

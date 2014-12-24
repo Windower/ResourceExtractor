@@ -152,13 +152,13 @@ namespace ResourceExtractor
                     action.id = reader.ReadInt16();
                     
                     action.type = (AbilityType)reader.ReadByte();
-                    action.element = reader.ReadByte() % 8;
+                    action.element = reader.ReadByte() & 0x07;
                     action.icon_id = reader.ReadInt16();
                     action.mp_cost = reader.ReadInt16();
                     action.recast_id = reader.ReadInt16();
                     action.targets = reader.ReadInt16();
                     action.tp_cost = reader.ReadInt16();
-                    reader.ReadBytes(0x01);     // Unknown 0E - 0E, 18 for Ready, 0x16 for Ward, 0x17 for Effusion, 0x00 for every other valid ability
+                    reader.ReadBytes(0x01);     // Unknown 0E - 0E, 0x12 for Ready, 0x16 for Ward, 0x17 for Effusion, 0x00 for every other valid ability
                     action.monster_level = reader.ReadSByte();
                     action.range = reader.ReadSByte();
 
@@ -178,7 +178,8 @@ namespace ResourceExtractor
 
                 model.actions.Add(action);
 
-                if (action.id >= 0x0200 && action.id < 0x0400)
+                // Job ability
+                if (action.id >= 0x0200 && action.id < 0x0600)
                 {
                     // Add to recast dictionary
                     dynamic recast = new ModelObject();

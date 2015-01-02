@@ -235,7 +235,7 @@ namespace ResourceExtractor
                     spell.targets = reader.ReadUInt16();
                     spell.skill = reader.ReadInt16();
                     spell.mp_cost = reader.ReadInt16();
-                    spell.cast_time = reader.ReadByte();
+                    spell.cast_time = reader.ReadByte() / 4.0;
                     spell.recast = reader.ReadByte() / 4.0;
                     var levels = reader.ReadBytes(0x18);    // Processed into a dictionary spell.levels later
                     // SE changed spell recast times in memory to be indexed by spell ID, not recast ID

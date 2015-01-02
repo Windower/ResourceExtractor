@@ -270,6 +270,25 @@ IN THE SOFTWARE.
       <o id="375" duration="30" /> <!-- Rayke -->
       <o id="376" duration="90" /> <!-- Battuta -->
       <o id="378" duration="30" /> <!-- Odyllic Subterfuge -->
+
+      <!-- Avatar -->
+      <o id="514" duration="180" /> <!-- Shining Ruby -->
+      <o id="527" duration="3600" /> <!-- Altana's Favor -->
+      <o id="532" duration="180" /> <!-- Ecliptic Growl -->
+      <o id="533" duration="180" /> <!-- Ecliptic Howl -->
+      <o id="538" duration="60" /> <!-- Heavenward Howl -->
+      <o id="548" duration="60" /> <!-- Crimson Howl -->
+      <o id="553" duration="60" /> <!-- Inferno Howl -->
+      <o id="564" duration="900" /> <!-- Earthen Ward -->
+      <o id="569" duration="60" /> <!-- Earthen Armor -->
+      <o id="595" duration="180" /> <!-- Hastega -->
+      <o id="596" duration="900" /> <!-- Aerial Armor -->
+      <o id="601" duration="120" /> <!-- Fleeting Wind -->
+      <o id="610" duration="180" /> <!-- Frost Armor -->
+      <o id="626" duration="120" /> <!-- Rolling Thunder -->
+      <o id="628" duration="180" /> <!-- Lightning Armor -->
+      <o id="660" duration="180" /> <!-- Noctoshield -->
+      <o id="661" duration="180" /> <!-- Dream Shroud -->
     </update>
   </job_abilities>
   <ability_recasts>

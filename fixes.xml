@@ -281,10 +281,13 @@ IN THE SOFTWARE.
       <o id="553" duration="60" /> <!-- Inferno Howl -->
       <o id="564" duration="900" /> <!-- Earthen Ward -->
       <o id="569" duration="60" /> <!-- Earthen Armor -->
+      <o id="586" duration="180" /> <!-- Soothing Current -->
       <o id="595" duration="180" /> <!-- Hastega -->
       <o id="596" duration="900" /> <!-- Aerial Armor -->
       <o id="601" duration="120" /> <!-- Fleeting Wind -->
+      <o id="602" duration="180" /> <!-- Hastega II -->
       <o id="610" duration="180" /> <!-- Frost Armor -->
+      <o id="618" duration="180" /> <!-- Crystal Blessing -->
       <o id="626" duration="120" /> <!-- Rolling Thunder -->
       <o id="628" duration="180" /> <!-- Lightning Armor -->
       <o id="660" duration="180" /> <!-- Noctoshield -->

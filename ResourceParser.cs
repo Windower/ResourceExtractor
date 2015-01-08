@@ -184,6 +184,7 @@ namespace ResourceExtractor
                     // Add to recast dictionary
                     dynamic recast = new ModelObject();
                     recast.id = action.recast_id;
+                    recast.action_id = action.id - 0x200;
                     recasts[recast.id] = recast;
                 }
             }

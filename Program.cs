@@ -68,6 +68,11 @@ namespace ResourceExtractor
                     {0, "ja"},
                 }},
             }},
+            //{"augments", new Dictionary<ushort, Dictionary<int, string>> {
+            //    {0xD98C, new Dictionary<int, string> {
+            //        {0, "en"},
+            //    }},
+            //}},
             {"auto_translates", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD971, new Dictionary<int, string> {
                     {0, "en"},
@@ -635,15 +640,19 @@ namespace ResourceExtractor
         private static void LoadMainData()
         {
             DisplayMessage("Loading main data stream...");
+#if !DEBUG
             try
             {
+#endif
                 ResourceParser.ParseMainStream(File.OpenRead(GetPath(0x0051)));
+#if !DEBUG
             }
             catch
             {
                 DisplayError();
                 throw;
             }
+#endif
 
             DisplaySuccess();
         }

@@ -196,7 +196,7 @@ namespace ResourceExtractor
 
         public static void ParseSpells(Stream stream, int length)
         {
-            var data = new byte[0x40];
+            var data = new byte[0x50];
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
@@ -210,12 +210,12 @@ namespace ResourceExtractor
                 data[11] = b11;
                 data[12] = b12;
 
-                bool valid = data[40] != 0;
+                bool valid = true;
 
                 // Check if spell is usable by any job.
-                for (int j = 0; j < 24; ++j)
+                for (int j = 0; j < 0x18; ++j)
                 {
-                    valid |= data[14 + j] != 0xFF;
+                    valid |= data[14 + 2 * j] != 0xFF;
                 }
 
                 // Invalid spell
@@ -230,6 +230,11 @@ namespace ResourceExtractor
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
                     spell.id = reader.ReadInt16();
+                    if (spell.id == 0)
+                    {
+                        continue;
+                    }
+
                     spell.type = (MagicType)reader.ReadInt16();
                     spell.element = reader.ReadByte();
                     reader.ReadBytes(0x01);                 // Unknown 05 - 05, possibly just padding or element being a short
@@ -238,7 +243,23 @@ namespace ResourceExtractor
                     spell.mp_cost = reader.ReadInt16();
                     spell.cast_time = reader.ReadByte() / 4.0;
                     spell.recast = reader.ReadByte() / 4.0;
-                    var levels = reader.ReadBytes(0x18);    // Processed into a dictionary spell.levels later
+                    spell.levels = new Dictionary<int, int>();
+                    for (var job = 0; job < 0x18; ++job)
+                    {
+                        var level = reader.ReadInt16();
+
+                        // Currently the last job slot just mirrors the White Mage's level
+                        // This may need to be removed at some point, if they expand on jobs more
+                        if (job == 0x17)
+                        {
+                            break;
+                        }
+
+                        if (level != -1)
+                        {
+                            spell.levels[job] = level;
+                        }
+                    }
                     // SE changed spell recast times in memory to be indexed by spell ID, not recast ID
                     //spell.recast_id = reader.ReadInt16();
                     reader.ReadBytes(0x02);
@@ -267,17 +288,6 @@ namespace ResourceExtractor
                             break;
                     }
 
-                    spell.levels = new Dictionary<int, int>();
-
-                    // Discard last entry, always a copy of white mages...
-                    for (var j = 0; j < levels.Length - 1; ++j)
-                    {
-                        if (levels[j] != 0xFF)
-                        {
-                            spell.levels[j] = levels[j];
-                        }
-                    }
-
                     if (spell.range == 0xF)
                     {
                         spell.range = 0;
@@ -286,6 +296,7 @@ namespace ResourceExtractor
 
                 model.spells.Add(spell);
             }
+            model.spells.Remove(0);
         }
 
         public static void ParseItems(Stream stream, Stream streamja)

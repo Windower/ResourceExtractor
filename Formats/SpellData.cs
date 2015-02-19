@@ -36,7 +36,7 @@ namespace ResourceExtractor.Formats
         private int mpcost;
         private int casttime;
         private int recast;
-        private byte[] levels = new byte[24];
+        private int[] levels = new int[24];
         private int id;
         private int iconid;
         public int duration;
@@ -63,15 +63,18 @@ namespace ResourceExtractor.Formats
             this.mpcost = (data[10] | data[11] << 8);
             this.casttime = data[12];
             this.recast = data[13];
-            Array.Copy(data, 14, this.levels, 0, this.levels.Length);
-            this.id = data[38] | data[39] << 8;
-            this.iconid = data[40];
+            for (var i = 0; i < 24; ++i)
+            {
+                this.levels[i] = (short)(data[14 + i] << 8 | data[15 + i]);
+            }
+            this.id = data[62] | data[63] << 8;
+            this.iconid = data[64];
 
             this.valid = this.iconid != 0;
             // Check if spell is usable by any job.
-            for (int i = 0; i < 24; i++)
+            for (int i = 0; i < 24; ++i)
             {
-                this.valid |= data[14 + i] != 0xFF;
+                this.valid |= this.levels[i] != -1;
             }
 
             duration = 0;
@@ -165,7 +168,7 @@ namespace ResourceExtractor.Formats
             }
         }
 
-        public byte[] Levels
+        public int[] Levels
         {
             get
             {
@@ -177,7 +180,7 @@ namespace ResourceExtractor.Formats
         {
             IList<SpellData> result = new List<SpellData>();
 
-            byte[] buffer = new byte[0x40];
+            byte[] buffer = new byte[0x50];
 
             length /= buffer.Length;
             for (int i = 0; i < length; i++)

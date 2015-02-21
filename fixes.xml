@@ -987,24 +987,23 @@ IN THE SOFTWARE.
       <o id="451" duration="120" /> <!-- Water Carol II -->
       <o id="452" duration="120" /> <!-- Light Carol II -->
       <o id="453" duration="120" /> <!-- Dark Carol II -->
-      <o id="454" duration="120" /> <!-- Fire Threnody -->
-      <o id="455" duration="120" /> <!-- Ice Threnody -->
-      <o id="456" duration="120" /> <!-- Wind Threnody -->
-      <o id="457" duration="120" /> <!-- Earth Threnody -->
-      <o id="458" duration="120" /> <!-- Ltng. Threnody -->
-      <o id="459" duration="120" /> <!-- Water Threnody -->
-      <o id="460" duration="120" /> <!-- Light Threnody -->
-      <o id="461" duration="120" /> <!-- Dark Threnody -->
-      <o id="462" duration="120" /> <!-- Magic Finale -->
-      <o id="463" duration="120" /> <!-- Foe Lullaby -->
+      <o id="454" duration="60" /> <!-- Fire Threnody -->
+      <o id="455" duration="60" /> <!-- Ice Threnody -->
+      <o id="456" duration="60" /> <!-- Wind Threnody -->
+      <o id="457" duration="60" /> <!-- Earth Threnody -->
+      <o id="458" duration="60" /> <!-- Ltng. Threnody -->
+      <o id="459" duration="60" /> <!-- Water Threnody -->
+      <o id="460" duration="60" /> <!-- Light Threnody -->
+      <o id="461" duration="60" /> <!-- Dark Threnody -->
+      <o id="463" duration="30" /> <!-- Foe Lullaby -->
       <o id="464" duration="120" /> <!-- Goddess's Hymnus -->
       <o id="465" duration="120" /> <!-- Chocobo Mazurka -->
-      <o id="466" duration="120" /> <!-- Maiden's Virelai -->
+      <o id="466" duration="30" /> <!-- Maiden's Virelai -->
       <o id="467" duration="120" /> <!-- Raptor Mazurka -->
       <o id="468" duration="120" /> <!-- Foe Sirvente -->
       <o id="469" duration="120" /> <!-- Adventurer's Dirge -->
       <o id="470" duration="120" /> <!-- Sentinel's Scherzo -->
-      <o id="471" duration="120" /> <!-- Foe Lullaby II -->
+      <o id="471" duration="60" /> <!-- Foe Lullaby II -->
       <o id="472" duration="120" /> <!-- Pining Nocturne -->
       <o id="473" duration="150" /> <!-- Refresh II -->
       <o id="476" duration="300" /> <!-- Crusade -->
@@ -1062,6 +1061,8 @@ IN THE SOFTWARE.
       <o id="845" duration="180" /> <!-- Flurry -->
       <o id="846" duration="180" /> <!-- Flurry II -->
       <o id="848" duration="3600" /> <!-- Reraise IV -->
+      <o id="855" duration="180" /> <!-- Enlight II -->
+      <o id="856" duration="180" /> <!-- Endark II -->
       <o id="857" duration="180" /> <!-- Sandstorm II -->
       <o id="858" duration="180" /> <!-- Rainstorm II -->
       <o id="859" duration="180" /> <!-- Windstorm II -->
@@ -1070,6 +1071,14 @@ IN THE SOFTWARE.
       <o id="862" duration="180" /> <!-- Thunderstorm II -->
       <o id="863" duration="180" /> <!-- Voidstorm II -->
       <o id="864" duration="180" /> <!-- Aurorastorm II -->
+      <o id="865" duration="90" /> <!-- Fire Threnody II -->
+      <o id="866" duration="90" /> <!-- Ice Threnody II -->
+      <o id="867" duration="90" /> <!-- Wind Threnody II -->
+      <o id="868" duration="90" /> <!-- Earth Threnody II -->
+      <o id="869" duration="90" /> <!-- Ltng. Threnody II -->
+      <o id="870" duration="90" /> <!-- Water Threnody II -->
+      <o id="871" duration="90" /> <!-- Light Threnody II -->
+      <o id="872" duration="90" /> <!-- Dark Threnody II -->
     </update>
   </spells>
   <buffs>

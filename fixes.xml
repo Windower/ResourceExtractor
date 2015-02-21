@@ -1060,6 +1060,15 @@ IN THE SOFTWARE.
       <o id="840" duration="30" /> <!-- Foil -->
       <o id="845" duration="180" /> <!-- Flurry -->
       <o id="846" duration="180" /> <!-- Flurry II -->
+      <o id="848" duration="3600" /> <!-- Reraise IV -->
+      <o id="857" duration="180" /> <!-- Sandstorm II -->
+      <o id="858" duration="180" /> <!-- Rainstorm II -->
+      <o id="859" duration="180" /> <!-- Windstorm II -->
+      <o id="860" duration="180" /> <!-- Firestorm II -->
+      <o id="861" duration="180" /> <!-- Hailstorm II -->
+      <o id="862" duration="180" /> <!-- Thunderstorm II -->
+      <o id="863" duration="180" /> <!-- Voidstorm II -->
+      <o id="864" duration="180" /> <!-- Aurorastorm II -->
     </update>
   </spells>
   <buffs>
@@ -1085,6 +1094,11 @@ IN THE SOFTWARE.
       <o id="398" en="Weakened Daze 3" ja="スタッターステップ3" enl="Weakened Daze 3" jal="スタッターステップ3" />
       <o id="399" en="Weakened Daze 4" ja="スタッターステップ4" enl="Weakened Daze 4" jal="スタッターステップ4" />
       <o id="400" en="Weakened Daze 5" ja="スタッターステップ5" enl="Weakened Daze 5" jal="スタッターステップ5" />
+      <o id="448" en="Bewildered Daze 1" ja="フェザーステップ1" enl="Bewildered Daze 1" jal="フェザーステップ1" />
+      <o id="449" en="Bewildered Daze 2" ja="フェザーステップ2" enl="Bewildered Daze 2" jal="フェザーステップ2" />
+      <o id="450" en="Bewildered Daze 3" ja="フェザーステップ3" enl="Bewildered Daze 3" jal="フェザーステップ3" />
+      <o id="451" en="Bewildered Daze 4" ja="フェザーステップ4" enl="Bewildered Daze 4" jal="フェザーステップ4" />
+      <o id="452" en="Bewildered Daze 5" ja="フェザーステップ5" enl="Bewildered Daze 5" jal="フェザーステップ5" />
     </update>
   </buffs>
   <items>
@@ -1140,6 +1154,7 @@ IN THE SOFTWARE.
       <o id="5" en="linkshell" incoming="14" outgoing="6" />
       <o id="8" en="emote" incoming="15" outgoing="7" />
       <o id="26" en="yell" incoming="11" outgoing="3" />
+      <o id="27" en="linkshell2" incoming="214" outgoing="213" />
       <o id="33" en="unity" incoming="212" outgoing="212" />
     </update>
   </chat>

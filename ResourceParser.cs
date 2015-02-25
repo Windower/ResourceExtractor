@@ -25,7 +25,6 @@ namespace ResourceExtractor
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
-    using System.Dynamic;
     using System.Globalization;
     using System.IO;
     using System.Linq;
@@ -155,7 +154,7 @@ namespace ResourceExtractor
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
+        [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseActions(Stream stream, int length)
         {
             IDictionary<short, object> recasts = new Dictionary<short, object>();
@@ -298,7 +297,7 @@ namespace ResourceExtractor
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
+        [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseItems(Stream stream, Stream streamja)
         {
             byte[] data = new byte[0x200];

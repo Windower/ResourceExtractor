@@ -67,6 +67,14 @@ namespace ResourceExtractor
                     {0, "ja"},
                 }},
             }},
+            {"augments", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD98C, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD914, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+            }},
             {"auto_translates", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD971, new Dictionary<int, string> {
                     {0, "en"},
@@ -84,7 +92,14 @@ namespace ResourceExtractor
                     {0, "ja"},
                 }},
             }},
-            {"jobs", new Dictionary<ushort, Dictionary<int, string>> {
+            {"job_points", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD98E, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD916, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+            }},            {"jobs", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD8AB, new Dictionary<int, string> {
                     {0, "en"},
                 }},
@@ -396,6 +411,8 @@ namespace ResourceExtractor
                         }
                     }
                 }
+                model.actions = null;
+
 
                 // Shift monster abilities up by 0x100
                 foreach (var monster_ability in model.monster_abilities)
@@ -403,7 +420,26 @@ namespace ResourceExtractor
                     monster_ability.id += 0x100;
                 }
 
-                model.actions = null;
+                // Split job point names/descriptions and filter garbage values
+                foreach (var job_point in model.job_points)
+                {
+                    // The first 64 entries contain the category names
+                    if (job_point.id < 0x40 || job_point.en == "カテゴリー名" || job_point.en == "ヘルプ文")
+                    {
+                        job_point.id = 0;
+                        continue;
+                    }
+
+                    // Uneven entries contain the descriptions for the previous entry
+                    if (job_point.id % 2 == 1)
+                    {
+                        model.job_points[job_point.id - 1].endesc = job_point.en;
+                        model.job_points[job_point.id - 1].jadesc = job_point.ja;
+
+                        job_point.id = 0;
+                    }
+                }
+                ((List<dynamic>)model.job_points).RemoveAll(job_point => job_point.id == 0);
 
                 success = true;
             }

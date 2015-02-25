@@ -1060,6 +1060,16 @@ IN THE SOFTWARE.
       <o id="840" duration="30" /> <!-- Foil -->
       <o id="845" duration="180" /> <!-- Flurry -->
       <o id="846" duration="180" /> <!-- Flurry II -->
+      <o id="855" duration="180" /> <!-- Enlight II -->
+      <o id="856" duration="180" /> <!-- Endark II -->
+      <o id="857" duration="180" /> <!-- Sandstorm II -->
+      <o id="858" duration="180" /> <!-- Rainstorm II -->
+      <o id="859" duration="180" /> <!-- Windstorm II -->
+      <o id="860" duration="180" /> <!-- Firestorm II -->
+      <o id="861" duration="180" /> <!-- Hailstorm II -->
+      <o id="862" duration="180" /> <!-- Thunderstorm II -->
+      <o id="863" duration="180" /> <!-- Voidstorm II -->
+      <o id="864" duration="180" /> <!-- Aurorastorm II -->
     </update>
   </spells>
   <buffs>

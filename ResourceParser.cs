@@ -291,23 +291,6 @@ namespace ResourceExtractor
             spell.requirements = reader.ReadByte();
             spell.range = reader.ReadSByte() % 0xF;
 
-            switch ((byte)spell.icon_id_nq)
-            {
-            case 56:
-            case 57:
-            case 58:
-            case 59:
-            case 60:
-            case 61:
-            case 62:
-            case 63:
-                spell.element = spell.icon_id_nq - 56;
-                break;
-            case 64:
-                spell.element = -1;
-                break;
-            }
-
             // Derived data
             spell.prefix = ((MagicType)spell.type).Prefix();
 

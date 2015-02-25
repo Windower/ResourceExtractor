@@ -121,6 +121,14 @@ namespace ResourceExtractor
                     //{2, "jadesc"},
                 }},
             }},
+            {"merit_points", new Dictionary<ushort, Dictionary<int, string>> {
+                {0xD986, new Dictionary<int, string> {
+                    {0, "en"},
+                }},
+                {0xD90E, new Dictionary<int, string> {
+                    {0, "ja"},
+                }},
+            }},
             {"monster_abilities", new Dictionary<ushort, Dictionary<int, string>> {
                 {0x1B7B, new Dictionary<int, string> {
                     {0, "en"},
@@ -419,6 +427,27 @@ namespace ResourceExtractor
                 {
                     monster_ability.id += 0x100;
                 }
+
+                // Split merit point names/descriptions and filter garbage values
+                foreach (var merit_point in model.merit_points)
+                {
+                    // The first 64 entries contain the category names
+                    if (merit_point.id < 0x40 || merit_point.en.StartsWith("Meripo"))
+                    {
+                        merit_point.id = 0;
+                        continue;
+                    }
+
+                    // Uneven entries contain the descriptions for the previous entry
+                    if (merit_point.id % 2 == 1)
+                    {
+                        model.merit_points[merit_point.id - 1].endesc = merit_point.en;
+                        model.merit_points[merit_point.id - 1].jadesc = merit_point.ja;
+
+                        merit_point.id = 0;
+                    }
+                }
+                ((List<dynamic>)model.merit_points).RemoveAll(merit_point => merit_point.id == 0);
 
                 // Split job point names/descriptions and filter garbage values
                 foreach (var job_point in model.job_points)

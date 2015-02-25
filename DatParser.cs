@@ -29,6 +29,8 @@ namespace ResourceExtractor
 
     internal class DatParser
     {
+        private DatParser() { }
+
         public static dynamic[] Parse(Stream stream, Dictionary<int, string> fields)
         {
             var format = stream.Read<ulong>();

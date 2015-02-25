@@ -31,41 +31,50 @@ namespace ResourceExtractor
         internal static Bitmap Parse(BinaryReader reader, ImageHeader header, bool ignoreAlpha = false)
         {
             var Result = new Bitmap(header.Width, header.Height, PixelFormat.Format32bppArgb);
-            var Raw = Result.LockBits(new Rectangle(0, 0, Result.Width, Result.Height), ImageLockMode.WriteOnly, Result.PixelFormat);
-
-            var PixelCount = header.Height * header.Width;
-
-            unsafe
+            try
             {
-                var Buffer = (byte*)Raw.Scan0;
+                var Raw = Result.LockBits(new Rectangle(0, 0, Result.Width, Result.Height), ImageLockMode.WriteOnly, Result.PixelFormat);
 
-                Color[] Palette = null;
-                byte[] BitFields = null;
-                bool EightCount = header.BitCount == 8;
-                if (EightCount)
-                { // 8-bit, with palette
-                    Palette = new Color[256];
-                    for (var i = 0; i < 256; ++i)
-                    {
-                        Palette[i] = ReadColor(reader, 32);
+                var PixelCount = header.Height * header.Width;
+
+                unsafe
+                {
+                    var Buffer = (byte*)Raw.Scan0;
+
+                    Color[] Palette = null;
+                    byte[] BitFields = null;
+                    bool EightCount = header.BitCount == 8;
+                    if (EightCount)
+                    { // 8-bit, with palette
+                        Palette = new Color[256];
+                        for (var i = 0; i < 256; ++i)
+                        {
+                            Palette[i] = ReadColor(reader, 32);
+                        }
+
+                        BitFields = reader.ReadBytes(PixelCount);
                     }
 
-                    BitFields = reader.ReadBytes(PixelCount);
+                    for (var Pixel = 0; Pixel < PixelCount; ++Pixel)
+                    {
+                        var Color = EightCount ? Palette[BitFields[Pixel]] : ReadColor(reader, header.BitCount);
+                        Buffer[4 * Pixel + 0] = Color.B;
+                        Buffer[4 * Pixel + 1] = Color.G;
+                        Buffer[4 * Pixel + 2] = Color.R;
+                        Buffer[4 * Pixel + 3] = ignoreAlpha ? (byte)255 : Color.A;
+                    }
                 }
 
-                for (var Pixel = 0; Pixel < PixelCount; ++Pixel)
-                {
-                    var Color = EightCount ? Palette[BitFields[Pixel]] : ReadColor(reader, header.BitCount);
-                    Buffer[4 * Pixel + 0] = Color.B;
-                    Buffer[4 * Pixel + 1] = Color.G;
-                    Buffer[4 * Pixel + 2] = Color.R;
-                    Buffer[4 * Pixel + 3] = ignoreAlpha ? (byte)255 : Color.A;
-                }
+                Result.UnlockBits(Raw);
+
+                Result.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            }
+            catch
+            {
+                Result.Dispose();
+                throw;
             }
 
-            Result.UnlockBits(Raw);
-
-            Result.RotateFlip(RotateFlipType.RotateNoneFlipY);
             return Result;
         }
 

@@ -24,10 +24,13 @@ namespace ResourceExtractor
 {
     using System;
     using System.Drawing;
+    using System.Globalization;
     using System.IO;
 
     internal class ImageParser
     {
+        private ImageParser() { }
+
         internal static Bitmap Parse(Stream stream, bool ignoreAlpha = false)
         {
             Bitmap Result = null;
@@ -53,7 +56,7 @@ namespace ResourceExtractor
                     Result = BitmapParser.Parse(Reader, Header, ignoreAlpha);
                     break;
                 default:
-                    throw new InvalidDataException(string.Format("Image type {0} not supported: {1}", Header.Type, Flag));
+                    throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture, "Image type {0} not supported: {1}", Header.Type, Flag));
                 }
             }
 

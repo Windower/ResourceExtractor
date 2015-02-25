@@ -182,6 +182,7 @@ namespace ResourceExtractor
             callsite.Target(callsite, obj, value);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         private static object Convert(string value, string type)
         {
             switch (type)

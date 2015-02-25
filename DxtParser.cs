@@ -24,6 +24,7 @@ namespace ResourceExtractor
 {
     using System.Drawing;
     using System.Drawing.Imaging;
+    using System.Globalization;
     using System.IO;
 
     internal static class DxtParser
@@ -32,35 +33,43 @@ namespace ResourceExtractor
         {
             var Format = (header.Type == ImageType.DXT2 || header.Type == ImageType.DXT4) ? PixelFormat.Format32bppPArgb : PixelFormat.Format32bppArgb;
             var Result = new Bitmap(header.Width, header.Height, Format);
-            var Raw = Result.LockBits(new Rectangle(0, 0, Result.Width, Result.Height), ImageLockMode.WriteOnly, Result.PixelFormat);
-
-            var TexelBlockCount = (header.Width * header.Height) / (4 * 4);
-            unsafe
+            try
             {
-                var Buffer = (byte*)Raw.Scan0; 
+                var Raw = Result.LockBits(new Rectangle(0, 0, Result.Width, Result.Height), ImageLockMode.WriteOnly, Result.PixelFormat);
 
-                for (var Texel = 0; Texel < TexelBlockCount; ++Texel)
+                var TexelBlockCount = (header.Width * header.Height) / (4 * 4);
+                unsafe
                 {
-                    var TexelBlock = ReadTexelBlock(reader, header.Type);
-                    var PixelOffsetX = 4 * (Texel % (header.Width / 4));
-                    var PixelOffsetY = 4 * (Texel / (header.Width / 4)) * (Raw.Stride / 4);
+                    var Buffer = (byte*)Raw.Scan0;
 
-                    var Index = 4 * (PixelOffsetX + PixelOffsetY);
-                    for (var Y = 0; Y < 4; ++Y, Index += Raw.Stride - 16)
+                    for (var Texel = 0; Texel < TexelBlockCount; ++Texel)
                     {
-                        for (var X = 0; X < 4; ++X, Index += 4)
+                        var TexelBlock = ReadTexelBlock(reader, header.Type);
+                        var PixelOffsetX = 4 * (Texel % (header.Width / 4));
+                        var PixelOffsetY = 4 * (Texel / (header.Width / 4)) * (Raw.Stride / 4);
+
+                        var Index = 4 * (PixelOffsetX + PixelOffsetY);
+                        for (var Y = 0; Y < 4; ++Y, Index += Raw.Stride - 16)
                         {
-                            var Lookup = X + 4 * Y;
-                            Buffer[Index + 0] = TexelBlock[Lookup].B;
-                            Buffer[Index + 1] = TexelBlock[Lookup].G;
-                            Buffer[Index + 2] = TexelBlock[Lookup].R;
-                            Buffer[Index + 3] = ignoreAlpha ? (byte)255 : TexelBlock[Lookup].A;
+                            for (var X = 0; X < 4; ++X, Index += 4)
+                            {
+                                var Lookup = X + 4 * Y;
+                                Buffer[Index + 0] = TexelBlock[Lookup].B;
+                                Buffer[Index + 1] = TexelBlock[Lookup].G;
+                                Buffer[Index + 2] = TexelBlock[Lookup].R;
+                                Buffer[Index + 3] = ignoreAlpha ? (byte)255 : TexelBlock[Lookup].A;
+                            }
                         }
                     }
                 }
-            }
 
-            Result.UnlockBits(Raw);
+                Result.UnlockBits(Raw);
+            }
+            catch
+            {
+                Result.Dispose();
+                throw;
+            }
 
             return Result;
         }
@@ -75,7 +84,7 @@ namespace ResourceExtractor
             }
             else if (type != ImageType.DXT1)
             {
-                throw new InvalidDataException(string.Format("Format {0} not recognized.", type));
+                throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture, "Format {0} not recognized.", type));
             }
 
             ushort C0 = reader.ReadUInt16();

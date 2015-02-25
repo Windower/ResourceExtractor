@@ -158,17 +158,17 @@ namespace ResourceExtractor.Serialization
             }
         }
 
-        private void SerializeBoolean(TextWriter writer, object value)
+        private static void SerializeBoolean(TextWriter writer, object value)
         {
             writer.Write((bool)value ? "true" : "false");
         }
 
-        private void SerializeNumber(TextWriter writer, object value)
+        private static void SerializeNumber(TextWriter writer, object value)
         {
             writer.Write(value);
         }
 
-        private void SerializeString(TextWriter writer, object value)
+        private static void SerializeString(TextWriter writer, object value)
         {
             var temp = new StringBuilder().Append(value);
             temp.Replace("\\", "\\\\");

@@ -26,13 +26,12 @@ namespace ResourceExtractor
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
-    using System.Dynamic;
     using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Xml.Linq;
     using Microsoft.Win32;
-    using ResourceExtractor.Serializers.Lua;
+    using Serializers.Lua;
 
     internal class Program
     {
@@ -68,11 +67,6 @@ namespace ResourceExtractor
                     {0, "ja"},
                 }},
             }},
-            //{"augments", new Dictionary<ushort, Dictionary<int, string>> {
-            //    {0xD98C, new Dictionary<int, string> {
-            //        {0, "en"},
-            //    }},
-            //}},
             {"auto_translates", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD971, new Dictionary<int, string> {
                     {0, "en"},
@@ -403,7 +397,6 @@ namespace ResourceExtractor
                     }
                 }
 
-
                 // Shift monster abilities up by 0x100
                 foreach (var monster_ability in model.monster_abilities)
                 {
@@ -644,7 +637,10 @@ namespace ResourceExtractor
             try
             {
 #endif
-                ResourceParser.ParseMainStream(File.OpenRead(GetPath(0x0051)));
+                using (var file = File.OpenRead(GetPath(0x0051)))
+                {
+                    ResourceParser.ParseMainStream(file);
+                }
 #if !DEBUG
             }
             catch

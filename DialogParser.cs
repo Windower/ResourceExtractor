@@ -51,7 +51,11 @@ namespace ResourceExtractor
             {
                 data[i] ^= 0x80;
             }
-            var table = new MemoryStream(data).ReadArray<int>((int)header.TableSize);
+            int[] table;
+            using (var datastream = new MemoryStream(data))
+            {
+                table = datastream.ReadArray<int>((int)header.TableSize);
+            }
 
             dynamic objects = new ModelObject[header.TableSize];
 

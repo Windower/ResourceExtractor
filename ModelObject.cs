@@ -33,11 +33,13 @@ namespace ResourceExtractor
     {
         private IDictionary<string, object> map = new Dictionary<string, object>();
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {
             return map.TryGetValue(binder.Name, out result);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
         public override bool TrySetMember(SetMemberBinder binder, object value)
         {
             if (value != null)
@@ -51,6 +53,7 @@ namespace ResourceExtractor
             return true;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "1")]
         public override bool TryGetIndex(GetIndexBinder binder, object[] indexes, out object result)
         {
             result = null;
@@ -66,6 +69,7 @@ namespace ResourceExtractor
             return false;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "1")]
         public override bool TrySetIndex(SetIndexBinder binder, object[] indexes, object value)
         {
             if (indexes.Length == 1)
@@ -88,12 +92,14 @@ namespace ResourceExtractor
             return false;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
         public override bool TryDeleteMember(DeleteMemberBinder binder)
         {
             map.Remove(binder.Name);
             return true;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "1")]
         public override bool TryDeleteIndex(DeleteIndexBinder binder, object[] indexes)
         {
             if (indexes.Length == 1)
@@ -144,6 +150,11 @@ namespace ResourceExtractor
 
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
         {
+            if (info == null)
+            {
+                throw new ArgumentNullException("info");
+            }
+
             foreach (var pair in map)
             {
                 info.AddValue(pair.Key, pair.Value);

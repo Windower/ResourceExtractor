@@ -126,6 +126,36 @@ namespace ResourceExtractor
             }
         }
 
+        private static ModelObject ParseAction(BinaryReader reader)
+        {
+            dynamic action = new ModelObject();
+
+            action.id = reader.ReadInt16();
+            
+            action.type = (AbilityType)reader.ReadByte();
+            action.element = reader.ReadByte() & 0x07;
+            action.icon_id = reader.ReadInt16();
+            action.mp_cost = reader.ReadInt16();
+            action.recast_id = reader.ReadInt16();
+            action.targets = reader.ReadInt16();
+            action.tp_cost = reader.ReadInt16();
+            reader.ReadBytes(0x01);     // Unknown 0E - 0E, 0x12 for Ready, 0x16 for Ward, 0x17 for Effusion, 0x00 for every other valid ability
+            action.monster_level = reader.ReadSByte();
+            action.range = reader.ReadSByte() % 0xF;
+
+            // Derived data
+            action.prefix = ((AbilityType)action.type).Prefix();
+
+            if (action.tp_cost == -1)
+            {
+                action.tp_cost = 0;
+            }
+
+            return action;
+        }
+
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseActions(Stream stream, int length)
         {
             IDictionary<short, object> recasts = new Dictionary<short, object>();
@@ -144,48 +174,26 @@ namespace ResourceExtractor
                 data[11] = b11;
                 data[12] = b12;
 
-                dynamic action = new ModelObject();
-
                 using (MemoryStream mstream = new MemoryStream(data))
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
-                    action.id = reader.ReadInt16();
-                    
-                    action.type = (AbilityType)reader.ReadByte();
-                    action.element = reader.ReadByte() & 0x07;
-                    action.icon_id = reader.ReadInt16();
-                    action.mp_cost = reader.ReadInt16();
-                    action.recast_id = reader.ReadInt16();
-                    action.targets = reader.ReadInt16();
-                    action.tp_cost = reader.ReadInt16();
-                    reader.ReadBytes(0x01);     // Unknown 0E - 0E, 0x12 for Ready, 0x16 for Ward, 0x17 for Effusion, 0x00 for every other valid ability
-                    action.monster_level = reader.ReadSByte();
-                    action.range = reader.ReadSByte();
-
-                    // Derived data
-                    action.prefix = ((AbilityType)action.type).Prefix();
-
-                    if (action.tp_cost == -1)
+                    dynamic action = ParseAction(reader);
+                    if (action == null)
                     {
-                        action.tp_cost = 0;
+                        continue;
                     }
 
-                    if (action.range == 0xF)
+                    model.actions.Add(action);
+
+                    // Job ability
+                    if (action.id >= 0x0200 && action.id < 0x0600)
                     {
-                        action.range = 0;
+                        // Add to recast dictionary
+                        dynamic recast = new ModelObject();
+                        recast.id = action.recast_id;
+                        recast.action_id = action.id - 0x200;
+                        recasts[recast.id] = recast;
                     }
-                }
-
-                model.actions.Add(action);
-
-                // Job ability
-                if (action.id >= 0x0200 && action.id < 0x0600)
-                {
-                    // Add to recast dictionary
-                    dynamic recast = new ModelObject();
-                    recast.id = action.recast_id;
-                    recast.action_id = action.id - 0x200;
-                    recasts[recast.id] = recast;
                 }
             }
 
@@ -194,6 +202,7 @@ namespace ResourceExtractor
             model.ability_recasts.AddRange(recasts.Select(kvp => kvp.Value));
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseSpells(Stream stream, int length)
         {
             var data = new byte[0x50];
@@ -213,9 +222,9 @@ namespace ResourceExtractor
                 bool valid = true;
 
                 // Check if spell is usable by any job.
-                for (int j = 0; j < 0x18; ++j)
+                for (int j = 0; j < 0x30; ++j)
                 {
-                    valid |= data[14 + 2 * j] != 0xFF;
+                    valid |= data[14 + j] != 0xFF;
                 }
 
                 // Invalid spell
@@ -224,81 +233,89 @@ namespace ResourceExtractor
                     continue;
                 }
 
-                dynamic spell = new ModelObject();
-
                 using (MemoryStream mstream = new MemoryStream(data))
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
-                    spell.id = reader.ReadInt16();
-                    if (spell.id == 0)
+                    dynamic spell = ParseSpell(reader);
+                    if (spell == null)
                     {
                         continue;
                     }
 
-                    spell.type = (MagicType)reader.ReadInt16();
-                    spell.element = reader.ReadByte();
-                    reader.ReadBytes(0x01);                 // Unknown 05 - 05, possibly just padding or element being a short
-                    spell.targets = reader.ReadUInt16();
-                    spell.skill = reader.ReadInt16();
-                    spell.mp_cost = reader.ReadInt16();
-                    spell.cast_time = reader.ReadByte() / 4.0;
-                    spell.recast = reader.ReadByte() / 4.0;
-                    spell.levels = new Dictionary<int, int>();
-                    for (var job = 0; job < 0x18; ++job)
-                    {
-                        var level = reader.ReadInt16();
-
-                        // Currently the last job slot just mirrors the White Mage's level
-                        // This may need to be removed at some point, if they expand on jobs more
-                        if (job == 0x17)
-                        {
-                            break;
-                        }
-
-                        if (level != -1)
-                        {
-                            spell.levels[job] = level;
-                        }
-                    }
-                    // SE changed spell recast times in memory to be indexed by spell ID, not recast ID
-                    //spell.recast_id = reader.ReadInt16();
-                    reader.ReadBytes(0x02);
-                    spell.recast_id = spell.id;
-                    spell.icon_id_nq = reader.ReadInt16();
-                    spell.icon_id = reader.ReadInt16();
-                    spell.requirements = reader.ReadByte();
-                    spell.range = reader.ReadSByte();
-
-                    // Derived data
-                    spell.prefix = ((MagicType)spell.type).Prefix();
-                    switch ((byte)spell.icon_id_nq)
-                    {
-                        case 56:
-                        case 57:
-                        case 58:
-                        case 59:
-                        case 60:
-                        case 61:
-                        case 62:
-                        case 63:
-                            spell.element = spell.icon_id_nq - 56;
-                            break;
-                        case 64:
-                            spell.element = -1;
-                            break;
-                    }
-
-                    if (spell.range == 0xF)
-                    {
-                        spell.range = 0;
-                    }
+                    model.spells.Add(spell);
                 }
-
-                model.spells.Add(spell);
             }
             model.spells.Remove(0);
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        private static ModelObject ParseSpell(BinaryReader reader)
+        {
+            dynamic spell = new ModelObject();
+
+            spell.id = reader.ReadInt16();
+            if (spell.id == 0)
+            {
+                return null;
+            }
+
+            spell.type = (MagicType)reader.ReadInt16();
+            spell.element = reader.ReadByte();
+            reader.ReadBytes(0x01);                 // Unknown 05 - 05, possibly just padding or element being a short
+            spell.targets = reader.ReadUInt16();
+            spell.skill = reader.ReadInt16();
+            spell.mp_cost = reader.ReadInt16();
+            spell.cast_time = reader.ReadByte() / 4.0;
+            spell.recast = reader.ReadByte() / 4.0;
+            spell.levels = new Dictionary<int, int>();
+            for (var job = 0; job < 0x18; ++job)
+            {
+                var level = reader.ReadInt16();
+                if (level != -1)
+                {
+                    spell.levels[job] = level;
+                }
+            }
+
+            // Currently the last job slot just mirrors the White Mage's level
+            // This may need to be removed at some point, if they expand on jobs more
+            spell.levels.Remove(0x17);
+
+            reader.ReadBytes(0x02);
+
+            // SE changed spell recast times in memory to be indexed by spell ID, not recast ID
+            //spell.recast_id = reader.ReadInt16();
+            spell.recast_id = spell.id;
+            spell.icon_id_nq = reader.ReadInt16();
+            spell.icon_id = reader.ReadInt16();
+            spell.requirements = reader.ReadByte();
+            spell.range = reader.ReadSByte() % 0xF;
+
+            switch ((byte)spell.icon_id_nq)
+            {
+            case 56:
+            case 57:
+            case 58:
+            case 59:
+            case 60:
+            case 61:
+            case 62:
+            case 63:
+                spell.element = spell.icon_id_nq - 56;
+                break;
+            case 64:
+                spell.element = -1;
+                break;
+            }
+
+            // Derived data
+            spell.prefix = ((MagicType)spell.type).Prefix();
+
+            return spell;
+        }
+
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseItems(Stream stream, Stream streamja)
         {
             byte[] data = new byte[0x200];
@@ -311,8 +328,6 @@ namespace ResourceExtractor
                 stream.Read(data, 0, data.Length);
                 streamja.Read(dataja, 0, dataja.Length);
 
-                dynamic item = new ModelObject();
-
                 data.RotateRight(5);
                 dataja.RotateRight(5);
 
@@ -321,58 +336,18 @@ namespace ResourceExtractor
                 using (BinaryReader reader = new BinaryReader(stringstream, Encoding.ASCII, true))
                 using (BinaryReader readerja = new BinaryReader(stringstreamja, Encoding.ASCII, true))
                 {
-                    item.id = reader.ReadUInt16();
-                    if (item.id == 0x0000)
+                    // The english and japanese stream contain the same main item data, so only one stream is needed here
+                    // The only difference is in the string handling, hence readerja is still needed later
+                    dynamic item = ParseItem(reader);
+                    if (item == null)
                     {
                         continue;
                     }
 
-                    reader.ReadBytes(0x02);         // Unknown 02 - 03 (possibly for future expansion of ID)
-
-                    if (item.id >= 0xF000 && item.id < 0xF200)
-                    {
-                        ParseMonstrosityItem(reader, item);
-                    }
-                    else if (item.id == 0xFFFF)
-                    {
-                        ParseGilItem(reader, item);
-                    }
-                    else
-                    {
-                        item.flags = reader.ReadUInt16();
-                        item.stack = reader.ReadUInt16();
-                        item.type = reader.ReadUInt16();
-                        reader.ReadBytes(0x02);     // AH sorting value
-                        item.targets = reader.ReadUInt16();
-
-                        if ((item.id >= 0x0001 && item.id <= 0x0FFF) || (item.id >= 0x2200 && item.id < 0x2800))
-                        {
-                            ParseGeneralItem(reader, item);
-                        }
-                        else if (item.id >= 0x1000 && item.id < 0x2000)
-                        {
-                            ParseUsableItem(reader, item);
-                        }
-                        else if (item.id >= 0x2000 && item.id < 0x2200)
-                        {
-                            ParseAutomatonItem(reader, item);
-                        }
-                        else if ((item.id >= 0x2800 && item.id < 0x4000) || (item.id >= 0x6400 && item.id < 0x7000))
-                        {
-                            ParseArmorItem(reader, item);
-                        }
-                        else if (item.id >= 0x4000 && item.id < 0x5400)
-                        {
-                            ParseWeaponItem(reader, item);
-                        }
-                        else if (item.id >= 0x7000 && item.id < 0x7400)
-                        {
-                            ParseMazeItem(reader, item);
-                        }
-                    }
-
+                    // Advance the japanese stream's position to the same as the english one for string parsing
                     stringstreamja.Position = stringstream.Position;
 
+                    // Parse strings
                     if (item.id >= 0xF000 && item.id < 0xF200)
                     {
                         item.id -= 0xF000;
@@ -390,6 +365,81 @@ namespace ResourceExtractor
                         model.items.Add(item);
                     }
                 }
+            }
+        }
+
+        private static ModelObject ParseItem(BinaryReader reader)
+        {
+            dynamic item = new ModelObject();
+
+            item.id = reader.ReadUInt16();
+            if (item.id == 0x0000)
+            {
+                return null;
+            }
+
+            reader.ReadBytes(0x02);         // Unknown 02 - 03 (possibly for future expansion of ID)
+
+            if (item.id >= 0xF000 && item.id < 0xF200)
+            {
+                ParseMonstrosityItem(reader, item);
+            }
+            else if (item.id == 0xFFFF)
+            {
+                ParseGilItem(reader, item);
+            }
+            else
+            {
+                ParseRealItem(reader, item);
+            }
+
+            return item;
+        }
+
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        private static void ParseRealItem(BinaryReader reader, dynamic item)
+        {
+            item.flags = reader.ReadUInt16();
+            item.stack = reader.ReadUInt16();
+            item.type = reader.ReadUInt16();
+            reader.ReadBytes(0x02);     // AH sorting value
+            item.targets = reader.ReadUInt16();
+
+            if (item.id <= 0x0FFF)
+            {
+                ParseGeneralItem(reader, item);
+            }
+            else if (item.id < 0x2000)
+            {
+                ParseUsableItem(reader, item);
+            }
+            else if (item.id < 0x2200)
+            {
+                ParseAutomatonItem(reader, item);
+            }
+            else if (item.id < 0x2800)
+            {
+                ParseGeneralItem(reader, item);
+            }
+            else if (item.id < 0x4000)
+            {
+                ParseArmorItem(reader, item);
+            }
+            else if (item.id < 0x5400)
+            {
+                ParseWeaponItem(reader, item);
+            }
+            else if (item.id < 0x6400)
+            {
+                // Unknown
+            }
+            else if (item.id < 0x7000)
+            {
+                ParseArmorItem(reader, item);
+            }
+            else if (item.id < 0x7400)
+            {
+                ParseMazeItem(reader, item);
             }
         }
 

@@ -204,7 +204,7 @@ namespace ResourceExtractor
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseSpells(Stream stream, int length)
         {
-            var data = new byte[0x50];
+            var data = new byte[0x58];
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
@@ -253,7 +253,7 @@ namespace ResourceExtractor
             dynamic spell = new ModelObject();
 
             spell.id = reader.ReadInt16();
-            if (spell.id <= 0)
+            if (spell.id == 0)
             {
                 return null;
             }

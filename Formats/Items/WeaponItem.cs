@@ -43,7 +43,7 @@ namespace ResourceExtractor.Formats.Items
             this.casttime = data[0x25];
             this.recast = data[0x28] | data[0x29] << 8 | data[0x2A] << 16 | data[0x2B] << 24;
 
-            this.InitializeStrings(data, 0x34);
+            this.InitializeStrings(data, 0x38);
         }
 
         public override ValidTargets ValidTargets

@@ -180,7 +180,7 @@ namespace ResourceExtractor.Formats
         {
             IList<SpellData> result = new List<SpellData>();
 
-            byte[] buffer = new byte[0x50];
+            byte[] buffer = new byte[0x58];
 
             length /= buffer.Length;
             for (int i = 0; i < length; i++)

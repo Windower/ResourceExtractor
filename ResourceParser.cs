@@ -253,7 +253,7 @@ namespace ResourceExtractor
             dynamic spell = new ModelObject();
 
             spell.id = reader.ReadInt16();
-            if (spell.id == 0)
+            if (spell.id <= 0)
             {
                 return null;
             }
@@ -413,7 +413,7 @@ namespace ResourceExtractor
             }
             else if (item.id < 0x6400)
             {
-                // Unknown
+                reader.ReadBytes(0x2A);
             }
             else if (item.id < 0x7000)
             {
@@ -481,6 +481,8 @@ namespace ResourceExtractor
                 item.item_level = item_level;
             }
 
+            reader.ReadBytes(0x04);             // Unknown 34 - 37
+
             item.category = "Weapon";
         }
 
@@ -533,6 +535,8 @@ namespace ResourceExtractor
             {
                 item.item_level = item_level;
             }
+
+            reader.ReadBytes(0x04);             // Unknown 28 - 2B
 
             item.category = "Armor";
         }

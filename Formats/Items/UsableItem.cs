@@ -33,7 +33,7 @@ namespace ResourceExtractor.Formats.Items
             this.validtargets = (ValidTargets)(data[0x0C] | data[0x0D] << 8);
             this.casttime = data[0x0E] | data[0x0F] << 8;
 
-            this.InitializeStrings(data, 0x18);
+            this.InitializeStrings(data, 0x1C);
         }
 
         public ValidTargets ValidTargets

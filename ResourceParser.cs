@@ -545,6 +545,7 @@ namespace ResourceExtractor
         {
             item.cast_time = reader.ReadUInt16() / 4.0;
             reader.ReadBytes(0x08);             // Unknown 10 - 17
+            reader.ReadInt32();                 // Not entirely known 18-1B, https://gist.github.com/z16/b1678ffefc4a6e9d52d6
 
             item.category = "Usable";
         }

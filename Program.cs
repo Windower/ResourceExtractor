@@ -99,7 +99,8 @@ namespace ResourceExtractor
                 {0xD916, new Dictionary<int, string> {
                     {0, "ja"},
                 }},
-            }},            {"jobs", new Dictionary<ushort, Dictionary<int, string>> {
+            }},
+            {"jobs", new Dictionary<ushort, Dictionary<int, string>> {
                 {0xD8AB, new Dictionary<int, string> {
                     {0, "en"},
                 }},

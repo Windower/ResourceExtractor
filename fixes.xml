@@ -1145,14 +1145,15 @@ IN THE SOFTWARE.
   <bags>
     <update>
       <o id="0" en="Inventory" access="Everywhere" />
-      <o id="1" en="Safe" access="Mog House" />
-      <o id="2" en="Storage" access="Mog House" />
+      <o id="1" en="Safe" access="Mog House" command="bank" />
+      <o id="2" en="Storage" access="Mog House" command="storage" />
       <o id="3" en="Temporary" access="Situational" />
-      <o id="4" en="Locker" access="Mog House" />
-      <o id="5" en="Satchel" access="Everywhere" />
-      <o id="6" en="Sack" access="Everywhere" />
-      <o id="7" en="Case" access="Everywhere" />
-      <o id="8" en="Wardrobe" access="Everywhere" />
+      <o id="4" en="Locker" access="Mog House" command="locker" />
+      <o id="5" en="Satchel" access="Everywhere" command="satchel" />
+      <o id="6" en="Sack" access="Everywhere" command="sack" />
+      <o id="7" en="Case" access="Everywhere" command="case" />
+      <o id="8" en="Wardrobe" access="Everywhere" command="wardrobe" />
+      <o id="9" en="Safe 2" access="Mog House" command="bank2" />
     </update>
   </bags>
   <chat>

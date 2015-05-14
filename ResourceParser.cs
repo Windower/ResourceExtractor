@@ -498,10 +498,6 @@ namespace ResourceExtractor
                 item.superior_level = superior_level;
             }
             reader.ReadByte();                  // Unknown 17
-            if (superior_level > 0) 
-            { 
-                item.superior_level = superior_level; 
-            }
 
             var shield_size = reader.ReadUInt16();
             if (shield_size > 0)

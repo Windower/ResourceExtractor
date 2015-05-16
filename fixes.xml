@@ -1144,16 +1144,16 @@ IN THE SOFTWARE.
   </elements>
   <bags>
     <update>
-      <o id="0" en="Inventory" access="Everywhere" />
-      <o id="1" en="Safe" access="Mog House" command="bank" />
-      <o id="2" en="Storage" access="Mog House" command="storage" />
-      <o id="3" en="Temporary" access="Situational" />
-      <o id="4" en="Locker" access="Mog House" command="locker" />
-      <o id="5" en="Satchel" access="Everywhere" command="satchel" />
-      <o id="6" en="Sack" access="Everywhere" command="sack" />
-      <o id="7" en="Case" access="Everywhere" command="case" />
-      <o id="8" en="Wardrobe" access="Everywhere" command="wardrobe" />
-      <o id="9" en="Safe 2" access="Mog House" command="bank2" />
+      <o id="0" en="Inventory" access="Everywhere" slot="inventory" />
+      <o id="1" en="Safe" access="Mog House" command="bank" slot="safe" />
+      <o id="2" en="Storage" access="Mog House" command="storage" slot="storage" />
+      <o id="3" en="Temporary" access="Situational" slot="temporary" />
+      <o id="4" en="Locker" access="Mog House" command="locker" slot="locker" />
+      <o id="5" en="Satchel" access="Everywhere" command="satchel" slot="satchel" />
+      <o id="6" en="Sack" access="Everywhere" command="sack" slot="sack" />
+      <o id="7" en="Case" access="Everywhere" command="case" slot="case" />
+      <o id="8" en="Wardrobe" access="Everywhere" command="wardrobe" slot="wardrobe" />
+      <o id="9" en="Safe 2" access="Mog House" command="bank2" slot="safe2" />
     </update>
   </bags>
   <chat>

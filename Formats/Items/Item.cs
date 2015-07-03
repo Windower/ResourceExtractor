@@ -70,35 +70,35 @@ namespace ResourceExtractor.Formats.Items
 
             int id = data[0] | data[1] << 8;
 
-            if (id >= 0x0001 && id <= 0x0FFF)
+            if (id >= 0x0001 && id < 0x1000)
             {
                 return new GeneralItem(data);
             }
-            else if (id >= 0x1000 && id <= 0x1FFF)
+            else if (id >= 0x1000 && id < 0x2000)
             {
                 return new UsableItem(data);
             }
-            else if (id >= 0x2000 && id <= 0x21FF)
+            else if (id >= 0x2000 && id < 0x2200)
             {
                 return new AutomatonItem(data);
             }
-            else if (id >= 0x2200 && id <= 0x27FF)
+            else if (id >= 0x2200 && id < 0x2800)
             {
                 return new GeneralItem(data);
             }
-            else if ((id >= 0x2800 && id <= 0x3FFF) || (id >= 0x6400 && id <= 0x6FFF))
+            else if ((id >= 0x2800 && id < 0x4000) || (id >= 0x6400 && id < 0x7000))
             {
                 return new ArmorItem(data);
             }
-            else if (id >= 0x4000 && id <= 0x53FF)
+            else if (id >= 0x4000 && id < 0x6400)
             {
                 return new WeaponItem(data);
             }
-            else if (id >= 0x7000 && id <= 0x7400)
+            else if (id >= 0x7000 && id < 0x7400)
             {
                 return new MazeItem(data);
             }
-            else if (id >= 0xF000 && id <= 0xF1FF)
+            else if (id >= 0xF000 && id < 0xF200)
             {
                 return new MonstrosityItem(data);
             }

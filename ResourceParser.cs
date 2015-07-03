@@ -407,13 +407,9 @@ namespace ResourceExtractor
             {
                 ParseArmorItem(reader, item);
             }
-            else if (item.id < 0x5400)
-            {
-                ParseWeaponItem(reader, item);
-            }
             else if (item.id < 0x6400)
             {
-                reader.ReadBytes(0x2A);
+                ParseWeaponItem(reader, item);
             }
             else if (item.id < 0x7000)
             {

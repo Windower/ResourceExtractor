@@ -204,7 +204,7 @@ namespace ResourceExtractor
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseSpells(Stream stream, int length)
         {
-            var data = new byte[0x58];
+            var data = new byte[0x64];
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);

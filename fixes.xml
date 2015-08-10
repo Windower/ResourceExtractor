@@ -1431,6 +1431,7 @@ IN THE SOFTWARE.
       <o id="60" en="Fishing line break" />
       <o id="61" en="Fishing monster catch" />
       <o id="62" en="Fishing no catch or lost" />
+      <o id="63" en="Sitchair" />
     </update>
   </statuses>
   <synth_ranks>

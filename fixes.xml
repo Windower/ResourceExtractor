@@ -62,6 +62,7 @@ IN THE SOFTWARE.
       <o id="254" duration="300" /> <!-- Mana Wall -->
       <o id="273" duration="60" /> <!-- Manawell -->
       <o id="326" duration="60" /> <!-- Subtle Sorcery -->
+      <o id="388" duration="60" /> <!-- Cascade -->
       <o id="19" duration="60" /> <!-- Manafont -->
 
       <!-- RDM -->
@@ -103,6 +104,7 @@ IN THE SOFTWARE.
       <o id="279" duration="180" /> <!-- Arcane Crest -->
       <o id="280" duration="180" /> <!-- Scarlet Delirium -->
       <o id="330" duration="30" /> <!-- Soul Enslavement -->
+      <o id="389" duration="60" /> <!-- Consume Mana -->
       <o id="23" duration="30" /> <!-- Blood Weapon -->
 
       <!-- BST -->
@@ -205,6 +207,9 @@ IN THE SOFTWARE.
       <o id="303" duration="300" /> <!-- Miser's Roll -->
       <o id="304" duration="300" /> <!-- Companion's Roll -->
       <o id="305" duration="300" /> <!-- Avenger's Roll -->
+      <o id="390" duration="300" /> <!-- Naturalist's Roll -->
+      <o id="391" duration="300" /> <!-- Runeist's Roll -->
+      <o id="392" duration="60" /> <!-- Crooked Cards -->
 
       <!-- PUP -->
       <o id="135" duration="60" /> <!-- Overdrive -->
@@ -231,6 +236,7 @@ IN THE SOFTWARE.
       <o id="314" duration="60" /> <!-- Ternary Flourish -->
       <o id="341" duration="30" /> <!-- Grand Pas -->
       <o id="381" duration="120" /> <!-- Chocobo Jig II -->
+      <o id="384" duration="60" /> <!-- Contradance -->
       <o id="181" duration="60" /> <!-- Trance -->
 
       <!-- SCH -->
@@ -246,6 +252,7 @@ IN THE SOFTWARE.
       <o id="350" duration="60" /> <!-- Blaze of Glory -->
       <o id="351" duration="60" /> <!-- Dematerialize -->
       <o id="352" duration="60" /> <!-- Theurgic Focus -->
+      <o id="386" duration="60" /> <!-- Entrust -->
       <o id="377" duration="60" /> <!-- Widened Compass -->
 
       <!-- RUN -->

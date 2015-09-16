@@ -65,14 +65,15 @@ namespace ResourceExtractor.Formats
             this.recast = data[13];
             for (var i = 0; i < 24; ++i)
             {
-                this.levels[i] = (short)(data[14 + i] << 8 | data[15 + i]);
+                this.levels[i] = (short)(data[16 + i * 2] << 8 | data[17 + i * 2]);
             }
             this.id = data[62] | data[63] << 8;
-            this.iconid = data[64];
+            this.iconid = data[64] | data[65] << 8;
 
             this.valid = this.iconid != 0;
             // Check if spell is usable by any job.
-            for (int i = 0; i < 24; ++i)
+            // Intentionally skipping job 23.
+            for (int i = 0; i < 23; ++i)
             {
                 this.valid |= this.levels[i] != -1;
             }
@@ -180,7 +181,7 @@ namespace ResourceExtractor.Formats
         {
             IList<SpellData> result = new List<SpellData>();
 
-            byte[] buffer = new byte[0x58];
+            byte[] buffer = new byte[0x64];
 
             length /= buffer.Length;
             for (int i = 0; i < length; i++)

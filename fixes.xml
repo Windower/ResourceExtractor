@@ -1441,7 +1441,16 @@ IN THE SOFTWARE.
       <o id="60" en="Fishing line break" />
       <o id="61" en="Fishing monster catch" />
       <o id="62" en="Fishing no catch or lost" />
-      <o id="63" en="Sitchair" />
+      <o id="63" en="Sitchair 0" />
+      <o id="64" en="Sitchair 1" />
+      <o id="65" en="Sitchair 2" />
+      <o id="66" en="Sitchair 3" />
+      <o id="67" en="Sitchair 4" />
+      <o id="68" en="Sitchair 5" />
+      <o id="69" en="Sitchair 6" />
+      <o id="70" en="Sitchair 7" />
+      <o id="71" en="Sitchair 8" />
+      <o id="72" en="Sitchair 9" />
     </update>
   </statuses>
   <synth_ranks>

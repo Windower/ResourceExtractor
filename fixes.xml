@@ -2097,8 +2097,8 @@ IN THE SOFTWARE.
       <o id="560" en="${actor} uses ${ability}. Finishing move now ${number}." color="101" suffix="FM" />
       <o id="561" en="Unable to perform that action.${lb}Your have already earned the maximum number of finishing moves." color="122" />
       <o id="562" en="The status parameters of ${target} have increased." color="122" />
-      <o id="563" en="${actor} destroys ${target}." color="1" />
-      <o id="564" en="${target} were destroyed." color="1" />
+      <o id="563" en="${actor} destroys ${target}." color="101" />
+      <o id="564" en="${target} were destroyed." color="101" />
       <o id="565" en="${target} obtains ${gil}." color="1" />
       <o id="566" en="${target} obtains ${number} tab.${lb}(Total: ${number})" color="1" />
       <o id="567" en="${actor} stowed away a ${item} in ?Unknown Parameter (Type: 90) 91?his/her] tattered Maze Monger pouch." color="1" />
@@ -2260,14 +2260,14 @@ IN THE SOFTWARE.
       <o id="733" en="${target}:" color="91" />
       <o id="734" en="${actor} uses ${ability} on ${target}." color="91" />
       <o id="735" en="Capacity chain #${number}!${lb}${actor} gains ${number2} capacity points." color="91" />
-      <o id="736" en="${actor} uses ${ability}.${lb}${number} HP drained from ${target}." color="1" />
-      <o id="737" en="${actor} uses ${ability}. ${lb}${number} of ${target} magic effects is drained." color="1" />
-      <o id="738" en="${actor} uses ${ability}." color="1" />
+      <o id="736" en="${actor} uses ${ability}.${lb}${number} HP drained from ${target}." color="101" />
+      <o id="737" en="${actor} uses ${ability}. ${lb}${number} of ${target} magic effects is drained." color="101" />
+      <o id="738" en="${actor} uses ${ability}." color="101" />
       <o id="739" en="${target} receives ${number} magical effects." color="1" />
       <o id="740" en="${target}: $lt; ${number}/${number2}" color="1 $gt;" />
       <o id="741" en="You receive ${number} Unity accolades for a total of ${number2}!" color="1" />
       <o id="742" en="You are currently unable to undertake this objective." color="1" />
-      <o id="743" en="${actor} uses ${ability}.${lb}${target}'s enmity decreases." color="1" />
+      <o id="743" en="${actor} uses ${ability}.${lb}${target}'s enmity decreases." color="101" />
       <o id="744" en="${actor}奄" color="1" />
       <o id="745" en="Your automaton exceeds one or more elemental capacity values and cannot be activated." color="1" />
       <o id="746" en="${actor} uses ${ability}.${lb}${number} TP drained from ${target}." color="1" />
@@ -2281,7 +2281,7 @@ IN THE SOFTWARE.
       <o id="754" en="${actor} uses ${spell}.${lb}Magic Burst! ${target} is ${status}." color="1" />
       <o id="755" en="${actor} uses ${spell}.${lb}Magic Burst! ${target} receives the effect of ${status}." color="1" />
       <o id="756" en="${target}'s spikes cause ${target} to fall to the ground." color="1" />
-      <o id="757" en="${number} of ${target}'s effects disappears!" color="1" />
+      <o id="757" en="${number} of ${target}'s effects disappears!" color="101" />
       <o id="758" en="${actor} uses ${item}.${lb}→Obtained key item: ${key_item}." color="1" />
       <o id="759" en="You already have key item: ${key_item}." color="1" />
       <o id="760" en="{You are only able to possess one ${item} and thus are unable to receive your just reward. Clear out your inventory and receive the item from the Records of Eminence Menu." color="1" />
@@ -2291,6 +2291,11 @@ IN THE SOFTWARE.
       <o id="764" en="${actor} uses ${spell}.${lb}${target} feels the Fever!" color="1" />
       <o id="765" en="${actor} uses ${item}.${lb}${target} obtains ${number} escha silt." color="1" />
       <o id="766" en="${actor} uses ${item}.${lb}${target} obtains ${number} escha beads." color="1" />
+      <o id="767" en="Skillchain: Radiance.${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="768" en="Skillchain: Umbra.${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="769" en="Skillchain: Radiance.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="770" en="Skillchain: Umbra.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="771" en="Congratulations! Your deeds of valor will ring throughout the ages, providing inspiration for generations to come." color="1" />
     </update>
   </action_messages>
 </fixes>

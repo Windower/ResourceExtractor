@@ -1079,6 +1079,8 @@ IN THE SOFTWARE.
       <o id="870" duration="90" /> <!-- Water Threnody II -->
       <o id="871" duration="90" /> <!-- Light Threnody II -->
       <o id="872" duration="90" /> <!-- Dark Threnody II -->
+      <o id="895" duration="150" /> <!-- Refresh III -->
+      <o id="896" duration="180" /> <!-- Temper II -->
     </update>
   </spells>
   <buffs>

@@ -563,28 +563,30 @@ namespace ResourceExtractor
             try
             {
 #endif
-                XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
-                LuaFile lua = new LuaFile(name);
+                var xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
+                var lua = new LuaFile(name);
 
-                foreach (dynamic obj in model[name])
+                foreach (var obj in model[name])
                 {
-                    if (IsValidName(ignore ?? new string[] { }, obj))
+                    if (!IsValidName(ignore ?? new string[] {}, obj))
                     {
-                        XElement xmlelement = new XElement("o");
-                        foreach (var pair in obj)
-                        {
-                            //TODO: Level dictionaries are currently messed up on XML output
-                            xmlelement.SetAttributeValue(pair.Key, pair.Value);
-                        }
-
-                        xml.Root.Add(xmlelement);
-                        lua.Add(obj);
+                        continue;
                     }
+
+                    var xmlelement = new XElement("o");
+                    foreach (var pair in obj)
+                    {
+                        //TODO: Level dictionaries are currently messed up on XML output
+                        xmlelement.SetAttributeValue(pair.Key, pair.Value);
+                    }
+
+                    xml.Root.Add(xmlelement);
+                    lua.Add(obj);
                 }
 
                 xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint)((int?)e.Attribute("id") ?? 0)));
 
-                xml.Save(Path.Combine("resources", "xml", string.Format(CultureInfo.InvariantCulture, "{0}.xml", name)));
+                xml.Save(Path.Combine("resources", "xml", FormattableString.Invariant($"{name}.xml")));
                 lua.Save();
 
 #if !DEBUG

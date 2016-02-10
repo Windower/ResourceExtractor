@@ -20,19 +20,21 @@
 // IN THE SOFTWARE.
 // </copyright>
 
+using System.Collections.Generic;
+using System.Linq;
+
 namespace ResourceExtractor.Serializers.Lua
 {
     using System;
     using System.Collections;
     using System.Globalization;
-    using System.Text;
 
     internal class LuaAttribute
     {
         public LuaAttribute(string key, object value)
         {
-            this.Key = key;
-            this.Value = value;
+            Key = key;
+            Value = value;
         }
 
         private string Key { get; set; }
@@ -56,54 +58,21 @@ namespace ResourceExtractor.Serializers.Lua
                 return "\"" + value.ToString().Replace("\"", "\\\"").Replace("\n", "\\n") + "\"";
             }
 
-            if (value is bool)
-            {
-                return value.ToString().ToLower();
-            }
-
             var vdict = value as IDictionary;
             if (vdict != null)
             {
-                StringBuilder str = new StringBuilder("{");
-
-                bool first = true;
-                foreach (var v in vdict.Keys)
-                {
-                    if (!first)
-                    {
-                        str.Append(',');
-                    }
-
-                    str.Append(MakeKey(v)).Append('=').Append(MakeValue(vdict[v]));
-                    first = false;
-                }
-
-                str.Append('}');
-                return str.ToString();
+                var lines = vdict.Keys.Cast<object>().Select(key => $"{MakeKey(key)}={MakeValue(vdict[key])}").ToList();
+                return $"{{{string.Join(",", lines)}}}";
             }
 
             var venum = value as IEnumerable;
             if (venum != null)
             {
-                StringBuilder str = new StringBuilder("{");
-
-                bool first = true;
-                foreach (var v in venum)
-                {
-                    if (!first)
-                    {
-                        str.Append(',');
-                    }
-
-                    str.Append(v);
-                    first = false;
-                }
-
-                str.Append('}');
-                return str.ToString();
+                var lines = venum.Cast<object>().Select(val => $"{MakeKey(val)}={MakeValue(vdict[val])}").ToList();
+                return $"{{{string.Join(",", lines)}}}";
             }
 
-            return value.ToString();
+            return FormattableString.Invariant($"{value}");
         }
     }
 }

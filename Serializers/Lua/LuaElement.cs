@@ -27,7 +27,7 @@ namespace ResourceExtractor.Serializers.Lua
 
     internal class LuaElement
     {
-        private static List<string> fixedKeys = new List<string> { "id", "en", "ja", "enl", "jal", };
+        private static readonly List<string> FixedKeys = new List<string> { "id", "en", "ja", "enl", "jal", };
 
         public LuaElement(dynamic obj)
         {
@@ -37,22 +37,19 @@ namespace ResourceExtractor.Serializers.Lua
 
             ID = obj.id;
 
-            foreach (var key in fixedKeys)
+            foreach (var key in FixedKeys.Where(key => obj.ContainsKey(key)))
             {
-                if (obj.ContainsKey(key))
-                {
-                    Attributes.Add(new LuaAttribute(key, obj[key]));
-                    Keys.Add(key);
-                }
+                Attributes.Add(new LuaAttribute(key, obj[key]));
+                Keys.Add(key);
             }
 
             // TODO: Prettier
-            var OtherKeys = new List<string>();
+            var otherKeys = new List<string>();
             foreach (var pair in obj)
             {
-                OtherKeys.Add(pair.Key);
+                otherKeys.Add(pair.Key);
             }
-            foreach (var key in OtherKeys.Where(key => !fixedKeys.Contains(key)).OrderBy(key => key))
+            foreach (var key in otherKeys.Where(key => !FixedKeys.Contains(key)).OrderBy(key => key))
             {
                 Attributes.Add(new LuaAttribute(key, obj[key]));
                 Keys.Add(key);
@@ -67,7 +64,7 @@ namespace ResourceExtractor.Serializers.Lua
 
         public override string ToString()
         {
-            return "{" + string.Join(",", from Attr in Attributes select Attr.ToString()) + "}";
+            return "{" + string.Join(",", Attributes.Select(attr => attr.ToString())) + "}";
         }
     }
 }

@@ -52,7 +52,7 @@ namespace ResourceExtractor.Serializers.Lua
 
         public void Save()
         {
-            using (StreamWriter file = new StreamWriter(Path.Combine(Directory.GetCurrentDirectory(), "resources", "lua", string.Format(CultureInfo.InvariantCulture, "{0}.lua", Name))))
+            using (var file = new StreamWriter(Path.Combine(Directory.GetCurrentDirectory(), "resources", "lua", string.Format(CultureInfo.InvariantCulture, "{0}.lua", Name))))
             {
                 var words = Name.Split('_').Select(str => char.ToUpperInvariant(str[0]) + str.Substring(1));
                 file.WriteLine("-- Automatically generated file: {0}", string.Join(" ", words));
@@ -61,7 +61,7 @@ namespace ResourceExtractor.Serializers.Lua
 
                 foreach (var e in Elements.OrderBy(e => e.ID))
                 {
-                    file.WriteLine("    [{0}] = {1},", e.ID, e.ToString());
+                    file.WriteLine("    [{0}] = {1},", e.ID, e);
                 }
 
                 file.WriteLine("}}, {0}", "{" + string.Join(", ", Keys.Select(k => "\"" + k + "\"")) + "}");

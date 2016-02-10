@@ -86,11 +86,11 @@ namespace ResourceExtractor.Formats.Items
             {
                 return new GeneralItem(data);
             }
-            else if ((id >= 0x2800 && id < 0x4000) || (id >= 0x6400 && id < 0x7000))
+            else if ((id >= 0x2800 && id < 0x4000) || (id >= 0x5A00 && id < 0x7000))
             {
                 return new ArmorItem(data);
             }
-            else if (id >= 0x4000 && id < 0x6400)
+            else if (id >= 0x4000 && id < 0x5A00)
             {
                 return new WeaponItem(data);
             }

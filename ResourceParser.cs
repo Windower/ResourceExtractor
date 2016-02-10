@@ -407,7 +407,7 @@ namespace ResourceExtractor
             {
                 ParseArmorItem(reader, item);
             }
-            else if (item.id < 0x6400)
+            else if (item.id < 0x5A00)
             {
                 ParseWeaponItem(reader, item);
             }

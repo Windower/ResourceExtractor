@@ -62,6 +62,7 @@ IN THE SOFTWARE.
       <o id="254" duration="300" /> <!-- Mana Wall -->
       <o id="273" duration="60" /> <!-- Manawell -->
       <o id="326" duration="60" /> <!-- Subtle Sorcery -->
+      <o id="388" duration="60" /> <!-- Cascade -->
       <o id="19" duration="60" /> <!-- Manafont -->
 
       <!-- RDM -->
@@ -103,6 +104,7 @@ IN THE SOFTWARE.
       <o id="279" duration="180" /> <!-- Arcane Crest -->
       <o id="280" duration="180" /> <!-- Scarlet Delirium -->
       <o id="330" duration="30" /> <!-- Soul Enslavement -->
+      <o id="389" duration="60" /> <!-- Consume Mana -->
       <o id="23" duration="30" /> <!-- Blood Weapon -->
 
       <!-- BST -->
@@ -205,6 +207,9 @@ IN THE SOFTWARE.
       <o id="303" duration="300" /> <!-- Miser's Roll -->
       <o id="304" duration="300" /> <!-- Companion's Roll -->
       <o id="305" duration="300" /> <!-- Avenger's Roll -->
+      <o id="390" duration="300" /> <!-- Naturalist's Roll -->
+      <o id="391" duration="300" /> <!-- Runeist's Roll -->
+      <o id="392" duration="60" /> <!-- Crooked Cards -->
 
       <!-- PUP -->
       <o id="135" duration="60" /> <!-- Overdrive -->
@@ -216,6 +221,7 @@ IN THE SOFTWARE.
       <o id="187" duration="90" /> <!-- Aspir Samba -->
       <o id="188" duration="90" /> <!-- Aspir Samba II -->
       <o id="189" duration="90" /> <!-- Haste Samba -->
+      <o id="196" duration="180" /> <!-- Spectral Jig -->
       <o id="197" duration="120" /> <!-- Chocobo Jig -->
       <o id="201" duration="60" /> <!-- Quickstep -->
       <o id="202" duration="60" /> <!-- Box Step -->
@@ -231,6 +237,7 @@ IN THE SOFTWARE.
       <o id="314" duration="60" /> <!-- Ternary Flourish -->
       <o id="341" duration="30" /> <!-- Grand Pas -->
       <o id="381" duration="120" /> <!-- Chocobo Jig II -->
+      <o id="384" duration="60" /> <!-- Contradance -->
       <o id="181" duration="60" /> <!-- Trance -->
 
       <!-- SCH -->
@@ -246,6 +253,7 @@ IN THE SOFTWARE.
       <o id="350" duration="60" /> <!-- Blaze of Glory -->
       <o id="351" duration="60" /> <!-- Dematerialize -->
       <o id="352" duration="60" /> <!-- Theurgic Focus -->
+      <o id="386" duration="60" /> <!-- Entrust -->
       <o id="377" duration="60" /> <!-- Widened Compass -->
 
       <!-- RUN -->
@@ -1079,8 +1087,8 @@ IN THE SOFTWARE.
       <o id="870" duration="90" /> <!-- Water Threnody II -->
       <o id="871" duration="90" /> <!-- Light Threnody II -->
       <o id="872" duration="90" /> <!-- Dark Threnody II -->
-      <o id="895" duration="150" /> <!-- Refresh III -->
-      <o id="896" duration="180" /> <!-- Temper II -->
+      <o id="894" duration="150" /> <!-- Refresh III -->
+      <o id="895" duration="180" /> <!-- Temper II -->
     </update>
   </spells>
   <buffs>
@@ -1433,7 +1441,19 @@ IN THE SOFTWARE.
       <o id="60" en="Fishing line break" />
       <o id="61" en="Fishing monster catch" />
       <o id="62" en="Fishing no catch or lost" />
-      <o id="63" en="Sitchair" />
+      <o id="63" en="Sitchair 0" />
+      <o id="64" en="Sitchair 1" />
+      <o id="65" en="Sitchair 2" />
+      <o id="66" en="Sitchair 3" />
+      <o id="67" en="Sitchair 4" />
+      <o id="68" en="Sitchair 5" />
+      <o id="69" en="Sitchair 6" />
+      <o id="70" en="Sitchair 7" />
+      <o id="71" en="Sitchair 8" />
+      <o id="72" en="Sitchair 9" />
+      <o id="73" en="Sitchair 10" />
+      <o id="74" en="Sitchair 11" />
+      <o id="75" en="Sitchair 12" />
     </update>
   </statuses>
   <synth_ranks>
@@ -2080,8 +2100,8 @@ IN THE SOFTWARE.
       <o id="560" en="${actor} uses ${ability}. Finishing move now ${number}." color="101" suffix="FM" />
       <o id="561" en="Unable to perform that action.${lb}Your have already earned the maximum number of finishing moves." color="122" />
       <o id="562" en="The status parameters of ${target} have increased." color="122" />
-      <o id="563" en="${actor} destroys ${target}." color="1" />
-      <o id="564" en="${target} were destroyed." color="1" />
+      <o id="563" en="${actor} destroys ${target}." color="101" />
+      <o id="564" en="${target} were destroyed." color="101" />
       <o id="565" en="${target} obtains ${gil}." color="1" />
       <o id="566" en="${target} obtains ${number} tab.${lb}(Total: ${number})" color="1" />
       <o id="567" en="${actor} stowed away a ${item} in ?Unknown Parameter (Type: 90) 91?his/her] tattered Maze Monger pouch." color="1" />
@@ -2243,14 +2263,14 @@ IN THE SOFTWARE.
       <o id="733" en="${target}:" color="91" />
       <o id="734" en="${actor} uses ${ability} on ${target}." color="91" />
       <o id="735" en="Capacity chain #${number}!${lb}${actor} gains ${number2} capacity points." color="91" />
-      <o id="736" en="${actor} uses ${ability}.${lb}${number} HP drained from ${target}." color="1" />
-      <o id="737" en="${actor} uses ${ability}. ${lb}${number} of ${target} magic effects is drained." color="1" />
-      <o id="738" en="${actor} uses ${ability}." color="1" />
+      <o id="736" en="${actor} uses ${ability}.${lb}${number} HP drained from ${target}." color="101" />
+      <o id="737" en="${actor} uses ${ability}. ${lb}${number} of ${target} magic effects is drained." color="101" />
+      <o id="738" en="${actor} uses ${ability}." color="101" />
       <o id="739" en="${target} receives ${number} magical effects." color="1" />
       <o id="740" en="${target}: $lt; ${number}/${number2}" color="1 $gt;" />
       <o id="741" en="You receive ${number} Unity accolades for a total of ${number2}!" color="1" />
       <o id="742" en="You are currently unable to undertake this objective." color="1" />
-      <o id="743" en="${actor} uses ${ability}.${lb}${target}'s enmity decreases." color="1" />
+      <o id="743" en="${actor} uses ${ability}.${lb}${target}'s enmity decreases." color="101" />
       <o id="744" en="${actor}奄" color="1" />
       <o id="745" en="Your automaton exceeds one or more elemental capacity values and cannot be activated." color="1" />
       <o id="746" en="${actor} uses ${ability}.${lb}${number} TP drained from ${target}." color="1" />
@@ -2264,7 +2284,7 @@ IN THE SOFTWARE.
       <o id="754" en="${actor} uses ${spell}.${lb}Magic Burst! ${target} is ${status}." color="1" />
       <o id="755" en="${actor} uses ${spell}.${lb}Magic Burst! ${target} receives the effect of ${status}." color="1" />
       <o id="756" en="${target}'s spikes cause ${target} to fall to the ground." color="1" />
-      <o id="757" en="${number} of ${target}'s effects disappears!" color="1" />
+      <o id="757" en="${number} of ${target}'s effects disappears!" color="101" />
       <o id="758" en="${actor} uses ${item}.${lb}→Obtained key item: ${key_item}." color="1" />
       <o id="759" en="You already have key item: ${key_item}." color="1" />
       <o id="760" en="{You are only able to possess one ${item} and thus are unable to receive your just reward. Clear out your inventory and receive the item from the Records of Eminence Menu." color="1" />
@@ -2274,6 +2294,11 @@ IN THE SOFTWARE.
       <o id="764" en="${actor} uses ${spell}.${lb}${target} feels the Fever!" color="1" />
       <o id="765" en="${actor} uses ${item}.${lb}${target} obtains ${number} escha silt." color="1" />
       <o id="766" en="${actor} uses ${item}.${lb}${target} obtains ${number} escha beads." color="1" />
+      <o id="767" en="Skillchain: Radiance.${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="768" en="Skillchain: Umbra.${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="769" en="Skillchain: Radiance.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="770" en="Skillchain: Umbra.${lb}${target} recovers ${number} hit points!" color="H" />
+      <o id="771" en="Congratulations! Your deeds of valor will ring throughout the ages, providing inspiration for generations to come." color="1" />
     </update>
   </action_messages>
 </fixes>

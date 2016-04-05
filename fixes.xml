@@ -1164,6 +1164,7 @@ IN THE SOFTWARE.
       <o id="7" en="Case" access="Everywhere" command="case" />
       <o id="8" en="Wardrobe" access="Everywhere" command="wardrobe" />
       <o id="9" en="Safe 2" access="Mog House" command="bank2" />
+      <o id="10" en="Wardrobe 2" access="Everywhere" command="wardrobe2" />
     </update>
   </bags>
   <chat>

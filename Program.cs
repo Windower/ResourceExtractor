@@ -50,7 +50,6 @@ namespace ResourceExtractor
                 if (basedirectory != null)
                 {
                     Directory.CreateDirectory("resources");
-                    Directory.CreateDirectory("resources/lua");
                     Directory.CreateDirectory("resources/data");
 
                     ExtractItems(basedirectory);

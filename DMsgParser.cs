@@ -23,7 +23,6 @@
 namespace ResourceExtractor
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Globalization;
     using System.IO;
@@ -31,14 +30,14 @@ namespace ResourceExtractor
 
     internal class DMsgParser
     {
-        internal static dynamic[] Parse(Stream stream, Dictionary<int, string> fields)
+        internal static dynamic[] Parse(Stream stream, IDictionary<int, string> fields)
         {
             if (stream == null)
             {
-                throw new ArgumentNullException("stream");
+                throw new ArgumentNullException(nameof(stream));
             }
 
-            Header header = stream.Read<Header>(0);
+            var header = stream.Read<Header>(0);
 
             if (header.Format != 0x00000067736D5F64)
             {
@@ -89,9 +88,9 @@ namespace ResourceExtractor
             dynamic objects = new ModelObject[header.Count];
 
             int length = (int)header.EntrySize;
-            int offset = 0;
             for (int i = 0; i < objects.Length; i++)
             {
+                int offset;
                 if (header.TableSize != 0)
                 {
                     length = (int)(table[i] >> 32);
@@ -155,56 +154,27 @@ namespace ResourceExtractor
         [StructLayout(LayoutKind.Sequential, Pack = 4, Size = 64)]
         private struct Header
         {
-            private long format;
-            private short unknown;
-            private byte encrypted;
-            private long version;
-            private uint filesize;
-            private uint headersize;
-            private uint tablesize;
-            private uint entrysize;
-            private int datasize;
-            private int count;
+            private readonly long format;
+            private readonly short unknown;
+            private readonly byte encrypted;
+            private readonly long version;
+            private readonly uint filesize;
+            private readonly uint headersize;
+            private readonly uint tablesize;
+            private readonly uint entrysize;
+            private readonly int datasize;
+            private readonly int count;
 
-            public long Format
-            {
-                get { return format; }
-            }
-
-            public bool Encrypted
-            {
-                get { return encrypted != 0; }
-            }
-
-            public long Version
-            {
-                get { return version; }
-            }
-
-            public uint HeaderSize
-            {
-                get { return headersize; }
-            }
-
-            public uint TableSize
-            {
-                get { return tablesize; }
-            }
-
-            public uint EntrySize
-            {
-                get { return entrysize; }
-            }
-
-            public int DataSize
-            {
-                get { return datasize; }
-            }
-
-            public int Count
-            {
-                get { return count; }
-            }
+            // ReSharper disable ConvertToAutoProperty
+            public long Format => format;
+            public bool Encrypted => encrypted != 0;
+            public long Version => version;
+            public uint HeaderSize => headersize;
+            public uint TableSize => tablesize;
+            public uint EntrySize => entrysize;
+            public int DataSize => datasize;
+            public int Count => count;
+            // ReSharper restore ConvertToAutoProperty
         }
     }
 }

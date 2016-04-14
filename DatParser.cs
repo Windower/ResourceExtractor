@@ -22,16 +22,14 @@
 
 namespace ResourceExtractor
 {
-    using System.Text;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.InteropServices;
 
     internal class DatParser
     {
         private DatParser() { }
 
-        public static dynamic[] Parse(Stream stream, Dictionary<int, string> fields)
+        public static dynamic[] Parse(Stream stream, IDictionary<int, string> fields)
         {
             var format = stream.Read<ulong>();
             stream.Position = 0;

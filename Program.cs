@@ -29,6 +29,7 @@ namespace ResourceExtractor
     using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Text.RegularExpressions;
     using System.Xml.Linq;
     using Microsoft.Win32;
     using Serializers.Lua;
@@ -36,7 +37,7 @@ namespace ResourceExtractor
     internal class Program
     {
         private static dynamic model;
-        private static string[] categories = new string[] {
+        private static readonly string[] categories = {
             "action_messages",
             "actions",
             "ability_recasts",
@@ -48,131 +49,146 @@ namespace ResourceExtractor
             "spells",
             "weapon_skills",
         };
-        private static Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> DatLut = new Dictionary<string, Dictionary<ushort, Dictionary<int, string>>> {
+
+        private static readonly Dictionary<string, IDictionary<ushort, IDictionary<int, string>>> DatLut = new Dictionary<string, IDictionary<ushort, IDictionary<int, string>>> {
             //TODO: Comment in once special char parsing has been added
 
-            //{"action_messages", new Dictionary<ushort, Dictionary<int, string>> {
-            //    {0x1B73, new Dictionary<int, string> {
+            //["action_messages"] = new Dictionary<ushort, IDictionary<int, string>> {
+            //    [0x1B73] = new Dictionary<int, string> {
             //        {0, "en"},
-            //    }},
-            //    {0x1B72, new Dictionary<int, string> {
+            //    },
+            //    [0x1B72] = new Dictionary<int, string> {
             //        {0, "ja"},
-            //    }},
-            //}},
-            {"actions", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD995, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD91D, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"augments", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD98C, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD914, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"auto_translates", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD971, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD8F9, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"buffs", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD9AD, new Dictionary<int, string> {
-                    {0, "en"},
-                    {1, "enl"},
-                }},
-                {0xD935, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"job_points", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD98E, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD916, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"jobs", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD8AB, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD8AC, new Dictionary<int, string> {
-                    {0, "ens"},
-                }},
-                {0xD8F0, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"key_items", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD98F, new Dictionary<int, string> {
-                    {0, "id"},
-                    {4, "en"},
-                    //{6, "endesc"},
-                }},
-                {0xD917, new Dictionary<int, string> {
-                    {1, "ja"},
-                    //{2, "jadesc"},
-                }},
-            }},
-            {"merit_points", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD986, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD90E, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"monster_abilities", new Dictionary<ushort, Dictionary<int, string>> {
-                {0x1B7B, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0x1B7A, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"regions", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD966, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD8EE, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"spells", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD996, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD91E, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"titles", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD998, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD920, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
-            {"zones", new Dictionary<ushort, Dictionary<int, string>> {
-                {0xD8A9, new Dictionary<int, string> {
-                    {0, "en"},
-                }},
-                {0xD8AA, new Dictionary<int, string> {
-                    {0, "search"},
-                }},
-                {0xD8EF, new Dictionary<int, string> {
-                    {0, "ja"},
-                }},
-            }},
+            //    },
+            //},
+            ["actions"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD995] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD91D] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["augments"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD98C] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD914] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["auto_translates"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD971] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD8F9] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["buffs"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD9AD] = new Dictionary<int, string> {
+                    [0] = "en",
+                    [1] = "enl",
+                },
+                [0xD935] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["job_points"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD98E] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD916] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["jobs"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD8AB] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD8AC] = new Dictionary<int, string> {
+                    [0] = "ens",
+                },
+                [0xD8F0] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["key_items"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD98F] = new Dictionary<int, string> {
+                    [0] = "id",
+                    [4] = "en",
+                    //[6] = "endesc",
+                },
+                [0xD917] = new Dictionary<int, string> {
+                    [1] = "ja",
+                    //[2] = "jadesc",
+                },
+            },
+            ["merit_points"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD986] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD90E] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["monster_abilities"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0x1B7B] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0x1B7A] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["mounts"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD981] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD909] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+                [0xD982] = new Dictionary<int, string> {
+                    [0] = "endesc",
+                },
+                [0xD90A] = new Dictionary<int, string> {
+                    [0] = "jadesc",
+                },
+            },
+            ["regions"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD966] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD8EE] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["spells"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD996] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD91E] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["titles"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD998] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD920] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
+            ["zones"] = new Dictionary<ushort, IDictionary<int, string>> {
+                [0xD8A9] = new Dictionary<int, string> {
+                    [0] = "en",
+                },
+                [0xD8AA] = new Dictionary<int, string> {
+                    [0] = "search",
+                },
+                [0xD8EF] = new Dictionary<int, string> {
+                    [0] = "ja",
+                },
+            },
         };
 
         private static string Dir { get; set; }
@@ -215,9 +231,8 @@ namespace ResourceExtractor
 
                     // Clear directories
                     Directory.CreateDirectory("resources");
-                    foreach (var dir in new string[] { "lua", "xml", "json", "maps" })
+                    foreach (var path in new [] { "lua", "xml", "json", "maps" }.Select(dir => "resources/" + dir))
                     {
-                        string path = "resources/" + dir;
                         Directory.CreateDirectory(path);
                         foreach (var file in Directory.EnumerateFiles(path))
                         {
@@ -248,10 +263,6 @@ namespace ResourceExtractor
             }
 #endif
             Console.WriteLine();
-
-            Console.Write("Press any key to exit. ");
-            Console.CursorVisible = true;
-            Console.ReadKey(true);
         }
 
         private static void PostProcess()
@@ -302,7 +313,7 @@ namespace ResourceExtractor
 
                 // Move item descriptions into separate table
                 //TODO: Remove when shared resources are implemented
-                model.item_descriptions = new List<dynamic> { };
+                model.item_descriptions = new List<dynamic>();
                 foreach (var item in model.items)
                 {
                     dynamic item_description = new ModelObject();
@@ -482,12 +493,14 @@ namespace ResourceExtractor
         private static void WriteData()
         {
             // Create manifest file
-            XDocument manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
+            var manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
 
-            var IgnoreStrings = new Dictionary<string, string[]>();
-            IgnoreStrings["buffs"] = new string[] { "(None)", "(Imagery)" };
-            IgnoreStrings["titles"] = new string[] { "0" };
-            IgnoreStrings["zones"] = new string[] { "none" };
+            var IgnoreStrings = new Dictionary<string, string[]>
+            {
+                ["buffs"] = new[] {"(None)", "(Imagery)"},
+                ["titles"] = new[] {"0"},
+                ["zones"] = new[] {"none"}
+            };
             foreach (var pair in model)
             {
                 if (IgnoreStrings.ContainsKey(pair.Key))
@@ -499,8 +512,10 @@ namespace ResourceExtractor
                     Extract(pair.Key);
                 }
 
-                var element = new XElement("file");
-                element.Value = pair.Key;
+                var element = new XElement("file")
+                {
+                    Value = pair.Key,
+                };
                 manifest.Root.Add(element);
             }
 
@@ -516,34 +531,11 @@ namespace ResourceExtractor
 
             try
             {
-                using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
+                using (var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
                 {
-                    RegistryKey key = null;
-                    try
+                    using (var key = (hklm.OpenSubKey("SOFTWARE\\PlayOnlineUS\\InstallFolder") ?? hklm.OpenSubKey("SOFTWARE\\PlayOnline\\InstallFolder")) ?? hklm.OpenSubKey("SOFTWARE\\PlayOnlineEU\\InstallFolder"))
                     {
-                        key = hklm.OpenSubKey("SOFTWARE\\PlayOnlineUS\\InstallFolder");
-
-                        if (key == null)
-                        {
-                            key = hklm.OpenSubKey("SOFTWARE\\PlayOnline\\InstallFolder");
-                        }
-
-                        if (key == null)
-                        {
-                            key = hklm.OpenSubKey("SOFTWARE\\PlayOnlineEU\\InstallFolder");
-                        }
-
-                        if (key != null)
-                        {
-                            Dir = key.GetValue("0001") as string;
-                        }
-                    }
-                    finally
-                    {
-                        if (key != null)
-                        {
-                            key.Dispose();
-                        }
+                        Dir = key?.GetValue("0001") as string;
                     }
                 }
             }
@@ -564,6 +556,10 @@ namespace ResourceExtractor
             {
 #endif
                 var xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
+                if (xml.Root == null)
+                {
+                    throw new InvalidDataException("fixes.xml file corrupted.");
+                }
                 var lua = new LuaFile(name);
 
                 foreach (var obj in model[name])
@@ -608,28 +604,32 @@ namespace ResourceExtractor
             try
             {
 #endif
-                XDocument fixes = XDocument.Load("fixes.xml");
+                var fixes = XDocument.Load("fixes.xml");
+                if (fixes.Root == null)
+                {
+                    throw new InvalidDataException("fixes.xml file corrupted.");
+                }
 
-                foreach (XElement fixset in fixes.Root.Elements())
+                foreach (var fixset in fixes.Root.Elements())
                 {
                     if (!model.ContainsKey(fixset.Name.LocalName))
                     {
                         model[fixset.Name.LocalName] = new List<dynamic>();
                     }
-                    List<dynamic> data = (List<dynamic>)model[fixset.Name.LocalName];
+                    var data = (List<dynamic>)model[fixset.Name.LocalName];
 
-                    XElement update = fixset.Element("update");
+                    var update = fixset.Element("update");
                     if (update != null)
                     {
-                        foreach (XElement fix in update.Elements())
+                        foreach (var fix in update.Elements())
                         {
-                            var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+                            var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture)).ToList();
 
                             if (!elements.Any())
                             {
                                 dynamic el = new ModelObject();
 
-                                foreach (XAttribute attr in fix.Attributes())
+                                foreach (var attr in fix.Attributes())
                                 {
                                     el[attr.Name.LocalName] = attr.Parse();
                                 }
@@ -637,24 +637,24 @@ namespace ResourceExtractor
                                 data.Add(el);
                                 continue;
                             }
-                            else
+
+                            var element = elements.Single();
+                            foreach (var attr in fix.Attributes())
                             {
-                                var element = elements.Single();
-                                foreach (XAttribute attr in fix.Attributes())
-                                {
-                                    element[attr.Name.LocalName] = attr.Parse();
-                                }
+                                element[attr.Name.LocalName] = attr.Parse();
                             }
                         }
                     }
 
-                    XElement remove = fixset.Element("remove");
-                    if (remove != null)
+                    var remove = fixset.Element("remove");
+                    if (remove == null)
                     {
-                        foreach (XElement fix in remove.Elements())
-                        {
-                            data.RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
-                        }
+                        continue;
+                    }
+
+                    foreach (var fix in remove.Elements())
+                    {
+                        data.RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
                     }
                 }
 #if !DEBUG
@@ -678,9 +678,9 @@ namespace ResourceExtractor
                 DisplayMessage("Loading item data...");
 
                 int[][] fileids =
-                    { //                                    Armor   Weapons
-                        new int[] { 0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975 },
-                        new int[] { 0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD },
+                    { //                                 Armor   Weapons
+                        new [] { 0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975 },
+                        new [] { 0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD },
                     };
 
                 for (var i = 0; i < fileids[0].Length; ++i)
@@ -732,7 +732,7 @@ namespace ResourceExtractor
 
         private static void ParseFields(string name)
         {
-            bool result = false;
+            var result = false;
 
             try
             {
@@ -740,7 +740,7 @@ namespace ResourceExtractor
 
                 foreach (var filepair in DatLut[name])
                 {
-                    using (FileStream stream = File.OpenRead(GetPath(filepair.Key)))
+                    using (var stream = File.OpenRead(GetPath(filepair.Key)))
                     {
                         var single = DatParser.Parse(stream, filepair.Value);
                         if (parsed == null)
@@ -754,6 +754,11 @@ namespace ResourceExtractor
                             parsed[i].Merge(single[i]);
                         }
                     }
+                }
+
+                if (parsed == null)
+                {
+                    throw new InvalidDataException($"Could not parse data for field \"{name}\".");
                 }
 
                 if (model[name].Count > 0)
@@ -800,16 +805,44 @@ namespace ResourceExtractor
 
         public static string GetPath(int id)
         {
-            string ftable = Path.Combine(Dir, "FTABLE.DAT");
+            var ftable = Path.Combine(Dir, "FTABLE.DAT");
 
-            using (FileStream fstream = File.OpenRead(ftable))
+            using (var fstream = File.OpenRead(ftable))
             {
                 fstream.Position = id * 2;
-                int file = fstream.ReadByte() | fstream.ReadByte() << 8;
+                var file = fstream.ReadByte() | fstream.ReadByte() << 8;
                 return Path.Combine(Dir, "ROM",
                     string.Format(CultureInfo.InvariantCulture, "{0}", file >> 7),
                     string.Format(CultureInfo.InvariantCulture, "{0}.DAT", file & 0x7F));
             }
+        }
+
+        public static int GetDat(string path)
+        {
+            var pattern = new Regex(@".*ROM[/\\](\d+)[/\\](\d+).DAT$");
+            var matches = pattern.Matches(path);
+            if (matches.Count != 1 || matches[0].Groups.Count != 3)
+            {
+                throw new ArgumentException("Invalid path specified.");
+            }
+            var check = int.Parse(matches[0].Groups[1].Value) << 7 | int.Parse(matches[0].Groups[2].Value);
+            var ftable = Path.Combine(Dir, "FTABLE.DAT");
+
+            using (var fstream = File.OpenRead(ftable))
+            {
+                while (fstream.Position < fstream.Length)
+                {
+                    var file = fstream.ReadByte() | fstream.ReadByte() << 8;
+                    if (file != check)
+                    {
+                        continue;
+                    }
+
+                    return (int) (fstream.Position/2) - 1;
+                }
+            }
+
+            throw new ArgumentException("No ID found corresponding to the provided path.");
         }
 
         public static void DisplayMessage(string message)
@@ -844,11 +877,11 @@ namespace ResourceExtractor
             Console.CursorTop = Console.CursorTop - 1;
             Console.CursorLeft = Console.BufferWidth - result.Length - 2;
 
-            ConsoleColor currentcolor = Console.ForegroundColor;
+            var currentcolor = Console.ForegroundColor;
             try
             {
                 Console.ForegroundColor = color;
-                Console.Write("[{0}]", result);
+                Console.Write($"[{result}]");
             }
             finally
             {

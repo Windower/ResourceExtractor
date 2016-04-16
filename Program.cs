@@ -143,6 +143,7 @@ namespace ResourceExtractor
             ["mounts"] = new Dictionary<ushort, IDictionary<int, string>> {
                 [0xD981] = new Dictionary<int, string> {
                     [0] = "en",
+                    [1] = "icon_id",
                 },
                 [0xD909] = new Dictionary<int, string> {
                     [0] = "ja",
@@ -269,7 +270,7 @@ namespace ResourceExtractor
         {
             Console.WriteLine("Post-processing parsed data...");
 
-            bool success = false;
+            var success = false;
             try
             {
                 // Add log names for non-english languages
@@ -286,12 +287,14 @@ namespace ResourceExtractor
                 {
                     foreach (var action in model.actions)
                     {
-                        if (recast.id == action.recast_id)
+                        if (recast.id != action.recast_id)
                         {
-                            recast.en = action.en;
-                            recast.ja = action.ja;
-                            break;
+                            continue;
                         }
+
+                        recast.en = action.en;
+                        recast.ja = action.ja;
+                        break;
                     }
                 }
 
@@ -330,13 +333,16 @@ namespace ResourceExtractor
                 // Fill in linked auto-translate names
                 foreach (var at in model.auto_translates)
                 {
-                    if (at.en.StartsWith("@"))
+                    if (!at.en.StartsWith("@"))
                     {
-                        int id = int.Parse(at.en.Substring(2), NumberStyles.HexNumber);
+                        continue;
+                    }
 
-                        string key;
-                        switch ((char)at.en[1])
-                        {
+                    int id = int.Parse(at.en.Substring(2), NumberStyles.HexNumber);
+
+                    string key;
+                    switch ((char)at.en[1])
+                    {
                         case 'A':
                             key = "zones";
                             break;
@@ -351,27 +357,28 @@ namespace ResourceExtractor
                             break;
                         default:
                             throw new InvalidDataException(string.Format("Unknown auto-translate code: {0}", at.en));
-                        }
+                    }
                         
-                        dynamic item = null;
-                        foreach (var i in model[key])
+                    dynamic item = null;
+                    foreach (var i in model[key])
+                    {
+                        if (i.id != id)
                         {
-                            if (i.id == id)
-                            {
-                                item = i;
-                                break;
-                            }
+                            continue;
                         }
 
-                        if (item != null)
-                        {
-                            at.en = item.en;
-                            at.ja = item.ja;
-                        }
-                        else
-                        {
-                            //throw new InvalidDataException(string.Format("Unknown auto-translate ID for {0}: {1}", key, id));
-                        }
+                        item = i;
+                        break;
+                    }
+
+                    if (item != null)
+                    {
+                        at.en = item.en;
+                        at.ja = item.ja;
+                    }
+                    else
+                    {
+                        //throw new InvalidDataException(string.Format("Unknown auto-translate ID for {0}: {1}", key, id));
                     }
                 }
 
@@ -451,14 +458,17 @@ namespace ResourceExtractor
                     }
 
                     // Uneven entries contain the descriptions for the previous entry
-                    if (merit_point.id % 2 == 1)
+                    if (merit_point.id % 2 != 1)
                     {
-                        model.merit_points[merit_point.id - 1].endesc = merit_point.en;
-                        model.merit_points[merit_point.id - 1].jadesc = merit_point.ja;
-
-                        merit_point.id = 0;
+                        continue;
                     }
+
+                    model.merit_points[merit_point.id - 1].endesc = merit_point.en;
+                    model.merit_points[merit_point.id - 1].jadesc = merit_point.ja;
+
+                    merit_point.id = 0;
                 }
+
                 ((List<dynamic>)model.merit_points).RemoveAll(merit_point => merit_point.id == 0);
 
                 // Split job point names/descriptions and filter garbage values
@@ -472,15 +482,23 @@ namespace ResourceExtractor
                     }
 
                     // Uneven entries contain the descriptions for the previous entry
-                    if (job_point.id % 2 == 1)
+                    if (job_point.id % 2 != 1)
                     {
-                        model.job_points[job_point.id - 1].endesc = job_point.en;
-                        model.job_points[job_point.id - 1].jadesc = job_point.ja;
-
-                        job_point.id = 0;
+                        continue;
                     }
+
+                    model.job_points[job_point.id - 1].endesc = job_point.en;
+                    model.job_points[job_point.id - 1].jadesc = job_point.ja;
+
+                    job_point.id = 0;
                 }
+
                 ((List<dynamic>)model.job_points).RemoveAll(job_point => job_point.id == 0);
+
+                foreach (var mount in model.mounts)
+                {
+                    mount.prefix = "/mount";
+                }
 
                 success = true;
             }

@@ -22,10 +22,10 @@
 
 namespace ResourceExtractor
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
-    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Runtime.InteropServices;
@@ -43,9 +43,9 @@ namespace ResourceExtractor
         private enum StringIndex
         {
             Name = 0,
-            EnglishArticle = 1,
+            //EnglishArticle = 1,
             EnglishLogSingular = 2,
-            EnglishLogPlural = 3,
+            //EnglishLogPlural = 3,
             EnglishDescription = 4,
             JapaneseDescription = 1,
         }
@@ -65,26 +65,15 @@ namespace ResourceExtractor
             private int size;
             private long padding;
 
-            public int ID
-            {
-                get { return id; }
-            }
-
-            public int Size
-            {
-                get { return (int) (((uint) size >> 3) & ~0xF) - 16; }
-            }
-
-            public BlockType Type
-            {
-                get { return (BlockType) (size & 0x7F); }
-            }
+            public int ID => id;
+            public int Size => (size >> 3 & ~0xF) - 0x10;
+            public BlockType Type => (BlockType) (size & 0x7F);
         }
 
         public static void ParseMainStream(Stream stream)
         {
-            Header header = stream.Read<Header>();
-            long block = stream.Position;
+            var header = stream.Read<Header>();
+            var block = stream.Position;
 
             if (header.Type != BlockType.ContainerBegin)
             {
@@ -107,21 +96,21 @@ namespace ResourceExtractor
         {
             switch (header.Type)
             {
-                case BlockType.ContainerEnd:
-                    break;
-                case BlockType.ContainerBegin:
-                    stream.Position -= Marshal.SizeOf(typeof(Header));
-                    ParseMainStream(stream);
-                    break;
-                case BlockType.SpellData:
-                    ResourceParser.ParseSpells(stream, header.Size);
-                    break;
-                case BlockType.AbilityData:
-                    ResourceParser.ParseActions(stream, header.Size);
-                    break;
-                default:
-                    Trace.WriteLine(string.Format(CultureInfo.InvariantCulture, "Unknown [{0:X2}]", (int)header.Type));
-                    break;
+            case BlockType.ContainerEnd:
+                break;
+            case BlockType.ContainerBegin:
+                stream.Position -= Marshal.SizeOf(typeof (Header));
+                ParseMainStream(stream);
+                break;
+            case BlockType.SpellData:
+                ParseSpells(stream, header.Size);
+                break;
+            case BlockType.AbilityData:
+                ParseActions(stream, header.Size);
+                break;
+            default:
+                Trace.WriteLine(FormattableString.Invariant($"Unknown type [{(int)header.Type :X2}] for ID {header.ID}"));
+                break;
             }
         }
 
@@ -201,16 +190,16 @@ namespace ResourceExtractor
             model.ability_recasts.AddRange(recasts.Select(kvp => kvp.Value));
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
+        [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseSpells(Stream stream, int length)
         {
             var data = new byte[0x64];
             for (var i = 0; i < length / data.Length; ++i)
             {
                 stream.Read(data, 0, data.Length);
-                byte b2 = data[2];
-                byte b11 = data[11];
-                byte b12 = data[12];
+                var b2 = data[2];
+                var b11 = data[11];
+                var b12 = data[12];
 
                 data.Decode();
 
@@ -218,22 +207,8 @@ namespace ResourceExtractor
                 data[11] = b11;
                 data[12] = b12;
 
-                bool valid = true;
-
-                // Check if spell is usable by any job.
-                for (int j = 0; j < 0x30; ++j)
-                {
-                    valid |= data[14 + j] != 0xFF;
-                }
-
-                // Invalid spell
-                if (!valid)
-                {
-                    continue;
-                }
-
-                using (MemoryStream mstream = new MemoryStream(data))
-                using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
+                using (var mstream = new MemoryStream(data))
+                using (var reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
                     dynamic spell = ParseSpell(reader);
                     if (spell == null)
@@ -610,35 +585,34 @@ namespace ResourceExtractor
 
         private static object DecodeEntry(BinaryReader reader, StringIndex index)
         {
-            Stream stream = reader.BaseStream;
-            long origin = stream.Position;
+            var stream = reader.BaseStream;
+            var origin = stream.Position;
             reader.ReadBytes(8 * (int)index);
-            int dataoffset = reader.ReadInt32();
-            int datatype = reader.ReadInt32();
+            var dataoffset = reader.ReadInt32();
+            var datatype = reader.ReadInt32();
             stream.Position = origin;
 
             reader.ReadBytes(dataoffset);
 
             switch (datatype)
             {
-                case 0:
-                    reader.ReadBytes(0x18);
-                    long dataorigin = stream.Position;
-                    int length;
+            case 0:
+                reader.ReadBytes(0x18);
+                var dataorigin = stream.Position;
 
-                    while (stream.Position != stream.Length && reader.ReadByte() != 0)
-                    {
-                    }
+                while (stream.Position != stream.Length && reader.ReadByte() != 0)
+                {
+                }
 
-                    length = (int)(stream.Position - dataorigin) - 1;
-                    stream.Position = dataorigin;
+                var length = (int)(stream.Position - dataorigin) - 1;
+                stream.Position = dataorigin;
 
-                    var res = ShiftJISFF11Encoding.ShiftJISFF11.GetString(reader.ReadBytes(length), 0, length);
-                    stream.Position = origin;
-                    return res;
+                var res = ShiftJISFF11Encoding.ShiftJISFF11.GetString(reader.ReadBytes(length), 0, length);
+                stream.Position = origin;
+                return res;
 
-                case 1:
-                    return reader.ReadInt32();
+            case 1:
+                return reader.ReadInt32();
             }
 
             return null;

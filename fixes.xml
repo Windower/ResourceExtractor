@@ -913,9 +913,9 @@ IN THE SOFTWARE.
       <o id="315" duration="180" /> <!-- Enstone II -->
       <o id="316" duration="180" /> <!-- Enthunder II -->
       <o id="317" duration="180" /> <!-- Enwater II -->
-      <o id="318" duration="180" /> <!-- Monomi: Ichi -->
-      <o id="353" duration="180" /> <!-- Tonko: Ichi -->
-      <o id="354" duration="300" /> <!-- Tonko: Ni -->
+      <o id="318" duration="420" /> <!-- Monomi: Ichi -->
+      <o id="353" duration="420" /> <!-- Tonko: Ichi -->
+      <o id="354" duration="600" /> <!-- Tonko: Ni -->
       <o id="338" duration="600" /> <!-- Utsusemi: Ichi -->
       <o id="339" duration="600" /> <!-- Utsusemi: Ni -->
       <o id="340" duration="900" /> <!-- Utsusemi: San -->
@@ -1035,9 +1035,9 @@ IN THE SOFTWARE.
       <o id="495" duration="180" /> <!-- Adloquium -->
       <o id="504" duration="60" /> <!-- Regen V -->
       <o id="505" duration="300" /> <!-- Gekka: Ichi -->
-      <o id="506" duration="180" /> <!-- Yain: Ichi -->
-      <o id="507" duration="180" /> <!-- Myoshin: Ichi -->
-      <o id="509" duration="180" /> <!-- Kakka: Ichi -->
+      <o id="506" duration="300" /> <!-- Yain: Ichi -->
+      <o id="507" duration="300" /> <!-- Myoshin: Ichi -->
+      <o id="509" duration="300" /> <!-- Kakka: Ichi -->
       <o id="510" duration="60" /> <!-- Migawari: Ichi -->
       <o id="511" duration="180" /> <!-- Haste II -->
       <o id="517" duration="900" /> <!-- Metallic Body -->
@@ -1079,14 +1079,14 @@ IN THE SOFTWARE.
       <o id="862" duration="180" /> <!-- Thunderstorm II -->
       <o id="863" duration="180" /> <!-- Voidstorm II -->
       <o id="864" duration="180" /> <!-- Aurorastorm II -->
-      <o id="865" duration="90" /> <!-- Fire Threnody II -->
-      <o id="866" duration="90" /> <!-- Ice Threnody II -->
-      <o id="867" duration="90" /> <!-- Wind Threnody II -->
-      <o id="868" duration="90" /> <!-- Earth Threnody II -->
-      <o id="869" duration="90" /> <!-- Ltng. Threnody II -->
-      <o id="870" duration="90" /> <!-- Water Threnody II -->
-      <o id="871" duration="90" /> <!-- Light Threnody II -->
-      <o id="872" duration="90" /> <!-- Dark Threnody II -->
+      <o id="871" duration="90" /> <!-- Fire Threnody II -->
+      <o id="872" duration="90" /> <!-- Ice Threnody II -->
+      <o id="873" duration="90" /> <!-- Wind Threnody II -->
+      <o id="874" duration="90" /> <!-- Earth Threnody II -->
+      <o id="875" duration="90" /> <!-- Ltng. Threnody II -->
+      <o id="876" duration="90" /> <!-- Water Threnody II -->
+      <o id="877" duration="90" /> <!-- Light Threnody II -->
+      <o id="878" duration="90" /> <!-- Dark Threnody II -->
       <o id="894" duration="150" /> <!-- Refresh III -->
       <o id="895" duration="180" /> <!-- Temper II -->
     </update>

@@ -256,7 +256,7 @@ namespace ResourceExtractor
             }
             catch
             {
-                if (Debugger.IsAttached)
+                if (System.Diagnostics.Debugger.IsAttached)
                 {
                     throw;
                 }

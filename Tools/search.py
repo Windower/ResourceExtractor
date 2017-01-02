@@ -45,6 +45,7 @@ def getpath(dat):
 
 def getenc(f):
     format = f.read(4)
+
     f.seek(0, 2)
     checksum = 0x10000000 + f.tell() - 4
     f.seek(0x04)
@@ -136,8 +137,9 @@ if search_terms:
                 print('Searching in %s...' % subdir)
                 olddir = subdir
 
-            for filename in (f for f in files if f.endswith('.DAT')):
+            for filename in (f for f in files if f.endswith('.DAT') and f[:-4].isdigit()):
                 lookup = subdir + '/' + filename
+
                 with open(lookup, 'rb') as f:
                     needles = getmatches(f)
                     haystack = f.read()

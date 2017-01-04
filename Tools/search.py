@@ -13,7 +13,7 @@ parser.add_argument('-v', '--verbose', action='store_const', const=True, default
 
 args = parser.parse_args()
 
-search_terms = [re.sub('\\\\x(\d\d)', lambda match: chr(int(match.group(1), 16)), match) for match in args.matches] if args.matches else []
+search_terms = [re.sub('\\\\x(..)', lambda match: chr(int(match.group(1), 16)), match) for match in args.matches] if args.matches else []
 
 root = os.path.dirname(os.path.realpath(__file__)) + '/'
 

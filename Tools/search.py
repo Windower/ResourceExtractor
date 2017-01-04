@@ -150,12 +150,6 @@ if search_terms:
                             decode(lookup)
 
 if args.console:
-    import readline
     import code
-
-    vars = globals().copy()
-    vars.update(locals())
-
-    shell = code.InteractiveConsole(vars)
-    shell.interact()
+    code.interact(local=locals())
 

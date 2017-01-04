@@ -106,7 +106,7 @@ namespace ResourceExtractor
                 ParseSpells(stream, header.Size);
                 break;
             case BlockType.AbilityData:
-                ParseActions(stream, header.Size);
+                ParseAbilities(stream, header.Size);
                 break;
             default:
                 Trace.WriteLine(FormattableString.Invariant($"Unknown type [{(int)header.Type :X2}] for ID {header.ID}"));
@@ -114,7 +114,7 @@ namespace ResourceExtractor
             }
         }
 
-        private static ModelObject ParseAction(BinaryReader reader)
+        private static ModelObject ParseAbility(BinaryReader reader)
         {
             dynamic action = new ModelObject();
 
@@ -144,7 +144,7 @@ namespace ResourceExtractor
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
-        public static void ParseActions(Stream stream, int length)
+        public static void ParseAbilities(Stream stream, int length)
         {
             IDictionary<short, object> recasts = new Dictionary<short, object>();
 
@@ -165,7 +165,7 @@ namespace ResourceExtractor
                 using (MemoryStream mstream = new MemoryStream(data))
                 using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
-                    dynamic action = ParseAction(reader);
+                    dynamic action = ParseAbility(reader);
                     if (action == null)
                     {
                         continue;

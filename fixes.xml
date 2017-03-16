@@ -398,6 +398,7 @@ IN THE SOFTWARE.
       <o id="58" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Herculean Slash -->
       <o id="59" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Torcleaver -->
       <o id="60" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Resolution -->
+      <o id="61" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Dimidiation -->
       <o id="64" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Raging Axe -->
       <o id="65" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Smash Axe -->
       <o id="66" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Gale Axe -->
@@ -620,6 +621,7 @@ IN THE SOFTWARE.
       <o id="58" skill="4" /> <!-- Herculean Slash -->
       <o id="59" skill="4" /> <!-- Torcleaver -->
       <o id="60" skill="4" /> <!-- Resolution -->
+      <o id="61" skill="4" /> <!-- Dimidiation -->
       <o id="64" skill="5" /> <!-- Raging Axe -->
       <o id="65" skill="5" /> <!-- Smash Axe -->
       <o id="66" skill="5" /> <!-- Gale Axe -->

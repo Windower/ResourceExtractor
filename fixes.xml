@@ -498,6 +498,7 @@ IN THE SOFTWARE.
       <o id="172" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Flash Nova -->
       <o id="173" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Dagan -->
       <o id="174" skillchain_a="Fusion" skillchain_b="Impaction" skillchain_c="" /> <!-- Realmrazer -->
+      <o id="175" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Exudation -->
       <o id="176" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Heavy Swing -->
       <o id="177" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Rock Crusher -->
       <o id="178" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Earth Crusher -->
@@ -721,6 +722,7 @@ IN THE SOFTWARE.
       <o id="172" skill="11" /> <!-- Flash Nova -->
       <o id="173" skill="11" /> <!-- Dagan -->
       <o id="174" skill="11" /> <!-- Realmrazer -->
+      <o id="175" skill="11" /> <!-- Exudation -->
       <o id="176" skill="12" /> <!-- Heavy Swing -->
       <o id="177" skill="12" /> <!-- Rock Crusher -->
       <o id="178" skill="12" /> <!-- Earth Crusher -->

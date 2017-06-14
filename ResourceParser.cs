@@ -235,7 +235,7 @@ namespace ResourceExtractor
 
             spell.type = (MagicType)reader.ReadInt16();
             spell.element = reader.ReadByte();
-            reader.ReadBytes(0x01);                 // Unknown 05 - 05, possibly just padding or element being a short
+            reader.ReadByte();                 // Unknown, possibly just padding or element being a short. Always 0x00
             spell.targets = reader.ReadUInt16();
             spell.skill = reader.ReadInt16();
             spell.mp_cost = reader.ReadInt16();
@@ -251,19 +251,56 @@ namespace ResourceExtractor
                 }
             }
 
-            // Currently the last job slot just mirrors the White Mage's level
-            // This may need to be removed at some point, if they expand on jobs more
+            // Currently the last job slot occasionally mirrors the lowest level that any job learns the spell.
+            // May be NPC-related information. This may be removed at some point, if they expand on jobs more
             spell.levels.Remove(0x17);
 
-            reader.ReadBytes(0x02);
-
             // SE changed spell recast times in memory to be indexed by spell ID, not recast ID
-            //spell.recast_id = reader.ReadInt16();
+            reader.ReadInt16(); // old spell.recast_id
             spell.recast_id = spell.id;
+
             spell.icon_id_nq = reader.ReadInt16();
             spell.icon_id = reader.ReadInt16();
             spell.requirements = reader.ReadByte();
-            spell.range = reader.ReadSByte() % 0xF;
+            spell.range = reader.ReadByte();
+            
+            // AoE information?
+            reader.ReadByte(); // spell.aoe_range : 11 for uncastable AOE enfeebling. 15 for self target spells
+            reader.ReadByte(); // spell.target_shape : Target type. 1 for centered on target. 2 for conal. 3 for 
+            reader.ReadByte(); // spell.cursor_behavior : 1 for self-target non-AoE, 2 for self-target AoE, 5 for self-target AoE that needs an enemy in range, 6 for Geomancy, 8 for Enemy, etc.
+            reader.ReadBytes(0x03);
+
+            // Unknown bytes
+            reader.ReadBytes(0x02);
+            //spell.unknown12 = reader.ReadByte(); // The first and eighth bits are used. 0, 1, 128, and 129 are observed. They're systematic but I can't see what the covariate is.
+            //spell.unknown13 = reader.ReadByte(); // 
+
+            // Another requirements field?
+            reader.ReadByte(); // 128 if the spell can be stacked with Accession. Seems redundant with the "requirements" field. Takes no other values.
+            reader.ReadByte(); // 1 for Manifestation, 2 for Enlightenment, 4 for Embrava, 8 for Meteor, 16 for Geo-spells, 32 for -ra spells, 64 for spells that take all MP (Full Cure and Death)
+
+            //Unknown section
+            reader.ReadBytes(0x0A);
+            //spell.unknown16 = reader.ReadByte();
+            //spell.unknown17 = reader.ReadByte();
+            //spell.unknown18 = reader.ReadByte();
+            //spell.unknown19 = reader.ReadByte();
+            //spell.unknown20 = reader.ReadByte();
+            //spell.unknown21 = reader.ReadByte();
+            //spell.unknown22 = reader.ReadByte();
+            //spell.unknown23 = reader.ReadByte();
+            //spell.unknown24 = reader.ReadByte();
+            //spell.unknown25 = reader.ReadByte();
+            reader.ReadUInt16(); // Always 0x0000
+
+            // These next 3 bytes indicate whether a spell is accessible through Gifts for specific jobs.
+            reader.ReadByte(); // spells.gift_spell_flags : 0x08 WHM, 0x10 BLM, 0x20 RDM, 0x80 PLD
+            reader.ReadByte(); // spells.gift_spell_flags : 0x01 DRK, 0x04 BRD, 0x20 NIN
+            reader.ReadByte(); // spells.gift_spell_flags : 0x10 SCH, 0x20 GEO, 0x40 RUN
+
+
+            reader.ReadBytes(0x4); // 0x00000000
+            reader.ReadByte(); // 0xFF, last byte
 
             // Derived data
             spell.prefix = ((MagicType)spell.type).Prefix();

@@ -262,7 +262,7 @@ namespace ResourceExtractor
             spell.icon_id_nq = reader.ReadInt16();
             spell.icon_id = reader.ReadInt16();
             spell.requirements = reader.ReadByte();
-            spell.range = reader.ReadByte();
+            spell.range = reader.ReadByte() % 0xF;
             
             // AoE information?
             reader.ReadByte(); // spell.aoe_range : 11 for uncastable AOE enfeebling. 15 for self target spells

@@ -487,6 +487,7 @@ namespace ResourceExtractor
         private static void ExtractAreas(string basedirectory)
         {
             IList<IList<IList<string>>> names = LoadAreaNames(basedirectory);
+            
             if (names == null)
             {
                 DisplayMessage("\nA problem occurred while loading area names.");
@@ -501,7 +502,7 @@ namespace ResourceExtractor
 
                 XDocument areas = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("areas"));
 
-                int count = names[0].Count;
+                int count = Math.Min(names[0].Count, names[1].Count);
 
                 string[] ignore = { "none" };
 

@@ -262,7 +262,8 @@ namespace ResourceExtractor
             spell.icon_id_nq = reader.ReadInt16();
             spell.icon_id = reader.ReadInt16();
             spell.requirements = reader.ReadByte();
-            spell.range = reader.ReadByte() % 0xF;
+            var range = reader.ReadByte();
+            spell.range = range == 15 ? 0 : range;
             
             // AoE information?
             reader.ReadByte(); // spell.aoe_range : 11 for uncastable AOE enfeebling. 15 for self target spells
@@ -312,10 +313,10 @@ namespace ResourceExtractor
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseItems(Stream stream, Stream streamja)
         {
-            byte[] data = new byte[0x200];
-            byte[] dataja = new byte[0x200];
-            int count = (int)(stream.Length / 0xC00);
-            for (int i = 0; i < count; i++)
+            var data = new byte[0x200];
+            var dataja = new byte[0x200];
+            var count = (int)(stream.Length / 0xC00);
+            for (var i = 0; i < count; i++)
             {
                 stream.Position = streamja.Position = i * 0xC00;
 
@@ -325,10 +326,10 @@ namespace ResourceExtractor
                 data.RotateRight(5);
                 dataja.RotateRight(5);
 
-                using (Stream stringstream = new MemoryStream(data))
-                using (Stream stringstreamja = new MemoryStream(dataja))
-                using (BinaryReader reader = new BinaryReader(stringstream, Encoding.ASCII, true))
-                using (BinaryReader readerja = new BinaryReader(stringstreamja, Encoding.ASCII, true))
+                using (var stringstream = new MemoryStream(data))
+                using (var stringstreamja = new MemoryStream(dataja))
+                using (var reader = new BinaryReader(stringstream, Encoding.ASCII, true))
+                using (var readerja = new BinaryReader(stringstreamja, Encoding.ASCII, true))
                 {
                     // The english and japanese stream contain the same main item data, so only one stream is needed here
                     // The only difference is in the string handling, hence readerja is still needed later
@@ -483,13 +484,13 @@ namespace ResourceExtractor
                 item.recast_delay = recast_delay;
             }
             reader.ReadBytes(0x02);             // Unknown 30 - 31
-            var item_level = reader.ReadUInt16();
+            var item_level = reader.ReadByte();
             if (item_level > 0)
             {
                 item.item_level = item_level;
             }
 
-            reader.ReadBytes(0x04);             // Unknown 34 - 37
+            reader.ReadBytes(0x05);             // Unknown 33 - 37
 
             item.category = "Weapon";
         }
@@ -534,13 +535,13 @@ namespace ResourceExtractor
                 item.recast_delay = recast_delay;
             }
             reader.ReadBytes(0x02);             // Unknown 24 - 25
-            var item_level = reader.ReadUInt16();
+            var item_level = reader.ReadByte();
             if (item_level > 0)
             {
                 item.item_level = item_level;
             }
 
-            reader.ReadBytes(0x04);             // Unknown 28 - 2B
+            reader.ReadBytes(0x05);             // Unknown 27 - 2B
 
             item.category = "Armor";
         }

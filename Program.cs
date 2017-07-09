@@ -1,5 +1,5 @@
 ﻿// <copyright file="Program.cs" company="Windower Team">
-// Copyright © 2013-2014 Windower Team
+// Copyright © 2013-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -193,7 +193,7 @@ namespace ResourceExtractor
 
         private static string Dir { get; set; }
 
-        private static void Main()
+        private static void Main(String[] args)
         {
 #if !DEBUG
             try
@@ -215,43 +215,51 @@ namespace ResourceExtractor
 
                 Dir = GetBaseDirectory();
                 Console.WriteLine();
-                if (Dir != null)
-                {
-                    LoadItemData();     // Items, Monstrosity
-                    LoadMainData();     // Abilities, Spells
-
-                    ParseStringTables();
-                    Console.WriteLine();
-
-                    PostProcess();
-                    Console.WriteLine();
-
-                    ApplyFixes();
-                    Console.WriteLine();
-
-                    // Clear directories
-                    Directory.CreateDirectory("resources");
-                    foreach (var path in new [] { "lua", "xml", "json", "maps" }.Select(dir => "resources/" + dir))
-                    {
-                        Directory.CreateDirectory(path);
-                        foreach (var file in Directory.EnumerateFiles(path))
-                        {
-                            File.Delete(file);
-                        }
-                    }
-
-                    WriteData();
-                    Console.WriteLine();
-
-                    MapParser.Extract();
-                    Console.WriteLine();
-
-                    Console.WriteLine("Resource extraction complete!");
-                }
-                else
+                if (Dir == null)
                 {
                     Console.WriteLine("Unable to locate Final Fantasy XI installation.");
+                    Console.WriteLine();
+                    return;
                 }
+
+                LoadItemData();     // Items, Monstrosity
+                LoadMainData();     // Abilities, Spells
+
+                ParseStringTables();
+                Console.WriteLine();
+
+                PostProcess();
+                Console.WriteLine();
+
+                ApplyFixes();
+                Console.WriteLine();
+
+                // Clear directories
+                Directory.CreateDirectory("resources");
+                foreach (var path in new [] { "lua", "xml", "json", "maps" }.Select(dir => "resources/" + dir))
+                {
+                    Directory.CreateDirectory(path);
+                    foreach (var file in Directory.EnumerateFiles(path))
+                    {
+                        File.Delete(file);
+                    }
+                }
+
+                WriteData();
+                Console.WriteLine();
+
+                if (args.Contains("--maps") || args.Contains("-m"))
+                {
+                    MapParser.Extract();
+                    Console.WriteLine();
+                }
+
+                if (args.Contains("--analysis") || args.Contains("-a"))
+                {
+                    Analyzer.Analyze(model);
+                }
+
+                Console.WriteLine("Resource extraction complete!");
 #if !DEBUG
             }
             catch
@@ -507,17 +515,23 @@ namespace ResourceExtractor
             }
         }
 
+        private static readonly IDictionary<string, string[]> IgnoreStrings = new Dictionary<string, string[]>
+        {
+            ["buffs"] = new[] {"(None)", "(Imagery)"},
+            ["titles"] = new[] {"0"},
+            ["zones"] = new[] {"none"}
+        };
+
+        internal static Boolean IsValidObject(string name, dynamic obj)
+        {
+            return IsValidName(IgnoreStrings.ContainsKey(name) ? IgnoreStrings[name] : new string[] { }, obj);
+        }
+
         private static void WriteData()
         {
             // Create manifest file
             var manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
 
-            var IgnoreStrings = new Dictionary<string, string[]>
-            {
-                ["buffs"] = new[] {"(None)", "(Imagery)"},
-                ["titles"] = new[] {"0"},
-                ["zones"] = new[] {"none"}
-            };
             foreach (var pair in model)
             {
                 if (IgnoreStrings.ContainsKey(pair.Key))

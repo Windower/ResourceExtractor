@@ -1,5 +1,5 @@
 ﻿// <copyright file="LuaFile.cs" company="Windower Team">
-// Copyright © 2013-2014 Windower Team
+// Copyright © 2013-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -37,11 +37,11 @@ namespace ResourceExtractor.Serializers.Lua
             Keys = new HashSet<string>();
         }
 
-        private string Name { get; set; }
+        private string Name { get; }
 
-        private List<LuaElement> Elements { get; set; }
+        private List<LuaElement> Elements { get; }
 
-        private HashSet<string> Keys { get; set; }
+        private HashSet<string> Keys { get; }
 
         public void Add(dynamic e)
         {

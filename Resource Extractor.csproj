@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityType.cs" />
+    <Compile Include="Analyzer.cs" />
     <Compile Include="ATParser.cs" />
     <Compile Include="BitmapParser.cs" />
     <Compile Include="DatParser.cs" />

@@ -22,6 +22,12 @@ IN THE SOFTWARE.
 -->
 
 <fixes>
+  <!-- Temporary changes due to DAT mistakes -->
+  <spells>
+    <update>
+      <o id="355" prefix="/ninjutsu" type="Ninjutsu" skill="39" /> <!-- Tonko: San-->
+    </update>
+  </spells>
   <job_abilities>
     <update>
       <!-- WAR -->

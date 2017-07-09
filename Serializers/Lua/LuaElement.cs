@@ -47,6 +47,10 @@ namespace ResourceExtractor.Serializers.Lua
             var otherKeys = new List<string>();
             foreach (var pair in obj)
             {
+                if (pair.Key.StartsWith("_"))
+                {
+                    continue;
+                }
                 otherKeys.Add(pair.Key);
             }
             foreach (var key in otherKeys.Where(key => !FixedKeys.Contains(key)).OrderBy(key => key))

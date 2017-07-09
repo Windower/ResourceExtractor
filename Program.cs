@@ -573,10 +573,6 @@ namespace ResourceExtractor
             {
 #endif
                 var xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
-                if (xml.Root == null)
-                {
-                    throw new InvalidDataException("fixes.xml file corrupted.");
-                }
                 var lua = new LuaFile(name);
 
                 foreach (var obj in model[name])
@@ -590,6 +586,10 @@ namespace ResourceExtractor
                     foreach (var pair in obj)
                     {
                         //TODO: Level dictionaries are currently messed up on XML output
+                        if (pair.Key.StartsWith("_"))
+                        {
+                            continue;
+                        }
                         xmlelement.SetAttributeValue(pair.Key, pair.Value);
                     }
 

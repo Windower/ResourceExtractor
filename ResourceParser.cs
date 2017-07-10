@@ -1,5 +1,5 @@
 ﻿// <copyright file="ResourceParser.cs" company="Windower Team">
-// Copyright © 2013-2014 Windower Team
+// Copyright © 2013-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -235,7 +235,8 @@ namespace ResourceExtractor
 
             spell.type = (MagicType)reader.ReadInt16();
             spell.element = reader.ReadByte();
-            reader.ReadByte();                 // Unknown, possibly just padding or element being a short. Always 0x00
+            var padding = reader.ReadByte();                 // Unknown, possibly just padding or element being a short. Always 0x00
+            Debug.Assert(padding == 0);
             spell.targets = reader.ReadUInt16();
             spell.skill = reader.ReadInt16();
             spell.mp_cost = reader.ReadInt16();
@@ -256,7 +257,7 @@ namespace ResourceExtractor
             spell.levels.Remove(0x17);
 
             // SE changed spell recast times in memory to be indexed by spell ID, not recast ID
-            reader.ReadInt16(); // old spell.recast_id
+            spell._oldrecast = reader.ReadInt16(); // old spell.recast_id
             spell.recast_id = spell.id;
 
             spell.icon_id_nq = reader.ReadInt16();
@@ -266,42 +267,45 @@ namespace ResourceExtractor
             spell.range = range == 15 ? 0 : range;
             
             // AoE information?
-            reader.ReadByte(); // spell.aoe_range : 11 for uncastable AOE enfeebling. 15 for self target spells
-            reader.ReadByte(); // spell.target_shape : Target type. 1 for centered on target. 2 for conal. 3 for 
-            reader.ReadByte(); // spell.cursor_behavior : 1 for self-target non-AoE, 2 for self-target AoE, 5 for self-target AoE that needs an enemy in range, 6 for Geomancy, 8 for Enemy, etc.
+            spell._aoe_range = reader.ReadByte(); // spell.aoe_range : 11 for uncastable AOE enfeebling. 15 for self target spells
+            spell._target_shape = reader.ReadByte(); // spell.target_shape : Target type. 1 for centered on target. 2 for conal. 3 for 
+            spell._cursor_behavior = reader.ReadByte(); // spell.cursor_behavior : 1 for self-target non-AoE, 2 for self-target AoE, 5 for self-target AoE that needs an enemy in range, 6 for Geomancy, 8 for Enemy, etc.
             reader.ReadBytes(0x03);
 
             // Unknown bytes
-            reader.ReadBytes(0x02);
-            //spell.unknown12 = reader.ReadByte(); // The first and eighth bits are used. 0, 1, 128, and 129 are observed. They're systematic but I can't see what the covariate is.
-            //spell.unknown13 = reader.ReadByte(); // 
+            spell._unknown12 = reader.ReadByte(); // The first and eighth bits are used. 0, 1, 128, and 129 are observed. They're systematic but I can't see what the covariate is.
+            spell._unknown13 = reader.ReadByte(); // 
 
             // Another requirements field?
-            reader.ReadByte(); // 128 if the spell can be stacked with Accession. Seems redundant with the "requirements" field. Takes no other values.
-            reader.ReadByte(); // 1 for Manifestation, 2 for Enlightenment, 4 for Embrava, 8 for Meteor, 16 for Geo-spells, 32 for -ra spells, 64 for spells that take all MP (Full Cure and Death)
+            spell._unknown14 = reader.ReadByte(); // 128 if the spell can be stacked with Accession. Seems redundant with the "requirements" field. Takes no other values.
+            spell._unknown15 = reader.ReadByte(); // 1 for Manifestation, 2 for Enlightenment, 4 for Embrava, 8 for Meteor, 16 for Geo-spells, 32 for -ra spells, 64 for spells that take all MP (Full Cure and Death)
 
             //Unknown section
-            reader.ReadBytes(0x0A);
-            //spell.unknown16 = reader.ReadByte();
-            //spell.unknown17 = reader.ReadByte();
-            //spell.unknown18 = reader.ReadByte();
-            //spell.unknown19 = reader.ReadByte();
-            //spell.unknown20 = reader.ReadByte();
-            //spell.unknown21 = reader.ReadByte();
-            //spell.unknown22 = reader.ReadByte();
-            //spell.unknown23 = reader.ReadByte();
-            //spell.unknown24 = reader.ReadByte();
-            //spell.unknown25 = reader.ReadByte();
-            reader.ReadUInt16(); // Always 0x0000
+            //reader.ReadBytes(0x0A);
+            spell._unknown16 = reader.ReadByte();
+            spell._unknown17 = reader.ReadByte();
+            spell._unknown18 = reader.ReadByte();
+            spell._unknown19 = reader.ReadByte();
+            spell._unknown20 = reader.ReadByte();
+            spell._unknown21 = reader.ReadByte();
+            spell._unknown22 = reader.ReadByte();
+            spell._unknown23 = reader.ReadByte();
+            spell._unknown24 = reader.ReadByte();
+            spell._unknown25 = reader.ReadByte();
+            spell._unknown26 = reader.ReadUInt16(); // Always 0x0000
+            Debug.Assert((Boolean)(spell._unknown26 == 0));
 
             // These next 3 bytes indicate whether a spell is accessible through Gifts for specific jobs.
             reader.ReadByte(); // spells.gift_spell_flags : 0x08 WHM, 0x10 BLM, 0x20 RDM, 0x80 PLD
             reader.ReadByte(); // spells.gift_spell_flags : 0x01 DRK, 0x04 BRD, 0x20 NIN
             reader.ReadByte(); // spells.gift_spell_flags : 0x10 SCH, 0x20 GEO, 0x40 RUN
 
-
-            reader.ReadBytes(0x4); // 0x00000000
-            reader.ReadByte(); // 0xFF, last byte
+            var trail = reader.ReadBytes(0x4); // 0x00000000
+            foreach (var b in trail)
+            {
+                Debug.Assert(b == 0);
+            }
+            Debug.Assert(reader.ReadSByte() == -1); // 0xFF, last byte
 
             // Derived data
             spell.prefix = ((MagicType)spell.type).Prefix();

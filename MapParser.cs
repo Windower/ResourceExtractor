@@ -1,5 +1,5 @@
-﻿// <copyright file="MapDats.cs" company="Windower Team">
-// Copyright © 2014 Windower Team
+﻿// <copyright file="MapParser.cs" company="Windower Team">
+// Copyright © 2014-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -22,7 +22,6 @@
 
 namespace ResourceExtractor
 {
-    using System;
     using System.Collections.Generic;
     using System.Drawing.Imaging;
     using System.Globalization;
@@ -50,27 +49,16 @@ namespace ResourceExtractor
         //"205": {"18": 5685                    //18 is not used in game.
         //"226": {"0": 5475},                   //0 is a dummy map.
         //"242": {"0": 5490},                   //0 is a dummy map.
-        #endregion JSON Comments/Posterity
+        #endregion
 
         public static void Extract()
         {
-            Console.Write("Extract map data? (y/n) ");
-            Console.CursorVisible = true;
-            var Key = Console.ReadKey();
-            Console.CursorVisible = false;
-            Console.Write("\n");
-
-            if (Key.KeyChar != 'y')
-            {
-                return;
-            }
-
             Program.DisplayMessage("Extracting map data...");
 
             var Serializer = new JavaScriptSerializer();
             var DatLut = Serializer.Deserialize<IDictionary<string, IDictionary<string, ushort>>>(File.ReadAllText("MapDats.json"));
 
-            bool Success = false;
+            var Success = false;
             try
             {
                 foreach (var ZonePair in DatLut)
@@ -80,10 +68,10 @@ namespace ResourceExtractor
                     {
                         var Map = MapPair.Key;
 
-                        using (FileStream Stream = File.Open(Program.GetPath(MapPair.Value), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                        using (var Stream = File.Open(Program.GetPath(MapPair.Value), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                         {
                             var Image = ImageParser.Parse(Stream, true);
-                            using (FileStream OutFile = File.Open(string.Format(CultureInfo.InvariantCulture, "resources/maps/{0}_{1}.png", Zone, Map), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+                            using (var OutFile = File.Open(string.Format(CultureInfo.InvariantCulture, "resources/maps/{0}_{1}.png", Zone, Map), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
                             {
                                 Image.Save(OutFile, ImageFormat.Png);
                             }

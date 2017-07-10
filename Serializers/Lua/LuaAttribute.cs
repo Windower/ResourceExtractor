@@ -1,5 +1,5 @@
 ﻿// <copyright file="LuaAttribute.cs" company="Windower Team">
-// Copyright © 2013-2014 Windower Team
+// Copyright © 2013-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -20,7 +20,6 @@
 // IN THE SOFTWARE.
 // </copyright>
 
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ResourceExtractor.Serializers.Lua
@@ -37,9 +36,9 @@ namespace ResourceExtractor.Serializers.Lua
             Value = value;
         }
 
-        private string Key { get; set; }
+        private string Key { get; }
 
-        private object Value { get; set; }
+        private object Value { get; }
 
         public override string ToString()
         {

@@ -1,5 +1,5 @@
 ﻿// <copyright file="LuaElement.cs" company="Windower Team">
-// Copyright © 2013-2014 Windower Team
+// Copyright © 2013-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -47,6 +47,10 @@ namespace ResourceExtractor.Serializers.Lua
             var otherKeys = new List<string>();
             foreach (var pair in obj)
             {
+                if (pair.Key.StartsWith("_"))
+                {
+                    continue;
+                }
                 otherKeys.Add(pair.Key);
             }
             foreach (var key in otherKeys.Where(key => !FixedKeys.Contains(key)).OrderBy(key => key))
@@ -56,11 +60,11 @@ namespace ResourceExtractor.Serializers.Lua
             }
         }
 
-        public HashSet<string> Keys { get; private set; }
+        public HashSet<string> Keys { get; }
 
-        public int ID { get; private set; }
+        public int ID { get; }
 
-        private List<LuaAttribute> Attributes { get; set; }
+        private List<LuaAttribute> Attributes { get; }
 
         public override string ToString()
         {

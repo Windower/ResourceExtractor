@@ -1,5 +1,5 @@
 ﻿// <copyright file="ModelObject.cs" company="Windower Team">
-// Copyright © 2014 Windower Team
+// Copyright © 2014-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -31,7 +31,7 @@ namespace ResourceExtractor
     [Serializable]
     internal class ModelObject : DynamicObject, ISerializable, IEnumerable<KeyValuePair<string, object>>
     {
-        private IDictionary<string, object> map = new Dictionary<string, object>();
+        private readonly IDictionary<string, object> map = new Dictionary<string, object>();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
         public override bool TryGetMember(GetMemberBinder binder, out object result)
@@ -152,7 +152,7 @@ namespace ResourceExtractor
         {
             if (info == null)
             {
-                throw new ArgumentNullException("info");
+                throw new ArgumentNullException(nameof(info));
             }
 
             foreach (var pair in map)

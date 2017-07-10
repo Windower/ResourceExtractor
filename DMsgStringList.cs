@@ -1,5 +1,5 @@
 ﻿// <copyright file="DMsgStringList.cs" company="Windower Team">
-// Copyright © 2013-2014 Windower Team
+// Copyright © 2013-2017 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -31,16 +31,16 @@ namespace ResourceExtractor
 
     internal class DMsgStringList : IList<IList<object>>
     {
-        private IList<object>[] objects;
+        private readonly IList<object>[] objects;
 
         internal DMsgStringList(Stream stream)
         {
             if (stream == null)
             {
-                throw new ArgumentNullException("stream");
+                throw new ArgumentNullException(nameof(stream));
             }
 
-            Header header = stream.Read<Header>(0);
+            var header = stream.Read<Header>(0);
 
             if (header.Format != 0x00000067736D5F64)
             {
@@ -183,21 +183,15 @@ namespace ResourceExtractor
             }
         }
 
-        bool ICollection<IList<object>>.IsReadOnly
-        {
-            get { return true; }
-        }
+        bool ICollection<IList<object>>.IsReadOnly => true;
 
-        public int Count
-        {
-            get { return objects.Length; }
-        }
+        public int Count => objects.Length;
 
         public IList<object> this[int index]
         {
-            get { return objects[index]; }
+            get => objects[index];
 
-            set { throw new NotSupportedException(); }
+            set => throw new NotSupportedException();
         }
 
         int IList<IList<object>>.IndexOf(IList<object> item)
@@ -264,45 +258,14 @@ namespace ResourceExtractor
             private int datasize;
             private int count;
 
-            public long Format
-            {
-                get { return format; }
-            }
-
-            public bool Encrypted
-            {
-                get { return encrypted != 0; }
-            }
-
-            public long Version
-            {
-                get { return version; }
-            }
-
-            public uint HeaderSize
-            {
-                get { return headersize; }
-            }
-
-            public uint TableSize
-            {
-                get { return tablesize; }
-            }
-
-            public uint EntrySize
-            {
-                get { return entrysize; }
-            }
-
-            public int DataSize
-            {
-                get { return datasize; }
-            }
-
-            public int Count
-            {
-                get { return count; }
-            }
+            public long Format => format;
+            public bool Encrypted => encrypted != 0;
+            public long Version => version;
+            public uint HeaderSize => headersize;
+            public uint TableSize => tablesize;
+            public uint EntrySize => entrysize;
+            public int DataSize => datasize;
+            public int Count => count;
         }
     }
 }

@@ -1432,6 +1432,10 @@ IN THE SOFTWARE.
       <o id="3" en="Engaged dead" />
       <o id="4" en="Event" />
       <o id="5" en="Chocobo" />
+      <o id="8" en="Door Opening" />
+      <o id="9" en="Door Closing" />
+      <o id="10" en="Elevator Up" />
+      <o id="11" en="Elevator Down" />
       <o id="33" en="Resting" />
       <o id="34" en="Locked" />
       <o id="38" en="Fishing fighting" />

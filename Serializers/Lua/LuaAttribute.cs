@@ -1,5 +1,5 @@
 ﻿// <copyright file="LuaAttribute.cs" company="Windower Team">
-// Copyright © 2013-2017 Windower Team
+// Copyright © 2013-2018 Windower Team
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -59,7 +59,7 @@ namespace ResourceExtractor.Serializers.Lua
 
             if ( value is bool )
             {
-              return value.ToString().ToLower();
+                return value.ToString().ToLower();
             }
 
             var vdict = value as IDictionary;

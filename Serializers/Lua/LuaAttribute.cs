@@ -57,7 +57,7 @@ namespace ResourceExtractor.Serializers.Lua
                 return "\"" + value.ToString().Replace("\"", "\\\"").Replace("\n", "\\n") + "\"";
             }
 
-            if ( value is bool )
+            if (value is bool)
             {
                 return value.ToString().ToLower();
             }

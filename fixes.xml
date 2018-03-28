@@ -116,7 +116,7 @@ IN THE SOFTWARE.
       <!-- BST -->
       <o id="162" duration="180" /> <!-- Killer Instinct -->
       <o id="331" duration="60" /> <!-- Unleash -->
-      
+
       <!-- BRD -->
       <o id="163" duration="60" /> <!-- Nightingale -->
       <o id="164" duration="60" /> <!-- Troubadour -->
@@ -1099,6 +1099,30 @@ IN THE SOFTWARE.
       <o id="878" duration="90" /> <!-- Dark Threnody II -->
       <o id="894" duration="150" /> <!-- Refresh III -->
       <o id="895" duration="180" /> <!-- Temper II -->
+      <!-- Unlearnable spells -->
+      <o id="31" unlearnable="true" /> <!-- Banish IV -->
+      <o id="40" unlearnable="true" /> <!-- Banishga III -->
+      <o id="34" unlearnable="true" /> <!-- Diaga II -->
+      <o id="35" unlearnable="true" /> <!-- Diaga III -->
+      <o id="358" unlearnable="true" /> <!-- Hastega -->
+      <o id="356" unlearnable="true" /> <!-- Paralyga -->
+      <o id="359" unlearnable="true" /> <!-- Silencega -->
+      <o id="357" unlearnable="true" /> <!-- Slowga -->
+      <o id="361" unlearnable="true" /> <!-- Blindga -->
+      <o id="362" unlearnable="true" /> <!-- Bindga -->
+      <o id="257" unlearnable="true" /> <!-- Curse -->
+      <o id="360" unlearnable="true" /> <!-- Dispelga -->
+      <o id="226" unlearnable="true" /> <!-- Poisonga II -->
+      <o id="256" unlearnable="true" /> <!-- Virus -->
+      <o id="244" unlearnable="true" /> <!-- Meteor II -->
+      <o id="351" unlearnable="true" /> <!-- Dokumori: Ni -->
+      <o id="342" unlearnable="true" /> <!-- Jubaku: Ni -->
+      <o id="349" unlearnable="true" /> <!-- Kurayami: San -->
+      <o id="355" unlearnable="true" /> <!-- Tonko: San -->
+      <o id="416" unlearnable="true" /> <!-- Cactuar Fugue -->
+      <o id="407" unlearnable="true" /> <!-- Chocobo Hum -->
+      <o id="363" unlearnable="true" /> <!-- Sleepga (duplicate) -->
+      <o id="364" unlearnable="true" /> <!-- Sleepga II (duplicate) -->
     </update>
   </spells>
   <buffs>

@@ -1,5 +1,5 @@
 ﻿// <copyright file="Program.cs" company="Windower Team">
-// Copyright © 2013-2017 Windower Team
+// Copyright © 2013-2018 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -716,8 +716,8 @@ namespace ResourceExtractor
 
                 for (var i = 0; i < fileids[0].Length; ++i)
                 {
-                    using (FileStream stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    using (FileStream streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
                         ResourceParser.ParseItems(stream, streamja);
                     }

@@ -1,5 +1,5 @@
 ﻿// <copyright file="ResourceParser.cs" company="Windower Team">
-// Copyright © 2013-2017 Windower Team
+// Copyright © 2013-2018 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -61,9 +61,9 @@ namespace ResourceExtractor
         [StructLayout(LayoutKind.Sequential)]
         private struct Header
         {
-            private int id;
-            private int size;
-            private long padding;
+            private readonly int id;
+            private readonly int size;
+            private readonly long padding;
 
             public int ID => id;
             public int Size => (size >> 3 & ~0xF) - 0x10;
@@ -144,7 +144,7 @@ namespace ResourceExtractor
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
-        public static void ParseAbilities(Stream stream, int length)
+        private static void ParseAbilities(Stream stream, int length)
         {
             IDictionary<short, object> recasts = new Dictionary<short, object>();
 
@@ -162,8 +162,8 @@ namespace ResourceExtractor
                 data[11] = b11;
                 data[12] = b12;
 
-                using (MemoryStream mstream = new MemoryStream(data))
-                using (BinaryReader reader = new BinaryReader(mstream, Encoding.ASCII, true))
+                using (var mstream = new MemoryStream(data))
+                using (var reader = new BinaryReader(mstream, Encoding.ASCII, true))
                 {
                     dynamic action = ParseAbility(reader);
                     if (action == null)
@@ -191,7 +191,7 @@ namespace ResourceExtractor
         }
 
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
-        public static void ParseSpells(Stream stream, int length)
+        private static void ParseSpells(Stream stream, int length)
         {
             var data = new byte[0x64];
             for (var i = 0; i < length / data.Length; ++i)

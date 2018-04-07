@@ -317,8 +317,8 @@ namespace ResourceExtractor
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void ParseItems(Stream stream, Stream streamja)
         {
-            var data = new byte[0x200];
-            var dataja = new byte[0x200];
+            var data = new byte[0xC00];
+            var dataja = new byte[0xC00];
             var count = (int)(stream.Length / 0xC00);
             for (var i = 0; i < count; i++)
             {

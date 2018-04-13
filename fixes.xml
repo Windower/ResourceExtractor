@@ -1123,6 +1123,78 @@ IN THE SOFTWARE.
       <o id="407" unlearnable="true" /> <!-- Chocobo Hum -->
       <o id="363" unlearnable="true" /> <!-- Sleepga (duplicate) -->
       <o id="364" unlearnable="true" /> <!-- Sleepga II (duplicate) -->
+      <!-- Status effects -->
+      <o id="23" status="134" duration="60" /> <!-- Dia -->
+      <o id="24" status="134" duration="120" overwrites="{23,230}" /> <!-- Dia II -->
+      <o id="25" status="134" duration="90" overwrites="{23,24,230,231}" /> <!-- Dia III -->
+      <o id="56" status="13" duration="120" /> <!-- Slow -->
+      <o id="58" status="4" duration="120" /> <!-- Paralyze -->
+      <o id="59" status="6" duration="120" /> <!-- Silence -->
+      <o id="79" status="13" duration="120" overwrites="{56}" /> <!-- Slow II -->
+      <o id="80" status="4" duration="120" overwrites="{58}" /> <!-- Paralyze II -->
+      <o id="98" status="2" duration="90" overwrites="{253}" /> <!-- Repose -->
+      <o id="216" status="12" duration="120" /> <!-- Gravity -->
+      <o id="217" status="12" duration="120" overwrites="{216}" /> <!-- Gravity II -->
+      <o id="220" status="3" duration="90" /> <!-- Poison -->
+      <o id="221" status="3" duration="120" overwrites="{220}" /> <!-- Poison II -->
+      <o id="230" status="135" duration="60" overwrites="{23}" /> <!-- Bio -->
+      <o id="231" status="135" duration="120" overwrites="{23,24,230}" /> <!-- Bio II -->
+      <o id="232" status="135" duration="30" overwrites="{23,24,25,230,231}" /> <!-- Bio III -->
+      <o id="253" status="2" duration="60" /> <!-- Sleep -->
+      <o id="254" status="5" duration="180" /> <!-- Blind -->
+      <o id="255" status="7" duration="30" /> <!-- Break -->
+      <o id="258" status="11" duration="60" /> <!-- Bind -->
+      <o id="259" status="2" duration="120" overwrites="{253,273}" /> <!-- Sleep II -->
+      <o id="273" status="2" duration="90" /> <!-- Sleepga -->
+      <o id="274" status="2" duration="120" overwrites="{253,273}" /> <!-- Sleepga II -->
+      <o id="276" status="5" duration="180" overwrites="{254}" /> <!-- Blind II -->
+      <o id="278" status="186" duration="230" /> <!-- Geohelix -->
+      <o id="279" status="186" duration="230" /> <!-- Hydrohelix -->
+      <o id="280" status="186" duration="230" /> <!-- Anemohelix -->
+      <o id="281" status="186" duration="230" /> <!-- Pyrohelix -->
+      <o id="282" status="186" duration="230" /> <!-- Cryohelix -->
+      <o id="283" status="186" duration="230" /> <!-- Ionohelix -->
+      <o id="284" status="186" duration="230" /> <!-- Noctohelix -->
+      <o id="285" status="186" duration="230" /> <!-- Luminohelix -->
+      <o id="286" status="21" duration="120" /> <!-- Addle -->
+      <o id="368" status="192" duration="60" /> <!-- Foe Requiem -->
+      <o id="369" status="192" duration="120" overwrites="{368}" /> <!-- Foe Requiem II -->
+      <o id="370" status="192" duration="120" overwrites="{368,369}" /> <!-- Foe Requiem III -->
+      <o id="371" status="192" duration="120" overwrites="{368,369,370}" /> <!-- Foe Requiem IV -->
+      <o id="372" status="192" duration="120" overwrites="{368,369,370,371}" /> <!-- Foe Requiem V -->
+      <o id="373" status="192" duration="120" overwrites="{368,369,370,371,372}" /> <!-- Foe Requiem VI -->
+      <o id="374" status="192" duration="120" overwrites="{368,369,370,371,372,373}" /> <!-- Foe Requiem VII -->
+      <o id="375" status="192" duration="120" overwrites="{368,369,370,371,372,373,374}" /> <!-- Foe Requiem VIII -->
+      <o id="376" status="2" duration="45" /> <!-- Horde Lullaby -->
+      <o id="377" status="2" duration="90" overwrites="{376,463}" /> <!-- Horde Lullaby II -->
+      <o id="421" status="194" duration="120" /> <!-- Battlefield Elegy -->
+      <o id="422" status="194" duration="180" overwrites="{421}" /> <!-- Carnage Elegy -->
+      <o id="423" status="194" duration="240" overwrites="{421,422}" /> <!-- Massacre Elegy -->
+      <o id="463" status="2" duration="45" /> <!-- Foe Lullaby -->
+      <o id="471" status="2" duration="90" overwrites="{376,463}" /> <!-- Foe Lullaby II -->
+      <o id="576" status="2" duration="90" /> <!-- Yawn -->
+      <o id="584" status="2" duration="60" /> <!-- Sheep Song -->
+      <o id="678" status="2" duration="90" /> <!-- Dream Flower -->
+      <o id="717" status="149" duration="120" /> <!-- Sweeping Gouge -->
+      <o id="727" status="6" duration="300" /> <!-- Silent Storm -->
+      <o id="728" status="149" duration="90" overwrites="{717}" /> <!-- Tenebral Crush -->
+      <o id="740" status="149" duration="60" overwrites="{717,728}" /> <!-- Tourbillion -->
+      <o id="841" status="148" duration="120" /> <!-- Distract -->
+      <o id="842" status="148" duration="120" overwrites="{841}" /> <!-- Distract II -->
+      <o id="843" status="404" duration="120" /> <!-- Frazzle -->
+      <o id="844" status="404" duration="120" overwrites="{843}" /> <!-- Frazzle II -->
+      <o id="879" status="597" duration="300" /> <!-- Inundation -->
+      <o id="882" status="148" duration="120" overwrites="{841,842}" /> <!-- Distract III -->
+      <o id="883" status="404" duration="120" overwrites="{843,844}" /> <!-- Frazzle III -->
+      <o id="884" status="21" duration="120" overwrites="{286}" /> <!-- Addle II -->
+      <o id="885" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Geohelix II -->
+      <o id="886" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Hydrohelix II -->
+      <o id="887" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Anemohelix II -->
+      <o id="888" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Pyrohelix II -->
+      <o id="889" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Cryohelix II -->
+      <o id="890" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Ionohelix II -->
+      <o id="891" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Noctohelix II -->
+      <o id="892" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Luminohelix II -->
     </update>
   </spells>
   <buffs>

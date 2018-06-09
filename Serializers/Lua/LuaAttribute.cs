@@ -49,7 +49,7 @@ namespace ResourceExtractor.Serializers.Lua
             return key is string ? FormattableString.Invariant($"{key}") : FormattableString.Invariant($"[{key}]");
         }
 
-        private static string MakeValue(object value)
+        public static string MakeValue(object value)
         {
             if (value is string || value is Enum)
             {

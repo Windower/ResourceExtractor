@@ -606,7 +606,15 @@ namespace ResourceExtractor
                         {
                             continue;
                         }
-                        xmlelement.SetAttributeValue(pair.Key, pair.Value);
+
+                        if (!(pair.Value is string) && pair.Value is IEnumerable)
+                        {
+                            xmlelement.SetAttributeValue(pair.Key, LuaAttribute.MakeValue(pair.Value));
+                        }
+                        else
+                        {
+                            xmlelement.SetAttributeValue(pair.Key, pair.Value);
+                        }
                     }
 
                     xml.Root.Add(xmlelement);

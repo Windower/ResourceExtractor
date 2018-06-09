@@ -20,6 +20,8 @@
 // IN THE SOFTWARE.
 // </copyright>
 
+using System.Linq;
+
 namespace ResourceExtractor
 {
     using System;
@@ -183,29 +185,25 @@ namespace ResourceExtractor
             return "/unknown";
         }
 
-        public static object Parse(this XAttribute value)
+        public static object Parse(this string value)
         {
-            string str = (string)value;
-
-            int resint;
-            if (int.TryParse(str, out resint))
+            var str = value;
+            if (!str.StartsWith("{"))
             {
-                return resint;
+                return
+                    int.TryParse(str, out var resint) ? resint :
+                    float.TryParse(str, out var resfloat) ? resfloat :
+                    bool.TryParse(str, out var resbool) ? (object)resbool :
+                    str;
             }
 
-            float resfloat;
-            if (float.TryParse(str, out resfloat))
+            str = str.Substring(1, str.Length - 2);
+            if (!str.StartsWith("["))
             {
-                return resfloat;
+                return str.Split(',').Select(Parse).ToList();
             }
 
-            bool resbool;
-            if (bool.TryParse(str, out resbool))
-            {
-                return resbool;
-            }
-
-            return str;
+            return str.Split(',').Select(kvp => kvp.Split('=')).ToDictionary(kvp => Parse(kvp[0].Substring(1, kvp[0].Length - 2)), kvp => Parse(kvp[1]));
         }
 
         private static int CountBits(byte b)

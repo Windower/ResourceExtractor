@@ -831,6 +831,9 @@ IN THE SOFTWARE.
   </weapon_skills>
   <spells>
     <update>
+      <o id="23" duration="60" /> <!-- Dia -->
+      <o id="24" duration="120" /> <!-- Dia II -->
+      <o id="25" duration="90" /> <!-- Dia III -->
       <o id="43" duration="1800" /> <!-- Protect -->
       <o id="44" duration="1800" /> <!-- Protect II -->
       <o id="45" duration="1800" /> <!-- Protect III -->
@@ -844,7 +847,10 @@ IN THE SOFTWARE.
       <o id="53" duration="300" /> <!-- Blink -->
       <o id="54" duration="300" /> <!-- Stoneskin -->
       <o id="55" duration="600" /> <!-- Aquaveil -->
+      <o id="56" duration="120" /> <!-- Slow -->
       <o id="57" duration="180" /> <!-- Haste -->
+      <o id="58" duration="120" /> <!-- Paralyze -->
+      <o id="59" duration="120" /> <!-- Silence -->
       <o id="60" duration="480" /> <!-- Barfire -->
       <o id="61" duration="480" /> <!-- Barblizzard -->
       <o id="62" duration="480" /> <!-- Baraero -->
@@ -864,6 +870,8 @@ IN THE SOFTWARE.
       <o id="76" duration="480" /> <!-- Barsilence -->
       <o id="77" duration="480" /> <!-- Barpetrify -->
       <o id="78" duration="480" /> <!-- Barvirus -->
+      <o id="79" duration="120" /> <!-- Slow II -->
+      <o id="80" duration="120" /> <!-- Paralyze II -->
       <o id="84" duration="480" /> <!-- Baramnesia -->
       <o id="85" duration="480" /> <!-- Baramnesra -->
       <o id="86" duration="480" /> <!-- Barsleepra -->
@@ -875,6 +883,7 @@ IN THE SOFTWARE.
       <o id="92" duration="480" /> <!-- Barvira -->
       <o id="96" duration="180" /> <!-- Auspice -->
       <o id="97" duration="60" /> <!-- Reprisal -->
+      <o id="98" duration="90" /> <!-- Repose -->
       <o id="99" duration="180" /> <!-- Sandstorm -->
       <o id="100" duration="180" /> <!-- Enfire -->
       <o id="101" duration="180" /> <!-- Enblizzard -->
@@ -908,10 +917,34 @@ IN THE SOFTWARE.
       <o id="135" duration="3600" /> <!-- Reraise -->
       <o id="141" duration="3600" /> <!-- Reraise II -->
       <o id="142" duration="3600" /> <!-- Reraise III -->
+      <o id="216" duration="120" /> <!-- Gravity -->
+      <o id="217" duration="120" /> <!-- Gravity II -->
+      <o id="220" duration="90" /> <!-- Poison -->
+      <o id="221" duration="120" /> <!-- Poison II -->
+      <o id="230" duration="60" /> <!-- Bio -->
+      <o id="231" duration="120" /> <!-- Bio II -->
+      <o id="232" duration="30" /> <!-- Bio III -->
       <o id="249" duration="180" /> <!-- Blaze Spikes -->
       <o id="250" duration="180" /> <!-- Ice Spikes -->
       <o id="251" duration="180" /> <!-- Shock Spikes -->
+      <o id="253" duration="60" /> <!-- Sleep -->
+      <o id="254" duration="180" /> <!-- Blind -->
+      <o id="255" duration="30" /> <!-- Break -->
+      <o id="258" duration="60" /> <!-- Bind -->
+      <o id="259" duration="120" /> <!-- Sleep II -->
+      <o id="273" duration="90" /> <!-- Sleepga -->
+      <o id="274" duration="120" /> <!-- Sleepga II -->
+      <o id="276" duration="180" /> <!-- Blind II -->
       <o id="277" duration="60" /> <!-- Dread Spikes -->
+      <o id="278" duration="230" /> <!-- Geohelix -->
+      <o id="279" duration="230" /> <!-- Hydrohelix -->
+      <o id="280" duration="230" /> <!-- Anemohelix -->
+      <o id="281" duration="230" /> <!-- Pyrohelix -->
+      <o id="282" duration="230" /> <!-- Cryohelix -->
+      <o id="283" duration="230" /> <!-- Ionohelix -->
+      <o id="284" duration="230" /> <!-- Noctohelix -->
+      <o id="285" duration="230" /> <!-- Luminohelix -->
+      <o id="286" duration="120" /> <!-- Addle -->
       <o id="287" duration="180" /> <!-- Klimaform -->
       <o id="308" duration="180" /> <!-- Animus Augeo -->
       <o id="309" duration="180" /> <!-- Animus Minuo -->
@@ -929,6 +962,16 @@ IN THE SOFTWARE.
       <o id="338" duration="600" /> <!-- Utsusemi: Ichi -->
       <o id="339" duration="600" /> <!-- Utsusemi: Ni -->
       <o id="340" duration="900" /> <!-- Utsusemi: San -->
+      <o id="368" duration="60" /> <!-- Foe Requiem -->
+      <o id="369" duration="120" /> <!-- Foe Requiem II -->
+      <o id="370" duration="120" /> <!-- Foe Requiem III -->
+      <o id="371" duration="120" /> <!-- Foe Requiem IV -->
+      <o id="372" duration="120" /> <!-- Foe Requiem V -->
+      <o id="373" duration="120" /> <!-- Foe Requiem VI -->
+      <o id="374" duration="120" /> <!-- Foe Requiem VII -->
+      <o id="375" duration="120" /> <!-- Foe Requiem VIII -->
+      <o id="376" duration="45" /> <!-- Horde Lullaby -->
+      <o id="377" duration="90" /> <!-- Horde Lullaby II -->
       <o id="378" duration="120" /> <!-- Army's Paeon -->
       <o id="379" duration="120" /> <!-- Army's Paeon II -->
       <o id="380" duration="120" /> <!-- Army's Paeon III -->
@@ -973,8 +1016,8 @@ IN THE SOFTWARE.
       <o id="419" duration="120" /> <!-- Advancing March -->
       <o id="420" duration="120" /> <!-- Victory March -->
       <o id="421" duration="120" /> <!-- Battlefield Elegy -->
-      <o id="422" duration="120" /> <!-- Carnage Elegy -->
-      <o id="423" duration="120" /> <!-- Massacre Elegy -->
+      <o id="422" duration="180" /> <!-- Carnage Elegy -->
+      <o id="423" duration="240" /> <!-- Massacre Elegy -->
       <o id="424" duration="120" /> <!-- Sinewy Etude -->
       <o id="425" duration="120" /> <!-- Dextrous Etude -->
       <o id="426" duration="120" /> <!-- Vivacious Etude -->
@@ -1055,6 +1098,8 @@ IN THE SOFTWARE.
       <o id="538" duration="60" /> <!-- Memento Mori -->
       <o id="547" duration="90" /> <!-- Cocoon -->
       <o id="574" duration="30" /> <!-- Feather Barrier -->
+      <o id="576" duration="90" /> <!-- Yawn -->
+      <o id="584" duration="60" /> <!-- Sheep Song -->
       <o id="613" duration="180" /> <!-- Reactor Cool -->
       <o id="614" duration="120" /> <!-- Saline Coat -->
       <o id="615" duration="750" /> <!-- Plasma Charge -->
@@ -1069,13 +1114,22 @@ IN THE SOFTWARE.
       <o id="685" duration="180" /> <!-- Barrier Tusk -->
       <o id="668" duration="900" /> <!-- Magic Barrier -->
       <o id="674" duration="180" /> <!-- Fantod -->
+      <o id="678" duration="90" /> <!-- Dream Flower -->
       <o id="679" duration="300" /> <!-- Occultation -->
       <o id="696" duration="180" /> <!-- O. Counterstance -->
       <o id="700" duration="90" /> <!-- Nat. Meditation -->
       <o id="710" duration="300" /> <!-- Erratic Flutter -->
+      <o id="717" duration="120" /> <!-- Sweeping Gouge -->
+      <o id="727" duration="300" /> <!-- Silent Storm -->
+      <o id="728" duration="90" /> <!-- Tenebral Crush -->
       <o id="737" duration="90" /> <!-- Harden Shell -->
+      <o id="740" duration="60" /> <!-- Tourbillion -->
       <o id="741" duration="300" /> <!-- Pyric Bulwark -->
       <o id="840" duration="30" /> <!-- Foil -->
+      <o id="841" duration="120" /> <!-- Distract -->
+      <o id="842" duration="120" /> <!-- Distract II -->
+      <o id="843" duration="120" /> <!-- Frazzle -->
+      <o id="844" duration="120" /> <!-- Frazzle II -->
       <o id="845" duration="180" /> <!-- Flurry -->
       <o id="846" duration="180" /> <!-- Flurry II -->
       <o id="848" duration="3600" /> <!-- Reraise IV -->
@@ -1098,6 +1152,18 @@ IN THE SOFTWARE.
       <o id="877" duration="90" /> <!-- Light Threnody II -->
       <o id="878" duration="90" /> <!-- Dark Threnody II -->
       <o id="894" duration="150" /> <!-- Refresh III -->
+      <o id="879" duration="300" /> <!-- Inundation -->
+      <o id="882" duration="120" /> <!-- Distract III -->
+      <o id="883" duration="120" /> <!-- Frazzle III -->
+      <o id="884" duration="120" /> <!-- Addle II -->
+      <o id="885" duration="230" /> <!-- Geohelix II -->
+      <o id="886" duration="230" /> <!-- Hydrohelix II -->
+      <o id="887" duration="230" /> <!-- Anemohelix II -->
+      <o id="888" duration="230" /> <!-- Pyrohelix II -->
+      <o id="889" duration="230" /> <!-- Cryohelix II -->
+      <o id="890" duration="230" /> <!-- Ionohelix II -->
+      <o id="891" duration="230" /> <!-- Noctohelix II -->
+      <o id="892" duration="230" /> <!-- Luminohelix II -->
       <o id="895" duration="180" /> <!-- Temper II -->
       <!-- Unlearnable spells -->
       <o id="31" unlearnable="true" /> <!-- Banish IV -->
@@ -2326,9 +2392,9 @@ IN THE SOFTWARE.
       <o id="680" en="A newfound puissance courses through your veins." color="91" />
       <o id="681" en="Your muscles ripple with an immensely powerful and invigorating force." color="91" />
       <o id="682" en="Your puissance withers slightly." color="91" />
-      <o id="683" en="You have claimed {$target}!" color="91" />
-      <o id="684" en="{$target} has been claimed!" color="91" />
-      <o id="685" en="The enemy you are battling will no longer be claimed in: {$number}." color="91" />
+      <o id="683" en="You have claimed ${target}!" color="91" />
+      <o id="684" en="${target} has been claimed!" color="91" />
+      <o id="685" en="The enemy you are battling will no longer be claimed in: ${number}." color="91" />
       <o id="686" en="The enemy you were battling is no longer claimed." color="91" />
       <o id="687" en="${actor} captured the ${target}." color="91" />
       <o id="688" en="${actor} has fled!" color="91" />
@@ -2401,8 +2467,8 @@ IN THE SOFTWARE.
       <o id="757" en="${number} of ${target}'s effects disappears!" color="101" />
       <o id="758" en="${actor} uses ${item}.${lb}→Obtained key item: ${key_item}." color="1" />
       <o id="759" en="You already have key item: ${key_item}." color="1" />
-      <o id="760" en="{You are only able to possess one ${item} and thus are unable to receive your just reward. Clear out your inventory and receive the item from the Records of Eminence Menu." color="1" />
-      <o id="761" en="{You were unable to receive your just reward because you need ${number} free spaces in your inventory. Clear out your bags and receive your item from the Records of Eminence Menu." color="1" />
+      <o id="760" en="You are only able to possess one ${item} and thus are unable to receive your just reward. Clear out your inventory and receive the item from the Records of Eminence Menu." color="1" />
+      <o id="761" en="You were unable to receive your just reward because you need ${number} free spaces in your inventory. Clear out your bags and receive your item from the Records of Eminence Menu." color="1" />
       <o id="762" en="${actor} uses ${spell}.${lb}All of ${target}'s status parameters are boosted." color="1" />
       <o id="763" en="${actor} uses ${spell}.${lb}${target} has grown noticeably bored." color="1" />
       <o id="764" en="${actor} uses ${spell}.${lb}${target} feels the Fever!" color="1" />

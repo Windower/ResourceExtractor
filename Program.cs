@@ -672,7 +672,7 @@ namespace ResourceExtractor
 
                                 foreach (var attr in fix.Attributes())
                                 {
-                                    el[attr.Name.LocalName] = attr.Parse();
+                                    el[attr.Name.LocalName] = attr.Value.Parse();
                                 }
 
                                 data.Add(el);
@@ -682,7 +682,7 @@ namespace ResourceExtractor
                             var element = elements.Single();
                             foreach (var attr in fix.Attributes())
                             {
-                                element[attr.Name.LocalName] = attr.Parse();
+                                element[attr.Name.LocalName] = attr.Value.Parse();
                             }
                         }
                     }

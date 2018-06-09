@@ -20,6 +20,8 @@
 // IN THE SOFTWARE.
 // </copyright>
 
+using System.Collections;
+
 namespace ResourceExtractor
 {
     using System;

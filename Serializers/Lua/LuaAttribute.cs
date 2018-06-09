@@ -26,7 +26,6 @@ namespace ResourceExtractor.Serializers.Lua
 {
     using System;
     using System.Collections;
-    using System.Globalization;
 
     internal class LuaAttribute
     {
@@ -42,12 +41,12 @@ namespace ResourceExtractor.Serializers.Lua
 
         public override string ToString()
         {
-            return string.Format(CultureInfo.InvariantCulture, "{0}={1}", MakeKey(Key), MakeValue(Value));
+            return FormattableString.Invariant($"{MakeKey(Key)}={MakeValue(Value)}");
         }
 
         private static string MakeKey(object key)
         {
-            return string.Format(CultureInfo.InvariantCulture, key is string ? "{0}" : "[{0}]", key);
+            return key is string ? FormattableString.Invariant($"{key}") : FormattableString.Invariant($"[{key}]");
         }
 
         private static string MakeValue(object value)
@@ -57,26 +56,18 @@ namespace ResourceExtractor.Serializers.Lua
                 return "\"" + value.ToString().Replace("\"", "\\\"").Replace("\n", "\\n") + "\"";
             }
 
-            if (value is bool)
-            {
-                return value.ToString().ToLower();
-            }
-
-            var vdict = value as IDictionary;
-            if (vdict != null)
+            if (value is IDictionary vdict)
             {
                 var lines = vdict.Keys.Cast<object>().Select(key => $"{MakeKey(key)}={MakeValue(vdict[key])}").ToList();
                 return $"{{{string.Join(",", lines)}}}";
             }
 
-            var venum = value as IEnumerable;
-            if (venum != null)
+            if (value is IEnumerable venum)
             {
-                var lines = venum.Cast<object>().Select(val => $"{MakeKey(val)}={MakeValue(vdict[val])}").ToList();
-                return $"{{{string.Join(",", lines)}}}";
+                return $"{{{string.Join(",", venum.Cast<object>().Select(MakeValue))}}}";
             }
 
-            return FormattableString.Invariant($"{value}");
+            return FormattableString.Invariant($"{value}").ToLower();
         }
     }
 }

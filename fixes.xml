@@ -834,6 +834,7 @@ IN THE SOFTWARE.
       <o id="23" duration="60" /> <!-- Dia -->
       <o id="24" duration="120" /> <!-- Dia II -->
       <o id="25" duration="90" /> <!-- Dia III -->
+      <o id="26" duration="90" /> <!-- Dia IV -->
       <o id="43" duration="1800" /> <!-- Protect -->
       <o id="44" duration="1800" /> <!-- Protect II -->
       <o id="45" duration="1800" /> <!-- Protect III -->
@@ -1193,6 +1194,7 @@ IN THE SOFTWARE.
       <o id="23" status="134" duration="60" /> <!-- Dia -->
       <o id="24" status="134" duration="120" overwrites="{23,230}" /> <!-- Dia II -->
       <o id="25" status="134" duration="90" overwrites="{23,24,230,231}" /> <!-- Dia III -->
+      <o id="26" status="134" duration="90" overwrites="{23,24,25,230,231,232}" /> <!-- Dia IV -->
       <o id="56" status="13" duration="120" /> <!-- Slow -->
       <o id="58" status="4" duration="120" /> <!-- Paralyze -->
       <o id="59" status="6" duration="120" /> <!-- Silence -->

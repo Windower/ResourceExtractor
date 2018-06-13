@@ -26,6 +26,126 @@ IN THE SOFTWARE.
   <spells>
     <update>
       <o id="355" prefix="/ninjutsu" type="Ninjutsu" skill="39" /> <!-- Tonko: San-->
+      <!-- Trust -->
+      <o id="896" name="Shantotto" models="3000" /> <!--Shantotto-->
+      <o id="897" name="Naji" models="3001" /> <!--Naji-->
+      <o id="898" name="Kupipi" models="3002" /> <!--Kupipi-->
+      <o id="899" name="Excenmille" models="3003" /> <!--Excenmille-->
+      <o id="900" name="Ayame" models="3004" /> <!--Ayame-->
+      <o id="901" name="NanaaMihgo" models="3005" /> <!--Nanaa Mihgo-->
+      <o id="902" name="Curilla" models="3006" /> <!--Curilla-->
+      <o id="903" name="Volker" models="3007" /> <!--Volker-->
+      <o id="904" name="Ajido-Marujido" models="3008" /> <!--Ajido-Marujido-->
+      <o id="905" name="Trion" models="3009" /> <!--Trion-->
+      <o id="906" name="Zeid" models="3010" /> <!--Zeid-->
+      <o id="907" name="Lion" models="3011" /> <!--Lion-->
+      <o id="908" name="Tenzen" models="3012" /> <!--Tenzen-->
+      <o id="909" name="MihliAliapoh" models="3013" /> <!--Mihli Aliapoh-->
+      <o id="910" name="Valaineral" models="3014" /> <!--Valaineral-->
+      <o id="911" name="Joachim" models="3015" /> <!--Joachim-->
+      <o id="912" name="NajaSalaheem" models="3016" /> <!--Naja Salaheem-->
+      <o id="913" name="Prishe" models="3017" /> <!--Prishe-->
+      <o id="914" name="Ulmia" models="3018" /> <!--Ulmia-->
+      <o id="915" name="ShikareeZ" models="3019" /> <!--Shikaree Z-->
+      <o id="916" name="Cherukiki" models="3020" /> <!--Cherukiki-->
+      <o id="917" name="IronEater" models="3021" /> <!--Iron Eater-->
+      <o id="918" name="Gessho" models="3022" /> <!--Gessho-->
+      <o id="919" name="Gadalar" models="3023" /> <!--Gadalar-->
+      <o id="920" name="Rainemard" models="3024" /> <!--Rainemard-->
+      <o id="921" name="Ingrid" models="3025" /> <!--Ingrid-->
+      <o id="922" name="LehkoHabhoka" models="3026" /> <!--Lehko Habhoka-->
+      <o id="923" name="Nashmeira" models="3027" /> <!--Nashmeira-->
+      <o id="924" name="Zazarg" models="3028" /> <!--Zazarg-->
+      <o id="925" name="Ovjang" models="3029" /> <!--Ovjang-->
+      <o id="926" name="Mnejing" models="3030" /> <!--Mnejing-->
+      <o id="927" name="Sakura" models="3031" /> <!--Sakura-->
+      <o id="928" name="Luzaf" models="3032" /> <!--Luzaf-->
+      <o id="929" name="Najelith" models="3033" /> <!--Najelith-->
+      <o id="930" name="Aldo" models="3034" /> <!--Aldo-->
+      <o id="931" name="Moogle" models="3035" /> <!--Moogle-->
+      <o id="932" name="Fablinix" models="3036" /> <!--Fablinix-->
+      <o id="933" name="Maat" models="3037" /> <!--Maat-->
+      <o id="934" name="D.Shantotto" models="3038" /> <!--D. Shantotto-->
+      <o id="935" name="StarSibyl" models="3039" /> <!--Star Sibyl-->
+      <o id="936" name="Karaha-Baruha" models="3040" /> <!--Karaha-Baruha-->
+      <o id="937" name="Cid" models="3041" /> <!--Cid-->
+      <o id="938" name="Gilgamesh" models="3042" /> <!--Gilgamesh-->
+      <o id="939" name="Areuhat" models="3043" /> <!--Areuhat-->
+      <o id="940" name="SemihLafihna" models="3044" /> <!--Semih Lafihna-->
+      <o id="941" name="Elivira" models="3045" /> <!--Elivira-->
+      <o id="942" name="Noillurie" models="3046" /> <!--Noillurie-->
+      <o id="943" name="LhuMhakaracca" models="3047" /> <!--Lhu Mhakaracca-->
+      <o id="944" name="FerreousCoffin" models="3048" /> <!--Ferreous Coffin-->
+      <o id="945" name="Lilisette" models="3049" /> <!--Lilisette-->
+      <o id="946" name="Mumor" models="3050" /> <!--Mumor-->
+      <o id="947" name="UkaTotlihn" models="3051" /> <!--Uka Totlihn-->
+      <o id="948" name="Klara" models="3053" /> <!--Klara-->
+      <o id="949" name="RomaaMihgo" models="3054" /> <!--Romaa Mihgo-->
+      <o id="950" name="KuyinHathdenna" models="3055" /> <!--Kuyin Hathdenna-->
+      <o id="951" name="Rahal" models="3056" /> <!--Rahal-->
+      <o id="952" name="Koru-Moru" models="3057" /> <!--Koru-Moru-->
+      <o id="953" name="Pieuje" models="3058" /> <!--Pieuje (UC)-->
+      <o id="954" name="InvincibleShld" models="3060" /> <!--I. Shield (UC)-->
+      <o id="955" name="Apururu" models="3061" /> <!--Apururu (UC)-->
+      <o id="956" name="JakohWahcondalo" models="3062" /> <!--Jakoh (UC)-->
+      <o id="957" name="Flaviria" models="3059" /> <!--Flaviria (UC)-->
+      <o id="958" name="Babban" models="3067" /> <!--Babban-->
+      <o id="959" name="Abenzio" models="3068" /> <!--Abenzio-->
+      <o id="960" name="Rughadjeen" models="3069" /> <!--Rughadjeen-->
+      <o id="961" name="Kukki-Chebukki" models="3070" /> <!--Kukki-Chebukki-->
+      <o id="962" name="Margret" models="3071" /> <!--Margret-->
+      <o id="963" name="Chacharoon" models="3072" /> <!--Chacharoon-->
+      <o id="964" name="LheLhangavo" models="3073" /> <!--Lhe Lhangavo-->
+      <o id="965" name="Arciela" models="3074" /> <!--Arciela-->
+      <o id="966" name="Mayakov" models="3075" /> <!--Mayakov-->
+      <o id="967" name="Qultada" models="3076" /> <!--Qultada-->
+      <o id="968" name="Adelheid" models="3077" /> <!--Adelheid-->
+      <o id="969" name="Amchuchu" models="3078" /> <!--Amchuchu-->
+      <o id="970" name="Brygid" models="3079" /> <!--Brygid-->
+      <o id="971" name="Mildaurion" models="3080" /> <!--Mildaurion-->
+      <o id="972" name="Halver" models="3087" /> <!--Halver-->
+      <o id="973" name="Rongelouts" models="3088" /> <!--Rongelouts-->
+      <o id="974" name="Leonoyne" models="3089" /> <!--Leonoyne-->
+      <o id="975" name="Maximilian" models="3090" /> <!--Maximilian-->
+      <o id="976" name="Kayeel-Payeel" models="3091" /> <!--Kayeel-Payeel-->
+      <o id="977" name="Robel-Akbel" models="3092" /> <!--Robel-Akbel-->
+      <o id="978" name="Kupofried" models="3093" /> <!--Kupofried-->
+      <o id="979" name="Selh'teus" models="3094" /> <!--Selh'teus-->
+      <o id="980" name="Yoran-Oran" models="3095" /> <!--Yoran-Oran (UC)-->
+      <o id="981" name="Sylvie" models="3096" /> <!--Sylvie (UC)-->
+      <o id="982" name="Abquhbah" models="3098" /> <!--Abquhbah-->
+      <o id="983" name="Balamor" models="3099" /> <!--Balamor-->
+      <o id="984" name="August" models="3100" /> <!--August-->
+      <o id="985" name="Rosulatia" models="3101" /> <!--Rosulatia-->
+      <o id="986" name="Teodor" models="3103" /> <!--Teodor-->
+      <o id="987" name="Ullegore" models="3105" /> <!--Ullegore-->
+      <o id="988" name="Makki-Chebukki" models="3106" /> <!--Makki-Chebukki-->
+      <o id="989" name="KingOfHearts" models="3107" /> <!--King of Hearts-->
+      <o id="990" name="Morimar" models="3108" /> <!--Morimar-->
+      <o id="991" name="Darrcuiln" models="3109" /> <!--Darrcuiln-->
+      <o id="992" name="ArkHM" models="3113" /> <!--AAHM-->
+      <o id="993" name="ArkEV" models="3114" /> <!--AAEV-->
+      <o id="994" name="ArkMR" models="3115" /> <!--AAMR-->
+      <o id="995" name="ArkTT" models="3116" /> <!--AATT-->
+      <o id="996" name="ArkGK" models="3117" /> <!--AAGK-->
+      <o id="997" name="Iroha" models="3111" /> <!--Iroha-->
+      <o id="998" name="Ygnas" models="3118" /> <!--Ygnas-->
+      <o id="1004" name="Excenmille" models="3052" /> <!--Excenmille [S]-->
+      <o id="1005" name="Ayame" models="3063" /> <!--Ayame (UC)-->
+      <o id="1006" name="Maat" models="3064" /> <!--Maat (UC)-->
+      <o id="1007" name="Aldo" models="3065" /> <!--Aldo (UC)-->
+      <o id="1008" name="NajaSalaheem" models="3066" /> <!--Naja (UC)-->
+      <o id="1009" name="Lion" models="3081" /> <!--Lion II-->
+      <o id="1010" name="Zeid" models="3086" /> <!--Zeid II-->
+      <o id="1011" name="Prishe" models="3082" /> <!--Prishe II-->
+      <o id="1012" name="Nashmeira" models="3083" /> <!--Nashmeira II-->
+      <o id="1013" name="Lilisette" models="3084" /> <!--Lilisette II-->
+      <o id="1014" name="Tenzen" models="3097" /> <!--Tenzen II-->
+      <o id="1015" name="Mumor" models="3104" /> <!--Mumor II-->
+      <o id="1016" name="Ingrid" models="3102" /> <!--Ingrid II-->
+      <o id="1017" name="Arciela" models="3085" /> <!--Arciela II-->
+      <o id="1018" name="Iroha" models="3112" /> <!--Iroha II-->
+      <o id="1019" name="Shantotto" models="3110" /> <!--Shantotto II-->
     </update>
   </spells>
   <job_abilities>

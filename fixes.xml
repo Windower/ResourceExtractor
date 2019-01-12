@@ -319,8 +319,6 @@ IN THE SOFTWARE.
       <o id="101" en="Stay/Heel/Leave" ja="まってろ/もどれ/かえれ" />
       <o id="102" en="Sic/Ready" ja="ほんきだせ/しじをさせろ" />
       <o id="126" en="Unlimited/Double Shot" ja="エンドレスショット/ダブルショット" />
-      <o id="158" en="Jump/Spirit Jump" ja="ジャンプ/スピリットジャンプ" />
-      <o id="159" en="High/Soul Jump" ja="ハイジャンプ/ソウルジャンプ" />
       <o id="173" en="Blood Pact: Rage" ja="契約の履行:幻術" />
       <o id="174" en="Blood Pact: Ward" ja="契約の履行:験術" />
       <o id="193" en="Phantom Roll" ja="ファントムロール" />
@@ -328,12 +326,10 @@ IN THE SOFTWARE.
       <o id="210" en="Maneuvers" ja="マニューバ" />
       <o id="215" en="Healing Waltz" ja="ヒーリングワルツ" />
       <o id="216" en="Sambas" ja="サンバモード" />
-      <o id="217" en="Curing Waltz" ja="ケアルワルツ" />
       <o id="218" en="Jigs" ja="ジグモード" />
       <o id="220" en="Steps" ja="ステップ" />
       <o id="221" en="Flourishes I" ja="フラリッシュI" />
       <o id="222" en="Flourishes II" ja="フラリッシュII" />
-      <o id="225" en="Divine Waltz" ja="ディバインワルツ" />
       <o id="226" en="Flourishes III" ja="フラリッシュIII" />
       <o id="231" en="Stratagems" ja="戦術魔道書" />
       <o id="244" en="Ecl.Attr./Last.Eman." ja="サークルエンリッチ/エンデュアエマネイト" />

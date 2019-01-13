@@ -43,13 +43,12 @@ IN THE SOFTWARE.
       <o id="16" duration="45" /> <!-- Mighty Strikes -->
 
       <!-- MNK -->
-      <o id="36" duration="120" /> <!-- Focus -->
-      <o id="37" duration="120" /> <!-- Dodge -->
-      <o id="39" duration="180" /> <!-- Boost -->
+      <o id="36" duration="30" /> <!-- Focus -->
+      <o id="37" duration="30" /> <!-- Dodge -->
       <o id="40" duration="300" /> <!-- Counterstance -->
       <o id="151" duration="180" /> <!-- Mantra -->
       <o id="152" duration="180" /> <!-- Formless Strikes -->
-      <o id="227" duration="300" /> <!-- Footwork -->
+      <o id="227" duration="60" /> <!-- Footwork -->
       <o id="253" duration="30" /> <!-- Perfect Counter -->
       <o id="269" duration="180" /> <!-- Impetus -->
       <o id="324" duration="30" /> <!-- Inner Strength -->

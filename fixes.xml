@@ -828,7 +828,7 @@ IN THE SOFTWARE.
     <update>
       <o id="23" duration="60" /> <!-- Dia -->
       <o id="24" duration="120" /> <!-- Dia II -->
-      <o id="25" duration="90" /> <!-- Dia III -->
+      <o id="25" duration="180" /> <!-- Dia III -->
       <o id="26" duration="90" /> <!-- Dia IV -->
       <o id="43" duration="1800" /> <!-- Protect -->
       <o id="44" duration="1800" /> <!-- Protect II -->
@@ -843,7 +843,7 @@ IN THE SOFTWARE.
       <o id="53" duration="300" /> <!-- Blink -->
       <o id="54" duration="300" /> <!-- Stoneskin -->
       <o id="55" duration="600" /> <!-- Aquaveil -->
-      <o id="56" duration="120" /> <!-- Slow -->
+      <o id="56" duration="180" /> <!-- Slow -->
       <o id="57" duration="180" /> <!-- Haste -->
       <o id="58" duration="120" /> <!-- Paralyze -->
       <o id="59" duration="120" /> <!-- Silence -->
@@ -866,7 +866,7 @@ IN THE SOFTWARE.
       <o id="76" duration="480" /> <!-- Barsilence -->
       <o id="77" duration="480" /> <!-- Barpetrify -->
       <o id="78" duration="480" /> <!-- Barvirus -->
-      <o id="79" duration="120" /> <!-- Slow II -->
+      <o id="79" duration="180" /> <!-- Slow II -->
       <o id="80" duration="120" /> <!-- Paralyze II -->
       <o id="84" duration="480" /> <!-- Baramnesia -->
       <o id="85" duration="480" /> <!-- Baramnesra -->
@@ -927,9 +927,9 @@ IN THE SOFTWARE.
       <o id="254" duration="180" /> <!-- Blind -->
       <o id="255" duration="30" /> <!-- Break -->
       <o id="258" duration="60" /> <!-- Bind -->
-      <o id="259" duration="120" /> <!-- Sleep II -->
-      <o id="273" duration="90" /> <!-- Sleepga -->
-      <o id="274" duration="120" /> <!-- Sleepga II -->
+      <o id="259" duration="90" /> <!-- Sleep II -->
+      <o id="273" duration="60" /> <!-- Sleepga -->
+      <o id="274" duration="90" /> <!-- Sleepga II -->
       <o id="276" duration="180" /> <!-- Blind II -->
       <o id="277" duration="180" /> <!-- Dread Spikes -->
       <o id="278" duration="230" /> <!-- Geohelix -->
@@ -1122,10 +1122,10 @@ IN THE SOFTWARE.
       <o id="740" duration="60" /> <!-- Tourbillion -->
       <o id="741" duration="300" /> <!-- Pyric Bulwark -->
       <o id="840" duration="30" /> <!-- Foil -->
-      <o id="841" duration="120" /> <!-- Distract -->
-      <o id="842" duration="120" /> <!-- Distract II -->
-      <o id="843" duration="120" /> <!-- Frazzle -->
-      <o id="844" duration="120" /> <!-- Frazzle II -->
+      <o id="841" duration="300" /> <!-- Distract -->
+      <o id="842" duration="300" /> <!-- Distract II -->
+      <o id="843" duration="300" /> <!-- Frazzle -->
+      <o id="844" duration="300" /> <!-- Frazzle II -->
       <o id="845" duration="180" /> <!-- Flurry -->
       <o id="846" duration="180" /> <!-- Flurry II -->
       <o id="848" duration="3600" /> <!-- Reraise IV -->
@@ -1149,9 +1149,9 @@ IN THE SOFTWARE.
       <o id="878" duration="90" /> <!-- Dark Threnody II -->
       <o id="894" duration="150" /> <!-- Refresh III -->
       <o id="879" duration="300" /> <!-- Inundation -->
-      <o id="882" duration="120" /> <!-- Distract III -->
-      <o id="883" duration="120" /> <!-- Frazzle III -->
-      <o id="884" duration="120" /> <!-- Addle II -->
+      <o id="882" duration="300" /> <!-- Distract III -->
+      <o id="883" duration="300" /> <!-- Frazzle III -->
+      <o id="884" duration="180" /> <!-- Addle II -->
       <o id="885" duration="230" /> <!-- Geohelix II -->
       <o id="886" duration="230" /> <!-- Hydrohelix II -->
       <o id="887" duration="230" /> <!-- Anemohelix II -->

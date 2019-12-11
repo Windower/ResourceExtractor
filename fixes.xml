@@ -98,6 +98,7 @@ IN THE SOFTWARE.
       <o id="278" duration="60" /> <!-- Palisade -->
       <o id="329" duration="30" /> <!-- Intervene -->
       <o id="22" duration="30" /> <!-- Invincible -->
+	  <o id="394" duration="60" /> <!-- Majesty -->
 
       <!-- DRK -->
       <o id="49" duration="60" /> <!-- Souleater -->
@@ -888,7 +889,7 @@ IN THE SOFTWARE.
       <o id="104" duration="180" /> <!-- Enthunder -->
       <o id="105" duration="180" /> <!-- Enwater -->
       <o id="106" duration="180" /> <!-- Phalanx -->
-      <o id="107" duration="120" /> <!-- Phalanx II -->
+      <o id="107" duration="240" /> <!-- Phalanx II -->
       <o id="108" duration="75" /> <!-- Regen -->
       <o id="109" duration="150" /> <!-- Refresh -->
       <o id="110" duration="60" /> <!-- Regen II -->

@@ -1204,12 +1204,12 @@ IN THE SOFTWARE.
       <o id="230" status="135" duration="60" overwrites="{23}" /> <!-- Bio -->
       <o id="231" status="135" duration="120" overwrites="{23,24,230}" /> <!-- Bio II -->
       <o id="232" status="135" duration="30" overwrites="{23,24,25,230,231}" /> <!-- Bio III -->
-      <o id="235" status="128" duration="90" /> <!-- Burn -->
-      <o id="236" status="129" duration="90" /> <!-- Frost -->
-      <o id="237" status="130" duration="90" /> <!-- Choke -->
-      <o id="238" status="131" duration="90" /> <!-- Rasp -->
-      <o id="239" status="132" duration="90" /> <!-- Shock -->
-      <o id="240" status="133" duration="90" /> <!-- Drown -->
+      <o id="235" status="128" duration="90" overwrites="{236,240}" /> <!-- Burn -->
+      <o id="236" status="129" duration="90" overwrites="{235,237}" /> <!-- Frost -->
+      <o id="237" status="130" duration="90" overwrites="{236,238}" /> <!-- Choke -->
+      <o id="238" status="131" duration="90" overwrites="{237,239}" /> <!-- Rasp -->
+      <o id="239" status="132" duration="90" overwrites="{238,240}" /> <!-- Shock -->
+      <o id="240" status="133" duration="90" overwrites="{235,239}" /> <!-- Drown -->
       <o id="253" status="2" duration="60" /> <!-- Sleep -->
       <o id="254" status="5" duration="180" /> <!-- Blind -->
       <o id="255" status="7" duration="30" /> <!-- Break -->

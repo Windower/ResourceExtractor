@@ -1194,16 +1194,22 @@ IN THE SOFTWARE.
       <o id="56" status="13" duration="120" /> <!-- Slow -->
       <o id="58" status="4" duration="120" /> <!-- Paralyze -->
       <o id="59" status="6" duration="120" /> <!-- Silence -->
-      <o id="79" status="13" duration="120" overwrites="{56}" /> <!-- Slow II -->
-      <o id="80" status="4" duration="120" overwrites="{58}" /> <!-- Paralyze II -->
+      <o id="79" status="13" duration="120" overwrites="{56,344,345,346}" /> <!-- Slow II -->
+      <o id="80" status="4" duration="120" overwrites="{58,341,342,343}" /> <!-- Paralyze II -->
       <o id="98" status="2" duration="90" overwrites="{253}" /> <!-- Repose -->
       <o id="216" status="12" duration="120" /> <!-- Gravity -->
       <o id="217" status="12" duration="120" overwrites="{216}" /> <!-- Gravity II -->
       <o id="220" status="3" duration="90" /> <!-- Poison -->
-      <o id="221" status="3" duration="120" overwrites="{220}" /> <!-- Poison II -->
+      <o id="221" status="3" duration="120" overwrites="{220,350,351,352}" /> <!-- Poison II -->
       <o id="230" status="135" duration="60" overwrites="{23}" /> <!-- Bio -->
       <o id="231" status="135" duration="120" overwrites="{23,24,230}" /> <!-- Bio II -->
       <o id="232" status="135" duration="30" overwrites="{23,24,25,230,231}" /> <!-- Bio III -->
+      <o id="235" status="128" /> <!-- Burn -->
+      <o id="236" status="129" /> <!-- Frost -->
+      <o id="237" status="130" /> <!-- Choke -->
+      <o id="238" status="131" /> <!-- Rasp -->
+      <o id="239" status="132" /> <!-- Shock -->
+      <o id="240" status="133" /> <!-- Drown -->
       <o id="253" status="2" duration="60" /> <!-- Sleep -->
       <o id="254" status="5" duration="180" /> <!-- Blind -->
       <o id="255" status="7" duration="30" /> <!-- Break -->
@@ -1211,7 +1217,7 @@ IN THE SOFTWARE.
       <o id="259" status="2" duration="120" overwrites="{253,273}" /> <!-- Sleep II -->
       <o id="273" status="2" duration="90" /> <!-- Sleepga -->
       <o id="274" status="2" duration="120" overwrites="{253,273}" /> <!-- Sleepga II -->
-      <o id="276" status="5" duration="180" overwrites="{254}" /> <!-- Blind II -->
+      <o id="276" status="5" duration="180" overwrites="{254,347,348,349}" /> <!-- Blind II -->
       <o id="278" status="186" duration="230" /> <!-- Geohelix -->
       <o id="279" status="186" duration="230" /> <!-- Hydrohelix -->
       <o id="280" status="186" duration="230" /> <!-- Anemohelix -->
@@ -1221,6 +1227,19 @@ IN THE SOFTWARE.
       <o id="284" status="186" duration="230" /> <!-- Noctohelix -->
       <o id="285" status="186" duration="230" /> <!-- Luminohelix -->
       <o id="286" status="21" duration="120" /> <!-- Addle -->
+      <o id="319" status="557" /> <!-- Aisha: Ichi -->
+      <o id="341" status="4" /> <!-- Jubaku: Ichi -->
+      <o id="342" status="4" overwrites="{341}" /> <!-- Jubaku: Ni -->
+      <o id="343" status="4" overwrites="{341,342}" /> <!-- Jubaku: San -->
+      <o id="344" status="13" /> <!-- Hojo: Ichi -->
+      <o id="345" status="13" overwrites="{344}" /> <!-- Hojo: Ni -->
+      <o id="346" status="13" overwrites="{344,345}" /> <!-- Hojo: San -->
+      <o id="347" status="5" /> <!-- Kurayami: Ichi -->
+      <o id="348" status="5" overwrites="{347}" /> <!-- Kurayami: Ni -->
+      <o id="349" status="5" overwrites="{347,348}" /> <!-- Kurayami: San -->
+      <o id="350" status="3" /> <!-- Dokumori: Ichi -->
+      <o id="351" status="3" overwrites="{350}" /> <!-- Dokumori: Ni -->
+      <o id="352" status="3" overwrites="{350,351}" /> <!-- Dokumori: San -->
       <o id="368" status="192" duration="60" /> <!-- Foe Requiem -->
       <o id="369" status="192" duration="120" overwrites="{368}" /> <!-- Foe Requiem II -->
       <o id="370" status="192" duration="120" overwrites="{368,369}" /> <!-- Foe Requiem III -->
@@ -1236,6 +1255,7 @@ IN THE SOFTWARE.
       <o id="423" status="194" duration="240" overwrites="{421,422}" /> <!-- Massacre Elegy -->
       <o id="463" status="2" duration="45" /> <!-- Foe Lullaby -->
       <o id="471" status="2" duration="90" overwrites="{376,463}" /> <!-- Foe Lullaby II -->
+      <o id="508" status="168" /> <!-- Yurin: Ichi -->
       <o id="576" status="2" duration="90" /> <!-- Yawn -->
       <o id="584" status="2" duration="60" /> <!-- Sheep Song -->
       <o id="678" status="2" duration="90" /> <!-- Dream Flower -->

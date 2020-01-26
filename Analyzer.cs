@@ -77,7 +77,7 @@ namespace ResourceExtractor
 
                             if (set.Count <= 5)
                             {
-                                writer.WriteLine($"    [{MakeValue(bucket.Key)}] = {{{string.Join(", ", names)}}}{comment}");
+                                writer.WriteLine($"    [{MakeValue(bucket.Key)}] = {{{string.Join(", ", names)}}},{comment}");
                             }
                             else
                             {

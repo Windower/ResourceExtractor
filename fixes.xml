@@ -1090,38 +1090,187 @@ IN THE SOFTWARE.
       <o id="509" duration="300" /> <!-- Kakka: Ichi -->
       <o id="510" duration="60" /> <!-- Migawari: Ichi -->
       <o id="511" duration="180" /> <!-- Haste II -->
-      <o id="517" duration="900" /> <!-- Metallic Body -->
-      <o id="530" duration="300" /> <!-- Refueling -->
-      <o id="538" duration="60" /> <!-- Memento Mori -->
-      <o id="547" duration="90" /> <!-- Cocoon -->
-      <o id="574" duration="30" /> <!-- Feather Barrier -->
-      <o id="576" duration="90" /> <!-- Yawn -->
-      <o id="584" duration="60" /> <!-- Sheep Song -->
-      <o id="613" duration="180" /> <!-- Reactor Cool -->
-      <o id="614" duration="120" /> <!-- Saline Coat -->
-      <o id="615" duration="750" /> <!-- Plasma Charge -->
-      <o id="632" duration="90" /> <!-- Diamondhide -->
-      <o id="636" duration="180" /> <!-- Warm-Up -->
-      <o id="642" duration="90" /> <!-- Amplification -->
-      <o id="647" duration="900" /> <!-- Zephyr Mantle -->
-      <o id="655" duration="90" /> <!-- Triumphant Roar -->
-      <o id="661" duration="300" /> <!-- Animating Wail -->
-      <o id="662" duration="300" /> <!-- Battery Charge -->
-      <o id="664" duration="90" /> <!-- Regeneration -->
-      <o id="685" duration="180" /> <!-- Barrier Tusk -->
-      <o id="668" duration="900" /> <!-- Magic Barrier -->
-      <o id="674" duration="180" /> <!-- Fantod -->
-      <o id="678" duration="90" /> <!-- Dream Flower -->
-      <o id="679" duration="300" /> <!-- Occultation -->
-      <o id="696" duration="180" /> <!-- O. Counterstance -->
-      <o id="700" duration="90" /> <!-- Nat. Meditation -->
-      <o id="710" duration="300" /> <!-- Erratic Flutter -->
-      <o id="717" duration="120" /> <!-- Sweeping Gouge -->
-      <o id="727" duration="300" /> <!-- Silent Storm -->
-      <o id="728" duration="90" /> <!-- Tenebral Crush -->
-      <o id="737" duration="90" /> <!-- Harden Shell -->
-      <o id="740" duration="60" /> <!-- Tourbillion -->
-      <o id="741" duration="300" /> <!-- Pyric Bulwark -->
+      <o id="513" blu_points="3" /> <!--Venom Shell-->
+      <o id="515" blu_points="5" /> <!--Maelstrom-->
+      <o id="517" duration="900" blu_points="1" /> <!--Metallic Body-->
+      <o id="519" blu_points="3" /> <!--Screwdriver-->
+      <o id="521" blu_points="4" /> <!--MP Drainkiss-->
+      <o id="522" blu_points="2" /> <!--Death Ray-->
+      <o id="524" blu_points="2" /> <!--Sandspin-->
+      <o id="527" blu_points="3" /> <!--Smite of Rage-->
+      <o id="529" blu_points="2" /> <!--Bludgeon-->
+      <o id="530" duration="300" blu_points="4" /> <!--Refueling-->
+      <o id="531" blu_points="3" /> <!--Ice Break-->
+      <o id="532" blu_points="4" /> <!--Blitzstrahl-->
+      <o id="533" blu_points="3" /> <!--Self-Destruct-->
+      <o id="534" blu_points="4" /> <!--Mysterious Light-->
+      <o id="535" blu_points="1" /> <!--Cold Wave-->
+      <o id="536" blu_points="1" /> <!--Poison Breath-->
+      <o id="537" blu_points="2" /> <!--Stinking Gas-->
+      <o id="538" duration="60" blu_points="4" /> <!--Memento Mori-->
+      <o id="539" blu_points="3" /> <!--Terror Touch-->
+      <o id="540" blu_points="4" /> <!--Spinal Cleave-->
+      <o id="541" blu_points="2" /> <!--Blood Saber-->
+      <o id="542" blu_points="2" /> <!--Digest-->
+      <o id="543" blu_points="2" /> <!--Mandibular Bite-->
+      <o id="544" blu_points="2" /> <!--Cursed Sphere-->
+      <o id="545" blu_points="4" /> <!--Sickle Slash-->
+      <o id="547" duration="90" blu_points="1" /> <!--Cocoon-->
+      <o id="548" blu_points="3" /> <!--Filamented Hold-->
+      <o id="549" blu_points="1" /> <!--Pollen-->
+      <o id="551" blu_points="1" /> <!--Power Attack-->
+      <o id="554" blu_points="5" /> <!--Death Scissors-->
+      <o id="555" blu_points="3" /> <!--Magnetite Cloud-->
+      <o id="557" blu_points="4" /> <!--Eyes On Me-->
+      <o id="560" blu_points="3" /> <!--Frenetic Rip-->
+      <o id="561" blu_points="3" /> <!--Frightful Roar-->
+      <o id="563" blu_points="3" /> <!--Hecatomb Wave-->
+      <o id="564" blu_points="4" /> <!--Body Slam-->
+      <o id="565" blu_points="4" /> <!--Radiant Breath-->
+      <o id="567" blu_points="2" /> <!--Helldive-->
+      <o id="569" blu_points="4" /> <!--Jet Stream-->
+      <o id="570" blu_points="2" /> <!--Blood Drain-->
+      <o id="572" blu_points="1" /> <!--Sound Blast-->
+      <o id="573" blu_points="3" /> <!--Feather Tickle-->
+      <o id="574" duration="30" blu_points="2" /> <!--Feather Barrier-->
+      <o id="575" blu_points="4" /> <!--Jettatura-->
+      <o id="576" duration="90" blu_points="3" /> <!--Yawn-->
+      <o id="577" blu_points="2" /> <!--Foot Kick-->
+      <o id="578" blu_points="3" /> <!--Wild Carrot-->
+      <o id="579" blu_points="4" /> <!--Voracious Trunk-->
+      <o id="581" blu_points="4" /> <!--Healing Breeze-->
+      <o id="582" blu_points="2" /> <!--Chaotic Eye-->
+      <o id="584" duration="60" blu_points="2" /> <!--Sheep Song-->
+      <o id="585" blu_points="4" /> <!--Ram Charge-->
+      <o id="587" blu_points="2" /> <!--Claw Cyclone-->
+      <o id="588" blu_points="2" /> <!--Lowing-->
+      <o id="589" blu_points="5" /> <!--Dimensional Death-->
+      <o id="591" blu_points="4" /> <!--Heat Breath-->
+      <o id="592" blu_points="2" /> <!--Blank Gaze-->
+      <o id="593" blu_points="3" /> <!--Magic Fruit-->
+      <o id="594" blu_points="3" /> <!--Uppercut-->
+      <o id="595" blu_points="5" /> <!--1000 Needles-->
+      <o id="596" blu_points="2" /> <!--Pinecone Bomb-->
+      <o id="597" blu_points="2" /> <!--Sprout Smack-->
+      <o id="598" blu_points="4" /> <!--Soporific-->
+      <o id="599" blu_points="2" /> <!--Queasyshroom-->
+      <o id="603" blu_points="3" /> <!--Wild Oats-->
+      <o id="604" blu_points="5" /> <!--Bad Breath-->
+      <o id="605" blu_points="3" /> <!--Geist Wall-->
+      <o id="606" blu_points="2" /> <!--Awful Eye-->
+      <o id="608" blu_points="3" /> <!--Frost Breath-->
+      <o id="610" blu_points="4" /> <!--Infrasonics-->
+      <o id="611" blu_points="5" /> <!--Disseverment-->
+      <o id="612" blu_points="4" /> <!--Actinic Burst-->
+      <o id="613" duration="180" blu_points="5" /> <!--Reactor Cool-->
+      <o id="614" duration="120" blu_points="3" /> <!--Saline Coat-->
+      <o id="615" duration="750" blu_points="5" /> <!--Plasma Charge-->
+      <o id="616" blu_points="5" /> <!--Temporal Shift-->
+      <o id="617" blu_points="3" /> <!--Vertical Cleave-->
+      <o id="618" blu_points="2" /> <!--Blastbomb-->
+      <o id="620" blu_points="3" /> <!--Battle Dance-->
+      <o id="621" blu_points="2" /> <!--Sandspray-->
+      <o id="622" blu_points="2" /> <!--Grand Slam-->
+      <o id="623" blu_points="3" /> <!--Head Butt-->
+      <o id="626" blu_points="3" /> <!--Bomb Toss-->
+      <o id="628" blu_points="3" /> <!--Frypan-->
+      <o id="629" blu_points="3" /> <!--Flying Hip Press-->
+      <o id="631" blu_points="3" /> <!--Hydro Shot-->
+      <o id="632" duration="90" blu_points="3" /> <!--Diamondhide-->
+      <o id="633" blu_points="5" /> <!--Enervation-->
+      <o id="634" blu_points="5" /> <!--Light of Penance-->
+      <o id="636" duration="180" blu_points="4" /> <!--Warm-Up-->
+      <o id="637" blu_points="5" /> <!--Firespit-->
+      <o id="638" blu_points="3" /> <!--Feather Storm-->
+      <o id="640" blu_points="4" /> <!--Tail Slap-->
+      <o id="641" blu_points="5" /> <!--Hysteric Barrage-->
+      <o id="642" duration="90" blu_points="3" /> <!--Amplification-->
+      <o id="643" blu_points="3" /> <!--Cannonball-->
+      <o id="644" blu_points="4" /> <!--Mind Blast-->
+      <o id="645" blu_points="4" /> <!--Exuviation-->
+      <o id="646" blu_points="4" /> <!--Magic Hammer-->
+      <o id="647" duration="900" blu_points="2" /> <!--Zephyr Mantle-->
+      <o id="648" blu_points="1" /> <!--Regurgitation-->
+      <o id="650" blu_points="4" /> <!--Seedspray-->
+      <o id="651" blu_points="4" /> <!--Corrosive Ooze-->
+      <o id="652" blu_points="3" /> <!--Spiral Spin-->
+      <o id="653" blu_points="2" /> <!--Asuran Claws-->
+      <o id="654" blu_points="4" /> <!--Sub-zero Smash-->
+      <o id="655" duration="90" blu_points="3" /> <!--Triumphant Roar-->
+      <o id="656" blu_points="3" /> <!--Acrid Stream-->
+      <o id="657" blu_points="3" /> <!--Blazing Bound-->
+      <o id="658" blu_points="4" /> <!--Plenilune Embrace-->
+      <o id="659" blu_points="4" /> <!--Demoralizing Roar-->
+      <o id="660" blu_points="3" /> <!--Cimicine Discharge-->
+      <o id="661" duration="300" blu_points="5" /> <!--Animating Wail-->
+      <o id="662" duration="300" blu_points="3" /> <!--Battery Charge-->
+      <o id="663" blu_points="4" /> <!--Leafstorm-->
+      <o id="664" duration="90" blu_points="2" /> <!--Regeneration-->
+      <o id="665" blu_points="1" /> <!--Final Sting-->
+      <o id="666" blu_points="3" /> <!--Goblin Rush-->
+      <o id="667" blu_points="2" /> <!--Vanity Dive-->
+      <o id="668" duration="900" blu_points="3" /> <!--Magic Barrier-->
+      <o id="669" blu_points="2" /> <!--Whirl of Rage-->
+      <o id="670" blu_points="4" /> <!--Benthic Typhoon-->
+      <o id="671" blu_points="4" /> <!--Auroral Drape-->
+      <o id="672" blu_points="5" /> <!--Osmosis-->
+      <o id="673" blu_points="4" /> <!--Quad. Continuum-->
+      <o id="674" duration="180" blu_points="1" /> <!--Fantod-->
+      <o id="675" blu_points="3" /> <!--Thermal Pulse-->
+      <o id="677" blu_points="3" /> <!--Empty Thrash-->
+      <o id="678" duration="90" blu_points="3" /> <!--Dream Flower-->
+      <o id="679" duration="300" blu_points="3" /> <!--Occultation-->
+      <o id="680" blu_points="5" /> <!--Charged Whisker-->
+      <o id="681" blu_points="5" /> <!--Winds of Promy.-->
+      <o id="682" blu_points="2" /> <!--Delta Thrust-->
+      <o id="683" blu_points="4" /> <!--Evryone. Grudge-->
+      <o id="684" blu_points="4" /> <!--Reaving Wind-->
+      <o id="685" duration="180" blu_points="3" /> <!--Barrier Tusk-->
+      <o id="686" blu_points="4" /> <!--Mortal Ray-->
+      <o id="687" blu_points="2" /> <!--Water Bomb-->
+      <o id="688" blu_points="2" /> <!--Heavy Strike-->
+      <o id="689" blu_points="3" /> <!--Dark Orb-->
+      <o id="690" blu_points="5" /> <!--White Wind-->
+      <o id="692" blu_points="4" /> <!--Sudden Lunge-->
+      <o id="693" blu_points="5" /> <!--Quadrastrike-->
+      <o id="694" blu_points="3" /> <!--Vapor Spray-->
+      <o id="695" blu_points="4" /> <!--Thunder Breath-->
+      <o id="696" duration="180" blu_points="5" /> <!--O. Counterstance-->
+      <o id="697" blu_points="4" /> <!--Amorphic Spikes-->
+      <o id="698" blu_points="2" /> <!--Wind Breath-->
+      <o id="699" blu_points="2" /> <!--Barbed Crescent-->
+      <o id="700" duration="90" blu_points="6" /> <!--Nat. Meditation-->
+      <o id="701" blu_points="6" /> <!--Tem. Upheaval-->
+      <o id="702" blu_points="6" /> <!--Rending Deluge-->
+      <o id="703" blu_points="6" /> <!--Embalming Earth-->
+      <o id="704" blu_points="6" /> <!--Paralyzing Triad-->
+      <o id="705" blu_points="3" /> <!--Foul Waters-->
+      <o id="706" blu_points="2" /> <!--Glutinous Dart-->
+      <o id="707" blu_points="5" /> <!--Retinal Glare-->
+      <o id="708" blu_points="6" /> <!--Subduction-->
+      <o id="709" blu_points="7" /> <!--Thrashing Assault-->
+      <o id="710" duration="300" blu_points="6" /> <!--Erratic Flutter-->
+      <o id="711" blu_points="7" /> <!--Restoral-->
+      <o id="712" blu_points="6" /> <!--Rail Cannon-->
+      <o id="713" blu_points="6" /> <!--Diffusion Ray-->
+      <o id="714" blu_points="6" /> <!--Sinker Drill-->
+      <o id="715" blu_points="6" /> <!--Molting Plumage-->
+      <o id="716" blu_points="6" /> <!--Nectarous Deluge-->
+      <o id="717" duration="120" blu_points="6" /> <!--Sweeping Gouge-->
+      <o id="718" blu_points="6" /> <!--Atra. Libations-->
+      <o id="719" blu_points="8" /> <!--Searing Tempest-->
+      <o id="720" blu_points="8" /> <!--Spectral Floe-->
+      <o id="721" blu_points="8" /> <!--Anvil Lightning-->
+      <o id="722" blu_points="8" /> <!--Entomb-->
+      <o id="723" blu_points="7" /> <!--Saurian Slide-->
+      <o id="724" blu_points="7" /> <!--Palling Salvo-->
+      <o id="725" blu_points="8" /> <!--Blinding Fulgor-->
+      <o id="726" blu_points="8" /> <!--Scouring Spate-->
+      <o id="727" duration="300" blu_points="8" /> <!--Silent Storm-->
+      <o id="728" duration="90" blu_points="8" /> <!--Tenebral Crush-->
+      <o id="737" duration="90" /> <!--Harden Shell-->
+      <o id="740" duration="60" /> <!--Tourbillion-->
+      <o id="741" duration="300" /> <!--Pyric Bulwark-->
       <o id="840" duration="30" /> <!-- Foil -->
       <o id="841" duration="300" /> <!-- Distract -->
       <o id="842" duration="300" /> <!-- Distract II -->

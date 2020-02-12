@@ -25,7 +25,6 @@ IN THE SOFTWARE.
   <!-- Temporary changes due to DAT mistakes -->
   <spells>
     <update>
-      <o id="355" prefix="/ninjutsu" type="Ninjutsu" skill="39" /> <!-- Tonko: San-->
     </update>
   </spells>
   <job_abilities>
@@ -1330,7 +1329,6 @@ IN THE SOFTWARE.
       <o id="351" unlearnable="true" /> <!-- Dokumori: Ni -->
       <o id="342" unlearnable="true" /> <!-- Jubaku: Ni -->
       <o id="349" unlearnable="true" /> <!-- Kurayami: San -->
-      <o id="355" unlearnable="true" /> <!-- Tonko: San -->
       <o id="416" unlearnable="true" /> <!-- Cactuar Fugue -->
       <o id="407" unlearnable="true" /> <!-- Chocobo Hum -->
       <o id="363" unlearnable="true" /> <!-- Sleepga (duplicate) -->

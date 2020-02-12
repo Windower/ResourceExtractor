@@ -2658,6 +2658,11 @@ IN THE SOFTWARE.
       <o id="798" en="${actor}'s ${ability} overload chance is ${number}%." color="101" />
       <o id="799" en="${actor}'s ${ability} overload chance is ${number}%.${lb}${actor} is overloaded!" color="101" />
       <o id="800" en="${status} activates. ${target} takes ${number} points of damage." color="D" />
+      <o id="802" en="${actor} uses ${ability}.${lb}${number} HP drained from ${target}." color="H" />
+      <o id="803" en="${actor} uses ${ability}.${lb}Magic Burst! ${number} HP drained from ${target}." color="H" />
+      <o id="804" en="${actor} uses ${ability}.${lb}Magic Burst! ${target} receives the effect of ${status}." color="1" />
+      <o id="805" en="${actor} uses ${weapon_skill}.${lb}${target}'s ${status} effect disappears!" color="H" />
+      <o id="806" en="${target}'s ${status} effect disappears!" color="1" />
     </update>
   </action_messages>
 </fixes>

@@ -29,282 +29,239 @@ IN THE SOFTWARE.
   </spells>
   <job_abilities>
     <update>
-      <!-- WAR -->
-      <o id="31" duration="180" /> <!-- Berserk -->
-      <o id="32" duration="30" /> <!-- Warcry -->
-      <o id="33" duration="180" /> <!-- Defender -->
-      <o id="34" duration="180" /> <!-- Aggressor -->
-      <o id="149" duration="60" /> <!-- Warrior's Charge -->
-      <o id="226" duration="180" /> <!-- Retaliation -->
-      <o id="252" duration="300" /> <!-- Restraint -->
-      <o id="267" duration="30" /> <!-- Blood Rage -->
-      <o id="323" duration="30" /> <!-- Brazen Rush -->
-      <o id="16" duration="45" /> <!-- Mighty Strikes -->
-
-      <!-- MNK -->
-      <o id="36" duration="30" /> <!-- Focus -->
-      <o id="37" duration="30" /> <!-- Dodge -->
-      <o id="40" duration="300" /> <!-- Counterstance -->
-      <o id="151" duration="180" /> <!-- Mantra -->
-      <o id="152" duration="180" /> <!-- Formless Strikes -->
-      <o id="227" duration="60" /> <!-- Footwork -->
-      <o id="253" duration="30" /> <!-- Perfect Counter -->
-      <o id="269" duration="180" /> <!-- Impetus -->
-      <o id="324" duration="30" /> <!-- Inner Strength -->
-      <o id="17" duration="45" /> <!-- Hundred Fists -->
-
-      <!-- WHM -->
-      <o id="74" duration="60" /> <!-- Divine Seal -->
-      <o id="245" duration="7200" /> <!-- Afflatus Solace -->
-      <o id="246" duration="7200" /> <!-- Afflatus Misery -->
-      <o id="270" duration="60" /> <!-- Divine Caress -->
-      <o id="271" duration="60" /> <!-- Sacrosanctity -->
-      <o id="325" duration="30" /> <!-- Asylum -->
-
-      <!-- BLM -->
-      <o id="75" duration="60" /> <!-- Elemental Seal -->
-      <o id="254" duration="300" /> <!-- Mana Wall -->
-      <o id="273" duration="60" /> <!-- Manawell -->
-      <o id="326" duration="60" /> <!-- Subtle Sorcery -->
-      <o id="388" duration="60" /> <!-- Cascade -->
-      <o id="19" duration="60" /> <!-- Manafont -->
-
-      <!-- RDM -->
-      <o id="247" duration="7200" /> <!-- Composure -->
-      <o id="274" duration="60" /> <!-- Saboteur -->
-      <o id="275" duration="60" /> <!-- Spontaneity -->
-      <o id="327" duration="60" /> <!-- Stymie -->
-      <o id="20" duration="60" /> <!-- Chainspell -->
-
-      <!-- THF -->
-      <o id="42" duration="30" /> <!-- Flee -->
-      <o id="44" duration="60" /> <!-- Sneak Attack -->
-      <o id="76" duration="60" /> <!-- Trick Attack -->
-      <o id="155" duration="60" /> <!-- Assassin's Charge -->
-      <o id="156" duration="60" /> <!-- Feint -->
-      <o id="276" duration="60" /> <!-- Conspirator -->
-      <o id="321" duration="30" /> <!-- Bully -->
-      <o id="21" duration="30" /> <!-- Perfect Dodge -->
-
-      <!-- PLD -->
-      <o id="47" duration="180" /> <!-- Holy Circle -->
-      <o id="48" duration="30" /> <!-- Sentinel -->
-      <o id="79" duration="15" /> <!-- Cover -->
-      <o id="92" duration="30" /> <!-- Rampart -->
-      <o id="157" duration="60" /> <!-- Fealty -->
-      <o id="255" duration="60" /> <!-- Divine Emblem -->
-      <o id="277" duration="180" /> <!-- Sepulcher -->
-      <o id="278" duration="60" /> <!-- Palisade -->
-      <o id="329" duration="30" /> <!-- Intervene -->
-      <o id="22" duration="30" /> <!-- Invincible -->
-	  <o id="394" duration="180" /> <!-- Majesty -->
-
-      <!-- DRK -->
-      <o id="49" duration="60" /> <!-- Souleater -->
-      <o id="50" duration="180" /> <!-- Arcane Circle -->
-      <o id="51" duration="180" /> <!-- Last Resort -->
-      <o id="159" duration="60" /> <!-- Dark Seal -->
-      <o id="160" duration="180" /> <!-- Diabolic Eye -->
-      <o id="256" duration="60" /> <!-- Nether Void -->
-      <o id="279" duration="180" /> <!-- Arcane Crest -->
-      <o id="280" duration="180" /> <!-- Scarlet Delirium -->
-      <o id="330" duration="30" /> <!-- Soul Enslavement -->
-      <o id="389" duration="60" /> <!-- Consume Mana -->
-      <o id="23" duration="30" /> <!-- Blood Weapon -->
-
-      <!-- BST -->
-      <o id="162" duration="180" /> <!-- Killer Instinct -->
-      <o id="331" duration="60" /> <!-- Unleash -->
-
-      <!-- BRD -->
-      <o id="163" duration="60" /> <!-- Nightingale -->
-      <o id="164" duration="60" /> <!-- Troubadour -->
-      <o id="229" duration="60" /> <!-- Pianissimo -->
-      <o id="283" duration="60" /> <!-- Tenuto -->
-      <o id="284" duration="60" /> <!-- Marcato -->
-      <o id="332" duration="180" /> <!-- Clarion Call -->
-      <o id="25" duration="180" /> <!-- Soul Voice -->
-
-      <!-- RNG -->
+      <o id="16" status="44" duration="45" /> <!-- Mighty Strikes -->
+      <o id="17" status="46" duration="45" /> <!-- Hundred Fists -->
+      <o id="19" status="47" duration="60" /> <!-- Manafont -->
+      <o id="20" status="48" duration="60" /> <!-- Chainspell -->
+      <o id="21" status="49" duration="30" /> <!-- Perfect Dodge -->
+      <o id="22" status="50" duration="30" /> <!-- Invincible -->
+      <o id="23" status="51" duration="30" /> <!-- Blood Weapon -->
+      <o id="25" status="52" duration="180" /> <!-- Soul Voice -->
+      <o id="27" status="54" duration="30" /> <!-- Meikyo Shisui -->
+      <o id="29" status="126" duration="60" /> <!-- Spirit Surge -->
+      <o id="30" status="55" duration="180" /> <!-- Astral Flow -->
+      <o id="31" status="56" duration="180" /> <!-- Berserk -->
+      <o id="32" status="68" duration="30" /> <!-- Warcry -->
+      <o id="33" status="57" duration="180" /> <!-- Defender -->
+      <o id="34" status="58" duration="180" /> <!-- Aggressor -->
+      <o id="36" status="59" duration="30" /> <!-- Focus -->
+      <o id="37" status="60" duration="30" /> <!-- Dodge -->
+      <o id="40" status="61" duration="300" /> <!-- Counterstance -->
+      <o id="42" status="32" duration="30" /> <!-- Flee -->
+      <o id="44" status="65" duration="60" /> <!-- Sneak Attack -->
+      <o id="47" status="74" duration="180" /> <!-- Holy Circle -->
+      <o id="48" status="62" duration="30" /> <!-- Sentinel -->
+      <o id="49" status="63" duration="60" /> <!-- Souleater -->
+      <o id="50" status="75" duration="180" /> <!-- Arcane Circle -->
+      <o id="51" status="64" duration="180" /> <!-- Last Resort -->
       <o id="57" duration="30" /> <!-- Shadowbind -->
-      <o id="59" duration="60" /> <!-- Sharpshot -->
-      <o id="60" duration="60" /> <!-- Barrage -->
-      <o id="86" duration="60" /> <!-- Unlimited Shot -->
-      <o id="165" duration="60" /> <!-- Stealth Shot -->
-      <o id="166" duration="60" /> <!-- Flashy Shot -->
-      <o id="224" duration="7200" /> <!-- Velocity Shot -->
-      <o id="257" duration="90" /> <!-- Double Shot -->
-      <o id="286" duration="180" /> <!-- Decoy Shot -->
-      <o id="301" duration="90" /> <!-- Triple Shot -->
-      <o id="333" duration="60" /> <!-- Overkill -->
-
-      <!-- SAM -->
-      <o id="62" duration="30" /> <!-- Third Eye -->
-      <o id="64" duration="180" /> <!-- Warding Circle -->
-      <o id="173" duration="300" /> <!-- Hasso -->
-      <o id="174" duration="300" /> <!-- Seigan -->
-      <o id="258" duration="60" /> <!-- Sengikori -->
-      <o id="287" duration="180" /> <!-- Hamanoha -->
-      <o id="288" duration="60" /> <!-- Hagakure -->
-      <o id="291" duration="60" /> <!-- Issekigan -->
-      <o id="320" duration="60" /> <!-- Konzen-ittai -->
-      <o id="334" duration="45" /> <!-- Yaegasumi -->
-      <o id="27" duration="30" /> <!-- Meikyo Shisui -->
-
-      <!-- NIN -->
-      <o id="171" duration="60" /> <!-- Sange -->
-      <o id="248" duration="300" /> <!-- Yonin -->
-      <o id="249" duration="300" /> <!-- Innin -->
-      <o id="259" duration="60" /> <!-- Futae -->
-      <o id="335" duration="45" /> <!-- Mikage -->
-
-      <!-- DRG -->
-      <o id="65" duration="180" /> <!-- Ancient Circle -->
+      <o id="59" status="72" duration="60" /> <!-- Sharpshot -->
+      <o id="60" status="73" duration="60" /> <!-- Barrage -->
+      <o id="62" status="67" duration="30" /> <!-- Third Eye -->
+      <o id="64" status="117" duration="180" /> <!-- Warding Circle -->
+      <o id="65" status="118" duration="180" /> <!-- Ancient Circle -->
+      <o id="74" status="78" duration="60" /> <!-- Divine Seal -->
+      <o id="75" status="79" duration="60" /> <!-- Elemental Seal -->
+      <o id="76" status="87" duration="60" /> <!-- Trick Attack -->
+      <o id="79" status="114" duration="15" /> <!-- Cover -->
+      <o id="86" status="115" duration="60" /> <!-- Unlimited Shot -->
+      <o id="92" status="93" duration="30" /> <!-- Rampart -->
+      <o id="93" status="163" duration="30" /> <!-- Azure Lore -->
+      <o id="94" status="164" duration="30" /> <!-- Chain Affinity -->
+      <o id="95" status="165" duration="30" /> <!-- Burst Affinity -->
+      <o id="98" status="310" duration="300" /> <!-- Fighter's Roll -->
+      <o id="99" status="311" duration="300" /> <!-- Monk's Roll -->
+      <o id="100" status="312" duration="300" /> <!-- Healer's Roll -->
+      <o id="101" status="313" duration="300" /> <!-- Wizard's Roll -->
+      <o id="102" status="314" duration="300" /> <!-- Warlock's Roll -->
+      <o id="103" status="315" duration="300" /> <!-- Rogue's Roll -->
+      <o id="104" status="316" duration="300" /> <!-- Gallant's Roll -->
+      <o id="105" status="317" duration="300" /> <!-- Chaos Roll -->
+      <o id="106" status="318" duration="300" /> <!-- Beast Roll -->
+      <o id="107" status="319" duration="300" /> <!-- Choral Roll -->
+      <o id="108" status="320" duration="300" /> <!-- Hunter's Roll -->
+      <o id="109" status="321" duration="300" /> <!-- Samurai Roll -->
+      <o id="110" status="322" duration="300" /> <!-- Ninja Roll -->
+      <o id="111" status="323" duration="300" /> <!-- Drachen Roll -->
+      <o id="112" status="324" duration="300" /> <!-- Evoker's Roll -->
+      <o id="113" status="325" duration="300" /> <!-- Magus's Roll -->
+      <o id="114" status="326" duration="300" /> <!-- Corsair's Roll -->
+      <o id="115" status="327" duration="300" /> <!-- Puppet Roll -->
+      <o id="116" status="328" duration="300" /> <!-- Dancer's Roll -->
+      <o id="117" status="329" duration="300" /> <!-- Scholar's Roll -->
+      <o id="118" status="330" duration="300" /> <!-- Bolter's Roll -->
+      <o id="119" status="331" duration="300" /> <!-- Caster's Roll -->
+      <o id="120" status="332" duration="300" /> <!-- Courser's Roll -->
+      <o id="121" status="333" duration="300" /> <!-- Blitzer's Roll -->
+      <o id="122" status="334" duration="300" /> <!-- Tactician's Roll -->
+      <o id="135" status="166" duration="60" /> <!-- Overdrive -->
+      <o id="149" status="340" duration="60" /> <!-- Warrior's Charge -->
+      <o id="151" status="88" duration="180" /> <!-- Mantra -->
+      <o id="152" status="341" duration="180" /> <!-- Formless Strikes -->
+      <o id="155" status="342" duration="60" /> <!-- Assassin's Charge -->
+      <o id="156" status="343" duration="60" /> <!-- Feint -->
+      <o id="157" status="344" duration="60" /> <!-- Fealty -->
+      <o id="159" status="345" duration="60" /> <!-- Dark Seal -->
+      <o id="160" status="346" duration="180" /> <!-- Diabolic Eye -->
+      <o id="162" status="349" duration="180" /> <!-- Killer Instinct -->
+      <o id="163" status="347" duration="60" /> <!-- Nightingale -->
+      <o id="164" status="348" duration="60" /> <!-- Troubadour -->
+      <o id="165" status="350" duration="60" /> <!-- Stealth Shot -->
+      <o id="166" status="351" duration="60" /> <!-- Flashy Shot -->
       <o id="169" duration="180" /> <!-- Deep Breathing -->
       <o id="170" duration="30" /> <!-- Angon -->
-      <o id="292" duration="180" /> <!-- Dragon Breaker -->
-      <o id="336" duration="30" /> <!-- Fly High -->
-      <o id="29" duration="60" /> <!-- Spirit Surge -->
-
-      <!-- SMN -->
-      <o id="337" duration="30" /> <!-- Astral Conduit -->
-      <o id="385" duration="60" /> <!-- Apogee -->
-      <o id="30" duration="180" /> <!-- Astral Flow -->
-
-      <!-- BLU -->
-      <o id="93" duration="30" /> <!-- Azure Lore -->
-      <o id="94" duration="30" /> <!-- Chain Affinity -->
-      <o id="95" duration="30" /> <!-- Burst Affinity -->
-      <o id="175" duration="60" /> <!-- Convergence -->
-      <o id="176" duration="60" /> <!-- Diffusion -->
-      <o id="297" duration="60" /> <!-- Efflux -->
-      <o id="298" duration="60" /> <!-- Unbridled Learning -->
-      <o id="338" duration="60" /> <!-- Unbridled Wisdom -->
-
-      <!-- COR -->
-      <o id="98" duration="300" /> <!-- Fighter's Roll -->
-      <o id="99" duration="300" /> <!-- Monk's Roll -->
-      <o id="100" duration="300" /> <!-- Healer's Roll -->
-      <o id="101" duration="300" /> <!-- Wizard's Roll -->
-      <o id="102" duration="300" /> <!-- Warlock's Roll -->
-      <o id="103" duration="300" /> <!-- Rogue's Roll -->
-      <o id="104" duration="300" /> <!-- Gallant's Roll -->
-      <o id="105" duration="300" /> <!-- Chaos Roll -->
-      <o id="106" duration="300" /> <!-- Beast Roll -->
-      <o id="107" duration="300" /> <!-- Choral Roll -->
-      <o id="108" duration="300" /> <!-- Hunter's Roll -->
-      <o id="109" duration="300" /> <!-- Samurai Roll -->
-      <o id="110" duration="300" /> <!-- Ninja Roll -->
-      <o id="111" duration="300" /> <!-- Drachen Roll -->
-      <o id="112" duration="300" /> <!-- Evoker's Roll -->
-      <o id="113" duration="300" /> <!-- Magus's Roll -->
-      <o id="114" duration="300" /> <!-- Corsair's Roll -->
-      <o id="115" duration="300" /> <!-- Puppet Roll -->
-      <o id="116" duration="300" /> <!-- Dancer's Roll -->
-      <o id="117" duration="300" /> <!-- Scholar's Roll -->
-      <o id="118" duration="300" /> <!-- Bolter's Roll -->
-      <o id="119" duration="300" /> <!-- Caster's Roll -->
-      <o id="120" duration="300" /> <!-- Courser's Roll -->
-      <o id="121" duration="300" /> <!-- Blitzer's Roll -->
-      <o id="122" duration="300" /> <!-- Tactician's Roll -->
-      <o id="177" duration="60" /> <!-- Snake Eye -->
-      <o id="302" duration="300" /> <!-- Allies' Roll -->
-      <o id="303" duration="300" /> <!-- Miser's Roll -->
-      <o id="304" duration="300" /> <!-- Companion's Roll -->
-      <o id="305" duration="300" /> <!-- Avenger's Roll -->
-      <o id="390" duration="300" /> <!-- Naturalist's Roll -->
-      <o id="391" duration="300" /> <!-- Runeist's Roll -->
-      <o id="392" duration="60" /> <!-- Crooked Cards -->
-
-      <!-- PUP -->
-      <o id="135" duration="60" /> <!-- Overdrive -->
-
-      <!-- DNC -->
-      <o id="184" duration="90" /> <!-- Drain Samba -->
-      <o id="185" duration="90" /> <!-- Drain Samba II -->
-      <o id="186" duration="90" /> <!-- Drain Samba III -->
-      <o id="187" duration="90" /> <!-- Aspir Samba -->
-      <o id="188" duration="90" /> <!-- Aspir Samba II -->
-      <o id="189" duration="90" /> <!-- Haste Samba -->
+      <o id="171" status="352" duration="60" /> <!-- Sange -->
+      <o id="173" status="353" duration="300" /> <!-- Hasso -->
+      <o id="174" status="354" duration="300" /> <!-- Seigan -->
+      <o id="175" status="355" duration="60" /> <!-- Convergence -->
+      <o id="176" status="356" duration="60" /> <!-- Diffusion -->
+      <o id="177" status="357" duration="60" /> <!-- Snake Eye -->
+      <o id="181" status="376" duration="60" /> <!-- Trance -->
+      <o id="184" status="368" duration="90" /> <!-- Drain Samba -->
+      <o id="185" status="368" duration="90" /> <!-- Drain Samba II -->
+      <o id="186" status="368" duration="90" /> <!-- Drain Samba III -->
+      <o id="187" status="369" duration="90" /> <!-- Aspir Samba -->
+      <o id="188" status="369" duration="90" /> <!-- Aspir Samba II -->
+      <o id="189" status="370" duration="90" /> <!-- Haste Samba -->
       <o id="196" duration="180" /> <!-- Spectral Jig -->
-      <o id="197" duration="120" /> <!-- Chocobo Jig -->
+      <o id="197" status="176" duration="120" /> <!-- Chocobo Jig -->
       <o id="201" duration="60" /> <!-- Quickstep -->
       <o id="202" duration="60" /> <!-- Box Step -->
       <o id="203" duration="60" /> <!-- Stutter Step -->
-      <o id="208" duration="60" /> <!-- Building Flourish -->
+      <o id="208" status="375" duration="60" /> <!-- Building Flourish -->
       <o id="209" duration="10" /> <!-- Wild Flourish -->
-      <o id="237" duration="300" /> <!-- Saber Dance -->
-      <o id="238" duration="300" /> <!-- Fan Dance -->
-      <o id="261" duration="30" /> <!-- Presto -->
-      <o id="264" duration="60" /> <!-- Climactic Flourish -->
+      <o id="210" status="377" duration="180" /> <!-- Tabula Rasa -->
+      <o id="211" status="358" duration="7200" /> <!-- Light Arts -->
+      <o id="212" status="359" duration="7200" /> <!-- Dark Arts -->
+      <o id="224" status="371" duration="7200" /> <!-- Velocity Shot -->
+      <o id="226" status="405" duration="180" /> <!-- Retaliation -->
+      <o id="227" status="406" duration="60" /> <!-- Footwork -->
+      <o id="229" status="409" duration="60" /> <!-- Pianissimo -->
+      <o id="233" status="187" duration="7200" /> <!-- Sublimation -->
+      <o id="234" status="401" /> <!-- Addendum: White -->
+      <o id="235" status="402" /> <!-- Addendum: Black -->
+      <o id="237" status="410" duration="300" /> <!-- Saber Dance -->
+      <o id="238" status="411" duration="300" /> <!-- Fan Dance -->
+      <o id="244" status="416" duration="60" /> <!-- Enlightenment -->
+      <o id="245" status="417" duration="7200" /> <!-- Afflatus Solace -->
+      <o id="246" status="418" duration="7200" /> <!-- Afflatus Misery -->
+      <o id="247" status="419" duration="7200" /> <!-- Composure -->
+      <o id="248" status="420" duration="300" /> <!-- Yonin -->
+      <o id="249" status="421" duration="300" /> <!-- Innin -->
+      <o id="252" status="435" duration="300" /> <!-- Restraint -->
+      <o id="253" status="436" duration="30" /> <!-- Perfect Counter -->
+      <o id="254" status="437" duration="300" /> <!-- Mana Wall -->
+      <o id="255" status="438" duration="60" /> <!-- Divine Emblem -->
+      <o id="256" status="439" duration="60" /> <!-- Nether Void -->
+      <o id="257" status="433" duration="90" /> <!-- Double Shot -->
+      <o id="258" status="440" duration="60" /> <!-- Sengikori -->
+      <o id="259" status="441" duration="60" /> <!-- Futae -->
+      <o id="261" status="442" duration="30" /> <!-- Presto -->
+      <o id="264" status="443" duration="60" /> <!-- Climactic Flourish -->
+      <o id="267" status="460" duration="30" /> <!-- Blood Rage -->
+      <o id="269" status="461" duration="180" /> <!-- Impetus -->
+      <o id="270" status="453" duration="60" /> <!-- Divine Caress -->
+      <o id="271" status="477" duration="60" /> <!-- Sacrosanctity -->
+      <o id="273" status="229" duration="60" /> <!-- Manawell -->
+      <o id="274" status="454" duration="60" /> <!-- Saboteur -->
+      <o id="275" status="230" duration="60" /> <!-- Spontaneity -->
+      <o id="276" status="462" duration="60" /> <!-- Conspirator -->
+      <o id="277" status="463" duration="180" /> <!-- Sepulcher -->
+      <o id="278" status="478" duration="60" /> <!-- Palisade -->
+      <o id="279" status="464" duration="180" /> <!-- Arcane Crest -->
+      <o id="280" status="479" duration="180" /> <!-- Scarlet Delirium -->
+      <o id="283" status="455" duration="60" /> <!-- Tenuto -->
+      <o id="284" status="231" duration="60" /> <!-- Marcato -->
+      <o id="286" status="482" duration="180" /> <!-- Decoy Shot -->
+      <o id="287" status="465" duration="180" /> <!-- Hamanoha -->
+      <o id="288" status="483" duration="60" /> <!-- Hagakure -->
+      <o id="291" status="484" duration="60" /> <!-- Issekigan -->
+      <o id="292" status="466" duration="180" /> <!-- Dragon Breaker -->
+      <o id="297" status="457" duration="60" /> <!-- Efflux -->
+      <o id="298" status="485" duration="60" /> <!-- Unbridled Learning -->
+      <o id="301" status="467" duration="90" /> <!-- Triple Shot -->
+      <o id="302" status="335" duration="300" /> <!-- Allies' Roll -->
+      <o id="303" status="336" duration="300" /> <!-- Miser's Roll -->
+      <o id="304" status="337" duration="300" /> <!-- Companion's Roll -->
+      <o id="305" status="338" duration="300" /> <!-- Avenger's Roll -->
       <o id="312" duration="60" /> <!-- Feather Step -->
-      <o id="313" duration="60" /> <!-- Striking Flourish -->
-      <o id="314" duration="60" /> <!-- Ternary Flourish -->
-      <o id="341" duration="30" /> <!-- Grand Pas -->
-      <o id="381" duration="120" /> <!-- Chocobo Jig II -->
-      <o id="384" duration="60" /> <!-- Contradance -->
-      <o id="181" duration="60" /> <!-- Trance -->
-
-      <!-- SCH -->
-      <o id="211" duration="7200" /> <!-- Light Arts -->
-      <o id="212" duration="7200" /> <!-- Dark Arts -->
-      <o id="233" duration="7200" /> <!-- Sublimation -->
-      <o id="244" duration="60" /> <!-- Enlightenment -->
-      <o id="210" duration="180" /> <!-- Tabula Rasa -->
-
-      <!-- GEO -->
-      <o id="343" duration="180" /> <!-- Bolster -->
-      <o id="348" duration="60" /> <!-- Collimated Fervor -->
-      <o id="350" duration="60" /> <!-- Blaze of Glory -->
-      <o id="351" duration="60" /> <!-- Dematerialize -->
-      <o id="352" duration="60" /> <!-- Theurgic Focus -->
-      <o id="386" duration="60" /> <!-- Entrust -->
-      <o id="377" duration="60" /> <!-- Widened Compass -->
-
-      <!-- RUN -->
-      <o id="356" duration="30" /> <!-- Elemental Sforzo -->
-      <o id="358" duration="300" /> <!-- Ignis -->
-      <o id="359" duration="300" /> <!-- Gelus -->
-      <o id="360" duration="300" /> <!-- Flabra -->
-      <o id="361" duration="300" /> <!-- Tellus -->
-      <o id="362" duration="300" /> <!-- Sulpor -->
-      <o id="363" duration="300" /> <!-- Unda -->
-      <o id="364" duration="300" /> <!-- Lux -->
-      <o id="365" duration="300" /> <!-- Tenebrae -->
-      <o id="366" duration="120" /> <!-- Vallation -->
-      <o id="367" duration="120" /> <!-- Swordplay -->
-      <o id="369" duration="120" /> <!-- Pflug -->
-      <o id="370" duration="60" /> <!-- Embolden -->
-      <o id="371" duration="180" /> <!-- Valiance -->
-      <o id="372" duration="300" /> <!-- Gambit -->
-      <o id="373" duration="10" /> <!-- Liement -->
-      <o id="374" duration="30" /> <!-- One For All -->
-      <o id="375" duration="30" /> <!-- Rayke -->
-      <o id="376" duration="90" /> <!-- Battuta -->
-      <o id="378" duration="30" /> <!-- Odyllic Subterfuge -->
-
-      <!-- Avatar -->
-      <o id="514" duration="180" /> <!-- Shining Ruby -->
-      <o id="526" duration="3600" /> <!-- Reraise II -->
-      <o id="527" duration="3600" /> <!-- Altana's Favor -->
+      <o id="313" status="468" duration="60" /> <!-- Striking Flourish -->
+      <o id="314" status="472" duration="60" /> <!-- Ternary Flourish -->
+      <o id="320" duration="60" /> <!-- Konzen-ittai -->
+      <o id="321" duration="30" /> <!-- Bully -->
+      <o id="323" status="490" duration="30" /> <!-- Brazen Rush -->
+      <o id="324" status="491" duration="30" /> <!-- Inner Strength -->
+      <o id="325" status="492" duration="30" /> <!-- Asylum -->
+      <o id="326" status="493" duration="60" /> <!-- Subtle Sorcery -->
+      <o id="327" status="494" duration="60" /> <!-- Stymie -->
+      <o id="329" status="496" duration="30" /> <!-- Intervene -->
+      <o id="330" status="497" duration="30" /> <!-- Soul Enslavement -->
+      <o id="331" status="498" duration="60" /> <!-- Unleash -->
+      <o id="332" status="499" duration="180" /> <!-- Clarion Call -->
+      <o id="333" status="500" duration="60" /> <!-- Overkill -->
+      <o id="334" status="501" duration="45" /> <!-- Yaegasumi -->
+      <o id="335" status="502" duration="45" /> <!-- Mikage -->
+      <o id="336" status="503" duration="30" /> <!-- Fly High -->
+      <o id="337" status="504" duration="30" /> <!-- Astral Conduit -->
+      <o id="338" status="505" duration="60" /> <!-- Unbridled Wisdom -->
+      <o id="341" status="507" duration="30" /> <!-- Grand Pas -->
+      <o id="343" status="513" duration="180" /> <!-- Bolster -->
+      <o id="348" status="517" duration="60" /> <!-- Collimated Fervor -->
+      <o id="350" status="569" duration="60" /> <!-- Blaze of Glory -->
+      <o id="351" status="518" duration="60" /> <!-- Dematerialize -->
+      <o id="352" status="519" duration="60" /> <!-- Theurgic Focus -->
+      <o id="356" status="522" duration="30" /> <!-- Elemental Sforzo -->
+      <o id="358" status="523" duration="300" /> <!-- Ignis -->
+      <o id="359" status="524" duration="300" /> <!-- Gelus -->
+      <o id="360" status="525" duration="300" /> <!-- Flabra -->
+      <o id="361" status="526" duration="300" /> <!-- Tellus -->
+      <o id="362" status="527" duration="300" /> <!-- Sulpor -->
+      <o id="363" status="528" duration="300" /> <!-- Unda -->
+      <o id="364" status="529" duration="300" /> <!-- Lux -->
+      <o id="365" status="530" duration="300" /> <!-- Tenebrae -->
+      <o id="366" status="531" duration="120" /> <!-- Vallation -->
+      <o id="367" status="532" duration="120" /> <!-- Swordplay -->
+      <o id="369" status="533" duration="120" /> <!-- Pflug -->
+      <o id="370" status="534" duration="60" /> <!-- Embolden -->
+      <o id="371" status="535" duration="180" /> <!-- Valiance -->
+      <o id="372" status="536" duration="300" /> <!-- Gambit -->
+      <o id="373" status="537" duration="10" /> <!-- Liement -->
+      <o id="374" status="152" duration="30" /> <!-- One for All -->
+      <o id="375" status="571" duration="30" /> <!-- Rayke -->
+      <o id="376" status="570" duration="90" /> <!-- Battuta -->
+      <o id="377" status="508" duration="60" /> <!-- Widened Compass -->
+      <o id="378" status="509" duration="30" /> <!-- Odyllic Subterfuge -->
+      <o id="381" status="176" duration="120" /> <!-- Chocobo Jig II -->
+      <o id="384" status="582" duration="60" /> <!-- Contradance -->
+      <o id="385" status="583" duration="60" /> <!-- Apogee -->
+      <o id="386" status="584" duration="60" /> <!-- Entrust -->
+      <o id="388" status="598" duration="60" /> <!-- Cascade -->
+      <o id="389" status="599" duration="60" /> <!-- Consume Mana -->
+      <o id="390" status="339" duration="300" /> <!-- Naturalist's Roll -->
+      <o id="391" status="600" duration="300" /> <!-- Runeist's Roll -->
+      <o id="392" status="601" duration="60" /> <!-- Crooked Cards -->
+      <o id="394" status="621" duration="180" /> <!-- Majesty -->
+      <o id="514" status="154" duration="180" /> <!-- Shining Ruby -->
+      <o id="526" status="113" duration="3600" /> <!-- Reraise II -->
+      <o id="527" status="113" duration="3600" /> <!-- Altana's Favor -->
       <o id="532" duration="180" /> <!-- Ecliptic Growl -->
       <o id="533" duration="180" /> <!-- Ecliptic Howl -->
       <o id="538" duration="60" /> <!-- Heavenward Howl -->
-      <o id="548" duration="60" /> <!-- Crimson Howl -->
-      <o id="553" duration="60" /> <!-- Inferno Howl -->
-      <o id="564" duration="900" /> <!-- Earthen Ward -->
-      <o id="569" duration="60" /> <!-- Earthen Armor -->
-      <o id="586" duration="180" /> <!-- Soothing Current -->
-      <o id="595" duration="180" /> <!-- Hastega -->
-      <o id="596" duration="900" /> <!-- Aerial Armor -->
-      <o id="601" duration="120" /> <!-- Fleeting Wind -->
-      <o id="602" duration="180" /> <!-- Hastega II -->
-      <o id="610" duration="180" /> <!-- Frost Armor -->
-      <o id="618" duration="180" /> <!-- Crystal Blessing -->
-      <o id="626" duration="120" /> <!-- Rolling Thunder -->
-      <o id="628" duration="180" /> <!-- Lightning Armor -->
-      <o id="660" duration="180" /> <!-- Noctoshield -->
-      <o id="661" duration="180" /> <!-- Dream Shroud -->
+      <o id="548" status="68" duration="60" /> <!-- Crimson Howl -->
+      <o id="553" status="94" duration="60" /> <!-- Inferno Howl -->
+      <o id="564" status="37" duration="900" /> <!-- Earthen Ward -->
+      <o id="569" status="458" duration="60" /> <!-- Earthen Armor -->
+      <o id="586" status="586" duration="180" /> <!-- Soothing Current -->
+      <o id="595" status="33" duration="180" /> <!-- Hastega -->
+      <o id="596" status="36" duration="900" /> <!-- Aerial Armor -->
+      <o id="601" status="176" duration="120" /> <!-- Fleet Wind -->
+      <o id="602" status="33" duration="180" /> <!-- Hastega II -->
+      <o id="610" status="35" duration="180" /> <!-- Frost Armor -->
+      <o id="618" status="587" duration="180" /> <!-- Crystal Blessing -->
+      <o id="626" status="98" duration="120" /> <!-- Rolling Thunder -->
+      <o id="628" status="38" duration="180" /> <!-- Lightning Armor -->
+      <o id="660" status="116" duration="180" /> <!-- Noctoshield -->
+      <o id="661" status="190" duration="180" /> <!-- Dream Shroud -->
     </update>
   </job_abilities>
   <ability_recasts>
@@ -1338,12 +1295,92 @@ IN THE SOFTWARE.
       <o id="24" status="134" duration="120" overwrites="{23,230}" /> <!-- Dia II -->
       <o id="25" status="134" duration="90" overwrites="{23,24,230,231}" /> <!-- Dia III -->
       <o id="26" status="134" duration="90" overwrites="{23,24,25,230,231,232}" /> <!-- Dia IV -->
+      <o id="43" status="40" duration="1800" /> <!-- Protect -->
+      <o id="44" status="40" duration="1800" overwrites="{43}" /> <!-- Protect II -->
+      <o id="45" status="40" duration="1800" overwrites="{43,44}" /> <!-- Protect III -->
+      <o id="46" status="40" duration="1800" overwrites="{43,44,45}" /> <!-- Protect IV -->
+      <o id="47" status="40" duration="1800" overwrites="{43,44,45,46}" /> <!-- Protect V -->
+      <o id="48" status="41" duration="1800" /> <!-- Shell -->
+      <o id="49" status="41" duration="1800" overwrites="{48}" /> <!-- Shell II -->
+      <o id="50" status="41" duration="1800" overwrites="{48,49}" /> <!-- Shell III -->
+      <o id="51" status="41" duration="1800" overwrites="{48,49,50}" /> <!-- Shell IV -->
+      <o id="52" status="41" duration="1800" overwrites="{48,49,50,51}" /> <!-- Shell V -->
+      <o id="53" status="36" duration="300" /> <!-- Blink -->
+      <o id="54" status="37" duration="300" /> <!-- Stoneskin -->
+      <o id="55" status="39" duration="600" /> <!-- Aquaveil -->
       <o id="56" status="13" duration="120" /> <!-- Slow -->
+      <o id="57" status="33" duration="180" /> <!-- Haste -->
       <o id="58" status="4" duration="120" /> <!-- Paralyze -->
       <o id="59" status="6" duration="120" /> <!-- Silence -->
+      <o id="60" status="100" duration="480" overwrites="{61,62,63,64,65}" /> <!-- Barfire -->
+      <o id="61" status="101" duration="480" overwrites="{60,62,63,64,65}" /> <!-- Barblizzard -->
+      <o id="62" status="102" duration="480" overwrites="{60,61,63,64,65}" /> <!-- Baraero -->
+      <o id="63" status="103" duration="480" overwrites="{60,61,62,64,65}" /> <!-- Barstone -->
+      <o id="64" status="104" duration="480" overwrites="{60,61,62,63,65}" /> <!-- Barthunder -->
+      <o id="65" status="105" duration="480" overwrites="{60,61,62,63,64}" /> <!-- Barwater -->
+      <o id="66" status="100" duration="480" overwrites="{67,68,69,70,71}" /> <!-- Barfira -->
+      <o id="67" status="101" duration="480" overwrites="{66,68,69,70,71}" /> <!-- Barblizzara -->
+      <o id="68" status="102" duration="480" overwrites="{66,67,69,70,71}" /> <!-- Baraera -->
+      <o id="69" status="103" duration="480" overwrites="{66,67,68,70,71}" /> <!-- Barstonra -->
+      <o id="70" status="104" duration="480" overwrites="{66,67,68,69,71}" /> <!-- Barthundra -->
+      <o id="71" status="105" duration="480" overwrites="{66,67,68,69,70}" /> <!-- Barwatera -->
+      <o id="72" status="106" duration="480" /> <!-- Barsleep -->
+      <o id="73" status="107" duration="480" /> <!-- Barpoison -->
+      <o id="74" status="108" duration="480" /> <!-- Barparalyze -->
+      <o id="75" status="109" duration="480" /> <!-- Barblind -->
+      <o id="76" status="110" duration="480" /> <!-- Barsilence -->
+      <o id="77" status="111" duration="480" /> <!-- Barpetrify -->
+      <o id="78" status="112" duration="480" /> <!-- Barvirus -->
       <o id="79" status="13" duration="120" overwrites="{56,344,345,346}" /> <!-- Slow II -->
       <o id="80" status="4" duration="120" overwrites="{58,341,342,343}" /> <!-- Paralyze II -->
+      <o id="84" status="286" duration="480" /> <!-- Baramnesia -->
+      <o id="85" status="286" duration="480" /> <!-- Baramnesra -->
+      <o id="86" status="106" duration="480" /> <!-- Barsleepra -->
+      <o id="87" status="107" duration="480" /> <!-- Barpoisonra -->
+      <o id="88" status="108" duration="480" /> <!-- Barparalyzra -->
+      <o id="89" status="109" duration="480" /> <!-- Barblindra -->
+      <o id="90" status="110" duration="480" /> <!-- Barsilencera -->
+      <o id="91" status="111" duration="480" /> <!-- Barpetra -->
+      <o id="92" status="112" duration="480" /> <!-- Barvira -->
+      <o id="96" status="275" duration="180" /> <!-- Auspice -->
+      <o id="97" status="403" duration="60" /> <!-- Reprisal -->
       <o id="98" status="2" duration="90" overwrites="{253}" /> <!-- Repose -->
+      <o id="99" status="181" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Sandstorm -->
+      <o id="100" status="94" duration="180" overwrites="{100,101,102,103,104,105}" /> <!-- Enfire -->
+      <o id="101" status="95" duration="180" overwrites="{100,101,102,103,104,105}" /> <!-- Enblizzard -->
+      <o id="102" status="96" duration="180" overwrites="{100,101,102,103,104,105}" /> <!-- Enaero -->
+      <o id="103" status="97" duration="180" overwrites="{100,101,102,103,104,105}" /> <!-- Enstone -->
+      <o id="104" status="98" duration="180" overwrites="{100,101,102,103,104,105}" /> <!-- Enthunder -->
+      <o id="105" status="99" duration="180" overwrites="{100,101,102,103,104,105}" /> <!-- Enwater -->
+      <o id="106" status="116" duration="180" /> <!-- Phalanx -->
+      <o id="107" status="116" duration="240" /> <!-- Phalanx II -->
+      <o id="108" status="42" duration="75" /> <!-- Regen -->
+      <o id="109" status="43" duration="150" /> <!-- Refresh -->
+      <o id="110" status="42" duration="60" /> <!-- Regen II -->
+      <o id="111" status="42" duration="60" /> <!-- Regen III -->
+      <o id="113" status="183" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Rainstorm -->
+      <o id="114" status="180" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Windstorm -->
+      <o id="115" status="178" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Firestorm -->
+      <o id="116" status="179" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Hailstorm -->
+      <o id="117" status="182" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Thunderstorm -->
+      <o id="118" status="185" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Voidstorm -->
+      <o id="119" status="184" duration="180" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Aurorastorm -->
+      <o id="125" status="40" duration="1800" /> <!-- Protectra -->
+      <o id="126" status="40" duration="1800" /> <!-- Protectra II -->
+      <o id="127" status="40" duration="1800" /> <!-- Protectra III -->
+      <o id="128" status="40" duration="1800" /> <!-- Protectra IV -->
+      <o id="129" status="40" duration="1800" /> <!-- Protectra V -->
+      <o id="130" status="41" duration="1800" /> <!-- Shellra -->
+      <o id="131" status="41" duration="1800" /> <!-- Shellra II -->
+      <o id="132" status="41" duration="1800" /> <!-- Shellra III -->
+      <o id="133" status="41" duration="1800" /> <!-- Shellra IV -->
+      <o id="134" status="41" duration="1800" /> <!-- Shellra V -->
+      <o id="135" status="113" duration="3600" /> <!-- Reraise -->
+      <o id="136" status="69" /> <!-- Invisible -->
+      <o id="137" status="71" /> <!-- Sneak -->
+      <o id="138" status="70" /> <!-- Deodorize -->
+      <o id="141" status="113" duration="3600" /> <!-- Reraise II -->
+      <o id="142" status="113" duration="3600" /> <!-- Reraise III -->
       <o id="216" status="12" duration="120" /> <!-- Gravity -->
       <o id="217" status="12" duration="120" overwrites="{216}" /> <!-- Gravity II -->
       <o id="220" status="3" duration="90" /> <!-- Poison -->
@@ -1357,6 +1394,9 @@ IN THE SOFTWARE.
       <o id="238" status="131" duration="90" overwrites="{237,239}" /> <!-- Rasp -->
       <o id="239" status="132" duration="90" overwrites="{238,240}" /> <!-- Shock -->
       <o id="240" status="133" duration="90" overwrites="{235,239}" /> <!-- Drown -->
+      <o id="249" status="34" duration="180" /> <!-- Blaze Spikes -->
+      <o id="250" status="35" duration="180" /> <!-- Ice Spikes -->
+      <o id="251" status="38" duration="180" /> <!-- Shock Spikes -->
       <o id="253" status="2" duration="60" /> <!-- Sleep -->
       <o id="254" status="5" duration="180" /> <!-- Blind -->
       <o id="255" status="7" duration="30" /> <!-- Break -->
@@ -1365,6 +1405,7 @@ IN THE SOFTWARE.
       <o id="273" status="2" duration="90" /> <!-- Sleepga -->
       <o id="274" status="2" duration="120" overwrites="{253,273}" /> <!-- Sleepga II -->
       <o id="276" status="5" duration="180" overwrites="{254,347,348,349}" /> <!-- Blind II -->
+      <o id="277" status="173" duration="180" /> <!-- Dread Spikes -->
       <o id="278" status="186" duration="230" /> <!-- Geohelix -->
       <o id="279" status="186" duration="230" /> <!-- Hydrohelix -->
       <o id="280" status="186" duration="230" /> <!-- Anemohelix -->
@@ -1374,7 +1415,22 @@ IN THE SOFTWARE.
       <o id="284" status="186" duration="230" /> <!-- Noctohelix -->
       <o id="285" status="186" duration="230" /> <!-- Luminohelix -->
       <o id="286" status="21" duration="120" /> <!-- Addle -->
+      <o id="287" status="407" duration="180" /> <!-- Klimaform -->
+      <o id="308" status="289" duration="180" /> <!-- Animus Augeo -->
+      <o id="309" status="289" duration="180" /> <!-- Animus Minuo -->
+      <o id="310" status="274" duration="180" /> <!-- Enlight -->
+      <o id="311" status="288" duration="180" /> <!-- Endark -->
+      <o id="312" status="277" duration="180" overwrites="{100,101,102,103,104,105,312,313,314,315,316,317}" /> <!-- Enfire II -->
+      <o id="313" status="278" duration="180" overwrites="{100,101,102,103,104,105,312,313,314,315,316,317}" /> <!-- Enblizzard II -->
+      <o id="314" status="279" duration="180" overwrites="{100,101,102,103,104,105,312,313,314,315,316,317}" /> <!-- Enaero II -->
+      <o id="315" status="280" duration="180" overwrites="{100,101,102,103,104,105,312,313,314,315,316,317}" /> <!-- Enstone II -->
+      <o id="316" status="281" duration="180" overwrites="{100,101,102,103,104,105,312,313,314,315,316,317}" /> <!-- Enthunder II -->
+      <o id="317" status="282" duration="180" overwrites="{100,101,102,103,104,105,312,313,314,315,316,317}" /> <!-- Enwater II -->
+      <o id="318" status="71" duration="420" /> <!-- Monomi: Ichi -->
       <o id="319" status="557" /> <!-- Aisha: Ichi -->
+      <o id="338" duration="600" /> <!-- Utsusemi: Ichi -->
+      <o id="339" duration="600" /> <!-- Utsusemi: Ni -->
+      <o id="340" duration="900" /> <!-- Utsusemi: San -->
       <o id="341" status="4" /> <!-- Jubaku: Ichi -->
       <o id="342" status="4" overwrites="{341}" /> <!-- Jubaku: Ni -->
       <o id="343" status="4" overwrites="{341,342}" /> <!-- Jubaku: San -->
@@ -1387,6 +1443,8 @@ IN THE SOFTWARE.
       <o id="350" status="3" /> <!-- Dokumori: Ichi -->
       <o id="351" status="3" overwrites="{350}" /> <!-- Dokumori: Ni -->
       <o id="352" status="3" overwrites="{350,351}" /> <!-- Dokumori: San -->
+      <o id="353" status="69" duration="420" /> <!-- Tonko: Ichi -->
+      <o id="354" status="69" duration="600" /> <!-- Tonko: Ni -->
       <o id="368" status="192" duration="60" /> <!-- Foe Requiem -->
       <o id="369" status="192" duration="120" overwrites="{368}" /> <!-- Foe Requiem II -->
       <o id="370" status="192" duration="120" overwrites="{368,369}" /> <!-- Foe Requiem III -->
@@ -1397,23 +1455,207 @@ IN THE SOFTWARE.
       <o id="375" status="192" duration="120" overwrites="{368,369,370,371,372,373,374}" /> <!-- Foe Requiem VIII -->
       <o id="376" status="2" duration="45" /> <!-- Horde Lullaby -->
       <o id="377" status="2" duration="90" overwrites="{376,463}" /> <!-- Horde Lullaby II -->
+      <o id="378" status="195" duration="120" /> <!-- Army's Paeon -->
+      <o id="379" status="195" duration="120" /> <!-- Army's Paeon II -->
+      <o id="380" status="195" duration="120" /> <!-- Army's Paeon III -->
+      <o id="381" status="195" duration="120" /> <!-- Army's Paeon IV -->
+      <o id="382" status="195" duration="120" /> <!-- Army's Paeon V -->
+      <o id="383" status="195" duration="120" /> <!-- Army's Paeon VI -->
+      <o id="384" duration="120" /> <!-- Army's Paeon VII -->
+      <o id="385" duration="120" /> <!-- Army's Paeon VIII -->
+      <o id="386" status="196" duration="120" /> <!-- Mage's Ballad -->
+      <o id="387" status="196" duration="120" /> <!-- Mage's Ballad II -->
+      <o id="388" status="196" duration="120" /> <!-- Mage's Ballad III -->
+      <o id="389" status="197" duration="120" /> <!-- Knight's Minne -->
+      <o id="390" status="197" duration="120" /> <!-- Knight's Minne II -->
+      <o id="391" status="197" duration="120" /> <!-- Knight's Minne III -->
+      <o id="392" status="197" duration="120" /> <!-- Knight's Minne IV -->
+      <o id="393" status="197" duration="120" /> <!-- Knight's Minne V -->
+      <o id="394" status="198" duration="120" /> <!-- Valor Minuet -->
+      <o id="395" status="198" duration="120" /> <!-- Valor Minuet II -->
+      <o id="396" status="198" duration="120" /> <!-- Valor Minuet III -->
+      <o id="397" status="198" duration="120" /> <!-- Valor Minuet IV -->
+      <o id="398" status="198" duration="120" /> <!-- Valor Minuet V -->
+      <o id="399" status="199" duration="120" /> <!-- Sword Madrigal -->
+      <o id="400" status="199" duration="120" /> <!-- Blade Madrigal -->
+      <o id="401" status="200" duration="120" /> <!-- Hunter's Prelude -->
+      <o id="402" status="200" duration="120" /> <!-- Archer's Prelude -->
+      <o id="403" status="201" duration="120" /> <!-- Sheepfoe Mambo -->
+      <o id="404" status="201" duration="120" /> <!-- Dragonfoe Mambo -->
+      <o id="405" status="202" duration="120" /> <!-- Fowl Aubade -->
+      <o id="406" status="203" duration="120" /> <!-- Herb Pastoral -->
+      <o id="407" status="204" duration="120" /> <!-- Chocobo Hum -->
+      <o id="408" status="205" duration="120" /> <!-- Shining Fantasia -->
+      <o id="409" status="206" duration="120" /> <!-- Scop's Operetta -->
+      <o id="410" status="206" duration="120" /> <!-- Puppet's Operetta -->
+      <o id="411" status="206" duration="120" /> <!-- Jester's Operetta -->
+      <o id="412" status="207" duration="120" /> <!-- Gold Capriccio -->
+      <o id="413" status="208" duration="120" /> <!-- Devotee Serenade -->
+      <o id="414" status="209" duration="120" /> <!-- Warding Round -->
+      <o id="415" status="210" duration="120" /> <!-- Goblin Gavotte -->
+      <o id="416" status="211" duration="120" /> <!-- Cactuar Fugue -->
+      <o id="417" status="214" duration="120" /> <!-- Honor March -->
+      <o id="418" status="213" duration="120" /> <!-- Protected Aria -->
+      <o id="419" status="214" duration="120" /> <!-- Advancing March -->
+      <o id="420" status="214" duration="120" /> <!-- Victory March -->
       <o id="421" status="194" duration="120" /> <!-- Battlefield Elegy -->
       <o id="422" status="194" duration="180" overwrites="{421}" /> <!-- Carnage Elegy -->
       <o id="423" status="194" duration="240" overwrites="{421,422}" /> <!-- Massacre Elegy -->
+      <o id="424" status="215" duration="120" /> <!-- Sinewy Etude -->
+      <o id="425" status="215" duration="120" /> <!-- Dextrous Etude -->
+      <o id="426" status="215" duration="120" /> <!-- Vivacious Etude -->
+      <o id="427" status="215" duration="120" /> <!-- Quick Etude -->
+      <o id="428" status="215" duration="120" /> <!-- Learned Etude -->
+      <o id="429" status="215" duration="120" /> <!-- Spirited Etude -->
+      <o id="430" status="215" duration="120" /> <!-- Enchanting Etude -->
+      <o id="431" status="215" duration="120" /> <!-- Herculean Etude -->
+      <o id="432" status="215" duration="120" /> <!-- Uncanny Etude -->
+      <o id="433" status="215" duration="120" /> <!-- Vital Etude -->
+      <o id="434" status="215" duration="120" /> <!-- Swift Etude -->
+      <o id="435" status="215" duration="120" /> <!-- Sage Etude -->
+      <o id="436" status="215" duration="120" /> <!-- Logical Etude -->
+      <o id="437" status="215" duration="120" /> <!-- Bewitching Etude -->
+      <o id="438" status="216" duration="120" /> <!-- Fire Carol -->
+      <o id="439" status="216" duration="120" /> <!-- Ice Carol -->
+      <o id="440" status="216" duration="120" /> <!-- Wind Carol -->
+      <o id="441" status="216" duration="120" /> <!-- Earth Carol -->
+      <o id="442" status="216" duration="120" /> <!-- Lightning Carol -->
+      <o id="443" status="216" duration="120" /> <!-- Water Carol -->
+      <o id="444" status="216" duration="120" /> <!-- Light Carol -->
+      <o id="445" status="216" duration="120" /> <!-- Dark Carol -->
+      <o id="446" status="216" duration="120" /> <!-- Fire Carol II -->
+      <o id="447" status="216" duration="120" /> <!-- Ice Carol II -->
+      <o id="448" status="216" duration="120" /> <!-- Wind Carol II -->
+      <o id="449" status="216" duration="120" /> <!-- Earth Carol II -->
+      <o id="450" status="216" duration="120" /> <!-- Lightning Carol II -->
+      <o id="451" status="216" duration="120" /> <!-- Water Carol II -->
+      <o id="452" status="216" duration="120" /> <!-- Light Carol II -->
+      <o id="453" status="216" duration="120" /> <!-- Dark Carol II -->
+      <o id="454" status="217" duration="60" /> <!-- Fire Threnody -->
+      <o id="455" status="217" duration="60" /> <!-- Ice Threnody -->
+      <o id="456" status="217" duration="60" /> <!-- Wind Threnody -->
+      <o id="457" status="217" duration="60" /> <!-- Earth Threnody -->
+      <o id="458" status="217" duration="60" /> <!-- Ltng. Threnody -->
+      <o id="459" status="217" duration="60" /> <!-- Water Threnody -->
+      <o id="460" status="217" duration="60" /> <!-- Light Threnody -->
+      <o id="461" status="217" duration="60" /> <!-- Dark Threnody -->
       <o id="463" status="2" duration="45" /> <!-- Foe Lullaby -->
+      <o id="464" status="218" duration="120" /> <!-- Goddess's Hymnus -->
+      <o id="465" status="219" duration="120" overwrites="{465,467}" /> <!-- Chocobo Mazurka -->
+      <o id="466" duration="30" /> <!-- Maiden's Virelai -->
+      <o id="467" status="219" duration="120" overwrites="{465,467}" /> <!-- Raptor Mazurka -->
+      <o id="468" status="220" duration="120" /> <!-- Foe Sirvente -->
+      <o id="469" status="221" duration="120" /> <!-- Adventurer's Dirge -->
+      <o id="470" status="222" duration="120" /> <!-- Sentinel's Scherzo -->
       <o id="471" status="2" duration="90" overwrites="{376,463}" /> <!-- Foe Lullaby II -->
+      <o id="472" status="223" duration="120" /> <!-- Pining Nocturne -->
+      <o id="473" status="43" duration="150" /> <!-- Refresh II -->
+      <o id="476" status="289" duration="300" /> <!-- Crusade -->
+      <o id="477" status="42" duration="60" /> <!-- Regen IV -->
+      <o id="478" status="228" duration="90" /> <!-- Embrava -->
+      <o id="479" status="119" duration="300" /> <!-- Boost-STR -->
+      <o id="480" status="120" duration="300" /> <!-- Boost-DEX -->
+      <o id="481" status="121" duration="300" /> <!-- Boost-VIT -->
+      <o id="482" status="122" duration="300" /> <!-- Boost-AGI -->
+      <o id="483" status="123" duration="300" /> <!-- Boost-INT -->
+      <o id="484" status="124" duration="300" /> <!-- Boost-MND -->
+      <o id="485" status="86" duration="300" /> <!-- Boost-CHR -->
+      <o id="486" status="119" duration="300" /> <!-- Gain-STR -->
+      <o id="487" status="120" duration="300" /> <!-- Gain-DEX -->
+      <o id="488" status="121" duration="300" /> <!-- Gain-VIT -->
+      <o id="489" status="122" duration="300" /> <!-- Gain-AGI -->
+      <o id="490" status="123" duration="300" /> <!-- Gain-INT -->
+      <o id="491" status="124" duration="300" /> <!-- Gain-MND -->
+      <o id="492" status="125" duration="300" /> <!-- Gain-CHR -->
+      <o id="493" status="432" duration="180" /> <!-- Temper -->
+      <o id="495" duration="180" /> <!-- Adloquium -->
+      <o id="504" status="42" duration="60" /> <!-- Regen V -->
+      <o id="505" status="289" duration="300" /> <!-- Gekka: Ichi -->
+      <o id="506" status="171" duration="300" /> <!-- Yain: Ichi -->
+      <o id="507" status="290" duration="300" /> <!-- Myoshu: Ichi -->
       <o id="508" status="168" /> <!-- Yurin: Ichi -->
+      <o id="509" status="227" duration="300" /> <!-- Kakka: Ichi -->
+      <o id="510" status="471" duration="60" /> <!-- Migawari: Ichi -->
+      <o id="511" status="33" duration="180" /> <!-- Haste II -->
+      <o id="517" status="37" duration="900" /> <!-- Metallic Body -->
+      <o id="530" status="33" duration="300" /> <!-- Refueling -->
+      <o id="538" status="190" duration="60" /> <!-- Memento Mori -->
+      <o id="547" status="93" duration="90" /> <!-- Cocoon -->
+      <o id="574" duration="30" /> <!-- Feather Barrier -->
       <o id="576" status="2" duration="90" /> <!-- Yawn -->
       <o id="584" status="2" duration="60" /> <!-- Sheep Song -->
+      <o id="613" status="93" duration="180" /> <!-- Reactor Cool -->
+      <o id="614" status="191" duration="120" /> <!-- Saline Coat -->
+      <o id="615" status="38" duration="750" /> <!-- Plasma Charge -->
+      <o id="632" status="37" duration="90" /> <!-- Diamondhide -->
+      <o id="636" duration="180" /> <!-- Warm-Up -->
+      <o id="642" duration="90" /> <!-- Amplification -->
+      <o id="647" status="36" duration="900" /> <!-- Zephyr Mantle -->
+      <o id="655" status="91" duration="90" /> <!-- Triumphant Roar -->
+      <o id="661" status="33" duration="300" /> <!-- Animating Wail -->
+      <o id="662" status="43" duration="300" /> <!-- Battery Charge -->
+      <o id="664" status="42" duration="90" /> <!-- Regeneration -->
+      <o id="668" duration="900" /> <!-- Magic Barrier -->
+      <o id="674" status="45" duration="180" /> <!-- Fantod -->
       <o id="678" status="2" duration="90" /> <!-- Dream Flower -->
+      <o id="679" status="36" duration="300" /> <!-- Occultation -->
+      <o id="685" status="116" duration="180" /> <!-- Barrier Tusk -->
+      <o id="696" status="61" duration="180" /> <!-- O. Counterstance -->
+      <o id="700" status="91" duration="90" /> <!-- Nat. Meditation -->
+      <o id="710" status="33" duration="300" /> <!-- Erratic Flutter -->
       <o id="717" status="149" duration="120" /> <!-- Sweeping Gouge -->
       <o id="727" status="6" duration="300" /> <!-- Silent Storm -->
       <o id="728" status="149" duration="90" overwrites="{717}" /> <!-- Tenebral Crush -->
+      <o id="737" status="93" duration="90" /> <!-- Harden Shell -->
       <o id="740" status="149" duration="60" overwrites="{717,728}" /> <!-- Tourbillion -->
+      <o id="741" status="150" duration="300" /> <!-- Pyric Bulwark -->
+      <o id="745" status="91" /> <!-- Carcharian Verve -->
+      <o id="750" status="604" /> <!-- Mighty Guard -->
+      <o id="768" status="539" /> <!-- Indi-Regen -->
+      <o id="770" status="541" /> <!-- Indi-Refresh -->
+      <o id="771" status="580" /> <!-- Indi-Haste -->
+      <o id="772" status="542" /> <!-- Indi-STR -->
+      <o id="773" status="543" /> <!-- Indi-DEX -->
+      <o id="774" status="544" /> <!-- Indi-VIT -->
+      <o id="775" status="545" /> <!-- Indi-AGI -->
+      <o id="776" status="546" /> <!-- Indi-INT -->
+      <o id="777" status="547" /> <!-- Indi-MND -->
+      <o id="778" status="548" /> <!-- Indi-CHR -->
+      <o id="779" status="549" /> <!-- Indi-Fury -->
+      <o id="780" status="550" /> <!-- Indi-Barrier -->
+      <o id="781" status="551" /> <!-- Indi-Acumen -->
+      <o id="782" status="552" /> <!-- Indi-Fend -->
+      <o id="783" status="553" /> <!-- Indi-Precision -->
+      <o id="784" status="554" /> <!-- Indi-Voidance -->
+      <o id="785" status="555" /> <!-- Indi-Focus -->
+      <o id="786" status="556" /> <!-- Indi-Attunement -->
+      <o id="798" status="539" /> <!-- Geo-Regen -->
+      <o id="840" status="568" duration="30" /> <!-- Foil -->
       <o id="841" status="148" duration="120" /> <!-- Distract -->
       <o id="842" status="148" duration="120" overwrites="{841}" /> <!-- Distract II -->
       <o id="843" status="404" duration="120" /> <!-- Frazzle -->
       <o id="844" status="404" duration="120" overwrites="{843}" /> <!-- Frazzle II -->
+      <o id="845" status="581" duration="180" /> <!-- Flurry -->
+      <o id="846" status="581" duration="180" overwrites="{845}" /> <!-- Flurry II -->
+      <o id="848" status="113" duration="3600" /> <!-- Reraise IV -->
+      <o id="855" status="274" duration="180" /> <!-- Enlight II -->
+      <o id="856" status="288" duration="180" /> <!-- Endark II -->
+      <o id="857" status="592" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Sandstorm II -->
+      <o id="858" status="594" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Rainstorm II -->
+      <o id="859" status="591" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Windstorm II -->
+      <o id="860" status="589" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Firestorm II -->
+      <o id="861" status="590" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Hailstorm II -->
+      <o id="862" status="593" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Thunderstorm II -->
+      <o id="863" status="596" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Voidstorm II -->
+      <o id="864" status="595" duration="180" overwrites="{857,858,859,860,861,862,863,864}" /> <!-- Aurorastorm II -->
+      <o id="871" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,872,873,874,875,876,877,878}" /> <!-- Fire Threnody II -->
+      <o id="872" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,871,873,874,875,876,877,878}" /> <!-- Ice Threnody II -->
+      <o id="873" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,871,872,874,875,876,877,878}" /> <!-- Wind Threnody II -->
+      <o id="874" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,871,872,873,875,876,877,878}" /> <!-- Earth Threnody II -->
+      <o id="875" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,876,877,878}" /> <!-- Ltng. Threnody II -->
+      <o id="876" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,875,877,878}" /> <!-- Water Threnody II -->
+      <o id="877" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,875,876,878}" /> <!-- Light Threnody II -->
+      <o id="878" status="217" duration="90" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,875,876,877}" /> <!-- Dark Threnody II -->
       <o id="879" status="597" duration="300" /> <!-- Inundation -->
       <o id="882" status="148" duration="120" overwrites="{841,842}" /> <!-- Distract III -->
       <o id="883" status="404" duration="120" overwrites="{843,844}" /> <!-- Frazzle III -->
@@ -1426,6 +1668,8 @@ IN THE SOFTWARE.
       <o id="890" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Ionohelix II -->
       <o id="891" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Noctohelix II -->
       <o id="892" status="186" duration="230" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Luminohelix II -->
+      <o id="894" status="43" duration="150" /> <!-- Refresh III -->
+      <o id="895" status="432" duration="180" /> <!-- Temper II -->
     </update>
   </spells>
   <buffs>

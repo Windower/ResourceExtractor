@@ -1797,8 +1797,8 @@ IN THE SOFTWARE.
       <o id="10" en="${actor} loses ${number} experience points." color="1" />
       <o id="11" en="${actor} falls to level ${number}." color="1" />
       <o id="12" en="Cannot attack.${lb}Your target is already claimed." color="1" />
-      <o id="13" en="Debug Message: ${actor}: ${target} is now invincible." color="1" />
-      <o id="14" en="${actor}'s attack is countered by ${target}.${lb}${number} of ${actor}'s shadows absorbs the damage and disappears." color="29" suffix="shadow" />
+      <o id="13" en="Debug Message:${lb}${actor}: ${target} is now invincible." color="1" />
+      <o id="14" en="${actor}'s attack is countered by ${target}. ${number} of ${actor}'s shadows absorbs the damage and disappears." color="29" suffix="shadow" />
       <o id="15" en="${actor} misses ${target}." color="M" suffix="(miss)" />
       <o id="16" en="${actor}'s casting is interrupted." color="122" />
       <o id="17" en="Unable to cast spells at this time." color="122" />
@@ -1811,13 +1811,13 @@ IN THE SOFTWARE.
       <o id="24" en="${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="25" en="${target} recovers ${number} MP." color="H" suffix="MP" />
       <o id="26" en="${target} recovers ${number} HP and MP." color="H" suffix="HP/MP" />
-      <o id="27" en="Debug Message: Cannot execute command.${lb}No (BTCALC) command in ATEL source." color="1" />
+      <o id="27" en="Debug Message:${lb}Cannot execute command.${lb}No (BTCALC) command in ATEL source." color="1" />
       <o id="28" en="${actor} uses a ${item}." color="90" />
       <o id="29" en="${actor} is paralyzed." color="122" />
       <o id="30" en="${target} anticipates the attack." color="M" suffix="(miss)" />
       <o id="31" en="${number} of ${target}'s shadows absorbs the damage and disappears." color="29" suffix="shadow" />
       <o id="32" en="${target} dodges the attack." color="29" />
-      <o id="33" en="${actor}'s attack is countered by ${target}.${lb}${actor} takes ${number} points of damage." color="D" />
+      <o id="33" en="${actor}'s attack is countered by ${target}. ${actor} takes ${number} points of damage." color="D" />
       <o id="34" en="${actor} does not have enough MP to cast ${spell}." color="122" />
       <o id="35" en="${actor} lacks the ninja tools to cast ${spell}." color="122" />
       <o id="36" en="You lose sight of ${target}." color="122" />
@@ -1830,11 +1830,11 @@ IN THE SOFTWARE.
       <o id="43" en="${actor} readies ${weapon_skill}." color="110" />
       <o id="44" en="${target}'s spikes deal ${number} points of damage to ${actor}." color="D" />
       <o id="45" en="${actor} learns &quot;${weapon_skill}&quot;!" color="81" />
-      <o id="46" en="Debug Message: Current POP number: (${number})" color="1" />
+      <o id="46" en="Debug Message:${lb}Current POP number: (${number})" color="1" />
       <o id="47" en="${actor} cannot cast ${spell}." color="122" />
       <o id="48" en="${spell} cannot be cast on ${target}." color="122" />
       <o id="49" en="${actor} is unable to cast spells." color="122" />
-      <o id="50" en="${actor} earns a merit points!${lb}(Total: ${number})" color="1" suffix="merit points" />
+      <o id="50" en="${actor} earns a merit points! (Total: ${number})" color="1" suffix="merit points" />
       <o id="51" en="--Out of sight--" color="1" />
       <o id="52" en="${target} gives up chasing ${actor}.${lb}---Find Path Error---" color="1" />
       <o id="53" en="${target}'s ${skill} skill reaches level ${number2}." color="129" />
@@ -1849,7 +1849,7 @@ IN THE SOFTWARE.
       <o id="62" en="The ${item} fails to activate." color="121" />
       <o id="63" en="${actor} misses ${target}." color="M" suffix="(miss)" />
       <o id="64" en="${target} is no longer ${status}." color="191" />
-      <o id="65" en="You are not carrying any Petras.${lb}You cannot use the ${item}." color="1" />
+      <o id="65" en="You are not carrying any Petras. You cannot use the ${item}." color="1" />
       <o id="66" en="Debug: Resisted spell!" color="R" />
       <o id="67" en="${actor} scores a critical hit!${lb}${target} takes ${number} points of damage." color="D" />
       <o id="68" en="Debug: Casting interrupted!" color="1" />
@@ -1865,7 +1865,7 @@ IN THE SOFTWARE.
       <o id="78" en="${target} is too far away." color="122" />
       <o id="79" en="Debug: ${target} uses Double Attack(${number}%)." color="1" />
       <o id="80" en="Debug: ${target} uses Triple Attack(${number}%)." color="1" />
-      <o id="81" en="Debug: Battle Debug No.${lb}(${number}) used on ${target}." color="1" />
+      <o id="81" en="Debug: Battle Debug No. (${number}) used on ${target}." color="1" />
       <o id="82" en="${actor} casts ${spell}.${lb}${target} is ${status}!" color="57" />
       <o id="83" en="${actor} casts ${spell}.${lb}${actor} successfully removes ${target}'s ${status}." color="191" />
       <o id="84" en="${actor} is paralyzed." color="122" />
@@ -1879,7 +1879,7 @@ IN THE SOFTWARE.
       <o id="92" en="Cannot use the ${item} on ${target}." color="1" />
       <o id="93" en="${actor} casts ${spell}.${lb}${target} vanishes." color="64" />
       <o id="94" en="You must wait longer to perform that action." color="121" />
-      <o id="95" en="You cannot learn ${spell}.${lb}You do not meet the job or level requirements." color="1" />
+      <o id="95" en="You cannot learn ${spell}. You do not meet the job or level requirements." color="1" />
       <o id="96" en="You already know ${spell}." color="1" />
       <o id="97" en="${target} was defeated by ${actor}." color="38" />
       <o id="98" en="You obtain a ${item} from ${target}." color="127" />
@@ -1888,7 +1888,7 @@ IN THE SOFTWARE.
       <o id="101" en="${actor} uses ${weapon_skill}." color="56" />
       <o id="102" en="${actor} uses ${ability}.${lb}${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="103" en="${actor} uses ${weapon_skill}.${lb}${target} recovers ${number} HP." color="H" suffix="HP" />
-      <o id="104" en="Unable to use item.${lb}You do not meet the level requirement." color="1" />
+      <o id="104" en="Unable to use item. You do not meet the level requirement." color="1" />
       <o id="105" en="${actor} gains ${number} experience points." color="131" />
       <o id="106" en="${actor} is intimidated by ${target}'s presence." color="122" />
       <o id="107" en="${target} is temporarily unable to access support job abilities." color="1" />
@@ -1940,7 +1940,7 @@ IN THE SOFTWARE.
       <o id="153" en="${actor} uses ${ability}.${lb}${actor} fails to steal from ${target}." color="69" />
       <o id="154" en="${target} is out of range." color="122" />
       <o id="155" en="You cannot perform that action on the specified target." color="122" />
-      <o id="156" en="${actor} uses ${ability}.${lb}No effect on ${target}." color="R" />
+      <o id="156" en="${actor} uses ${ability}. No effect on ${target}." color="R" />
       <o id="157" en="${actor} uses Barrage.${lb}${target} takes ${number} points of damage." color="D" />
       <o id="158" en="${actor} uses ${ability}, but misses." color="M" suffix="(miss)" />
       <o id="159" en="${actor} uses ${weapon_skill}.${lb}${target}'s ${status} effect disappears!" color="H" />
@@ -1963,11 +1963,11 @@ IN THE SOFTWARE.
       <o id="176" en="${target} seems ${skill}.${lb}It seems to have low evasion but high defense." color="191" />
       <o id="177" en="${target} seems ${skill}.${lb}It seems to have low evasion." color="191" />
       <o id="178" en="${target} seems ${skill}.${lb}It seems to have low evasion and defense." color="191" />
-      <o id="179" en="${target}: hit-eva(${number}) =} ${number}%" color="1" />
+      <o id="179" en="${target}:${lb}hit-eva(${number}) =} ${number}%" color="1" />
       <o id="180" en="str-vit(${number}) dmg-adj(${number})" color="1" />
       <o id="181" en="atk-def(${number}) ofs-adj%(${number})" color="1" />
-      <o id="182" en="${target}: MonNo(${number})-Lev(${number})" color="1" />
-      <o id="183" en="HIT-EVA(${number}) ATK-DEF(${number})" color="1" />
+      <o id="182" en="${target}:${lb}MonNo(${number})-Lev(${number})" color="1" />
+      <o id="183" en="HIT-EVA(${number})${lb}ATK-DEF(${number})" color="1" />
       <o id="184" en="${actor}:ALLIANCE SUM=${number}/LEV=${number}" color="1" />
       <o id="185" en="${actor} uses ${weapon_skill}.${lb}${target} takes ${number} points of damage." color="D" />
       <o id="186" en="${actor} uses ${weapon_skill}.${lb}${target} gains the effect of ${status}." color="56" />
@@ -1979,8 +1979,8 @@ IN THE SOFTWARE.
       <o id="192" en="${actor} does not have enough TP." color="122" />
       <o id="193" en="${weapon_skill} cannot be used against that target." color="1" />
       <o id="194" en="${actor} uses ${weapon_skill}.${lb}${target} gains the effect of ${status}." color="56" />
-      <o id="195" en="${target}: TOTAL ALLIANCE SUM=${number}/LEV=${number}" color="1" />
-      <o id="196" en="Skillchain!${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="195" en="${target}:${lb}TOTAL ALLIANCE SUM=${number}/LEV=${number}" color="1" />
+      <o id="196" en="Skillchain! ${target} takes ${number} points of damage." color="D" />
       <o id="197" en="${actor} uses ${weapon_skill}, but ${target} resists.${lb}${target} takes ${number} points of damage." color="D" />
       <o id="198" en="${target} is too far away." color="122" />
       <o id="199" en="That action requires a shield." color="1" />
@@ -2036,30 +2036,30 @@ IN THE SOFTWARE.
       <o id="249" en="${target}'s strength is impossible to gauge!" color="191" />
       <o id="250" en="Reraise takes effect!" color="1" />
       <o id="251" en="The effect of ${status} is about to wear off." color="123" />
-      <o id="252" en="${actor} casts ${spell}.${lb}Magic Burst!${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="252" en="${actor} casts ${spell}.${lb}Magic Burst! ${target} takes ${number} points of damage." color="D" />
       <o id="253" en="EXP chain #${number}!${lb}${actor} gains ${number} experience points." color="131" />
       <o id="254" en="Current enmity: ${number}" color="1" />
       <o id="255" en="DEBUG: ${target}}${number}% chance of success." color="1" />
-      <o id="256" en="In this flower pot: Seeds sown: ${item}" color="1" />
+      <o id="256" en="In this flower pot:${lb}Seeds sown: ${item}" color="1" />
       <o id="257" en="Crystal used: none" color="1" />
       <o id="258" en="Crystal used: ${item}" color="1" />
-      <o id="259" en="First crystal used: ${item} Second crystal used: ${item}" color="1" />
-      <o id="260" en="First crystal used: none Second crystal used: ${item}" color="1" />
-      <o id="261" en="First crystal used: ${item} Second crystal used: none" color="1" />
-      <o id="262" en="First crystal used: none Second crystal used: none" color="1" />
+      <o id="259" en="First crystal used: ${item}${lb}Second crystal used: ${item}" color="1" />
+      <o id="260" en="First crystal used: none${lb}Second crystal used: ${item}" color="1" />
+      <o id="261" en="First crystal used: ${item}${lb}Second crystal used: none" color="1" />
+      <o id="262" en="First crystal used: none${lb}Second crystal used: none" color="1" />
       <o id="263" en="${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="264" en="${target} takes ${number} points of damage." color="D" />
-      <o id="265" en="Magic Burst!${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="265" en="Magic Burst! ${target} takes ${number} points of damage." color="D" />
       <o id="266" en="${target} gains the effect of ${status}." color="56" />
       <o id="267" en="${target} receives the effect of ${status}." color="57" />
-      <o id="268" en="${actor} casts ${spell}.${lb}Magic Burst!${lb}${target} receives the effect of ${status}." color="57" />
-      <o id="269" en="Magic Burst!${lb}${target} receives the effect of ${status}." color="57" />
+      <o id="268" en="${actor} casts ${spell}.${lb}Magic Burst! ${target} receives the effect of ${status}." color="57" />
+      <o id="269" en="Magic Burst! ${target} receives the effect of ${status}." color="57" />
       <o id="270" en="${target} is ${status}." color="122" />
-      <o id="271" en="${actor} casts ${spell}.${lb}Magic Burst!${lb}${target} is ${status}." color="56" />
-      <o id="272" en="Magic Burst!${lb}${target} is ${status}." color="56" />
+      <o id="271" en="${actor} casts ${spell}.${lb}Magic Burst! ${target} is ${status}." color="56" />
+      <o id="272" en="Magic Burst! ${target} is ${status}." color="56" />
       <o id="273" en="${target} vanishes!" color="64" />
-      <o id="274" en="${actor} casts ${spell}.${lb}Magic Burst!${lb}${number} HP drained from ${target}." color="H" suffix="HP" />
-      <o id="275" en="${actor} casts ${spell}.${lb}Magic Burst!${lb}${number} MP drained from ${target}." color="H" suffix="MP" />
+      <o id="274" en="${actor} casts ${spell}.${lb}Magic Burst! ${number} HP drained from ${target}." color="H" suffix="HP" />
+      <o id="275" en="${actor} casts ${spell}.${lb}Magic Burst! ${number} MP drained from ${target}." color="H" suffix="MP" />
       <o id="276" en="${target} recovers ${number} MP." color="H" suffix="MP" />
       <o id="277" en="${target} is ${status}." color="122" />
       <o id="278" en="${target} receives the effect of ${status}." color="57" />
@@ -2092,7 +2092,7 @@ IN THE SOFTWARE.
       <o id="305" en="${actor} uses Trick Attack." color="101" />
       <o id="306" en="${actor} uses ${ability}.${lb}${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="307" en="That action requires a two-handed weapon." color="122" />
-      <o id="308" en="Unable to use the ${item}.${lb}${target}'s inventory is full." color="121" />
+      <o id="308" en="Unable to use the ${item}. ${target}'s inventory is full." color="121" />
       <o id="309" en="${actor} casts ${spell} on ${target}." color="56" />
       <o id="310" en="${actor}'s ${skill} skill drops 0.${number} points!" color="1" suffix="skill points" />
       <o id="311" en="${actor} covers ${target}." color="101" />
@@ -2140,7 +2140,7 @@ IN THE SOFTWARE.
       <o id="353" en="${actor}'s ranged attack scores a critical hit!${lb}${target} takes ${number} points of damage." color="D" />
       <o id="354" en="${actor}'s ranged attack misses." color="M" suffix="(miss)" />
       <o id="355" en="${actor}'s ranged attack has no effect on ${target}." color="R" />
-      <o id="356" en="Cannot execute command.${lb}Your inventory is full." color="1" />
+      <o id="356" en="Cannot execute command. Your inventory is full." color="1" />
       <o id="357" en="${target} regains ${number} HP." color="H" suffix="HP" />
       <o id="358" en="${target} regains ${number} MP." color="H" suffix="MP" />
       <o id="359" en="${target} narrowly escapes impending doom." color="1" />
@@ -2152,7 +2152,7 @@ IN THE SOFTWARE.
       <o id="365" en="All of ${target}'s status parameters are boosted." color="101" />
       <o id="366" en="${number} MP drained from ${target}." color="H" suffix="MP" />
       <o id="367" en="${target} recovers ${number} HP." color="H" suffix="HP" />
-      <o id="368" en="${actor} earns a merit points!${lb}(Total: ${number})" color="1" suffix="merit points" />
+      <o id="368" en="${actor} earns a merit points! (Total: ${number})" color="1" suffix="merit points" />
       <o id="369" en="${actor} uses ${weapon_skill}.${lb}${number} of ${target}'s attributes is drained." color="H" suffix="attributes" />
       <o id="370" en="${actor} uses ${weapon_skill}.${lb}${number} status effect is drained from ${target}." color="56" suffix="status effect" />
       <o id="371" en="${actor} gains ${number} limit points." color="131" suffix="limit points" />
@@ -2163,7 +2163,7 @@ IN THE SOFTWARE.
       <o id="376" en="${actor} uses a ${item}.${lb}${target} obtains a ${item2}." color="81" />
       <o id="377" en="${actor} uses a ${item}.${lb}${target} obtains ${item2}." color="81" />
       <o id="378" en="${actor} uses a ${item}.${lb}${target}'s ${status} effect disappears!" color="81" />
-      <o id="379" en="${actor} uses ${ability}.${lb}Magic Burst!${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="379" en="${actor} uses ${ability}.${lb}Magic Burst! ${target} takes ${number} points of damage." color="D" />
       <o id="380" en="${merit skill} modification has risen to level ${number}." color="1" />
       <o id="381" en="${merit skill} modification has dropped to level ${number}." color="1" />
       <o id="382" en="${actor}'s ranged attack hits ${target}.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
@@ -2194,7 +2194,7 @@ IN THE SOFTWARE.
       <o id="407" en="${actor} uses a ${item}.${lb}${target}'s TP is reduced." color="81" suffix="TP" />
       <o id="408" en="${actor} uses a ${item}.${lb}No effect on ${target}." color="R" />
       <o id="409" en="${actor} uses ${weapon_skill}.${lb}${target}'s TP is increased to ${number}." color="H" suffix="TP" />
-      <o id="410" en="No target available.${lb}Unable to use item." color="1" />
+      <o id="410" en="No target available. Unable to use item." color="1" />
       <o id="411" en="${actor} attempts to use the ${item}, but lacks the required number of Ballista Points.${lb}You currently have ${number} Ballista points." color="1" />
       <o id="412" en="${actor} uses a ${item}.${lb}${target} receives the effect of ${status}." color="81" />
       <o id="413" en="${actor} uses a ${item}.${lb}${target} takes ${number} points of damage." color="D" />
@@ -2206,13 +2206,13 @@ IN THE SOFTWARE.
       <o id="419" en="${target} learns ${spell}!" color="81" />
       <o id="420" en="${actor} uses ${ability}. The total comes to ${number}!${lb}${target} receives the effect of ${ability}." color="101" />
       <o id="421" en="${target} receives the effect of ${ability}." color="111" />
-      <o id="422" en="${actor} uses ${ability}.${lb}The total comes to ${number}!${lb}No effect on ${target}." color="R" />
+      <o id="422" en="${actor} uses ${ability}. The total comes to ${number}!${lb}No effect on ${target}." color="R" />
       <o id="423" en="No effect on ${target}." color="R" />
       <o id="424" en="${actor} uses Double-Up.${lb}The total for ${ability} increases to ${number}!${lb}${target} receives the effect of ${ability}." color="101" />
       <o id="425" en="${actor} uses Double-Up.${lb}The total for ${ability} increases to ${number}!${lb}No effect on ${target}." color="R" />
       <o id="426" en="${actor} uses Double-Up.${lb}Bust!${lb}${target} loses the effect of ${ability}." color="102" />
       <o id="427" en="${target} loses the effect of ${ability}." color="112" />
-      <o id="428" en="There are no rolls eligible for Double-Up.${lb}Unable to use ability." color="1" />
+      <o id="428" en="There are no rolls eligible for Double-Up. Unable to use ability." color="1" />
       <o id="429" en="The same roll is already active on ${actor}." color="1" />
       <o id="430" en="${actor} casts ${spell}.${lb}1 of ${target}'s attributes is drained." color="1" />
       <o id="431" en="${actor} casts ${spell}.${lb}${target}'s TP is reduced." color="56" suffix="TP" />
@@ -2227,21 +2227,21 @@ IN THE SOFTWARE.
       <o id="440" en="All of ${target}'s abilities are recharged.${lb}${target} regains MP." color="111" suffix="MP" />
       <o id="441" en="${actor} uses ${ability}.${lb}${target} receives the effect of ${ability}." color="101" />
       <o id="442" en="${actor} learns a new ability!" color="81" />
-      <o id="443" en="You cannot learn ${ability}.${lb}You do not meet the job or level requirements." color="1" />
+      <o id="443" en="You cannot learn ${ability}. You do not meet the job or level requirements." color="1" />
       <o id="444" en="You already know ${ability}." color="1" />
       <o id="445" en="You cannot use items at this time." color="1" />
       <o id="446" en="You cannot attack that target." color="1" />
       <o id="447" en="You are provoked and unable to change your target." color="1" />
       <o id="448" en="Time allowed in Dynamis has been extended by ${number} minute." color="1" />
-      <o id="449" en="---== WARNING ==---- Time remaining in Dynamis: ${number} minute." color="1" />
+      <o id="449" en="---== WARNING ==----${lb}Time remaining in Dynamis: ${number} minute." color="1" />
       <o id="450" en="WATCH${number} ${target}:${number}" color="1" />
       <o id="451" en="${actor} uses ${ability}.${lb}${target} regains ${number} MP." color="H" suffix="MP" />
       <o id="452" en="${actor} uses ${ability}.${lb}${target} regains ${number} TP." color="H" suffix="TP" />
       <o id="453" en="${actor} uses ${ability}.${lb}${actor} steals the effect of ${status} from ${target}." color="101" />
       <o id="454" en="${actor} casts ${spell}.${lb}${number} TP drained from ${target}." color="H" suffix="TP" />
       <o id="455" en="Debug : Fishing skill check: ${item} : ???${number}" color="1" />
-      <o id="456" en="Debug : Level Restriction on.${lb}PetType ${number}/ID ${number}" color="1" />
-      <o id="457" en="Debug : Level restriction off.${lb}PetType ${number}/ID ${number}" color="1" />
+      <o id="456" en="Debug : Level Restriction on. PetType ${number}/ID ${number}" color="1" />
+      <o id="457" en="Debug : Level restriction off. PetType ${number}/ID ${number}" color="1" />
       <o id="458" en="Debug : Dif - Now } ${number} RATE ${number}/10" color="1" />
       <o id="459" en="Self-destruct check: skipping calculation of ${target}'s self-destruct process md_no${number}/cmd_arg${number}!" color="1" />
       <o id="460" en="EXP Check: ${actor} } ${target} XP:${number}/LvUp${number}" color="1" />
@@ -2261,7 +2261,7 @@ IN THE SOFTWARE.
       <o id="474" en="Avatar level: Master${${number}} Pet${${number}}" color="1" />
       <o id="475" en="Avatar No.: Master${${number}} Pet${${number}}" color="1" />
       <o id="476" en="Probability of ${target} dropping ${item}: ${number}/10" color="1" />
-      <o id="477" en="Unable to target ${target}.${lb}You have not received the level cap status." color="1" />
+      <o id="477" en="Unable to target ${target}. You have not received the level cap status." color="1" />
       <o id="478" en="Height differential between ${actor} and ${target}: ${number}mm." color="1" />
       <o id="479" en="Damage taken." color="1" />
       <o id="480" en="Number of Targets (${number}) Damage (${number})" color="1" />
@@ -2311,7 +2311,7 @@ IN THE SOFTWARE.
       <o id="524" en="You have not earned enough finishing moves to perform that action." color="1" />
       <o id="525" en="${ability} can only be performed during battle." color="1" />
       <o id="526" en="${actor} uses ${ability}.${lb}Enmity is stolen from ${target}." color="101" />
-      <o id="527" en="${actor} uses ${ability}.${lb}Ranged attack power and speed are increased.${lb}Melee attack power and speed are reduced." color="101" />
+      <o id="527" en="${actor} uses ${ability}.${lb}Ranged attack power and speed are increased. Melee attack power and speed are reduced." color="101" />
       <o id="528" en="${actor} uses ${ability}.${lb}Enmity is transferred to ${actor}'s pet." color="101" />
       <o id="529" en="${actor} uses ${ability}.${lb}${target} is chainbound." color="101" />
       <o id="530" en="${target}'s petrification counter is now down to ${number}." color="101" />
@@ -2319,12 +2319,12 @@ IN THE SOFTWARE.
       <o id="532" en="${actor} uses ${ability}.${lb}${target} receives the effect of Sneak and Invisible." color="101" />
       <o id="533" en="${actor} casts ${spell}.${lb}${target}'s Accuracy is drained." color="1" />
       <o id="534" en="${actor} casts ${spell}.${lb}${target}'s Attack is drained." color="1" />
-      <o id="535" en="${target} retaliates.${lb}${number} of ${actor}'s shadows absorbs the damage and disappears." color="29" suffix="shadow" />
-      <o id="536" en="${target} retaliates.${lb}${actor} takes ${number} points of damage." color="D" />
+      <o id="535" en="${target} retaliates. ${number} of ${actor}'s shadows absorbs the damage and disappears." color="29" suffix="shadow" />
+      <o id="536" en="${target} retaliates. ${actor} takes ${number} points of damage." color="D" />
       <o id="537" en="${target}'s TP is increased to ${number}%." color="H" suffix="TP" />
       <o id="538" en="A protective energy absorbs the malice of your enemy!" color="1" />
       <o id="539" en="${actor} uses ${weapon_skill}.${lb}${target} regains HP." color="H" suffix="HP" />
-      <o id="540" en="Level Sync activated.${lb}Your level has been restricted to ${number}.${lb}Equipment affected by the level restriction will be adjusted accordingly.${lb}Experience points will become unavailable for all party members should the Level Sync designee stray too far from the enemy." color="1" />
+      <o id="540" en="Level Sync activated. Your level has been restricted to ${number}.${lb}Equipment affected by the level restriction will be adjusted accordingly.${lb}Experience points will become unavailable for all party members should the Level Sync designee stray too far from the enemy." color="1" />
       <o id="541" en="Level Sync could not be activated.${lb}The designated player is below level 10." color="1" />
       <o id="542" en="Level Sync could not be activated.${lb}The designated player is in a different area." color="1" />
       <o id="543" en="Level Sync could not be activated.${lb}One or more party members are currently under the effect of a status which prevents synchronization." color="1" />
@@ -2342,7 +2342,7 @@ IN THE SOFTWARE.
       <o id="555" en="Level Sync will be deactivated in ${number} seconds.${lb}A party member has undergone a job change." color="1" />
       <o id="556" en="Level Sync will be deactivated in ${number} seconds.${lb}The Level Sync designee is incapable of receiving experience points." color="1" />
       <o id="557" en="${target} receives ${number} piece of alexandrite." color="101" />
-      <o id="558" en="You defeated a designated target.${lb}(Progress: ${number}/${number2})" color="122" />
+      <o id="558" en="You defeated a designated target. (Progress: ${number}/${number2})" color="122" />
       <o id="559" en="You have successfully completed the training regime." color="122" />
       <o id="560" en="${actor} uses ${ability}. Finishing move now ${number}." color="101" suffix="FM" />
       <o id="561" en="Unable to perform that action.${lb}Your have already earned the maximum number of finishing moves." color="122" />
@@ -2350,7 +2350,7 @@ IN THE SOFTWARE.
       <o id="563" en="${actor} destroys ${target}." color="101" />
       <o id="564" en="${target} were destroyed." color="101" />
       <o id="565" en="${target} obtains ${gil}." color="1" />
-      <o id="566" en="${target} obtains ${number} tab.${lb}(Total: ${number})" color="1" />
+      <o id="566" en="${target} obtains ${number} tab. (Total: ${number})" color="1" />
       <o id="567" en="${actor} stowed away a ${item} in ?Unknown Parameter (Type: 90) 91?his/her] tattered Maze Monger pouch." color="1" />
       <o id="568" en="Your tattered Maze Monger pouch already contains a ${item} and cannot hold another." color="1" />
       <o id="569" en="Your current status prevents you from using that ability." color="1" />
@@ -2426,7 +2426,7 @@ IN THE SOFTWARE.
       <o id="647" en="${actor} casts ${ability}.${lb}${target}'s ${status} effect disappears!" color="81" />
       <o id="648" en="${actor} leads the casting of ${spell}.${lb}${target} takes ${number} points of damage." color="D" />
       <o id="649" en="A member of another party is readying ${spell} against your target.${lb}You cannot cast the same spell at this time." color="1" />
-      <o id="650" en="${actor} leads the casting of ${spell}.${lb}Magic Burst!${lb}${target} takes ${number} points of damage." color="D" />
+      <o id="650" en="${actor} leads the casting of ${spell}.${lb}Magic Burst! ${target} takes ${number} points of damage." color="D" />
       <o id="651" en="${actor} leads the casting of ${spell}.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
       <o id="652" en="Additional effect: ${target} loses ${number} TP." color="56" suffix="TP" />
       <o id="653" en="${actor} casts ${spell}.${lb}${target} resists the spell.${lb}Immunobreak!" color="R" />
@@ -2441,7 +2441,7 @@ IN THE SOFTWARE.
       <o id="662" en="This action requires a luopan." color="122" />
       <o id="663" en="${actor} uses ${ability}.${lb}The luopan's HP consumption rate has been reduced." color="101" />
       <o id="664" en="${actor} uses ${ability}.${lb}The effects of the luopan and its HP consumption rate have increased." color="101" />
-      <o id="665" en="${actor} has a pet.${lb}Unable to use ability." color="1" />
+      <o id="665" en="${actor} has a pet. Unable to use ability." color="1" />
       <o id="666" en="This action requires the ability Rune Enchantment." color="1" />
       <o id="667" en="${actor} uses ${ability}.${lb}Accuracy and evasion are enhanced." color="101" />
       <o id="668" en="${actor} uses ${ability}.${lb}${target} receives the effect of Vallation, reducing damage taken from certain elemental magic spells." color="101" />

@@ -1286,6 +1286,17 @@ IN THE SOFTWARE.
       <o id="784" duration="180" status="554" /> <!-- Indi-Voidance -->
       <o id="785" duration="180" status="555" /> <!-- Indi-Focus -->
       <o id="786" duration="180" status="556" /> <!-- Indi-Attunement -->
+      <o id="787" duration="180" status="557" /> <!-- Indi-Wilt -->
+      <o id="788" duration="180" status="558" /> <!-- Indi-Fraility -->
+      <o id="789" duration="180" status="559" /> <!-- Indi-Fade -->
+      <o id="790" duration="180" status="560" /> <!-- Indi-Malaise -->
+      <o id="791" duration="180" status="561" /> <!-- Indi-Slip -->
+      <o id="792" duration="180" status="562" /> <!-- Indi-Torpor -->
+      <o id="793" duration="180" status="563" /> <!-- Indi-Vex -->
+      <o id="794" duration="180" status="564" /> <!-- Indi-Languor -->
+      <o id="795" duration="180" status="565" /> <!-- Indi-Slow -->
+      <o id="796" duration="180" status="566" /> <!-- Indi-Paralysis -->
+      <o id="797" duration="180" status="567" /> <!-- Indi-Gravity -->
       <o id="798" status="539" /> <!-- Geo-Regen -->
       <o id="840" duration="30" status="568" /> <!-- Foil -->
       <o id="841" duration="120" status="148" /> <!-- Distract -->

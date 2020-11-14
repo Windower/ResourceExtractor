@@ -1269,24 +1269,23 @@ IN THE SOFTWARE.
       <o id="741" duration="300" status="150" /> <!-- Pyric Bulwark -->
       <o id="745" status="91" /> <!-- Carcharian Verve -->
       <o id="750" duration="180" status="604" /> <!-- Mighty Guard -->
-      <o id="768" status="539" /> <!-- Indi-Regen -->
-      <o id="770" status="541" /> <!-- Indi-Refresh -->
-      <o id="771" status="580" /> <!-- Indi-Haste -->
-      <o id="772" status="542" /> <!-- Indi-STR -->
-      <o id="773" status="543" /> <!-- Indi-DEX -->
-      <o id="774" status="544" /> <!-- Indi-VIT -->
-      <o id="775" status="545" /> <!-- Indi-AGI -->
-      <o id="776" status="546" /> <!-- Indi-INT -->
-      <o id="777" status="547" /> <!-- Indi-MND -->
-      <o id="778" status="548" /> <!-- Indi-CHR -->
-      <o id="779" status="549" /> <!-- Indi-Fury -->
-      <o id="780" status="550" /> <!-- Indi-Barrier -->
-      <o id="781" status="551" /> <!-- Indi-Acumen -->
-      <o id="782" status="552" /> <!-- Indi-Fend -->
-      <o id="783" status="553" /> <!-- Indi-Precision -->
-      <o id="784" status="554" /> <!-- Indi-Voidance -->
-      <o id="785" status="555" /> <!-- Indi-Focus -->
-      <o id="786" status="556" /> <!-- Indi-Attunement -->
+      <o id="768" duration="180" status="539" /> <!-- Indi-Regen -->
+      <o id="770" duration="180" status="541" /> <!-- Indi-Refresh -->
+      <o id="772" duration="180" status="542" /> <!-- Indi-STR -->
+      <o id="773" duration="180" status="543" /> <!-- Indi-DEX -->
+      <o id="774" duration="180" status="544" /> <!-- Indi-VIT -->
+      <o id="775" duration="180" status="545" /> <!-- Indi-AGI -->
+      <o id="776" duration="180" status="546" /> <!-- Indi-INT -->
+      <o id="777" duration="180" status="547" /> <!-- Indi-MND -->
+      <o id="778" duration="180" status="548" /> <!-- Indi-CHR -->
+      <o id="779" duration="180" status="549" /> <!-- Indi-Fury -->
+      <o id="780" duration="180" status="550" /> <!-- Indi-Barrier -->
+      <o id="781" duration="180" status="551" /> <!-- Indi-Acumen -->
+      <o id="782" duration="180" status="552" /> <!-- Indi-Fend -->
+      <o id="783" duration="180" status="553" /> <!-- Indi-Precision -->
+      <o id="784" duration="180" status="554" /> <!-- Indi-Voidance -->
+      <o id="785" duration="180" status="555" /> <!-- Indi-Focus -->
+      <o id="786" duration="180" status="556" /> <!-- Indi-Attunement -->
       <o id="798" status="539" /> <!-- Geo-Regen -->
       <o id="840" duration="30" status="568" /> <!-- Foil -->
       <o id="841" duration="120" status="148" /> <!-- Distract -->

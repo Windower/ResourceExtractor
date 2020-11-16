@@ -1270,7 +1270,9 @@ IN THE SOFTWARE.
       <o id="745" status="91" /> <!-- Carcharian Verve -->
       <o id="750" duration="180" status="604" /> <!-- Mighty Guard -->
       <o id="768" duration="180" status="539" /> <!-- Indi-Regen -->
+      <o id="769" duration="180" status="540" /> <!-- Indi-Poison -->
       <o id="770" duration="180" status="541" /> <!-- Indi-Refresh -->
+      <o id="771" duration="180" status="580" /> <!-- Indi-Haste -->
       <o id="772" duration="180" status="542" /> <!-- Indi-STR -->
       <o id="773" duration="180" status="543" /> <!-- Indi-DEX -->
       <o id="774" duration="180" status="544" /> <!-- Indi-VIT -->

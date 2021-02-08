@@ -1430,7 +1430,9 @@ IN THE SOFTWARE.
       <o id="8" en="emote" incoming="15" outgoing="7" />
       <o id="26" en="yell" incoming="11" outgoing="3" />
       <o id="27" en="linkshell2" incoming="214" outgoing="213" />
-      <o id="33" en="unity" incoming="212" outgoing="212" />
+      <o id="33" en="unity" incoming="212" outgoing="211" />
+      <o id="34" en="assistJ" incoming="220" outgoing="219" />
+      <o id="35" en="assistE" incoming="222" outgoing="221" />
     </update>
   </chat>
   <check_ratings>

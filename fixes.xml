@@ -1431,8 +1431,8 @@ IN THE SOFTWARE.
       <o id="26" en="yell" incoming="11" outgoing="3" />
       <o id="27" en="linkshell2" incoming="214" outgoing="213" />
       <o id="33" en="unity" incoming="212" outgoing="211" />
-      <o id="34" en="assistJ" incoming="220" outgoing="219" />
-      <o id="35" en="assistE" incoming="222" outgoing="221" />
+      <o id="34" en="assistj" incoming="220" outgoing="219" />
+      <o id="35" en="assiste" incoming="222" outgoing="221" />
     </update>
   </chat>
   <check_ratings>

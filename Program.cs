@@ -324,7 +324,6 @@ namespace ResourceExtractor
                 }
 
                 // Move item descriptions into separate table
-                //TODO: Remove when shared resources are implemented
                 model.item_descriptions = new List<dynamic>();
                 foreach (var item in model.items)
                 {
@@ -339,8 +338,7 @@ namespace ResourceExtractor
                     model.item_descriptions.Add(item_description);
                 }
                 
-                // Move grammar helper into separate table
-                //TODO: Remove when shared resources are implemented
+                // Move item grammar into separate table
                 model.items_grammar = new List<dynamic>();
                 foreach (var item in model.items)
                 {
@@ -348,8 +346,8 @@ namespace ResourceExtractor
                     {
                         dynamic item_grammar = new ModelObject();
                         item_grammar.id = item.id;
-                        item_grammar.enlp = item.enlp;
-                        item_grammar.art = item.art;
+                        item_grammar.plural = item.enlp;
+                        item_grammar.article = item.art;
 
                         item.art = null;
                         item.enlp = null;

@@ -43,9 +43,9 @@ namespace ResourceExtractor
         private enum StringIndex
         {
             Name = 0,
-            //EnglishArticle = 1,
+            EnglishArticle = 1,
             EnglishLogSingular = 2,
-            //EnglishLogPlural = 3,
+            EnglishLogPlural = 3,
             EnglishDescription = 4,
             JapaneseDescription = 1,
         }
@@ -614,7 +614,9 @@ namespace ResourceExtractor
             switch (language)
             {
             case Languages.English:
+                item.art = DecodeEntry(reader, StringIndex.EnglishArticle);
                 item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
+                item.enlp = DecodeEntry(reader, StringIndex.EnglishLogPlural);
                 item.endesc = DecodeEntry(reader, StringIndex.EnglishDescription);
                 break;
 
@@ -634,12 +636,12 @@ namespace ResourceExtractor
             var datatype = reader.ReadInt32();
             stream.Position = origin;
 
-            reader.ReadBytes(dataoffset);
+            reader.ReadBytes(dataoffset - 4);
 
             switch (datatype)
             {
             case 0:
-                reader.ReadBytes(0x18);
+                reader.ReadBytes(0x1C);
                 var dataorigin = stream.Position;
 
                 while (stream.Position != stream.Length && reader.ReadByte() != 0)
@@ -654,7 +656,9 @@ namespace ResourceExtractor
                 return res;
 
             case 1:
-                return reader.ReadInt32();
+                var value = reader.ReadInt32();
+                stream.Position = origin;
+                return value;
             }
 
             return null;

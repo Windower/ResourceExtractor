@@ -338,6 +338,25 @@ namespace ResourceExtractor
 
                     model.item_descriptions.Add(item_description);
                 }
+                
+                // Move grammar helper into separate table
+                //TODO: Remove when shared resources are implemented
+                model.items_grammar = new List<dynamic>();
+                foreach (var item in model.items)
+                {
+                    if (item.en != "." && (item.id < 29681 ^ item.id > 29693))
+                    {
+                        dynamic item_grammar = new ModelObject();
+                        item_grammar.id = item.id;
+                        item_grammar.enlp = item.enlp;
+                        item_grammar.art = item.art;
+
+                        item.art = null;
+                        item.enlp = null;
+
+                        model.items_grammar.Add(item_grammar);
+                    }
+                }
 
                 // Fill in linked auto-translate names
                 foreach (var at in model.auto_translates)

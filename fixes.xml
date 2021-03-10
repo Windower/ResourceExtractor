@@ -1903,7 +1903,7 @@ IN THE SOFTWARE.
       <o id="102" en="${actor} uses ${ability}.${lb}${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="103" en="${actor} uses ${weapon_skill}.${lb}${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="104" en="Unable to use item. You do not meet the level requirement." color="122" />
-      <o id="105" en="${actor} gains ${number} experience points." color="131" />
+      <o id="105" en="${actor} gains ${number2} experience points." color="131" />
       <o id="106" en="${actor} is intimidated by ${target}'s presence." color="122" />
       <o id="107" en="${target} is temporarily unable to access support job abilities." color="123" />
       <o id="108" en="${actor} uses ${ability}.${lb}Pet's powers increase!" color="101" />
@@ -2051,7 +2051,7 @@ IN THE SOFTWARE.
       <o id="250" en="Reraise takes effect!" color="122" />
       <o id="251" en="The effect of ${status} is about to wear off." color="123" />
       <o id="252" en="${actor} casts ${spell}.${lb}Magic Burst! ${target} takes ${number} points of damage." color="D" />
-      <o id="253" en="EXP chain #${number}!${lb}${actor} gains ${number} experience points." color="131" />
+      <o id="253" en="EXP chain #${number2}!${lb}${actor} gains ${number} experience points." color="131" />
       <o id="254" en="Current enmity: ${number}" color="191" />
       <o id="255" en="DEBUG: ${target}}${number}% chance of success." color="1" />
       <o id="256" en="In this flower pot:${lb}Seeds sown: ${item}" color="121" />
@@ -2106,7 +2106,7 @@ IN THE SOFTWARE.
       <o id="305" en="${actor} uses Trick Attack." color="101" />
       <o id="306" en="${actor} uses ${ability}.${lb}${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="307" en="That action requires a two-handed weapon." color="122" />
-      <o id="308" en="Unable to use the ${item}. ${target}'s inventory is full." color="121" />
+      <o id="308" en="Unable to use the ${item}. ${target}'s inventory is full." color="123" />
       <o id="309" en="${actor} casts ${spell} on ${target}." color="56" />
       <o id="310" en="${actor}'s ${skill} skill drops 0.${number} points!" color="1" suffix="skill points" />
       <o id="311" en="${actor} covers ${target}." color="101" />
@@ -2167,10 +2167,10 @@ IN THE SOFTWARE.
       <o id="366" en="${number} MP drained from ${target}." color="H" suffix="MP" />
       <o id="367" en="${target} recovers ${number} HP." color="H" suffix="HP" />
       <o id="368" en="${actor} earns a merit points! (Total: ${number})" color="1" suffix="merit points" />
-      <o id="369" en="${actor} uses ${weapon_skill}.${lb}${number} of ${target}'s attributes is drained." color="H" suffix="attributes" />
-      <o id="370" en="${actor} uses ${weapon_skill}.${lb}${number} status effect is drained from ${target}." color="56" suffix="status effect" />
+      <o id="369" en="${actor} uses ${weapon_skill}.${lb}${number} of ${target}'s attributes is drained." color="H" suffix="attributes drained" />
+      <o id="370" en="${actor} uses ${weapon_skill}.${lb}${number} status effect is drained from ${target}." color="56" suffix="status effect drained" />
       <o id="371" en="${actor} gains ${number} limit points." color="131" suffix="limit points" />
-      <o id="372" en="Limit chain #${number}!${lb}${actor} gains ${number} limit points." color="131" suffix="limit points" />
+      <o id="372" en="Limit chain #${number2}!${lb}${actor} gains ${number} limit points." color="131" suffix="limit points" />
       <o id="373" en="${actor} hits ${target}.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
       <o id="374" en="Striking ${target}'s armor causes ${actor} to become ${status}." color="112" />
       <o id="375" en="${actor} uses a ${item}.${lb}${target} receives the effect of ${status}." color="81" />
@@ -2198,24 +2198,24 @@ IN THE SOFTWARE.
       <o id="397" en="Skillchain: Detonation.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
       <o id="398" en="Skillchain: Impaction.${lb}${target} recovers ${number} hit points!" color="H" suffix="HP" />
       <o id="399" en="${actor} uses a ${item}.${lb}All of ${target}'s Petras vanish!" color="81" />
-      <o id="400" en="${actor} uses a ${item}.${lb}${number} of ${target}'s status ailments disappears!" color="81" />
+      <o id="400" en="${actor} uses a ${item}.${lb}${number} of ${target}'s status ailments disappears!" color="81" suffix="status ailments disappears" />
       <o id="401" en="${actor} uses a ${item}.${lb}${number} of ${target}'s effects disappears!" color="81" suffix="effects disappears" />
       <o id="402" en="${actor} uses ${weapon_skill}.${lb}${target}'s magic defense is enhanced." color="56" />
-      <o id="403" en="${number} of ${target}'s attributes is drained." color="H" suffix="attributes" />
-      <o id="404" en="${number} status effect is drained from ${target}." color="H" suffix="buffs" />
+      <o id="403" en="${number} of ${target}'s attributes is drained." color="H" suffix="attributes drained" />
+      <o id="404" en="${number} status effect is drained from ${target}." color="H" suffix="status effect drained" />
       <o id="405" en="${actor} uses ${weapon_skill}.${lb}${number} of ${target}'s effects disappears!" color="56" suffix="effects disappears" />
       <o id="406" en="${actor} uses ${weapon_skill}.${lb}${target} falls to the ground." color="102" />
       <o id="407" en="${actor} uses a ${item}.${lb}${target}'s TP is reduced." color="81" suffix="TP" />
       <o id="408" en="${actor} uses a ${item}.${lb}No effect on ${target}." color="R" />
       <o id="409" en="${actor} uses ${weapon_skill}.${lb}${target}'s TP is increased to ${number}." color="H" suffix="TP" />
       <o id="410" en="No target available. Unable to use item." color="122" />
-      <o id="411" en="${actor} attempts to use the ${item}, but lacks the required number of Ballista Points.${lb}You currently have ${number} Ballista points." color="122" />
+      <o id="411" en="${actor} attempts to use the ${item}, but lacks the required number of Ballista Points.${lb}You currently have ${number} Ballista Points." color="122" />
       <o id="412" en="${actor} uses a ${item}.${lb}${target} receives the effect of ${status}." color="81" />
       <o id="413" en="${actor} uses a ${item}.${lb}${target} takes ${number} points of damage." color="D" />
       <o id="414" en="${actor} uses ${ability}.${lb}${target} receives the effect of Magic Attack Boost and Magic Defense Boost." color="101" />
       <o id="415" en="${target} receives the effect of Magic Attack Boost and Magic Defense Boost." color="101" />
       <o id="416" en="${actor} uses ${weapon_skill}.${lb}${target} receives the effect of Magic Attack Boost and Magic Defense Boost." color="56" />
-      <o id="417" en="${actor} uses ${ability}.${lb}${number} of ${target}'s attributes is drained." color="H" suffix="attributes" />
+      <o id="417" en="${actor} uses ${ability}.${lb}${number} of ${target}'s attributes is drained." color="H" suffix="attributes drained" />
       <o id="418" en="${actor} uses ${weapon_skill} on ${target}.${lb}${target}'s target switches to ${actor}!" color="56" />
       <o id="419" en="${target} learns ${spell}!" color="81" />
       <o id="420" en="${actor} uses ${ability}. The total comes to ${number}!${lb}${target} receives the effect of ${ability}." color="101" />
@@ -2362,15 +2362,15 @@ IN THE SOFTWARE.
       <o id="561" en="Unable to perform that action.${lb}Your have already earned the maximum number of finishing moves." color="122" />
       <o id="562" en="The status parameters of ${target} have increased." color="122" />
       <o id="563" en="${actor} destroys ${target}." color="101" />
-      <o id="564" en="${target} were destroyed." color="101" />
+      <o id="564" en="${target} was destroyed." color="101" />
       <o id="565" en="${target} obtains ${gil}." color="127" suffix="gil"/>
       <o id="566" en="${target} obtains ${number} tab. (Total: ${number})" color="131" />
       <o id="567" en="${actor} stowed away a ${item} in his tattered Maze Monger pouch." color="81" />
       <o id="568" en="Your tattered Maze Monger pouch already contains a ${item} and cannot hold another." color="122" />
       <o id="569" en="Your current status prevents you from using that ability." color="123" />
-      <o id="570" en="${actor} casts ${spell}.${lb}${number} of ${target}'s status ailments disappears!" color="81" />
-      <o id="571" en="${number} of ${target}'s status ailments disappears!" color="81" />
-      <o id="572" en="${actor} casts ${spell}.${lb}${actor} absorbs ${number} of ${target}'s status ailments." color="81" />
+      <o id="570" en="${actor} casts ${spell}.${lb}${number} of ${target}'s status ailments disappears!" color="81" suffix="status ailments disappears" />
+      <o id="571" en="${number} of ${target}'s status ailments disappears!" color="81" suffix="status ailments disappears" />
+      <o id="572" en="${actor} casts ${spell}.${lb}${actor} absorbs ${number} of ${target}'s status ailments." color="81" suffix="status ailments absorbed" />
       <o id="573" en="${actor} or a alliance member is participating in a union.${lb}Ineligible to obtain treasure from this enemy." color="123" />
       <o id="574" en="${actor}'s pet is currently unable to perform that action." color="122" />
       <o id="575" en="${actor}'s pet does not have enough TP to perform that action." color="122" />
@@ -2387,7 +2387,7 @@ IN THE SOFTWARE.
       <o id="586" en="Towards ${target} is ${number}%." color="101" suffix="%%" />
       <o id="587" en="${target} regains ${number} HP." color="H" suffix="HP" />
       <o id="588" en="${target} regains ${number} MP." color="H" suffix="MP" />
-      <o id="589" en="${target} have been healed of ${number} status ailments." color="101" />
+      <o id="589" en="${target} has been healed of ${number} status ailments." color="101" suffix="status ailments healed" />
       <o id="590" en="You can now perform ${weapon_skill}." color="122" />
       <o id="591" en="${actor} uses ${ability}.${lb}${target} is afflicted with Bewildered Daze (lv.${number})." color="101" prefix="lv." />
       <o id="592" en="${target} attempts to counter ${actor}'s attack, but misses." color="M" suffix="(miss)" />
@@ -2405,7 +2405,7 @@ IN THE SOFTWARE.
       <o id="604" en="${actor} eats a ${item}, but finds nothing inside..." color="81" />
       <o id="605" en="Additional effect: ${target} falls to the ground." color="56" />
       <o id="606" en="${actor}'s absorbs ${target}'s counter.${lb}${actor} recovers ${number} HP." color="H" suffix="HP" />
-      <o id="607" en="${actor} uses ${weapon_skill}.${lb}${number} of ${target}'s status ailments disappears!" color="H" />
+      <o id="607" en="${actor} uses ${weapon_skill}.${lb}${number} of ${target}'s status ailments disappears!" color="H" suffix="status ailments disappears" />
       <o id="608" en="${actor} uses ${ability}.${lb}Treasure Hunter effectiveness against ${target} increases to ${number}." color="101" prefix="TH" />
       <o id="609" en="Prowess attained: Increased treasure casket discovery." color="122" />
       <o id="610" en="Prowess attained: Increased combat and magic skill gain." color="122" />
@@ -2431,10 +2431,10 @@ IN THE SOFTWARE.
       <o id="634" en="Prowess boosted: Enhanced &quot;Cure&quot; potency." color="122" />
       <o id="635" en="Prowess boosted: Increased weapon skill damage." color="122" />
       <o id="636" en="Prowess boosted: &quot;Killer&quot; effects bonus." color="122" />
-      <o id="641" en="Additional effect: 1 of ${target}'s attributes is drained." color="H" />
-      <o id="642" en="${actor} casts ${spell}.${lb}${actor} absorbs ${number} of ${target}'s status benefits." color="H" />
+      <o id="641" en="Additional effect: 1 of ${target}'s attributes is drained." color="H" suffix="attributes drained" />
+      <o id="642" en="${actor} casts ${spell}.${lb}${actor} absorbs ${number} of ${target}'s status benefits." color="H" suffix="status benefits absorbed" />
       <o id="643" en="Your current training regime will begin anew!" color="122" />
-      <o id="644" en="${actor} uses ${ability}.${lb}${number} of ${target}'s status effects are removed." color="H" suffix="buffs"  />
+      <o id="644" en="${actor} uses ${ability}.${lb}${number} of ${target}'s status effects are removed." color="H" suffix="status effects removed" />
       <o id="645" en="${actor} uses ${ability}.${lb}${target} is ${status}." color="65" />
       <o id="646" en="${actor} uses ${ability}.${lb}${target} falls to the ground." color="56" />
       <o id="647" en="${actor} casts ${ability}.${lb}${target}'s ${status} effect disappears!" color="81" />
@@ -2525,9 +2525,9 @@ IN THE SOFTWARE.
       <o id="734" en="${actor} uses ${ability} on ${target}." color="56" />
       <o id="735" en="Capacity chain #${number}!${lb}${actor} gains ${number2} capacity points." color="131" />
       <o id="736" en="${actor} uses ${ability}.${lb}${number} HP drained from ${target}." color="H" suffix="HP" />
-      <o id="737" en="${actor} uses ${ability}. ${lb}${number} of ${target} magic effects is drained." color="101" />
+      <o id="737" en="${actor} uses ${ability}. ${lb}${number} of ${target} magic effects is drained." color="101" suffix="magic effects drained" />
       <o id="738" en="${actor} uses ${ability}." color="101" />
-      <o id="739" en="${target} receives ${number} magical effects." color="56" />
+      <o id="739" en="${target} receives ${number} magical effects." color="56" suffix="magical effects received" />
       <o id="740" en="${target}: $lt; ${number}/${number2}" color="1 $gt;" />
       <o id="741" en="You receive ${number} Unity accolades for a total of ${number2}!" color="127" />
       <o id="742" en="You are currently unable to undertake this objective." color="121" />
@@ -2566,7 +2566,7 @@ IN THE SOFTWARE.
       <o id="775" en="A new objective has been added in the Contents &gt; Content (Ambuscade) Records of Eminence category!" color="121" />
       <o id="776" en="Additional effect: ${target} is chainbound." color="56" />
       <o id="777" en="You cannot mount at this time." color="122" />
-      <o id="778" en="${actor} uses ${weapon_skill}.${lb}${actor} copies ${number} magical effects from ${target}." color="111" />
+      <o id="778" en="${actor} uses ${weapon_skill}.${lb}${actor} copies ${number} magical effects from ${target}." color="111" suffix="magical effects copied" />
       <o id="779" en="${actor} uses ${weapon_skill}.${lb}A barrier begins to pulsate around ${target}." color="111" />
       <o id="780" en="${actor} uses ${weapon_skill}.${lb}${actor} takes aim at ${target}!" color="111" />
       <o id="781" en="${target} retaliates, absorbing ${number} TP from ${actor}." color="101" />

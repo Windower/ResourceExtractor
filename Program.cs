@@ -342,7 +342,7 @@ namespace ResourceExtractor
                 model.items_grammar = new List<dynamic>();
                 foreach (var item in model.items)
                 {
-                    if (item.en != "." && (item.id < 29681 ^ item.id > 29693))
+                    if (item.en != "." && (item.id < 29681 || item.id > 29693))
                     {
                         dynamic item_grammar = new ModelObject();
                         item_grammar.id = item.id;

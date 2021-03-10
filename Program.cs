@@ -324,7 +324,6 @@ namespace ResourceExtractor
                 }
 
                 // Move item descriptions into separate table
-                //TODO: Remove when shared resources are implemented
                 model.item_descriptions = new List<dynamic>();
                 foreach (var item in model.items)
                 {
@@ -337,6 +336,24 @@ namespace ResourceExtractor
                     item.jadesc = null;
 
                     model.item_descriptions.Add(item_description);
+                }
+                
+                // Move item grammar into separate table
+                model.items_grammar = new List<dynamic>();
+                foreach (var item in model.items)
+                {
+                    if (item.en != "." && (item.id < 29681 || item.id > 29693))
+                    {
+                        dynamic item_grammar = new ModelObject();
+                        item_grammar.id = item.id;
+                        item_grammar.plural = item.enlp;
+                        item_grammar.article = item.art;
+
+                        item.art = null;
+                        item.enlp = null;
+
+                        model.items_grammar.Add(item_grammar);
+                    }
                 }
 
                 // Fill in linked auto-translate names

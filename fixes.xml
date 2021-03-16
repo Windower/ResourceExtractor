@@ -885,12 +885,12 @@ IN THE SOFTWARE.
       <o id="230" duration="60" status="135" overwrites="{23}" /> <!-- Bio -->
       <o id="231" duration="120" status="135" overwrites="{23,24,230}" /> <!-- Bio II -->
       <o id="232" duration="30" status="135" overwrites="{23,24,25,230,231}" /> <!-- Bio III -->
-      <o id="235" duration="90" status="128" overwrites="{236,240}" /> <!-- Burn -->
-      <o id="236" duration="90" status="129" overwrites="{235,237}" /> <!-- Frost -->
-      <o id="237" duration="90" status="130" overwrites="{236,238}" /> <!-- Choke -->
-      <o id="238" duration="90" status="131" overwrites="{237,239}" /> <!-- Rasp -->
-      <o id="239" duration="90" status="132" overwrites="{238,240}" /> <!-- Shock -->
-      <o id="240" duration="90" status="133" overwrites="{235,239}" /> <!-- Drown -->
+      <o id="235" duration="90" status="128" overwrites="{236}" /> <!-- Burn -->
+      <o id="236" duration="90" status="129" overwrites="{237}" /> <!-- Frost -->
+      <o id="237" duration="90" status="130" overwrites="{238}" /> <!-- Choke -->
+      <o id="238" duration="90" status="131" overwrites="{239}" /> <!-- Rasp -->
+      <o id="239" duration="90" status="132" overwrites="{240}" /> <!-- Shock -->
+      <o id="240" duration="90" status="133" overwrites="{235}" /> <!-- Drown -->
       <o id="244" unlearnable="true" /> <!-- Meteor II -->
       <o id="249" duration="180" status="34" /> <!-- Blaze Spikes -->
       <o id="250" duration="180" status="35" /> <!-- Ice Spikes -->

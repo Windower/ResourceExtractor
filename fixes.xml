@@ -955,6 +955,7 @@ IN THE SOFTWARE.
       <o id="362" unlearnable="true" /> <!-- Bindga -->
       <o id="363" unlearnable="true" /> <!-- Sleepga -->
       <o id="364" unlearnable="true" /> <!-- Sleepga II -->
+      <o id="365" duration="30" status="7" /> <!-- Breakga -->
       <o id="368" duration="60" status="192" /> <!-- Foe Requiem -->
       <o id="369" duration="120" status="192" overwrites="{368}" /> <!-- Foe Requiem II -->
       <o id="370" duration="120" status="192" overwrites="{368,369}" /> <!-- Foe Requiem III -->

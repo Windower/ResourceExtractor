@@ -96,6 +96,7 @@ IN THE SOFTWARE.
       <o id="122" duration="300" status="334" /> <!-- Tactician's Roll -->
       <o id="135" duration="60" status="166" /> <!-- Overdrive -->
       <o id="149" duration="60" status="340" /> <!-- Warrior's Charge -->
+      <o id="150" duration="30" status="232" /> <!-- Tomahawk -->
       <o id="151" duration="180" status="88" /> <!-- Mantra -->
       <o id="152" duration="180" status="341" /> <!-- Formless Strikes -->
       <o id="155" duration="60" status="342" /> <!-- Assassin's Charge -->
@@ -109,7 +110,7 @@ IN THE SOFTWARE.
       <o id="165" duration="60" status="350" /> <!-- Stealth Shot -->
       <o id="166" duration="60" status="351" /> <!-- Flashy Shot -->
       <o id="169" duration="180" /> <!-- Deep Breathing -->
-      <o id="170" duration="30" /> <!-- Angon -->
+      <o id="170" duration="30" status="149"/> <!-- Angon -->
       <o id="171" duration="60" status="352" /> <!-- Sange -->
       <o id="173" duration="300" status="353" /> <!-- Hasso -->
       <o id="174" duration="300" status="354" /> <!-- Seigan -->
@@ -1271,6 +1272,7 @@ IN THE SOFTWARE.
       <o id="741" duration="300" status="150" /> <!-- Pyric Bulwark -->
       <o id="745" status="91" /> <!-- Carcharian Verve -->
       <o id="750" duration="180" status="604" /> <!-- Mighty Guard -->
+      <o id="751" duration="60" status="15" /> <!-- Cruel Joke -->
       <o id="768" duration="180" status="539" /> <!-- Indi-Regen -->
       <o id="769" duration="180" status="540" /> <!-- Indi-Poison -->
       <o id="770" duration="180" status="541" /> <!-- Indi-Refresh -->

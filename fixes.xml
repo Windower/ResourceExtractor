@@ -944,7 +944,7 @@ IN THE SOFTWARE.
       <o id="349" status="5" overwrites="{347,348}" unlearnable="true" /> <!-- Kurayami: San -->
       <o id="350" status="3" /> <!-- Dokumori: Ichi -->
       <o id="351" status="3" overwrites="{350}" unlearnable="true" /> <!-- Dokumori: Ni -->
-      <o id="352" status="3" overwrites="{350,351}" unlearnable="true"/> <!-- Dokumori: San -->
+      <o id="352" status="3" overwrites="{350,351}" unlearnable="true" /> <!-- Dokumori: San -->
       <o id="353" duration="420" status="69" /> <!-- Tonko: Ichi -->
       <o id="354" duration="600" status="69" /> <!-- Tonko: Ni -->
       <o id="356" unlearnable="true" /> <!-- Paralyga -->

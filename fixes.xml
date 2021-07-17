@@ -938,7 +938,7 @@ IN THE SOFTWARE.
       <o id="343" status="4" overwrites="{341,342}" /> <!-- Jubaku: San -->
       <o id="344" status="13" /> <!-- Hojo: Ichi -->
       <o id="345" status="13" overwrites="{344}" /> <!-- Hojo: Ni -->
-      <o id="346" status="13" overwrites="{344,345}" /> <!-- Hojo: San -->
+      <o id="346" status="13" overwrites="{344,345}" unlearnable="true"/> <!-- Hojo: San -->
       <o id="347" status="5" /> <!-- Kurayami: Ichi -->
       <o id="348" status="5" overwrites="{347}" /> <!-- Kurayami: Ni -->
       <o id="349" status="5" overwrites="{347,348}" unlearnable="true" /> <!-- Kurayami: San -->

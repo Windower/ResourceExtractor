@@ -830,7 +830,7 @@ IN THE SOFTWARE.
       <o id="77" duration="480" status="111" /> <!-- Barpetrify -->
       <o id="78" duration="480" status="112" /> <!-- Barvirus -->
       <o id="79" duration="180" status="13" overwrites="{56,344,345,346,548,660,703}" /> <!-- Slow II -->
-      <o id="80" duration="120" status="4" overwrites="{58,341,342,343,,644,704}" /> <!-- Paralyze II -->
+      <o id="80" duration="120" status="4" overwrites="{58,341,342,343,644,704}" /> <!-- Paralyze II -->
       <o id="84" duration="480" status="286" /> <!-- Baramnesia -->
       <o id="85" duration="480" status="286" /> <!-- Baramnesra -->
       <o id="86" duration="480" status="106" /> <!-- Barsleepra -->

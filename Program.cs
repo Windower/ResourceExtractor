@@ -46,6 +46,7 @@ namespace ResourceExtractor
             "job_abilities",
             "job_traits",
             "jobs",
+            "monster_skills",
             "monstrosity",
             "spells",
             "weapon_skills",
@@ -454,14 +455,7 @@ namespace ResourceExtractor
                         action.recast_id = null;
                         action.type = null;
 
-                        // Remove names, as they are parsed separately
-                        action.en = null;
-                        action.ja = null;
-
-                        if (action.id < model.monster_abilities.Count)
-                        {
-                            model.monster_abilities[action.id].Merge(action);
-                        }
+                        model.monster_skills.Add(action);
                     }
                 }
                 model.actions = null;
@@ -471,6 +465,12 @@ namespace ResourceExtractor
                 foreach (var monster_ability in model.monster_abilities)
                 {
                     monster_ability.id += 0x100;
+                }
+
+                // Shift monster skills up by 0x100
+                foreach (var monster_skill in model.monster_skills)
+                {
+                    monster_skill.id += 0x100;
                 }
 
                 // Split merit point names/descriptions and filter garbage values

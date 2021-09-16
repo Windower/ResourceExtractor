@@ -449,7 +449,8 @@ namespace ResourceExtractor
                     // Monstrosity
                     else if (action.id >= 0x0700)
                     {
-                        action.id -= 0x0700;
+                        // Monster skills start at 256
+                        action.id -= 0x0600;
 
                         action.mp_cost = null;
                         action.recast_id = null;
@@ -465,12 +466,6 @@ namespace ResourceExtractor
                 foreach (var monster_ability in model.monster_abilities)
                 {
                     monster_ability.id += 0x100;
-                }
-
-                // Shift monster skills up by 0x100
-                foreach (var monster_skill in model.monster_skills)
-                {
-                    monster_skill.id += 0x100;
                 }
 
                 // Split merit point names/descriptions and filter garbage values

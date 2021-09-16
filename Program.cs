@@ -46,6 +46,7 @@ namespace ResourceExtractor
             "job_abilities",
             "job_traits",
             "jobs",
+            "monster_skills",
             "monstrosity",
             "spells",
             "weapon_skills",
@@ -448,20 +449,14 @@ namespace ResourceExtractor
                     // Monstrosity
                     else if (action.id >= 0x0700)
                     {
-                        action.id -= 0x0700;
+                        // Monster skills start at 256
+                        action.id -= 0x0600;
 
                         action.mp_cost = null;
                         action.recast_id = null;
                         action.type = null;
 
-                        // Remove names, as they are parsed separately
-                        action.en = null;
-                        action.ja = null;
-
-                        if (action.id < model.monster_abilities.Count)
-                        {
-                            model.monster_abilities[action.id].Merge(action);
-                        }
+                        model.monster_skills.Add(action);
                     }
                 }
                 model.actions = null;

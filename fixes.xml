@@ -242,27 +242,99 @@ IN THE SOFTWARE.
       <o id="391" duration="300" status="600" /> <!-- Runeist's Roll -->
       <o id="392" duration="60" status="601" /> <!-- Crooked Cards -->
       <o id="394" duration="180" status="621" /> <!-- Majesty -->
+      <o id="513" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Poison Nails -->
       <o id="514" duration="180" status="154" /> <!-- Shining Ruby -->
+      <o id="516" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Meteorite -->
+      <o id="518" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Searing Light -->
+      <o id="519" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Holy Mist -->
+      <o id="521" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Regal Scratch -->
+      <o id="524" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Level ? Holy -->
       <o id="526" duration="3600" status="113" /> <!-- Reraise II -->
       <o id="527" duration="3600" status="113" /> <!-- Altana's Favor -->
+      <o id="528" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Moonlit Charge -->
+      <o id="529" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Crescent Fang -->
       <o id="532" duration="180" /> <!-- Ecliptic Growl -->
       <o id="533" duration="180" /> <!-- Ecliptic Howl -->
+      <o id="534" skillchain_a="Gravitation" skillchain_b="Scission" skillchain_c="" /> <!-- Eclipse Bite -->
+      <o id="536" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Howling Moon -->
+      <o id="537" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Lunar Bay -->
       <o id="538" duration="60" /> <!-- Heavenward Howl -->
+      <o id="539" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Impact -->
+      <o id="544" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Punch -->
+      <o id="545" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Fire II -->
+      <o id="546" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Burning Strike -->
+      <o id="547" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Double Punch -->
       <o id="548" duration="60" status="68" /> <!-- Crimson Howl -->
+      <o id="549" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Fire IV -->
+      <o id="550" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Flaming Crush -->
+      <o id="551" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Meteor Strike -->
+      <o id="552" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Inferno -->
       <o id="553" duration="60" status="94" /> <!-- Inferno Howl -->
+      <o id="554" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Conflag Strike -->
+      <o id="560" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Rock Throw -->
+      <o id="561" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Stone II -->
+      <o id="562" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Rock Buster -->
+      <o id="563" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Megalith Throw -->
       <o id="564" duration="900" status="37" /> <!-- Earthen Ward -->
+      <o id="565" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Stone IV -->
+      <o id="566" skillchain_a="Gravitation" skillchain_b="Induration" skillchain_c="" /> <!-- Mountain Buster -->
+      <o id="567" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Geocrush -->
+      <o id="568" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Earthen Fury -->
       <o id="569" duration="60" status="458" /> <!-- Earthen Armor -->
+      <o id="570" skillchain_a="Gravitation" skillchain_b="Scission" skillchain_c="" /> <!-- Crag Throw -->
+      <o id="576" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Barracuda Dive -->
+      <o id="577" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Water II -->
+      <o id="578" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Tail Whip -->
+      <o id="581" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Water IV -->
+      <o id="582" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Spinning Dive -->
+      <o id="583" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Grand Fall -->
+      <o id="584" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Tidal Wave -->
       <o id="586" duration="180" status="586" /> <!-- Soothing Current -->
+      <o id="592" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Claw -->
+      <o id="593" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Aero II -->
       <o id="595" duration="180" status="33" /> <!-- Hastega -->
       <o id="596" duration="900" status="36" /> <!-- Aerial Armor -->
+      <o id="597" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Aero IV -->
+      <o id="598" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Predator Claws -->
+      <o id="599" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Wind Blade -->
+      <o id="600" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Aerial Blast -->
       <o id="601" duration="120" status="176" /> <!-- Fleet Wind -->
       <o id="602" duration="180" status="33" /> <!-- Hastega II -->
+      <o id="608" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Axe Kick -->
+      <o id="609" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Blizzard II -->
       <o id="610" duration="180" status="35" /> <!-- Frost Armor -->
+      <o id="612" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Double Slap -->
+      <o id="613" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Blizzard IV -->
+      <o id="614" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Rush -->
+      <o id="615" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Heavenly Strike -->
+      <o id="616" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Diamond Dust -->
       <o id="618" duration="180" status="587" /> <!-- Crystal Blessing -->
+      <o id="624" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shock Strike -->
       <o id="626" duration="120" status="98" /> <!-- Rolling Thunder -->
+      <o id="627" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Thunderspark -->
       <o id="628" duration="180" status="38" /> <!-- Lightning Armor -->
+      <o id="629" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Thunder IV -->
+      <o id="630" skillchain_a="Fragmentation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Chaotic Strike -->
+      <o id="631" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Thunderstorm -->
+      <o id="632" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Judgment Bolt -->
+      <o id="634" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Volt Strike -->
+      <o id="656" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Camisado -->
       <o id="660" duration="180" status="116" /> <!-- Noctoshield -->
       <o id="661" duration="180" status="190" /> <!-- Dream Shroud -->
+      <o id="662" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Nether Blast -->
+      <o id="665" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Ruinous Omen -->
+      <o id="665" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Night Terror -->
+      <o id="667" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Blindside -->
+      <o id="780" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Regal Gash -->
+      <o id="960" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Clarsach Call -->
+      <o id="961" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Welt -->
+      <o id="962" duration="120" status="96" /> <!-- Katabatic Blades -->
+      <o id="964" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Roundhouse -->
+      <o id="965" duration="900" status="39" /> <!-- Chinook -->
+      <o id="967" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Sonic Buffet -->
+      <o id="968" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Tornado II -->
+      <o id="969" duration="60" status="152" /> <!-- Wind's Blessing -->
+      <o id="970" skillchain_a="Fragmentation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Hysteric Assault -->
     </update>
   </job_abilities>
   <ability_recasts>

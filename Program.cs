@@ -117,11 +117,12 @@ namespace ResourceExtractor
             },
             ["key_items"] = new Dictionary<ushort, IDictionary<int, string>> {
                 [0xD98F] = new Dictionary<int, string> {
-                    [0] = "id",
+                    [0] = "id_en",
                     [4] = "en",
                     //[6] = "endesc",
                 },
                 [0xD917] = new Dictionary<int, string> {
+                    [0] = "id_ja",
                     [1] = "ja",
                     //[2] = "jadesc",
                 },
@@ -308,21 +309,32 @@ namespace ResourceExtractor
                     }
                 }
 
-                // Add categories to key items
+                // Add categories to key items and synchronize IDs between languages for key items
                 var category = "";
+                var key_items = new Dictionary<int, dynamic>();
                 for (var i = model.key_items.Count - 1; i >= 0; --i)
                 {
                     dynamic ki = model.key_items[i];
                     if (ki.en.StartsWith("-"))
                     {
                         category = ki.en.Substring(1);
-                        model.key_items.Remove(ki);
                     }
-                    else
+                    else if (ki.id_en != 0)
                     {
-                        ki.category = category;
+                        dynamic en = key_items.TryGetValue(ki.id_en, out dynamic entry_en) ? entry_en : new ModelObject();
+                        en.id = ki.id_en;
+                        en.en = ki.en;
+                        en.category = category;
+                        key_items[en.id] = en;
+                    }
+
+                    if (ki.id_ja != 0) {
+                        dynamic ja = key_items.TryGetValue(ki.id_ja, out dynamic entry_ja) ? entry_ja : new ModelObject();
+                        ja.ja = ki.ja;
+                        key_items[ki.id_ja] = ja;
                     }
                 }
+                model.key_items = key_items.Values.OrderBy(key_item => key_item.id).ToList();
 
                 // Move item descriptions into separate table
                 model.item_descriptions = new List<dynamic>();

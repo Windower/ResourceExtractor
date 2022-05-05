@@ -859,7 +859,7 @@ IN THE SOFTWARE.
     <update>
       <o id="23" duration="60" status="134" /> <!-- Dia -->
       <o id="24" duration="120" status="134" overwrites="{23,230}" /> <!-- Dia II -->
-      <o id="25" duration="90" status="134" overwrites="{23,24,230,231}" /> <!-- Dia III -->
+      <o id="25" duration="180" status="134" overwrites="{23,24,230,231}" /> <!-- Dia III -->
       <o id="26" duration="90" status="134" overwrites="{23,24,25,230,231,232}" /> <!-- Dia IV -->
       <o id="31" unlearnable="true" /> <!-- Banish IV -->
       <o id="34" unlearnable="true" /> <!-- Diaga II -->
@@ -975,9 +975,9 @@ IN THE SOFTWARE.
       <o id="256" unlearnable="true" /> <!-- Virus -->
       <o id="257" status="9" unlearnable="true" /> <!-- Curse -->
       <o id="258" duration="60" status="11" /> <!-- Bind -->
-      <o id="259" duration="120" status="2" overwrites="{253,273}" /> <!-- Sleep II -->
-      <o id="273" duration="90" status="2" /> <!-- Sleepga -->
-      <o id="274" duration="120" status="2" overwrites="{253,273}" /> <!-- Sleepga II -->
+      <o id="259" duration="90" status="2" overwrites="{253,273}" /> <!-- Sleep II -->
+      <o id="273" duration="60" status="2" /> <!-- Sleepga -->
+      <o id="274" duration="90" status="2" overwrites="{253,273}" /> <!-- Sleepga II -->
       <o id="276" duration="180" status="5" overwrites="{254,347,348,349}" /> <!-- Blind II -->
       <o id="277" duration="180" status="173" /> <!-- Dread Spikes -->
       <o id="278" duration="230" status="186" /> <!-- Geohelix -->
@@ -1377,10 +1377,10 @@ IN THE SOFTWARE.
       <o id="797" duration="180" status="567" /> <!-- Indi-Gravity -->
       <o id="798" status="539" /> <!-- Geo-Regen -->
       <o id="840" duration="30" status="568" /> <!-- Foil -->
-      <o id="841" duration="120" status="148" /> <!-- Distract -->
-      <o id="842" duration="120" status="148" overwrites="{841}" /> <!-- Distract II -->
-      <o id="843" duration="120" status="404" /> <!-- Frazzle -->
-      <o id="844" duration="120" status="404" overwrites="{843}" /> <!-- Frazzle II -->
+      <o id="841" duration="300" status="148" /> <!-- Distract -->
+      <o id="842" duration="300" status="148" overwrites="{841}" /> <!-- Distract II -->
+      <o id="843" duration="300" status="404" /> <!-- Frazzle -->
+      <o id="844" duration="300" status="404" overwrites="{843}" /> <!-- Frazzle II -->
       <o id="845" duration="180" status="581" /> <!-- Flurry -->
       <o id="846" duration="180" status="581" overwrites="{845}" /> <!-- Flurry II -->
       <o id="848" duration="3600" status="113" /> <!-- Reraise IV -->
@@ -1403,9 +1403,9 @@ IN THE SOFTWARE.
       <o id="877" duration="90" status="217" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,875,876,878}" /> <!-- Light Threnody II -->
       <o id="878" duration="90" status="217" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,875,876,877}" /> <!-- Dark Threnody II -->
       <o id="879" duration="300" status="597" /> <!-- Inundation -->
-      <o id="882" duration="120" status="148" overwrites="{841,842}" /> <!-- Distract III -->
-      <o id="883" duration="120" status="404" overwrites="{843,844}" /> <!-- Frazzle III -->
-      <o id="884" duration="120" status="21" overwrites="{286}" /> <!-- Addle II -->
+      <o id="882" duration="300" status="148" overwrites="{841,842}" /> <!-- Distract III -->
+      <o id="883" duration="300" status="404" overwrites="{843,844}" /> <!-- Frazzle III -->
+      <o id="884" duration="180" status="21" overwrites="{286}" /> <!-- Addle II -->
       <o id="885" duration="230" status="186" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Geohelix II -->
       <o id="886" duration="230" status="186" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Hydrohelix II -->
       <o id="887" duration="230" status="186" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Anemohelix II -->

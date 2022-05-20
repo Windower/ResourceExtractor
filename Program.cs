@@ -1,4 +1,4 @@
-﻿// <copyright file="Program.cs" company="Windower Team">
+// <copyright file="Program.cs" company="Windower Team">
 // Copyright © 2013-2018 Windower Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -349,6 +349,75 @@ namespace ResourceExtractor
                     item.jadesc = null;
 
                     model.item_descriptions.Add(item_description);
+                }
+
+                const uint ammo_slot = 8;
+                const uint cor_job_flag = (1 << 17);
+                IReadOnlyDictionary<uint, string> range_slot_skills = new Dictionary<uint, string>
+                {
+                    {25,"Archery"},
+                    {26,"Marksmanship"},
+                    {48,"Fishing"}
+                };
+                foreach (var item in model.items)
+                {
+                    if (!item.ContainsKey("slots") || !item.ContainsKey("skill") || !range_slot_skills.ContainsKey(item.skill)) continue;
+                    string skill = range_slot_skills[item.skill];
+                    bool ammo = item.slots == ammo_slot;
+                    if (skill == "Archery")
+                    {
+                        if (ammo)
+                        {
+                            item.ammo_type = "Arrow";
+                        }
+                        else
+                        {
+                            item.range_type = "Bow";
+                        }
+                    }
+                    else if (skill == "Marksmanship")
+                    {
+                        if (ammo)
+                        {
+                            if (item.ja.Contains("ブレット") || item.en.Contains("Bullet"))
+                            {
+                                item.ammo_type = "Bullet";
+                            }
+                            else if (item.ja.Contains("シェル") || item.en.Contains("Shell"))
+                            {
+                                item.ammo_type = "Shell";
+                            }
+                            else if (item.ja.Contains("ボルト") || item.en.Contains("Bolt"))
+                            {
+                                item.ammo_type = "Bolt";
+                            }
+                        }
+                        else {
+                            if (item.delay >= 700 && item.delay < 999)
+                            {
+                                item.range_type = "Cannon";
+                            }
+                            else if (item.delay > 450 || (item.jobs & cor_job_flag) == cor_job_flag)
+                            {
+                                item.range_type = "Gun";
+                            }
+                            else
+                            {
+                                item.range_type = "Crossbow";
+                            }
+                        }
+                    }
+                    else if (skill == "Fishing")
+                    {
+                        if (ammo)
+                        {
+                            item.ammo_type = "Bait";
+                        }
+                        else
+                        {
+                            item.range_type = "Fishing Rod";
+                        }
+                    }
                 }
                 
                 // Move item grammar into separate table

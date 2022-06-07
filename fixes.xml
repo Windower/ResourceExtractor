@@ -879,7 +879,7 @@ IN THE SOFTWARE.
       <o id="54" duration="300" status="37" /> <!-- Stoneskin -->
       <o id="55" duration="600" status="39" /> <!-- Aquaveil -->
       <o id="56" duration="180" status="13" /> <!-- Slow -->
-      <o id="57" duration="180" status="33" /> <!-- Haste -->
+      <o id="57" duration="180" status="33" overwrites="{845}" /> <!-- Haste -->
       <o id="58" duration="120" status="4" /> <!-- Paralyze -->
       <o id="59" duration="120" status="6" /> <!-- Silence -->
       <o id="60" duration="480" status="100" overwrites="{61,62,63,64,65}" /> <!-- Barfire -->
@@ -1160,7 +1160,7 @@ IN THE SOFTWARE.
       <o id="508" status="168" /> <!-- Yurin: Ichi -->
       <o id="509" duration="300" status="227" /> <!-- Kakka: Ichi -->
       <o id="510" duration="60" status="471" /> <!-- Migawari: Ichi -->
-      <o id="511" duration="180" status="33" /> <!-- Haste II -->
+      <o id="511" duration="180" status="33" overwrites="{57,845,846}/> <!-- Haste II -->
       <o id="513" status="41" blu_points="3" /> <!-- Venom Shell -->
       <o id="515" blu_points="5" /> <!-- Maelstrom -->
       <o id="517" duration="900" status="37" blu_points="1" /> <!-- Metallic Body -->
@@ -1381,8 +1381,8 @@ IN THE SOFTWARE.
       <o id="842" duration="300" status="148" overwrites="{841}" /> <!-- Distract II -->
       <o id="843" duration="300" status="404" /> <!-- Frazzle -->
       <o id="844" duration="300" status="404" overwrites="{843}" /> <!-- Frazzle II -->
-      <o id="845" duration="180" status="581" /> <!-- Flurry -->
-      <o id="846" duration="180" status="581" overwrites="{845}" /> <!-- Flurry II -->
+      <o id="845" duration="180" status="581" overwrites="{57}"/> <!-- Flurry -->
+      <o id="846" duration="180" status="581" overwrites="{57,511,845}" /> <!-- Flurry II -->
       <o id="848" duration="3600" status="113" /> <!-- Reraise IV -->
       <o id="855" duration="180" status="274" /> <!-- Enlight II -->
       <o id="856" duration="180" status="288" /> <!-- Endark II -->

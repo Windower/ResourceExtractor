@@ -1160,7 +1160,7 @@ IN THE SOFTWARE.
       <o id="508" status="168" /> <!-- Yurin: Ichi -->
       <o id="509" duration="300" status="227" /> <!-- Kakka: Ichi -->
       <o id="510" duration="60" status="471" /> <!-- Migawari: Ichi -->
-      <o id="511" duration="180" status="33" overwrites="{57,845,846}/> <!-- Haste II -->
+      <o id="511" duration="180" status="33" overwrites="{57,845,846}" /> <!-- Haste II -->
       <o id="513" status="41" blu_points="3" /> <!-- Venom Shell -->
       <o id="515" blu_points="5" /> <!-- Maelstrom -->
       <o id="517" duration="900" status="37" blu_points="1" /> <!-- Metallic Body -->

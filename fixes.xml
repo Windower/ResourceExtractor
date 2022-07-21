@@ -1548,7 +1548,7 @@ IN THE SOFTWARE.
       <o id="4" command="laugh" />
       <o id="5" command="cry" />
       <o id="6" command="no" />
-      <o id="7" command="yes" />
+      <o id="7" command="yes" alternative="nod" />
       <o id="8" command="wave" />
       <o id="9" command="goodbye" alternative="farewell" />
       <o id="10" command="welcome" />

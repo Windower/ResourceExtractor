@@ -515,6 +515,7 @@ IN THE SOFTWARE.
       <o id="155" skillchain_a="Compression" skillchain_b="Scission" skillchain_c="" /> <!-- Tachi: Ageha -->
       <o id="156" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Tachi: Fudo -->
       <o id="157" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Tachi: Shoha -->
+      <o id="158" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Tachi: Suikawari -->
       <o id="160" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shining Strike -->
       <o id="161" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Seraph Strike -->
       <o id="162" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Brainshaker -->
@@ -574,6 +575,10 @@ IN THE SOFTWARE.
       <o id="224" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Exenterator -->
       <o id="225" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
       <o id="226" skillchain_a="Gravitation" skillchain_b="Scission" skillchain_c="" /> <!-- Requiescat -->
+      <o id="227" skillchain_a="Light" skillchain_b="" skillchain_c="" /> <!-- Knights of the Rotund -->
+      <o id="228" skillchain_a="Light" skillchain_b="" skillchain_c="" /> <!-- Final Paradise -->
+      <o id="229" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Fast Blade II -->
+      <o id="230" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Dragon Blow -->
       <o id="238" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Uriel Blade -->
       <o id="239" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Glory Slash -->
       <o id="240" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Tartarus Torpor -->
@@ -2663,4 +2668,70 @@ IN THE SOFTWARE.
       <o id="1023" en="${actor} uses ${weapon_skill}.${lb}${target}'s attacks and defenses are enhanced." color="111" />
     </update>
   </action_messages>
+  <monster_abilities>
+    <update>
+      <o id="1188" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Final Heaven -->
+      <o id="1189" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Mercy Stroke -->
+      <o id="1190" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Knights of Round -->
+      <o id="1191" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Scourge -->
+      <o id="1192" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Onslaught -->
+      <o id="1193" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Metatron Torment -->
+      <o id="1194" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Catastrophe -->
+      <o id="1195" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Geirskogul -->
+      <o id="1196" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Blade: Metsu -->
+      <o id="1197" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Tachi: Kaiten -->
+      <o id="1198" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Randgirth -->
+      <o id="1199" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Gate of Tartarus -->
+      <o id="1200" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Namas (??) -->
+      <o id="1201" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Coronach -->
+      <o id="1444" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Vorpal Blade -->
+      <o id="1483" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Vorpal Blade -->
+      <o id="1520" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Howling Moon -->
+      <o id="1737" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Vorpal Blade -->
+      <o id="3176" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
+      <o id="3179" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
+      <o id="3190" skillchain_a="Liquefaction" skillchain_b="Detonation" skillchain_c="" /> <!-- Red Lotus Blade -->
+      <o id="3192" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Vorpal Blade -->
+      <o id="3203" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Scouring Bubbles -->
+      <o id="3216" skillchain_a="Liquefaction" skillchain_b="Detonation" skillchain_c="" /> <!-- Red Lotus Blade -->
+      <o id="3243" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Imperial Authority -->
+      <o id="3256" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Hane Fubuki -->
+      <o id="3257" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Shibaraku -->
+      <o id="3259" skillchain_a="Reverberation" skillchain_b="Impaction" skillchain_c="" /> <!-- Happobarai -->
+      <o id="3314" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- True Strike -->
+      <o id="3315" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Hexa Strike -->
+      <o id="3411" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Power Slash -->
+      <o id="3502" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Nott -->
+      <o id="3551" skillchain_a="Gravitation" skillchain_b="Compression" skillchain_c="" /> <!-- Lunar Bay -->
+      <o id="3556" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Fuga -->
+      <o id="3557" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Kyori -->
+      <o id="3558" skillchain_a="Reverberation" skillchain_b="Impaction" skillchain_c="" /> <!-- Amatsu: Hanadoki -->
+      <o id="3559" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Choun -->
+      <o id="3560" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Amatsu: Gachirin -->
+      <o id="3561" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Suien -->
+      <o id="3591" skillchain_a="Compression" skillchain_b="Scission" skillchain_c="" /> <!-- Tartaric Sigil -->
+      <o id="3592" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Null Field -->
+      <o id="3593" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Alabaster Burst -->
+      <o id="3594" skillchain_a="Gravitation" skillchain_b="" skillchain_c="" /> <!-- Noble Frenzy -->
+      <o id="3595" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Fulminous Fury -->
+      <o id="3596" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- No Quarter -->
+      <o id="3653" skillchain_a="Compression" skillchain_b="Scission" skillchain_c="" /> <!-- Tartaric Sigil -->
+      <o id="3654" skillchain_a="Fusion" skillchain_b="Transfixion" skillchain_c="" /> <!-- Null Field -->
+      <o id="3655" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Alabaster Burst -->
+      <o id="3656" skillchain_a="Gravitation" skillchain_b="" skillchain_c="" /> <!-- Noble Frenzy -->
+      <o id="3657" skillchain_a="Fragmentation" skillchain_b="" skillchain_c="" /> <!-- Fulminous Fury -->
+      <o id="3658" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- No Quarter -->
+      <o id="3708" skillchain_a="Gravitation" skillchain_b="" skillchain_c="" /> <!-- Swift Blade -->
+      <o id="3709" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
+      <o id="3711" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Vorpal Blade -->
+      <o id="3713" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
+      <o id="3732" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Fuga -->
+      <o id="3733" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Kyori -->
+      <o id="3734" skillchain_a="Reverberation" skillchain_b="Impaction" skillchain_c="" /> <!-- Amatsu: Hanadoki -->
+      <o id="3735" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Choun -->
+      <o id="3736" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Amatsu: Gachirin -->
+      <o id="3737" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Amatsu: Suien -->
+      <o id="3738" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Rise From Ashes -->
+    </update>
+  </monster_abilities>
 </fixes>

@@ -2736,6 +2736,7 @@ IN THE SOFTWARE.
   </monster_abilities>
   <zones>
     <update>
+      <o id="0" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- unknown -->
       <o id="1" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Phanauet Channel -->
       <o id="2" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Carpenters' Landing -->
       <o id="3" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Manaclipper -->

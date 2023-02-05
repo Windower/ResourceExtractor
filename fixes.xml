@@ -1487,15 +1487,15 @@ IN THE SOFTWARE.
   <bags>
     <update>
       <o id="0" en="Inventory" access="Everywhere" command="inventory" equippable="true" />
-      <o id="1" en="Safe" access="Mog House" command="bank" equippable="false" />
-      <o id="2" en="Storage" access="Mog House" command="storage" equippable="false" />
-      <o id="3" en="Temporary" access="Situational" command="temporary" equippable="false" />
-      <o id="4" en="Locker" access="Mog House" command="locker" equippable="false" />
-      <o id="5" en="Satchel" access="Everywhere" command="satchel" equippable="false" />
-      <o id="6" en="Sack" access="Everywhere" command="sack" equippable="false" />
-      <o id="7" en="Case" access="Everywhere" command="case" equippable="false" />
+      <o id="1" en="Safe" access="Mog House" command="bank" />
+      <o id="2" en="Storage" access="Mog House" command="storage" />
+      <o id="3" en="Temporary" access="Situational" command="temporary" />
+      <o id="4" en="Locker" access="Mog House" command="locker" />
+      <o id="5" en="Satchel" access="Everywhere" command="satchel" />
+      <o id="6" en="Sack" access="Everywhere" command="sack" />
+      <o id="7" en="Case" access="Everywhere" command="case" />
       <o id="8" en="Wardrobe" access="Everywhere" command="wardrobe" equippable="true" />
-      <o id="9" en="Safe 2" access="Mog House" command="bank2" equippable="false" />
+      <o id="9" en="Safe 2" access="Mog House" command="bank2" />
       <o id="10" en="Wardrobe 2" access="Everywhere" command="wardrobe2" equippable="true" />
       <o id="11" en="Wardrobe 3" access="Everywhere" command="wardrobe3" equippable="true" />
       <o id="12" en="Wardrobe 4" access="Everywhere" command="wardrobe4" equippable="true" />
@@ -1503,7 +1503,7 @@ IN THE SOFTWARE.
       <o id="14" en="Wardrobe 6" access="Everywhere" command="wardrobe6" equippable="true" />
       <o id="15" en="Wardrobe 7" access="Everywhere" command="wardrobe7" equippable="true" />
       <o id="16" en="Wardrobe 8" access="Everywhere" command="wardrobe8" equippable="true" />
-      <o id="17" en="Recycle" access="Everywhere" command="recycle" equippable="false" />
+      <o id="17" en="Recycle" access="Everywhere" command="recycle" />
     </update>
   </bags>
   <chat>
@@ -2736,298 +2736,298 @@ IN THE SOFTWARE.
   </monster_abilities>
   <zones>
     <update>
-      <o id="0" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- unknown -->
-      <o id="1" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Phanauet Channel -->
-      <o id="2" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Carpenters' Landing -->
-      <o id="3" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Manaclipper -->
-      <o id="4" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Bibiki Bay -->
-      <o id="5" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Uleguerand Range -->
-      <o id="6" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Bearclaw Pinnacle -->
-      <o id="7" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Attohwa Chasm -->
-      <o id="8" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Boneyard Gully -->
-      <o id="9" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Pso'Xja -->
-      <o id="10" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- The Shrouded Maw -->
-      <o id="11" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Oldton Movalpolos -->
-      <o id="12" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Newton Movalpolos -->
-      <o id="13" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Mine Shaft #2716 -->
-      <o id="14" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Hall of Transference -->
-      <o id="15" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Konschtat -->
-      <o id="16" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Promyvion - Holla -->
-      <o id="17" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Spire of Holla -->
-      <o id="18" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Promyvion - Dem -->
-      <o id="19" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Spire of Dem -->
-      <o id="20" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Promyvion - Mea -->
-      <o id="21" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Spire of Mea -->
-      <o id="22" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Promyvion - Vahzl -->
-      <o id="23" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Spire of Vahzl -->
-      <o id="24" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Lufaise Meadows -->
-      <o id="25" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Misareaux Coast -->
-      <o id="26" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Tavnazian Safehold -->
-      <o id="27" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Phomiuna Aqueducts -->
-      <o id="28" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Sacrarium -->
-      <o id="29" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Riverne - Site #B01 -->
-      <o id="30" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Riverne - Site #A01 -->
-      <o id="31" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Monarch Linn -->
-      <o id="32" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Sealion's Den -->
-      <o id="33" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Al'Taieu -->
-      <o id="34" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Grand Palace of Hu'Xzoi -->
-      <o id="35" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- The Garden of Ru'Hmet -->
-      <o id="36" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Empyreal Paradox -->
-      <o id="37" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Temenos -->
-      <o id="38" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Apollyon -->
-      <o id="39" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Valkurm -->
-      <o id="40" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Buburimu -->
-      <o id="41" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Qufim -->
-      <o id="42" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Tavnazia -->
-      <o id="43" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Diorama Abdhaljs-Ghelsba -->
-      <o id="44" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abdhaljs Isle-Purgonorgo -->
-      <o id="45" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Tahrongi -->
-      <o id="46" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Open sea route to Al Zahbi -->
-      <o id="47" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Open sea route to Mhaura -->
-      <o id="48" can_nexus="true" can_mount="false" can_pet="true" can_deliver="true" can_auction="true" can_invite_cross_zone="true" is_layered="false" /> <!-- Al Zahbi -->
-      <o id="50" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Aht Urhgan Whitegate -->
-      <o id="51" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Wajaom Woodlands -->
-      <o id="52" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Bhaflau Thickets -->
-      <o id="53" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Nashmau -->
-      <o id="54" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Arrapago Reef -->
-      <o id="55" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Ilrusi Atoll -->
-      <o id="56" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Periqia -->
-      <o id="57" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Talacca Cove -->
-      <o id="58" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Silver Sea route to Nashmau -->
-      <o id="59" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Silver Sea route to Al Zahbi -->
-      <o id="60" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- The Ashu Talif -->
-      <o id="61" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Mount Zhayolm -->
-      <o id="62" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Halvung -->
-      <o id="63" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Lebros Cavern -->
-      <o id="64" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Navukgo Execution Chamber -->
-      <o id="65" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Mamook -->
-      <o id="66" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Mamool Ja Training Grounds -->
-      <o id="67" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Jade Sepulcher -->
-      <o id="68" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Aydeewa Subterrane -->
-      <o id="69" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Leujaoam Sanctum -->
-      <o id="70" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Chocobo Circuit -->
-      <o id="71" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- The Colosseum -->
-      <o id="72" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Alzadaal Undersea Ruins -->
-      <o id="73" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Zhayolm Remnants -->
-      <o id="74" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Arrapago Remnants -->
-      <o id="75" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Bhaflau Remnants -->
-      <o id="76" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Silver Sea Remnants -->
-      <o id="77" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Nyzul Isle -->
-      <o id="78" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Hazhalm Testing Grounds -->
-      <o id="79" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Caedarva Mire -->
-      <o id="80" can_nexus="true" can_mount="false" can_pet="true" can_deliver="true" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Southern San d'Oria [S] -->
-      <o id="81" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- East Ronfaure [S] -->
-      <o id="82" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Jugner Forest [S] -->
-      <o id="83" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Vunkerl Inlet [S] -->
-      <o id="84" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Batallia Downs [S] -->
-      <o id="85" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- La Vaule [S] -->
-      <o id="86" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Everbloom Hollow -->
-      <o id="87" can_nexus="true" can_mount="false" can_pet="true" can_deliver="true" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Bastok Markets [S] -->
-      <o id="88" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- North Gustaberg [S] -->
-      <o id="89" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Grauberg [S] -->
-      <o id="90" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Pashhow Marshlands [S] -->
-      <o id="91" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Rolanberry Fields [S] -->
-      <o id="92" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Beadeaux [S] -->
-      <o id="93" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Ruhotz Silvermines -->
-      <o id="94" can_nexus="true" can_mount="false" can_pet="true" can_deliver="true" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Windurst Waters [S] -->
-      <o id="95" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- West Sarutabaruta [S] -->
-      <o id="96" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Fort Karugo-Narugo [S] -->
-      <o id="97" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Meriphataud Mountains [S] -->
-      <o id="98" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Sauromugue Champaign [S] -->
-      <o id="99" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Castle Oztroja [S] -->
-      <o id="100" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- West Ronfaure -->
-      <o id="101" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- East Ronfaure -->
-      <o id="102" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- La Theine Plateau -->
-      <o id="103" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Valkurm Dunes -->
-      <o id="104" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Jugner Forest -->
-      <o id="105" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Batallia Downs -->
-      <o id="106" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- North Gustaberg -->
-      <o id="107" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- South Gustaberg -->
-      <o id="108" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Konschtat Highlands -->
-      <o id="109" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Pashhow Marshlands -->
-      <o id="110" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Rolanberry Fields -->
-      <o id="111" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Beaucedine Glacier -->
-      <o id="112" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Xarcabard -->
-      <o id="113" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Cape Teriggan -->
-      <o id="114" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Eastern Altepa Desert -->
-      <o id="115" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- West Sarutabaruta -->
-      <o id="116" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- East Sarutabaruta -->
-      <o id="117" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Tahrongi Canyon -->
-      <o id="118" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Buburimu Peninsula -->
-      <o id="119" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Meriphataud Mountains -->
-      <o id="120" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Sauromugue Champaign -->
-      <o id="121" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- The Sanctuary of Zi'Tah -->
-      <o id="122" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ro'Maeve -->
-      <o id="123" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Yuhtunga Jungle -->
-      <o id="124" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Yhoator Jungle -->
-      <o id="125" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Western Altepa Desert -->
-      <o id="126" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Qufim Island -->
-      <o id="127" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Behemoth's Dominion -->
-      <o id="128" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Valley of Sorrows -->
-      <o id="129" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Ghoyu's Reverie -->
-      <o id="130" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ru'Aun Gardens -->
-      <o id="131" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Mordion Gaol -->
-      <o id="132" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - La Theine -->
-      <o id="133" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Outer Ra'Kaznar [U2] -->
-      <o id="134" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Beaucedine -->
-      <o id="135" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Xarcabard -->
-      <o id="136" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Beaucedine Glacier [S] -->
-      <o id="137" can_nexus="true" can_mount="true" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Xarcabard [S] -->
-      <o id="138" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Castle Zvahl Baileys [S] -->
-      <o id="139" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Horlais Peak -->
-      <o id="140" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ghelsba Outpost -->
-      <o id="141" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Fort Ghelsba -->
-      <o id="142" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Yughott Grotto -->
-      <o id="143" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Palborough Mines -->
-      <o id="144" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Waughroon Shrine -->
-      <o id="145" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Giddeus -->
-      <o id="146" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Balga's Dais -->
-      <o id="147" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Beadeaux -->
-      <o id="148" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Qulun Dome -->
-      <o id="149" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Davoi -->
-      <o id="150" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Monastic Cavern -->
-      <o id="151" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Castle Oztroja -->
-      <o id="152" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Altar Room -->
-      <o id="153" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- The Boyahda Tree -->
-      <o id="154" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dragon's Aery -->
-      <o id="155" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Castle Zvahl Keep [S] -->
-      <o id="156" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Throne Room [S] -->
-      <o id="157" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Middle Delkfutt's Tower -->
-      <o id="158" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Upper Delkfutt's Tower -->
-      <o id="159" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Temple of Uggalepih -->
-      <o id="160" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Den of Rancor -->
-      <o id="161" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Castle Zvahl Baileys -->
-      <o id="162" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Castle Zvahl Keep -->
-      <o id="163" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Sacrificial Chamber -->
-      <o id="164" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Garlaige Citadel [S] -->
-      <o id="165" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Throne Room -->
-      <o id="166" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ranguemont Pass -->
-      <o id="167" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Bostaunieux Oubliette -->
-      <o id="168" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Chamber of Oracles -->
-      <o id="169" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Toraimarai Canal -->
-      <o id="170" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Full Moon Fountain -->
-      <o id="171" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Crawlers' Nest [S] -->
-      <o id="172" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Zeruhn Mines -->
-      <o id="173" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Korroloka Tunnel -->
-      <o id="174" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Kuftal Tunnel -->
-      <o id="175" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- The Eldieme Necropolis [S] -->
-      <o id="176" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Sea Serpent Grotto -->
-      <o id="177" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ve'Lugannon Palace -->
-      <o id="178" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- The Shrine of Ru'Avitau -->
-      <o id="179" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Stellar Fulcrum -->
-      <o id="180" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- La'Loff Amphitheater -->
-      <o id="181" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- The Celestial Nexus -->
-      <o id="182" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Walk of Echoes -->
-      <o id="183" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Maquette Abdhaljs-LegionA -->
-      <o id="184" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Lower Delkfutt's Tower -->
-      <o id="185" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - San d'Oria -->
-      <o id="186" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Bastok -->
-      <o id="187" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Windurst -->
-      <o id="188" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dynamis - Jeuno -->
-      <o id="190" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- King Ranperre's Tomb -->
-      <o id="191" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dangruf Wadi -->
-      <o id="192" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Inner Horutoto Ruins -->
-      <o id="193" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ordelle's Caves -->
-      <o id="194" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Outer Horutoto Ruins -->
-      <o id="195" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- The Eldieme Necropolis -->
-      <o id="196" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Gusgen Mines -->
-      <o id="197" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Crawlers' Nest -->
-      <o id="198" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Maze of Shakhrami -->
-      <o id="200" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Garlaige Citadel -->
-      <o id="201" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Cloister of Gales -->
-      <o id="202" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Cloister of Storms -->
-      <o id="203" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Cloister of Frost -->
-      <o id="204" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Fei'Yin -->
-      <o id="205" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ifrit's Cauldron -->
-      <o id="206" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Qu'Bia Arena -->
-      <o id="207" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Cloister of Flames -->
-      <o id="208" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Quicksand Caves -->
-      <o id="209" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Cloister of Tremors -->
-      <o id="211" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Cloister of Tides -->
-      <o id="212" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Gustav Tunnel -->
-      <o id="213" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Labyrinth of Onzozo -->
-      <o id="215" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Attohwa -->
-      <o id="216" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Misareaux -->
-      <o id="217" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Vunkerl -->
-      <o id="218" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Altepa -->
-      <o id="220" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ship bound for Selbina -->
-      <o id="221" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ship bound for Mhaura -->
-      <o id="222" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Provenance -->
-      <o id="223" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- San d'Oria-Jeuno Airship -->
-      <o id="224" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Bastok-Jeuno Airship -->
-      <o id="225" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Windurst-Jeuno Airship -->
-      <o id="226" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Kazham-Jeuno Airship -->
-      <o id="227" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ship bound for Selbina -->
-      <o id="228" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ship bound for Mhaura -->
-      <o id="229" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Throne Room [V] -->
-      <o id="230" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Southern San d'Oria -->
-      <o id="231" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Northern San d'Oria -->
-      <o id="232" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Port San d'Oria -->
-      <o id="233" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Chateau d'Oraguille -->
-      <o id="234" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Bastok Mines -->
-      <o id="235" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Bastok Markets -->
-      <o id="236" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Port Bastok -->
-      <o id="237" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Metalworks -->
-      <o id="238" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Windurst Waters -->
-      <o id="239" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Windurst Walls -->
-      <o id="240" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Port Windurst -->
-      <o id="241" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Windurst Woods -->
-      <o id="242" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Heavens Tower -->
-      <o id="243" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ru'Lude Gardens -->
-      <o id="244" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Upper Jeuno -->
-      <o id="245" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Lower Jeuno -->
-      <o id="246" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Port Jeuno -->
-      <o id="247" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Rabao -->
-      <o id="248" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Selbina -->
-      <o id="249" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Mhaura -->
-      <o id="250" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Kazham -->
-      <o id="251" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Hall of the Gods -->
-      <o id="252" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Norg -->
-      <o id="253" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Uleguerand -->
-      <o id="254" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Abyssea - Grauberg -->
-      <o id="255" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Abyssea - Empyreal Paradox -->
-      <o id="256" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Western Adoulin -->
-      <o id="257" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Eastern Adoulin -->
-      <o id="258" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Rala Waterways -->
-      <o id="259" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Rala Waterways [U] -->
-      <o id="260" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Yahse Hunting Grounds -->
-      <o id="261" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ceizak Battlegrounds -->
-      <o id="262" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Foret de Hennetiel -->
-      <o id="263" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Yorcia Weald -->
-      <o id="264" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Yorcia Weald [U] -->
-      <o id="265" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Morimar Basalt Fields -->
-      <o id="266" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Marjami Ravine -->
-      <o id="267" can_nexus="true" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Kamihr Drifts -->
-      <o id="268" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Sih Gates -->
-      <o id="269" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Moh Gates -->
-      <o id="270" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Cirdas Caverns -->
-      <o id="271" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Cirdas Caverns [U] -->
-      <o id="272" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Dho Gates -->
-      <o id="273" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Woh Gates -->
-      <o id="274" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Outer Ra'Kaznar -->
-      <o id="275" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Outer Ra'Kaznar [U1] -->
-      <o id="276" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Ra'Kaznar Inner Court -->
-      <o id="277" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Ra'Kaznar Turris -->
-      <o id="278" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Gwora - Corridor -->
-      <o id="279" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Walk of Echoes [P2] -->
-      <o id="280" can_nexus="false" can_mount="false" can_pet="false" can_deliver="true" can_auction="false" can_invite_cross_zone="true" is_layered="true" /> <!-- Mog Garden -->
-      <o id="281" can_nexus="true" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Leafallia -->
-      <o id="282" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Mount Kamihr -->
-      <o id="283" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Silver Knife -->
-      <o id="284" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Celennia Memorial Library -->
-      <o id="285" can_nexus="false" can_mount="false" can_pet="false" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Feretory -->
-      <o id="287" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Maquette Abdhaljs-LegionB -->
-      <o id="288" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Escha - Zi'Tah -->
-      <o id="289" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Escha - Ru'Aun -->
-      <o id="290" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Desuetia - Empyreal Paradox -->
-      <o id="291" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="true" is_layered="false" /> <!-- Reisenjima -->
-      <o id="292" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Reisenjima Henge -->
-      <o id="293" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="false" /> <!-- Reisenjima Sanctorium -->
-      <o id="294" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Dynamis - San d'Oria [D] -->
-      <o id="295" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Dynamis - Bastok [D] -->
-      <o id="296" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Dynamis - Windurst [D] -->
-      <o id="297" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Dynamis - Jeuno [D] -->
-      <o id="298" can_nexus="false" can_mount="false" can_pet="true" can_deliver="false" can_auction="false" can_invite_cross_zone="false" is_layered="true" /> <!-- Walk of Echoes [P1] -->
+      <o id="0" /> <!-- unknown -->
+      <o id="1" can_pet="true" can_invite_cross_zone="true" /> <!-- Phanauet Channel -->
+      <o id="2" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Carpenters' Landing -->
+      <o id="3" can_pet="true" can_invite_cross_zone="true" /> <!-- Manaclipper -->
+      <o id="4" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Bibiki Bay -->
+      <o id="5" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Uleguerand Range -->
+      <o id="6" can_pet="true" /> <!-- Bearclaw Pinnacle -->
+      <o id="7" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Attohwa Chasm -->
+      <o id="8" can_pet="true" /> <!-- Boneyard Gully -->
+      <o id="9" can_pet="true" can_invite_cross_zone="true" /> <!-- Pso'Xja -->
+      <o id="10" can_pet="true" /> <!-- The Shrouded Maw -->
+      <o id="11" can_pet="true" can_invite_cross_zone="true" /> <!-- Oldton Movalpolos -->
+      <o id="12" can_pet="true" can_invite_cross_zone="true" /> <!-- Newton Movalpolos -->
+      <o id="13" can_pet="true" /> <!-- Mine Shaft #2716 -->
+      <o id="14" can_pet="true" can_invite_cross_zone="true" /> <!-- Hall of Transference -->
+      <o id="15" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Konschtat -->
+      <o id="16" can_pet="true" can_invite_cross_zone="true" /> <!-- Promyvion - Holla -->
+      <o id="17" can_pet="true" /> <!-- Spire of Holla -->
+      <o id="18" can_pet="true" can_invite_cross_zone="true" /> <!-- Promyvion - Dem -->
+      <o id="19" can_pet="true" /> <!-- Spire of Dem -->
+      <o id="20" can_pet="true" can_invite_cross_zone="true" /> <!-- Promyvion - Mea -->
+      <o id="21" can_pet="true" /> <!-- Spire of Mea -->
+      <o id="22" can_pet="true" can_invite_cross_zone="true" /> <!-- Promyvion - Vahzl -->
+      <o id="23" can_pet="true" /> <!-- Spire of Vahzl -->
+      <o id="24" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Lufaise Meadows -->
+      <o id="25" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Misareaux Coast -->
+      <o id="26" can_nexus="true" can_invite_cross_zone="true" /> <!-- Tavnazian Safehold -->
+      <o id="27" can_pet="true" can_invite_cross_zone="true" /> <!-- Phomiuna Aqueducts -->
+      <o id="28" can_pet="true" can_invite_cross_zone="true" /> <!-- Sacrarium -->
+      <o id="29" can_pet="true" can_invite_cross_zone="true" /> <!-- Riverne - Site #B01 -->
+      <o id="30" can_pet="true" can_invite_cross_zone="true" /> <!-- Riverne - Site #A01 -->
+      <o id="31" can_pet="true" /> <!-- Monarch Linn -->
+      <o id="32" can_pet="true" /> <!-- Sealion's Den -->
+      <o id="33" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Al'Taieu -->
+      <o id="34" can_pet="true" can_invite_cross_zone="true" /> <!-- Grand Palace of Hu'Xzoi -->
+      <o id="35" can_pet="true" can_invite_cross_zone="true" /> <!-- The Garden of Ru'Hmet -->
+      <o id="36" can_pet="true" /> <!-- Empyreal Paradox -->
+      <o id="37" can_pet="true" can_invite_cross_zone="true" /> <!-- Temenos -->
+      <o id="38" can_pet="true" can_invite_cross_zone="true" /> <!-- Apollyon -->
+      <o id="39" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Valkurm -->
+      <o id="40" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Buburimu -->
+      <o id="41" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Qufim -->
+      <o id="42" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Tavnazia -->
+      <o id="43" can_pet="true" can_invite_cross_zone="true" /> <!-- Diorama Abdhaljs-Ghelsba -->
+      <o id="44" can_pet="true" can_invite_cross_zone="true" /> <!-- Abdhaljs Isle-Purgonorgo -->
+      <o id="45" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Tahrongi -->
+      <o id="46" can_pet="true" can_invite_cross_zone="true" /> <!-- Open sea route to Al Zahbi -->
+      <o id="47" can_pet="true" can_invite_cross_zone="true" /> <!-- Open sea route to Mhaura -->
+      <o id="48" can_nexus="true" can_pet="true" can_deliver="true" can_auction="true" can_invite_cross_zone="true" /> <!-- Al Zahbi -->
+      <o id="50" can_nexus="true" can_invite_cross_zone="true" /> <!-- Aht Urhgan Whitegate -->
+      <o id="51" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Wajaom Woodlands -->
+      <o id="52" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Bhaflau Thickets -->
+      <o id="53" can_nexus="true" can_invite_cross_zone="true" /> <!-- Nashmau -->
+      <o id="54" can_pet="true" can_invite_cross_zone="true" /> <!-- Arrapago Reef -->
+      <o id="55" can_pet="true" is_layered="true" /> <!-- Ilrusi Atoll -->
+      <o id="56" can_pet="true" is_layered="true" /> <!-- Periqia -->
+      <o id="57" can_pet="true" /> <!-- Talacca Cove -->
+      <o id="58" can_pet="true" can_invite_cross_zone="true" /> <!-- Silver Sea route to Nashmau -->
+      <o id="59" can_pet="true" can_invite_cross_zone="true" /> <!-- Silver Sea route to Al Zahbi -->
+      <o id="60" can_pet="true" /> <!-- The Ashu Talif -->
+      <o id="61" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Mount Zhayolm -->
+      <o id="62" can_pet="true" can_invite_cross_zone="true" /> <!-- Halvung -->
+      <o id="63" can_pet="true" is_layered="true" /> <!-- Lebros Cavern -->
+      <o id="64" can_pet="true" /> <!-- Navukgo Execution Chamber -->
+      <o id="65" can_pet="true" can_invite_cross_zone="true" /> <!-- Mamook -->
+      <o id="66" can_pet="true" is_layered="true" /> <!-- Mamool Ja Training Grounds -->
+      <o id="67" can_pet="true" /> <!-- Jade Sepulcher -->
+      <o id="68" can_pet="true" can_invite_cross_zone="true" /> <!-- Aydeewa Subterrane -->
+      <o id="69" can_pet="true" is_layered="true" /> <!-- Leujaoam Sanctum -->
+      <o id="70" can_invite_cross_zone="true" /> <!-- Chocobo Circuit -->
+      <o id="71" can_invite_cross_zone="true" /> <!-- The Colosseum -->
+      <o id="72" can_pet="true" can_invite_cross_zone="true" /> <!-- Alzadaal Undersea Ruins -->
+      <o id="73" can_pet="true" is_layered="true" /> <!-- Zhayolm Remnants -->
+      <o id="74" can_pet="true" is_layered="true" /> <!-- Arrapago Remnants -->
+      <o id="75" can_pet="true" is_layered="true" /> <!-- Bhaflau Remnants -->
+      <o id="76" can_pet="true" is_layered="true" /> <!-- Silver Sea Remnants -->
+      <o id="77" can_pet="true" is_layered="true" /> <!-- Nyzul Isle -->
+      <o id="78" can_pet="true" /> <!-- Hazhalm Testing Grounds -->
+      <o id="79" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Caedarva Mire -->
+      <o id="80" can_nexus="true" can_pet="true" can_deliver="true" can_invite_cross_zone="true" /> <!-- Southern San d'Oria [S] -->
+      <o id="81" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- East Ronfaure [S] -->
+      <o id="82" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Jugner Forest [S] -->
+      <o id="83" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Vunkerl Inlet [S] -->
+      <o id="84" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Batallia Downs [S] -->
+      <o id="85" can_pet="true" can_invite_cross_zone="true" /> <!-- La Vaule [S] -->
+      <o id="86" can_pet="true" is_layered="true" /> <!-- Everbloom Hollow -->
+      <o id="87" can_nexus="true" can_pet="true" can_deliver="true" can_invite_cross_zone="true" /> <!-- Bastok Markets [S] -->
+      <o id="88" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- North Gustaberg [S] -->
+      <o id="89" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Grauberg [S] -->
+      <o id="90" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Pashhow Marshlands [S] -->
+      <o id="91" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Rolanberry Fields [S] -->
+      <o id="92" can_pet="true" can_invite_cross_zone="true" /> <!-- Beadeaux [S] -->
+      <o id="93" can_pet="true" is_layered="true" /> <!-- Ruhotz Silvermines -->
+      <o id="94" can_nexus="true" can_pet="true" can_deliver="true" can_invite_cross_zone="true" /> <!-- Windurst Waters [S] -->
+      <o id="95" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- West Sarutabaruta [S] -->
+      <o id="96" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Fort Karugo-Narugo [S] -->
+      <o id="97" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Meriphataud Mountains [S] -->
+      <o id="98" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Sauromugue Champaign [S] -->
+      <o id="99" can_pet="true" can_invite_cross_zone="true" /> <!-- Castle Oztroja [S] -->
+      <o id="100" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- West Ronfaure -->
+      <o id="101" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- East Ronfaure -->
+      <o id="102" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- La Theine Plateau -->
+      <o id="103" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Valkurm Dunes -->
+      <o id="104" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Jugner Forest -->
+      <o id="105" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Batallia Downs -->
+      <o id="106" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- North Gustaberg -->
+      <o id="107" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- South Gustaberg -->
+      <o id="108" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Konschtat Highlands -->
+      <o id="109" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Pashhow Marshlands -->
+      <o id="110" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Rolanberry Fields -->
+      <o id="111" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Beaucedine Glacier -->
+      <o id="112" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Xarcabard -->
+      <o id="113" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Cape Teriggan -->
+      <o id="114" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Eastern Altepa Desert -->
+      <o id="115" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- West Sarutabaruta -->
+      <o id="116" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- East Sarutabaruta -->
+      <o id="117" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Tahrongi Canyon -->
+      <o id="118" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Buburimu Peninsula -->
+      <o id="119" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Meriphataud Mountains -->
+      <o id="120" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Sauromugue Champaign -->
+      <o id="121" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- The Sanctuary of Zi'Tah -->
+      <o id="122" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Ro'Maeve -->
+      <o id="123" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Yuhtunga Jungle -->
+      <o id="124" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Yhoator Jungle -->
+      <o id="125" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Western Altepa Desert -->
+      <o id="126" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Qufim Island -->
+      <o id="127" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Behemoth's Dominion -->
+      <o id="128" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Valley of Sorrows -->
+      <o id="129" can_pet="true" is_layered="true" /> <!-- Ghoyu's Reverie -->
+      <o id="130" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Ru'Aun Gardens -->
+      <o id="131" can_invite_cross_zone="true" /> <!-- Mordion Gaol -->
+      <o id="132" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - La Theine -->
+      <o id="133" can_pet="true" is_layered="true" /> <!-- Outer Ra'Kaznar [U2] -->
+      <o id="134" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Beaucedine -->
+      <o id="135" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Xarcabard -->
+      <o id="136" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Beaucedine Glacier [S] -->
+      <o id="137" can_nexus="true" can_mount="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Xarcabard [S] -->
+      <o id="138" can_pet="true" can_invite_cross_zone="true" /> <!-- Castle Zvahl Baileys [S] -->
+      <o id="139" can_pet="true" /> <!-- Horlais Peak -->
+      <o id="140" can_pet="true" can_invite_cross_zone="true" /> <!-- Ghelsba Outpost -->
+      <o id="141" can_pet="true" can_invite_cross_zone="true" /> <!-- Fort Ghelsba -->
+      <o id="142" can_pet="true" can_invite_cross_zone="true" /> <!-- Yughott Grotto -->
+      <o id="143" can_pet="true" can_invite_cross_zone="true" /> <!-- Palborough Mines -->
+      <o id="144" can_pet="true" /> <!-- Waughroon Shrine -->
+      <o id="145" can_pet="true" can_invite_cross_zone="true" /> <!-- Giddeus -->
+      <o id="146" can_pet="true" /> <!-- Balga's Dais -->
+      <o id="147" can_pet="true" can_invite_cross_zone="true" /> <!-- Beadeaux -->
+      <o id="148" can_pet="true" can_invite_cross_zone="true" /> <!-- Qulun Dome -->
+      <o id="149" can_pet="true" can_invite_cross_zone="true" /> <!-- Davoi -->
+      <o id="150" can_pet="true" can_invite_cross_zone="true" /> <!-- Monastic Cavern -->
+      <o id="151" can_pet="true" can_invite_cross_zone="true" /> <!-- Castle Oztroja -->
+      <o id="152" can_pet="true" can_invite_cross_zone="true" /> <!-- Altar Room -->
+      <o id="153" can_pet="true" can_invite_cross_zone="true" /> <!-- The Boyahda Tree -->
+      <o id="154" can_pet="true" can_invite_cross_zone="true" /> <!-- Dragon's Aery -->
+      <o id="155" can_pet="true" can_invite_cross_zone="true" /> <!-- Castle Zvahl Keep [S] -->
+      <o id="156" can_pet="true" /> <!-- Throne Room [S] -->
+      <o id="157" can_pet="true" can_invite_cross_zone="true" /> <!-- Middle Delkfutt's Tower -->
+      <o id="158" can_pet="true" can_invite_cross_zone="true" /> <!-- Upper Delkfutt's Tower -->
+      <o id="159" can_pet="true" can_invite_cross_zone="true" /> <!-- Temple of Uggalepih -->
+      <o id="160" can_pet="true" can_invite_cross_zone="true" /> <!-- Den of Rancor -->
+      <o id="161" can_pet="true" can_invite_cross_zone="true" /> <!-- Castle Zvahl Baileys -->
+      <o id="162" can_pet="true" can_invite_cross_zone="true" /> <!-- Castle Zvahl Keep -->
+      <o id="163" can_pet="true" /> <!-- Sacrificial Chamber -->
+      <o id="164" can_pet="true" can_invite_cross_zone="true" /> <!-- Garlaige Citadel [S] -->
+      <o id="165" can_pet="true" /> <!-- Throne Room -->
+      <o id="166" can_pet="true" can_invite_cross_zone="true" /> <!-- Ranguemont Pass -->
+      <o id="167" can_pet="true" can_invite_cross_zone="true" /> <!-- Bostaunieux Oubliette -->
+      <o id="168" can_pet="true" /> <!-- Chamber of Oracles -->
+      <o id="169" can_pet="true" can_invite_cross_zone="true" /> <!-- Toraimarai Canal -->
+      <o id="170" can_pet="true" /> <!-- Full Moon Fountain -->
+      <o id="171" can_pet="true" can_invite_cross_zone="true" /> <!-- Crawlers' Nest [S] -->
+      <o id="172" can_pet="true" can_invite_cross_zone="true" /> <!-- Zeruhn Mines -->
+      <o id="173" can_pet="true" can_invite_cross_zone="true" /> <!-- Korroloka Tunnel -->
+      <o id="174" can_pet="true" can_invite_cross_zone="true" /> <!-- Kuftal Tunnel -->
+      <o id="175" can_pet="true" can_invite_cross_zone="true" /> <!-- The Eldieme Necropolis [S] -->
+      <o id="176" can_pet="true" can_invite_cross_zone="true" /> <!-- Sea Serpent Grotto -->
+      <o id="177" can_pet="true" can_invite_cross_zone="true" /> <!-- Ve'Lugannon Palace -->
+      <o id="178" can_pet="true" can_invite_cross_zone="true" /> <!-- The Shrine of Ru'Avitau -->
+      <o id="179" can_pet="true" /> <!-- Stellar Fulcrum -->
+      <o id="180" can_pet="true" /> <!-- La'Loff Amphitheater -->
+      <o id="181" can_pet="true" /> <!-- The Celestial Nexus -->
+      <o id="182" can_pet="true" can_invite_cross_zone="true" /> <!-- Walk of Echoes -->
+      <o id="183" can_pet="true" is_layered="true" /> <!-- Maquette Abdhaljs-LegionA -->
+      <o id="184" can_pet="true" can_invite_cross_zone="true" /> <!-- Lower Delkfutt's Tower -->
+      <o id="185" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - San d'Oria -->
+      <o id="186" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Bastok -->
+      <o id="187" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Windurst -->
+      <o id="188" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Jeuno -->
+      <o id="190" can_pet="true" can_invite_cross_zone="true" /> <!-- King Ranperre's Tomb -->
+      <o id="191" can_pet="true" can_invite_cross_zone="true" /> <!-- Dangruf Wadi -->
+      <o id="192" can_pet="true" can_invite_cross_zone="true" /> <!-- Inner Horutoto Ruins -->
+      <o id="193" can_pet="true" can_invite_cross_zone="true" /> <!-- Ordelle's Caves -->
+      <o id="194" can_pet="true" can_invite_cross_zone="true" /> <!-- Outer Horutoto Ruins -->
+      <o id="195" can_pet="true" can_invite_cross_zone="true" /> <!-- The Eldieme Necropolis -->
+      <o id="196" can_pet="true" can_invite_cross_zone="true" /> <!-- Gusgen Mines -->
+      <o id="197" can_pet="true" can_invite_cross_zone="true" /> <!-- Crawlers' Nest -->
+      <o id="198" can_pet="true" can_invite_cross_zone="true" /> <!-- Maze of Shakhrami -->
+      <o id="200" can_pet="true" can_invite_cross_zone="true" /> <!-- Garlaige Citadel -->
+      <o id="201" can_pet="true" /> <!-- Cloister of Gales -->
+      <o id="202" can_pet="true" /> <!-- Cloister of Storms -->
+      <o id="203" can_pet="true" /> <!-- Cloister of Frost -->
+      <o id="204" can_pet="true" can_invite_cross_zone="true" /> <!-- Fei'Yin -->
+      <o id="205" can_pet="true" can_invite_cross_zone="true" /> <!-- Ifrit's Cauldron -->
+      <o id="206" can_pet="true" /> <!-- Qu'Bia Arena -->
+      <o id="207" can_pet="true" /> <!-- Cloister of Flames -->
+      <o id="208" can_pet="true" can_invite_cross_zone="true" /> <!-- Quicksand Caves -->
+      <o id="209" can_pet="true" /> <!-- Cloister of Tremors -->
+      <o id="211" can_pet="true" /> <!-- Cloister of Tides -->
+      <o id="212" can_pet="true" can_invite_cross_zone="true" /> <!-- Gustav Tunnel -->
+      <o id="213" can_pet="true" can_invite_cross_zone="true" /> <!-- Labyrinth of Onzozo -->
+      <o id="215" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Attohwa -->
+      <o id="216" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Misareaux -->
+      <o id="217" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Vunkerl -->
+      <o id="218" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Altepa -->
+      <o id="220" can_pet="true" can_invite_cross_zone="true" /> <!-- Ship bound for Selbina -->
+      <o id="221" can_pet="true" can_invite_cross_zone="true" /> <!-- Ship bound for Mhaura -->
+      <o id="222" can_pet="true" /> <!-- Provenance -->
+      <o id="223" can_invite_cross_zone="true" /> <!-- San d'Oria-Jeuno Airship -->
+      <o id="224" can_invite_cross_zone="true" /> <!-- Bastok-Jeuno Airship -->
+      <o id="225" can_invite_cross_zone="true" /> <!-- Windurst-Jeuno Airship -->
+      <o id="226" can_invite_cross_zone="true" /> <!-- Kazham-Jeuno Airship -->
+      <o id="227" can_pet="true" can_invite_cross_zone="true" /> <!-- Ship bound for Selbina -->
+      <o id="228" can_pet="true" can_invite_cross_zone="true" /> <!-- Ship bound for Mhaura -->
+      <o id="229" can_pet="true" is_layered="true" /> <!-- Throne Room [V] -->
+      <o id="230" can_nexus="true" can_invite_cross_zone="true" /> <!-- Southern San d'Oria -->
+      <o id="231" can_nexus="true" can_invite_cross_zone="true" /> <!-- Northern San d'Oria -->
+      <o id="232" can_nexus="true" can_invite_cross_zone="true" /> <!-- Port San d'Oria -->
+      <o id="233" can_invite_cross_zone="true" /> <!-- Chateau d'Oraguille -->
+      <o id="234" can_nexus="true" can_invite_cross_zone="true" /> <!-- Bastok Mines -->
+      <o id="235" can_nexus="true" can_invite_cross_zone="true" /> <!-- Bastok Markets -->
+      <o id="236" can_nexus="true" can_invite_cross_zone="true" /> <!-- Port Bastok -->
+      <o id="237" can_nexus="true" can_invite_cross_zone="true" /> <!-- Metalworks -->
+      <o id="238" can_nexus="true" can_invite_cross_zone="true" /> <!-- Windurst Waters -->
+      <o id="239" can_nexus="true" can_invite_cross_zone="true" /> <!-- Windurst Walls -->
+      <o id="240" can_nexus="true" can_invite_cross_zone="true" /> <!-- Port Windurst -->
+      <o id="241" can_nexus="true" can_invite_cross_zone="true" /> <!-- Windurst Woods -->
+      <o id="242" can_nexus="true" can_invite_cross_zone="true" /> <!-- Heavens Tower -->
+      <o id="243" can_nexus="true" can_invite_cross_zone="true" /> <!-- Ru'Lude Gardens -->
+      <o id="244" can_nexus="true" can_invite_cross_zone="true" /> <!-- Upper Jeuno -->
+      <o id="245" can_nexus="true" can_invite_cross_zone="true" /> <!-- Lower Jeuno -->
+      <o id="246" can_nexus="true" can_invite_cross_zone="true" /> <!-- Port Jeuno -->
+      <o id="247" can_nexus="true" can_invite_cross_zone="true" /> <!-- Rabao -->
+      <o id="248" can_nexus="true" can_invite_cross_zone="true" /> <!-- Selbina -->
+      <o id="249" can_nexus="true" can_invite_cross_zone="true" /> <!-- Mhaura -->
+      <o id="250" can_nexus="true" can_invite_cross_zone="true" /> <!-- Kazham -->
+      <o id="251" can_invite_cross_zone="true" /> <!-- Hall of the Gods -->
+      <o id="252" can_nexus="true" can_invite_cross_zone="true" /> <!-- Norg -->
+      <o id="253" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Uleguerand -->
+      <o id="254" can_pet="true" can_invite_cross_zone="true" /> <!-- Abyssea - Grauberg -->
+      <o id="255" can_pet="true" /> <!-- Abyssea - Empyreal Paradox -->
+      <o id="256" can_nexus="true" can_invite_cross_zone="true" /> <!-- Western Adoulin -->
+      <o id="257" can_nexus="true" can_invite_cross_zone="true" /> <!-- Eastern Adoulin -->
+      <o id="258" can_pet="true" can_invite_cross_zone="true" /> <!-- Rala Waterways -->
+      <o id="259" can_pet="true" is_layered="true" /> <!-- Rala Waterways [U] -->
+      <o id="260" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Yahse Hunting Grounds -->
+      <o id="261" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Ceizak Battlegrounds -->
+      <o id="262" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Foret de Hennetiel -->
+      <o id="263" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Yorcia Weald -->
+      <o id="264" can_pet="true" is_layered="true" /> <!-- Yorcia Weald [U] -->
+      <o id="265" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Morimar Basalt Fields -->
+      <o id="266" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Marjami Ravine -->
+      <o id="267" can_nexus="true" can_pet="true" can_invite_cross_zone="true" /> <!-- Kamihr Drifts -->
+      <o id="268" can_pet="true" can_invite_cross_zone="true" /> <!-- Sih Gates -->
+      <o id="269" can_pet="true" can_invite_cross_zone="true" /> <!-- Moh Gates -->
+      <o id="270" can_pet="true" can_invite_cross_zone="true" /> <!-- Cirdas Caverns -->
+      <o id="271" can_pet="true" is_layered="true" /> <!-- Cirdas Caverns [U] -->
+      <o id="272" can_pet="true" can_invite_cross_zone="true" /> <!-- Dho Gates -->
+      <o id="273" can_pet="true" can_invite_cross_zone="true" /> <!-- Woh Gates -->
+      <o id="274" can_pet="true" can_invite_cross_zone="true" /> <!-- Outer Ra'Kaznar -->
+      <o id="275" can_pet="true" is_layered="true" /> <!-- Outer Ra'Kaznar [U1] -->
+      <o id="276" can_pet="true" can_invite_cross_zone="true" /> <!-- Ra'Kaznar Inner Court -->
+      <o id="277" can_pet="true" /> <!-- Ra'Kaznar Turris -->
+      <o id="278" can_pet="true" is_layered="true" /> <!-- Gwora - Corridor -->
+      <o id="279" can_pet="true" is_layered="true" /> <!-- Walk of Echoes [P2] -->
+      <o id="280" can_deliver="true" can_invite_cross_zone="true" is_layered="true" /> <!-- Mog Garden -->
+      <o id="281" can_nexus="true" can_invite_cross_zone="true" /> <!-- Leafallia -->
+      <o id="282" can_invite_cross_zone="true" /> <!-- Mount Kamihr -->
+      <o id="283" can_invite_cross_zone="true" /> <!-- Silver Knife -->
+      <o id="284" can_invite_cross_zone="true" /> <!-- Celennia Memorial Library -->
+      <o id="285" can_invite_cross_zone="true" /> <!-- Feretory -->
+      <o id="287" can_pet="true" is_layered="true" /> <!-- Maquette Abdhaljs-LegionB -->
+      <o id="288" can_pet="true" can_invite_cross_zone="true" /> <!-- Escha - Zi'Tah -->
+      <o id="289" can_pet="true" can_invite_cross_zone="true" /> <!-- Escha - Ru'Aun -->
+      <o id="290" can_pet="true" is_layered="true" /> <!-- Desuetia - Empyreal Paradox -->
+      <o id="291" can_pet="true" can_invite_cross_zone="true" /> <!-- Reisenjima -->
+      <o id="292" can_pet="true" is_layered="true" /> <!-- Reisenjima Henge -->
+      <o id="293" can_pet="true" /> <!-- Reisenjima Sanctorium -->
+      <o id="294" can_pet="true" is_layered="true" /> <!-- Dynamis - San d'Oria [D] -->
+      <o id="295" can_pet="true" is_layered="true" /> <!-- Dynamis - Bastok [D] -->
+      <o id="296" can_pet="true" is_layered="true" /> <!-- Dynamis - Windurst [D] -->
+      <o id="297" can_pet="true" is_layered="true" /> <!-- Dynamis - Jeuno [D] -->
+      <o id="298" can_pet="true" is_layered="true" /> <!-- Walk of Echoes [P1] -->
     </update>
   </zones>
 </fixes>

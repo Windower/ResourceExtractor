@@ -2924,6 +2924,7 @@ IN THE SOFTWARE.
       <o id="186" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Bastok -->
       <o id="187" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Windurst -->
       <o id="188" can_pet="true" can_invite_cross_zone="true" /> <!-- Dynamis - Jeuno -->
+      <o id="189" can_pet="true" is_layered="true" /> <!-- Outer Ra'Kaznar [U3] -->
       <o id="190" can_pet="true" can_invite_cross_zone="true" /> <!-- King Ranperre's Tomb -->
       <o id="191" can_pet="true" can_invite_cross_zone="true" /> <!-- Dangruf Wadi -->
       <o id="192" can_pet="true" can_invite_cross_zone="true" /> <!-- Inner Horutoto Ruins -->

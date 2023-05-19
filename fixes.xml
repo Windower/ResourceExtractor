@@ -399,7 +399,7 @@ IN THE SOFTWARE.
       <o id="27" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Mandalic Stab -->
       <o id="28" skillchain_a="Fragmentation" skillchain_b="Distortion" skillchain_c="" /> <!-- Mordant Rime -->
       <o id="29" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Pyrrhic Kleos -->
-      <o id="30" skillchain_a="Impaction" skillchain_b="Scission" skillchain_c="Detonation" /> <!-- Aeolian Edge -->
+      <o id="30" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="Impaction" /> <!-- Aeolian Edge -->
       <o id="31" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Rudra's Storm -->
       <o id="32" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Fast Blade -->
       <o id="33" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Burning Blade -->

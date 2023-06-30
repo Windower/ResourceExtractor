@@ -431,6 +431,7 @@ IN THE SOFTWARE.
       <o id="59" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Torcleaver -->
       <o id="60" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Resolution -->
       <o id="61" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Dimidiation -->
+      <o id="62" skill="4" skillchain_a="Detonation" skillchain_b="Compression" skillchain_c="Distortion" /> <!-- Fimbulvetr -->
       <o id="64" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Raging Axe -->
       <o id="65" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Smash Axe -->
       <o id="66" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Gale Axe -->
@@ -445,6 +446,7 @@ IN THE SOFTWARE.
       <o id="75" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Bora Axe -->
       <o id="76" skillchain_a="Darkness" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Cloudsplitter -->
       <o id="77" skillchain_a="Distortion" skillchain_b="Detonation" skillchain_c="" /> <!-- Ruinator -->
+      <o id="78" skill="5" skillchain_a="Liquefaction" skillchain_b="Impaction" skillchain_c="Fragmentation" /> <!-- Blitz -->
       <o id="80" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shield Break -->
       <o id="81" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Iron Tempest -->
       <o id="82" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Sturmwind -->
@@ -459,6 +461,7 @@ IN THE SOFTWARE.
       <o id="91" skillchain_a="Scission" skillchain_b="Detonation" skillchain_c="" /> <!-- Fell Cleave -->
       <o id="92" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Ukko's Fury -->
       <o id="93" skillchain_a="Fusion" skillchain_b="Compression" skillchain_c="" /> <!-- Upheaval -->
+      <o id="94" skill="6" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="Gravitation" /> <!-- Disaster -->
       <o id="96" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Slice -->
       <o id="97" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Dark Harvest -->
       <o id="98" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Shadow of Death -->
@@ -473,6 +476,7 @@ IN THE SOFTWARE.
       <o id="107" skillchain_a="Compression" skillchain_b="Reverberation" skillchain_c="" /> <!-- Infernal Scythe -->
       <o id="108" skillchain_a="Darkness" skillchain_b="Distortion" skillchain_c="" /> <!-- Quietus -->
       <o id="109" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Entropy -->
+      <o id="110" skill="7" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="Fusion" /> <!-- Origin -->
       <o id="112" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Double Thrust -->
       <o id="113" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Thunder Thrust -->
       <o id="114" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Raiden Thrust -->
@@ -487,6 +491,7 @@ IN THE SOFTWARE.
       <o id="123" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Sonic Thrust -->
       <o id="124" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Camlann's Torment -->
       <o id="125" skillchain_a="Gravitation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Stardiver -->
+      <o id="126" skill="8" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="Gravitation" /> <!-- Diarmuid -->
       <o id="128" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Blade: Rin -->
       <o id="129" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Blade: Retsu -->
       <o id="130" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Blade: Teki -->
@@ -501,6 +506,7 @@ IN THE SOFTWARE.
       <o id="139" skillchain_a="Reverberation" skillchain_b="Scission" skillchain_c="" /> <!-- Blade: Yu -->
       <o id="140" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Blade: Hi -->
       <o id="141" skillchain_a="Fusion" skillchain_b="Impaction" skillchain_c="" /> <!-- Blade: Shun -->
+      <o id="142" skill="9" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="Fusion" /> <!-- Zesho Meppo -->
       <o id="144" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="" /> <!-- Tachi: Enpi -->
       <o id="145" skillchain_a="Induration" skillchain_b="" skillchain_c="" /> <!-- Tachi: Hobaku -->
       <o id="146" skillchain_a="Transfixion" skillchain_b="Impaction" skillchain_c="" /> <!-- Tachi: Goten -->
@@ -516,6 +522,7 @@ IN THE SOFTWARE.
       <o id="156" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Tachi: Fudo -->
       <o id="157" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Tachi: Shoha -->
       <o id="158" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Tachi: Suikawari -->
+      <o id="159" skill="10" skillchain_a="Detonation" skillchain_b="Compression" skillchain_c="Distortion" /> <!-- Tachi: Mumei -->
       <o id="160" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Shining Strike -->
       <o id="161" skillchain_a="Impaction" skillchain_b="" skillchain_c="" /> <!-- Seraph Strike -->
       <o id="162" skillchain_a="Reverberation" skillchain_b="" skillchain_c="" /> <!-- Brainshaker -->
@@ -559,6 +566,7 @@ IN THE SOFTWARE.
       <o id="201" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Refulgent Arrow -->
       <o id="202" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Jishnu's Radiance -->
       <o id="203" skillchain_a="Fragmentation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Apex Arrow -->
+      <o id="204" skill="25" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="Gravitation" /> <!-- Sarv -->
       <o id="208" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Hot Shot -->
       <o id="209" skillchain_a="Reverberation" skillchain_b="Transfixion" skillchain_c="" /> <!-- Split Shot -->
       <o id="210" skillchain_a="Liquefaction" skillchain_b="Transfixion" skillchain_c="" /> <!-- Sniper Shot -->
@@ -572,6 +580,7 @@ IN THE SOFTWARE.
       <o id="219" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Numbing Shot -->
       <o id="220" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Wildfire -->
       <o id="221" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Last Stand -->
+      <o id="204" skill="26" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="Fusion" /> <!-- Terminus -->
       <o id="224" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Exenterator -->
       <o id="225" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
       <o id="226" skillchain_a="Gravitation" skillchain_b="Scission" skillchain_c="" /> <!-- Requiescat -->
@@ -579,6 +588,11 @@ IN THE SOFTWARE.
       <o id="228" skillchain_a="Light" skillchain_b="" skillchain_c="" /> <!-- Final Paradise -->
       <o id="229" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Fast Blade II -->
       <o id="230" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Dragon Blow -->
+      <o id="231" skill="1" skillchain_a="Detonation" skillchain_b="Compression" skillchain_c="Distortion" /> <!-- Maru Kala -->
+      <o id="232" skill="2" skillchain_a="Liquefaction" skillchain_b="Impaction" skillchain_c="Fragmentation" /> <!-- Ruthless Stroke -->
+      <o id="233" skill="3" skillchain_a="Detonation" skillchain_b="Compression" skillchain_c="Distortion" /> <!-- Imperator -->
+      <o id="234" skill="11" skillchain_a="Transfixion" skillchain_b="Scission" skillchain_c="Gravitation" /> <!-- Dagda -->
+      <o id="235" skill="12" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="Fusion" /> <!-- Oshala -->
       <o id="238" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Uriel Blade -->
       <o id="239" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Glory Slash -->
       <o id="240" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Tartarus Torpor -->

@@ -580,7 +580,7 @@ IN THE SOFTWARE.
       <o id="219" skillchain_a="Induration" skillchain_b="Impaction" skillchain_c="Detonation" /> <!-- Numbing Shot -->
       <o id="220" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Wildfire -->
       <o id="221" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Last Stand -->
-      <o id="204" skill="26" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="Fusion" /> <!-- Terminus -->
+      <o id="222" skill="26" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="Fusion" /> <!-- Terminus -->
       <o id="224" skillchain_a="Fragmentation" skillchain_b="Scission" skillchain_c="" /> <!-- Exenterator -->
       <o id="225" skillchain_a="Light" skillchain_b="Distortion" skillchain_c="" /> <!-- Chant du Cygne -->
       <o id="226" skillchain_a="Gravitation" skillchain_b="Scission" skillchain_c="" /> <!-- Requiescat -->

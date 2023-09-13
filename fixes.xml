@@ -250,7 +250,7 @@ IN THE SOFTWARE.
       <o id="521" skillchain_a="Scission" skillchain_b="" skillchain_c="" /> <!-- Regal Scratch -->
       <o id="524" skillchain_a="" skillchain_b="" skillchain_c="" /> <!-- Level ? Holy -->
       <o id="526" duration="3600" status="113" /> <!-- Reraise II -->
-      <o id="527" duration="3600" status="113" /> <!-- Altana's Favor -->
+      <o id="527" status="113" /> <!-- Altana's Favor -->
       <o id="528" skillchain_a="Compression" skillchain_b="" skillchain_c="" /> <!-- Moonlit Charge -->
       <o id="529" skillchain_a="Transfixion" skillchain_b="" skillchain_c="" /> <!-- Crescent Fang -->
       <o id="532" duration="180" /> <!-- Ecliptic Growl -->

@@ -94,7 +94,7 @@ IN THE SOFTWARE.
       <o id="120" duration="300" status="332" /> <!-- Courser's Roll -->
       <o id="121" duration="300" status="333" /> <!-- Blitzer's Roll -->
       <o id="122" duration="300" status="334" /> <!-- Tactician's Roll -->
-      <o id="135" duration="60" status="166" /> <!-- Overdrive -->
+      <o id="135" duration="180" status="166" /> <!-- Overdrive -->
       <o id="149" duration="60" status="340" /> <!-- Warrior's Charge -->
       <o id="150" duration="30" status="232" /> <!-- Tomahawk -->
       <o id="151" duration="180" status="88" /> <!-- Mantra -->

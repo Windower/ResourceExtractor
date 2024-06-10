@@ -1435,6 +1435,128 @@ IN THE SOFTWARE.
       <o id="892" duration="230" status="186" overwrites="{278,279,280,281,282,283,284,285}" /> <!-- Luminohelix II -->
       <o id="894" duration="150" status="43" /> <!-- Refresh III -->
       <o id="895" duration="180" status="432" /> <!-- Temper II -->
+      <o id="896" model="3000" /> <!-- Shantotto -->
+      <o id="897" model="3001" /> <!-- Naji -->
+      <o id="898" model="3002" /> <!-- Kupipi -->
+      <o id="899" model="3003" /> <!-- Excenmille -->
+      <o id="900" model="3004" /> <!-- Ayame -->
+      <o id="901" model="3005" /> <!-- Nanaa Mihgo -->
+      <o id="902" model="3006" /> <!-- Curilla -->
+      <o id="903" model="3007" /> <!-- Volker -->
+      <o id="904" model="3008" /> <!-- Ajido-Marujido -->
+      <o id="905" model="3009" /> <!-- Trion -->
+      <o id="906" model="3010" /> <!-- Zeid -->
+      <o id="907" model="3011" /> <!-- Lion -->
+      <o id="908" model="3012" /> <!-- Tenzen -->
+      <o id="909" model="3013" /> <!-- Mihli Aliapoh -->
+      <o id="910" model="3014" /> <!-- Valaineral -->
+      <o id="911" model="3015" /> <!-- Joachim -->
+      <o id="912" model="3016" /> <!-- Naja Salaheem -->
+      <o id="913" model="3017" /> <!-- Prishe -->
+      <o id="914" model="3018" /> <!-- Ulmia -->
+      <o id="915" model="3019" /> <!-- Shikaree Z -->
+      <o id="916" model="3020" /> <!-- Cherukiki -->
+      <o id="917" model="3021" /> <!-- Iron Eater -->
+      <o id="918" model="3022" /> <!-- Gessho -->
+      <o id="919" model="3023" /> <!-- Gadalar -->
+      <o id="920" model="3024" /> <!-- Rainemard -->
+      <o id="921" model="3025" /> <!-- Ingrid -->
+      <o id="922" model="3026" /> <!-- Lehko Habhoka -->
+      <o id="923" model="3027" /> <!-- Nashmeira -->
+      <o id="924" model="3028" /> <!-- Zazarg -->
+      <o id="925" model="3029" /> <!-- Ovjang -->
+      <o id="926" model="3030" /> <!-- Mnejing -->
+      <o id="927" model="3031" /> <!-- Sakura -->
+      <o id="928" model="3032" /> <!-- Luzaf -->
+      <o id="929" model="3033" /> <!-- Najelith -->
+      <o id="930" model="3034" /> <!-- Aldo -->
+      <o id="931" model="3035" /> <!-- Moogle -->
+      <o id="932" model="3036" /> <!-- Fablinix -->
+      <o id="933" model="3037" /> <!-- Maat -->
+      <o id="934" model="3038" /> <!-- D. Shantotto -->
+      <o id="935" model="3039" /> <!-- Star Sibyl -->
+      <o id="936" model="3040" /> <!-- Karaha-Baruha -->
+      <o id="937" model="3041" /> <!-- Cid -->
+      <o id="938" model="3042" /> <!-- Gilgamesh -->
+      <o id="939" model="3043" /> <!-- Areuhat -->
+      <o id="940" model="3044" /> <!-- Semih Lafihna -->
+      <o id="941" model="3045" /> <!-- Elivira -->
+      <o id="942" model="3046" /> <!-- Noillurie -->
+      <o id="943" model="3047" /> <!-- Lhu Mhakaracca -->
+      <o id="944" model="3048" /> <!-- Ferreous Coffin -->
+      <o id="945" model="3049" /> <!-- Lilisette -->
+      <o id="946" model="3050" /> <!-- Mumor -->
+      <o id="947" model="3051" /> <!-- Uka Totlihn -->
+      <o id="948" model="3053" /> <!-- Klara -->
+      <o id="949" model="3054" /> <!-- Romaa Mihgo -->
+      <o id="950" model="3055" /> <!-- Kuyin Hathdenna -->
+      <o id="951" model="3056" /> <!-- Rahal -->
+      <o id="952" model="3057" /> <!-- Koru-Moru -->
+      <o id="953" model="3058" /> <!-- Pieuje (UC) -->
+      <o id="954" model="3060" party_name="InvincibleShld"/> <!-- I. Shield (UC) -->
+      <o id="955" model="3061" /> <!-- Apururu (UC) -->
+      <o id="956" model="3062" party_name="JakohWahcondalo"/> <!-- Jakoh (UC) -->
+      <o id="957" model="3059" /> <!-- Flaviria (UC) -->
+      <o id="958" model="3067" /> <!-- Babban -->
+      <o id="959" model="3068" /> <!-- Abenzio -->
+      <o id="960" model="3069" /> <!-- Rughadjeen -->
+      <o id="961" model="3070" /> <!-- Kukki-Chebukki -->
+      <o id="962" model="3071" /> <!-- Margret -->
+      <o id="963" model="3072" /> <!-- Chacharoon -->
+      <o id="964" model="3073" /> <!-- Lhe Lhangavo -->
+      <o id="965" model="3074" /> <!-- Arciela -->
+      <o id="966" model="3075" /> <!-- Mayakov -->
+      <o id="967" model="3076" /> <!-- Qultada -->
+      <o id="968" model="3077" /> <!-- Adelheid -->
+      <o id="969" model="3078" /> <!-- Amchuchu -->
+      <o id="970" model="3079" /> <!-- Brygid -->
+      <o id="971" model="3080" /> <!-- Mildaurion -->
+      <o id="972" model="3087" /> <!-- Halver -->
+      <o id="973" model="3088" /> <!-- Rongelouts -->
+      <o id="974" model="3089" /> <!-- Leonoyne -->
+      <o id="975" model="3090" /> <!-- Maximilian -->
+      <o id="976" model="3091" /> <!-- Kayeel-Payeel -->
+      <o id="977" model="3092" /> <!-- Robel-Akbel -->
+      <o id="978" model="3093" /> <!-- Kupofried -->
+      <o id="979" model="3094" /> <!-- Selh'teus -->
+      <o id="980" model="3095" /> <!-- Yoran-Oran (UC) -->
+      <o id="981" model="3096" /> <!-- Sylvie (UC) -->
+      <o id="982" model="3098" /> <!-- Abquhbah -->
+      <o id="983" model="3099" /> <!-- Balamor -->
+      <o id="984" model="3100" /> <!-- August -->
+      <o id="985" model="3101" /> <!-- Rosulatia -->
+      <o id="986" model="3103" /> <!-- Teodor -->
+      <o id="987" model="3105" /> <!-- Ullegore -->
+      <o id="988" model="3106" /> <!-- Makki-Chebukki -->
+      <o id="989" model="3107" /> <!-- King of Hearts -->
+      <o id="990" model="3108" /> <!-- Morimar -->
+      <o id="991" model="3109" /> <!-- Darrcuiln -->
+      <o id="992" model="3113" party_name="ArkHM"/> <!-- AAHM -->
+      <o id="993" model="3114" party_name="ArkEV"/> <!-- AAEV -->
+      <o id="994" model="3115" party_name="ArkMR"/> <!-- AAMR -->
+      <o id="995" model="3116" party_name="ArkTT"/> <!-- AATT -->
+      <o id="996" model="3117" party_name="ArkGK"/> <!-- AAGK -->
+      <o id="997" model="3111" /> <!-- Iroha -->
+      <o id="998" model="3118" /> <!-- Ygnas -->
+      <o id="999" model="3120" /> <!-- Monberaux -->
+      <o id="1002" model="3119" /> <!-- Cornelia -->
+      <o id="1003" model="3121" /> <!-- Matsui-P -->
+      <o id="1004" model="3052" party_name="Excenmille"/> <!-- Excenmille [S] -->
+      <o id="1005" model="3063" /> <!-- Ayame (UC) -->
+      <o id="1006" model="3064" /> <!-- Maat (UC) -->
+      <o id="1007" model="3065" /> <!-- Aldo (UC) -->
+      <o id="1008" model="3066" party_name="NajaSalaheem"/> <!-- Naja (UC) -->
+      <o id="1009" model="3081" /> <!-- Lion II -->
+      <o id="1010" model="3086" /> <!-- Zeid II -->
+      <o id="1011" model="3082" /> <!-- Prishe II -->
+      <o id="1012" model="3083" /> <!-- Nashmeira II -->
+      <o id="1013" model="3084" /> <!-- Lilisette II -->
+      <o id="1014" model="3097" /> <!-- Tenzen II -->
+      <o id="1015" model="3104" /> <!-- Mumor II -->
+      <o id="1016" model="3102" /> <!-- Ingrid II -->
+      <o id="1017" model="3085" /> <!-- Arciela II -->
+      <o id="1018" model="3112" /> <!-- Iroha II -->
+      <o id="1019" model="3110" /> <!-- Shantotto II -->
     </update>
   </spells>
   <buffs>

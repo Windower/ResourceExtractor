@@ -309,6 +309,14 @@ namespace ResourceExtractor
                     }
                 }
 
+                // Trust party member name defaults:
+                foreach (var spell in model.spells)
+                {
+                    if (!(spell.ContainsKey("type") && spell.type == MagicType.Trust && spell.ContainsKey("en"))) continue;
+                    string party_name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(spell.en).Replace(" (UC)", "").Replace(" II", "").Replace(" ", "");
+                    spell.party_name = party_name;
+                }
+
                 // Add categories to key items and synchronize IDs between languages for key items
                 var category = "";
                 var key_items = new Dictionary<int, dynamic>();

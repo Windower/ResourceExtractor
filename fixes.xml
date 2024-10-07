@@ -1623,15 +1623,15 @@ IN THE SOFTWARE.
   <bags>
     <update>
       <o id="0" en="Inventory" access="Everywhere" command="inventory" equippable="true" />
-      <o id="1" en="Safe" access="Mog House" command="bank" />
-      <o id="2" en="Storage" access="Mog House" command="storage" />
-      <o id="3" en="Temporary" access="Situational" command="temporary" />
-      <o id="4" en="Locker" access="Mog House" command="locker" />
-      <o id="5" en="Satchel" access="Everywhere" command="satchel" />
-      <o id="6" en="Sack" access="Everywhere" command="sack" />
-      <o id="7" en="Case" access="Everywhere" command="case" />
+      <o id="1" en="Safe" access="Mog House" command="bank" equippable="false" />
+      <o id="2" en="Storage" access="Mog House" command="storage" equippable="false" />
+      <o id="3" en="Temporary" access="Situational" command="temporary" equippable="false" />
+      <o id="4" en="Locker" access="Mog House" command="locker" equippable="false" />
+      <o id="5" en="Satchel" access="Everywhere" command="satchel" equippable="false" />
+      <o id="6" en="Sack" access="Everywhere" command="sack" equippable="false" />
+      <o id="7" en="Case" access="Everywhere" command="case" equippable="false" />
       <o id="8" en="Wardrobe" access="Everywhere" command="wardrobe" equippable="true" />
-      <o id="9" en="Safe 2" access="Mog House" command="bank2" />
+      <o id="9" en="Safe 2" access="Mog House" command="bank2" equippable="false" />
       <o id="10" en="Wardrobe 2" access="Everywhere" command="wardrobe2" equippable="true" />
       <o id="11" en="Wardrobe 3" access="Everywhere" command="wardrobe3" equippable="true" />
       <o id="12" en="Wardrobe 4" access="Everywhere" command="wardrobe4" equippable="true" />
@@ -1639,7 +1639,7 @@ IN THE SOFTWARE.
       <o id="14" en="Wardrobe 6" access="Everywhere" command="wardrobe6" equippable="true" />
       <o id="15" en="Wardrobe 7" access="Everywhere" command="wardrobe7" equippable="true" />
       <o id="16" en="Wardrobe 8" access="Everywhere" command="wardrobe8" equippable="true" />
-      <o id="17" en="Recycle" access="Everywhere" command="recycle" />
+      <o id="17" en="Recycle" access="Everywhere" command="recycle" equippable="false" />
     </update>
   </bags>
   <chat>

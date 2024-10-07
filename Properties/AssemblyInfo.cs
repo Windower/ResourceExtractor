@@ -23,15 +23,6 @@
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
-
-[assembly: AssemblyVersion("1.0.*")]
-
-[assembly: AssemblyTitle("Resource Extractor")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Resource Extractor")]
-[assembly: AssemblyCopyright("Copyright © 2013 Windower")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

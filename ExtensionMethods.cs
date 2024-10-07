@@ -1,226 +1,140 @@
-﻿// <copyright file="ExtensionMethods.cs" company="Windower Team">
-// Copyright © 2013-2018 Windower Team
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to
-// deal in the Software without restriction, including without limitation the
-// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-// sell copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-// IN THE SOFTWARE.
-// </copyright>
-
+﻿using System;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 
-namespace ResourceExtractor
-{
-    using System;
-    using System.IO;
-    using System.Runtime.InteropServices;
-    using System.Xml.Linq;
+namespace ResourceExtractor; 
 
-    internal static class ExtensionMethods
-    {
-        public static void RotateRight(this byte[] data, int count)
-        {
-            for (int i = 0; i < data.Length; i++)
-            {
-                byte b = data[i];
-                data[i] = (byte)(b >> count | b << (8 - count));
-            }
-        }
+internal static class ExtensionMethods {
+	public static R Let<T, R>(this T value, Func<T, R> fn) =>
+		fn(value);
 
-        public static void Decode(this byte[] data)
-        {
-            if (data.Length < 13)
-            {
-                return;
-            }
+	public static void RotateRight(this byte[] data, int count) {
+		for (var i = 0; i < data.Length; i++) {
+			var b = data[i];
+			data[i] = (byte) (b >> count | b << (8 - count));
+		}
+	}
 
-            int key = 0;
+	public static void Decode(this byte[] data) {
+		if (data.Length < 13) {
+			return;
+		}
 
-            int count = Math.Abs(CountBits(data[2]) - CountBits(data[11]) + CountBits(data[12]));
-            switch (count % 5)
-            {
-                case 0: key = 7; break;
-                case 1: key = 1; break;
-                case 2: key = 6; break;
-                case 3: key = 2; break;
-                case 4: key = 5; break;
-            }
+		var key = (Math.Abs(CountBits(data[2]) - CountBits(data[11]) + CountBits(data[12])) % 5) switch {
+			0 => 7,
+			1 => 1,
+			2 => 6,
+			3 => 2,
+			4 => 5,
+			_ => 0,
+		};
 
-            data.RotateRight(key);
-        }
+		data.RotateRight(key);
+	}
 
-        public static T Read<T>(this Stream stream)
-        {
-            int size = Marshal.SizeOf(typeof(T));
-            byte[] data = new byte[size];
-            stream.Read(data, 0, data.Length);
+	public static T Read<T>(this Stream stream) {
+		var size = Marshal.SizeOf(typeof(T));
+		var data = new byte[size];
+		stream.Read(data, 0, data.Length);
 
-            IntPtr ptr = IntPtr.Zero;
-            try
-            {
-                ptr = Marshal.AllocHGlobal(data.Length);
-                Marshal.Copy(data, 0, ptr, data.Length);
-                return (T)Marshal.PtrToStructure(ptr, typeof(T));
-            }
-            finally
-            {
-                if (ptr != IntPtr.Zero)
-                {
-                    Marshal.FreeHGlobal(ptr);
-                }
-            }
-        }
+		var ptr = IntPtr.Zero;
+		try {
+			ptr = Marshal.AllocHGlobal(data.Length);
+			Marshal.Copy(data, 0, ptr, data.Length);
+			return (T) Marshal.PtrToStructure(ptr, typeof(T));
+		} finally {
+			if (ptr != IntPtr.Zero) {
+				Marshal.FreeHGlobal(ptr);
+			}
+		}
+	}
 
-        public static T Read<T>(this Stream stream, uint offset)
-        {
-            stream.Position = offset;
-            return Read<T>(stream);
-        }
+	public static T Read<T>(this Stream stream, uint offset) {
+		stream.Position = offset;
+		return Read<T>(stream);
+	}
 
-        public static T[] ReadArray<T>(this Stream stream, int count, uint offset)
-        {
-            stream.Position = offset;
-            return stream.ReadArray<T>(count);
-        }
+	public static T[] ReadArray<T>(this Stream stream, int count, uint offset) {
+		stream.Position = offset;
+		return stream.ReadArray<T>(count);
+	}
 
-        public static T[] ReadArray<T>(this Stream stream, int count)
-        {
-            int size = Marshal.SizeOf(typeof(T));
-            byte[] data = new byte[size * count];
-            stream.Read(data, 0, data.Length);
+	public static T[] ReadArray<T>(this Stream stream, int count) {
+		var size = Marshal.SizeOf(typeof(T));
+		var data = new byte[size * count];
+		stream.Read(data, 0, data.Length);
 
-            IntPtr ptr = IntPtr.Zero;
-            try
-            {
-                ptr = Marshal.AllocHGlobal(data.Length);
-                Marshal.Copy(data, 0, ptr, data.Length);
+		var ptr = IntPtr.Zero;
+		try {
+			ptr = Marshal.AllocHGlobal(data.Length);
+			Marshal.Copy(data, 0, ptr, data.Length);
 
-                T[] result = new T[count];
+			var result = new T[count];
 
-                for (int i = 0; i < count; i++)
-                {
-                    result[i] = (T)Marshal.PtrToStructure(ptr + size * i, typeof(T));
-                }
+			for (var i = 0; i < count; i++) {
+				result[i] = (T) Marshal.PtrToStructure(ptr + size * i, typeof(T));
+			}
 
-                return result;
-            }
-            finally
-            {
-                if (ptr != IntPtr.Zero)
-                {
-                    Marshal.FreeHGlobal(ptr);
-                }
-            }
-        }
+			return result;
+		} finally {
+			if (ptr != IntPtr.Zero) {
+				Marshal.FreeHGlobal(ptr);
+			}
+		}
+	}
 
-        // Enum values
-        public static string Prefix(this AbilityType value)
-        {
-            switch (value)
-            {
-                case AbilityType.Misc:
-                case AbilityType.JobTrait:
-                    return "/echo";
-                case AbilityType.JobAbility:
-                case AbilityType.CorsairRoll:
-                case AbilityType.CorsairShot:
-                case AbilityType.Samba:
-                case AbilityType.Waltz:
-                case AbilityType.Step:
-                case AbilityType.Jig:
-                case AbilityType.Flourish1:
-                case AbilityType.Flourish2:
-                case AbilityType.Flourish3:
-                case AbilityType.Scholar:
-                case AbilityType.Rune:
-                case AbilityType.Ward:
-                case AbilityType.Effusion:
-                    return "/jobability";
-                case AbilityType.WeaponSkill:
-                    return "/weaponskill";
-                case AbilityType.MonsterSkill:
-                    return "/monsterskill";
-                case AbilityType.PetCommand:
-                case AbilityType.BloodPactWard:
-                case AbilityType.BloodPactRage:
-                case AbilityType.Monster:
-                    return "/pet";
-            }
+	public static string Prefix(this AbilityType value) {
+		return value switch {
+			AbilityType.Misc or AbilityType.JobTrait => "/echo",
+			AbilityType.JobAbility or AbilityType.CorsairRoll or AbilityType.CorsairShot or AbilityType.Samba or AbilityType.Waltz or AbilityType.Step or AbilityType.Jig or AbilityType.Flourish1 or AbilityType.Flourish2 or AbilityType.Flourish3 or AbilityType.Scholar or AbilityType.Rune or AbilityType.Ward or AbilityType.Effusion => "/jobability",
+			AbilityType.WeaponSkill => "/weaponskill",
+			AbilityType.MonsterSkill => "/monsterskill",
+			AbilityType.PetCommand or AbilityType.BloodPactWard or AbilityType.BloodPactRage or AbilityType.Monster => "/pet",
+			_ => "/unknown",
+		};
+	}
 
-            return "/unknown";
-        }
+	public static string Prefix(this MagicType value) {
+		return value switch {
+			MagicType.WhiteMagic or MagicType.BlackMagic or MagicType.SummonerPact or MagicType.BlueMagic or MagicType.Geomancy or MagicType.Trust => "/magic",
+			MagicType.BardSong => "/song",
+			MagicType.Ninjutsu => "/ninjutsu",
+			_ => "/unknown",
+		};
+	}
 
-        public static string Prefix(this MagicType value)
-        {
-            switch (value)
-            {
-                case MagicType.WhiteMagic:
-                case MagicType.BlackMagic:
-                case MagicType.SummonerPact:
-                case MagicType.BlueMagic:
-                case MagicType.Geomancy:
-                case MagicType.Trust:
-                    return "/magic";
+	public static object Parse(this string value) {
+		var str = value;
+		if (!str.StartsWith('{')) {
+			return
+				Int32.TryParse(str, out var resint) ? resint :
+				Single.TryParse(str, out var resfloat) ? resfloat :
+				Boolean.TryParse(str, out var resbool) ? resbool :
+				str;
+		}
 
-                case MagicType.BardSong:
-                    return "/song";
+		str = str[1..^1];
+		if (!str.StartsWith('[')) {
+			return str.Split(',').Select(Parse).ToList();
+		}
 
-                case MagicType.Ninjutsu:
-                    return "/ninjutsu";
-            }
+		return str.Split(',')
+			.Select(kvp => kvp.Split('='))
+			.ToDictionary(kvp => Parse(kvp[0][1..^1]), kvp => Parse(kvp[1]));
+	}
 
-            return "/unknown";
-        }
+	private static int CountBits(byte b) {
+		var count = 0;
 
-        public static object Parse(this string value)
-        {
-            var str = value;
-            if (!str.StartsWith("{"))
-            {
-                return
-                    int.TryParse(str, out var resint) ? resint :
-                    float.TryParse(str, out var resfloat) ? resfloat :
-                    bool.TryParse(str, out var resbool) ? (object)resbool :
-                    str;
-            }
+		while (b != 0) {
+			if ((b & 1) != 0) {
+				count++;
+			}
 
-            str = str.Substring(1, str.Length - 2);
-            if (!str.StartsWith("["))
-            {
-                return str.Split(',').Select(Parse).ToList();
-            }
+			b >>= 1;
+		}
 
-            return str.Split(',').Select(kvp => kvp.Split('=')).ToDictionary(kvp => Parse(kvp[0].Substring(1, kvp[0].Length - 2)), kvp => Parse(kvp[1]));
-        }
-
-        private static int CountBits(byte b)
-        {
-            int count = 0;
-
-            while (b != 0)
-            {
-                if ((b & 1) != 0)
-                {
-                    count++;
-                }
-
-                b >>= 1;
-            }
-
-            return count;
-        }
-    }
+		return count;
+	}
 }

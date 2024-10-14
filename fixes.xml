@@ -1600,24 +1600,24 @@
   </elements>
   <bags>
     <update>
-      <o id="0" en="Inventory" name="inventory" access="Everywhere" command="inventory" equippable="true" />
-      <o id="1" en="Safe" name="safe" access="Mog House" command="bank" equippable="false" />
-      <o id="2" en="Storage" name="storage" access="Mog House" command="storage" equippable="false" />
-      <o id="3" en="Temporary" name="temporary" access="Situational" command="temporary" equippable="false" />
-      <o id="4" en="Locker" name="locker" access="Mog House" command="locker" equippable="false" />
-      <o id="5" en="Satchel" name="satchel" access="Everywhere" command="satchel" equippable="false" />
-      <o id="6" en="Sack" name="sack" access="Everywhere" command="sack" equippable="false" />
-      <o id="7" en="Case" name="case" access="Everywhere" command="case" equippable="false" />
-      <o id="8" en="Wardrobe" name="wardrobe" access="Everywhere" command="wardrobe" equippable="true" />
-      <o id="9" en="Safe 2" name="safe2" access="Mog House" command="bank2" equippable="false" />
-      <o id="10" en="Wardrobe 2" name="wardrobe2" access="Everywhere" command="wardrobe2" equippable="true" />
-      <o id="11" en="Wardrobe 3" name="wardrobe3" access="Everywhere" command="wardrobe3" equippable="true" />
-      <o id="12" en="Wardrobe 4" name="wardrobe4" access="Everywhere" command="wardrobe4" equippable="true" />
-      <o id="13" en="Wardrobe 5" name="wardrobe5" access="Everywhere" command="wardrobe5" equippable="true" />
-      <o id="14" en="Wardrobe 6" name="wardrobe6" access="Everywhere" command="wardrobe6" equippable="true" />
-      <o id="15" en="Wardrobe 7" name="wardrobe7" access="Everywhere" command="wardrobe7" equippable="true" />
-      <o id="16" en="Wardrobe 8" name="wardrobe8" access="Everywhere" command="wardrobe8" equippable="true" />
-      <o id="17" en="Recycle" name="recycle" access="Everywhere" command="recycle" equippable="false" />
+      <o id="0" en="Inventory" api="inventory" access="Everywhere" command="inventory" equippable="true" />
+      <o id="1" en="Safe" api="safe" access="Mog House" command="bank" equippable="false" />
+      <o id="2" en="Storage" api="storage" access="Mog House" command="storage" equippable="false" />
+      <o id="3" en="Temporary" api="temporary" access="Situational" command="temporary" equippable="false" />
+      <o id="4" en="Locker" api="locker" access="Mog House" command="locker" equippable="false" />
+      <o id="5" en="Satchel" api="satchel" access="Everywhere" command="satchel" equippable="false" />
+      <o id="6" en="Sack" api="sack" access="Everywhere" command="sack" equippable="false" />
+      <o id="7" en="Case" api="case" access="Everywhere" command="case" equippable="false" />
+      <o id="8" en="Wardrobe" api="wardrobe" access="Everywhere" command="wardrobe" equippable="true" />
+      <o id="9" en="Safe 2" api="safe2" access="Mog House" command="bank2" equippable="false" />
+      <o id="10" en="Wardrobe 2" api="wardrobe2" access="Everywhere" command="wardrobe2" equippable="true" />
+      <o id="11" en="Wardrobe 3" api="wardrobe3" access="Everywhere" command="wardrobe3" equippable="true" />
+      <o id="12" en="Wardrobe 4" api="wardrobe4" access="Everywhere" command="wardrobe4" equippable="true" />
+      <o id="13" en="Wardrobe 5" api="wardrobe5" access="Everywhere" command="wardrobe5" equippable="true" />
+      <o id="14" en="Wardrobe 6" api="wardrobe6" access="Everywhere" command="wardrobe6" equippable="true" />
+      <o id="15" en="Wardrobe 7" api="wardrobe7" access="Everywhere" command="wardrobe7" equippable="true" />
+      <o id="16" en="Wardrobe 8" api="wardrobe8" access="Everywhere" command="wardrobe8" equippable="true" />
+      <o id="17" en="Recycle" api="recycle" access="Everywhere" command="recycle" equippable="false" />
     </update>
   </bags>
   <chat>

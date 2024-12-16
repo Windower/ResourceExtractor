@@ -988,7 +988,7 @@
       <o id="286" duration="120" status="21" /> <!-- Addle -->
       <o id="287" duration="300" status="407" /> <!-- Klimaform -->
       <o id="308" duration="180" status="289" /> <!-- Animus Augeo -->
-      <o id="309" duration="180" status="291" /> <!-- Animus Minuo -->
+      <o id="309" duration="180" status="171" /> <!-- Animus Minuo -->
       <o id="310" duration="180" status="274" /> <!-- Enlight -->
       <o id="311" duration="180" status="288" /> <!-- Endark -->
       <o id="312" duration="180" status="277" overwrites="{100,101,102,103,104,105,312,313,314,315,316,317}" /> <!-- Enfire II -->

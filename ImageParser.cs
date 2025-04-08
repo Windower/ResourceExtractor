@@ -4,9 +4,7 @@ using System.IO;
 
 namespace ResourceExtractor; 
 
-internal class ImageParser {
-	private ImageParser() { }
-
+internal static class ImageParser {
 	internal static Bitmap Parse(Stream stream, bool ignoreAlpha = false) {
 		var flag = stream.Read<byte>(0x30);
 		var header = stream.Read<ImageHeader>(0x41);
@@ -18,9 +16,7 @@ internal class ImageParser {
 			case ImageType.DXT3:
 			case ImageType.DXT4:
 			case ImageType.DXT5:
-				// Unknown 8 bytes
-				reader.ReadBytes(8);
-
+				stream.Seek(8, SeekOrigin.Current); // Unknown 8 bytes
 				return DxtParser.Parse(reader, header, ignoreAlpha);
 			case ImageType.Bitmap:
 				return BitmapParser.Parse(reader, header, ignoreAlpha);

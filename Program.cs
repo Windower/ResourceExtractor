@@ -174,6 +174,10 @@ internal class Program {
 
 	private static void Main(string[] args) {
 		try {
+			Console.WriteLine();
+
+			InitializeBaseDirectory(args);
+
 			Console.CursorVisible = false;
 
 			model = new ModelObject();
@@ -186,16 +190,8 @@ internal class Program {
 
 			ResourceParser.Initialize(model);
 
-			Dir = GetBaseDirectory();
-			Console.WriteLine();
-			if (Dir == null) {
-				Console.WriteLine("Unable to locate Final Fantasy XI installation.");
-				Console.WriteLine();
-				return;
-			}
-
-			LoadItemData();  // Items, Monstrosity
-			LoadMainData();  // Abilities, Spells
+			LoadItemData(); // Items, Monstrosity
+			LoadMainData(); // Abilities, Spells
 
 			ParseStringTables();
 			Console.WriteLine();
@@ -219,12 +215,13 @@ internal class Program {
 			Console.WriteLine();
 
 			if (args.Contains("--maps") || args.Contains("-m")) {
-				MapParser.Extract();
+				ExtractMaps();
 				Console.WriteLine();
 			}
 
 			if (args.Contains("--analysis") || args.Contains("-a")) {
 				Analyzer.Analyze(model);
+				Console.WriteLine();
 			}
 
 			Console.WriteLine("Resource extraction complete!");
@@ -539,20 +536,27 @@ internal class Program {
 		manifest.Save(Path.Combine("resources", "manifest.xml"));
 	}
 
-	private static string GetBaseDirectory() {
-		Dir = null;
-
+	private static void InitializeBaseDirectory(string[] args) {
 		DisplayMessage("Locating Final Fantasy XI installation directory...");
 
+		var message = "Unable to locate Final Fantasy XI installation.";
 		try {
 			using var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
 			using var key = (hklm.OpenSubKey("SOFTWARE\\PlayOnlineUS\\InstallFolder") ?? hklm.OpenSubKey("SOFTWARE\\PlayOnline\\InstallFolder")) ?? hklm.OpenSubKey("SOFTWARE\\PlayOnlineEU\\InstallFolder");
 			Dir = key?.GetValue("0001") as string;
-		} finally {
-			DisplayResult(Dir != null);
-		}
 
-		return Dir;
+			if (Dir != null && !Directory.Exists(Dir)) {
+				message = $"Path \"{Dir}\" not found.";
+				Dir = null;
+			}
+		} finally {
+			var success = Dir != null;
+			DisplayResult(success);
+			if (!success) {
+				DisplayMessage(message);
+				Environment.Exit(1);
+			}
+		}
 	}
 
 	private static void Extract(string name, string[] ignore = null) {
@@ -735,7 +739,6 @@ internal class Program {
 		}
 	}
 
-	[SuppressMessage("Microsoft.Maintainability", "CA1502")]
 	private static bool IsValidName(string[] ignore, dynamic res) {
 		return
 			// English
@@ -746,6 +749,17 @@ internal class Program {
 			&& (!res.ContainsKey("ja") || !(res.ja == "."
 			|| String.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string) res.ja)
 			|| res.ja.StartsWith("#", StringComparison.Ordinal)));
+	}
+
+	private static void ExtractMaps() {
+		DisplayMessage("Extracting map data...");
+
+		try {
+			MapParser.Extract();
+			DisplaySuccess();
+		} catch {
+			DisplayError();
+		}
 	}
 
 	public static string GetPath(int id) {
@@ -763,8 +777,20 @@ internal class Program {
 		Console.WriteLine(message);
 	}
 
-	public static void DisplayError() {
+	public static void DisplayMessage(string message, ConsoleColor color) {
+		var backupColor = Console.ForegroundColor;
+		Console.ForegroundColor = color;
+		Console.WriteLine(message);
+		Console.ForegroundColor = backupColor;
+	}
+
+	public static void DisplayError(string message = null) {
 		DisplayResult("Error!", ConsoleColor.Red);
+		if (message != null) {
+			Console.WriteLine();
+			DisplayMessage($"  {message}", ConsoleColor.Red);
+			Console.WriteLine();
+		}
 	}
 
 	public static void DisplaySuccess() {
@@ -782,13 +808,6 @@ internal class Program {
 	private static void DisplayResult(string result, ConsoleColor color) {
 		Console.CursorTop -= 1;
 		Console.CursorLeft = Console.BufferWidth - result.Length - 2;
-
-		var currentcolor = Console.ForegroundColor;
-		try {
-			Console.ForegroundColor = color;
-			Console.Write($"[{result}]");
-		} finally {
-			Console.ForegroundColor = currentcolor;
-		}
+		DisplayMessage($"[{result}]", color);
 	}
 }

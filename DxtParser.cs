@@ -108,6 +108,6 @@ internal static class DxtParser {
 		return DecodedColors;
 	}
 
-	private static Color DecodeRGB565(ushort C) =>
-		Color.FromArgb((C & 0xF800) >> 8, (C & 0x07E0) >> 3, (C & 0x001F) << 3);
+	private static Color DecodeRGB565(ushort c) =>
+		Color.FromArgb((c & 0xF800) >> 8, (c & 0x07E0) >> 3, (c & 0x001F) << 3);
 }

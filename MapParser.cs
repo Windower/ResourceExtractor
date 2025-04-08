@@ -9,24 +9,15 @@ namespace ResourceExtractor;
 
 public static class MapParser {
 	public static void Extract() {
-		Program.DisplayMessage("Extracting map data...");
-
 		var dats = JsonSerializer.Deserialize<IDictionary<string, IDictionary<string, ushort>>>(File.ReadAllText("MapDats.json"));
 
-		var success = false;
-		try {
-			foreach (var (zone, maps) in dats) {
-				foreach (var (map, datId) in maps) {
-					using var dat = File.Open(Program.GetPath(datId), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-					var image = ImageParser.Parse(dat, true);
-					using var file = File.Open(String.Format(CultureInfo.InvariantCulture, "resources/maps/{0}_{1}.png", zone, map), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
-					image.Save(file, ImageFormat.Png);
-				}
+		foreach (var (zone, maps) in dats) {
+			foreach (var (map, datId) in maps) {
+				using var dat = File.Open(Program.GetPath(datId), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+				var image = ImageParser.Parse(dat, true);
+				using var file = File.Open(String.Format(CultureInfo.InvariantCulture, "resources/maps/{0}_{1}.png", zone, map), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
+				image.Save(file, ImageFormat.Png);
 			}
-
-			success = true;
-		} finally {
-			Program.DisplayResult(success);
 		}
 	}
 

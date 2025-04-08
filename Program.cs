@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Linq;
 using Microsoft.Win32;
 using ResourceExtractor.Serializers;
@@ -605,7 +606,8 @@ internal class Program {
 	private static void ApplyFixes() {
 		DisplayMessage("Applying fixes...");
 		try {
-			var fixes = XDocument.Load("fixes.xml");
+			using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ResourceExtractor.fixes.xml");
+			var fixes = XDocument.Load(stream);
 
 			foreach (var fixset in fixes.Root.Elements()) {
 				if (!model.ContainsKey(fixset.Name.LocalName)) {

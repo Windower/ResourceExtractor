@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
+using System.Reflection;
 using System.Text.Json;
 
 namespace ResourceExtractor; 
 
 public static class MapParser {
 	public static void Extract() {
-		var dats = JsonSerializer.Deserialize<IDictionary<string, IDictionary<string, ushort>>>(File.ReadAllText("MapDats.json"));
+		using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ResourceExtractor.MapDats.json");
+		var dats = JsonSerializer.Deserialize<IDictionary<string, IDictionary<string, ushort>>>(stream);
 
 		foreach (var (zone, maps) in dats) {
 			foreach (var (map, datId) in maps) {

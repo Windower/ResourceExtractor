@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace ResourceExtractor; 
 
+[SupportedOSPlatform("windows")]
 internal static class ImageParser {
 	internal static Bitmap Parse(Stream stream, bool ignoreAlpha = false) {
 		var flag = stream.Read<byte>(0x30);

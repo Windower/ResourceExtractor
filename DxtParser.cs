@@ -2,9 +2,11 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace ResourceExtractor; 
 
+[SupportedOSPlatform("windows")]
 internal static class DxtParser {
 	internal static Bitmap Parse(BinaryReader reader, ImageHeader header, bool ignoreAlpha = false) {
 		var format = (header.Type == ImageType.DXT2 || header.Type == ImageType.DXT4) ? PixelFormat.Format32bppPArgb : PixelFormat.Format32bppArgb;

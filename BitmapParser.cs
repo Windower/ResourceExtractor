@@ -1,9 +1,11 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.Versioning;
 
-namespace ResourceExtractor; 
+namespace ResourceExtractor;
 
+[SupportedOSPlatform("windows")]
 internal static class BitmapParser {
 	internal static Bitmap Parse(BinaryReader reader, ImageHeader header, bool ignoreAlpha = false) {
 		var Result = new Bitmap(header.Width, header.Height, PixelFormat.Format32bppArgb);

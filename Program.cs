@@ -542,9 +542,16 @@ internal class Program {
 
 		var message = "Unable to locate Final Fantasy XI installation.";
 		try {
-			using var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
-			using var key = (hklm.OpenSubKey("SOFTWARE\\PlayOnlineUS\\InstallFolder") ?? hklm.OpenSubKey("SOFTWARE\\PlayOnline\\InstallFolder")) ?? hklm.OpenSubKey("SOFTWARE\\PlayOnlineEU\\InstallFolder");
-			Dir = key?.GetValue("0001") as string;
+			if (OperatingSystem.IsWindows()) {
+				using var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+				using var key = (hklm.OpenSubKey("SOFTWARE\\PlayOnlineUS\\InstallFolder") ?? hklm.OpenSubKey("SOFTWARE\\PlayOnline\\InstallFolder")) ?? hklm.OpenSubKey("SOFTWARE\\PlayOnlineEU\\InstallFolder");
+				Dir = key?.GetValue("0001") as string;
+			} else {
+				Dir = args.FirstOrDefault(arg => arg[0] != '-');
+				if (Dir == null) {
+					message = "No path provided";
+				}
+			}
 
 			if (Dir != null && !Directory.Exists(Dir)) {
 				message = $"Path \"{Dir}\" not found.";
@@ -755,6 +762,10 @@ internal class Program {
 
 	private static void ExtractMaps() {
 		DisplayMessage("Extracting map data...");
+		if (!OperatingSystem.IsWindowsVersionAtLeast(7)) {
+			DisplayError("Map extraction currently only works on Windows 7 and higher.");
+			return;
+		}
 
 		try {
 			MapParser.Extract();

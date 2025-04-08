@@ -4,10 +4,12 @@ using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Versioning;
 using System.Text.Json;
 
 namespace ResourceExtractor; 
 
+[SupportedOSPlatform("windows")]
 public static class MapParser {
 	public static void Extract() {
 		using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ResourceExtractor.MapDats.json");

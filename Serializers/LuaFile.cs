@@ -13,7 +13,9 @@ internal class LuaFile(string name) {
 	}
 
 	public void Save() {
-		using var file = new StreamWriter(Path.Combine(Directory.GetCurrentDirectory(), "resources", "lua", FormattableString.Invariant($"{name}.lua")));
+		using var file = new StreamWriter(Path.Combine(Directory.GetCurrentDirectory(), "resources", "lua", FormattableString.Invariant($"{name}.lua"))) {
+			NewLine = "\n",
+		};
 		var words = name.Split('_').Select(str => Char.ToUpperInvariant(str[0]) + str[1..]);
 		file.WriteLine("-- Automatically generated file: {0}", String.Join(" ", words));
 		file.WriteLine();

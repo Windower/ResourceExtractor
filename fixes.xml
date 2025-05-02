@@ -1566,6 +1566,7 @@
       <o id="450" en="Bewildered Daze 3" ja="フェザーステップ3" enl="Bewildered Daze 3" jal="フェザーステップ3" />
       <o id="451" en="Bewildered Daze 4" ja="フェザーステップ4" enl="Bewildered Daze 4" jal="フェザーステップ4" />
       <o id="452" en="Bewildered Daze 5" ja="フェザーステップ5" enl="Bewildered Daze 5" jal="フェザーステップ5" />
+      <o id="495" en="Macro Test" ja="マクロテスト" enl="Macro Test" jal="マクロテスト" /> <!-- please remove this line as soon as SE adds this data themselves thanks! -->
     </update>
   </buffs>
   <items>

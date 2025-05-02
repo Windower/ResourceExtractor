@@ -3496,7 +3496,7 @@
       <o id="298" can_pet="true" is_layered="true" /> <!-- Walk of Echoes [P1] -->
     </update>
   </zones>
-  <songs>
+  <music>
     <update>
       <o id="0" en="No Music" />
       <o id="25" en="The Voracious Resurgence" />
@@ -3720,5 +3720,5 @@
       <o id="254" en="Griffons Never Die" />
       <o id="900" en="Distant Worlds" />
    </update>
-  </songs>
+  </music>
 </fixes>

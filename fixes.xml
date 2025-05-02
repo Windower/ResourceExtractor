@@ -3495,4 +3495,229 @@
       <o id="298" can_pet="true" is_layered="true" /> <!-- Walk of Echoes [P1] -->
     </update>
   </zones>
+  <songs>
+    <update>
+      <o id="0" en="No Music" />
+      <o id="25" en="The Voracious Resurgence" />
+      <o id="26" en="The Devoured" />
+      <o id="27" en="Enroaching Perils" />
+      <o id="28" en="The Destiny Destroyers" />
+      <o id="29" en="Devils' Delight" />
+      <o id="30" en="Sojourner" />
+      <o id="31" en="Black Stars Rise" />
+      <o id="32" en="All Smiles" />
+      <o id="33" en="Valhalla" />
+      <o id="34" en="We Are Vana'diel" />
+      <o id="35" en="Goddessspeed" />
+      <o id="36" en="Good Fortune" />
+      <o id="37" en="All-Consuming Chaos" />
+      <o id="38" en="Your Choice" />
+      <o id="40" en="Cloister of Time and Souls" />
+      <o id="41" en="Royal Wanderlust" />
+      <o id="42" en="Snowdrift Waltz" />
+      <o id="43" en="Troubled Shadows" />
+      <o id="44" en="Where Lords Rule Not" />
+      <o id="45" en="Summers Lost" />
+      <o id="46" en="Goddess Divine" />
+      <o id="47" en="Echoes of Creation" />
+      <o id="48" en="Main Theme" />
+      <o id="49" en="Luck of the Mog" />
+      <o id="50" en="Feast of the Ladies" />
+      <o id="51" en="Abyssea - Scarlet Skies, Shadowed Plains" />
+      <o id="52" en="Melodies Errant" />
+      <o id="53" en="Shinryu" />
+      <o id="54" en="Everlasting Bonds" />
+      <o id="55" en="Provenance Watcher" />
+      <o id="56" en="Where it All Begins" />
+      <o id="57" en="Steel Sings, Blades Dance" />
+      <o id="58" en="A New Direction" />
+      <o id="59" en="The Pioneers" />
+      <o id="60" en="Into Lands Primeval - Ulbuka" />
+      <o id="61" en="Water's Umbral Knell" />
+      <o id="62" en="Keepers of the Wild" />
+      <o id="63" en="The Sacred City of Adoulin" />
+      <o id="64" en="Breaking Ground" />
+      <o id="65" en="Hades" />
+      <o id="66" en="Arciela" />
+      <o id="67" en="Mog Resort" />
+      <o id="68" en="Worlds Away" />
+      <o id="69" en="Distant Worlds (Nanaa Mihgo's version)" />
+      <o id="70" en="Monstrosity" />
+      <o id="71" en="The Pioneers (Nanaa Mihgo's version)" />
+      <o id="72" en="The Serpentine Labyrinth" />
+      <o id="73" en="The Divine" />
+      <o id="74" en="Clouds Over Ulbuka" />
+      <o id="75" en="The Price" />
+      <o id="76" en="Forever Today" />
+      <o id="77" en="Distant Worlds (Instrumental)" />
+      <o id="78" en="Forever Today (Instrumental)" />
+      <o id="79" en="Iroha" />
+      <o id="80" en="The Boundless Black" />
+      <o id="81" en="Isle of the Gods" />
+      <o id="82" en="Wail of the Void" />
+      <o id="83" en="Rhapsodies of Vana'diel" />
+      <o id="84" en="Full Speed Ahead!" />
+      <o id="85" en="Times Grow Tense" />
+      <o id="86" en="Shadow Lord (Record Keeper Remix)" />
+      <o id="87" en="For a Friend" />
+      <o id="88" en="Between Dreams and Reality" />
+      <o id="89" en="Disjoined One" />
+      <o id="90" en="Winds of Change" />
+      <o id="101" en="Battle Theme" />
+      <o id="102" en="Battle in the Dungeon #2" />
+      <o id="103" en="Battle Theme #2" />
+      <o id="104" en="A Road Once Traveled" />
+      <o id="105" en="Mhaura" />
+      <o id="106" en="Voyager" />
+      <o id="107" en="The Kingdom of San d'Oria" />
+      <o id="108" en="Vana'diel March" />
+      <o id="109" en="Ronfaure" />
+      <o id="110" en="The Grand Duchy of Jeuno" />
+      <o id="111" en="Blackout" />
+      <o id="112" en="Selbina" />
+      <o id="113" en="Sarutabaruta" />
+      <o id="114" en="Batallia Downs" />
+      <o id="115" en="Battle in the Dungeon" />
+      <o id="116" en="Gustaberg" />
+      <o id="117" en="Ru'Lude Gardens" />
+      <o id="118" en="Rolanberry Fields" />
+      <o id="119" en="Awakening" />
+      <o id="120" en="Vana'diel March #2" />
+      <o id="121" en="Shadow Lord" />
+      <o id="122" en="One Last Time" />
+      <o id="123" en="Hopelessness" />
+      <o id="124" en="Recollection" />
+      <o id="125" en="Tough Battle" />
+      <o id="126" en="Mog House" />
+      <o id="127" en="Anxiety" />
+      <o id="128" en="Airship" />
+      <o id="129" en="Hook, Line, and Sinker" />
+      <o id="130" en="Tarutaru Female" />
+      <o id="131" en="Elvaan Female" />
+      <o id="132" en="Elvaan Male" />
+      <o id="133" en="Hume Male" />
+      <o id="134" en="Yuhtunga Jungle" />
+      <o id="135" en="Kazham" />
+      <o id="136" en="The Big One" />
+      <o id="137" en="A Realm of Emptiness" />
+      <o id="138" en="Mercenaries' Delight" />
+      <o id="139" en="Delve" />
+      <o id="140" en="Wings of the Goddess" />
+      <o id="141" en="The Cosmic Wheel" />
+      <o id="142" en="Fated Strife -Besieged-" />
+      <o id="143" en="Hellriders" />
+      <o id="144" en="Rapid Onslaught -Assault-" />
+      <o id="145" en="Encampment Dreams" />
+      <o id="146" en="The Colosseum" />
+      <o id="147" en="Eastward Bound..." />
+      <o id="148" en="Forbidden Seal" />
+      <o id="149" en="Jeweled Boughs" />
+      <o id="150" en="Ululations from Beyond" />
+      <o id="151" en="The Federation of Windurst" />
+      <o id="152" en="The Republic of Bastok" />
+      <o id="153" en="Prelude" />
+      <o id="154" en="Metalworks" />
+      <o id="155" en="Castle Zvahl" />
+      <o id="156" en="Chateau d'Oraguille" />
+      <o id="157" en="Fury" />
+      <o id="158" en="Sauromugue Champaign" />
+      <o id="159" en="Sorrow" />
+      <o id="160" en="Repression (Memoro de la Stono)" />
+      <o id="161" en="Despair (Memoro de la Stono)" />
+      <o id="162" en="Heavens Tower" />
+      <o id="163" en="Sometime, Somewhere" />
+      <o id="164" en="Xarcabard" />
+      <o id="165" en="Galka" />
+      <o id="166" en="Mithra" />
+      <o id="167" en="Tarutaru Male" />
+      <o id="168" en="Hume Female" />
+      <o id="169" en="Regeneracy" />
+      <o id="170" en="Buccaneers" />
+      <o id="171" en="Altepa Desert" />
+      <o id="172" en="Black Coffin" />
+      <o id="173" en="Illusions in the Mist" />
+      <o id="174" en="Whispers of the Gods" />
+      <o id="175" en="Bandits' Market" />
+      <o id="176" en="Circuit de Chocobo" />
+      <o id="177" en="Run Chocobo, Run!" />
+      <o id="178" en="Bustle of the Capital" />
+      <o id="179" en="Vana'diel March #4" />
+      <o id="180" en="Thunder of the March" />
+      <o id="181" en="Dash de Chocobo (Low Quality)" />
+      <o id="182" en="Stargazing" />
+      <o id="183" en="A Puppet's Slumber" />
+      <o id="184" en="Eternal Gravestone" />
+      <o id="185" en="Ever-Turning Wheels" />
+      <o id="186" en="Iron Colossus" />
+      <o id="187" en="Ragnarok" />
+      <o id="188" en="Choc-a-bye Baby" />
+      <o id="189" en="An Invisible Crown" />
+      <o id="190" en="The Sanctuary of Zi'Tah" />
+      <o id="191" en="Battle Theme #3" />
+      <o id="192" en="Battle in the Dungeon #3" />
+      <o id="193" en="Tough Battle #2" />
+      <o id="194" en="Bloody Promises" />
+      <o id="195" en="Belief" />
+      <o id="196" en="Fighters of the Crystal" />
+      <o id="197" en="To the Heavens" />
+      <o id="198" en="Eald'narche" />
+      <o id="199" en="Grav'iton" />
+      <o id="200" en="Hidden Truths" />
+      <o id="201" en="End Theme" />
+      <o id="202" en="Moongate (Memoro de la Stono)" />
+      <o id="203" en="Ancient Verse of Uggalepih" />
+      <o id="204" en="Ancient Verse of Ro'Maeve" />
+      <o id="205" en="Ancient Verse of Altepa" />
+      <o id="206" en="Revenant Maiden" />
+      <o id="207" en="Ve'Lugannon Palace" />
+      <o id="208" en="Rabao" />
+      <o id="209" en="Norg" />
+      <o id="210" en="Tu'Lia" />
+      <o id="211" en="Ro'Maeve" />
+      <o id="212" en="Dash de Chocobo" />
+      <o id="213" en="Hall of the Gods" />
+      <o id="214" en="Eternal Oath" />
+      <o id="215" en="Clash of Standards" />
+      <o id="216" en="On this Blade" />
+      <o id="217" en="Kindred Cry" />
+      <o id="218" en="Depths of the Soul" />
+      <o id="219" en="Onslaught" />
+      <o id="220" en="Turmoil" />
+      <o id="221" en="Moblin Menagerie - Movalpolos" />
+      <o id="222" en="Faded Memories - Promyvion" />
+      <o id="223" en="Conflict: March of the Hero" />
+      <o id="224" en="Dusk and Dawn" />
+      <o id="225" en="Words Unspoken - Pso'Xja" />
+      <o id="226" en="Conflict: You Want to Live Forever?" />
+      <o id="227" en="Sunbreeze Shuffle" />
+      <o id="228" en="Gates of Paradise - The Garden of Ru'Hmet" />
+      <o id="229" en="Currents of Time" />
+      <o id="230" en="A New Horizon - Tavnazian Archipelago" />
+      <o id="231" en="Celestial Thunder" />
+      <o id="232" en="The Ruler of the Skies" />
+      <o id="233" en="The Celestial Capital - Al'Taieu" />
+      <o id="234" en="Happily Ever After" />
+      <o id="235" en="First Ode: Nocturne of the Gods" />
+      <o id="236" en="Fourth Ode: Clouded Dawn" />
+      <o id="237" en="Third Ode: Memoria de la Stona" />
+      <o id="238" en="A New Morning" />
+      <o id="239" en="Jeuno -Starlight Celebration-" />
+      <o id="240" en="Second Ode: Distant Promises" />
+      <o id="241" en="Fifth Ode: A Time for Prayer" />
+      <o id="242" en="Unity" />
+      <o id="243" en="Grav'iton" />
+      <o id="244" en="Revenant Maiden" />
+      <o id="245" en="The Forgotten City - Tavnazian Safehold" />
+      <o id="246" en="March of the Allied Forces" />
+      <o id="247" en="Roar of the Battle Drums" />
+      <o id="248" en="Young Griffons in Flight" />
+      <o id="249" en="Run Maggot, Run!" />
+      <o id="250" en="Under a Clouded Moon" />
+      <o id="251" en="Autumn Footfalls" />
+      <o id="252" en="Flowers on the Battlefield" />
+      <o id="253" en="Echoes of a Zephyr" />
+      <o id="254" en="Griffons Never Die" />
+      <o id="900" en="Distant Worlds" />
+   </update>
+  </songs>
 </fixes>

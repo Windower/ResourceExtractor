@@ -796,6 +796,10 @@
       <o id="224" skill="2" /> <!-- Exenterator -->
       <o id="225" skill="3" /> <!-- Chant du Cygne -->
       <o id="226" skill="3" /> <!-- Requiescat -->
+      <o id="227" skill="3" /> <!-- Knights of Rotund -->
+      <o id="228" skill="1" /> <!-- Final Paradise -->
+      <o id="229" skill="3" /> <!-- Fast Blade II -->
+      <o id="230" skill="1" /> <!-- Dragon Blow -->
       <o id="238" skill="2" /> <!-- Uriel Blade -->
       <o id="239" skill="2" /> <!-- Glory Slash -->
       <o id="240" skill="12" /> <!-- Tartarus Torpor -->
@@ -934,15 +938,15 @@
       <o id="118" duration="180" status="185" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Voidstorm -->
       <o id="119" duration="180" status="184" overwrites="{99,113,114,115,116,117,118,119}" /> <!-- Aurorastorm -->
       <o id="125" duration="1800" status="40" /> <!-- Protectra -->
-      <o id="126" duration="1800" status="40" /> <!-- Protectra II -->
-      <o id="127" duration="1800" status="40" /> <!-- Protectra III -->
-      <o id="128" duration="1800" status="40" /> <!-- Protectra IV -->
-      <o id="129" duration="1800" status="40" /> <!-- Protectra V -->
+      <o id="126" duration="1800" status="40" overwrites="{125}"/> <!-- Protectra II -->
+      <o id="127" duration="1800" status="40" overwrites="{125,126}"/> <!-- Protectra III -->
+      <o id="128" duration="1800" status="40" overwrites="{125,126,127}" /> <!-- Protectra IV -->
+      <o id="129" duration="1800" status="40" overwrites="{125,126,127,128}"/> <!-- Protectra V -->
       <o id="130" duration="1800" status="41" /> <!-- Shellra -->
-      <o id="131" duration="1800" status="41" /> <!-- Shellra II -->
-      <o id="132" duration="1800" status="41" /> <!-- Shellra III -->
-      <o id="133" duration="1800" status="41" /> <!-- Shellra IV -->
-      <o id="134" duration="1800" status="41" /> <!-- Shellra V -->
+      <o id="131" duration="1800" status="41" overwrites="{130}"/> <!-- Shellra II -->
+      <o id="132" duration="1800" status="41" overwrites="{130,131}"/> <!-- Shellra III -->
+      <o id="133" duration="1800" status="41" overwrites="{130,131,132}"/> <!-- Shellra IV -->
+      <o id="134" duration="1800" status="41" overwrites="{130,131,132,133}"/> <!-- Shellra V -->
       <o id="135" duration="3600" status="113" /> <!-- Reraise -->
       <o id="136" status="69" /> <!-- Invisible -->
       <o id="137" status="71" /> <!-- Sneak -->
@@ -2825,7 +2829,7 @@
       <o id="1041" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Dragon Breath -->
       <o id="1088" skillchain_a="Fusion" skillchain_b="Impaction" skillchain_c="" /> <!-- Goblin Rush -->
       <o id="1089" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Bomb Toss -->
-      <o id="1090" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Bomb Toss -->  
+      <o id="1090" skillchain_a="Liquefaction" skillchain_b="" skillchain_c="" /> <!-- Bomb Toss -->
       <o id="1188" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Final Heaven -->
       <o id="1189" skillchain_a="Darkness" skillchain_b="Gravitation" skillchain_c="" /> <!-- Mercy Stroke -->
       <o id="1190" skillchain_a="Light" skillchain_b="Fusion" skillchain_c="" /> <!-- Knights of Round -->
@@ -3115,7 +3119,7 @@
       <o id="3687" skillchain_a="Gravitation" skillchain_b="Reverberation" skillchain_c="" /> <!-- Starward Yowl -->
       <o id="3688" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Stalking Prey -->
       <o id="3691" skillchain_a="Fusion" skillchain_b="" skillchain_c="" /> <!-- Bludgeon -->
-	    <o id="3692" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Deal Out -->
+      <o id="3692" skillchain_a="Distortion" skillchain_b="" skillchain_c="" /> <!-- Deal Out -->
       <o id="3699" skillchain_a="Distortion" skillchain_b="Scission" skillchain_c="" /> <!-- Expunge Magic -->
       <o id="3700" skillchain_a="Fusion" skillchain_b="Reverberation" skillchain_c="" /> <!-- Harmonic Displacement -->
       <o id="3701" skillchain_a="Fragmentation" skillchain_b="Compression" skillchain_c="" /> <!-- Sight Unseen -->
@@ -3720,6 +3724,6 @@
       <o id="253" en="Echoes of a Zephyr" />
       <o id="254" en="Griffons Never Die" />
       <o id="900" en="Distant Worlds" />
-   </update>
+    </update>
   </music>
 </fixes>

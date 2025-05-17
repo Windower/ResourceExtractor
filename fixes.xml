@@ -967,9 +967,7 @@
       <o id="238" duration="90" status="131" overwrites="{239}" /> <!-- Rasp -->
       <o id="239" duration="90" status="132" overwrites="{240}" /> <!-- Shock -->
       <o id="240" duration="90" status="133" overwrites="{235}" /> <!-- Drown -->
-      <o id="242" status="90" /> <!-- Absorb-ACC -->
       <o id="244" unlearnable="true" /> <!-- Meteor II -->
-      <o id="246" status="88" /> <!-- Drain II -->
       <o id="249" duration="180" status="34" /> <!-- Blaze Spikes -->
       <o id="250" duration="180" status="35" /> <!-- Ice Spikes -->
       <o id="251" duration="180" status="38" /> <!-- Shock Spikes -->
@@ -980,13 +978,6 @@
       <o id="257" status="9" unlearnable="true" /> <!-- Curse -->
       <o id="258" duration="60" status="11" /> <!-- Bind -->
       <o id="259" duration="90" status="2" overwrites="{253,273}" /> <!-- Sleep II -->
-      <o id="266" status="119" /> <!-- Absorb-STR -->
-      <o id="267" status="120" /> <!-- Absorb-DEX -->
-      <o id="268" status="121" /> <!-- Absorb-VIT -->
-      <o id="269" status="122" /> <!-- Absorb-AGI -->
-      <o id="270" status="123" /> <!-- Absorb-INT -->
-      <o id="271" status="124" /> <!-- Absorb-MND -->
-      <o id="272" status="125" /> <!-- Absorb-CHR -->
       <o id="273" duration="60" status="2" /> <!-- Sleepga -->
       <o id="274" duration="90" status="2" overwrites="{253,273}" /> <!-- Sleepga II -->
       <o id="276" duration="180" status="5" overwrites="{254,347,348,349}" /> <!-- Blind II -->
@@ -1414,7 +1405,6 @@
       <o id="877" duration="90" status="217" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,875,876,878}" /> <!-- Light Threnody II -->
       <o id="878" duration="90" status="217" overwrites="{454,455,456,457,458,459,460,461,871,872,873,874,875,876,877}" /> <!-- Dark Threnody II -->
       <o id="879" duration="300" status="597" /> <!-- Inundation -->
-      <o id="880" status="88" /> <!-- Drain III -->
       <o id="882" duration="300" status="148" overwrites="{841,842}" /> <!-- Distract III -->
       <o id="883" duration="300" status="404" overwrites="{843,844}" /> <!-- Frazzle III -->
       <o id="884" duration="180" status="21" overwrites="{286}" /> <!-- Addle II -->

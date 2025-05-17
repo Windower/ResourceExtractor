@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -8,6 +9,16 @@ namespace ResourceExtractor;
 internal static class ExtensionMethods {
 	public static R Let<T, R>(this T value, Func<T, R> fn) =>
 		fn(value);
+
+	public static int? IndexOf<T>(this IEnumerable<T> enumerable, T search) {
+		foreach (var (value, index) in enumerable.Select((value, index) => (value, index))) {
+			if (value.Equals(search)) {
+				return index;
+			}
+		}
+
+		return null;
+	}
 
 	public static void RotateRight(this byte[] data, int count) {
 		for (var i = 0; i < data.Length; i++) {

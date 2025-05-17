@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -171,15 +171,16 @@ internal class Program {
 		},
 	};
 
-	private static string Dir { get; set; }
+	private static bool UpdateResourcesRepo { get; set; }
+	private static string FfxiDir { get; set; }
+	private static string OutDir { get; set; }
 
 	private static void Main(string[] args) {
 		try {
-			Console.WriteLine();
-
-			InitializeBaseDirectory(args);
-
 			Console.CursorVisible = false;
+
+			Initialize(args);
+			Console.WriteLine();
 
 			model = new ModelObject();
 			foreach (var category in categories) {
@@ -204,11 +205,17 @@ internal class Program {
 			Console.WriteLine();
 
 			// Clear directories
-			Directory.CreateDirectory("resources");
-			foreach (var path in new[] { "lua", "xml", "json", "maps" }.Select(dir => "resources/" + dir)) {
-				Directory.CreateDirectory(path);
-				foreach (var file in Directory.EnumerateFiles(path)) {
+			if (UpdateResourcesRepo) {
+				foreach (var file in Directory.EnumerateFiles(OutDir)) {
 					File.Delete(file);
+				}
+			} else {
+				Directory.CreateDirectory("resources");
+				foreach (var path in new[] { "lua", "xml", "json", "maps" }.Select(dir => "resources/" + dir)) {
+					Directory.CreateDirectory(path);
+					foreach (var file in Directory.EnumerateFiles(path)) {
+						File.Delete(file);
+					}
 				}
 			}
 
@@ -230,8 +237,9 @@ internal class Program {
 			if (System.Diagnostics.Debugger.IsAttached) {
 				throw;
 			}
+		} finally {
+			Console.CursorVisible = true;
 		}
-		Console.WriteLine();
 	}
 
 	private static void PostProcess() {
@@ -537,6 +545,13 @@ internal class Program {
 		manifest.Save(Path.Combine("resources", "manifest.xml"));
 	}
 
+	private static void Initialize(string[] args) {
+		UpdateResourcesRepo = args.Contains("--update-repo") || args.Contains("-r");
+
+		InitializeBaseDirectory(args);
+		InitializeOutDirectory(args);
+	}
+
 	private static void InitializeBaseDirectory(string[] args) {
 		DisplayMessage("Locating Final Fantasy XI installation directory...");
 
@@ -545,20 +560,59 @@ internal class Program {
 			if (OperatingSystem.IsWindows()) {
 				using var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
 				using var key = (hklm.OpenSubKey("SOFTWARE\\PlayOnlineUS\\InstallFolder") ?? hklm.OpenSubKey("SOFTWARE\\PlayOnline\\InstallFolder")) ?? hklm.OpenSubKey("SOFTWARE\\PlayOnlineEU\\InstallFolder");
-				Dir = key?.GetValue("0001") as string;
+				FfxiDir = key?.GetValue("0001") as string;
 			} else {
-				Dir = args.FirstOrDefault(arg => arg[0] != '-');
-				if (Dir == null) {
+				FfxiDir = args.FirstOrDefault(arg => arg[0] != '-');
+				if (FfxiDir == null) {
 					message = "No path provided";
 				}
 			}
 
-			if (Dir != null && !Directory.Exists(Dir)) {
-				message = $"Path \"{Dir}\" not found.";
-				Dir = null;
+			if (FfxiDir != null && !Directory.Exists(FfxiDir)) {
+				message = $"Path \"{FfxiDir}\" not found.";
+				FfxiDir = null;
 			}
+		} catch (Exception ex) {
+			message = ex.Message;
 		} finally {
-			var success = Dir != null;
+			var success = FfxiDir != null;
+			DisplayResult(success);
+			if (!success) {
+				DisplayMessage(message);
+				Environment.Exit(1);
+			}
+		}
+	}
+
+	private static void InitializeOutDirectory(string[] args) {
+		DisplayMessage("Setting output directory...");
+
+		var message = "Could not determine output directory.";
+		try {
+			var outIndex = args.IndexOf("--out") ?? args.IndexOf("-o");
+			if (outIndex == null) {
+				OutDir = Directory.GetCurrentDirectory();
+				return;
+			}
+
+			if (outIndex == args.Length - 1) {
+				message = "No output directory provided.";
+				return;
+			}
+
+			OutDir = args[outIndex.Value + 1];
+			if (UpdateResourcesRepo) {
+				if (!Directory.Exists(OutDir)) {
+					message = "Specified repository directory does not exist.";
+					OutDir = null;
+				}
+			} else {
+				Directory.CreateDirectory(OutDir);
+			}
+		} catch (Exception ex) {
+			message = ex.Message;
+		} finally {
+			var success = OutDir != null;
 			DisplayResult(success);
 			if (!success) {
 				DisplayMessage(message);
@@ -571,37 +625,39 @@ internal class Program {
 		DisplayMessage("Generating files for " + name + "...");
 
 		try {
-			var xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
-			var lua = new LuaFile(name);
+			ignore ??= [];
 
-			foreach (var obj in model[name]) {
-				if (!IsValidName(ignore ?? [], obj)) {
-					continue;
-				}
+			var entries = ((IList<dynamic>) model[name]).Where(obj => IsValidName(ignore, obj)).ToImmutableArray();
 
-				var xmlelement = new XElement("o");
-				foreach (var pair in obj) {
-					//TODO: Level dictionaries are currently messed up on XML output
-					if (pair.Key.StartsWith("_")) {
+			if (UpdateResourcesRepo) {
+				LuaFile.Write(OutDir, name, entries);
+			} else {
+				LuaFile.Write(Path.Combine(OutDir, "resources", "lua"), name, entries);
+				var xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
+				foreach (var obj in model[name]) {
+					if (!IsValidName(ignore, obj)) {
 						continue;
 					}
 
-					if (pair.Value is not string && pair.Value is IEnumerable) {
-						xmlelement.SetAttributeValue(pair.Key, LuaAttribute.MakeValue(pair.Value));
-					} else {
-						xmlelement.SetAttributeValue(pair.Key, pair.Value);
+					var xmlelement = new XElement("o");
+					foreach (var pair in obj) {
+						//TODO: Level dictionaries are currently messed up on XML output
+						if (pair.Key.StartsWith("_")) {
+							continue;
+						}
+
+						if (pair.Value is not string && pair.Value is IEnumerable) {
+							xmlelement.SetAttributeValue(pair.Key, LuaAttribute.MakeValue(pair.Value));
+						} else {
+							xmlelement.SetAttributeValue(pair.Key, pair.Value);
+						}
 					}
+
+					xml.Root.Add(xmlelement);
 				}
-
-				xml.Root.Add(xmlelement);
-				lua.Add(obj);
+				xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint) ((int?) e.Attribute("id") ?? 0)));
+				xml.Save(Path.Combine(OutDir, "resources", "xml", FormattableString.Invariant($"{name}.xml")));
 			}
-
-			xml.Root.ReplaceNodes(xml.Root.Elements().OrderBy(e => (uint) ((int?) e.Attribute("id") ?? 0)));
-
-			xml.Save(Path.Combine("resources", "xml", FormattableString.Invariant($"{name}.xml")));
-			lua.Save();
-
 		} catch {
 			DisplayError();
 			throw;
@@ -751,13 +807,19 @@ internal class Program {
 	private static bool IsValidName(string[] ignore, dynamic res) {
 		return
 			// English
-			(!res.ContainsKey("en") || !(res.en == "."
-			|| String.IsNullOrWhiteSpace(res.en) || ignore.Contains((string) res.en)
-			|| res.en.StartsWith("#", StringComparison.Ordinal)))
+			(!res.ContainsKey("en") || !(
+				res.en == "." ||
+				String.IsNullOrWhiteSpace(res.en) ||
+				ignore.Contains((string) res.en) ||
+				res.en.StartsWith("#", StringComparison.Ordinal)
+			))
 			// Japanese
-			&& (!res.ContainsKey("ja") || !(res.ja == "."
-			|| String.IsNullOrWhiteSpace(res.ja) || ignore.Contains((string) res.ja)
-			|| res.ja.StartsWith("#", StringComparison.Ordinal)));
+			&& (!res.ContainsKey("ja") || !(
+				res.ja == "." ||
+				String.IsNullOrWhiteSpace(res.ja) ||
+				ignore.Contains((string) res.ja) ||
+				res.ja.StartsWith("#", StringComparison.Ordinal)
+			));
 	}
 
 	private static void ExtractMaps() {
@@ -768,7 +830,7 @@ internal class Program {
 		}
 
 		try {
-			MapParser.Extract();
+			MapParser.Extract(OutDir);
 			DisplaySuccess();
 		} catch {
 			DisplayError();
@@ -776,12 +838,12 @@ internal class Program {
 	}
 
 	public static string GetPath(int id) {
-		var ftable = Path.Combine(Dir, "FTABLE.DAT");
+		var ftable = Path.Combine(FfxiDir, "FTABLE.DAT");
 
 		using var fstream = File.OpenRead(ftable);
 		fstream.Position = id * 2;
 		var file = fstream.ReadByte() | fstream.ReadByte() << 8;
-		return Path.Combine(Dir, "ROM",
+		return Path.Combine(FfxiDir, "ROM",
 			String.Format(CultureInfo.InvariantCulture, "{0}", file >> 7),
 			String.Format(CultureInfo.InvariantCulture, "{0}.DAT", file & 0x7F));
 	}

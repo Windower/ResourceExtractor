@@ -1,14 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ResourceExtractor.Serializers;
 
-internal class LuaElement {
+internal class LuaEntry {
 	public int ID { get; }
 	public HashSet<string> Keys { get; } = [];
 
-	public LuaElement(dynamic obj) {
+	public LuaEntry(dynamic obj) {
 		ID = obj.id;
 
 		foreach (var key in FixedKeys.Where(key => obj.ContainsKey(key))) {

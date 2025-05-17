@@ -1,7 +1,5 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
-using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Versioning;
@@ -11,7 +9,7 @@ namespace ResourceExtractor;
 
 [SupportedOSPlatform("windows")]
 public static class MapParser {
-	public static void Extract() {
+	public static void Extract(string outDir) {
 		using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ResourceExtractor.MapDats.json");
 		var dats = JsonSerializer.Deserialize<IDictionary<string, IDictionary<string, ushort>>>(stream);
 
@@ -19,7 +17,7 @@ public static class MapParser {
 			foreach (var (map, datId) in maps) {
 				using var dat = File.Open(Program.GetPath(datId), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 				var image = ImageParser.Parse(dat, true);
-				using var file = File.Open(String.Format(CultureInfo.InvariantCulture, "resources/maps/{0}_{1}.png", zone, map), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
+				using var file = File.Open($"{outDir}/resources/maps/{zone}_{map}.png", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
 				image.Save(file, ImageFormat.Png);
 			}
 		}

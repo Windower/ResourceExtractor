@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -191,7 +191,10 @@ internal static class ResourceParser {
 		spell.skill = reader.ReadInt16();
 		spell.mp_cost = reader.ReadInt16();
 		spell.cast_time = reader.ReadByte() / 4.0;
-		spell.recast = reader.ReadByte() / 4.0;
+		var recast = reader.ReadByte();
+		spell.recast = recast < 0xB0 || recast % 0x10 != 0
+			? recast / 4.0
+			: 300 - (recast / 0x10 - 0xB) * 60;
 		spell.levels = new Dictionary<int, int>();
 		for (var job = 0; job < 0x18; ++job) {
 			var level = reader.ReadInt16();

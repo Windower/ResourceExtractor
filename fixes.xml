@@ -1633,7 +1633,10 @@
       <o id="3" en="tell" incoming="12" outgoing="4" />
       <o id="4" en="party" incoming="13" outgoing="5" />
       <o id="5" en="linkshell" incoming="14" outgoing="6" />
+      <o id="6" en="system message" incoming="200" outgoing="nil" />
+      <o id="7" en="system message" incoming="200" outgoing="nil" />
       <o id="8" en="emote" incoming="15" outgoing="7" />
+      <o id="12" en="gm prompt" incoming="nil" outgoing="nil" />
       <o id="26" en="yell" incoming="11" outgoing="3" />
       <o id="27" en="linkshell2" incoming="214" outgoing="213" />
       <o id="33" en="unity" incoming="212" outgoing="211" />

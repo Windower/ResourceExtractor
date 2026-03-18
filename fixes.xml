@@ -412,7 +412,7 @@
       <o id="61" skillchain_a="Light" skillchain_b="Fragmentation" skillchain_c="" /> <!-- Dimidiation -->
       <o id="62" skill="4" skillchain_a="Detonation" skillchain_b="Compression" skillchain_c="Distortion" /> <!-- Fimbulvetr -->
       <o id="64" skillchain_a="Detonation" skillchain_b="Impaction" skillchain_c="" /> <!-- Raging Axe -->
-      <o id="65" skillchain_a="Impaction" skillchain_b="Reverberation" skillchain_c="" /> <!-- Smash Axe -->
+      <o id="65" skillchain_a="Induration" skillchain_b="Reverberation" skillchain_c="" /> <!-- Smash Axe -->
       <o id="66" skillchain_a="Detonation" skillchain_b="" skillchain_c="" /> <!-- Gale Axe -->
       <o id="67" skillchain_a="Scission" skillchain_b="Impaction" skillchain_c="" /> <!-- Avalanche Axe -->
       <o id="68" skillchain_a="Liquefaction" skillchain_b="Scission" skillchain_c="Impaction" /> <!-- Spinning Axe -->

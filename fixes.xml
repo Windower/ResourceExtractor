@@ -863,10 +863,16 @@
       <o id="24" duration="120" status="134" overwrites="{23,230}" /> <!-- Dia II -->
       <o id="25" duration="180" status="134" overwrites="{23,24,230,231}" /> <!-- Dia III -->
       <o id="26" duration="90" status="134" overwrites="{23,24,25,230,231,232}" /> <!-- Dia IV -->
+      <o id="27" duration="90" status="134" overwrites="{23,24,25,26,230,231,232}" /> <!-- Dia V -->
       <o id="31" unlearnable="true" /> <!-- Banish IV -->
+      <o id="32" unlearnable="true" /> <!-- Banish V -->
       <o id="34" unlearnable="true" /> <!-- Diaga II -->
       <o id="35" unlearnable="true" /> <!-- Diaga III -->
+      <o id="36" unlearnable="true" /> <!-- Diaga IV -->
+      <o id="37" unlearnable="true" /> <!-- Diaga V -->
       <o id="40" unlearnable="true" /> <!-- Banishga III -->
+      <o id="41" unlearnable="true" /> <!-- Banishga IV -->
+      <o id="42" unlearnable="true" /> <!-- Banishga V -->
       <o id="43" duration="1800" status="40" /> <!-- Protect -->
       <o id="44" duration="1800" status="40" overwrites="{43}" /> <!-- Protect II -->
       <o id="45" duration="1800" status="40" overwrites="{43,44}" /> <!-- Protect III -->
@@ -953,14 +959,34 @@
       <o id="138" status="70" /> <!-- Deodorize -->
       <o id="141" duration="3600" status="113" /> <!-- Reraise II -->
       <o id="142" duration="3600" status="113" /> <!-- Reraise III -->
+      <o id="177" unlearnable="true" /> <!-- Firaga IV -->
+      <o id="178" unlearnable="true" /> <!-- Firaga V -->
+      <o id="182" unlearnable="true" /> <!-- Blizzaga IV -->
+      <o id="183" unlearnable="true" /> <!-- Blizzaga V -->
+      <o id="187" unlearnable="true" /> <!-- Aeroga IV -->
+      <o id="188" unlearnable="true" /> <!-- Aeroga V -->
+      <o id="192" unlearnable="true" /> <!-- Stonega IV -->
+      <o id="193" unlearnable="true" /> <!-- Stonega V -->
+      <o id="197" unlearnable="true" /> <!-- Thundaga IV -->
+      <o id="198" unlearnable="true" /> <!-- Thundaga V -->
+      <o id="202" unlearnable="true" /> <!-- Waterga IV -->
+      <o id="203" unlearnable="true" /> <!-- Waterga V -->
       <o id="216" duration="120" status="12" /> <!-- Gravity -->
       <o id="217" duration="120" status="12" overwrites="{216}" /> <!-- Gravity II -->
       <o id="220" duration="90" status="3" /> <!-- Poison -->
       <o id="221" duration="120" status="3" overwrites="{220,350,351,352}" /> <!-- Poison II -->
+      <o id="222" unlearnable="true" status="3" overwrites="{220,221,350,351,352}" /> <!-- Poison III -->
+      <o id="223" unlearnable="true" status="3" overwrites="{220,221,222,350,351,352}" /> <!-- Poison IV -->
+      <o id="224" unlearnable="true" status="3" overwrites="{220,221,222,223,350,351,352}" /> <!-- Poison V -->
       <o id="226" unlearnable="true" /> <!-- Poisonga II -->
+      <o id="227" unlearnable="true" /> <!-- Poisonga III -->
+      <o id="228" unlearnable="true" /> <!-- Poisonga IV -->
+      <o id="229" unlearnable="true" /> <!-- Poisonga V -->
       <o id="230" duration="60" status="135" overwrites="{23}" /> <!-- Bio -->
       <o id="231" duration="120" status="135" overwrites="{23,24,230}" /> <!-- Bio II -->
       <o id="232" duration="30" status="135" overwrites="{23,24,25,230,231}" /> <!-- Bio III -->
+      <o id="233" unlearnable="true" duration="30" status="135" overwrites="{23,24,25,230,231,232}" /> <!-- Bio IV -->
+      <o id="234" unlearnable="true" duration="30" status="135" overwrites="{23,24,25,230,231,232,233}" /> <!-- Bio V -->
       <o id="235" duration="90" status="128" overwrites="{236}" /> <!-- Burn -->
       <o id="236" duration="90" status="129" overwrites="{237}" /> <!-- Frost -->
       <o id="237" duration="90" status="130" overwrites="{238}" /> <!-- Choke -->
@@ -978,6 +1004,7 @@
       <o id="257" status="9" unlearnable="true" /> <!-- Curse -->
       <o id="258" duration="60" status="11" /> <!-- Bind -->
       <o id="259" duration="90" status="2" overwrites="{253,273}" /> <!-- Sleep II -->
+      <o id="265" unlearnable="true" /> <!-- Tractor II -->
       <o id="273" duration="60" status="2" /> <!-- Sleepga -->
       <o id="274" duration="90" status="2" overwrites="{253,273}" /> <!-- Sleepga II -->
       <o id="276" duration="180" status="5" overwrites="{254,347,348,349}" /> <!-- Blind II -->
@@ -1031,6 +1058,7 @@
       <o id="363" unlearnable="true" /> <!-- Sleepga -->
       <o id="364" unlearnable="true" /> <!-- Sleepga II -->
       <o id="365" duration="30" status="7" /> <!-- Breakga -->
+      <o id="366" duration="30" status="7" /> <!-- Graviga -->
       <o id="368" duration="60" status="192" /> <!-- Foe Requiem -->
       <o id="369" duration="120" status="192" overwrites="{368}" /> <!-- Foe Requiem II -->
       <o id="370" duration="120" status="192" overwrites="{368,369}" /> <!-- Foe Requiem III -->

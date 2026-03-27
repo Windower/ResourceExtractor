@@ -234,5 +234,7 @@ dotnet_diagnostic.CA1860.severity = none
 # CA1861: Avoid constant arrays as arguments
 dotnet_diagnostic.CA1861.severity = none
 dotnet_diagnostic.IDE2001.severity = none
+# CA2022: Avoid inexact read with Stream.Read
+dotnet_diagnostic.CA2022.severity = none
 # CS8524: The switch expression does not handle some values of its input type (it is not exhaustive) involving an unnamed enum value.
 dotnet_diagnostic.CS8524.severity = none

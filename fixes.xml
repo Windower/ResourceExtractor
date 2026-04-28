@@ -862,8 +862,8 @@
       <o id="23" duration="60" status="134" /> <!-- Dia -->
       <o id="24" duration="120" status="134" overwrites="{23,230}" /> <!-- Dia II -->
       <o id="25" duration="180" status="134" overwrites="{23,24,230,231}" /> <!-- Dia III -->
-      <o id="26" duration="90" status="134" overwrites="{23,24,25,230,231,232}" /> <!-- Dia IV -->
-      <o id="27" duration="90" status="134" overwrites="{23,24,25,26,230,231,232}" /> <!-- Dia V -->
+      <o id="26" duration="90" status="134" overwrites="{23,24,25,230,231,232}" unlearnable="true" /> <!-- Dia IV -->
+      <o id="27" duration="90" status="134" overwrites="{23,24,25,26,230,231,232}" unlearnable="true" /> <!-- Dia V -->
       <o id="31" unlearnable="true" /> <!-- Banish IV -->
       <o id="32" unlearnable="true" /> <!-- Banish V -->
       <o id="34" unlearnable="true" /> <!-- Diaga II -->
@@ -1058,7 +1058,7 @@
       <o id="363" unlearnable="true" /> <!-- Sleepga -->
       <o id="364" unlearnable="true" /> <!-- Sleepga II -->
       <o id="365" duration="30" status="7" /> <!-- Breakga -->
-      <o id="366" duration="30" status="7" /> <!-- Graviga -->
+      <o id="366" duration="30" status="7" unlearnable="true" /> <!-- Graviga -->
       <o id="368" duration="60" status="192" /> <!-- Foe Requiem -->
       <o id="369" duration="120" status="192" overwrites="{368}" /> <!-- Foe Requiem II -->
       <o id="370" duration="120" status="192" overwrites="{368,369}" /> <!-- Foe Requiem III -->
@@ -1066,7 +1066,7 @@
       <o id="372" duration="120" status="192" overwrites="{368,369,370,371}" /> <!-- Foe Requiem V -->
       <o id="373" duration="120" status="192" overwrites="{368,369,370,371,372}" /> <!-- Foe Requiem VI -->
       <o id="374" duration="120" status="192" overwrites="{368,369,370,371,372,373}" /> <!-- Foe Requiem VII -->
-      <o id="375" duration="120" status="192" overwrites="{368,369,370,371,372,373,374}" /> <!-- Foe Requiem VIII -->
+      <o id="375" duration="120" status="192" overwrites="{368,369,370,371,372,373,374}" unlearnable="true" /> <!-- Foe Requiem VIII -->
       <o id="376" duration="45" status="2" /> <!-- Horde Lullaby -->
       <o id="377" duration="90" status="2" overwrites="{376,463}" /> <!-- Horde Lullaby II -->
       <o id="378" duration="120" status="195" /> <!-- Army's Paeon -->
@@ -1075,8 +1075,8 @@
       <o id="381" duration="120" status="195" /> <!-- Army's Paeon IV -->
       <o id="382" duration="120" status="195" /> <!-- Army's Paeon V -->
       <o id="383" duration="120" status="195" /> <!-- Army's Paeon VI -->
-      <o id="384" duration="120" status="195" /> <!-- Army's Paeon VII -->
-      <o id="385" duration="120" status="195" /> <!-- Army's Paeon VIII -->
+      <o id="384" duration="120" status="195" unlearnable="true" /> <!-- Army's Paeon VII -->
+      <o id="385" duration="120" status="195" unlearnable="true" /> <!-- Army's Paeon VIII -->
       <o id="386" duration="120" status="196" /> <!-- Mage's Ballad -->
       <o id="387" duration="120" status="196" /> <!-- Mage's Ballad II -->
       <o id="388" duration="120" status="196" /> <!-- Mage's Ballad III -->
@@ -1102,9 +1102,9 @@
       <o id="408" duration="120" status="205" /> <!-- Shining Fantasia -->
       <o id="409" duration="120" status="206" /> <!-- Scop's Operetta -->
       <o id="410" duration="120" status="206" /> <!-- Puppet's Operetta -->
-      <o id="411" duration="120" status="206" /> <!-- Jester's Operetta -->
+      <o id="411" duration="120" status="206" unlearnable="true" /> <!-- Jester's Operetta -->
       <o id="412" duration="120" status="207" /> <!-- Gold Capriccio -->
-      <o id="413" duration="120" status="208" /> <!-- Devotee Serenade -->
+      <o id="413" duration="120" status="208" unlearnable="true" /> <!-- Devotee Serenade -->
       <o id="414" duration="120" status="209" /> <!-- Warding Round -->
       <o id="415" duration="120" status="210" /> <!-- Goblin Gavotte -->
       <o id="416" duration="120" status="211" unlearnable="true" /> <!-- Cactuar Fugue -->
@@ -1114,7 +1114,7 @@
       <o id="420" duration="120" status="214" /> <!-- Victory March -->
       <o id="421" duration="120" status="194" /> <!-- Battlefield Elegy -->
       <o id="422" duration="180" status="194" overwrites="{421}" /> <!-- Carnage Elegy -->
-      <o id="423" duration="240" status="194" overwrites="{421,422}" /> <!-- Massacre Elegy -->
+      <o id="423" duration="240" status="194" overwrites="{421,422}" unlearnable="true" /> <!-- Massacre Elegy -->
       <o id="424" duration="120" status="215" /> <!-- Sinewy Etude -->
       <o id="425" duration="120" status="215" /> <!-- Dextrous Etude -->
       <o id="426" duration="120" status="215" /> <!-- Vivacious Etude -->

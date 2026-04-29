@@ -3794,4 +3794,40 @@
       <o id="33" en="Storage Slip 33" ja="モグの預り帳【33】" item_id="29344" items="{23918, 23963, 24008, 24053, 24098, 23919, 23964, 24009, 24054, 24099, 23920, 23965, 24010, 24055, 24100, 23921, 23966, 24011, 24056, 24101, 23922, 23967, 24012, 24057, 24102, 23923, 23968, 24013, 24058, 24103, 23924, 23969, 24014, 24059, 24104, 23925, 23970, 24015, 24060, 24105, 23926, 23971, 24016, 24061, 24106, 23927, 23972, 24017, 24062, 24107, 23928, 23973, 24018, 24063, 24108, 23929, 23974, 24019, 24064, 24109, 23930, 23975, 24020, 24065, 24110, 23931, 23976, 24021, 24066, 24111, 23932, 23977, 24022, 24067, 24112, 23933, 23978, 24023, 24068, 24113, 23934, 23979, 24024, 24069, 24114, 23935, 23980, 24025, 24070, 24115, 23936, 23981, 24026, 24071, 24116, 23937, 23982, 24027, 24072, 24117, 23938, 23983, 24028, 24073, 24118, 23939, 23984, 24029, 24074, 24119}" /> <!-- 110-->
     </update>
   </slips>
+  <monstrosity>
+	<update>
+		<o id="14" unlearnable="true" /> <!-- Yztarg -->
+		<o id="24" unlearnable="true" /> <!-- Belladonna -->
+		<o id="25" unlearnable="true" /> <!-- Leafkin -->
+		<o id="26" unlearnable="true" /> <!-- Snapweed -->
+		<o id="39" unlearnable="true" /> <!-- Mantis -->
+		<o id="40" unlearnable="true" /> <!-- Kulox -->
+		<o id="41" unlearnable="true" /> <!-- Twitherym -->
+		<o id="42" unlearnable="true" /> <!-- Chapuli -->
+		<o id="50" unlearnable="true" /> <!-- Matamata -->
+		<o id="51" unlearnable="true" /> <!-- Worm -->
+		<o id="55" unlearnable="true" /> <!-- Botulus -->
+		<o id="59" unlearnable="true" /> <!-- Acuex -->
+		<o id="67" unlearnable="true" /> <!-- Pteraketos -->
+		<o id="68" unlearnable="true" /> <!-- Craklaw -->
+		<o id="77" unlearnable="true" /> <!-- Harpeia -->
+		<o id="78" unlearnable="true" /> <!-- Tulfaire -->
+		<o id="264" unlearnable="true" /> <!-- Lucerewe -->
+		<o id="265" unlearnable="true" /> <!-- Ovim -->
+		<o id="270" unlearnable="true" /> <!-- Bipedal Gnole -->
+		<o id="273" unlearnable="true" /> <!-- Flowering Treant -->
+		<o id="274" unlearnable="true" /> <!-- Scarlet-tinged Treant -->
+		<o id="275" unlearnable="true" /> <!-- Barren Treant -->
+		<o id="276" unlearnable="true" /> <!-- Necklaced Treant -->
+		<o id="286" unlearnable="true" /> <!-- Enlightened Mandragora -->
+		<o id="306" unlearnable="true" /> <!-- Coiled Wamouracampa -->
+		<o id="311" unlearnable="true" /> <!-- Vermilion Mantis -->
+		<o id="312" unlearnable="true" /> <!-- Russet Mantis -->
+		<o id="326" unlearnable="true" /> <!-- Vermilion Worm -->
+		<o id="327" unlearnable="true" /> <!-- Onyx Worm -->
+		<o id="328" unlearnable="true" /> <!-- Entozoon -->
+		<o id="361" unlearnable="true" /> <!-- Vermilion Harpeia -->
+		<o id="362" unlearnable="true" /> <!-- Alabaster Harpeia -->
+	</update>
+  </monstrosity>
 </fixes>

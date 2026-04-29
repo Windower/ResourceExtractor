@@ -1292,7 +1292,7 @@
       <o id="646" blu_points="4" /> <!-- Magic Hammer -->
       <o id="647" duration="900" status="36" blu_points="2" /> <!-- Zephyr Mantle -->
       <o id="648" blu_points="1" /> <!-- Regurgitation -->
-      <o id="650" blu_points="4" /> <!-- Seedspray -->
+      <o id="650" blu_points="2" /> <!-- Seedspray -->
       <o id="651" blu_points="4" /> <!-- Corrosive Ooze -->
       <o id="652" blu_points="3" /> <!-- Spiral Spin -->
       <o id="653" blu_points="2" /> <!-- Asuran Claws -->
@@ -1321,7 +1321,7 @@
       <o id="677" blu_points="3" /> <!-- Empty Thrash -->
       <o id="678" duration="90" status="2" blu_points="3" /> <!-- Dream Flower -->
       <o id="679" duration="300" status="36" blu_points="3" /> <!-- Occultation -->
-      <o id="680" blu_points="5" /> <!-- Charged Whisker -->
+      <o id="680" blu_points="4" /> <!-- Charged Whisker -->
       <o id="681" blu_points="5" /> <!-- Winds of Promy. -->
       <o id="682" blu_points="2" /> <!-- Delta Thrust -->
       <o id="683" blu_points="4" /> <!-- Evryone. Grudge -->
@@ -1345,7 +1345,7 @@
       <o id="702" blu_points="6" /> <!-- Rending Deluge -->
       <o id="703" blu_points="6" /> <!-- Embalming Earth -->
       <o id="704" blu_points="6" /> <!-- Paralyzing Triad -->
-      <o id="705" blu_points="3" /> <!-- Foul Waters -->
+      <o id="705" blu_points="4" /> <!-- Foul Waters -->
       <o id="706" blu_points="2" /> <!-- Glutinous Dart -->
       <o id="707" blu_points="5" /> <!-- Retinal Glare -->
       <o id="708" blu_points="6" /> <!-- Subduction -->

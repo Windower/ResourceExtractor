@@ -45,7 +45,7 @@ internal static class ExtensionMethods {
 	}
 
 	public static T Read<T>(this Stream stream) {
-		var size = Marshal.SizeOf(typeof(T));
+		var size = Marshal.SizeOf<T>();
 		var data = new byte[size];
 		stream.Read(data, 0, data.Length);
 
@@ -53,7 +53,7 @@ internal static class ExtensionMethods {
 		try {
 			ptr = Marshal.AllocHGlobal(data.Length);
 			Marshal.Copy(data, 0, ptr, data.Length);
-			return (T) Marshal.PtrToStructure(ptr, typeof(T));
+			return (T) Marshal.PtrToStructure<T>(ptr);
 		} finally {
 			if (ptr != IntPtr.Zero) {
 				Marshal.FreeHGlobal(ptr);
@@ -72,7 +72,7 @@ internal static class ExtensionMethods {
 	}
 
 	public static T[] ReadArray<T>(this Stream stream, int count) {
-		var size = Marshal.SizeOf(typeof(T));
+		var size = Marshal.SizeOf<T>();
 		var data = new byte[size * count];
 		stream.Read(data, 0, data.Length);
 
@@ -84,7 +84,7 @@ internal static class ExtensionMethods {
 			var result = new T[count];
 
 			for (var i = 0; i < count; i++) {
-				result[i] = (T) Marshal.PtrToStructure(ptr + size * i, typeof(T));
+				result[i] = (T) Marshal.PtrToStructure<T>(ptr + size * i);
 			}
 
 			return result;

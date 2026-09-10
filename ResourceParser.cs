@@ -68,7 +68,7 @@ internal static class ResourceParser {
 			case BlockType.ContainerEnd:
 				break;
 			case BlockType.ContainerBegin:
-				stream.Position -= Marshal.SizeOf(typeof(Header));
+				stream.Position -= Marshal.SizeOf<Header>();
 				ParseMainStream(stream);
 				break;
 			case BlockType.SpellData:
@@ -185,7 +185,7 @@ internal static class ResourceParser {
 
 		spell.type = (MagicType) reader.ReadInt16();
 		spell.element = reader.ReadByte();
-		var padding = reader.ReadByte();                 // Unknown, possibly just padding or element being a short. Always 0x00
+		var padding = reader.ReadByte(); // Unknown, possibly just padding or element being a short. Always 0x00
 		Debug.Assert(padding == 0);
 		spell.targets = reader.ReadUInt16();
 		spell.skill = reader.ReadInt16();
@@ -264,11 +264,12 @@ internal static class ResourceParser {
 	}
 
 	public static void ParseItems(Stream stream, Stream streamja) {
-		var data = new byte[0xC00];
-		var dataja = new byte[0xC00];
-		var count = (int) (stream.Length / 0xC00);
+		const int length = 0x1400;
+		var data = new byte[length];
+		var dataja = new byte[length];
+		var count = (int) (stream.Length / length);
 		for (var i = 0; i < count; i++) {
-			stream.Position = streamja.Position = i * 0xC00;
+			stream.Position = streamja.Position = i * length;
 
 			stream.Read(data, 0, data.Length);
 			streamja.Read(dataja, 0, dataja.Length);
@@ -315,7 +316,7 @@ internal static class ResourceParser {
 			return null;
 		}
 
-		reader.ReadBytes(0x02);         // Unknown 02 - 03 (possibly for future expansion of ID)
+		reader.ReadBytes(0x02); // Unknown 02 - 03 (possibly for future expansion of ID)
 
 		if (item.id >= 0xF000 && item.id < 0xF200) {
 			ParseMonstrosityItem(reader, item);
@@ -330,9 +331,10 @@ internal static class ResourceParser {
 
 	private static void ParseRealItem(BinaryReader reader, dynamic item) {
 		item.flags = reader.ReadUInt16();
+		reader.ReadBytes(0x02); // Unknown
 		item.stack = reader.ReadUInt16();
 		item.type = reader.ReadUInt16();
-		reader.ReadBytes(0x02);     // AH sorting value
+		reader.ReadBytes(0x02); // AH sorting value
 		item.targets = reader.ReadUInt16();
 
 		if (item.id <= 0x0FFF) {
@@ -355,13 +357,13 @@ internal static class ResourceParser {
 	}
 
 	private static void ParseGilItem(BinaryReader reader, dynamic item) {
-		reader.ReadBytes(0x0C);             // Unknown 04 - 0F
+		reader.ReadBytes(0x10); // Unknown 06 - 13
 
 		item.category = "Gil";
 	}
 
 	private static void ParseGeneralItem(BinaryReader reader, dynamic item) {
-		reader.ReadBytes(0x0A);             // Unknown 0E - 17
+		reader.ReadBytes(0x0C); // Unknown 10 - 1B
 
 		item.category = "General";
 	}
@@ -370,16 +372,16 @@ internal static class ResourceParser {
 		item.level = reader.ReadUInt16();
 		item.slots = reader.ReadUInt16();
 		item.races = reader.ReadUInt16();
+		reader.ReadBytes(0x02);
 		item.jobs = reader.ReadUInt32();
 
-		reader.ReadBytes(0x04);             // Unknown 18 - 1B
+		reader.ReadBytes(0x04); // Unknown 18 - 1B
 		item.damage = reader.ReadUInt16();
 		item.delay = reader.ReadInt16();
-		reader.ReadBytes(0x02);             // Weapon DPS
+		reader.ReadBytes(0x02); // Weapon DPS
 		item.skill = reader.ReadByte();
 
-		reader.ReadBytes(0x05);             // Unknown 23 - 27
-											// POLUtils claims that 0x23 is jug size, but seems incorrect
+		reader.ReadBytes(0x05); // Unknown 23 - 27, POLUtils claims that 0x23 is jug size, but seems incorrect
 		var max_charges = reader.ReadByte();
 		if (max_charges > 0) {
 			item.max_charges = max_charges;
@@ -396,13 +398,13 @@ internal static class ResourceParser {
 		if (recast_delay > 0) {
 			item.recast_delay = recast_delay;
 		}
-		reader.ReadBytes(0x02);             // Unknown 30 - 31
+		reader.ReadBytes(0x02); // Unknown 30 - 31
 		var item_level = reader.ReadByte();
 		if (item_level > 0) {
 			item.item_level = item_level;
 		}
 
-		reader.ReadBytes(0x05);             // Unknown 33 - 37
+		reader.ReadBytes(0x05); // Unknown 33 - 37
 
 		item.category = "Weapon";
 	}
@@ -411,12 +413,13 @@ internal static class ResourceParser {
 		item.level = reader.ReadUInt16();
 		item.slots = reader.ReadUInt16();
 		item.races = reader.ReadUInt16();
+		reader.ReadBytes(0x02);
 		item.jobs = reader.ReadUInt32();
 		var superior_level = reader.ReadByte();
 		if (superior_level > 0) {
 			item.superior_level = superior_level;
 		}
-		reader.ReadByte();                  // Unknown 17
+		reader.ReadByte(); // Unknown 17
 
 		var shield_size = reader.ReadUInt16();
 		if (shield_size > 0) {
@@ -439,40 +442,39 @@ internal static class ResourceParser {
 		if (recast_delay > 0) {
 			item.recast_delay = recast_delay;
 		}
-		reader.ReadBytes(0x02);             // Unknown 24 - 25
+		reader.ReadBytes(0x02); // Unknown 24 - 25
 		var item_level = reader.ReadByte();
 		if (item_level > 0) {
 			item.item_level = item_level;
 		}
 
-		reader.ReadBytes(0x05);             // Unknown 27 - 2B
+		reader.ReadBytes(0x05); // Unknown 27 - 2B
 
 		item.category = "Armor";
 	}
 
 	private static void ParseUsableItem(BinaryReader reader, dynamic item) {
 		item.cast_time = reader.ReadUInt16() / 4.0;
-		reader.ReadBytes(0x08);             // Unknown 10 - 17
-		reader.ReadInt32();                 // Not entirely known 18-1B, https://gist.github.com/z16/b1678ffefc4a6e9d52d6
+		reader.ReadBytes(0x0A); // Unknown 12 - 1B, not entirely known 1A-1D or 1C-1F, https://gist.github.com/z16/b1678ffefc4a6e9d52d6
 
 		item.category = "Usable";
 	}
 
 	private static void ParseAutomatonItem(BinaryReader reader, dynamic item) {
-		reader.ReadBytes(0x0A);             // Unknown 0E - 17
+		reader.ReadBytes(0x0C); // Unknown 10 - 1B
 
 		item.category = "Automaton";
 	}
 
 	private static void ParseMazeItem(BinaryReader reader, dynamic item) {
-		reader.ReadBytes(0x46);             // Unknown 0E - 53
+		reader.ReadBytes(0x44); // Unknown 0E - 53
 
 		item.category = "Maze";
 	}
 
 	private static void ParseMonstrosityItem(BinaryReader reader, dynamic item) {
 		item.tp_moves = new Dictionary<ushort, sbyte>();
-		reader.ReadBytes(0x2C);             // Unknown 04 - 2F
+		reader.ReadBytes(0x30); // Unknown 04 - 2F
 		for (var i = 0x00; i < 0x10; ++i) {
 			var move = reader.ReadUInt16();
 			var level = reader.ReadSByte();
@@ -480,7 +482,7 @@ internal static class ResourceParser {
 				item.tp_moves.Add(move, level);
 			}
 
-			reader.ReadByte();              // Unknown byte, possibly padding, or level being a short
+			reader.ReadByte(); // Unknown byte, possibly padding, or level being a short
 		}
 	}
 

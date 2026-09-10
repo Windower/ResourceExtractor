@@ -725,7 +725,7 @@ internal class Program {
 			DisplayMessage("Loading item data...");
 
 			int[][] fileids = [
-			//                                   Armor   Weapons
+			//                           Armor   Weapons
 				[0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975],
 				[0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD],
 			];

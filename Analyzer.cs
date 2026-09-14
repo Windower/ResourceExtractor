@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,16 +6,16 @@ using System.Linq;
 namespace ResourceExtractor; 
 
 internal static class Analyzer {
-	internal static void Analyze(IEnumerable<KeyValuePair<string, dynamic>> model) {
+	internal static void Analyze(IEnumerable<KeyValuePair<string, List<ModelObject>>> data) {
 		const string rootPath = "analysis";
 
 		Program.DisplayMessage("Starting analysis...");
 
 		Directory.CreateDirectory(rootPath);
-		foreach (var pair in model) {
+		foreach (var pair in data) {
 			var namePath = Path.Combine(rootPath, pair.Key);
 			Directory.CreateDirectory(namePath);
-			foreach (var property in Group((IEnumerable<dynamic>) pair.Value, pair.Key)) {
+			foreach (var property in Group(pair.Value, pair.Key)) {
 				var propertyName = property.Key[1..];
 				using var file = File.Open(Path.Combine(namePath, $"{propertyName}.lua"), FileMode.Create);
 				using var writer = new StreamWriter(file);
@@ -27,9 +27,9 @@ internal static class Analyzer {
 				foreach (var bucket in property.Value.OrderBy(bucket => bucket.Key)) {
 					var set = bucket.Value;
 					var comment = "";
-					var names = set.Select(obj => MakeValue(obj.en));
+					var names = set.Select(obj => MakeValue(obj["en"]));
 					if (set.Count > 1) {
-						var localAttributes = (IDictionary<string, dynamic>) attributes[bucket.Key];
+						var localAttributes = attributes[bucket.Key];
 						if (localAttributes.Count > 0) {
 							comment = " --";
 							var localCommonAttributeNames = commonAttributeNames.ToList();
@@ -57,7 +57,7 @@ internal static class Analyzer {
 			}
 		}
 
-		static string MakeValue(dynamic value) {
+		static string MakeValue(object value) {
 			if (value is string || value is Enum) {
 				return "\"" + value.ToString().Replace("\"", "\\\"").Replace("\n", "\\n") + "\"";
 			}
@@ -66,47 +66,48 @@ internal static class Analyzer {
 		}
 	}
 
-	private static IDictionary<string, IDictionary<dynamic, ISet<dynamic>>> Group(IEnumerable<dynamic> dict, string resName) {
-		var properties = new Dictionary<string, IDictionary<dynamic, ISet<dynamic>>>();
-		foreach (var obj in dict) {
-			foreach (var attribute in obj) {
-				if (!Program.IsValidObject(resName, obj)) {
+	private static IDictionary<string, IDictionary<object, ISet<ModelObject>>> Group(List<ModelObject> resources, string resName) {
+		var properties = new Dictionary<string, IDictionary<object, ISet<ModelObject>>>();
+		foreach (var resource in resources) {
+			foreach (var attribute in resource) {
+				if (!Program.IsValidObject(resName, resource)) {
 					continue;
 				}
 
-				var name = (string) attribute.Key;
+				var name = attribute.Key;
 				if (!name.StartsWith('_')) {
 					continue;
 				}
 
 				if (!properties.TryGetValue(name, out var property)) {
-					property = new Dictionary<dynamic, ISet<dynamic>>();
+					property = new Dictionary<object, ISet<ModelObject>>();
 					properties[name] = property;
 				}
 
 				var value = attribute.Value;
-				if (!property.ContainsKey(value)) {
-					property[value] = new HashSet<dynamic>();
+				if (!property.TryGetValue(value, out var group)) {
+					group = new HashSet<ModelObject>();
+					property[value] = group;
 				}
 
-				property[value].Add(obj);
+				group.Add(resource);
 			}
 		}
 
 		return properties;
 	}
 
-	private static IDictionary<dynamic, IDictionary<string, dynamic>> FindCommonAttributes(IDictionary<dynamic, ISet<dynamic>> buckets) {
+	private static IDictionary<object, IDictionary<string, object>> FindCommonAttributes(IDictionary<object, ISet<ModelObject>> buckets) {
 		return buckets.ToDictionary(pair => pair.Key, pair => FindCommonAttributesForSet(pair.Value));
 
-		static IDictionary<string, dynamic> FindCommonAttributesForSet(ISet<dynamic> objects) {
+		static IDictionary<string, object> FindCommonAttributesForSet(ISet<ModelObject> objects) {
 			if (objects.Count <= 1) {
-				return new Dictionary<string, dynamic>();
+				return new Dictionary<string, object>();
 			}
 
-			var attributes = objects.Aggregate((current, obj) => Enumerable.Intersect(current, (IEnumerable<KeyValuePair<string, dynamic>>) obj));
+			var attributes = objects.Cast<IEnumerable<KeyValuePair<string, object>>>().Aggregate((current, obj) => Enumerable.Intersect(current, obj));
 
-			return ((IEnumerable<KeyValuePair<string, dynamic>>) attributes).ToDictionary(pair => pair.Key.StartsWith('_') ? pair.Key[1..] : pair.Key, pair => pair.Value);
+			return attributes.ToDictionary(pair => pair.Key.StartsWith('_') ? pair.Key[1..] : pair.Key, pair => pair.Value);
 		}
 	}
 }

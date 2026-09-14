@@ -13,8 +13,9 @@ using ResourceExtractor.Serializers;
 namespace ResourceExtractor;
 
 internal class Program {
-	private static dynamic model;
-	private static readonly string[] categories = [
+	private static IDictionary<string, List<ModelObject>> Data;
+
+	private static readonly string[] Categories = [
 		"action_messages",
 		"actions",
 		"ability_recasts",
@@ -182,15 +183,7 @@ internal class Program {
 			Initialize(args);
 			Console.WriteLine();
 
-			model = new ModelObject();
-			foreach (var category in categories) {
-				model[category] = new List<ModelObject>();
-			}
-			foreach (var pair in DatLut) {
-				model[pair.Key] = new List<ModelObject>();
-			}
-
-			ResourceParser.Initialize(model);
+			ResourceParser.Initialize(Data);
 
 			LoadItemData(); // Items, Monstrosity
 			LoadMainData(); // Abilities, Spells
@@ -228,7 +221,7 @@ internal class Program {
 			}
 
 			if (args.Contains("--analysis") || args.Contains("-a")) {
-				Analyzer.Analyze(model);
+				Analyzer.Analyze(Data);
 				Console.WriteLine();
 			}
 
@@ -248,15 +241,15 @@ internal class Program {
 		var success = false;
 		try {
 			// Add log names for non-english languages
-			foreach (var buff in model.buffs) {
+			foreach (dynamic buff in Data["buffs"]) {
 				if (buff.ContainsKey("ja")) {
 					buff.jal = buff.ja;
 				}
 			}
 
 			// Populate ability recast table with proper names
-			foreach (var recast in model.ability_recasts) {
-				foreach (var action in model.actions) {
+			foreach (dynamic recast in Data["ability_recasts"]) {
+				foreach (dynamic action in Data["actions"]) {
 					if (recast.Id != action.recast_id) {
 						continue;
 					}
@@ -268,7 +261,7 @@ internal class Program {
 			}
 
 			// Trust party member name defaults:
-			foreach (var spell in model.spells) {
+			foreach (dynamic spell in Data["spells"]) {
 				if (!(spell.ContainsKey("type") && spell.type == MagicType.Trust && spell.ContainsKey("en"))) {
 					continue;
 				}
@@ -279,8 +272,8 @@ internal class Program {
 			// Add categories to key items and synchronize IDs between languages for key items
 			var category = "";
 			var keyItems = new Dictionary<int, ModelObject>();
-			for (var i = model.key_items.Count - 1; i >= 0; --i) {
-				var ki = model.key_items[i];
+			for (var i = Data["key_items"].Count - 1; i >= 0; --i) {
+				dynamic ki = Data["key_items"][i];
 				if (ki.en.StartsWith("-")) {
 					category = ki.en.Substring(1);
 				} else if (ki.id_en != 0) {
@@ -297,11 +290,11 @@ internal class Program {
 					keyItems[ki.id_ja] = ja;
 				}
 			}
-			model.key_items = keyItems.Values.OrderBy(key_item => key_item.Id).ToArray();
+			Data["key_items"] = [.. keyItems.Values.OrderBy(key_item => key_item.Id)];
 
 			// Move item descriptions into separate table
-			model.item_descriptions = new List<ModelObject>();
-			foreach (var item in model.items) {
+			Data["item_descriptions"] = [];
+			foreach (dynamic item in Data["items"]) {
 				dynamic description = new ModelObject(item.Id);
 				description.en = item.endesc;
 				description.ja = item.jadesc;
@@ -309,17 +302,17 @@ internal class Program {
 				item.endesc = null;
 				item.jadesc = null;
 
-				model.item_descriptions.Add(description);
+				Data["item_descriptions"].Add(description);
 			}
 
 			var ammoSlot = 8;
 			var corJobFlag = 1 << 17;
-			var rangeSlotSkills = new Dictionary<uint, string>() {
+			var rangeSlotSkills = new Dictionary<int, string>() {
 				[25] = "Archery",
 				[26] = "Marksmanship",
 				[48] = "Fishing",
 			};
-			foreach (var item in model.items) {
+			foreach (dynamic item in Data["items"]) {
 				if (!item.ContainsKey("slots") || !item.ContainsKey("skill") || !rangeSlotSkills.ContainsKey(item.skill)) {
 					continue;
 				}
@@ -360,8 +353,8 @@ internal class Program {
 			}
 
 			// Move item grammar into separate table
-			model.items_grammar = new List<ModelObject>();
-			foreach (var item in model.items) {
+			Data["items_grammar"] = [];
+			foreach (dynamic item in Data["items"]) {
 				if (item.en != "." && item.Id is < 29681 or > 29693) {
 					dynamic grammar = new ModelObject(item.Id);
 					grammar.plural = item.enlp;
@@ -370,12 +363,12 @@ internal class Program {
 					item.art = null;
 					item.enlp = null;
 
-					model.items_grammar.Add(grammar);
+					Data["items_grammar"].Add(grammar);
 				}
 			}
 
 			// Fill in linked auto-translate names
-			foreach (var at in model.auto_translates) {
+			foreach (dynamic at in Data["auto_translates"]) {
 				if (!at.en.StartsWith("@")) {
 					continue;
 				}
@@ -390,7 +383,7 @@ internal class Program {
 				};
 
 				dynamic item = null;
-				foreach (var i in model[key]) {
+				foreach (var i in Data[key]) {
 					if (i.Id != id) {
 						continue;
 					}
@@ -408,7 +401,7 @@ internal class Program {
 			}
 
 			// Split abilities into categories
-			foreach (var action in model.actions) {
+			foreach (dynamic action in Data["actions"]) {
 				// Weapon skill
 				if (action.Id is >= 0x0000 and < 0x0200) {
 					action.monster_level = null;
@@ -417,7 +410,7 @@ internal class Program {
 					action.tp_cost = null;
 					action.type = null;
 
-					model.weapon_skills.Add(action);
+					Data["weapon_skills"].Add(action);
 				}
 				// Job ability
 				else if (action.Id is >= 0x0200 and < 0x0600) {
@@ -425,7 +418,7 @@ internal class Program {
 
 					action.monster_level = null;
 
-					model.job_abilities.Add(action);
+					Data["job_abilities"].Add(action);
 				}
 				// Job traits
 				else if (action.Id is >= 0x0600 and < 0x0700) {
@@ -438,7 +431,7 @@ internal class Program {
 					action.tp_cost = null;
 					action.type = null;
 
-					model.job_traits.Add(action);
+					Data["job_traits"].Add(action);
 				}
 				// Monstrosity
 				else if (action.Id is >= 0x0700) {
@@ -449,19 +442,18 @@ internal class Program {
 					action.recast_id = null;
 					action.type = null;
 
-					model.monster_skills.Add(action);
+					Data["monster_skills"].Add(action);
 				}
 			}
-			model.actions = null;
-
+			Data.Remove("actions");
 
 			// Shift monster abilities up by 0x100
-			foreach (var monsterAbility in model.monster_abilities) {
+			foreach (var monsterAbility in Data["monster_abilities"]) {
 				monsterAbility.Id += 0x100;
 			}
 
 			// Split merit point names/descriptions and filter garbage values
-			foreach (var meritPoint in model.merit_points) {
+			foreach (dynamic meritPoint in Data["merit_points"]) {
 				// The first 64 entries contain the category names
 				if (meritPoint.Id < 0x40 || meritPoint.en.StartsWith("Meripo")) {
 					meritPoint.Id = 0;
@@ -473,16 +465,16 @@ internal class Program {
 					continue;
 				}
 
-				model.merit_points[meritPoint.Id - 1].endesc = meritPoint.en;
-				model.merit_points[meritPoint.Id - 1].jadesc = meritPoint.ja;
+				Data["merit_points"][meritPoint.Id - 1].endesc = meritPoint.en;
+				Data["merit_points"][meritPoint.Id - 1].jadesc = meritPoint.ja;
 
 				meritPoint.Id = 0;
 			}
 
-			((List<ModelObject>) model.merit_points).RemoveAll(meritPoint => meritPoint.Id == 0);
+			Data["merit_points"].RemoveAll(meritPoint => meritPoint.Id == 0);
 
 			// Split job point names/descriptions and filter garbage values
-			foreach (var jobPoint in model.job_points) {
+			foreach (dynamic jobPoint in Data["job_points"]) {
 				// The first 64 entries contain the category names
 				if (jobPoint.Id is < 0x40 || jobPoint.en is "カテゴリー名" or "ヘルプ文") {
 					jobPoint.Id = 0;
@@ -494,15 +486,15 @@ internal class Program {
 					continue;
 				}
 
-				model.job_points[jobPoint.Id - 1].endesc = jobPoint.en;
-				model.job_points[jobPoint.Id - 1].jadesc = jobPoint.ja;
+				Data["job_points"][jobPoint.Id - 1].endesc = jobPoint.en;
+				Data["job_points"][jobPoint.Id - 1].jadesc = jobPoint.ja;
 
 				jobPoint.Id = 0;
 			}
 
-			((List<ModelObject>) model.job_points).RemoveAll(jobPoint => jobPoint.Id == 0);
+			Data["job_points"].RemoveAll(jobPoint => jobPoint.Id == 0);
 
-			foreach (var mount in model.mounts) {
+			foreach (dynamic mount in Data["mounts"]) {
 				mount.prefix = "/mount";
 			}
 
@@ -526,15 +518,15 @@ internal class Program {
 		// Create manifest file
 		var manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
 
-		foreach (var pair in model) {
-			if (IgnoreStrings.ContainsKey(pair.Key)) {
-				Extract(pair.Key, IgnoreStrings[pair.Key]);
+		foreach (var (name, resources) in Data) {
+			if (IgnoreStrings.TryGetValue(name, out var ignored)) {
+				Extract(name, ignored);
 			} else {
-				Extract(pair.Key);
+				Extract(name);
 			}
 
 			var element = new XElement("file") {
-				Value = pair.Key,
+				Value = name,
 			};
 			manifest.Root.Add(element);
 		}
@@ -548,6 +540,15 @@ internal class Program {
 
 		InitializeBaseDirectory(args);
 		InitializeOutDirectory(args);
+
+		var data = new Dictionary<string, List<ModelObject>>();
+		foreach (var category in Categories) {
+			data[category] = [];
+		}
+		foreach (var pair in DatLut) {
+			data[pair.Key] = [];
+		}
+		Data = data;
 	}
 
 	private static void InitializeBaseDirectory(string[] args) {
@@ -625,14 +626,14 @@ internal class Program {
 		try {
 			ignore ??= [];
 
-			var entries = ((IEnumerable<ModelObject>) model[name]).Where(obj => IsValidName(ignore, obj)).ToArray();
+			var entries = Data[name].Where(obj => IsValidName(ignore, obj)).ToArray();
 
 			if (UpdateResourcesRepo) {
 				LuaFile.Write(OutDir, name, entries);
 			} else {
 				LuaFile.Write(Path.Combine(OutDir, "resources", "lua"), name, entries);
 				var xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
-				foreach (var obj in model[name]) {
+				foreach (var obj in Data[name]) {
 					if (!IsValidName(ignore, obj)) {
 						continue;
 					}
@@ -640,7 +641,7 @@ internal class Program {
 					var xmlelement = new XElement("o");
 					foreach (var pair in obj) {
 						//TODO: Level dictionaries are currently messed up on XML output
-						if (pair.Key.StartsWith("_")) {
+						if (pair.Key.StartsWith('_')) {
 							continue;
 						}
 
@@ -671,20 +672,20 @@ internal class Program {
 			var fixes = XDocument.Load(stream);
 
 			foreach (var fixset in fixes.Root.Elements()) {
-				if (!model.ContainsKey(fixset.Name.LocalName)) {
-					model[fixset.Name.LocalName] = new List<ModelObject>();
+				if (!Data.TryGetValue(fixset.Name.LocalName, out var resources)) {
+					resources = [];
+					Data[fixset.Name.LocalName] = resources;
 				}
-				var data = (List<ModelObject>) model[fixset.Name.LocalName];
 
 				var update = fixset.Element("update");
 				if (update != null) {
 					foreach (var fix in update.Elements()) {
-						var element = data.SingleOrDefault(e => e.Id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+						var element = resources.SingleOrDefault(e => e.Id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 
 						if (element == null) {
 							element = new ModelObject(Int32.Parse(fix.Attribute("id").Value));
 
-							data.Add(element);
+							resources.Add(element);
 						}
 
 						foreach (var attr in fix.Attributes().Where(attribute => attribute.Name != "id")) {
@@ -699,7 +700,7 @@ internal class Program {
 				}
 
 				foreach (var fix in remove.Elements()) {
-					data.RemoveAll(x => x.Id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+					resources.RemoveAll(x => x.Id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 				}
 			}
 		} catch {
@@ -711,7 +712,7 @@ internal class Program {
 	}
 
 	private static void LoadItemData() {
-		model.items = new List<ModelObject>();
+		Data["items"] = [];
 
 		try {
 			DisplayMessage("Loading item data...");
@@ -728,7 +729,7 @@ internal class Program {
 				ResourceParser.ParseItems(stream, streamja);
 			}
 		} finally {
-			DisplayResult(model.items.Count != 0);
+			DisplayResult(Data["items"].Count != 0);
 		}
 	}
 
@@ -775,19 +776,19 @@ internal class Program {
 				throw new InvalidDataException($"Could not parse data for field \"{name}\".");
 			}
 
-			if (model[name].Count > 0) {
-				foreach (var item in model[name]) {
+			if (Data[name].Count > 0) {
+				foreach (var item in Data[name]) {
 					item.Merge(parsed[item.Id]);
 				}
 			} else if (parsed.Any(entry => entry.Id != 0)) {
-				model[name] = parsed.ToList();
+				Data[name] = [.. parsed];
 			} else {
 				for (var i = 0; i < parsed.Length; ++i) {
 					dynamic obj = new ModelObject(i);
 
 					obj.Merge(parsed[i]);
 
-					model[name].Add(obj);
+					Data[name].Add(obj);
 				}
 			}
 

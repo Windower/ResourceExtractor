@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
 namespace ResourceExtractor;
 
 internal static class ResourceParser {
-	private static dynamic model;
+	private static IDictionary<string, List<ModelObject>> Data;
 
-	public static void Initialize(dynamic model) {
-		ResourceParser.model = model;
+	public static void Initialize(IDictionary<string, List<ModelObject>> data) {
+		Data = data;
 	}
 
 	private enum EnglishString {
@@ -134,7 +133,7 @@ internal static class ResourceParser {
 				continue;
 			}
 
-			model.actions.Add(action);
+			Data["actions"].Add(action);
 
 			// Job ability
 			if (action.Id is >= 0x0200 and < 0x0600) {
@@ -147,7 +146,7 @@ internal static class ResourceParser {
 
 		// Remove default value
 		recasts.Remove(0);
-		model.ability_recasts.AddRange(recasts.Values);
+		Data["ability_recasts"].AddRange(recasts.Values);
 	}
 
 	private static void ParseSpells(Stream stream, int length) {
@@ -171,7 +170,7 @@ internal static class ResourceParser {
 				continue;
 			}
 
-			model.spells.Add(spell);
+			Data["spells"].Add(spell);
 		}
 	}
 
@@ -296,12 +295,12 @@ internal static class ResourceParser {
 				ParseBasicStrings(reader, item, Languages.English);
 				ParseBasicStrings(readerja, item, Languages.Japanese);
 
-				model.monstrosity.Add(item);
+				Data["monstrosity"].Add(item);
 			} else {
 				ParseFullStrings(reader, item, Languages.English);
 				ParseFullStrings(readerja, item, Languages.Japanese);
 
-				model.items.Add(item);
+				Data["items"].Add(item);
 			}
 		}
 	}

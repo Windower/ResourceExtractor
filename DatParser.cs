@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ResourceExtractor; 
@@ -6,7 +6,7 @@ namespace ResourceExtractor;
 internal class DatParser {
 	private DatParser() { }
 
-	public static dynamic[] Parse(Stream stream, IDictionary<int, string> fields) {
+	public static ModelObject[] Parse(Stream stream, IDictionary<int, string> fields) {
 		var format = stream.Read<ulong>();
 		stream.Position = 0;
 

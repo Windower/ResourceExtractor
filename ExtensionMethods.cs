@@ -61,8 +61,14 @@ internal static class ExtensionMethods {
 		}
 	}
 
+	public static T Peek<T>(this Stream stream) {
+		var value = Read<T>(stream);
+		stream.Seek(-Marshal.SizeOf<T>(), SeekOrigin.Current);
+		return value;
+	}
+
 	public static T Read<T>(this Stream stream, uint offset) {
-		stream.Position = offset;
+		stream.Seek(offset, SeekOrigin.Current);
 		return Read<T>(stream);
 	}
 

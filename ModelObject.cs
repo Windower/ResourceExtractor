@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 
@@ -6,6 +6,15 @@ namespace ResourceExtractor;
 
 internal class ModelObject : DynamicObject, IEnumerable<KeyValuePair<string, object>> {
 	private readonly IDictionary<string, object> map = new Dictionary<string, object>();
+
+	public int Id { get; set; }
+
+	public ModelObject() {
+	}
+
+	public ModelObject(int id) {
+		Id = id;
+	}
 
 	public override bool TryGetMember(GetMemberBinder binder, out object result) =>
 		map.TryGetValue(binder.Name, out result);
@@ -51,6 +60,11 @@ internal class ModelObject : DynamicObject, IEnumerable<KeyValuePair<string, obj
 		return true;
 	}
 
+	public object this[string key] {
+		get => map[key];
+		set => map[key] = value;
+	}
+
 	public void Add(string key, object value) =>
 		map.Add(key, value);
 
@@ -68,6 +82,7 @@ internal class ModelObject : DynamicObject, IEnumerable<KeyValuePair<string, obj
 			map[pair.Key] = pair.Value;
 		}
 	}
+
 	public bool ContainsKey(string key) =>
 		map.ContainsKey(key);
 

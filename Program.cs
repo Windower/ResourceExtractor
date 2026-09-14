@@ -184,10 +184,10 @@ internal class Program {
 
 			model = new ModelObject();
 			foreach (var category in categories) {
-				model[category] = new List<dynamic>();
+				model[category] = new List<ModelObject>();
 			}
 			foreach (var pair in DatLut) {
-				model[pair.Key] = new List<dynamic>();
+				model[pair.Key] = new List<ModelObject>();
 			}
 
 			ResourceParser.Initialize(model);
@@ -257,7 +257,7 @@ internal class Program {
 			// Populate ability recast table with proper names
 			foreach (var recast in model.ability_recasts) {
 				foreach (var action in model.actions) {
-					if (recast.id != action.recast_id) {
+					if (recast.Id != action.recast_id) {
 						continue;
 					}
 
@@ -278,32 +278,31 @@ internal class Program {
 
 			// Add categories to key items and synchronize IDs between languages for key items
 			var category = "";
-			var keyItems = new Dictionary<int, dynamic>();
+			var keyItems = new Dictionary<int, ModelObject>();
 			for (var i = model.key_items.Count - 1; i >= 0; --i) {
-				dynamic ki = model.key_items[i];
+				var ki = model.key_items[i];
 				if (ki.en.StartsWith("-")) {
 					category = ki.en.Substring(1);
 				} else if (ki.id_en != 0) {
-					dynamic en = keyItems.TryGetValue(ki.id_en, out dynamic entry_en) ? entry_en : new ModelObject();
-					en.id = ki.id_en;
+					dynamic en = keyItems.TryGetValue((int) ki.id_en, out var entry_en) ? entry_en : [];
+					en.Id = ki.id_en;
 					en.en = ki.en;
 					en.category = category;
-					keyItems[en.id] = en;
+					keyItems[en.Id] = en;
 				}
 
 				if (ki.id_ja != 0) {
-					dynamic ja = keyItems.TryGetValue(ki.id_ja, out dynamic entry_ja) ? entry_ja : new ModelObject();
+					dynamic ja = keyItems.TryGetValue((int) ki.id_ja, out var entry_ja) ? entry_ja : [];
 					ja.ja = ki.ja;
 					keyItems[ki.id_ja] = ja;
 				}
 			}
-			model.key_items = keyItems.Values.OrderBy(key_item => key_item.id).ToArray();
+			model.key_items = keyItems.Values.OrderBy(key_item => key_item.Id).ToArray();
 
 			// Move item descriptions into separate table
-			model.item_descriptions = new List<dynamic>();
+			model.item_descriptions = new List<ModelObject>();
 			foreach (var item in model.items) {
-				dynamic description = new ModelObject();
-				description.id = item.id;
+				dynamic description = new ModelObject(item.Id);
 				description.en = item.endesc;
 				description.ja = item.jadesc;
 
@@ -361,11 +360,10 @@ internal class Program {
 			}
 
 			// Move item grammar into separate table
-			model.items_grammar = new List<dynamic>();
+			model.items_grammar = new List<ModelObject>();
 			foreach (var item in model.items) {
-				if (item.en != "." && (item.id < 29681 || item.id > 29693)) {
-					dynamic grammar = new ModelObject();
-					grammar.id = item.id;
+				if (item.en != "." && item.Id is < 29681 or > 29693) {
+					dynamic grammar = new ModelObject(item.Id);
 					grammar.plural = item.enlp;
 					grammar.article = item.art;
 
@@ -383,7 +381,6 @@ internal class Program {
 				}
 
 				var id = Int32.Parse(at.en.Substring(2), NumberStyles.HexNumber);
-
 				var key = (char) at.en[1] switch {
 					'A' => "zones",
 					'C' => "spells",
@@ -391,9 +388,10 @@ internal class Program {
 					'Y' => "actions",
 					_ => throw new InvalidDataException(String.Format("Unknown auto-translate code: {0}", at.en)),
 				};
+
 				dynamic item = null;
 				foreach (var i in model[key]) {
-					if (i.id != id) {
+					if (i.Id != id) {
 						continue;
 					}
 
@@ -401,18 +399,18 @@ internal class Program {
 					break;
 				}
 
-				if (item != null) {
-					at.en = item.en;
-					at.ja = item.ja;
-				} else {
-					//throw new InvalidDataException(string.Format("Unknown auto-translate ID for {0}: {1}", key, id));
+				if (item == null) {
+					throw new InvalidDataException(String.Format("Unknown auto-translate ID for {0}: {1}", key, id));
 				}
+
+				at.en = item.en;
+				at.ja = item.ja;
 			}
 
 			// Split abilities into categories
 			foreach (var action in model.actions) {
 				// Weapon skill
-				if (action.id >= 0x0000 && action.id < 0x0200) {
+				if (action.Id is >= 0x0000 and < 0x0200) {
 					action.monster_level = null;
 					action.mp_cost = null;
 					action.recast_id = null;
@@ -422,16 +420,16 @@ internal class Program {
 					model.weapon_skills.Add(action);
 				}
 				// Job ability
-				else if (action.id >= 0x0200 && action.id < 0x0600) {
-					action.id -= 0x0200;
+				else if (action.Id is >= 0x0200 and < 0x0600) {
+					action.Id -= 0x0200;
 
 					action.monster_level = null;
 
 					model.job_abilities.Add(action);
 				}
 				// Job traits
-				else if (action.id >= 0x0600 && action.id < 0x0700) {
-					action.id -= 0x0600;
+				else if (action.Id is >= 0x0600 and < 0x0700) {
+					action.Id -= 0x0600;
 
 					action.monster_level = null;
 					action.mp_cost = null;
@@ -443,9 +441,9 @@ internal class Program {
 					model.job_traits.Add(action);
 				}
 				// Monstrosity
-				else if (action.id >= 0x0700) {
+				else if (action.Id is >= 0x0700) {
 					// Monster skills start at 256
-					action.id -= 0x0600;
+					action.Id -= 0x0600;
 
 					action.mp_cost = null;
 					action.recast_id = null;
@@ -459,50 +457,50 @@ internal class Program {
 
 			// Shift monster abilities up by 0x100
 			foreach (var monsterAbility in model.monster_abilities) {
-				monsterAbility.id += 0x100;
+				monsterAbility.Id += 0x100;
 			}
 
 			// Split merit point names/descriptions and filter garbage values
 			foreach (var meritPoint in model.merit_points) {
 				// The first 64 entries contain the category names
-				if (meritPoint.id < 0x40 || meritPoint.en.StartsWith("Meripo")) {
-					meritPoint.id = 0;
+				if (meritPoint.Id < 0x40 || meritPoint.en.StartsWith("Meripo")) {
+					meritPoint.Id = 0;
 					continue;
 				}
 
 				// Uneven entries contain the descriptions for the previous entry
-				if (meritPoint.id % 2 != 1) {
+				if (meritPoint.Id % 2 != 1) {
 					continue;
 				}
 
-				model.merit_points[meritPoint.id - 1].endesc = meritPoint.en;
-				model.merit_points[meritPoint.id - 1].jadesc = meritPoint.ja;
+				model.merit_points[meritPoint.Id - 1].endesc = meritPoint.en;
+				model.merit_points[meritPoint.Id - 1].jadesc = meritPoint.ja;
 
-				meritPoint.id = 0;
+				meritPoint.Id = 0;
 			}
 
-			((List<dynamic>) model.merit_points).RemoveAll(meritPoint => meritPoint.id == 0);
+			((List<ModelObject>) model.merit_points).RemoveAll(meritPoint => meritPoint.Id == 0);
 
 			// Split job point names/descriptions and filter garbage values
 			foreach (var jobPoint in model.job_points) {
 				// The first 64 entries contain the category names
-				if (jobPoint.id < 0x40 || jobPoint.en == "カテゴリー名" || jobPoint.en == "ヘルプ文") {
-					jobPoint.id = 0;
+				if (jobPoint.Id is < 0x40 || jobPoint.en is "カテゴリー名" or "ヘルプ文") {
+					jobPoint.Id = 0;
 					continue;
 				}
 
 				// Uneven entries contain the descriptions for the previous entry
-				if (jobPoint.id % 2 != 1) {
+				if (jobPoint.Id % 2 != 1) {
 					continue;
 				}
 
-				model.job_points[jobPoint.id - 1].endesc = jobPoint.en;
-				model.job_points[jobPoint.id - 1].jadesc = jobPoint.ja;
+				model.job_points[jobPoint.Id - 1].endesc = jobPoint.en;
+				model.job_points[jobPoint.Id - 1].jadesc = jobPoint.ja;
 
-				jobPoint.id = 0;
+				jobPoint.Id = 0;
 			}
 
-			((List<dynamic>) model.job_points).RemoveAll(jobPoint => jobPoint.id == 0);
+			((List<ModelObject>) model.job_points).RemoveAll(jobPoint => jobPoint.Id == 0);
 
 			foreach (var mount in model.mounts) {
 				mount.prefix = "/mount";
@@ -520,7 +518,7 @@ internal class Program {
 		["zones"] = ["none"]
 	};
 
-	internal static bool IsValidObject(string name, dynamic obj) {
+	internal static bool IsValidObject(string name, ModelObject obj) {
 		return IsValidName(IgnoreStrings.TryGetValue(name, out var value) ? value : [], obj);
 	}
 
@@ -627,7 +625,7 @@ internal class Program {
 		try {
 			ignore ??= [];
 
-			var entries = ((IList<dynamic>) model[name]).Where(obj => IsValidName(ignore, obj)).ToImmutableArray();
+			var entries = ((IEnumerable<ModelObject>) model[name]).Where(obj => IsValidName(ignore, obj)).ToArray();
 
 			if (UpdateResourcesRepo) {
 				LuaFile.Write(OutDir, name, entries);
@@ -674,28 +672,22 @@ internal class Program {
 
 			foreach (var fixset in fixes.Root.Elements()) {
 				if (!model.ContainsKey(fixset.Name.LocalName)) {
-					model[fixset.Name.LocalName] = new List<dynamic>();
+					model[fixset.Name.LocalName] = new List<ModelObject>();
 				}
-				var data = (List<dynamic>) model[fixset.Name.LocalName];
+				var data = (List<ModelObject>) model[fixset.Name.LocalName];
 
 				var update = fixset.Element("update");
 				if (update != null) {
 					foreach (var fix in update.Elements()) {
-						var elements = data.Where(e => e.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture)).ToList();
+						var element = data.SingleOrDefault(e => e.Id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 
-						if (!elements.Any()) {
-							dynamic el = new ModelObject();
+						if (element == null) {
+							element = new ModelObject(Int32.Parse(fix.Attribute("id").Value));
 
-							foreach (var attr in fix.Attributes()) {
-								el[attr.Name.LocalName] = attr.Value.Parse();
-							}
-
-							data.Add(el);
-							continue;
+							data.Add(element);
 						}
 
-						var element = elements.Single();
-						foreach (var attr in fix.Attributes()) {
+						foreach (var attr in fix.Attributes().Where(attribute => attribute.Name != "id")) {
 							element[attr.Name.LocalName] = attr.Value.Parse();
 						}
 					}
@@ -707,7 +699,7 @@ internal class Program {
 				}
 
 				foreach (var fix in remove.Elements()) {
-					data.RemoveAll(x => x.id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
+					data.RemoveAll(x => x.Id == Convert.ToInt32(fix.Attribute("id").Value, CultureInfo.InvariantCulture));
 				}
 			}
 		} catch {
@@ -719,7 +711,7 @@ internal class Program {
 	}
 
 	private static void LoadItemData() {
-		model.items = new List<dynamic>();
+		model.items = new List<ModelObject>();
 
 		try {
 			DisplayMessage("Loading item data...");
@@ -764,7 +756,7 @@ internal class Program {
 		var result = false;
 
 		try {
-			dynamic[] parsed = null;
+			ModelObject[] parsed = null;
 
 			foreach (var filepair in DatLut[name]) {
 				using var stream = File.OpenRead(GetPath(filepair.Key));
@@ -784,13 +776,14 @@ internal class Program {
 			}
 
 			if (model[name].Count > 0) {
-				foreach (var obj in model[name]) {
-					obj.Merge(parsed[obj.id]);
+				foreach (var item in model[name]) {
+					item.Merge(parsed[item.Id]);
 				}
+			} else if (parsed.Any(entry => entry.Id != 0)) {
+				model[name] = parsed.ToList();
 			} else {
 				for (var i = 0; i < parsed.Length; ++i) {
-					dynamic obj = new ModelObject();
-					obj.id = i;
+					dynamic obj = new ModelObject(i);
 
 					obj.Merge(parsed[i]);
 
@@ -804,23 +797,21 @@ internal class Program {
 		}
 	}
 
-	private static bool IsValidName(string[] ignore, dynamic res) {
-		return
-			// English
-			(!res.ContainsKey("en") || !(
-				res.en == "." ||
-				String.IsNullOrWhiteSpace(res.en) ||
-				ignore.Contains((string) res.en) ||
-				res.en.StartsWith("#", StringComparison.Ordinal)
-			))
-			// Japanese
-			&& (!res.ContainsKey("ja") || !(
-				res.ja == "." ||
-				String.IsNullOrWhiteSpace(res.ja) ||
-				ignore.Contains((string) res.ja) ||
-				res.ja.StartsWith("#", StringComparison.Ordinal)
-			));
-	}
+	private static bool IsValidName(string[] ignore, dynamic res) =>
+		// English
+		(!res.ContainsKey("en") || !(
+			res.en == "." ||
+			String.IsNullOrWhiteSpace(res.en) ||
+			ignore.Contains((string) res.en) ||
+			res.en.StartsWith("#", StringComparison.Ordinal)
+		)) &&
+		// Japanese
+		(!res.ContainsKey("ja") || !(
+			res.ja == "." ||
+			String.IsNullOrWhiteSpace(res.ja) ||
+			ignore.Contains((string) res.ja) ||
+			res.ja.StartsWith("#", StringComparison.Ordinal)
+		));
 
 	private static void ExtractMaps() {
 		DisplayMessage("Extracting map data...");

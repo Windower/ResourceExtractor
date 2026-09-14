@@ -16,13 +16,17 @@ internal static class ResourceParser {
 		ResourceParser.model = model;
 	}
 
-	private enum StringIndex {
+	private enum EnglishString {
 		Name = 0,
-		EnglishArticle = 1,
-		EnglishLogSingular = 2,
-		EnglishLogPlural = 3,
-		EnglishDescription = 4,
-		JapaneseDescription = 1,
+		Article = 1,
+		LogSingular = 2,
+		LogPlural = 3,
+		Description = 4,
+	}
+
+	private enum JapaneseString {
+		Name = 0,
+		Description = 1,
 	}
 
 	private enum BlockType {
@@ -84,9 +88,7 @@ internal static class ResourceParser {
 	}
 
 	private static ModelObject ParseAbility(BinaryReader reader) {
-		dynamic action = new ModelObject();
-
-		action.id = reader.ReadInt16();
+		dynamic action = new ModelObject(reader.ReadInt16());
 
 		action.type = (AbilityType) reader.ReadByte();
 		action.element = reader.ReadByte() & 0x07;
@@ -110,7 +112,7 @@ internal static class ResourceParser {
 	}
 
 	private static void ParseAbilities(Stream stream, int length) {
-		var recasts = new Dictionary<short, object>();
+		var recasts = new Dictionary<int, ModelObject>();
 
 		var data = new byte[0x30];
 		for (var i = 0; i < length / data.Length; ++i) {
@@ -135,18 +137,17 @@ internal static class ResourceParser {
 			model.actions.Add(action);
 
 			// Job ability
-			if (action.id >= 0x0200 && action.id < 0x0600) {
+			if (action.Id is >= 0x0200 and < 0x0600) {
 				// Add to recast dictionary
-				dynamic recast = new ModelObject();
-				recast.id = action.recast_id;
-				recast.action_id = action.id - 0x200;
-				recasts[recast.id] = recast;
+				dynamic recast = new ModelObject(action.recast_id);
+				recast.action_id = action.Id - 0x200;
+				recasts[recast.Id] = recast;
 			}
 		}
 
 		// Remove default value
 		recasts.Remove(0);
-		model.ability_recasts.AddRange(recasts.Select(kvp => kvp.Value));
+		model.ability_recasts.AddRange(recasts.Values);
 	}
 
 	private static void ParseSpells(Stream stream, int length) {
@@ -165,21 +166,18 @@ internal static class ResourceParser {
 
 			using var mstream = new MemoryStream(data);
 			using var reader = new BinaryReader(mstream, Encoding.ASCII, true);
-			dynamic spell = ParseSpell(reader);
+			var spell = ParseSpell(reader);
 			if (spell == null) {
 				continue;
 			}
 
 			model.spells.Add(spell);
 		}
-		model.spells.Remove(0);
 	}
 
 	private static ModelObject ParseSpell(BinaryReader reader) {
-		dynamic spell = new ModelObject();
-
-		spell.id = reader.ReadInt16();
-		if (spell.id == 0) {
+		dynamic spell = new ModelObject(reader.ReadInt16());
+		if (spell.Id == 0) {
 			return null;
 		}
 
@@ -209,7 +207,7 @@ internal static class ResourceParser {
 
 		// SE changed spell recast times in memory to be indexed by spell ID, not recast ID
 		spell._oldrecast = reader.ReadInt16(); // old spell.recast_id
-		spell.recast_id = spell.id;
+		spell.recast_id = spell.Id;
 
 		spell.icon_id_nq = reader.ReadInt16();
 		spell.icon_id = reader.ReadInt16();
@@ -283,7 +281,7 @@ internal static class ResourceParser {
 			using var readerja = new BinaryReader(stringstreamja, Encoding.ASCII, true);
 			// The english and japanese stream contain the same main item data, so only one stream is needed here
 			// The only difference is in the string handling, hence readerja is still needed later
-			dynamic item = ParseItem(reader);
+			var item = ParseItem(reader);
 			if (item == null) {
 				continue;
 			}
@@ -292,8 +290,8 @@ internal static class ResourceParser {
 			stringstreamja.Position = stringstream.Position;
 
 			// Parse strings
-			if (item.id >= 0xF000 && item.id < 0xF200) {
-				item.id -= 0xF000;
+			if (item.Id is >= 0xF000 and < 0xF200) {
+				item.Id -= 0xF000;
 
 				ParseBasicStrings(reader, item, Languages.English);
 				ParseBasicStrings(readerja, item, Languages.Japanese);
@@ -309,18 +307,17 @@ internal static class ResourceParser {
 	}
 
 	private static ModelObject ParseItem(BinaryReader reader) {
-		dynamic item = new ModelObject();
+		var item = new ModelObject(reader.ReadUInt16());
 
-		item.id = reader.ReadUInt16();
-		if (item.id == 0x0000) {
+		if (item.Id is 0x0000) {
 			return null;
 		}
 
 		reader.ReadBytes(0x02); // Unknown 02 - 03 (possibly for future expansion of ID)
 
-		if (item.id >= 0xF000 && item.id < 0xF200) {
+		if (item.Id is >= 0xF000 and < 0xF200) {
 			ParseMonstrosityItem(reader, item);
-		} else if (item.id == 0xFFFF) {
+		} else if (item.Id == 0xFFFF) {
 			ParseGilItem(reader, item);
 		} else {
 			ParseRealItem(reader, item);
@@ -337,21 +334,21 @@ internal static class ResourceParser {
 		reader.ReadBytes(0x02); // AH sorting value
 		item.targets = reader.ReadUInt16();
 
-		if (item.id <= 0x0FFF) {
+		if (item.Id <= 0x0FFF) {
 			ParseGeneralItem(reader, item);
-		} else if (item.id < 0x2000) {
+		} else if (item.Id < 0x2000) {
 			ParseUsableItem(reader, item);
-		} else if (item.id < 0x2200) {
+		} else if (item.Id < 0x2200) {
 			ParseAutomatonItem(reader, item);
-		} else if (item.id < 0x2800) {
+		} else if (item.Id < 0x2800) {
 			ParseGeneralItem(reader, item);
-		} else if (item.id < 0x4000) {
+		} else if (item.Id < 0x4000) {
 			ParseArmorItem(reader, item);
-		} else if (item.id < 0x5A00) {
+		} else if (item.Id < 0x5A00) {
 			ParseWeaponItem(reader, item);
-		} else if (item.id < 0x7000) {
+		} else if (item.Id < 0x7000) {
 			ParseArmorItem(reader, item);
-		} else if (item.id < 0x7400) {
+		} else if (item.Id < 0x7400) {
 			ParseMazeItem(reader, item);
 		}
 	}
@@ -492,11 +489,11 @@ internal static class ResourceParser {
 
 		switch (language) {
 			case Languages.English:
-				item.en = DecodeEntry(reader, StringIndex.Name);
+				item.en = DecodeEntry(reader, EnglishString.Name);
 				break;
 
 			case Languages.Japanese:
-				item.ja = DecodeEntry(reader, StringIndex.Name);
+				item.ja = DecodeEntry(reader, JapaneseString.Name);
 				break;
 		}
 	}
@@ -506,23 +503,29 @@ internal static class ResourceParser {
 
 		switch (language) {
 			case Languages.English:
-				item.art = DecodeEntry(reader, StringIndex.EnglishArticle);
-				item.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
-				item.enlp = DecodeEntry(reader, StringIndex.EnglishLogPlural);
-				item.endesc = DecodeEntry(reader, StringIndex.EnglishDescription);
+				item.art = DecodeEntry(reader, EnglishString.Article);
+				item.enl = DecodeEntry(reader, EnglishString.LogSingular);
+				item.enlp = DecodeEntry(reader, EnglishString.LogPlural);
+				item.endesc = DecodeEntry(reader, EnglishString.Description);
 				break;
 
 			case Languages.Japanese:
-				item.jal = DecodeEntry(reader, StringIndex.Name);
-				item.jadesc = DecodeEntry(reader, StringIndex.JapaneseDescription);
+				item.jal = DecodeEntry(reader, JapaneseString.Name);
+				item.jadesc = DecodeEntry(reader, JapaneseString.Description);
 				break;
 		}
 	}
 
-	private static object DecodeEntry(BinaryReader reader, StringIndex index) {
+	private static object DecodeEntry(BinaryReader reader, EnglishString index) =>
+		DecodeEntry(reader, (int) index);
+
+	private static object DecodeEntry(BinaryReader reader, JapaneseString index) =>
+		DecodeEntry(reader, (int) index);
+
+	private static object DecodeEntry(BinaryReader reader, int index) {
 		var stream = reader.BaseStream;
 		var origin = stream.Position;
-		reader.ReadBytes(8 * (int) index);
+		reader.ReadBytes(8 * index);
 		var dataoffset = reader.ReadInt32();
 		var datatype = reader.ReadInt32();
 		stream.Position = origin;

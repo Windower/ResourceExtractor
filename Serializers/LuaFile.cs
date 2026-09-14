@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 
 namespace ResourceExtractor.Serializers; 
 
 internal static class LuaFile {
-	public static void Write(string outDir, string name, IImmutableList<dynamic> entries) {
+	public static void Write(string outDir, string name, IEnumerable<ModelObject> entries) {
 		using var file = new StreamWriter(Path.Combine(outDir, FormattableString.Invariant($"{name}.lua"))) {
 			NewLine = "\n",
 		};

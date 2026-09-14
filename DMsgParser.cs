@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace ResourceExtractor; 
 
 internal class DMsgParser {
-	internal static dynamic[] Parse(Stream stream, IDictionary<int, string> fields) {
+	internal static ModelObject[] Parse(Stream stream, IDictionary<int, string> fields) {
 		var header = stream.Read<Header>(0);
 
 		if (header.Format != 0x00000067736D5F64) {
@@ -48,7 +48,7 @@ internal class DMsgParser {
 			}
 		}
 
-		dynamic objects = new ModelObject[header.Count];
+		var objects = new ModelObject[header.Count];
 
 		var length = (int) header.EntrySize;
 		for (var i = 0; i < objects.Length; i++) {
@@ -62,7 +62,7 @@ internal class DMsgParser {
 
 			var count = BitConverter.ToInt32(data, offset);
 
-			dynamic resource = new ModelObject();
+			var resource = new ModelObject();
 
 			for (var j = 0; j < count; j++) {
 				if (!fields.ContainsKey(j)) {
@@ -72,7 +72,7 @@ internal class DMsgParser {
 				var entryoffset = BitConverter.ToInt32(data, offset + j * 8 + 4) + offset;
 				var entrytype = BitConverter.ToInt32(data, offset + j * 8 + 8);
 
-				dynamic value;
+				object value;
 				switch (entrytype) {
 					case 0:
 						entryoffset += 0x1C;
@@ -106,7 +106,7 @@ internal class DMsgParser {
 	}
 
 	[SuppressMessage("Style", "IDE0032:Use auto property", Justification = "Messes up struct layout")]
-	[StructLayout(LayoutKind.Sequential, Pack = 4, Size = 64)]
+	[StructLayout(LayoutKind.Sequential, Pack = 4, Size = 0x40)]
 	private readonly struct Header {
 		private readonly long format;
 		private readonly short unknown;

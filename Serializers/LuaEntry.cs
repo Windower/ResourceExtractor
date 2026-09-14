@@ -6,12 +6,14 @@ namespace ResourceExtractor.Serializers;
 
 internal class LuaEntry {
 	public int ID { get; }
-	public HashSet<string> Keys { get; } = [];
+	public HashSet<string> Keys { get; } = ["id"];
 
-	public LuaEntry(dynamic obj) {
-		ID = obj.id;
+	public LuaEntry(ModelObject obj) {
+		ID = obj.Id;
 
-		foreach (var key in FixedKeys.Where(key => obj.ContainsKey(key))) {
+		Attributes.Add(new("id", obj.Id));
+
+		foreach (var key in FixedKeys.Where(obj.ContainsKey)) {
 			Attributes.Add(new LuaAttribute(key, obj[key]));
 			Keys.Add(key);
 		}
@@ -19,7 +21,7 @@ internal class LuaEntry {
 		// TODO: Prettier
 		var otherKeys = new List<string>();
 		foreach (var pair in obj) {
-			if (pair.Key.StartsWith("_")) {
+			if (pair.Key.StartsWith('_')) {
 				continue;
 			}
 			otherKeys.Add(pair.Key);
@@ -35,5 +37,5 @@ internal class LuaEntry {
 
 	private List<LuaAttribute> Attributes { get; } = [];
 
-	private static readonly string[] FixedKeys = ["id", "en", "ja", "enl", "jal"];
+	private static readonly string[] FixedKeys = ["en", "ja", "enl", "jal"];
 }

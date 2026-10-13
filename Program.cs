@@ -206,16 +206,28 @@ internal class Program {
 
 			// Clear directories
 			if (UpdateResourcesRepo) {
-				foreach (var file in Directory.EnumerateFiles(OutDir)) {
-					File.Delete(file);
-				}
-			} else {
-				Directory.CreateDirectory("resources");
-				foreach (var path in new[] { "lua", "xml", "json", "maps" }.Select(dir => "resources/" + dir)) {
-					Directory.CreateDirectory(path);
-					foreach (var file in Directory.EnumerateFiles(path)) {
+				DisplayMessage("Preparing output directory...");
+				try {
+					foreach (var file in Directory.EnumerateFiles(OutDir)) {
 						File.Delete(file);
 					}
+					DisplaySuccess();
+				} catch {
+					DisplayError();
+				}
+			} else {
+				DisplayMessage("Preparing output directory...");
+				try {
+					Directory.CreateDirectory("resources");
+					foreach (var path in new[] { "lua", "xml", "json", "maps" }.Select(dir => "resources/" + dir)) {
+						Directory.CreateDirectory(path);
+						foreach (var file in Directory.EnumerateFiles(path)) {
+							File.Delete(file);
+						}
+					}
+					DisplaySuccess();
+				} catch {
+					DisplayError();
 				}
 			}
 
@@ -233,10 +245,12 @@ internal class Program {
 			}
 
 			Console.WriteLine("Resource extraction complete!");
-		} catch {
+		} catch (Exception ex) {
 			if (System.Diagnostics.Debugger.IsAttached) {
 				throw;
 			}
+			Console.WriteLine(ex.Message);
+			Console.WriteLine(ex.StackTrace);
 		} finally {
 			Console.CursorVisible = true;
 		}
@@ -525,16 +539,21 @@ internal class Program {
 	}
 
 	private static void WriteData() {
-		// Create manifest file
-		var manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
-
 		foreach (var pair in model) {
 			if (IgnoreStrings.ContainsKey(pair.Key)) {
 				Extract(pair.Key, IgnoreStrings[pair.Key]);
 			} else {
 				Extract(pair.Key);
 			}
+		}
 
+		if (UpdateResourcesRepo) {
+			return;
+		}
+
+		var manifest = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("manifest"));
+
+		foreach (var pair in model) {
 			var element = new XElement("file") {
 				Value = pair.Key,
 			};
@@ -542,40 +561,44 @@ internal class Program {
 		}
 
 		manifest.Root.ReplaceNodes(manifest.Root.Elements().OrderBy(e => e.Value));
-		manifest.Save(Path.Combine("resources", "manifest.xml"));
+		manifest.Save(Path.Combine(OutDir, "resources", "manifest.xml"));
 	}
 
 	private static void Initialize(string[] args) {
 		UpdateResourcesRepo = args.Contains("--update-repo") || args.Contains("-r");
 
 		InitializeBaseDirectory(args);
+		DisplayMessage($"  -> {FfxiDir}");
+
 		InitializeOutDirectory(args);
+		DisplayMessage($"  -> {OutDir}");
 	}
 
 	private static void InitializeBaseDirectory(string[] args) {
 		DisplayMessage("Locating Final Fantasy XI installation directory...");
 
-		var message = "Unable to locate Final Fantasy XI installation.";
+		var message = (string) null;
 		try {
-			if (OperatingSystem.IsWindows()) {
+			var windows = OperatingSystem.IsWindows();
+			if (windows) {
 				using var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
 				using var key = (hklm.OpenSubKey("SOFTWARE\\PlayOnlineUS\\InstallFolder") ?? hklm.OpenSubKey("SOFTWARE\\PlayOnline\\InstallFolder")) ?? hklm.OpenSubKey("SOFTWARE\\PlayOnlineEU\\InstallFolder");
 				FfxiDir = key?.GetValue("0001") as string;
 			} else {
 				FfxiDir = args.FirstOrDefault(arg => arg[0] != '-');
-				if (FfxiDir == null) {
-					message = "No path provided";
-				}
 			}
 
-			if (FfxiDir != null && !Directory.Exists(FfxiDir)) {
+			if (FfxiDir == null) {
+				message = windows ? "Unable to locate Final Fantasy XI installation." : "No path provided";
+			} else if (!Directory.Exists(FfxiDir)) {
 				message = $"Path \"{FfxiDir}\" not found.";
-				FfxiDir = null;
+			} else if (!File.Exists(Path.Combine(FfxiDir, "FTABLE.DAT"))) {
+				message = $"Path \"{FfxiDir}\" is not a valid FFXI path.";
 			}
-		} catch (Exception ex) {
-			message = ex.Message;
+		} catch {
+			message = "Could not determine Final Fantasy XI installation.";
 		} finally {
-			var success = FfxiDir != null;
+			var success = message is null;
 			DisplayResult(success);
 			if (!success) {
 				DisplayMessage(message);
@@ -587,7 +610,7 @@ internal class Program {
 	private static void InitializeOutDirectory(string[] args) {
 		DisplayMessage("Setting output directory...");
 
-		var message = "Could not determine output directory.";
+		var message = (string)null;
 		try {
 			var outIndex = args.IndexOf("--out") ?? args.IndexOf("-o");
 			if (outIndex == null) {
@@ -601,18 +624,18 @@ internal class Program {
 			}
 
 			OutDir = args[outIndex.Value + 1];
-			if (UpdateResourcesRepo) {
-				if (!Directory.Exists(OutDir)) {
-					message = "Specified repository directory does not exist.";
-					OutDir = null;
-				}
-			} else {
+			if (!UpdateResourcesRepo) {
 				Directory.CreateDirectory(OutDir);
+				return;
 			}
-		} catch (Exception ex) {
-			message = ex.Message;
+
+			if (!Directory.Exists(OutDir)) {
+				message = "Specified repository directory does not exist.";
+			}
+		} catch {
+			message = "Could not determine output directory.";
 		} finally {
-			var success = OutDir != null;
+			var success = message is null;
 			DisplayResult(success);
 			if (!success) {
 				DisplayMessage(message);

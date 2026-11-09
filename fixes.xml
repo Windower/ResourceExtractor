@@ -1183,6 +1183,7 @@
       <o id="492" duration="300" status="125" /> <!-- Gain-CHR -->
       <o id="493" duration="180" status="432" /> <!-- Temper -->
       <o id="495" duration="180" status="170" /> <!-- Adloquium -->
+      <o id="503" unlearnable="true" /> <!-- Impact -->
       <o id="504" duration="60" status="42" /> <!-- Regen V -->
       <o id="505" duration="300" status="289" /> <!-- Gekka: Ichi -->
       <o id="506" duration="300" status="171" /> <!-- Yain: Ichi -->

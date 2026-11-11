@@ -68,8 +68,12 @@ internal class ModelObject : DynamicObject, IEnumerable<KeyValuePair<string, obj
 			map[pair.Key] = pair.Value;
 		}
 	}
+
 	public bool ContainsKey(string key) =>
 		map.ContainsKey(key);
+
+	public bool TryGetValue(string key, out object result) =>
+		map.TryGetValue(key, out result);
 
 	IEnumerator<KeyValuePair<string, object>> IEnumerable<KeyValuePair<string, object>>.GetEnumerator() =>
 		map.GetEnumerator();

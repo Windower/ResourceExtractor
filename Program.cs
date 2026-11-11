@@ -528,23 +528,9 @@ internal class Program {
 		}
 	}
 
-	private static readonly IDictionary<string, string[]> IgnoreStrings = new Dictionary<string, string[]> {
-		["buffs"] = ["(None)", "(Imagery)"],
-		["titles"] = ["0"],
-		["zones"] = ["none"]
-	};
-
-	internal static bool IsValidObject(string name, dynamic obj) {
-		return IsValidName(IgnoreStrings.TryGetValue(name, out var value) ? value : [], obj);
-	}
-
 	private static void WriteData() {
 		foreach (var pair in model) {
-			if (IgnoreStrings.ContainsKey(pair.Key)) {
-				Extract(pair.Key, IgnoreStrings[pair.Key]);
-			} else {
-				Extract(pair.Key);
-			}
+			Extract(pair.Key, IgnoreStrings.TryGetValue((string) pair.Key, out var ignore) ? ignore : []);
 		}
 
 		if (UpdateResourcesRepo) {
@@ -644,24 +630,20 @@ internal class Program {
 		}
 	}
 
-	private static void Extract(string name, string[] ignore = null) {
+	private static void Extract(string name, string[] ignore) {
 		DisplayMessage("Generating files for " + name + "...");
 
 		try {
 			ignore ??= [];
 
-			var entries = ((IList<dynamic>) model[name]).Where(obj => IsValidName(ignore, obj)).ToImmutableArray();
+			var entries = ((IList<dynamic>) model[name]).Where(obj => HasValidName(ignore, obj)).ToImmutableArray();
 
 			if (UpdateResourcesRepo) {
 				LuaFile.Write(OutDir, name, entries);
 			} else {
 				LuaFile.Write(Path.Combine(OutDir, "resources", "lua"), name, entries);
 				var xml = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement(name));
-				foreach (var obj in model[name]) {
-					if (!IsValidName(ignore, obj)) {
-						continue;
-					}
-
+				foreach (var obj in entries) {
 					var xmlelement = new XElement("o");
 					foreach (var pair in obj) {
 						//TODO: Level dictionaries are currently messed up on XML output
@@ -827,23 +809,17 @@ internal class Program {
 		}
 	}
 
-	private static bool IsValidName(string[] ignore, dynamic res) {
-		return
-			// English
-			(!res.ContainsKey("en") || !(
-				res.en == "." ||
-				String.IsNullOrWhiteSpace(res.en) ||
-				ignore.Contains((string) res.en) ||
-				res.en.StartsWith("#", StringComparison.Ordinal)
-			))
-			// Japanese
-			&& (!res.ContainsKey("ja") || !(
-				res.ja == "." ||
-				String.IsNullOrWhiteSpace(res.ja) ||
-				ignore.Contains((string) res.ja) ||
-				res.ja.StartsWith("#", StringComparison.Ordinal)
-			));
-	}
+	private static readonly IDictionary<string, string[]> IgnoreStrings = new Dictionary<string, string[]> {
+		["buffs"] = ["(None)", "(Imagery)"],
+		["titles"] = ["0"],
+		["zones"] = ["none"]
+	};
+
+	internal static bool IsValidObject(string name, dynamic obj) =>
+		HasValidName(IgnoreStrings.TryGetValue(name, out var value) ? value : [], obj);
+
+	private static bool HasValidName(string[] ignore, ModelObject res) =>
+		new[] { "en", "ja" }.All(key => !res.TryGetValue(key, out var value) || value is string str && !(ignore.Contains(str) || str is "" || str[0] is '.' or '0' or ' ' or '\n' or '#'));
 
 	private static void ExtractMaps() {
 		DisplayMessage("Extracting map data...");

@@ -337,7 +337,7 @@ internal static class ResourceParser {
 		reader.ReadBytes(0x02); // AH sorting value
 		item.targets = reader.ReadUInt16();
 
-		if (item.id <= 0x0FFF) {
+		if (item.id < 0x1000) {
 			ParseGeneralItem(reader, item);
 		} else if (item.id < 0x2000) {
 			ParseUsableItem(reader, item);
@@ -353,6 +353,12 @@ internal static class ResourceParser {
 			ParseArmorItem(reader, item);
 		} else if (item.id < 0x7400) {
 			ParseMazeItem(reader, item);
+		} else if (item.id < 0x7800) {
+			throw new NotImplementedException("Instinct parsing not yet implemented.");
+		} else if (item.id < 0x7C00) {
+			ParseGeneralItem(reader, item);
+		} else {
+			throw new NotSupportedException("Unknown item ID range.");
 		}
 	}
 

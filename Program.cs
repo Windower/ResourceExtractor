@@ -729,16 +729,24 @@ internal class Program {
 		try {
 			DisplayMessage("Loading item data...");
 
-			int[][] fileids = [
-			//                           Armor   Weapons
-				[0x0049, 0x004A, 0x004D, 0x004C, 0x004B, 0x005B, 0xD973, 0xD974, 0xD977, 0xD975],
-				[0x0004, 0x0005, 0x0008, 0x0007, 0x0006, 0x0009, 0xD8FB, 0xD8FC, 0xD8FF, 0xD8FD],
-			];
+			var ids = new[] {
+				(0x0049, 0x0004), // General
+				(0x004A, 0x0005), // Usable
+				(0x004D, 0x0008), // Automaton
+				(0x004C, 0x0007), // Armor 1
+				(0x004B, 0x0006), // Weapons
+				(0x005B, 0x0009), // Gil
+				(0xD974, 0xD8FC), // Armor 2
+				(0xD973, 0xD8FB), // Maze
+				(0xD977, 0xD8FF), // General 2
+				(0xD97B, 0xD903), // General 3
+				(0xD975, 0xD8FD), // Monstrosity
+			};
 
-			for (var i = 0; i < fileids[0].Length; ++i) {
-				using var stream = File.Open(GetPath(fileids[0][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-				using var streamja = File.Open(GetPath(fileids[1][i]), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-				ResourceParser.ParseItems(stream, streamja);
+			foreach (var (en, ja) in ids) {
+				using var streamEn = File.Open(GetPath(en), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+				using var streamJa = File.Open(GetPath(ja), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+				ResourceParser.ParseItems(streamEn, streamJa);
 			}
 		} finally {
 			DisplayResult(model.items.Count != 0);

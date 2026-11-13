@@ -354,7 +354,7 @@ internal static class ResourceParser {
 		} else if (item.id < 0x7400) {
 			ParseMazeItem(reader, item);
 		} else if (item.id < 0x7800) {
-			throw new NotImplementedException("Instinct parsing not yet implemented.");
+			ParseInstinctItem(reader, item);
 		} else if (item.id < 0x7C00) {
 			ParseGeneralItem(reader, item);
 		} else {
@@ -476,6 +476,14 @@ internal static class ResourceParser {
 		reader.ReadBytes(0x44); // Unknown 0E - 53
 
 		item.category = "Maze";
+	}
+
+	private static void ParseInstinctItem(BinaryReader reader, dynamic item) {
+		reader.ReadBytes(0x0C); // Unknown 10 - 1B, constant
+		item.cost = reader.ReadUInt32(); // 1C - 1F, 255 = not implemented
+		reader.ReadBytes(0x0C); // Unknown 20 - 2B, always zero
+
+		item.category = "Instinct";
 	}
 
 	private static void ParseMonstrosityItem(BinaryReader reader, dynamic item) {

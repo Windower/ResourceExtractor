@@ -738,6 +738,7 @@ internal class Program {
 				(0x005B, 0x0009), // Gil
 				(0xD974, 0xD8FC), // Armor 2
 				(0xD973, 0xD8FB), // Maze
+				(0xD976, 0xD8FE), // Instincts
 				(0xD977, 0xD8FF), // General 2
 				(0xD97B, 0xD903), // General 3
 				(0xD975, 0xD8FD), // Monstrosity

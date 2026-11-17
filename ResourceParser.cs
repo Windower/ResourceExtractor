@@ -480,8 +480,8 @@ internal static class ResourceParser {
 
 	private static void ParseInstinctItem(BinaryReader reader, dynamic item) {
 		reader.ReadBytes(0x0C); // Unknown 10 - 1B, constant
-		item.cost = reader.ReadUInt32(); // 1C - 1F, 255 = not implemented
-		reader.ReadBytes(0x0C); // Unknown 20 - 2B, always zero
+		item.cost = reader.ReadSByte(); // 1C, -1 = not implemented
+		reader.ReadBytes(0x0F); // Unknown 1D - 2B, always zero
 
 		item.category = "Instinct";
 	}

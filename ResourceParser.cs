@@ -334,7 +334,7 @@ internal static class ResourceParser {
 		reader.ReadBytes(0x02); // Unknown
 		item.stack = reader.ReadUInt16();
 		item.type = reader.ReadUInt16();
-		var sort = reader.ReadUInt16(); // AH sorting value, resource ID for automaton items
+		item._sort = reader.ReadUInt16(); // AH sorting value, resource ID for automaton items
 		item.targets = reader.ReadUInt16();
 
 		if (item.id < 0x1000) {
@@ -342,7 +342,6 @@ internal static class ResourceParser {
 		} else if (item.id < 0x2000) {
 			ParseUsableItem(reader, item);
 		} else if (item.id < 0x2200) {
-			item.resource_id = sort; // 0 = head, 1 = frame, 2 - 9 = attachment (element + 2)
 			ParseAutomatonItem(reader, item);
 		} else if (item.id < 0x2800) {
 			ParseGeneralItem(reader, item);
@@ -468,14 +467,15 @@ internal static class ResourceParser {
 	}
 
 	private static void ParseAutomatonItem(BinaryReader reader, dynamic item) {
-		item.slot = reader.ReadUInt32(); // 10 - 13, 1 = head, 2 = frame, 3 = attachment
+		item.slot = reader.ReadByte(); // 10, 1 = head, 2 = frame, 3 = attachment
+		reader.ReadBytes(0x03); // Unknown 11 - 13, always zero
 
 		// 14 - 17, one nibble per element, low nibble first (Fire, Ice, Wind, Earth, Lightning, Water, Light, Dark)
 		// Elemental capacity for heads and frames, elemental cost for attachments
-		item.elements = new Dictionary<byte, byte>();
+		item.elements = new Dictionary<int, int>();
 		var packed = reader.ReadBytes(0x04);
-		for (byte element = 0; element < 8; ++element) {
-			var value = (byte) ((packed[element / 2] >> (element % 2 * 4)) & 0x0F);
+		for (var element = 0; element < 8; ++element) {
+			var value = (packed[element / 2] >> (element % 2 * 4)) & 0x0F;
 			if (value > 0) {
 				item.elements.Add(element, value);
 			}

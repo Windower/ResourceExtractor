@@ -313,6 +313,13 @@ internal class Program {
 			}
 			model.key_items = keyItems.Values.OrderBy(key_item => key_item.id).ToArray();
 
+			// The AH sorting value is the resource ID for automaton items
+			foreach (var item in model.items) {
+				if (item.category == "Automaton") {
+					item.resource_id = item._sort;
+				}
+			}
+
 			// Move item descriptions into separate table
 			model.item_descriptions = new List<dynamic>();
 			foreach (var item in model.items) {

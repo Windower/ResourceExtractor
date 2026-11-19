@@ -334,7 +334,7 @@ internal static class ResourceParser {
 		reader.ReadBytes(0x02); // Unknown
 		item.stack = reader.ReadUInt16();
 		item.type = reader.ReadUInt16();
-		item._sort = reader.ReadUInt16(); // AH sorting value, resource ID for automaton items
+		item._sort = reader.ReadUInt16(); // AH sorting value, resource ID/Subtype for automaton items
 		item.targets = reader.ReadUInt16();
 
 		if (item.id < 0x1000) {

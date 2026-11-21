@@ -502,7 +502,11 @@ internal static class ResourceParser {
 
 	private static void ParseMonstrosityItem(BinaryReader reader, dynamic item) {
 		item.tp_moves = new Dictionary<ushort, sbyte>();
-		reader.ReadBytes(0x30); // Unknown 04 - 2F
+		reader.ReadBytes(0x26); // 04 - 29: Index, padding, name, monster ecosystem
+		item.species = reader.ReadInt16(); // 2A - 2B: Base species ID, variants point to their base form's ID
+		reader.ReadBytes(0x04); // Unknown 2C - 2F
+		item.size = reader.ReadInt16(); // 30 - 31: Size, 0 = small, 1 = medium, 2 = large
+		reader.ReadBytes(0x02); // Unknown 32 - 33, always zero
 		for (var i = 0x00; i < 0x10; ++i) {
 			var move = reader.ReadUInt16();
 			var level = reader.ReadSByte();

@@ -24,6 +24,8 @@ internal class Program {
 		"jobs",
 		"monster_skills",
 		"monstrosity",
+		"roe_categories",
+		"roe_objectives",
 		"spells",
 		"weapon_skills",
 	];
@@ -749,6 +751,8 @@ internal class Program {
 				(0xD977, 0xD8FF), // General 2
 				(0xD97B, 0xD903), // General 3
 				(0xD975, 0xD8FD), // Monstrosity
+				(0xD978, 0xD900), // RoE Objectives
+				(0xD979, 0xD901), // RoE Categories
 			};
 
 			foreach (var (en, ja) in ids) {

@@ -22,7 +22,9 @@ internal static class ResourceParser {
 		EnglishLogSingular = 2,
 		EnglishLogPlural = 3,
 		EnglishDescription = 4,
+		EnglishDescription2 = 5, // RoE objectives only
 		JapaneseDescription = 1,
+		JapaneseDescription2 = 2, // RoE objectives only
 	}
 
 	private enum BlockType {
@@ -292,13 +294,31 @@ internal static class ResourceParser {
 			stringstreamja.Position = stringstream.Position;
 
 			// Parse strings
-			if (item.id >= 0xF000 && item.id < 0xF200) {
+			if (item.id >= 0xE000 && item.id < 0xF000) {
+				item.id -= 0xE000;
+
+				ParseBasicStrings(reader, item, Languages.English);
+				ParseBasicStrings(readerja, item, Languages.Japanese);
+
+				// The description can have a second page, it's appended as is
+				item.endesc = (string) DecodeEntry(reader, StringIndex.EnglishDescription) + (string) DecodeEntry(reader, StringIndex.EnglishDescription2);
+				item.jadesc = (string) DecodeEntry(readerja, StringIndex.JapaneseDescription) + (string) DecodeEntry(readerja, StringIndex.JapaneseDescription2);
+
+				model.roe_objectives.Add(item);
+			} else if (item.id >= 0xF000 && item.id < 0xF200) {
 				item.id -= 0xF000;
 
 				ParseBasicStrings(reader, item, Languages.English);
 				ParseBasicStrings(readerja, item, Languages.Japanese);
 
 				model.monstrosity.Add(item);
+			} else if (item.id >= 0xF200 && item.id < 0xF600) {
+				item.id -= 0xF200;
+
+				ParseBasicStrings(reader, item, Languages.English);
+				ParseBasicStrings(readerja, item, Languages.Japanese);
+
+				model.roe_categories.Add(item);
 			} else {
 				ParseFullStrings(reader, item, Languages.English);
 				ParseFullStrings(readerja, item, Languages.Japanese);
@@ -318,8 +338,12 @@ internal static class ResourceParser {
 
 		reader.ReadBytes(0x02); // Unknown 02 - 03 (possibly for future expansion of ID)
 
-		if (item.id >= 0xF000 && item.id < 0xF200) {
+		if (item.id >= 0xE000 && item.id < 0xF000) {
+			ParseRoeObjective(reader, item);
+		} else if (item.id >= 0xF000 && item.id < 0xF200) {
 			ParseMonstrosityItem(reader, item);
+		} else if (item.id >= 0xF200 && item.id < 0xF600) {
+			ParseRoeCategory(reader, item);
 		} else if (item.id == 0xFFFF) {
 			ParseGilItem(reader, item);
 		} else {
@@ -511,6 +535,49 @@ internal static class ResourceParser {
 			}
 
 			reader.ReadByte(); // Unknown byte, possibly padding, or level being a short
+		}
+	}
+
+	private static void ParseRoeObjective(BinaryReader reader, dynamic item) {
+		reader.ReadInt32(); // 04 - 07, Date (YYYYMMDD)
+		item.repeatable = reader.ReadInt32() != 0; // 08 - 0B
+		item.count = reader.ReadInt32(); // 0C - 0F
+		item.sparks = reader.ReadInt32(); // 10 - 13
+		item.exp = reader.ReadInt32(); // 14 - 17
+		item.cp = reader.ReadInt32(); // 18 - 1B
+		item.accolades = reader.ReadInt32(); // 1C - 1F
+	}
+
+	private static void ParseRoeCategory(BinaryReader reader, dynamic item) {
+		var count = reader.ReadInt32(); // 04 - 07, Child count
+
+		// 08 - 237, 28 child entries of 0x14 bytes: child ID followed by four requirements
+		// A category contains either sub categories or objectives, never both
+		var categories = new List<int>();
+		var objectives = new List<int>();
+		for (var i = 0x00; i < 0x1C; ++i) {
+			var child = reader.ReadInt32();
+			// Four requirements, high byte is the type (1 = roe objective, 4 = zone visited, 6 = unknown, Unity only (0 - 5 for Shared A - F, 0x100 - 0x103 for leader objectives), 7 = unity leader), the remaining 24 bits are the value
+			reader.ReadBytes(0x10);
+
+			// Unused entries are still read, so the reader ends up at the string table (0x238)
+			if (i >= count) {
+				continue;
+			}
+
+			// 0xF200 + ID for sub categories, 0xE000 + ID for objectives
+			if (child >= 0xF200) {
+				categories.Add(child - 0xF200);
+			} else {
+				objectives.Add(child - 0xE000);
+			}
+		}
+
+		if (categories.Count > 0) {
+			item.categories = categories;
+		}
+		if (objectives.Count > 0) {
+			item.objectives = objectives;
 		}
 	}
 

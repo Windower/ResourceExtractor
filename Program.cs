@@ -24,6 +24,8 @@ internal class Program {
 		"jobs",
 		"monster_skills",
 		"monstrosity",
+		"roe_categories",
+		"roe_objectives",
 		"spells",
 		"weapon_skills",
 	];
@@ -193,6 +195,7 @@ internal class Program {
 			ResourceParser.Initialize(model);
 
 			LoadItemData(); // Items, Monstrosity
+			LoadRoeData(); // Records of Eminence objectives and categories
 			LoadMainData(); // Abilities, Spells
 
 			ParseStringTables();
@@ -758,6 +761,28 @@ internal class Program {
 			}
 		} finally {
 			DisplayResult(model.items.Count != 0);
+		}
+	}
+
+	private static void LoadRoeData() {
+		var result = false;
+
+		try {
+			DisplayMessage("Loading Records of Eminence data...");
+
+			using (var streamEn = File.Open(GetPath(0xD978), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+			using (var streamJa = File.Open(GetPath(0xD900), FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
+				ResourceParser.ParseRoeObjectives(streamEn, streamJa);
+			}
+
+			using (var streamEn = File.Open(GetPath(0xD979), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+			using (var streamJa = File.Open(GetPath(0xD901), FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
+				ResourceParser.ParseRoeCategories(streamEn, streamJa);
+			}
+
+			result = model.roe_objectives.Count != 0 && model.roe_categories.Count != 0;
+		} finally {
+			DisplayResult(result);
 		}
 	}
 

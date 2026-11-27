@@ -294,13 +294,31 @@ internal static class ResourceParser {
 			stringstreamja.Position = stringstream.Position;
 
 			// Parse strings
-			if (item.id >= 0xF000 && item.id < 0xF200) {
+			if (item.id >= 0xE000 && item.id < 0xF000) {
+				item.id -= 0xE000;
+
+				ParseBasicStrings(reader, item, Languages.English);
+				ParseBasicStrings(readerja, item, Languages.Japanese);
+
+				// The description can have a second page, it's appended as is
+				item.endesc = (string) DecodeEntry(reader, StringIndex.EnglishDescription) + (string) DecodeEntry(reader, StringIndex.EnglishDescription2);
+				item.jadesc = (string) DecodeEntry(readerja, StringIndex.JapaneseDescription) + (string) DecodeEntry(readerja, StringIndex.JapaneseDescription2);
+
+				model.roe_objectives.Add(item);
+			} else if (item.id >= 0xF000 && item.id < 0xF200) {
 				item.id -= 0xF000;
 
 				ParseBasicStrings(reader, item, Languages.English);
 				ParseBasicStrings(readerja, item, Languages.Japanese);
 
 				model.monstrosity.Add(item);
+			} else if (item.id >= 0xF200 && item.id < 0xF600) {
+				item.id -= 0xF200;
+
+				ParseBasicStrings(reader, item, Languages.English);
+				ParseBasicStrings(readerja, item, Languages.Japanese);
+
+				model.roe_categories.Add(item);
 			} else {
 				ParseFullStrings(reader, item, Languages.English);
 				ParseFullStrings(readerja, item, Languages.Japanese);
@@ -320,8 +338,12 @@ internal static class ResourceParser {
 
 		reader.ReadBytes(0x02); // Unknown 02 - 03 (possibly for future expansion of ID)
 
-		if (item.id >= 0xF000 && item.id < 0xF200) {
+		if (item.id >= 0xE000 && item.id < 0xF000) {
+			ParseRoeObjective(reader, item);
+		} else if (item.id >= 0xF000 && item.id < 0xF200) {
 			ParseMonstrosityItem(reader, item);
+		} else if (item.id >= 0xF200 && item.id < 0xF600) {
+			ParseRoeCategory(reader, item);
 		} else if (item.id == 0xFFFF) {
 			ParseGilItem(reader, item);
 		} else {
@@ -516,119 +538,46 @@ internal static class ResourceParser {
 		}
 	}
 
-	public static void ParseRoeObjectives(Stream stream, Stream streamja) {
-		const int length = 0x1400;
-		var data = new byte[length];
-		var dataja = new byte[length];
-		var count = (int) (stream.Length / length);
-		for (var i = 0; i < count; i++) {
-			stream.Position = streamja.Position = i * length;
-
-			stream.Read(data, 0, data.Length);
-			streamja.Read(dataja, 0, dataja.Length);
-
-			data.RotateRight(5);
-			dataja.RotateRight(5);
-
-			using var stringstream = new MemoryStream(data);
-			using var stringstreamja = new MemoryStream(dataja);
-			using var reader = new BinaryReader(stringstream, Encoding.ASCII, true);
-			using var readerja = new BinaryReader(stringstreamja, Encoding.ASCII, true);
-
-			// The english and japanese stream contain the same objective data, only the strings differ
-			dynamic objective = new ModelObject();
-			objective.id = i;
-
-			reader.ReadBytes(0x04); // 00 - 03, 0xE000 + ID, record index is used instead since one record (4073) holds an ID used by another record (4079)
-			reader.ReadInt32(); // 04 - 07, Date (YYYYMMDD)
-			objective.repeatable = reader.ReadInt32() != 0; // 08 - 0B
-			objective.count = reader.ReadInt32(); // 0C - 0F
-			objective.sparks = reader.ReadInt32(); // 10 - 13
-			objective.exp = reader.ReadInt32(); // 14 - 17
-			objective.cp = reader.ReadInt32(); // 18 - 1B
-			objective.accolades = reader.ReadInt32(); // 1C - 1F
-
-			stringstreamja.Position = stringstream.Position;
-
-			reader.ReadInt32(); // String count
-			objective.en = DecodeEntry(reader, StringIndex.Name);
-			objective.enl = DecodeEntry(reader, StringIndex.EnglishLogSingular);
-			// The description can have a second page, it's appended as is
-			objective.endesc = (string) DecodeEntry(reader, StringIndex.EnglishDescription) + (string) DecodeEntry(reader, StringIndex.EnglishDescription2);
-
-			readerja.ReadInt32(); // String count
-			objective.ja = DecodeEntry(readerja, StringIndex.Name);
-			objective.jadesc = (string) DecodeEntry(readerja, StringIndex.JapaneseDescription) + (string) DecodeEntry(readerja, StringIndex.JapaneseDescription2);
-
-			model.roe_objectives.Add(objective);
-		}
+	private static void ParseRoeObjective(BinaryReader reader, dynamic item) {
+		reader.ReadInt32(); // 04 - 07, Date (YYYYMMDD)
+		item.repeatable = reader.ReadInt32() != 0; // 08 - 0B
+		item.count = reader.ReadInt32(); // 0C - 0F
+		item.sparks = reader.ReadInt32(); // 10 - 13
+		item.exp = reader.ReadInt32(); // 14 - 17
+		item.cp = reader.ReadInt32(); // 18 - 1B
+		item.accolades = reader.ReadInt32(); // 1C - 1F
 	}
 
-	public static void ParseRoeCategories(Stream stream, Stream streamja) {
-		const int length = 0x1400;
-		const int maxChildren = 0x1C;
-		var data = new byte[length];
-		var dataja = new byte[length];
-		var count = (int) (stream.Length / length);
-		for (var i = 0; i < count; i++) {
-			stream.Position = streamja.Position = i * length;
+	private static void ParseRoeCategory(BinaryReader reader, dynamic item) {
+		var count = reader.ReadInt32(); // 04 - 07, Child count
 
-			stream.Read(data, 0, data.Length);
-			streamja.Read(dataja, 0, dataja.Length);
+		// 08 - 237, 28 child entries of 0x14 bytes: child ID followed by four requirements
+		// A category contains either sub categories or objectives, never both
+		var categories = new List<int>();
+		var objectives = new List<int>();
+		for (var i = 0x00; i < 0x1C; ++i) {
+			var child = reader.ReadInt32();
+			// Four requirements, high byte is the type (1 = roe objective, 4 = zone visited, 6 = unknown, Unity only (0 - 5 for Shared A - F, 0x100 - 0x103 for leader objectives), 7 = unity leader), the remaining 24 bits are the value
+			reader.ReadBytes(0x10);
 
-			data.RotateRight(5);
-			dataja.RotateRight(5);
-
-			using var stringstream = new MemoryStream(data);
-			using var stringstreamja = new MemoryStream(dataja);
-			using var reader = new BinaryReader(stringstream, Encoding.ASCII, true);
-			using var readerja = new BinaryReader(stringstreamja, Encoding.ASCII, true);
-
-			// The english and japanese stream contain the same category data, only the strings differ
-			dynamic category = new ModelObject();
-			category.id = i;
-
-			reader.ReadBytes(0x04); // 00 - 03, 0xF200 + ID
-			var childCount = reader.ReadInt32();
-
-			// 08 - 237, 28 child entries of 0x14 bytes: child ID followed by four requirements
-			// A category contains either sub categories or objectives, never both
-			var categories = new List<int>();
-			var objectives = new List<int>();
-			for (var j = 0; j < maxChildren; j++) {
-				var child = reader.ReadInt32();
-				// Four requirements, high byte is the type (1 = roe objective, 4 = zone visited, 6 = unknown, Unity only (0 - 5 for Shared A - F, 0x100 - 0x103 for leader objectives), 7 = unity leader), the remaining 24 bits are the value
-				reader.ReadBytes(0x10);
-
-				// Unused slots are still read, so the reader ends up at the string table (0x238)
-				if (j >= childCount) {
-					continue;
-				}
-
-				// 0xF200 + ID for sub categories, 0xE000 + ID for objectives
-				if (child >= 0xF200) {
-					categories.Add(child - 0xF200);
-				} else {
-					objectives.Add(child - 0xE000);
-				}
+			// Unused entries are still read, so the reader ends up at the string table (0x238)
+			if (i >= count) {
+				continue;
 			}
 
-			if (categories.Count > 0) {
-				category.categories = categories;
+			// 0xF200 + ID for sub categories, 0xE000 + ID for objectives
+			if (child >= 0xF200) {
+				categories.Add(child - 0xF200);
+			} else {
+				objectives.Add(child - 0xE000);
 			}
-			if (objectives.Count > 0) {
-				category.objectives = objectives;
-			}
+		}
 
-			stringstreamja.Position = stringstream.Position;
-
-			reader.ReadInt32(); // String count
-			category.en = DecodeEntry(reader, StringIndex.Name);
-
-			readerja.ReadInt32(); // String count
-			category.ja = DecodeEntry(readerja, StringIndex.Name);
-
-			model.roe_categories.Add(category);
+		if (categories.Count > 0) {
+			item.categories = categories;
+		}
+		if (objectives.Count > 0) {
+			item.objectives = objectives;
 		}
 	}
 
